@@ -117,18 +117,26 @@ async function loadAchievements(userId, showAll = false) {
         if (!userId) return alert("Enter a user ID");
     }
 
+    // Fetch user data
     const userResp = await fetch(`users/${userId}.json`);
     if (!userResp.ok) return alert("User not found");
     const userData = await userResp.json();
 
-    const achResp = await fetch(`./achievements.json`);
+    // Fetch achievements and founders data
+    const [achResp, foundersResp] = await Promise.all([
+        fetch(`./achievements.json`),
+        fetch(`./founders.json`)
+    ]);
     if (!achResp.ok) return alert("Achievements file not found");
+    if (!foundersResp.ok) return alert("Founders file not found");
+
     const achData = await achResp.json();
+    const foundersData = await foundersResp.json();
 
     const container = document.getElementById("achievementsContainer");
     container.innerHTML = "";
 
-    let allIds = showAll ? Object.keys(achData) 
+    let allIds = showAll ? Object.keys(achData)
                           : Object.keys(userData.achievements.earned).concat(Object.keys(userData.achievements.founded));
 
     if (!allIds.length) {
@@ -162,8 +170,20 @@ async function loadAchievements(userId, showAll = false) {
             });
         }
 
+        // Determine founder info
+        let founderText = "";
+        if (foundersData[id]) {
+            const founderName = foundersData[id].founder_name;
+            const founderId = foundersData[id].founder_id;
+            if (founderId === userId) {
+                founderText = "(Founder: You!)";
+            } else {
+                founderText = `(Founder: ${founderName})`;
+            }
+        }
+
         div.innerHTML = `
-            <strong>${ach.name}</strong> ${isFounder ? '(Founder!)' : ''}<br>
+            <strong>${ach.name}</strong> ${founderText}<br>
             ${ach.Desc}<br>
             <em>Unlocked: ${formattedDate}</em>
         `;
