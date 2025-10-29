@@ -139,10 +139,28 @@ async function loadAchievements(userId) {
         const div = document.createElement("div");
         div.className = "achievement";
         if (userData.achievements.founded[id]) div.classList.add("founded");
+
+
+        const rawDate = userData.achievements.founded[id] || userData.achievements.earned[id];
+        let formattedDate = "Unknown";
+
+        if (rawDate) {
+            const dateObj = new Date(rawDate);
+            formattedDate = dateObj.toLocaleString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true, // set to true for AM/PM
+            });
+        }
+
         div.innerHTML = `
-            <strong>${ach.name}</strong> (${ach.trophy_name})<br>
+            <strong>${ach.name}</strong><br>
             ${ach.Desc}<br>
-            <em>Unlocked: ${userData.achievements.founded[id] || userData.achievements.earned[id]}</em>
+            <em>Unlocked: ${formattedDate}</em>
         `;
         container.appendChild(div);
     });
