@@ -50,7 +50,7 @@
       document.getElementById('username').innerText = "No user ID provided!";
       document.getElementById('achievements').innerText = "";
     } else {
-      fetch(`/Achievements/users/${userId}.json`)
+      fetch(`./users/${userId}.json`)
         .then(res => {
           if (!res.ok) throw new Error("User data not found");
           return res.json();
@@ -68,7 +68,7 @@
           ]);
 
           // Fetch the achievement info file
-          fetch('/Achievements/achievements.json')
+          fetch('./achievements.json')
             .then(res => res.json())
             .then(allAchievements => {
               earnedIds.forEach(id => {
