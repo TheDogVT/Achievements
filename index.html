@@ -174,14 +174,9 @@ async function loadAchievements(userId, showAll = false) {
         let founderText = "";
         if (foundersData[id]) {
             const founderName = foundersData[id].founder_name;
-            const founderId = foundersData[id].founder_id;
-            if (founderId === userId) {
-                founderText = "(Founder: You!)";
-            } else {
-                founderText = `(Founder: ${founderName})`;
-            }
+            founderText = `(Founder: ${founderName})`;
         }
-
+        
         div.innerHTML = `
             <strong>${ach.name}</strong> ${founderText}<br>
             ${ach.Desc}<br>
