@@ -1,63 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Achievements Viewer</title>
-<style>
-  body { font-family: sans-serif; padding: 2rem; background: #f9f9f9; }
-  input { padding: 0.5rem; font-size: 1rem; }
-  button { padding: 0.5rem 1rem; margin-left: 0.5rem; }
-  .achievement { background: #fff; padding: 1rem; margin: 0.5rem 0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);}
-  .trophy { font-weight: bold; color: #e67e22; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Achievements</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1a1a1a;
+      color: #eee;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    h1 {
+      color: #ffcc00;
+    }
+    .achievement {
+      background-color: #2a2a2a;
+      padding: 1rem;
+      margin: 0.5rem 0;
+      border-radius: 6px;
+    }
+    .founder {
+      border: 2px solid #00ccff;
+    }
+    .achievement-title {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .achievement-desc {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+  </style>
 </head>
 <body>
+  <h1 id="username">Loading...</h1>
+  <h2>Achievements</h2>
+  <div id="achievements">
+    Loading achievements...
+  </div>
 
-<h1>Achievements Viewer</h1>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const userId = urlParams.get('user');
 
-<input type="text" id="userIdInput" placeholder="Enter User ID">
-<button onclick="loadAchievements()">Load Achievements</button>
+    if (!userId) {
+      document.getElementById('username').innerText = "No user ID provided!";
+      document.getElementById('achievements').innerText = "";
+    } else {
+      fetch(`https://thedogvt.github.io/Achievements/${userId}.json`)
+        .then(res => {
+          if (!res.ok) throw new Error("User data not found");
+          return res.json();
+        })
+        .then(userData => {
+          document.getElementById('username').innerText = userData.username || userId;
 
-<div id="achievementsContainer"></div>
+          const achievementsContainer = document.getElementById('achievements');
+          achievementsContainer.innerHTML = "";
 
-<script>
-async function loadAchievements() {
-  const userId = document.getElementById('userIdInput').value.trim();
-  if (!userId) return alert("Enter a user ID!");
+          // Merge earned + founder IDs into a set for lookup
+          const earnedIds = new Set([
+            ...Object.keys(userData.achievements.earned || {}),
+            ...Object.keys(userData.achievements.founder || {})
+          ]);
 
-  try {
-    // Fetch user data
-    const userResp = await fetch(`users/${userId}.json`);
-    if (!userResp.ok) throw new Error("User not found");
-    const userData = await userResp.json();
+          // Fetch the achievement info file
+          fetch('https://thedogvt.github.io/Achievements/achievements.json')
+            .then(res => res.json())
+            .then(allAchievements => {
+              earnedIds.forEach(id => {
+                const ach = allAchievements[id];
+                if (!ach) return;
 
-    // Fetch achievement metadata (found achievements)
-    const achResp = await fetch('achievements/found.json');
-    const achData = await achResp.json();
+                const isFounder = userData.achievements.founder && userData.achievements.founder[id];
+                const earnedAt = userData.achievements.earned[id] || userData.achievements.founder[id];
 
-    const container = document.getElementById('achievementsContainer');
-    container.innerHTML = '';
-
-    const allAch = {...userData.achievements.earned, ...userData.achievements.founded};
-
-    for (const achId of Object.keys(allAch)) {
-      const meta = achData[achId];
-      if (!meta) continue; // skip unknown
-      const timestamp = userData.achievements.founded[achId] || '';
-      const div = document.createElement('div');
-      div.className = 'achievement';
-      div.innerHTML = `
-        <div><span class="trophy">${meta.trophy_name}</span> - ${meta.name}</div>
-        <div>${meta.Desc}</div>
-        ${timestamp ? `<div><small>Founder: ${timestamp}</small></div>` : ''}
-      `;
-      container.appendChild(div);
+                const div = document.createElement('div');
+                div.className = 'achievement' + (isFounder ? ' founder' : '');
+                div.innerHTML = `
+                  <div class="achievement-title">${ach.name} ${isFounder ? '(Founder!)' : ''}</div>
+                  <div class="achievement-desc">${ach.Desc}</div>
+                  <div class="achievement-time">Earned: ${earnedAt}</div>
+                `;
+                achievementsContainer.appendChild(div);
+              });
+            })
+            .catch(err => {
+              achievementsContainer.innerText = "Could not load achievement data.";
+            });
+        })
+        .catch(err => {
+          document.getElementById('username').innerText = "User not found!";
+          document.getElementById('achievements').innerText = "";
+        });
     }
-  } catch(err) {
-    alert("Error loading achievements: " + err.message);
-  }
-}
-</script>
-
+  </script>
 </body>
 </html>
