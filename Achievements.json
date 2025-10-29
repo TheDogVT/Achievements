@@ -1,0 +1,14 @@
+{
+  "chat_10": {
+    "name": "Curious Chatter",
+    "trophy_name": "CuriousYapper",
+    "Desc": "Awarded for yapping 10 times.",
+    "threshold": 10
+  },
+  "cheer_50": {
+    "name": "Generous Supporter",
+    "trophy_name": "CheerMaster",
+    "Desc": "Awarded for cheering 50 bits.",
+    "threshold": 50
+  }
+}
