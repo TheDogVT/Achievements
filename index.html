@@ -13,34 +13,23 @@
       margin: 0 auto;
       padding: 2rem;
     }
-    h1 {
-      color: #ffcc00;
-    }
+    h1 { color: #ffcc00; }
     .achievement {
       background-color: #2a2a2a;
       padding: 1rem;
       margin: 0.5rem 0;
       border-radius: 6px;
     }
-    .founder {
-      border: 2px solid #00ccff;
-    }
-    .achievement-title {
-      font-weight: bold;
-      font-size: 1.1rem;
-    }
-    .achievement-desc {
-      font-size: 0.9rem;
-      color: #ccc;
-    }
+    .founder { border: 2px solid #00ccff; }
+    .achievement-title { font-weight: bold; font-size: 1.1rem; }
+    .achievement-desc { font-size: 0.9rem; color: #ccc; }
+    .achievement-time { font-size: 0.8rem; color: #aaa; margin-top: 0.3rem; }
   </style>
 </head>
 <body>
   <h1 id="username">Loading...</h1>
   <h2>Achievements</h2>
-  <div id="achievements">
-    Loading achievements...
-  </div>
+  <div id="achievements">Loading achievements...</div>
 
   <script>
     const urlParams = new URLSearchParams(window.location.search);
@@ -50,6 +39,7 @@
       document.getElementById('username').innerText = "No user ID provided!";
       document.getElementById('achievements').innerText = "";
     } else {
+      // Load user JSON
       fetch(`./users/${userId}.json`)
         .then(res => {
           if (!res.ok) throw new Error("User data not found");
@@ -61,21 +51,23 @@
           const achievementsContainer = document.getElementById('achievements');
           achievementsContainer.innerHTML = "";
 
-          // Merge earned + founder IDs into a set for lookup
-          const earnedIds = new Set([
-            ...Object.keys(userData.achievements.earned || {}),
-            ...Object.keys(userData.achievements.founder || {})
-          ]);
+          // Combine earned + founder IDs
+          const earnedIds = Object.keys(userData.achievements.earned || {});
+          const founderIds = Object.keys(userData.achievements.founder || {});
+          const allIds = new Set([...earnedIds, ...founderIds]);
 
-          // Fetch the achievement info file
+          // Load global achievement info
           fetch('./achievements.json')
             .then(res => res.json())
             .then(allAchievements => {
-              earnedIds.forEach(id => {
+              allIds.forEach(id => {
                 const ach = allAchievements[id];
-                if (!ach) return;
+                if (!ach) {
+                  console.warn(`Achievement ${id} not found in achievements.json`);
+                  return;
+                }
 
-                const isFounder = userData.achievements.founder && userData.achievements.founder[id];
+                const isFounder = founderIds.includes(id);
                 const earnedAt = userData.achievements.earned[id] || userData.achievements.founder[id];
 
                 const div = document.createElement('div');
@@ -87,12 +79,18 @@
                 `;
                 achievementsContainer.appendChild(div);
               });
+
+              if (allIds.size === 0) {
+                achievementsContainer.innerText = "No achievements earned yet!";
+              }
             })
             .catch(err => {
-              achievementsContainer.innerText = "Could not load achievement data.";
+              console.error(err);
+              achievementsContainer.innerText = "Could not load achievement info.";
             });
         })
         .catch(err => {
+          console.error(err);
           document.getElementById('username').innerText = "User not found!";
           document.getElementById('achievements').innerText = "";
         });
