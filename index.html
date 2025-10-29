@@ -68,7 +68,7 @@
           ]);
 
           // Fetch the achievement info file
-          fetch('achievements.json')
+          fetch('/achievements.json')
             .then(res => res.json())
             .then(allAchievements => {
               earnedIds.forEach(id => {
