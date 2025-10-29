@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Achievements Viewer</title>
+<style>
+  body { font-family: sans-serif; padding: 2rem; background: #f9f9f9; }
+  input { padding: 0.5rem; font-size: 1rem; }
+  button { padding: 0.5rem 1rem; margin-left: 0.5rem; }
+  .achievement { background: #fff; padding: 1rem; margin: 0.5rem 0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);}
+  .trophy { font-weight: bold; color: #e67e22; }
+</style>
+</head>
+<body>
+
+<h1>Achievements Viewer</h1>
+
+<input type="text" id="userIdInput" placeholder="Enter User ID">
+<button onclick="loadAchievements()">Load Achievements</button>
+
+<div id="achievementsContainer"></div>
+
+<script>
+async function loadAchievements() {
+  const userId = document.getElementById('userIdInput').value.trim();
+  if (!userId) return alert("Enter a user ID!");
+
+  try {
+    // Fetch user data
+    const userResp = await fetch(`users/${userId}.json`);
+    if (!userResp.ok) throw new Error("User not found");
+    const userData = await userResp.json();
+
+    // Fetch achievement metadata (found achievements)
+    const achResp = await fetch('achievements/found.json');
+    const achData = await achResp.json();
+
+    const container = document.getElementById('achievementsContainer');
+    container.innerHTML = '';
+
+    const allAch = {...userData.achievements.earned, ...userData.achievements.founded};
+
+    for (const achId of Object.keys(allAch)) {
+      const meta = achData[achId];
+      if (!meta) continue; // skip unknown
+      const timestamp = userData.achievements.founded[achId] || '';
+      const div = document.createElement('div');
+      div.className = 'achievement';
+      div.innerHTML = `
+        <div><span class="trophy">${meta.trophy_name}</span> - ${meta.name}</div>
+        <div>${meta.Desc}</div>
+        ${timestamp ? `<div><small>Founder: ${timestamp}</small></div>` : ''}
+      `;
+      container.appendChild(div);
+    }
+  } catch(err) {
+    alert("Error loading achievements: " + err.message);
+  }
+}
+</script>
+
+</body>
+</html>
