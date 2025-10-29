@@ -160,7 +160,7 @@ async function loadAchievements(userId) {
         div.innerHTML = `
             <strong>${ach.name}</strong><br>
             ${ach.Desc}<br>
-            <em>Unlocked: ${formattedDate}</em>
+            <em>Unlocked: ${formattedDate} (UTC-5)</em>
         `;
         container.appendChild(div);
     });
