@@ -1,100 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Achievements</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #1a1a1a;
-      color: #eee;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-    h1 { color: #ffcc00; }
-    .achievement {
-      background-color: #2a2a2a;
-      padding: 1rem;
-      margin: 0.5rem 0;
-      border-radius: 6px;
-    }
-    .founder { border: 2px solid #00ccff; }
-    .achievement-title { font-weight: bold; font-size: 1.1rem; }
-    .achievement-desc { font-size: 0.9rem; color: #ccc; }
-    .achievement-time { font-size: 0.8rem; color: #aaa; margin-top: 0.3rem; }
-  </style>
+<meta charset="UTF-8">
+<title>User Achievements</title>
+<style>
+  body { font-family: Arial, sans-serif; padding: 2rem; background: #f0f0f0; }
+  h1 { color: #333; }
+  .achievement { 
+    background: #fff; 
+    padding: 1rem; 
+    margin-bottom: 1rem; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .founded { border-left: 5px solid gold; padding-left: 0.5rem; }
+</style>
 </head>
 <body>
-  <h1 id="username">Loading...</h1>
-  <h2>Achievements</h2>
-  <div id="achievements">Loading achievements...</div>
 
-  <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const userId = urlParams.get('user');
+<h1>User Achievements</h1>
 
-    if (!userId) {
-      document.getElementById('username').innerText = "No user ID provided!";
-      document.getElementById('achievements').innerText = "";
-    } else {
-      // Load user JSON
-      fetch(`./users/${userId}.json`)
-        .then(res => {
-          if (!res.ok) throw new Error("User data not found");
-          return res.json();
-        })
-        .then(userData => {
-          document.getElementById('username').innerText = userData.username || userId;
+<label for="userIdInput">Enter User ID:</label>
+<input type="text" id="userIdInput" placeholder="e.g., 929216269">
+<button id="loadBtn">Load Achievements</button>
 
-          const achievementsContainer = document.getElementById('achievements');
-          achievementsContainer.innerHTML = "";
+<div id="achievementsContainer"></div>
 
-          // Combine earned + founder IDs
-          const earnedIds = Object.keys(userData.achievements.earned || {});
-          const founderIds = Object.keys(userData.achievements.founder || {});
-          const allIds = new Set([...earnedIds, ...founderIds]);
+<script>
+async function loadAchievements() {
+    const userId = document.getElementById("userIdInput").value.trim();
+    if (!userId) return alert("Enter a user ID");
 
-          // Load global achievement info
-          fetch('./achievements.json')
-            .then(res => res.json())
-            .then(allAchievements => {
-              allIds.forEach(id => {
-                const ach = allAchievements[id];
-                if (!ach) {
-                  console.warn(`Achievement ${id} not found in achievements.json`);
-                  return;
-                }
+    // fetch user JSON
+    const userResp = await fetch(`users/${userId}.json`);
+    if (!userResp.ok) return alert("User not found");
+    const userData = await userResp.json();
 
-                const isFounder = founderIds.includes(id);
-                const earnedAt = userData.achievements.earned[id] || userData.achievements.founder[id];
+    // fetch achievements lookup JSON
+    const achResp = await fetch(`./achievements.json`);
+    if (!achResp.ok) return alert("Achievements file not found");
+    const achData = await achResp.json();
 
-                const div = document.createElement('div');
-                div.className = 'achievement' + (isFounder ? ' founder' : '');
-                div.innerHTML = `
-                  <div class="achievement-title">${ach.name} ${isFounder ? '(Founder!)' : ''}</div>
-                  <div class="achievement-desc">${ach.Desc}</div>
-                  <div class="achievement-time">Earned: ${earnedAt}</div>
-                `;
-                achievementsContainer.appendChild(div);
-              });
+    const container = document.getElementById("achievementsContainer");
+    container.innerHTML = ""; // clear previous
 
-              if (allIds.size === 0) {
-                achievementsContainer.innerText = "No achievements earned yet!";
-              }
-            })
-            .catch(err => {
-              console.error(err);
-              achievementsContainer.innerText = "Could not load achievement info.";
-            });
-        })
-        .catch(err => {
-          console.error(err);
-          document.getElementById('username').innerText = "User not found!";
-          document.getElementById('achievements').innerText = "";
-        });
+    const allIds = Object.keys(userData.achievements.earned).concat(Object.keys(userData.achievements.founded));
+
+    if (!allIds.length) {
+        container.innerHTML = "<p>No achievements yet.</p>";
+        return;
     }
-  </script>
+
+    allIds.forEach(id => {
+        const ach = achData[id];
+        if (!ach) return; // skip unknown
+        const div = document.createElement("div");
+        div.className = "achievement";
+        if (userData.achievements.founded[id]) div.classList.add("founded");
+        div.innerHTML = `
+            <strong>${ach.name}</strong> (${ach.trophy_name})<br>
+            ${ach.Desc}<br>
+            <em>Unlocked: ${userData.achievements.founded[id] || userData.achievements.earned[id]}</em>
+        `;
+        container.appendChild(div);
+    });
+}
+
+document.getElementById("loadBtn").addEventListener("click", loadAchievements);
+</script>
+
 </body>
 </html>
