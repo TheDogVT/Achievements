@@ -1,292 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>User Achievements</title>
-<style>
- /* General page styling */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #121212;
-  color: #eee;
-  margin: 0;
-  padding: 2rem;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
 
-h1 {
-  color: #ffcc00;
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
+        h1 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
 
-label, input, button {
-  display: block;
-  margin: 0.5rem 0;
-}
+        .controls {
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
 
-input {
-  padding: 0.5rem;
-  border-radius: 5px;
-  border: none;
-  width: 100%;
-  max-width: 300px;
-  background-color: #1e1e1e;
-  color: #eee;
-}
+        #userInput {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
 
-button {
-  padding: 0.6rem 1.2rem;
-  background-color: #ffcc00;
-  color: #121212;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.2s ease;
-}
+        .button-row {
+            display: flex;
+            width: 100%;
+            gap: 10px;
+        }
 
-button:hover {
-  background-color: #e6b800;
-}
+        button {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background-color: #444;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
 
-/* Achievements container */
-#achievementsContainer {
-  margin-top: 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-}
+        button:hover {
+            background-color: #666;
+        }
 
-/* Each achievement card */
-.achievement {
-  background-color: #1e1e1e;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+        #achievementContainer {
+            margin-top: 25px;
+            width: 100%;
+            max-width: 600px;
+        }
 
-.achievement:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.7);
-}
+        .category {
+            margin-bottom: 20px;
+        }
 
-.achievement strong {
-  color: #ffcc00;
-  font-size: 1.1rem;
-}
+        .category h2 {
+            text-align: center;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #444;
+        }
 
-.achievement em {
-  display: block;
-  font-size: 0.85rem;
-  color: #aaa;
-  margin-top: 0.5rem;
-}
+        .achievement {
+            background-color: #222;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
 
-/* Founder achievements */
-.founded {
-  border-left: 4px solid #00ccff;
-  padding-left: 0.8rem;
-}
+        .achievement.unlocked {
+            background-color: #2b6;
+        }
 
-@media (max-width: 600px) {
-  #achievementsContainer {
-    grid-template-columns: 1fr;
-  }
-}
-/* Controls: input + buttons side by side */
-#controls {
-    display: flex;
-    flex-direction: column; /* stack input and button row */
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-    width: 100%;
-    max-width: 400px; /* optional: control max width */
-}
+        @media (max-width: 480px) {
+            .controls {
+                width: 90%;
+            }
 
-#controls input {
-    width: 100%; /* full width of container */
-    padding: 0.5rem;
-    border-radius: 5px;
-    border: none;
-    background-color: #1e1e1e;
-    color: #eee;
-}
+            button {
+                font-size: 14px;
+                padding: 8px;
+            }
 
-#buttonRow {
-    display: flex;
-    gap: 0.5rem;
-}
-
-#buttonRow button {
-    flex: 1; /* each button takes equal space */
-    padding: 0.6rem 0;
-    border-radius: 5px;
-    border: none;
-    background-color: #ffcc00;
-    color: #121212;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-#buttonRow button:hover {
-    background-color: #e6b800;
-}
-</style>
+            #userInput {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <h1>Achievements Viewer</h1>
 
-<h1>User Achievements</h1>
-
-<label for="userIdInput">Enter Username or ID:</label>
-<div id="controls">
-    <input type="text" id="userIdInput" placeholder="e.g. thedogvt or 929216269">
-    <div id="buttonRow">
-        <button id="loadBtn">Load Achievements</button>
-        <button id="showAllBtn">Show All Achievements</button>
+    <div class="controls">
+        <input id="userInput" placeholder="Enter username or ID">
+        <div class="button-row">
+            <button id="loadAchievements">Load Achievements</button>
+            <button id="showAll">Show All</button>
+        </div>
     </div>
-</div>
 
-<div id="achievementsContainer"></div>
+    <div id="achievementContainer"></div>
 
-<script>
-let achData = {};
-let foundersData = {};
-let allUserData = {}; // cache loaded user data
-
-async function renderAchievements(userId=null, showAll=false) {
-    const container = document.getElementById("achievementsContainer");
-    container.innerHTML = "";
-
-    let userData = null;
-    if (userId) userData = allUserData[userId];
-
-    // Iterate categories
-    for (const category of Object.keys(achData)) {
-        const catDiv = document.createElement("div");
-        const catHeader = document.createElement("h2");
-        catHeader.textContent = category;
-        catHeader.style.color = "#ffcc00"; // optional styling
-        catDiv.appendChild(catHeader);
-
-        const catGrid = document.createElement("div");
-        catGrid.style.display = "grid";
-        catGrid.style.gridTemplateColumns = "repeat(auto-fit, minmax(250px, 1fr))";
-        catGrid.style.gap = "1rem";
-
-        for (const id of Object.keys(achData[category])) {
-            const ach = achData[category][id];
-
-            const isEarned = userData ? (userData.achievements.earned[id] || userData.achievements.founded[id]) : false;
-            const isFounder = userData ? userData.achievements.founded[id] : false;
-
-            if (!showAll && !isEarned) continue;
-
-            const div = document.createElement("div");
-            div.className = "achievement";
-
-            if (isFounder) div.classList.add("founded");
-            else if (showAll && isEarned) div.classList.add("highlighted");
-
-            let formattedDate = "Not earned yet";
-            if (isEarned) {
-                const dateObj = new Date(isEarned);
-                formattedDate = dateObj.toLocaleString('en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                    hour: 'numeric',
-                    minute: '2-digit',
-                    hour12: true
-                });
-            }
-
-            let founderText = "";
-            if (foundersData[id]) {
-                founderText = `(Founder: ${foundersData[id].founder_name})`;
-            }
-
-            div.innerHTML = `
-                <strong>${ach.name}</strong> ${founderText}<br>
-                ${ach.Desc}<br>
-                <em>Unlocked: ${formattedDate}</em>
-            `;
-
-            catGrid.appendChild(div);
-        }
-
-        catDiv.appendChild(catGrid);
-        container.appendChild(catDiv);
-    }
-}
-
-async function loadUser(usernameOrId) {
-    if (!usernameOrId) return;
-
-    let userId = usernameOrId;
-
-    if (isNaN(Number(usernameOrId))) {
-        const mapResp = await fetch('./username_map.json');
-        const usernameMap = await mapResp.json();
-        userId = usernameMap[usernameOrId.toLowerCase()];
-        if (!userId) return alert("Username not found");
-    }
-
-    const userResp = await fetch(`users/${userId}.json`);
-    if (!userResp.ok) return alert("User not found");
-    const userData = await userResp.json();
-    allUserData[userId] = userData;
-
-    await renderAchievements(userId, false);
-}
-
-async function initPage() {
-    const achResp = await fetch('./achievements.json');
-    achData = await achResp.json();
-
-    const foundersResp = await fetch('./founders.json');
-    foundersData = foundersResp.ok ? await foundersResp.json() : {};
-
-    await renderAchievements(null, true); // default: show all
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const userParam = urlParams.get("user");
-    if (userParam) await loadUser(userParam);
-}
-
-initPage();
-
-// Button events
-document.getElementById("loadBtn").addEventListener("click", () => {
-    const input = document.getElementById("userIdInput").value.trim();
-    loadUser(input);
-});
-
-document.getElementById("showAllBtn").addEventListener("click", async () => {
-    const input = document.getElementById("userIdInput").value.trim();
-    let userId = null;
-
-    if (input) {
-        if (isNaN(Number(input))) {
-            const mapResp = await fetch('./username_map.json');
-            const usernameMap = await mapResp.json();
-            userId = usernameMap[input.toLowerCase()];
-        } else {
-            userId = input;
-        }
-        if (userId && !allUserData[userId]) {
-            const userResp = await fetch(`users/${userId}.json`);
-            if (userResp.ok) allUserData[userId] = await userResp.json();
-        }
-    }
-
-    await renderAchievements(userId, true);
-});
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>
