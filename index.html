@@ -97,6 +97,22 @@ button:hover {
     grid-template-columns: 1fr;
   }
 }
+/* Controls: input + buttons side by side */
+#controls {
+    display: flex;
+    flex-wrap: wrap; /* wrap if screen is too small */
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+#controls input {
+    flex: 1 1 200px; /* input grows to fill space, minimum 200px */
+}
+
+#controls button {
+    flex: 0 0 auto; /* buttons keep their width */
+}
 </style>
 </head>
 <body>
@@ -104,9 +120,11 @@ button:hover {
 <h1>User Achievements</h1>
 
 <label for="userIdInput">Enter Username or ID:</label>
-<input type="text" id="userIdInput" placeholder="e.g. thedogvt or 929216269">
-<button id="loadBtn">Load Achievements</button>
-<button id="showAllBtn">Show All Achievements</button>
+<div id="controls">
+    <input type="text" id="userIdInput" placeholder="e.g. thedogvt or 929216269">
+    <button id="loadBtn">Load Achievements</button>
+    <button id="showAllBtn">Show All Achievements</button>
+</div>
 
 <div id="achievementsContainer"></div>
 
