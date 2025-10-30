@@ -1,32 +1,26 @@
 {
   "chat_10": {
     "name": "Curious Chatter",
-    "trophy_name": "CuriousYapper",
     "Desc": "Awarded for yapping 10 times.",
     "threshold": 10
   },
     "chat_100":{
         "name": "Entry Level Yapper",
-        "trophy_name": "BabyYapper",
         "Desc": "Awarded for yapping 100 times.",
         "threshold": 100
     },
     "chat_500":{
         "name": "Little Yapper",
-        "trophy_name": "LittleYap",
         "Desc": "Awarded for yapping 500 times.",
         "threshold": 500
     },
     "chat_1k":{
         "name": "Yapper",
-        "trophy_name": "Yap",
         "Desc": "Awarded for yapping 1,000 times.",
-        "Founder": "1089836852",
         "threshold": 1000
     }
   "cheer_50": {
     "name": "Generous Supporter",
-    "trophy_name": "CheerMaster",
     "Desc": "Awarded for cheering 50 bits.",
     "threshold": 50
   }
