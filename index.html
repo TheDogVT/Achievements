@@ -32,7 +32,7 @@
             gap: 10px;
         }
 
-        #userInput {
+        #userIdInput {
             width: 100%;
             padding: 10px;
             border-radius: 8px;
@@ -63,7 +63,7 @@
             background-color: #666;
         }
 
-        #achievementContainer {
+        #achievementsContainer {
             margin-top: 25px;
             width: 100%;
             max-width: 600px;
@@ -93,6 +93,10 @@
             background-color: #2b6;
         }
 
+        .achievement.founded {
+            border: 2px solid #ffd700;
+        }
+
         @media (max-width: 480px) {
             .controls {
                 width: 90%;
@@ -103,7 +107,7 @@
                 padding: 8px;
             }
 
-            #userInput {
+            #userIdInput {
                 font-size: 14px;
                 padding: 8px;
             }
@@ -114,14 +118,14 @@
     <h1>Achievements Viewer</h1>
 
     <div class="controls">
-        <input id="userInput" placeholder="Enter username or ID">
+        <input id="userIdInput" placeholder="Enter username or ID">
         <div class="button-row">
-            <button id="loadAchievements">Load Achievements</button>
-            <button id="showAll">Show All</button>
+            <button id="loadBtn">Load Achievements</button>
+            <button id="showAllBtn">Show All</button>
         </div>
     </div>
 
-    <div id="achievementContainer"></div>
+    <div id="achievementsContainer"></div>
 
     <script src="script.js"></script>
 </body>
