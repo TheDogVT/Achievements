@@ -55,9 +55,9 @@ async function renderAchievements(userId=null, showAll=false) {
             }
 
             div.innerHTML = `
-                <strong>${ach.name}</strong> ${founderText}<br>
+                <strong>${ach.name}</strong><br>
                 ${ach.Desc}<br>
-                <em>Unlocked: ${formattedDate}</em>
+                <em>Unlocked: ${formattedDate}<br> ${founderText}</em>
             `;
 
             catGrid.appendChild(div);
