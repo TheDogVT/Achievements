@@ -51,7 +51,7 @@ async function renderAchievements(userId=null, showAll=false) {
 
             let founderText = "";
             if (foundersData[id]) {
-                founderText = `(Founder: ${foundersData[id].founder_name})`;
+                founderText = `Founder: ${foundersData[id].founder_name}`;
             }
 
             div.innerHTML = `
