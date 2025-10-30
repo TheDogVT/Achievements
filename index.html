@@ -100,18 +100,41 @@ button:hover {
 /* Controls: input + buttons side by side */
 #controls {
     display: flex;
-    flex-wrap: wrap; /* wrap if screen is too small */
+    flex-direction: column; /* stack input and button row */
     gap: 0.5rem;
     margin-bottom: 1rem;
-    align-items: center;
+    width: 100%;
+    max-width: 400px; /* optional: control max width */
 }
 
 #controls input {
-    flex: 1 1 200px; /* input grows to fill space, minimum 200px */
+    width: 100%; /* full width of container */
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #1e1e1e;
+    color: #eee;
 }
 
-#controls button {
-    flex: 0 0 auto; /* buttons keep their width */
+#buttonRow {
+    display: flex;
+    gap: 0.5rem;
+}
+
+#buttonRow button {
+    flex: 1; /* each button takes equal space */
+    padding: 0.6rem 0;
+    border-radius: 5px;
+    border: none;
+    background-color: #ffcc00;
+    color: #121212;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#buttonRow button:hover {
+    background-color: #e6b800;
 }
 </style>
 </head>
@@ -122,8 +145,10 @@ button:hover {
 <label for="userIdInput">Enter Username or ID:</label>
 <div id="controls">
     <input type="text" id="userIdInput" placeholder="e.g. thedogvt or 929216269">
-    <button id="loadBtn">Load Achievements</button>
-    <button id="showAllBtn">Show All Achievements</button>
+    <div id="buttonRow">
+        <button id="loadBtn">Load Achievements</button>
+        <button id="showAllBtn">Show All Achievements</button>
+    </div>
 </div>
 
 <div id="achievementsContainer"></div>
