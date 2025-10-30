@@ -113,26 +113,32 @@ button:hover {
 <script>
 let achData = {};
 let foundersData = {};
-let allUserData = {}; // store last loaded user
+let allUserData = {}; // cache loaded user data
 
-async function renderAllAchievements(userId=null) {
+async function renderAchievements(userId=null, showAll=false) {
     const container = document.getElementById("achievementsContainer");
     container.innerHTML = "";
 
+    let userData = null;
+    if (userId) {
+        userData = allUserData[userId];
+    }
+
     for (const id of Object.keys(achData)) {
         const ach = achData[id];
+
+        // Check user ownership
+        const isEarned = userData ? (userData.achievements.earned[id] || userData.achievements.founded[id]) : false;
+        const isFounder = userData ? userData.achievements.founded[id] : false;
+
+        // Skip if we're in "user-only" mode and user doesn't have this achievement
+        if (!showAll && !isEarned) continue;
+
         const div = document.createElement("div");
         div.className = "achievement";
 
-        // Check if the current user earned/founded it
-        let isEarned = false;
-        let isFounder = false;
-        if (userId && allUserData[userId]) {
-            const userData = allUserData[userId];
-            isFounder = userData.achievements.founded[id];
-            isEarned = userData.achievements.earned[id] || isFounder;
-            if (isFounder) div.classList.add("founded");
-        }
+        if (isFounder) div.classList.add("founded");
+        else if (showAll && isEarned) div.classList.add("highlighted"); // optional CSS for highlighting owned achievements
 
         // Format unlock date
         let formattedDate = "Not earned yet";
@@ -183,21 +189,21 @@ async function loadUser(usernameOrId) {
     const userData = await userResp.json();
     allUserData[userId] = userData;
 
-    await renderAllAchievements(userId);
+    // Only show achievements user has
+    await renderAchievements(userId, false);
 }
 
 async function initPage() {
-    // Load achievement + founder data first
     const achResp = await fetch('./achievements.json');
     achData = await achResp.json();
 
     const foundersResp = await fetch('./founders.json');
     foundersData = foundersResp.ok ? await foundersResp.json() : {};
 
-    // Default: render all achievements (no user highlighted)
-    await renderAllAchievements();
+    // Default: show all achievements
+    await renderAchievements(null, true);
 
-    // Check URL param
+    // Load user if URL param is provided
     const urlParams = new URLSearchParams(window.location.search);
     const userParam = urlParams.get("user");
     if (userParam) await loadUser(userParam);
@@ -210,8 +216,27 @@ document.getElementById("loadBtn").addEventListener("click", () => {
     const input = document.getElementById("userIdInput").value.trim();
     loadUser(input);
 });
-document.getElementById("showAllBtn").addEventListener("click", () => {
-    renderAllAchievements(); // ignore user, show all
+
+document.getElementById("showAllBtn").addEventListener("click", async () => {
+    const input = document.getElementById("userIdInput").value.trim();
+    let userId = null;
+
+    if (input) {
+        // Try to fetch user for highlighting
+        if (isNaN(Number(input))) {
+            const mapResp = await fetch('./username_map.json');
+            const usernameMap = await mapResp.json();
+            userId = usernameMap[input.toLowerCase()];
+        } else {
+            userId = input;
+        }
+        if (userId && !allUserData[userId]) {
+            const userResp = await fetch(`users/${userId}.json`);
+            if (userResp.ok) allUserData[userId] = await userResp.json();
+        }
+    }
+
+    await renderAchievements(userId, true); // show all, highlight if userId provided
 });
 </script>
 
