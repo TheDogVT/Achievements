@@ -110,66 +110,31 @@ button:hover {
 
 <div id="achievementsContainer"></div>
 
- <script>
-async function loadAchievements(input, showAll = false) {
-    if (!input) {
-        input = document.getElementById("userIdInput").value.trim();
-        if (!input) return alert("Enter a username or ID");
-    }
+<script>
+let achData = {};
+let foundersData = {};
+let allUserData = {}; // store last loaded user
 
-    let userId = input;
-
-    // If input is not numeric, assume it's a username and lookup in map
-    if (isNaN(Number(input))) {
-        try {
-            const mapResp = await fetch('./username_map.json');
-            if (!mapResp.ok) throw new Error("Username map not found");
-            const usernameMap = await mapResp.json();
-
-            userId = usernameMap[input.toLowerCase()];
-            if (!userId) return alert("Username not found");
-        } catch (err) {
-            return alert(err.message);
-        }
-    }
-
-    // Now fetch user data by ID
-    const userResp = await fetch(`users/${userId}.json`);
-    if (!userResp.ok) return alert("User not found");
-    const userData = await userResp.json();
-
-    const achResp = await fetch(`./achievements.json`);
-    if (!achResp.ok) return alert("Achievements file not found");
-    const achData = await achResp.json();
-
-    const foundersResp = await fetch(`./founders.json`);
-    const foundersData = foundersResp.ok ? await foundersResp.json() : {};
-
+async function renderAllAchievements(userId=null) {
     const container = document.getElementById("achievementsContainer");
     container.innerHTML = "";
 
-    let allIds = showAll ? Object.keys(achData)
-                          : Object.keys(userData.achievements.earned)
-                            .concat(Object.keys(userData.achievements.founded));
-
-    if (!allIds.length) {
-        container.innerHTML = "<p>No achievements yet.</p>";
-        return;
-    }
-
-    allIds.forEach(id => {
+    for (const id of Object.keys(achData)) {
         const ach = achData[id];
-        if (!ach) return;
-
         const div = document.createElement("div");
         div.className = "achievement";
 
-        const isFounder = userData.achievements.founded[id];
-        const isEarned = userData.achievements.earned[id] || isFounder;
+        // Check if the current user earned/founded it
+        let isEarned = false;
+        let isFounder = false;
+        if (userId && allUserData[userId]) {
+            const userData = allUserData[userId];
+            isFounder = userData.achievements.founded[id];
+            isEarned = userData.achievements.earned[id] || isFounder;
+            if (isFounder) div.classList.add("founded");
+        }
 
-        if (isFounder) div.classList.add("founded");
-
-        // Format date
+        // Format unlock date
         let formattedDate = "Not earned yet";
         if (isEarned) {
             const dateObj = new Date(isEarned);
@@ -183,7 +148,7 @@ async function loadAchievements(input, showAll = false) {
             });
         }
 
-        // Get founder name from founders.json
+        // Founder info
         let founderText = "";
         if (foundersData[id]) {
             founderText = `(Founder: ${foundersData[id].founder_name})`;
@@ -194,18 +159,60 @@ async function loadAchievements(input, showAll = false) {
             ${ach.Desc}<br>
             <em>Unlocked: ${formattedDate}</em>
         `;
+
         container.appendChild(div);
-    });
+    }
 }
 
-// Load from URL param
-const urlParams = new URLSearchParams(window.location.search);
-const userParam = urlParams.get("user");
-if (userParam) loadAchievements(userParam);
+async function loadUser(usernameOrId) {
+    if (!usernameOrId) return;
+
+    let userId = usernameOrId;
+
+    // Lookup username if needed
+    if (isNaN(Number(usernameOrId))) {
+        const mapResp = await fetch('./username_map.json');
+        const usernameMap = await mapResp.json();
+        userId = usernameMap[usernameOrId.toLowerCase()];
+        if (!userId) return alert("Username not found");
+    }
+
+    // Fetch user JSON
+    const userResp = await fetch(`users/${userId}.json`);
+    if (!userResp.ok) return alert("User not found");
+    const userData = await userResp.json();
+    allUserData[userId] = userData;
+
+    await renderAllAchievements(userId);
+}
+
+async function initPage() {
+    // Load achievement + founder data first
+    const achResp = await fetch('./achievements.json');
+    achData = await achResp.json();
+
+    const foundersResp = await fetch('./founders.json');
+    foundersData = foundersResp.ok ? await foundersResp.json() : {};
+
+    // Default: render all achievements (no user highlighted)
+    await renderAllAchievements();
+
+    // Check URL param
+    const urlParams = new URLSearchParams(window.location.search);
+    const userParam = urlParams.get("user");
+    if (userParam) await loadUser(userParam);
+}
+
+initPage();
 
 // Button events
-document.getElementById("loadBtn").addEventListener("click", () => loadAchievements());
-document.getElementById("showAllBtn").addEventListener("click", () => loadAchievements(null, true));
+document.getElementById("loadBtn").addEventListener("click", () => {
+    const input = document.getElementById("userIdInput").value.trim();
+    loadUser(input);
+});
+document.getElementById("showAllBtn").addEventListener("click", () => {
+    renderAllAchievements(); // ignore user, show all
+});
 </script>
 
 </body>
