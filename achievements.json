@@ -1,354 +1,280 @@
 {
-  "chat_dog_god": {
-    "name": "Dog Loyalist",
-    "desc": "Awarded for believing in the dog god."
-  },
-  "chat_true_form": {
-    "name": "Dog Understander",
-    "desc": "Awarded for knowing the true desires of dog."
-  },
-  "test_0": {
-    "name": "Dog helper 2",
-    "desc": "Awarded for knowing the true desires of dog."
-  },
-  "chat_ball": {
-    "name": "Ball? WHERE?",
-    "desc": "Awarded for baiting dog with toys."
-  },
-  "chat_walk": {
-    "name": "Walkies?!",
-    "desc": "Awarded for baiting dog with a walk."
-  },
-  "chat_bork": {
-    "name": "Certified Barker",
-    "desc": "Awarded for speaking the sacred tongue."
-  },
-  "chat_goodboy": {
-    "name": "Who's A Good Doggo?",
-    "desc": "Awarded for praising the divine pupper."
-  },
-  "chat_treats": {
-    "name": "Treat Dispenser",
-    "desc": "Awarded for attempting to bribe the dog."
-  },
-  "chat_squirrel": {
-    "name": "SQUIRREL?!",
-    "desc": "Awarded for invoking ancient prey instincts."
-  },
-  "chat_pet": {
-    "name": "Headpats Initiate",
-    "desc": "Awarded for petting the divine creature."
-  },
-  "chat_stinky": {
-    "name": "Rude Human",
-    "desc": "Awarded for calling dog stinky."
-  },
-  "chat_fetch": {
-    "name": "Thrower Of Objects",
-    "desc": "Awarded for commanding fetch."
-  },
-  "chat_sleepy": {
-    "name": "Nap Whisperer",
-    "desc": "Awarded for noting the yawn."
-  },
-  "chat_rage": {
-    "name": "Zoomie Summoner",
-    "desc": "Awarded for invoking chaos."
-  },
-  "chat_tail": {
-    "name": "Tail Enthusiast",
-    "desc": "Awarded for noticing the tail physics."
-  },
-  "chat_bellyrub": {
-    "name": "Dangerous Temptation",
-    "desc": "Awarded for offering forbidden tummy rubs."
-  },
-  "chat_howl": {
-    "name": "Moon Choir Recruit",
-    "desc": "Awarded for attempting to summon howls."
-  },
-  "chat_stick": {
-    "name": "Stick Provider",
-    "desc": "Awarded for offering quality lumber."
-  },
-  "chat_biscuits": {
-    "name": "Economist",
-    "desc": "Awarded for discussing stellar-based wealth."
-  },
-  "chat_chaos": {
-    "name": "Mischief Encourager",
-    "desc": "Awarded for promoting chaos energy."
-  },
-  "chat_sniff": {
-    "name": "Sniff Scholar",
-    "desc": "Awarded for understanding the sacred sniff ritual."
-  },
-  "chat_protect": {
-    "name": "Guardian Vibes",
-    "desc": "Awarded for swearing loyalty and protection."
-  },
-  "chat_bath": {
-    "name": "Soapy Betrayer",
-    "desc": "Awarded for suggesting a bath."
-  },
-  "chat_10": {
-    "name": "Curious Chatter.",
-    "desc": "Awarded for yapping 10 times."
-  },
-  "chat_100": {
-    "name": "Entry Level Yapper.",
-    "desc": "Awarded for yapping 100 times."
-  },
-  "chat_500": {
-    "name": "Little Yapper.",
-    "desc": "Awarded for yapping 500 times."
-  },
-  "chat_1k": {
-    "name": "Yapper.",
-    "desc": "Awarded for yapping 1,000 times."
-  },
-  "chat_5k": {
-    "name": "Little Big Yapper.",
-    "desc": "Awarded for yapping 5,000 times."
-  },
-  "chat_10k": {
-    "name": "Big Yapper.",
-    "desc": "Awarded for yapping 10,000 times."
-  },
-  "chat_day_halloween_2": {
-    "name": "Spook 2, electric spook-a-lo.",
-    "desc": "Awarded for being present during Halloween 2025."
-  },
-  "chat_day_special_2": {
-    "name": "Day Achivement 2.",
-    "desc": "Awarded being present during the day delta was testing day achivement code for 2.0."
-  },
-  "gamble_loss_total_100k": {
-    "name": "Noteable Failure",
-    "desc": "Awarded for losing 100,000 kibble in gambling."
-  },
-  "gamble_loss_total_1m": {
-    "name": "Huge Failure",
-    "desc": "Awarded for losing 1,000,000 kibble in gambling."
-  },
-  "gamble_loss_total_10m": {
-    "name": "??? Failure",
-    "desc": "Awarded for losing 10,000,000 kibble in gambling."
-  },
-  "gamble_loss_total_100m": {
-    "name": "Gambler Without Logic.",
-    "desc": "Awarded for losing 100,000,000 kibble in gambling."
-  },
-  "gamble_loss_total_1b": {
-    "name": "(Platinum) One False Gambler",
-    "desc": "Awarded for losing 1,000,000,000 kibble in gambling."
-  },
-  "gamble_win_total_10k": {
-    "name": "Taste of Winning",
-    "desc": "Awarded for winning 10,000 kibble in gambling."
-  },
-  "gamble_win_total_100k": {
-    "name": "Noteable Winner",
-    "desc": "Awarded for winning 100,000 kibble in gambling."
-  },
-  "gamble_win_total_1m": {
-    "name": "Huge Winner",
-    "desc": "Awarded for winning 1,000,000 kibble in gambling."
-  },
-  "gamble_win_total_10m": {
-    "name": "??? Winner",
-    "desc": "Awarded for winning 10,000,000 kibble in gambling."
-  },
-  "gamble_total_1": {
-    "name": "Curious Gambler",
-    "desc": "Awarded for gambling for the first time! YAY GAMBLING!"
-  },
-  "gamble_total_5": {
-    "name": "Gambler",
-    "desc": "Awarded for gambling for the 5th time."
-  },
-  "gamble_total_win_1": {
-    "name": "Walk Away Now",
-    "desc": "Awarded for winning at gambling for the first time!"
-  },
-  "gamble_total_loss_1": {
-    "name": "Shouldn't Have Tried",
-    "desc": "Awarded for losing at gambling for the first time.."
-  },
-  "cheer_message_100": {
-    "name": "Generoius Bit Giver.",
-    "desc": "Awarded for cheering 100 or more bits in a message."
-  },
-  "cheer_message_1k": {
-    "name": "Big Bit Giver.",
-    "desc": "Awarded for cheering 1,000 or more bits in a message."
-  },
-  "cheer_message_10k": {
-    "name": "Massive Bit Giver.",
-    "desc": "Awarded for cheering 10,000 or more bits in a single message."
-  },
-  "cheer_cumulative_10k": {
-    "name": "Famous Cheerer.",
-    "desc": "Awarded for cheering 10,000 bits overall."
-  },
-  "cheer_time_1": {
-    "name": "Babys First Cheer.",
-    "desc": "Awarded for cheering once."
-  },
-  "cheer_time_10": {
-    "name": "Bit Farmer.",
-    "desc": "Awarded for cheering 10 times!."
-  },
-  "cheer_1": {
-    "name": "Bit Giver.",
-    "desc": "Awarded for cheering exactly 1 bit."
-  },
-  "cheer_2": {
-    "name": "Two's Legacy.",
-    "desc": "Awarded for cheering exactly 2 bits"
-  },
-  "cheer_3": {
-    "name": "A Slice of Pi.",
-    "desc": "Awarded for cheering exactly 3 bits"
-  },
-  "cheer_4": {
-    "name": "2, but 2 times.",
-    "desc": "Awarded for cheering exactly 4 bits"
-  },
-  "cheer_7": {
-    "name": "Lucky!",
-    "desc": "Awarded for cheering exactly 7 bits"
-  },
-  "cheer_8": {
-    "name": "2, but grown up.",
-    "desc": "Awarded for cheering exactly 8 bits"
-  },
-  "cheer_10": {
-    "name": "Not much, but it's honest bits.",
-    "desc": "Awarded for cheering exactly 10 bits"
-  },
-  "cheer_12": {
-    "name": "First 1 Then 2.",
-    "desc": "Awarded for cheering exactly 12 bits"
-  },
-  "cheer_13": {
-    "name": "Unlucky!",
-    "desc": "Awarded for cheering exactly 13 bits"
-  },
-  "cheer_42": {
-    "name": "The meaning of life the universe and everything.",
-    "desc": "Awarded for cheering exactly 42 bits"
-  },
-  "cheer_100": {
-    "name": "A dollar for doggo.",
-    "desc": "Awarded for cheering exactly 100 bits"
-  },
-  "donate_date_2": {
-    "name": "Direct Deposit Tester",
-    "desc": "Awarded for... dog?"
-  },
-  "donation_1": {
-    "name": "Dollar For Your Thoughts?",
-    "desc": "Awarded for donating 1 or more dollars at a time."
-  },
-  "donation_10": {
-    "name": "Many Dollars For Your Thoughts?",
-    "desc": "Awarded for donating 10 or more dollars at a time."
-  },
-  "donation_exact_13": {
-    "name": "Unlucky Donation",
-    "desc": "Awarded for donating exactly 13 dollars."
-  },
-  "donation_cumulative_200": {
-    "name": "Direct Food Buyer.",
-    "desc": "Awarded for donating 200 dollars overall."
-  },
-  "gifted_times_1": {
-    "name": "A present for Doggo, and friend",
-    "desc": "Awarded gifting for the first time."
-  },
-  "gifted_times_2": {
-    "name": "Presents for Doggo, and friends",
-    "desc": "Awarded gifting for the second time."
-  },
-  "gifted_times_5": {
-    "name": "Many Presents for Doggo, and friends",
-    "desc": "Awarded gifting for the 5th time."
-  },
-  "gifted_times_10": {
-    "name": "Ad Hater.",
-    "desc": "Awarded gifting for the 10th time."
-  },
-  "gifted_times_20": {
-    "name": "Big Ad Hater.",
-    "desc": "Awarded gifting for the 20th time."
-  },
-  "gifted_cumulative_5": {
-    "name": "Mini Santa",
-    "desc": "Awarded for 5 cumulative gifted subs."
-  },
-  "gifted_cumulative_10": {
-    "name": "Little Santa",
-    "desc": "Awarded for 10 cumulative gifted subs."
-  },
-  "gifted_cumulative_15": {
-    "name": "Santa",
-    "desc": "Awarded for 15 cumulative gifted subs."
-  },
-  "gifted_cumulative_20": {
-    "name": "Big Santa",
-    "desc": "Awarded for 20 cumulative gifted subs."
-  },
-  "gifted_cumulative_25": {
-    "name": "Very Big Santa",
-    "desc": "Awarded for 25 cumulative gifted subs."
-  },
-  "gifted_cumulative_30": {
-    "name": "Massive Santa",
-    "desc": "Awarded for 30 cumulative gifted subs."
-  },
-  "gifted_cumulative_40": {
-    "name": "Gigantic Santa",
-    "desc": "Awarded for 40 cumulative gifted subs."
-  },
-  "gifted_cumulative_50": {
-    "name": "UH OH Santa",
-    "desc": "Awarded for 50 cumulative gifted subs."
-  },
-  "redeem_checkin_1": {
-    "name": "Welcome Home Comutt.",
-    "desc": "Awarded for your first check-in."
-  },
-  "redeem_checkin_2": {
-    "name": "Welcome Back Comutt.",
-    "desc": "Awarded for your second check-in."
-  },
-  "redeem_pet_1": {
-    "name": "He's a good boy, yes he is!",
-    "desc": "Awarded for petting the dog."
-  },
-  "redeem_pet_5": {
-    "name": "Touch The Floof",
-    "desc": "Awarded for petting the dog 5 times."
-  },
-  "redeem_first_1": {
-    "name": "Me First!",
-    "desc": "Awarded for getting first for the first time."
-  },
-  "redeem_total_5": {
-    "name": "Curious Redeemer.",
-    "desc": "Awarded for using 5 channel point redeems."
-  },
-  "redeem_total_10": {
-    "name": "Semi-Active Redeemer.",
-    "desc": "Awarded for using 10 channel point redeems."
-  },
-  "redeem_total_25": {
-    "name": "Active Redeemer.",
-    "desc": "Awarded for using 25 channel point redeems."
-  },
-  "gamble_slick": {
-    "name": "Abmag",
-    "desc": "Awarded for trying to gamble negative kibble."
+  "chat": {
+    "chat_dog_god": {
+      "name": "Dog Loyalist"
+    },
+    "chat_true_form": {
+      "name": "Dog Understander"
+    },
+    "test_0": {
+      "name": "Dog helper 2"
+    },
+    "chat_ball": {
+      "name": "Ball? WHERE?"
+    },
+    "chat_walk": {
+      "name": "Walkies?!"
+    },
+    "chat_bork": {
+      "name": "Certified Barker"
+    },
+    "chat_goodboy": {
+      "name": "Who's A Good Doggo?"
+    },
+    "chat_treats": {
+      "name": "Treat Dispenser"
+    },
+    "chat_squirrel": {
+      "name": "SQUIRREL?!"
+    },
+    "chat_pet": {
+      "name": "Headpats Initiate"
+    },
+    "chat_stinky": {
+      "name": "Rude Human"
+    },
+    "chat_fetch": {
+      "name": "Thrower Of Objects"
+    },
+    "chat_sleepy": {
+      "name": "Nap Whisperer"
+    },
+    "chat_rage": {
+      "name": "Zoomie Summoner"
+    },
+    "chat_tail": {
+      "name": "Tail Enthusiast"
+    },
+    "chat_bellyrub": {
+      "name": "Dangerous Temptation"
+    },
+    "chat_howl": {
+      "name": "Moon Choir Recruit"
+    },
+    "chat_stick": {
+      "name": "Stick Provider"
+    },
+    "chat_biscuits": {
+      "name": "Economist"
+    },
+    "chat_chaos": {
+      "name": "Mischief Encourager"
+    },
+    "chat_sniff": {
+      "name": "Sniff Scholar"
+    },
+    "chat_protect": {
+      "name": "Guardian Vibes"
+    },
+    "chat_bath": {
+      "name": "Soapy Betrayer"
+    },
+    "chat_10": {
+      "name": "Curious Chatter."
+    },
+    "chat_100": {
+      "name": "Entry Level Yapper."
+    },
+    "chat_500": {
+      "name": "Little Yapper."
+    },
+    "chat_1k": {
+      "name": "Yapper."
+    },
+    "chat_5k": {
+      "name": "Little Big Yapper."
+    },
+    "chat_10k": {
+      "name": "Big Yapper."
+    },
+    "chat_day_halloween_2": {
+      "name": "Spook 2, electric spook-a-lo."
+    },
+    "chat_day_special_2": {
+      "name": "Day Achivement 2."
+    }
+  },
+  "gamble": {
+    "gamble_loss_total_100k": {
+      "name": "Noteable Failure"
+    },
+    "gamble_loss_total_1m": {
+      "name": "Huge Failure"
+    },
+    "gamble_loss_total_10m": {
+      "name": "??? Failure"
+    },
+    "gamble_loss_total_100m": {
+      "name": "Gambler Without Logic."
+    },
+    "gamble_loss_total_1b": {
+      "name": "(Platinum) One False Gambler"
+    },
+    "gamble_win_total_10k": {
+      "name": "Taste of Winning"
+    },
+    "gamble_win_total_100k": {
+      "name": "Noteable Winner"
+    },
+    "gamble_win_total_1m": {
+      "name": "Huge Winner"
+    },
+    "gamble_win_total_10m": {
+      "name": "??? Winner"
+    },
+    "gamble_total_1": {
+      "name": "Curious Gambler"
+    },
+    "gamble_total_5": {
+      "name": "Gambler"
+    },
+    "gamble_total_win_1": {
+      "name": "Walk Away Now"
+    },
+    "gamble_total_loss_1": {
+      "name": "Shouldn't Have Tried"
+    }
+  },
+  "cheer": {
+    "cheer_message_100": {
+      "name": "Generoius Bit Giver."
+    },
+    "cheer_message_1k": {
+      "name": "Big Bit Giver."
+    },
+    "cheer_message_10k": {
+      "name": "Massive Bit Giver."
+    },
+    "cheer_cumulative_10k": {
+      "name": "Famous Cheerer."
+    },
+    "cheer_time_1": {
+      "name": "Babys First Cheer."
+    },
+    "cheer_time_10": {
+      "name": "Bit Farmer."
+    },
+    "cheer_1": {
+      "name": "Bit Giver."
+    },
+    "cheer_2": {
+      "name": "Two's Legacy."
+    },
+    "cheer_3": {
+      "name": "A Slice of Pi."
+    },
+    "cheer_4": {
+      "name": "2, but 2 times."
+    },
+    "cheer_7": {
+      "name": "Lucky!"
+    },
+    "cheer_8": {
+      "name": "2, but grown up."
+    },
+    "cheer_10": {
+      "name": "Not much, but it's honest bits."
+    },
+    "cheer_12": {
+      "name": "First 1 Then 2."
+    },
+    "cheer_13": {
+      "name": "Unlucky!"
+    },
+    "cheer_42": {
+      "name": "The meaning of life the universe and everything."
+    },
+    "cheer_100": {
+      "name": "A dollar for doggo."
+    }
+  },
+  "donation": {
+    "donate_date_2": {
+      "name": "Direct Deposit Tester"
+    },
+    "donation_1": {
+      "name": "Dollar For Your Thoughts?"
+    },
+    "donation_10": {
+      "name": "Many Dollars For Your Thoughts?"
+    },
+    "donation_exact_13": {
+      "name": "Unlucky Donation"
+    },
+    "donation_cumulative_200": {
+      "name": "Direct Food Buyer."
+    }
+  },
+  "gifted": {
+    "gifted_times_1": {
+      "name": "A present for Doggo, and friend"
+    },
+    "gifted_times_2": {
+      "name": "Presents for Doggo, and friends"
+    },
+    "gifted_times_5": {
+      "name": "Many Presents for Doggo, and friends"
+    },
+    "gifted_times_10": {
+      "name": "Ad Hater."
+    },
+    "gifted_times_20": {
+      "name": "Big Ad Hater."
+    },
+    "gifted_cumulative_5": {
+      "name": "Mini Santa"
+    },
+    "gifted_cumulative_10": {
+      "name": "Little Santa"
+    },
+    "gifted_cumulative_15": {
+      "name": "Santa"
+    },
+    "gifted_cumulative_20": {
+      "name": "Big Santa"
+    },
+    "gifted_cumulative_25": {
+      "name": "Very Big Santa"
+    },
+    "gifted_cumulative_30": {
+      "name": "Massive Santa"
+    },
+    "gifted_cumulative_40": {
+      "name": "Gigantic Santa"
+    },
+    "gifted_cumulative_50": {
+      "name": "UH OH Santa"
+    }
+  },
+  "redeem": {
+    "redeem_checkin_1": {
+      "name": "Welcome Home Comutt."
+    },
+    "redeem_checkin_2": {
+      "name": "Welcome Back Comutt."
+    },
+    "redeem_pet_1": {
+      "name": "He's a good boy, yes he is!"
+    },
+    "redeem_pet_5": {
+      "name": "Touch The Floof"
+    },
+    "redeem_first_1": {
+      "name": "Me First!"
+    },
+    "redeem_total_5": {
+      "name": "Curious Redeemer."
+    },
+    "redeem_total_10": {
+      "name": "Semi-Active Redeemer."
+    },
+    "redeem_total_25": {
+      "name": "Active Redeemer."
+    }
+  },
+  "specific": {
+    "gamble_slick": {
+      "name": "Abmag"
+    }
   }
 }
