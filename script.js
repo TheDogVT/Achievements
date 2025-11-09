@@ -56,7 +56,7 @@ async function renderAchievements(userId=null, showAll=false) {
 
             div.innerHTML = `
                 <strong>${ach.name}</strong><br>
-                ${ach.Desc}<br>
+                ${ach.desc}<br>
                 <em>Unlocked: ${formattedDate}<br> ${founderText}</em>
             `;
 
