@@ -106,7 +106,7 @@
   },
   "donation_10": {
     "founder_id": "1237882084",
-    "founder_name": "MAYPLELeafVT",
+    "founder_name": "maypleleafvt",
     "founded_at": "2025-10-31T18:34:14.209031+00:00"
   },
   "donation_exact_13": {
@@ -381,7 +381,7 @@
   },
   "redeem_total_25": {
     "founder_id": "693171946",
-    "founder_name": "knight_Andromeda",
+    "founder_name": "knight_andromeda",
     "founded_at": "2025-11-08T21:14:08.609041+00:00"
   },
   "gamble_loss_total_10m": {
@@ -463,5 +463,15 @@
     "founder_id": "257377426",
     "founder_name": "phenakism5",
     "founded_at": "2025-11-13T22:14:48.443623+00:00"
+  },
+  "redeem_checkin_5": {
+    "founder_id": "693171946",
+    "founder_name": "knight_andromeda",
+    "founded_at": "2025-11-14T20:59:29.423333+00:00"
+  },
+  "cheer_10000": {
+    "founder_id": "1237882084",
+    "founder_name": "maypleleafvt",
+    "founded_at": "2025-11-14T23:26:23.986765+00:00"
   }
 }

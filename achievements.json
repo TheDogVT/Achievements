@@ -251,6 +251,10 @@
     "cheer_100": {
       "name": "A dollar for doggo.",
       "desc": "Awarded for cheering exactly 100 bits"
+    },
+    "cheer_10000": {
+      "name": "(Platinum) A True Doggo Lover.",
+      "desc": "Awarded for cheering exactly 10000 bits"
     }
   },
   "donation": {
@@ -337,6 +341,10 @@
     "redeem_checkin_2": {
       "name": "Welcome Back Comutt.",
       "desc": "Awarded for your second check-in."
+    },
+    "redeem_checkin_5": {
+      "name": "Reporting for view-y.",
+      "desc": "Awarded for your 5th check-in."
     },
     "redeem_pet_1": {
       "name": "He's a good boy, yes he is!",
