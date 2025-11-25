@@ -248,6 +248,10 @@
       "name": "The meaning of life the universe and everything.",
       "desc": "Awarded for cheering exactly 42 bits"
     },
+    "cheer_69": {
+      "name": "Nice Bitties.",
+      "desc": "Awarded for cheering exactly 69 bits"
+    },
     "cheer_100": {
       "name": "A dollar for doggo.",
       "desc": "Awarded for cheering exactly 100 bits"
