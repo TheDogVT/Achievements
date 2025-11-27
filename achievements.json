@@ -162,6 +162,10 @@
       "name": "??? Winner",
       "desc": "Awarded for winning 10,000,000 kibble in gambling."
     },
+    "gamble_win_total_100m": {
+      "name": "Most Logical Gambler.",
+      "desc": "Awarded for winning 100,000,000 kibble in gambling."
+    },
     "gamble_total_1": {
       "name": "Curious Gambler",
       "desc": "Awarded for gambling for the first time! YAY GAMBLING!"
