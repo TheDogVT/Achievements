@@ -166,6 +166,10 @@
       "name": "Most Logical Gambler.",
       "desc": "Awarded for winning 100,000,000 kibble in gambling."
     },
+    "gamble_jackpot_total_1": {
+      "name": "Taste of Luck.",
+      "desc": "Awarded for getting your first Jackpot while gambling."
+    },
     "gamble_total_1": {
       "name": "Curious Gambler",
       "desc": "Awarded for gambling for the first time! YAY GAMBLING!"
