@@ -347,6 +347,10 @@
     "gifted_cumulative_50": {
       "name": "UH OH Santa",
       "desc": "Awarded for 50 cumulative gifted subs."
+    },
+    "gifted_instance_5": {
+      "name": "Gifty Bomba",
+      "desc": "Awarded for gifting 5 subs at once."
     }
   },
   "redeem": {
@@ -397,6 +401,10 @@
     "redeem_total_50": {
       "name": "Very Active Redeemer.",
       "desc": "Awarded for using 50 channel point redeems."
+    },
+    "redeem_total_100": {
+      "name": "Obsessive Redeemer.",
+      "desc": "Awarded for using 100 channel point redeems."
     }
   },
   "specific": {
