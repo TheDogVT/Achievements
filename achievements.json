@@ -382,6 +382,10 @@
       "name": "Fluff The Floof",
       "desc": "Awarded for petting the dog 10 times."
     },
+    "redeem_pet_25": {
+      "name": "Floof Enjoyer",
+      "desc": "Awarded for petting the dog 25 times."
+    },
     "redeem_first_1": {
       "name": "Me First!",
       "desc": "Awarded for getting first for the first time."
