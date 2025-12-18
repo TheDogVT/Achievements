@@ -417,6 +417,10 @@
     "redeem_total_100": {
       "name": "Obsessive Redeemer.",
       "desc": "Awarded for using 100 channel point redeems."
+    },
+    "redeem_total_150": {
+      "name": "Playtime with Dog",
+      "desc": "Awarded for using 150 channel point redeems."
     }
   },
   "specific": {
