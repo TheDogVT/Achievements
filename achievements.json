@@ -123,6 +123,10 @@
     "chat_day_special_2": {
       "name": "Day Achivement 2.",
       "desc": "Awarded being present during the day delta was testing day achivement code for 2.0."
+    },
+    "subathon_2025": {
+      "name": "I WAS THERE AT THE START! 2025!",
+      "desc": "Awarded for being present on the first day of the subathon in 2025."
     }
   },
   "gamble": {
@@ -389,6 +393,10 @@
     "redeem_pet_25": {
       "name": "Floof Enjoyer",
       "desc": "Awarded for petting the dog 25 times."
+    },
+    "redeem_pet_50": {
+      "name": "Floof Obsessed",
+      "desc": "Awarded for petting the dog 50 times."
     },
     "redeem_first_1": {
       "name": "Me First!",
