@@ -127,6 +127,10 @@
     "subathon_2025": {
       "name": "I WAS THERE AT THE START! 2025!",
       "desc": "Awarded for being present on the first day of the subathon in 2025."
+    },
+    "subathon_2025_any": {
+      "name": "I WAS THERE! 2025!",
+      "desc": "Awarded for being present during the 2025 subathon."
     }
   },
   "gamble": {
@@ -207,6 +211,10 @@
     "cheer_cumulative_10k": {
       "name": "Famous Cheerer.",
       "desc": "Awarded for cheering 10,000 bits overall."
+    },
+    "cheer_cumulative_20k": {
+      "name": "Food Buyer.",
+      "desc": "Awarded for cheering 20,000 bits overall."
     },
     "cheer_time_1": {
       "name": "Babys First Cheer.",
@@ -429,6 +437,10 @@
     "redeem_total_150": {
       "name": "Playtime with Dog",
       "desc": "Awarded for using 150 channel point redeems."
+    },
+    "redeem_total_200": {
+      "name": "Lots of playtime with Dog",
+      "desc": "Awarded for using 200 channel point redeems."
     }
   },
   "specific": {
