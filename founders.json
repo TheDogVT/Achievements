@@ -558,5 +558,30 @@
     "founder_id": "693171946",
     "founder_name": "knight_Andromeda",
     "founded_at": "2025-12-24T00:44:15.692119+00:00"
+  },
+  "gifted_instance_10": {
+    "founder_id": "656844068",
+    "founder_name": "oculusvisionss",
+    "founded_at": "2025-12-24T21:22:19.032812+00:00"
+  },
+  "gifted_cumulative_75": {
+    "founder_id": "409826958",
+    "founder_name": "bananaarenotreal",
+    "founded_at": "2025-12-25T00:01:44.478139+00:00"
+  },
+  "gifted_cumulative_100": {
+    "founder_id": "409826958",
+    "founder_name": "bananaarenotreal",
+    "founded_at": "2025-12-25T00:01:44.480652+00:00"
+  },
+  "gifted_cumulative_150": {
+    "founder_id": "409826958",
+    "founder_name": "bananaarenotreal",
+    "founded_at": "2025-12-25T00:01:44.481651+00:00"
+  },
+  "gifted_instance_20": {
+    "founder_id": "409826958",
+    "founder_name": "bananaarenotreal",
+    "founded_at": "2025-12-25T00:18:16.495540+00:00"
   }
 }

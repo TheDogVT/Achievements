@@ -360,9 +360,29 @@
       "name": "UH OH Santa",
       "desc": "Awarded for 50 cumulative gifted subs."
     },
+    "gifted_cumulative_75": {
+      "name": "Santa Evolution",
+      "desc": "Awarded for 75 cumulative gifted subs."
+    },
+    "gifted_cumulative_100": {
+      "name": "Doggo Promoter",
+      "desc": "Awarded for 100 cumulative gifted subs."
+    },
+    "gifted_cumulative_150": {
+      "name": "Big Doggo Promoter",
+      "desc": "Awarded for 150 cumulative gifted subs."
+    },
     "gifted_instance_5": {
       "name": "Gifty Bomba",
       "desc": "Awarded for gifting 5 subs at once."
+    },
+    "gifted_instance_10": {
+      "name": "Big Gifty Bomba",
+      "desc": "Awarded for gifting 10 subs at once."
+    },
+    "gifted_instance_20": {
+      "name": "Gifted Bomb Run",
+      "desc": "Awarded for gifting 20 subs at once."
     }
   },
   "redeem": {
