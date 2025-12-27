@@ -131,6 +131,10 @@
     "subathon_2025_any": {
       "name": "I WAS THERE! 2025!",
       "desc": "Awarded for being present during the 2025 subathon."
+    },
+    "birthday_2025": {
+      "name": "Happy Birthday Dog! (2025)",
+      "desc": "Awarded for being present on dogs birthday in 2025."
     }
   },
   "gamble": {
