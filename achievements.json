@@ -268,6 +268,10 @@
       "name": "16 Bit Game?",
       "desc": "Awarded for cheering exactly 16 bits"
     },
+    "cheer_25": {
+      "name": "You know what's funnier? 25.",
+      "desc": "Awarded for cheering exactly 25 bits"
+    },
     "cheer_42": {
       "name": "The meaning of life the universe and everything.",
       "desc": "Awarded for cheering exactly 42 bits"
