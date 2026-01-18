@@ -418,6 +418,10 @@
       "name": "A Month Of Dedication!",
       "desc": "Awarded for your 31st check-in."
     },
+    "redeem_checkin_60": {
+      "name": "Two Months of Dedication!",
+      "desc": "Awarded for your 60th check-in."
+    },
     "redeem_pet_1": {
       "name": "He's a good boy, yes he is!",
       "desc": "Awarded for petting the dog."
