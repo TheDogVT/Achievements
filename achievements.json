@@ -489,6 +489,10 @@
     "redeem_total_300": {
       "name": "Can't stop playing with Dog",
       "desc": "Awarded for using 300 channel point redeems."
+    },
+    "redeem_total_400": {
+      "name": "Too much playing with dog?",
+      "desc": "Awarded for using 400 channel point redeems."
     }
   },
   "specific": {
