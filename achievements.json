@@ -458,6 +458,10 @@
       "name": "Queue Skipper",
       "desc": "Awarded for getting first for the 25th time."
     },
+    "redeem_first_31": {
+      "name": "A month of me.",
+      "desc": "Awarded for getting first for the 31st time."
+    },
     "redeem_total_5": {
       "name": "Curious Redeemer.",
       "desc": "Awarded for using 5 channel point redeems."
