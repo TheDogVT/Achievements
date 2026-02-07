@@ -88,6 +88,26 @@
       "name": "Soapy Betrayer",
       "desc": "Awarded for suggesting a bath."
     },
+    "chat_sit": {
+      "name": "Obedience Whisperer",
+      "desc": "Awarded for basic command mastery."
+    },
+    "chat_lick": {
+      "name": "Slobber Survivor",
+      "desc": "Awarded for enduring wet kisses."
+    },
+    "chat_floof": {
+      "name": "Floof Fanatic",
+      "desc": "Awarded for fluff obsession."
+    },
+    "chat_floofy": {
+      "name": "Floof Inspector",
+      "desc": "Awarded for fluff quality control."
+    },
+    "chat_yap": {
+      "name": "Yapper Supreme",
+      "desc": "Awarded for high-pitched tiny barks (even if you're a big dog)."
+    },
     "chat_10": {
       "name": "Curious Chatter.",
       "desc": "Awarded for yapping 10 times."
