@@ -132,6 +132,10 @@
       "name": "Pupper Aficionado",
       "desc": "Awarded for using ultimate cute slang."
     },
+    "chat_doge": {
+      "name": "Meme Lord",
+      "desc": "Awarded for invoking the original doge."
+    },
     "chat_leash": {
       "name": "Leash Handler",
       "desc": "Awarded for taking control of the walk."
