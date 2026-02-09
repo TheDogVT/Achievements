@@ -88,25 +88,137 @@
       "name": "Soapy Betrayer",
       "desc": "Awarded for suggesting a bath."
     },
+    "chat_boop": {
+      "name": "Nose Booper",
+      "desc": "Awarded for the ultimate snoot touch."
+    },
+    "chat_scratch": {
+      "name": "Scratch Specialist",
+      "desc": "Awarded for targeting those itchy spots."
+    },
+    "chat_paw": {
+      "name": "Paw Shaker",
+      "desc": "Awarded for sealing deals with floofy handshakes."
+    },
     "chat_sit": {
       "name": "Obedience Whisperer",
       "desc": "Awarded for basic command mastery."
+    },
+    "chat_rollover": {
+      "name": "Trick Teaser",
+      "desc": "Awarded for flipping the script on pup."
     },
     "chat_lick": {
       "name": "Slobber Survivor",
       "desc": "Awarded for enduring wet kisses."
     },
+    "chat_dig": {
+      "name": "Hole Digger",
+      "desc": "Awarded for unearthing buried treasures."
+    },
+    "chat_baddog": {
+      "name": "Rebel Rouser",
+      "desc": "Awarded for calling out naughty vibes."
+    },
+    "chat_frisbee": {
+      "name": "Disc Jockey",
+      "desc": "Awarded for aerial fetch upgrades."
+    },
+    "chat_woofwoof": {
+      "name": "Double Barker",
+      "desc": "Awarded for the classic double woof."
+    },
+    "chat_pupper": {
+      "name": "Pupper Aficionado",
+      "desc": "Awarded for using ultimate cute slang."
+    },
+    "chat_leash": {
+      "name": "Leash Handler",
+      "desc": "Awarded for taking control of the walk."
+    },
+    "chat_pawfive": {
+      "name": "High Paw Hero",
+      "desc": "Awarded for celebrating with slaps."
+    },
+    "chat_snoot": {
+      "name": "Snoot Connoisseur",
+      "desc": "Awarded for appreciating the noble nose."
+    },
     "chat_floof": {
       "name": "Floof Fanatic",
       "desc": "Awarded for fluff obsession."
+    },
+    "chat_trick": {
+      "name": "Trick Trainer",
+      "desc": "Awarded for teaching new moves."
+    },
+    "chat_park": {
+      "name": "Park Adventurer",
+      "desc": "Awarded for dreaming of open fields."
+    },
+    "chat_bone": {
+      "name": "Bone Burier",
+      "desc": "Awarded for hiding treasures."
+    },
+    "chat_shake": {
+      "name": "Shake Off Pro",
+      "desc": "Awarded for post-bath chaos."
+    },
+    "chat_cuddle": {
+      "name": "Cuddle Bug",
+      "desc": "Awarded for snuggle demands."
+    },
+    "chat_vet": {
+      "name": "Vet Avoider",
+      "desc": "Awarded for dreading the doc."
+    },
+    "chat_peanut": {
+      "name": "PB Dealer",
+      "desc": "Awarded for offering the legendary sticky treat."
+    },
+    "chat_chasetail": {
+      "name": "Tail Chaser",
+      "desc": "Awarded for witnessing the eternal spin cycle."
+    },
+    "chat_growl": {
+      "name": "Growl Translator",
+      "desc": "Awarded for decoding the warning rumbles."
     },
     "chat_floofy": {
       "name": "Floof Inspector",
       "desc": "Awarded for fluff quality control."
     },
+    "chat_carride": {
+      "name": "Window Licker",
+      "desc": "Awarded for promising the greatest adventure: sticking your head out the window."
+    },
+    "chat_vacuum": {
+      "name": "The monster vacoom",
+      "desc": "Awarded for declaring war on the loud monster."
+    },
+    "chat_brush": {
+      "name": "Brush Evader",
+      "desc": "Awarded for dramatic escape attempts during grooming."
+    },
+    "chat_mailman": {
+      "name": "Mailman Menace",
+      "desc": "Awarded for treating every delivery person like a personal nemesis."
+    },
     "chat_yap": {
       "name": "Yapper Supreme",
       "desc": "Awarded for high-pitched tiny barks (even if you're a big dog)."
+    },
+    "chat_playdead": {
+      "name": "Oscar Winner",
+      "desc": "Awarded for the ultimate dramatic flop."
+    },
+    "chat_tug": {
+      "name": "Tug Champion",
+      "desc": "Awarded for rope toy warfare."
+    },
+    "chat_pupcup": {
+      "name": "Pup Cup Connoisseur",
+      "desc": "Awarded for demanding frozen dairy treats."
     },
     "chat_10": {
       "name": "Curious Chatter.",
