@@ -176,6 +176,10 @@
       "name": "Vet Avoider",
       "desc": "Awarded for dreading the doc."
     },
+    "chat_spelled_forbidden": {
+      "name": "Pupper Confusion",
+      "desc": "Awarded for spelling out the scary words with sneaky spaces, thinking pup won't notice. Spoiler: pup notices."
+    },
     "chat_peanut": {
       "name": "PB Dealer",
       "desc": "Awarded for offering the legendary sticky treat."
