@@ -116,6 +116,10 @@
       "name": "Hole Digger",
       "desc": "Awarded for unearthing buried treasures."
     },
+    "chat_puppyeyes": {
+      "name": "Weakness Exploiter",
+      "desc": "Awarded for weaponizing cuteness."
+    },
     "chat_baddog": {
       "name": "Rebel Rouser",
       "desc": "Awarded for calling out naughty vibes."
