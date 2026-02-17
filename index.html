@@ -7,6 +7,53 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
+        /* ── LOADING SCREEN ── */
+        #loadingScreen {
+            position: fixed; inset: 0;
+            background: #0d0d0f;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            gap: 24px;
+            transition: opacity 0.4s ease;
+        }
+        #loadingScreen.fade-out { opacity: 0; pointer-events: none; }
+        .loading-title {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff 0%, #f5c518 60%, #ff9500 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 0.06em;
+        }
+        .loading-bar-wrap {
+            width: 280px;
+            height: 4px;
+            background: #2a2a32;
+            border-radius: 99px;
+            overflow: hidden;
+        }
+        .loading-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #f5c518, #ff9500);
+            border-radius: 99px;
+            width: 0%;
+            transition: width 0.15s ease;
+        }
+        #loadingStatus {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: #888899;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        #appContent { display: none; }
+    </style>
+    <style>
         :root {
             --bg:       #0d0d0f;
             --surface:  #141418;
@@ -260,11 +307,12 @@
 
         /* ── FILTER ROW ── */
         .filter-row {
-            display: flex;
+            display: none;
             align-items: center;
             gap: 10px;
             flex-wrap: wrap;
         }
+        .filter-row.visible { display: flex; }
         .filter-label {
             font-family: 'Space Mono', monospace;
             font-size: 0.72rem;
@@ -484,6 +532,17 @@
 </head>
 <body>
 
+<!-- LOADING SCREEN -->
+<div id="loadingScreen">
+    <div class="loading-title">⬡ Achievements</div>
+    <div class="loading-bar-wrap">
+        <div class="loading-bar-fill" id="loadingBarFill"></div>
+    </div>
+    <div id="loadingStatus">Initialising…</div>
+</div>
+
+<!-- MAIN APP (hidden until loaded) -->
+<div id="appContent">
 <div class="page-wrap">
 
     <!-- HEADER -->
@@ -533,18 +592,72 @@
     <div id="achievementsContainer"></div>
 
 </div>
+</div><!-- /appContent -->
 
 <!-- TOAST -->
 <div id="toast"></div>
 
 <script>
+// ── CONFIG ──────────────────────────────────────────────────────────────
+const BASE_URL = 'https://raw.githubusercontent.com/TheDogVT/Achievements/main';
+
 // ── DATA ──────────────────────────────────────────────────────────────
-let achData      = {};
-let foundersData = {};
-let allUserData  = {};
+let achData      = {};   // loaded from achievements.json
+let foundersData = {};   // loaded from founders.json
+let usernameMap  = {};   // loaded from username_map.json
+let allUserData  = {};   // loaded from users/*.json
 let currentUserId   = null;
 let currentCategory = 'all';
 let currentFilter   = 'all';
+
+// ── LOADING ───────────────────────────────────────────────────────────
+function setLoadProgress(pct, msg) {
+    document.getElementById('loadingBarFill').style.width = pct + '%';
+    document.getElementById('loadingStatus').textContent  = msg;
+}
+
+async function loadAllData() {
+    // 1. Core JSON files in parallel
+    setLoadProgress(5, 'Loading achievements…');
+    const [achRes, foundersRes, mapRes] = await Promise.all([
+        fetch(`${BASE_URL}/achievements.json`),
+        fetch(`${BASE_URL}/founders.json`),
+        fetch(`${BASE_URL}/username_map.json`),
+    ]);
+    achData      = await achRes.json();
+    foundersData = foundersRes.ok ? await foundersRes.json() : {};
+    usernameMap  = mapRes.ok      ? await mapRes.json()      : {};
+
+    setLoadProgress(20, 'Loading user data…');
+
+    // 2. Fetch all user files concurrently (batch to avoid overwhelming the browser)
+    const userIds    = Object.values(usernameMap);
+    const uniqueIds  = [...new Set(userIds)];
+    const BATCH_SIZE = 50;
+    let loaded = 0;
+
+    for (let i = 0; i < uniqueIds.length; i += BATCH_SIZE) {
+        const batch = uniqueIds.slice(i, i + BATCH_SIZE);
+        await Promise.all(batch.map(async (id) => {
+            try {
+                const res = await fetch(`${BASE_URL}/users/${id}.json`);
+                if (res.ok) allUserData[id] = await res.json();
+            } catch (_) { /* user file doesn't exist yet, skip */ }
+            loaded++;
+        }));
+        const pct = 20 + Math.round((loaded / uniqueIds.length) * 75);
+        setLoadProgress(pct, `Loading users… ${loaded} / ${uniqueIds.length}`);
+    }
+
+    setLoadProgress(100, 'Done!');
+    await new Promise(r => setTimeout(r, 300)); // brief pause to show 100%
+
+    // 3. Reveal app
+    const screen = document.getElementById('loadingScreen');
+    screen.classList.add('fade-out');
+    setTimeout(() => screen.remove(), 400);
+    document.getElementById('appContent').style.display = 'block';
+}
 
 // ── CATEGORY ICONS ────────────────────────────────────────────────────
 const CAT_ICONS = {
@@ -627,10 +740,14 @@ function renderAchievements() {
             const isFounder = !!foundedTs;
 
             // filter
-            if (currentFilter === 'unlocked' && !isEarned) continue;
-            if (currentFilter === 'locked'   &&  isEarned) continue;
+            // 'all'     = show everything (no user) OR all earned+founded (user loaded)
+            // 'unlocked' = earned but NOT founded (green cards only)
+            // 'founder'  = founded by this user (cyan cards only)
+            // 'locked'   = not yet earned
+            if (currentFilter === 'all'      && userData && !isEarned) continue;
+            if (currentFilter === 'unlocked' && (!isEarned || isFounder)) continue;
+            if (currentFilter === 'locked'   && isEarned) continue;
             if (currentFilter === 'founder'  && !isFounder) continue;
-            if (currentFilter === 'all' && userData && !isEarned) continue; // when user loaded, default to earned
 
             const card = buildCard(id, ach, isEarned, isFounder, earnedTs || foundedTs);
             card.style.animationDelay = `${delay * 30}ms`;
@@ -729,26 +846,27 @@ function updateStatus(count) {
 }
 
 // ── LOAD USER ────────────────────────────────────────────────────────
-async function loadUser(usernameOrId) {
+function loadUser(usernameOrId) {
     if (!usernameOrId) return;
-    let userId = usernameOrId;
+    let userId = usernameOrId.trim();
 
-    if (isNaN(Number(usernameOrId))) {
-        const mapResp = await fetch('./username_map.json');
-        const usernameMap = await mapResp.json();
-        userId = usernameMap[usernameOrId.toLowerCase()];
-        if (!userId) { showToast('Username not found', true); return; }
+    // Resolve username → ID using pre-loaded map
+    if (isNaN(Number(userId))) {
+        const resolved = usernameMap[userId.toLowerCase()];
+        if (!resolved) { showToast('Username not found', true); return; }
+        userId = resolved;
     }
 
+    // Check pre-loaded user data
     if (!allUserData[userId]) {
-        const userResp = await fetch(`users/${userId}.json`);
-        if (!userResp.ok) { showToast('User not found', true); return; }
-        allUserData[userId] = await userResp.json();
+        showToast('No data found for that user', true);
+        return;
     }
 
     currentUserId = userId;
-    currentFilter = 'unlocked'; // default: show earned when viewing a user
+    currentFilter = 'all';
     updateFilterChips();
+    document.getElementById('filterRow').classList.add('visible');
     showProfile(userId);
     renderAchievements();
 }
@@ -762,13 +880,7 @@ function updateFilterChips() {
 
 // ── INIT ──────────────────────────────────────────────────────────────
 async function initPage() {
-    const [achResp, foundersResp] = await Promise.all([
-        fetch('./achievements.json'),
-        fetch('./founders.json')
-    ]);
-    achData      = await achResp.json();
-    foundersData = foundersResp.ok ? await foundersResp.json() : {};
-
+    // All data is pre-loaded by loadAllData() before this runs
     buildTabs(Object.keys(achData));
 
     // URL param
@@ -800,6 +912,7 @@ document.getElementById('showAllBtn').addEventListener('click', () => {
     currentFilter = 'all';
     updateFilterChips();
     hideProfile();
+    document.getElementById('filterRow').classList.remove('visible');
     document.getElementById('userIdInput').value = '';
     renderAchievements();
 });
@@ -809,6 +922,7 @@ document.getElementById('clearBtn').addEventListener('click', () => {
     currentFilter = 'all';
     updateFilterChips();
     hideProfile();
+    document.getElementById('filterRow').classList.remove('visible');
     document.getElementById('userIdInput').value = '';
     renderAchievements();
 });
@@ -824,8 +938,8 @@ document.getElementById('filterRow').addEventListener('click', e => {
 // ── UTIL ──────────────────────────────────────────────────────────────
 function capitalize(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
 
-// ── GO ────────────────────────────────────────────────────────────────
-initPage();
+// ── STARTUP ───────────────────────────────────────────────────────────
+loadAllData().then(() => initPage());
 </script>
 </body>
 </html>
