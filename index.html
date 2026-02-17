@@ -737,32 +737,43 @@ function renderAchievements() {
         ? Object.keys(achData)
         : [currentCategory];
 
+    let items = [];
     let count = 0;
-    let delay = 0;
 
     for (const cat of catsToShow) {
         for (const [id, ach] of Object.entries(achData[cat] || {})) {
             const earnedTs  = userData?.achievements?.earned?.[id];
             const foundedTs = userData?.achievements?.founded?.[id];
+
+            const earnedTime  = earnedTs  ? new Date(earnedTs).getTime() : 0;
+            const foundedTime = foundedTs ? new Date(foundedTs).getTime() : 0;
+            const ts          = Math.max(earnedTime, foundedTime);
+
             const isEarned  = !!(earnedTs || foundedTs);
             const isFounder = !!foundedTs;
 
-            // filter
-            // 'all'     = show everything (no user) OR all earned+founded (user loaded)
-            // 'unlocked' = earned but NOT founded (green cards only)
-            // 'founder'  = founded by this user (cyan cards only)
-            // 'locked'   = not yet earned
             if (currentFilter === 'all'      && userData && !isEarned) continue;
             if (currentFilter === 'unlocked' && (!isEarned || isFounder)) continue;
             if (currentFilter === 'locked'   && isEarned) continue;
             if (currentFilter === 'founder'  && !isFounder) continue;
 
             const card = buildCard(id, ach, isEarned, isFounder, earnedTs || foundedTs);
-            card.style.animationDelay = `${delay * 30}ms`;
-            container.appendChild(card);
+            items.push({ card, ts });
             count++;
-            delay++;
         }
+    }
+
+    // newest first when viewing a user
+    if (userData) {
+        items.sort((a, b) => b.ts - a.ts);
+    }
+
+    // render with stagger
+    let delay = 0;
+    for (const item of items) {
+        item.card.style.animationDelay = `${delay * 30}ms`;
+        container.appendChild(item.card);
+        delay++;
     }
 
     if (count === 0) {
@@ -850,7 +861,7 @@ function hideProfile() {
 // ── STATUS BAR ────────────────────────────────────────────────────────
 function updateStatus(count) {
     const bar = document.getElementById('statusBar');
-    bar.textContent = `SHOWING ${count} ACHIEVEMENT${count !== 1 ? 'S' : ''}`;
+    bar.textContent = `SHOWING ${count} ACHIEVEMENT${count !== 1 ? 'S' : ''} (Newest first)`;
 }
 
 // ── LOAD USER ────────────────────────────────────────────────────────
