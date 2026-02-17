@@ -4,21 +4,828 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Achievements Viewer</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg:       #0d0d0f;
+            --surface:  #141418;
+            --card:     #1a1a1f;
+            --border:   #2a2a32;
+            --gold:     #f5c518;
+            --gold-dim: #a8851a;
+            --cyan:     #00d4ff;
+            --green:    #22c55e;
+            --text:     #e8e8ec;
+            --muted:    #888899;
+            --radius:   10px;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* ── NOISE TEXTURE OVERLAY ── */
+        body::before {
+            content: '';
+            position: fixed; inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.4;
+        }
+
+        .page-wrap {
+            position: relative; z-index: 1;
+            width: 100%;
+            max-width: 900px;
+            padding: 32px 20px 60px;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        /* ── HEADER ── */
+        header {
+            text-align: center;
+        }
+        header .eyebrow {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+        header h1 {
+            font-size: clamp(2rem, 6vw, 3.4rem);
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            line-height: 1;
+            background: linear-gradient(135deg, #fff 0%, var(--gold) 60%, #ff9500 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        header .subtitle {
+            margin-top: 6px;
+            color: var(--muted);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* ── SEARCH BAR ── */
+        .search-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .search-row {
+            display: flex;
+            gap: 10px;
+        }
+        .input-wrap {
+            position: relative;
+            flex: 1;
+        }
+        .input-wrap .icon {
+            position: absolute;
+            left: 14px; top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            pointer-events: none;
+            font-size: 1.1rem;
+        }
+        #userIdInput {
+            width: 100%;
+            padding: 12px 14px 12px 40px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            color: var(--text);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 500;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        #userIdInput::placeholder { color: var(--muted); }
+        #userIdInput:focus { border-color: var(--gold); }
+        #userIdInput:focus + .focus-ring {
+            opacity: 1;
+        }
+
+        .btn {
+            padding: 12px 22px;
+            border: none;
+            border-radius: var(--radius);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.18s ease;
+            white-space: nowrap;
+        }
+        .btn-primary {
+            background: var(--gold);
+            color: #0d0d0f;
+        }
+        .btn-primary:hover { background: #ffd740; transform: translateY(-1px); }
+        .btn-primary:active { transform: translateY(0); }
+        .btn-ghost {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+        .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+        /* ── USER PROFILE BANNER ── */
+        #profileBanner {
+            display: none;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 16px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+        #profileBanner.visible { display: flex; }
+        .avatar {
+            width: 42px; height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold), #ff9500);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 1.2rem; color: #0d0d0f;
+            flex-shrink: 0;
+        }
+        .profile-info { flex: 1; }
+        .profile-name {
+            font-size: 1.1rem; font-weight: 700;
+            color: var(--gold);
+        }
+        .profile-stats {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--muted);
+            margin-top: 2px;
+        }
+        .progress-bar-wrap {
+            height: 4px;
+            background: var(--border);
+            border-radius: 99px;
+            overflow: hidden;
+            margin-top: 6px;
+            width: 100%;
+            max-width: 200px;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--gold), #ff9500);
+            border-radius: 99px;
+            transition: width 0.5s cubic-bezier(.4,0,.2,1);
+        }
+        .btn-clear {
+            background: transparent;
+            border: none;
+            color: var(--muted);
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 4px 8px;
+            border-radius: 6px;
+            transition: color 0.15s;
+        }
+        .btn-clear:hover { color: var(--text); }
+
+        /* ── TABS ── */
+        .tabs-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .tabs-header {
+            display: flex;
+            gap: 4px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            padding-bottom: 2px;
+        }
+        .tabs-header::-webkit-scrollbar { display: none; }
+        .tab-btn {
+            flex-shrink: 0;
+            padding: 7px 16px;
+            border: 1px solid var(--border);
+            border-radius: 99px;
+            background: transparent;
+            color: var(--muted);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            cursor: pointer;
+            transition: all 0.18s;
+            display: flex; align-items: center; gap: 6px;
+        }
+        .tab-btn .badge {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            background: var(--border);
+            border-radius: 99px;
+            padding: 1px 6px;
+            color: var(--muted);
+            transition: all 0.18s;
+        }
+        .tab-btn:hover { border-color: var(--gold-dim); color: var(--text); }
+        .tab-btn.active {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: #0d0d0f;
+        }
+        .tab-btn.active .badge {
+            background: rgba(0,0,0,0.2);
+            color: #0d0d0f;
+        }
+
+        /* ── FILTER ROW ── */
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .filter-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--muted);
+            letter-spacing: 0.08em;
+        }
+        .filter-chip {
+            padding: 4px 12px;
+            border: 1px solid var(--border);
+            border-radius: 99px;
+            background: transparent;
+            color: var(--muted);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .filter-chip:hover { border-color: var(--gold-dim); color: var(--text); }
+        .filter-chip.active { border-color: var(--green); color: var(--green); background: rgba(34,197,94,0.07); }
+
+        /* ── ACHIEVEMENT GRID ── */
+        #achievementsContainer {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 14px;
+        }
+
+        /* ── ACHIEVEMENT CARD ── */
+        .achievement {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 16px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+            cursor: default;
+            animation: cardIn 0.25s ease both;
+        }
+        @keyframes cardIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .achievement:hover {
+            transform: translateY(-3px);
+            border-color: rgba(245,197,24,0.35);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+        }
+        /* sheen sweep */
+        .achievement::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.04) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.5s ease;
+        }
+        .achievement:hover::before { transform: translateX(100%); }
+
+        /* status stripe */
+        .achievement::after {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 3px;
+            background: var(--border);
+            border-radius: 99px 0 0 99px;
+        }
+        .achievement.unlocked::after { background: var(--green); }
+        .achievement.founded::after  { background: var(--cyan); }
+
+        /* unlocked bg tint */
+        .achievement.unlocked {
+            background: linear-gradient(135deg, #0f1f13, #111a14);
+            border-color: rgba(34,197,94,0.25);
+        }
+        /* founder bg + glow */
+        .achievement.founded {
+            background: linear-gradient(135deg, #0a1c24, #091820);
+            border-color: rgba(0,212,255,0.3);
+            box-shadow: 0 0 18px rgba(0,212,255,0.12);
+        }
+        .achievement.unlocked:hover { border-color: rgba(34,197,94,0.55); }
+        .achievement.founded:hover  { border-color: rgba(0,212,255,0.6); box-shadow: 0 0 28px rgba(0,212,255,0.22); }
+
+        .ach-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-left: 8px; /* room for stripe */
+        }
+        .ach-icon {
+            width: 34px; height: 34px;
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.15rem;
+            flex-shrink: 0;
+            background: var(--surface);
+            border: 1px solid var(--border);
+        }
+        .achievement.unlocked .ach-icon { background: rgba(34,197,94,0.12); border-color: rgba(34,197,94,0.3); }
+        .achievement.founded  .ach-icon { background: rgba(0,212,255,0.12); border-color: rgba(0,212,255,0.3); }
+
+        .ach-title-wrap { flex: 1; min-width: 0; }
+        .ach-name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text);
+            line-height: 1.2;
+            letter-spacing: 0.02em;
+        }
+        .achievement.unlocked .ach-name { color: #a3f0b4; }
+        .achievement.founded  .ach-name { color: var(--cyan); }
+
+        .ach-badges {
+            display: flex; gap: 4px; margin-top: 4px; flex-wrap: wrap;
+        }
+        .ach-badge {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.6rem;
+            padding: 1px 6px;
+            border-radius: 99px;
+            letter-spacing: 0.05em;
+            font-weight: 400;
+        }
+        .badge-earned  { background: rgba(34,197,94,0.15); color: var(--green); border: 1px solid rgba(34,197,94,0.3); }
+        .badge-founder { background: rgba(0,212,255,0.15); color: var(--cyan); border: 1px solid rgba(0,212,255,0.3); }
+        .badge-locked  { background: rgba(100,100,120,0.15); color: var(--muted); border: 1px solid var(--border); }
+
+        .ach-desc {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-top: 10px;
+            margin-left: 8px;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        .ach-meta {
+            margin-top: 12px;
+            margin-left: 8px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+        .ach-meta-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            color: var(--muted);
+        }
+        .ach-meta-row .dot {
+            width: 5px; height: 5px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .dot-green { background: var(--green); }
+        .dot-cyan  { background: var(--cyan); }
+        .dot-gray  { background: var(--border); }
+
+        /* ── EMPTY STATE ── */
+        .empty-state {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--muted);
+        }
+        .empty-state .icon { font-size: 2.5rem; margin-bottom: 12px; }
+        .empty-state p { font-size: 1rem; font-weight: 500; }
+        .empty-state small { font-size: 0.85rem; margin-top: 4px; display: block; }
+
+        /* ── STATUS BAR ── */
+        #statusBar {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--muted);
+            letter-spacing: 0.06em;
+            padding-left: 4px;
+            min-height: 1.2em;
+        }
+
+        /* ── TOAST ── */
+        #toast {
+            position: fixed;
+            bottom: 28px; left: 50%;
+            transform: translateX(-50%) translateY(80px);
+            background: #222228;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 12px 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text);
+            z-index: 100;
+            transition: transform 0.3s cubic-bezier(.4,0,.2,1), opacity 0.3s;
+            opacity: 0;
+            pointer-events: none;
+            white-space: nowrap;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+        }
+        #toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+        #toast.error { border-color: #ff4444; color: #ff7777; }
+
+        /* ── MOBILE ── */
+        @media (max-width: 520px) {
+            .page-wrap { padding: 20px 14px 48px; gap: 20px; }
+            #achievementsContainer { grid-template-columns: 1fr; }
+            .search-row { flex-direction: column; }
+            .btn { width: 100%; }
+        }
+    </style>
 </head>
 <body>
-    <h1>Achievements Viewer</h1>
 
-    <div class="controls">
-        <input id="userIdInput" placeholder="Enter username or ID">
-        <div class="button-row">
-            <button id="loadBtn">Load Achievements</button>
-            <button id="showAllBtn">Show All</button>
+<div class="page-wrap">
+
+    <!-- HEADER -->
+    <header>
+        <div class="eyebrow">⬡ Community</div>
+        <h1>Achievements</h1>
+        <p class="subtitle">Track your progress and milestones</p>
+    </header>
+
+    <!-- SEARCH -->
+    <div class="search-card">
+        <div class="search-row">
+            <div class="input-wrap">
+                <span class="icon">⌕</span>
+                <input id="userIdInput" type="text" placeholder="Enter username or ID…" autocomplete="off" spellcheck="false">
+            </div>
+            <button class="btn btn-primary" id="loadBtn">Search</button>
+            <button class="btn btn-ghost" id="showAllBtn">All</button>
+        </div>
+        <div id="profileBanner">
+            <div class="avatar" id="avatarEl">?</div>
+            <div class="profile-info">
+                <div class="profile-name" id="profileName">—</div>
+                <div class="profile-stats" id="profileStats">0 earned</div>
+                <div class="progress-bar-wrap">
+                    <div class="progress-bar-fill" id="progressFill" style="width:0%"></div>
+                </div>
+            </div>
+            <button class="btn-clear" id="clearBtn" title="Clear user">✕</button>
         </div>
     </div>
 
+    <!-- TABS -->
+    <div class="tabs-wrap">
+        <div class="tabs-header" id="tabsHeader"><!-- built by JS --></div>
+        <div class="filter-row" id="filterRow">
+            <span class="filter-label">SHOW:</span>
+            <button class="filter-chip active" data-filter="all">All</button>
+            <button class="filter-chip" data-filter="unlocked">Earned</button>
+            <button class="filter-chip" data-filter="locked">Locked</button>
+            <button class="filter-chip" data-filter="founder">Founder</button>
+        </div>
+        <div id="statusBar"></div>
+    </div>
+
+    <!-- ACHIEVEMENT GRID -->
     <div id="achievementsContainer"></div>
 
-    <script src="script.js"></script>
+</div>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<script>
+// ── DATA ──────────────────────────────────────────────────────────────
+let achData      = {};
+let foundersData = {};
+let allUserData  = {};
+let currentUserId   = null;
+let currentCategory = 'all';
+let currentFilter   = 'all';
+
+// ── CATEGORY ICONS ────────────────────────────────────────────────────
+const CAT_ICONS = {
+    chat:     '💬',
+    gamble:   '🎲',
+    cheer:    '⚡',
+    donation: '💸',
+    gifted:   '🎁',
+    redeem:   '🔑',
+    specific: '⭐',
+};
+
+// ── TOAST ─────────────────────────────────────────────────────────────
+let toastTimer;
+function showToast(msg, isError = false) {
+    const el = document.getElementById('toast');
+    el.textContent = msg;
+    el.className = 'show' + (isError ? ' error' : '');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => { el.className = ''; }, 3000);
+}
+
+// ── BUILD TABS ────────────────────────────────────────────────────────
+function buildTabs(cats) {
+    const header = document.getElementById('tabsHeader');
+    header.innerHTML = '';
+    const allBtn = makeTabBtn('all', '🏆', 'All');
+    header.appendChild(allBtn);
+    for (const cat of cats) {
+        header.appendChild(makeTabBtn(cat, CAT_ICONS[cat] || '🔹', capitalize(cat)));
+    }
+    updateTabBadges();
+}
+
+function makeTabBtn(cat, icon, label) {
+    const btn = document.createElement('button');
+    btn.className = 'tab-btn' + (cat === currentCategory ? ' active' : '');
+    btn.dataset.cat = cat;
+    btn.innerHTML = `${icon} ${label} <span class="badge" id="badge-${cat}">0</span>`;
+    btn.addEventListener('click', () => {
+        currentCategory = cat;
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderAchievements();
+    });
+    return btn;
+}
+
+function updateTabBadges() {
+    const allCats = ['all', ...Object.keys(achData)];
+    for (const cat of allCats) {
+        const badge = document.getElementById(`badge-${cat}`);
+        if (!badge) continue;
+        if (cat === 'all') {
+            badge.textContent = Object.values(achData).reduce((s, v) => s + Object.keys(v).length, 0);
+        } else {
+            badge.textContent = Object.keys(achData[cat] || {}).length;
+        }
+    }
+}
+
+// ── RENDER ────────────────────────────────────────────────────────────
+function renderAchievements() {
+    const container = document.getElementById('achievementsContainer');
+    const userData  = currentUserId ? allUserData[currentUserId] : null;
+    container.innerHTML = '';
+
+    const catsToShow = currentCategory === 'all'
+        ? Object.keys(achData)
+        : [currentCategory];
+
+    let count = 0;
+    let delay = 0;
+
+    for (const cat of catsToShow) {
+        for (const [id, ach] of Object.entries(achData[cat] || {})) {
+            const earnedTs  = userData?.achievements?.earned?.[id];
+            const foundedTs = userData?.achievements?.founded?.[id];
+            const isEarned  = !!(earnedTs || foundedTs);
+            const isFounder = !!foundedTs;
+
+            // filter
+            if (currentFilter === 'unlocked' && !isEarned) continue;
+            if (currentFilter === 'locked'   &&  isEarned) continue;
+            if (currentFilter === 'founder'  && !isFounder) continue;
+            if (currentFilter === 'all' && userData && !isEarned) continue; // when user loaded, default to earned
+
+            const card = buildCard(id, ach, isEarned, isFounder, earnedTs || foundedTs);
+            card.style.animationDelay = `${delay * 30}ms`;
+            container.appendChild(card);
+            count++;
+            delay++;
+        }
+    }
+
+    if (count === 0) {
+        const empty = document.createElement('div');
+        empty.className = 'empty-state';
+        let msg = userData
+            ? 'No achievements match this filter.'
+            : 'Search for a user to see their achievements, or switch filter to All.';
+        empty.innerHTML = `<div class="icon">🎯</div><p>${msg}</p>`;
+        container.appendChild(empty);
+    }
+
+    updateStatus(count);
+}
+
+function buildCard(id, ach, isEarned, isFounder, earnedTs) {
+    const div = document.createElement('div');
+    div.className = 'achievement' +
+        (isFounder ? ' founded' : isEarned ? ' unlocked' : '');
+
+    const catForIcon = Object.keys(achData).find(c => achData[c][id]) || '';
+    const icon = CAT_ICONS[catForIcon] || '🔹';
+
+    // Badges
+    let badgeHTML = '';
+    if (isFounder) badgeHTML += `<span class="ach-badge badge-founder">FOUNDER</span>`;
+    if (isEarned && !isFounder) badgeHTML += `<span class="ach-badge badge-earned">EARNED</span>`;
+    if (!isEarned) badgeHTML += `<span class="ach-badge badge-locked">LOCKED</span>`;
+
+    // Date meta
+    let metaHTML = '';
+    if (isEarned && earnedTs) {
+        const d = new Date(earnedTs);
+        const formatted = d.toLocaleString('en-US', {
+            month: 'short', day: 'numeric', year: 'numeric',
+            hour: 'numeric', minute: '2-digit', hour12: true
+        });
+        const dotClass = isFounder ? 'dot-cyan' : 'dot-green';
+        const label    = isFounder ? 'Founded' : 'Unlocked';
+        metaHTML += `<div class="ach-meta-row"><span class="dot ${dotClass}"></span>${label}: ${formatted}</div>`;
+    }
+    if (foundersData[id]) {
+        const fn = foundersData[id].founder_name;
+        metaHTML += `<div class="ach-meta-row"><span class="dot dot-cyan"></span>First: ${fn}</div>`;
+    }
+
+    div.innerHTML = `
+        <div class="ach-header">
+            <div class="ach-icon">${icon}</div>
+            <div class="ach-title-wrap">
+                <div class="ach-name">${ach.name}</div>
+                <div class="ach-badges">${badgeHTML}</div>
+            </div>
+        </div>
+        <p class="ach-desc">${ach.desc}</p>
+        ${metaHTML ? `<div class="ach-meta">${metaHTML}</div>` : ''}
+    `;
+
+    return div;
+}
+
+// ── PROFILE BANNER ────────────────────────────────────────────────────
+function showProfile(userId) {
+    const userData = allUserData[userId];
+    if (!userData) return;
+
+    const earned  = Object.keys(userData.achievements?.earned  || {}).length;
+    const founded = Object.keys(userData.achievements?.founded || {}).length;
+    const total   = Object.values(achData).reduce((s, v) => s + Object.keys(v).length, 0);
+    const pct     = total > 0 ? Math.round(((earned + founded) / total) * 100) : 0;
+
+    const name = userData.username || userId;
+    document.getElementById('profileName').textContent   = name;
+    document.getElementById('avatarEl').textContent      = name[0].toUpperCase();
+    document.getElementById('profileStats').textContent  =
+        `${earned + founded} / ${total} earned (${pct}%)${founded > 0 ? ` · ${founded} founded` : ''}`;
+    document.getElementById('progressFill').style.width  = pct + '%';
+    document.getElementById('profileBanner').classList.add('visible');
+}
+
+function hideProfile() {
+    document.getElementById('profileBanner').classList.remove('visible');
+}
+
+// ── STATUS BAR ────────────────────────────────────────────────────────
+function updateStatus(count) {
+    const bar = document.getElementById('statusBar');
+    bar.textContent = `SHOWING ${count} ACHIEVEMENT${count !== 1 ? 'S' : ''}`;
+}
+
+// ── LOAD USER ────────────────────────────────────────────────────────
+async function loadUser(usernameOrId) {
+    if (!usernameOrId) return;
+    let userId = usernameOrId;
+
+    if (isNaN(Number(usernameOrId))) {
+        const mapResp = await fetch('./username_map.json');
+        const usernameMap = await mapResp.json();
+        userId = usernameMap[usernameOrId.toLowerCase()];
+        if (!userId) { showToast('Username not found', true); return; }
+    }
+
+    if (!allUserData[userId]) {
+        const userResp = await fetch(`users/${userId}.json`);
+        if (!userResp.ok) { showToast('User not found', true); return; }
+        allUserData[userId] = await userResp.json();
+    }
+
+    currentUserId = userId;
+    currentFilter = 'unlocked'; // default: show earned when viewing a user
+    updateFilterChips();
+    showProfile(userId);
+    renderAchievements();
+}
+
+// ── FILTER CHIPS ──────────────────────────────────────────────────────
+function updateFilterChips() {
+    document.querySelectorAll('.filter-chip').forEach(c => {
+        c.classList.toggle('active', c.dataset.filter === currentFilter);
+    });
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────
+async function initPage() {
+    const [achResp, foundersResp] = await Promise.all([
+        fetch('./achievements.json'),
+        fetch('./founders.json')
+    ]);
+    achData      = await achResp.json();
+    foundersData = foundersResp.ok ? await foundersResp.json() : {};
+
+    buildTabs(Object.keys(achData));
+
+    // URL param
+    const userParam = new URLSearchParams(window.location.search).get('user');
+    if (userParam) {
+        await loadUser(userParam);
+    } else {
+        currentFilter = 'all';
+        updateFilterChips();
+        renderAchievements();
+    }
+}
+
+// ── EVENTS ────────────────────────────────────────────────────────────
+document.getElementById('loadBtn').addEventListener('click', () => {
+    const v = document.getElementById('userIdInput').value.trim();
+    if (v) loadUser(v);
+});
+
+document.getElementById('userIdInput').addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+        const v = e.target.value.trim();
+        if (v) loadUser(v);
+    }
+});
+
+document.getElementById('showAllBtn').addEventListener('click', () => {
+    currentUserId = null;
+    currentFilter = 'all';
+    updateFilterChips();
+    hideProfile();
+    document.getElementById('userIdInput').value = '';
+    renderAchievements();
+});
+
+document.getElementById('clearBtn').addEventListener('click', () => {
+    currentUserId = null;
+    currentFilter = 'all';
+    updateFilterChips();
+    hideProfile();
+    document.getElementById('userIdInput').value = '';
+    renderAchievements();
+});
+
+document.getElementById('filterRow').addEventListener('click', e => {
+    const chip = e.target.closest('.filter-chip');
+    if (!chip) return;
+    currentFilter = chip.dataset.filter;
+    updateFilterChips();
+    renderAchievements();
+});
+
+// ── UTIL ──────────────────────────────────────────────────────────────
+function capitalize(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+
+// ── GO ────────────────────────────────────────────────────────────────
+initPage();
+</script>
 </body>
 </html>
