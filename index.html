@@ -10,7 +10,7 @@
         /* ── LOADING SCREEN ── */
         #loadingScreen {
             position: fixed; inset: 0;
-            background: #0d0d0f;
+            background: #1B1A1A;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -24,7 +24,7 @@
             font-family: 'Rajdhani', sans-serif;
             font-size: 2rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #fff 0%, #f5c518 60%, #ff9500 100%);
+            background: linear-gradient(135deg, #fff 0%, #C6E8E8 60%, #8ed8d8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -33,13 +33,13 @@
         .loading-bar-wrap {
             width: 280px;
             height: 4px;
-            background: #2a2a32;
+            background: rgba(198, 232, 232, 0.15);
             border-radius: 99px;
             overflow: hidden;
         }
         .loading-bar-fill {
             height: 100%;
-            background: linear-gradient(90deg, #f5c518, #ff9500);
+            background: linear-gradient(90deg, #C6E8E8, #fff);
             border-radius: 99px;
             width: 0%;
             transition: width 0.15s ease;
@@ -47,7 +47,7 @@
         #loadingStatus {
             font-family: 'Space Mono', monospace;
             font-size: 0.7rem;
-            color: #888899;
+            color: rgba(198, 232, 232, 0.6);
             letter-spacing: 0.1em;
             text-transform: uppercase;
         }
@@ -55,16 +55,15 @@
     </style>
     <style>
         :root {
-            --bg:       #0d0d0f;
-            --surface:  #141418;
-            --card:     #1a1a1f;
-            --border:   #2a2a32;
-            --gold:     #f5c518;
-            --gold-dim: #a8851a;
-            --cyan:     #00d4ff;
-            --green:    #22c55e;
-            --text:     #e8e8ec;
-            --muted:    #888899;
+            --bg:       #1B1A1A;
+            --surface:  #252424;
+            --card:     #2d2c2c;
+            --border:   rgba(198, 232, 232, 0.15);
+            --cyan:     #C6E8E8;
+            --cyan-dim: #8ed8d8;
+            --cyan-bright: #e0f5f5;
+            --text:     #ffffff;
+            --muted:    rgba(198, 232, 232, 0.5);
             --radius:   10px;
         }
 
@@ -78,20 +77,20 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            overflow-x: hidden;
         }
 
-        /* ── NOISE TEXTURE OVERLAY ── */
-        body::before {
-            content: '';
-            position: fixed; inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-            pointer-events: none;
+        /* ── CONSTELLATION BACKGROUND ── */
+        #constellation {
+            position: fixed;
+            inset: 0;
             z-index: 0;
-            opacity: 0.4;
+            pointer-events: none;
         }
 
         .page-wrap {
-            position: relative; z-index: 1;
+            position: relative;
+            z-index: 1;
             width: 100%;
             max-width: 900px;
             padding: 32px 20px 60px;
@@ -108,19 +107,21 @@
             font-family: 'Space Mono', monospace;
             font-size: 0.7rem;
             letter-spacing: 0.25em;
-            color: var(--gold);
+            color: var(--cyan);
             text-transform: uppercase;
             margin-bottom: 6px;
+            text-shadow: 0 0 8px rgba(198, 232, 232, 0.4);
         }
         header h1 {
             font-size: clamp(2rem, 6vw, 3.4rem);
             font-weight: 700;
             letter-spacing: 0.05em;
             line-height: 1;
-            background: linear-gradient(135deg, #fff 0%, var(--gold) 60%, #ff9500 100%);
+            background: linear-gradient(135deg, #fff 0%, var(--cyan) 60%, var(--cyan-dim) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            filter: drop-shadow(0 0 12px rgba(198, 232, 232, 0.3));
         }
         header .subtitle {
             margin-top: 6px;
@@ -131,13 +132,15 @@
 
         /* ── SEARCH BAR ── */
         .search-card {
-            background: var(--surface);
+            background: rgba(37, 36, 36, 0.7);
+            backdrop-filter: blur(12px);
             border: 1px solid var(--border);
             border-radius: 14px;
             padding: 20px;
             display: flex;
             flex-direction: column;
             gap: 14px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
         }
         .search-row {
             display: flex;
@@ -158,7 +161,7 @@
         #userIdInput {
             width: 100%;
             padding: 12px 14px 12px 40px;
-            background: var(--card);
+            background: rgba(45, 44, 44, 0.8);
             border: 1px solid var(--border);
             border-radius: var(--radius);
             color: var(--text);
@@ -166,10 +169,13 @@
             font-size: 1.05rem;
             font-weight: 500;
             outline: none;
-            transition: border-color 0.2s;
+            transition: all 0.2s;
         }
         #userIdInput::placeholder { color: var(--muted); }
-        #userIdInput:focus { border-color: var(--gold); }
+        #userIdInput:focus {
+            border-color: var(--cyan);
+            box-shadow: 0 0 0 2px rgba(198, 232, 232, 0.1);
+        }
 
         /* ── AUTOCOMPLETE ── */
         #autocomplete {
@@ -177,14 +183,15 @@
             top: calc(100% + 4px);
             left: 0;
             right: 0;
-            background: var(--surface);
+            background: rgba(37, 36, 36, 0.95);
+            backdrop-filter: blur(12px);
             border: 1px solid var(--border);
             border-radius: var(--radius);
             max-height: 240px;
             overflow-y: auto;
             z-index: 10;
             display: none;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
         }
         #autocomplete.visible { display: block; }
         .autocomplete-item {
@@ -195,20 +202,20 @@
             font-size: 0.95rem;
             font-weight: 600;
             color: var(--text);
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid rgba(198, 232, 232, 0.08);
         }
         .autocomplete-item:last-child { border-bottom: none; }
         .autocomplete-item:hover,
         .autocomplete-item.selected {
-            background: var(--card);
-            color: var(--gold);
+            background: rgba(198, 232, 232, 0.1);
+            color: var(--cyan-bright);
         }
         .autocomplete-item .username {
             color: var(--text);
         }
         .autocomplete-item:hover .username,
         .autocomplete-item.selected .username {
-            color: var(--gold);
+            color: var(--cyan-bright);
         }
         .autocomplete-item .id {
             font-family: 'Space Mono', monospace;
@@ -237,17 +244,26 @@
             white-space: nowrap;
         }
         .btn-primary {
-            background: var(--gold);
-            color: #0d0d0f;
+            background: var(--cyan);
+            color: #1B1A1A;
+            box-shadow: 0 0 12px rgba(198, 232, 232, 0.3);
         }
-        .btn-primary:hover { background: #ffd740; transform: translateY(-1px); }
+        .btn-primary:hover {
+            background: var(--cyan-bright);
+            transform: translateY(-1px);
+            box-shadow: 0 0 20px rgba(198, 232, 232, 0.5);
+        }
         .btn-primary:active { transform: translateY(0); }
         .btn-ghost {
             background: transparent;
             border: 1px solid var(--border);
             color: var(--text);
         }
-        .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+        .btn-ghost:hover {
+            border-color: var(--cyan);
+            color: var(--cyan);
+            box-shadow: 0 0 12px rgba(198, 232, 232, 0.2);
+        }
 
         /* ── USER PROFILE BANNER ── */
         #profileBanner {
@@ -255,7 +271,7 @@
             align-items: center;
             gap: 14px;
             padding: 14px 16px;
-            background: var(--card);
+            background: rgba(45, 44, 44, 0.8);
             border: 1px solid var(--border);
             border-radius: var(--radius);
         }
@@ -263,15 +279,16 @@
         .avatar {
             width: 42px; height: 42px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--gold), #ff9500);
+            background: linear-gradient(135deg, var(--cyan), var(--cyan-dim));
             display: flex; align-items: center; justify-content: center;
-            font-weight: 700; font-size: 1.2rem; color: #0d0d0f;
+            font-weight: 700; font-size: 1.2rem; color: #1B1A1A;
             flex-shrink: 0;
+            box-shadow: 0 0 12px rgba(198, 232, 232, 0.4);
         }
         .profile-info { flex: 1; }
         .profile-name {
             font-size: 1.1rem; font-weight: 700;
-            color: var(--gold);
+            color: var(--cyan-bright);
         }
         .profile-stats {
             font-family: 'Space Mono', monospace;
@@ -281,7 +298,7 @@
         }
         .progress-bar-wrap {
             height: 4px;
-            background: var(--border);
+            background: rgba(198, 232, 232, 0.15);
             border-radius: 99px;
             overflow: hidden;
             margin-top: 6px;
@@ -290,9 +307,10 @@
         }
         .progress-bar-fill {
             height: 100%;
-            background: linear-gradient(90deg, var(--gold), #ff9500);
+            background: linear-gradient(90deg, var(--cyan), var(--cyan-bright));
             border-radius: 99px;
             transition: width 0.5s cubic-bezier(.4,0,.2,1);
+            box-shadow: 0 0 8px rgba(198, 232, 232, 0.6);
         }
         .btn-clear {
             background: transparent;
@@ -313,8 +331,8 @@
             gap: 14px;
         }
         .tabs-header {
-             display: flex;
-            gap: 7px;
+            display: flex;
+            gap: 4px;
             overflow-x: auto;
             scrollbar-width: none;
             padding-bottom: 2px;
@@ -339,31 +357,44 @@
         .tab-btn .badge {
             font-family: 'Space Mono', monospace;
             font-size: 0.65rem;
-            background: var(--border);
+            background: rgba(198, 232, 232, 0.1);
             border-radius: 99px;
             padding: 1px 6px;
             color: var(--muted);
             transition: all 0.18s;
         }
-        .tab-btn:hover { border-color: var(--gold-dim); color: var(--text); }
+        .tab-btn:hover {
+            border-color: var(--cyan-dim);
+            color: var(--text);
+        }
         .tab-btn.active {
-            background: var(--gold);
-            border-color: var(--gold);
-            color: #0d0d0f;
+            background: var(--cyan);
+            border-color: var(--cyan);
+            color: #1B1A1A;
+            box-shadow: 0 0 12px rgba(198, 232, 232, 0.4);
         }
         .tab-btn.active .badge {
             background: rgba(0,0,0,0.2);
-            color: #0d0d0f;
+            color: #1B1A1A;
         }
 
-        /* ── FILTER & SORT ROW ── */
-        .controls-row {
+        /* ── FILTER ROW (separate from sort) ── */
+        .filter-row {
             display: none;
             align-items: center;
             gap: 10px;
             flex-wrap: wrap;
         }
-        .controls-row.visible { display: flex; }
+        .filter-row.visible { display: flex; }
+        
+        /* ── SORT ROW (always visible) ── */
+        .sort-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
         .control-label {
             font-family: 'Space Mono', monospace;
             font-size: 0.72rem;
@@ -382,12 +413,20 @@
             cursor: pointer;
             transition: all 0.15s;
         }
-        .filter-chip:hover { border-color: var(--gold-dim); color: var(--text); }
-        .filter-chip.active { border-color: var(--green); color: var(--green); background: rgba(34,197,94,0.07); }
+        .filter-chip:hover {
+            border-color: var(--cyan-dim);
+            color: var(--text);
+        }
+        .filter-chip.active {
+            border-color: var(--cyan);
+            color: var(--cyan-bright);
+            background: rgba(198, 232, 232, 0.15);
+            box-shadow: 0 0 8px rgba(198, 232, 232, 0.2);
+        }
 
         .sort-select {
             padding: 4px 10px;
-            background: var(--card);
+            background: rgba(45, 44, 44, 0.8);
             border: 1px solid var(--border);
             border-radius: var(--radius);
             color: var(--text);
@@ -398,7 +437,7 @@
             outline: none;
             transition: border-color 0.15s;
         }
-        .sort-select:hover { border-color: var(--gold-dim); }
+        .sort-select:hover { border-color: var(--cyan-dim); }
         .sort-select option { background: var(--card); color: var(--text); }
 
         /* ── ACHIEVEMENT GRID ── */
@@ -410,7 +449,8 @@
 
         /* ── ACHIEVEMENT CARD ── */
         .achievement {
-            background: var(--card);
+            background: rgba(45, 44, 44, 0.7);
+            backdrop-filter: blur(8px);
             border: 1px solid var(--border);
             border-radius: var(--radius);
             padding: 16px;
@@ -426,15 +466,15 @@
         }
         .achievement:hover {
             transform: translateY(-3px);
-            border-color: rgba(245,197,24,0.35);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+            border-color: rgba(198, 232, 232, 0.4);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 20px rgba(198, 232, 232, 0.1);
         }
         /* sheen sweep */
         .achievement::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.04) 50%, transparent 70%);
+            background: linear-gradient(110deg, transparent 30%, rgba(198, 232, 232, 0.08) 50%, transparent 70%);
             transform: translateX(-100%);
             transition: transform 0.5s ease;
         }
@@ -446,49 +486,101 @@
             position: absolute;
             left: 0; top: 0; bottom: 0;
             width: 3px;
-            background: var(--border);
+            background: rgba(198, 232, 232, 0.2);
             border-radius: 99px 0 0 99px;
         }
-        .achievement.unlocked::after { background: var(--green); }
-        .achievement.founded::after  { background: var(--cyan); }
+        .achievement.unlocked::after { background: var(--cyan); box-shadow: 0 0 8px rgba(198, 232, 232, 0.6); }
+        .achievement.founded::after  { background: var(--cyan-bright); box-shadow: 0 0 12px rgba(198, 232, 232, 0.8); }
+        .achievement.founded.rare::after { background: #EE7430; box-shadow: 0 0 12px rgba(238, 116, 48, 0.8); }
+        .achievement.founded.common::after { background: #19D0EA; box-shadow: 0 0 12px rgba(25, 208, 234, 0.8); }
 
         /* unlocked bg tint */
         .achievement.unlocked {
-            background: linear-gradient(135deg, #0f1f13, #111a14);
-            border-color: rgba(34,197,94,0.25);
+            background: rgba(198, 232, 232, 0.08);
+            border-color: rgba(198, 232, 232, 0.25);
         }
-        /* founder bg + COOL ANIMATIONS */
+        /* founder bg + COSMIC ANIMATIONS */
         .achievement.founded {
-            background: linear-gradient(135deg, #0a1c24, #091820);
-            border-color: rgba(0,212,255,0.3);
-            box-shadow: 0 0 18px rgba(0,212,255,0.12);
+            background: rgba(198, 232, 232, 0.12);
+            border-color: rgba(198, 232, 232, 0.4);
+            box-shadow: 0 0 18px rgba(198, 232, 232, 0.2);
             animation: founderPulse 3s ease-in-out infinite;
         }
+        /* Rare founder (top 5%) - ORANGE */
+        .achievement.founded.rare {
+            background: rgba(238, 116, 48, 0.12);
+            border-color: rgba(238, 116, 48, 0.5);
+            box-shadow: 0 0 18px rgba(238, 116, 48, 0.3);
+            animation: founderPulseOrange 3s ease-in-out infinite;
+        }
+        /* Common founder (bottom 95%) - BRIGHT CYAN */
+        .achievement.founded.common {
+            background: rgba(25, 208, 234, 0.12);
+            border-color: rgba(25, 208, 234, 0.5);
+            box-shadow: 0 0 18px rgba(25, 208, 234, 0.3);
+            animation: founderPulseCyan 3s ease-in-out infinite;
+        }
         @keyframes founderPulse {
-            0%, 100% { box-shadow: 0 0 18px rgba(0,212,255,0.12); }
-            50%      { box-shadow: 0 0 28px rgba(0,212,255,0.25), 0 0 40px rgba(0,212,255,0.08); }
+            0%, 100% { box-shadow: 0 0 18px rgba(198, 232, 232, 0.2); }
+            50%      { box-shadow: 0 0 28px rgba(198, 232, 232, 0.4), 0 0 40px rgba(198, 232, 232, 0.15); }
+        }
+        @keyframes founderPulseOrange {
+            0%, 100% { box-shadow: 0 0 18px rgba(238, 116, 48, 0.3); }
+            50%      { box-shadow: 0 0 32px rgba(238, 116, 48, 0.5), 0 0 48px rgba(238, 116, 48, 0.2); }
+        }
+        @keyframes founderPulseCyan {
+            0%, 100% { box-shadow: 0 0 18px rgba(25, 208, 234, 0.3); }
+            50%      { box-shadow: 0 0 32px rgba(25, 208, 234, 0.5), 0 0 48px rgba(25, 208, 234, 0.2); }
         }
         /* Founder shimmer overlay */
         .achievement.founded::before {
             background: linear-gradient(
                 120deg,
                 transparent 20%,
-                rgba(0,212,255,0.15) 40%,
-                rgba(0,212,255,0.25) 50%,
-                rgba(0,212,255,0.15) 60%,
+                rgba(198, 232, 232, 0.2) 40%,
+                rgba(224, 245, 245, 0.3) 50%,
+                rgba(198, 232, 232, 0.2) 60%,
                 transparent 80%
             );
             animation: founderShimmer 4s ease-in-out infinite;
+        }
+        .achievement.founded.rare::before {
+            background: linear-gradient(
+                120deg,
+                transparent 20%,
+                rgba(238, 116, 48, 0.25) 40%,
+                rgba(255, 140, 70, 0.35) 50%,
+                rgba(238, 116, 48, 0.25) 60%,
+                transparent 80%
+            );
+        }
+        .achievement.founded.common::before {
+            background: linear-gradient(
+                120deg,
+                transparent 20%,
+                rgba(25, 208, 234, 0.25) 40%,
+                rgba(60, 225, 245, 0.35) 50%,
+                rgba(25, 208, 234, 0.25) 60%,
+                transparent 80%
+            );
         }
         @keyframes founderShimmer {
             0%   { transform: translateX(-150%); }
             50%  { transform: translateX(150%); }
             100% { transform: translateX(-150%); }
         }
-        .achievement.unlocked:hover { border-color: rgba(34,197,94,0.55); }
+        .achievement.unlocked:hover { border-color: rgba(198, 232, 232, 0.6); }
         .achievement.founded:hover  {
-            border-color: rgba(0,212,255,0.6);
-            box-shadow: 0 0 32px rgba(0,212,255,0.3), 0 8px 24px rgba(0,0,0,0.4);
+            border-color: rgba(224, 245, 245, 0.7);
+            box-shadow: 0 0 32px rgba(198, 232, 232, 0.4), 0 8px 24px rgba(0,0,0,0.4);
+        }
+        .achievement.founded.rare:hover {
+            border-color: rgba(238, 116, 48, 0.8);
+            box-shadow: 0 0 36px rgba(238, 116, 48, 0.6), 0 8px 24px rgba(0,0,0,0.4);
+        }
+        .achievement.founded.common:hover {
+            border-color: rgba(25, 208, 234, 0.8);
+            box-shadow: 0 0 36px rgba(25, 208, 234, 0.6), 0 8px 24px rgba(0,0,0,0.4);
         }
 
         .ach-header {
@@ -503,11 +595,28 @@
             display: flex; align-items: center; justify-content: center;
             font-size: 1.15rem;
             flex-shrink: 0;
-            background: var(--surface);
+            background: rgba(37, 36, 36, 0.6);
             border: 1px solid var(--border);
         }
-        .achievement.unlocked .ach-icon { background: rgba(34,197,94,0.12); border-color: rgba(34,197,94,0.3); }
-        .achievement.founded  .ach-icon { background: rgba(0,212,255,0.12); border-color: rgba(0,212,255,0.3); }
+        .achievement.unlocked .ach-icon {
+            background: rgba(198, 232, 232, 0.15);
+            border-color: rgba(198, 232, 232, 0.3);
+        }
+        .achievement.founded .ach-icon {
+            background: rgba(198, 232, 232, 0.2);
+            border-color: rgba(198, 232, 232, 0.4);
+            box-shadow: 0 0 8px rgba(198, 232, 232, 0.3);
+        }
+        .achievement.founded.rare .ach-icon {
+            background: rgba(238, 116, 48, 0.2);
+            border-color: rgba(238, 116, 48, 0.5);
+            box-shadow: 0 0 10px rgba(238, 116, 48, 0.4);
+        }
+        .achievement.founded.common .ach-icon {
+            background: rgba(25, 208, 234, 0.2);
+            border-color: rgba(25, 208, 234, 0.5);
+            box-shadow: 0 0 10px rgba(25, 208, 234, 0.4);
+        }
 
         .ach-title-wrap { flex: 1; min-width: 0; }
         .ach-name {
@@ -517,8 +626,11 @@
             line-height: 1.2;
             letter-spacing: 0.02em;
         }
-        .achievement.unlocked .ach-name { color: #a3f0b4; }
-        .achievement.founded  .ach-name { color: var(--cyan); }
+        .achievement.unlocked .ach-name { color: var(--cyan-bright); }
+        .achievement.founded  .ach-name {
+            color: var(--cyan-bright);
+            text-shadow: 0 0 8px rgba(198, 232, 232, 0.4);
+        }
 
         .ach-badges {
             display: flex; gap: 4px; margin-top: 4px; flex-wrap: wrap;
@@ -531,10 +643,50 @@
             letter-spacing: 0.05em;
             font-weight: 400;
         }
-        .badge-earned  { background: rgba(34,197,94,0.15); color: var(--green); border: 1px solid rgba(34,197,94,0.3); }
-        .badge-founder { background: rgba(0,212,255,0.15); color: var(--cyan); border: 1px solid rgba(0,212,255,0.3); }
-        .badge-locked  { background: rgba(100,100,120,0.15); color: var(--muted); border: 1px solid var(--border); }
-        .badge-rarity  { background: rgba(245,197,24,0.15); color: var(--gold); border: 1px solid rgba(245,197,24,0.3); }
+        .badge-earned  {
+            background: rgba(198, 232, 232, 0.15);
+            color: var(--cyan-bright);
+            border: 1px solid rgba(198, 232, 232, 0.3);
+        }
+        .badge-founder {
+            background: rgba(224, 245, 245, 0.2);
+            color: var(--cyan-bright);
+            border: 1px solid rgba(198, 232, 232, 0.4);
+            box-shadow: 0 0 4px rgba(198, 232, 232, 0.3);
+        }
+        .badge-founder.rare {
+            background: rgba(238, 116, 48, 0.2);
+            color: #ff9f6b;
+            border: 1px solid rgba(238, 116, 48, 0.5);
+            box-shadow: 0 0 6px rgba(238, 116, 48, 0.4);
+        }
+        .badge-founder.common {
+            background: rgba(25, 208, 234, 0.2);
+            color: #4de5ff;
+            border: 1px solid rgba(25, 208, 234, 0.5);
+            box-shadow: 0 0 6px rgba(25, 208, 234, 0.4);
+        }
+        .badge-locked  {
+            background: rgba(100,100,120,0.15);
+            color: var(--muted);
+            border: 1px solid rgba(198, 232, 232, 0.1);
+        }
+        .badge-rarity  {
+            background: rgba(198, 232, 232, 0.1);
+            color: var(--cyan);
+            border: 1px solid rgba(198, 232, 232, 0.25);
+        }
+        .badge-rarity.rare {
+            background: rgba(255, 215, 0, 0.15);
+            color: #ffd700;
+            border: 1px solid rgba(255, 215, 0, 0.4);
+            box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+            animation: goldPulse 2s ease-in-out infinite;
+        }
+        @keyframes goldPulse {
+            0%, 100% { box-shadow: 0 0 8px rgba(255, 215, 0, 0.4); }
+            50%      { box-shadow: 0 0 12px rgba(255, 215, 0, 0.6), 0 0 16px rgba(255, 215, 0, 0.3); }
+        }
 
         .ach-desc {
             font-size: 0.9rem;
@@ -549,7 +701,7 @@
             margin-top: 12px;
             margin-left: 8px;
             padding-top: 10px;
-            border-top: 1px solid var(--border);
+            border-top: 1px solid rgba(198, 232, 232, 0.1);
             display: flex;
             flex-direction: column;
             gap: 3px;
@@ -567,9 +719,9 @@
             border-radius: 50%;
             flex-shrink: 0;
         }
-        .dot-green { background: var(--green); }
-        .dot-cyan  { background: var(--cyan); }
-        .dot-gray  { background: var(--border); }
+        .dot-cyan  { background: var(--cyan); box-shadow: 0 0 4px rgba(198, 232, 232, 0.6); }
+        .dot-bright { background: var(--cyan-bright); box-shadow: 0 0 6px rgba(224, 245, 245, 0.8); }
+        .dot-gray  { background: rgba(198, 232, 232, 0.2); }
 
         /* ── EMPTY STATE ── */
         .empty-state {
@@ -597,7 +749,8 @@
             position: fixed;
             bottom: 28px; left: 50%;
             transform: translateX(-50%) translateY(80px);
-            background: #222228;
+            background: rgba(37, 36, 36, 0.95);
+            backdrop-filter: blur(12px);
             border: 1px solid var(--border);
             border-radius: 10px;
             padding: 12px 20px;
@@ -609,10 +762,10 @@
             opacity: 0;
             pointer-events: none;
             white-space: nowrap;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.6);
         }
         #toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
-        #toast.error { border-color: #ff4444; color: #ff7777; }
+        #toast.error { border-color: #ff6b6b; color: #ff9999; }
 
         /* ── MOBILE ── */
         @media (max-width: 520px) {
@@ -624,6 +777,9 @@
     </style>
 </head>
 <body>
+
+<!-- CONSTELLATION CANVAS -->
+<canvas id="constellation"></canvas>
 
 <!-- LOADING SCREEN -->
 <div id="loadingScreen">
@@ -640,9 +796,9 @@
 
     <!-- HEADER -->
     <header>
-        <div class="eyebrow">⬡ Community</div>
+        <div class="eyebrow">⬡ Cosmic Interference</div>
         <h1>Achievements</h1>
-        <p class="subtitle">Track your progress and milestones</p>
+        <p class="subtitle">Track your progress across the cosmos</p>
     </header>
 
     <!-- SEARCH -->
@@ -672,17 +828,24 @@
     <!-- TABS -->
     <div class="tabs-wrap">
         <div class="tabs-header" id="tabsHeader"><!-- built by JS --></div>
-        <div class="controls-row" id="controlsRow">
+        
+        <!-- FILTER ROW (only when user loaded) -->
+        <div class="filter-row" id="filterRow">
             <span class="control-label">SHOW:</span>
             <button class="filter-chip active" data-filter="all">All</button>
             <button class="filter-chip" data-filter="unlocked">Earned</button>
             <button class="filter-chip" data-filter="locked">Locked</button>
             <button class="filter-chip" data-filter="founder">Founder</button>
-            <span class="control-label" style="margin-left: 8px;">SORT:</span>
+        </div>
+        
+        <!-- SORT ROW (always visible) -->
+        <div class="sort-row">
+            <span class="control-label">SORT:</span>
             <select class="sort-select" id="sortSelect">
                 <!-- options built by JS based on context -->
             </select>
         </div>
+        
         <div id="statusBar"></div>
     </div>
 
@@ -696,19 +859,147 @@
 <div id="toast"></div>
 
 <script>
+// ── CONSTELLATION BACKGROUND ──────────────────────────────────────────
+const canvas = document.getElementById('constellation');
+const ctx = canvas.getContext('2d');
+
+let stars = [];
+let mouse = { x: null, y: null };
+let w, h;
+
+function initConstellation() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+    
+    // Create stars
+    stars = [];
+    const starCount = Math.floor((w * h) / 8000);
+    for (let i = 0; i < starCount; i++) {
+        stars.push({
+            x: Math.random() * w,
+            y: Math.random() * h,
+            vx: (Math.random() - 0.5) * 0.3,
+            vy: (Math.random() - 0.5) * 0.3,
+            radius: Math.random() * 1.5 + 0.5,
+            brightness: Math.random() * 0.5 + 0.5,
+        });
+    }
+}
+
+function drawConstellation() {
+    ctx.clearRect(0, 0, w, h);
+    
+    // Draw connections first
+    ctx.strokeStyle = 'rgba(198, 232, 232, 0.15)';
+    ctx.lineWidth = 0.5;
+    
+    for (let i = 0; i < stars.length; i++) {
+        const star = stars[i];
+        
+        // Connect to nearby stars
+        for (let j = i + 1; j < stars.length; j++) {
+            const other = stars[j];
+            const dx = star.x - other.x;
+            const dy = star.y - other.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            
+            if (dist < 120) {
+                const opacity = (1 - dist / 120) * 0.3;
+                ctx.strokeStyle = `rgba(198, 232, 232, ${opacity})`;
+                ctx.beginPath();
+                ctx.moveTo(star.x, star.y);
+                ctx.lineTo(other.x, other.y);
+                ctx.stroke();
+            }
+        }
+        
+        // Connect to mouse if nearby
+        if (mouse.x && mouse.y) {
+            const dx = star.x - mouse.x;
+            const dy = star.y - mouse.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            
+            if (dist < 150) {
+                const opacity = (1 - dist / 150) * 0.5;
+                ctx.strokeStyle = `rgba(198, 232, 232, ${opacity})`;
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.moveTo(star.x, star.y);
+                ctx.lineTo(mouse.x, mouse.y);
+                ctx.stroke();
+                ctx.lineWidth = 0.5;
+                
+                // Pull star toward mouse gently
+                const force = (1 - dist / 150) * 0.5;
+                star.vx += (mouse.x - star.x) * force * 0.0001;
+                star.vy += (mouse.y - star.y) * force * 0.0001;
+            }
+        }
+    }
+    
+    // Draw stars
+    for (const star of stars) {
+        // Update position
+        star.x += star.vx;
+        star.y += star.vy;
+        
+        // Damping
+        star.vx *= 0.99;
+        star.vy *= 0.99;
+        
+        // Wrap around edges
+        if (star.x < 0) star.x = w;
+        if (star.x > w) star.x = 0;
+        if (star.y < 0) star.y = h;
+        if (star.y > h) star.y = 0;
+        
+        // Draw star
+        const alpha = star.brightness * 0.8;
+        const glow = star.radius * 2;
+        
+        // Glow
+        const gradient = ctx.createRadialGradient(star.x, star.y, 0, star.x, star.y, glow);
+        gradient.addColorStop(0, `rgba(198, 232, 232, ${alpha * 0.8})`);
+        gradient.addColorStop(1, 'rgba(198, 232, 232, 0)');
+        ctx.fillStyle = gradient;
+        ctx.fillRect(star.x - glow, star.y - glow, glow * 2, glow * 2);
+        
+        // Core
+        ctx.fillStyle = `rgba(224, 245, 245, ${alpha})`;
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.fill();
+    }
+    
+    requestAnimationFrame(drawConstellation);
+}
+
+window.addEventListener('resize', initConstellation);
+window.addEventListener('mousemove', e => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+});
+window.addEventListener('mouseleave', () => {
+    mouse.x = null;
+    mouse.y = null;
+});
+
+initConstellation();
+drawConstellation();
+
 // ── CONFIG ────────────────────────────────────────────────────────────
 const BASE_URL = 'https://raw.githubusercontent.com/TheDogVT/Achievements/main';
 
 // ── DATA ──────────────────────────────────────────────────────────────
-let achData      = {};   // loaded from achievements.json
-let foundersData = {};   // derived from user files after load
-let usernameMap  = {};   // loaded from username_map.json
-let allUserData  = {};   // loaded from users/*.json
-let rarityData   = {};   // computed: { achId: percentage }
+let achData      = {};
+let foundersData = {};
+let usernameMap  = {};
+let allUserData  = {};
+let rarityData   = {};
 let currentUserId   = null;
 let currentCategory = 'all';
 let currentFilter   = 'all';
-let currentSort     = 'recent'; // changes based on context
+let currentSort     = 'recent';
 
 // ── LOADING ───────────────────────────────────────────────────────────
 function setLoadProgress(pct, msg) {
@@ -717,7 +1008,6 @@ function setLoadProgress(pct, msg) {
 }
 
 async function loadAllData() {
-    // 1. Core JSON files in parallel
     setLoadProgress(5, 'Loading achievements…');
     const [achRes, mapRes] = await Promise.all([
         fetch(`${BASE_URL}/achievements.json`),
@@ -728,7 +1018,6 @@ async function loadAllData() {
 
     setLoadProgress(20, 'Loading user data…');
 
-    // 2. Fetch all user files concurrently in batches
     const uniqueIds  = [...new Set(Object.values(usernameMap))];
     const BATCH_SIZE = 50;
     let loaded = 0;
@@ -739,14 +1028,13 @@ async function loadAllData() {
             try {
                 const res = await fetch(`${BASE_URL}/users/${id}.json`);
                 if (res.ok) allUserData[id] = await res.json();
-            } catch (_) { /* no file yet for this user, skip */ }
+            } catch (_) { }
             loaded++;
         }));
         const pct = 20 + Math.round((loaded / uniqueIds.length) * 70);
         setLoadProgress(pct, `Loading users… ${loaded} / ${uniqueIds.length}`);
     }
 
-    // 3. Derive foundersData from user files
     setLoadProgress(92, 'Building founder data…');
     for (const [userId, userData] of Object.entries(allUserData)) {
         const founded = userData?.achievements?.founded || {};
@@ -762,10 +1050,9 @@ async function loadAllData() {
         }
     }
 
-    // 4. Compute rarity percentages
     setLoadProgress(96, 'Computing rarity…');
     const totalUsers = Object.keys(allUserData).length;
-    const achCounts  = {}; // { achId: count of users who have it }
+    const achCounts  = {};
 
     for (const userData of Object.values(allUserData)) {
         const earned  = Object.keys(userData?.achievements?.earned  || {});
@@ -778,13 +1065,16 @@ async function loadAllData() {
 
     for (const achId of Object.keys(achCounts)) {
         const count = achCounts[achId];
-        rarityData[achId] = totalUsers > 0 ? ((count / totalUsers) * 100) : 0;
+        rarityData[achId] = {
+            count: count,
+            percentage: totalUsers > 0 ? ((count / totalUsers) * 100) : 0,
+            total: totalUsers
+        };
     }
 
     setLoadProgress(100, 'Done!');
     await new Promise(r => setTimeout(r, 300));
 
-    // 5. Reveal app
     const screen = document.getElementById('loadingScreen');
     screen.classList.add('fade-out');
     setTimeout(() => screen.remove(), 400);
@@ -847,14 +1137,12 @@ function updateTabBadges() {
         if (!badge) continue;
 
         if (!userData) {
-            // No user loaded: show total count for each category
             if (cat === 'all') {
                 badge.textContent = Object.values(achData).reduce((s, v) => s + Object.keys(v).length, 0);
             } else {
                 badge.textContent = Object.keys(achData[cat] || {}).length;
             }
         } else {
-            // User loaded: show how many they have in each category
             const earned  = userData.achievements?.earned  || {};
             const founded = userData.achievements?.founded || {};
             const userAchs = new Set([...Object.keys(earned), ...Object.keys(founded)]);
@@ -876,7 +1164,6 @@ function buildSortOptions() {
     select.innerHTML = '';
 
     if (!currentUserId) {
-        // No user loaded
         select.innerHTML = `
             <option value="name">Name (A-Z)</option>
             <option value="rarity">Rarity (Rarest first)</option>
@@ -884,7 +1171,6 @@ function buildSortOptions() {
         `;
         currentSort = 'name';
     } else {
-        // User loaded
         select.innerHTML = `
             <option value="recent">Most recently unlocked</option>
             <option value="rarity">Rarity (Rarest first)</option>
@@ -893,220 +1179,6 @@ function buildSortOptions() {
         currentSort = 'recent';
     }
     select.value = currentSort;
-}
-
-// ── RENDER ────────────────────────────────────────────────────────────
-function renderAchievements() {
-    const container = document.getElementById('achievementsContainer');
-    const userData  = currentUserId ? allUserData[currentUserId] : null;
-    container.innerHTML = '';
-
-    const catsToShow = currentCategory === 'all'
-        ? Object.keys(achData)
-        : [currentCategory];
-
-    let items = []; // { id, ach, isEarned, isFounder, earnedTs, rarity }
-
-    for (const cat of catsToShow) {
-        for (const [id, ach] of Object.entries(achData[cat] || {})) {
-            const earnedTs  = userData?.achievements?.earned?.[id];
-            const foundedTs = userData?.achievements?.founded?.[id];
-            const isEarned  = !!(earnedTs || foundedTs);
-            const isFounder = !!foundedTs;
-            const rarity    = rarityData[id] || 0;
-
-            // Filter
-            if (currentFilter === 'all'      && userData && !isEarned) continue;
-            if (currentFilter === 'unlocked' && (!isEarned || isFounder)) continue;
-            if (currentFilter === 'locked'   && isEarned) continue;
-            if (currentFilter === 'founder'  && !isFounder) continue;
-
-            items.push({
-                id, ach, cat, isEarned, isFounder,
-                earnedTs: earnedTs || foundedTs,
-                rarity,
-            });
-        }
-    }
-
-    // Sort
-    if (currentSort === 'name') {
-        items.sort((a, b) => a.ach.name.localeCompare(b.ach.name));
-    } else if (currentSort === 'rarity') {
-        items.sort((a, b) => a.rarity - b.rarity); // rarest first (lowest %)
-    } else if (currentSort === 'recent') {
-        items.sort((a, b) => {
-            if (!a.earnedTs) return 1;
-            if (!b.earnedTs) return -1;
-            return new Date(b.earnedTs) - new Date(a.earnedTs);
-        });
-    } else if (currentSort === 'founded') {
-        items.sort((a, b) => {
-            const aFounder = foundersData[a.id];
-            const bFounder = foundersData[b.id];
-            if (!aFounder) return 1;
-            if (!bFounder) return -1;
-            return new Date(bFounder.founded_at) - new Date(aFounder.founded_at);
-        });
-    }
-
-    // Render cards
-    items.forEach((item, idx) => {
-        const card = buildCard(item, userData);
-        card.style.animationDelay = `${idx * 20}ms`;
-        container.appendChild(card);
-    });
-
-    if (items.length === 0) {
-        const empty = document.createElement('div');
-        empty.className = 'empty-state';
-        const msg = userData
-            ? 'No achievements match this filter.'
-            : 'Search for a user to see their achievements, or switch filter to All.';
-        empty.innerHTML = `<div class="icon">🎯</div><p>${msg}</p>`;
-        container.appendChild(empty);
-    }
-
-    updateStatus(items.length);
-}
-
-function buildCard(item, userData) {
-    const { id, ach, cat, isEarned, isFounder, earnedTs, rarity } = item;
-
-    const div = document.createElement('div');
-    div.className = 'achievement' +
-        (isFounder ? ' founded' : isEarned ? ' unlocked' : '');
-
-    const icon = CAT_ICONS[cat] || '🔹';
-
-    // Badges
-    let badgeHTML = '';
-    if (isFounder) badgeHTML += `<span class="ach-badge badge-founder">FOUNDER</span>`;
-    if (isEarned && !isFounder) badgeHTML += `<span class="ach-badge badge-earned">EARNED</span>`;
-    if (!isEarned) badgeHTML += `<span class="ach-badge badge-locked">LOCKED</span>`;
-    
-    // Rarity badge (only if user is loaded)
-    if (userData && isEarned && rarity > 0) {
-        const pct = rarity.toFixed(1);
-        badgeHTML += `<span class="ach-badge badge-rarity">Top ${pct}%</span>`;
-    }
-
-    // Date meta
-    let metaHTML = '';
-    if (isEarned && earnedTs) {
-        const d = new Date(earnedTs);
-        const formatted = d.toLocaleString('en-US', {
-            month: 'short', day: 'numeric', year: 'numeric',
-            hour: 'numeric', minute: '2-digit', hour12: true
-        });
-        const dotClass = isFounder ? 'dot-cyan' : 'dot-green';
-        const label    = isFounder ? 'Founded' : 'Unlocked';
-        metaHTML += `<div class="ach-meta-row"><span class="dot ${dotClass}"></span>${label}: ${formatted}</div>`;
-    }
-
-    // "First:" line — only if founder exists AND it's NOT this user
-    if (foundersData[id]) {
-        const founderUserId = foundersData[id].founder_id;
-        const founderName   = foundersData[id].founder_name;
-        if (!userData || currentUserId !== founderUserId) {
-            metaHTML += `<div class="ach-meta-row"><span class="dot dot-cyan"></span>Founder: ${founderName}</div>`;
-        }
-    }
-
-    div.innerHTML = `
-        <div class="ach-header">
-            <div class="ach-icon">${icon}</div>
-            <div class="ach-title-wrap">
-                <div class="ach-name">${ach.name}</div>
-                <div class="ach-badges">${badgeHTML}</div>
-            </div>
-        </div>
-        <p class="ach-desc">${ach.desc}</p>
-        ${metaHTML ? `<div class="ach-meta">${metaHTML}</div>` : ''}
-    `;
-
-    return div;
-}
-
-// ── PROFILE BANNER ────────────────────────────────────────────────────
-function showProfile(userId) {
-    const userData = allUserData[userId];
-    if (!userData) return;
-
-    const earned  = Object.keys(userData.achievements?.earned  || {}).length;
-    const founded = Object.keys(userData.achievements?.founded || {}).length;
-    const total   = Object.values(achData).reduce((s, v) => s + Object.keys(v).length, 0);
-    const pct     = total > 0 ? Math.round(((earned + founded) / total) * 100) : 0;
-
-    const name = userData.username || userId;
-    document.getElementById('profileName').textContent   = name;
-    document.getElementById('avatarEl').textContent      = name[0].toUpperCase();
-    document.getElementById('profileStats').textContent  =
-        `${earned + founded} / ${total} earned (${pct}%)${founded > 0 ? ` · ${founded} founded` : ''}`;
-    document.getElementById('progressFill').style.width  = pct + '%';
-    document.getElementById('profileBanner').classList.add('visible');
-}
-
-function hideProfile() {
-    document.getElementById('profileBanner').classList.remove('visible');
-}
-
-// ── STATUS BAR ────────────────────────────────────────────────────────
-function updateStatus(count) {
-    const bar = document.getElementById('statusBar');
-    bar.textContent = `SHOWING ${count} ACHIEVEMENT${count !== 1 ? 'S' : ''}`;
-}
-
-// ── LOAD USER ────────────────────────────────────────────────────────
-function loadUser(usernameOrId) {
-    if (!usernameOrId) return;
-    let userId = usernameOrId.trim();
-
-    // Resolve username → ID using pre-loaded map
-    if (isNaN(Number(userId))) {
-        const resolved = usernameMap[userId.toLowerCase()];
-        if (!resolved) { showToast('Username not found', true); return; }
-        userId = resolved;
-    }
-
-    // Check pre-loaded user data
-    if (!allUserData[userId]) {
-        showToast('No data found for that user', true);
-        return;
-    }
-
-    currentUserId = userId;
-    currentFilter = 'all';
-    updateFilterChips();
-    buildSortOptions();
-    document.getElementById('controlsRow').classList.add('visible');
-    showProfile(userId);
-    updateTabBadges();
-    renderAchievements();
-}
-
-// ── FILTER CHIPS ──────────────────────────────────────────────────────
-function updateFilterChips() {
-    document.querySelectorAll('.filter-chip').forEach(c => {
-        c.classList.toggle('active', c.dataset.filter === currentFilter);
-    });
-}
-
-// ── INIT ──────────────────────────────────────────────────────────────
-async function initPage() {
-    // All data is pre-loaded by loadAllData() before this runs
-    buildTabs(Object.keys(achData));
-    buildSortOptions();
-
-    // URL param
-    const userParam = new URLSearchParams(window.location.search).get('user');
-    if (userParam) {
-        loadUser(userParam);
-    } else {
-        currentFilter = 'all';
-        updateFilterChips();
-        renderAchievements();
-    }
 }
 
 // ── AUTOCOMPLETE ──────────────────────────────────────────────────────
@@ -1122,14 +1194,14 @@ function updateAutocomplete(query) {
         return;
     }
 
-    // Search usernames (case-insensitive)
     const lowerQuery = query.toLowerCase();
     const matches = Object.entries(usernameMap)
         .filter(([username, id]) => 
             username.toLowerCase().includes(lowerQuery) || 
             id.includes(query)
         )
-        .slice(0, 10); // limit to 10 results
+        .sort((a, b) => a[0].length - b[0].length) // Sort by shortest name first
+        .slice(0, 10);
 
     autocompleteMatches = matches;
     autocompleteIndex = -1;
@@ -1176,9 +1248,250 @@ function highlightAutocompleteItem(index) {
         item.classList.toggle('selected', idx === index);
     });
     
-    // Scroll into view if needed
     if (index >= 0 && items[index]) {
         items[index].scrollIntoView({ block: 'nearest' });
+    }
+}
+
+// ── RENDER ────────────────────────────────────────────────────────────
+function renderAchievements() {
+    const container = document.getElementById('achievementsContainer');
+    const userData  = currentUserId ? allUserData[currentUserId] : null;
+    container.innerHTML = '';
+
+    const catsToShow = currentCategory === 'all'
+        ? Object.keys(achData)
+        : [currentCategory];
+
+    let items = [];
+
+    for (const cat of catsToShow) {
+        for (const [id, ach] of Object.entries(achData[cat] || {})) {
+            const earnedTs  = userData?.achievements?.earned?.[id];
+            const foundedTs = userData?.achievements?.founded?.[id];
+            const isEarned  = !!(earnedTs || foundedTs);
+            const isFounder = !!foundedTs;
+            const rarity    = rarityData[id] || { count: 0, percentage: 0, total: 0 };
+
+            if (currentFilter === 'all'      && userData && !isEarned) continue;
+            if (currentFilter === 'unlocked' && (!isEarned || isFounder)) continue;
+            if (currentFilter === 'locked'   && isEarned) continue;
+            if (currentFilter === 'founder'  && !isFounder) continue;
+
+            items.push({
+                id, ach, cat, isEarned, isFounder,
+                earnedTs: earnedTs || foundedTs,
+                rarity,
+            });
+        }
+    }
+
+    // Sort
+    if (currentSort === 'name') {
+        items.sort((a, b) => a.ach.name.localeCompare(b.ach.name));
+    } else if (currentSort === 'rarity') {
+        items.sort((a, b) => a.rarity.percentage - b.rarity.percentage);
+    } else if (currentSort === 'recent') {
+        items.sort((a, b) => {
+            if (!a.earnedTs) return 1;
+            if (!b.earnedTs) return -1;
+            return new Date(b.earnedTs) - new Date(a.earnedTs);
+        });
+    } else if (currentSort === 'founded') {
+        items.sort((a, b) => {
+            const aFounder = foundersData[a.id];
+            const bFounder = foundersData[b.id];
+            if (!aFounder) return 1;
+            if (!bFounder) return -1;
+            return new Date(bFounder.founded_at) - new Date(aFounder.founded_at);
+        });
+    }
+
+    items.forEach((item, idx) => {
+        const card = buildCard(item, userData);
+        card.style.animationDelay = `${idx * 20}ms`;
+        container.appendChild(card);
+    });
+
+    if (items.length === 0) {
+        const empty = document.createElement('div');
+        empty.className = 'empty-state';
+        const msg = userData
+            ? 'No achievements match this filter.'
+            : 'Search for a user to see their achievements.';
+        empty.innerHTML = `<div class="icon">🎯</div><p>${msg}</p>`;
+        container.appendChild(empty);
+    }
+
+    updateStatus(items.length);
+}
+
+function buildCard(item, userData) {
+    const { id, ach, cat, isEarned, isFounder, earnedTs, rarity } = item;
+
+    const isRare = rarity.percentage > 0 && rarity.percentage <= 5;
+
+    const div = document.createElement('div');
+    let classList = 'achievement';
+    if (isFounder) {
+        classList += ' founded';
+        if (isRare) classList += ' rare';
+        else classList += ' common';
+    } else if (isEarned) {
+        classList += ' unlocked';
+    }
+    div.className = classList;
+
+    const icon = CAT_ICONS[cat] || '🔹';
+
+    let badgeHTML = '';
+    if (isFounder) {
+        const founderClass = isRare ? 'badge-founder rare' : 'badge-founder common';
+        badgeHTML += `<span class="ach-badge ${founderClass}">FOUNDER</span>`;
+    }
+    if (isEarned && !isFounder) badgeHTML += `<span class="ach-badge badge-earned">EARNED</span>`;
+    if (!isEarned) badgeHTML += `<span class="ach-badge badge-locked">LOCKED</span>`;
+    
+    // Rarity badge
+    if (rarity.count > 0) {
+        if (userData && isEarned) {
+            // User context: show percentage with rare class if top 5%
+            const pct = rarity.percentage.toFixed(1);
+            const rarityClass = isRare ? 'badge-rarity rare' : 'badge-rarity';
+            badgeHTML += `<span class="ach-badge ${rarityClass}">Top ${pct}%</span>`;
+        } else if (!userData) {
+            // No user context: show count
+            badgeHTML += `<span class="ach-badge badge-rarity">${rarity.count}/${rarity.total}</span>`;
+        }
+    }
+
+    let metaHTML = '';
+    if (isEarned && earnedTs) {
+        const d = new Date(earnedTs);
+        const formatted = d.toLocaleString('en-US', {
+            month: 'short', day: 'numeric', year: 'numeric',
+            hour: 'numeric', minute: '2-digit', hour12: true
+        });
+        const dotClass = isFounder ? 'dot-bright' : 'dot-cyan';
+        const label    = isFounder ? 'Founded' : 'Unlocked';
+        metaHTML += `<div class="ach-meta-row"><span class="dot ${dotClass}"></span>${label}: ${formatted}</div>`;
+    }
+
+    if (foundersData[id]) {
+        const founderUserId = foundersData[id].founder_id;
+        const founderName   = foundersData[id].founder_name;
+        if (!userData || currentUserId !== founderUserId) {
+            metaHTML += `<div class="ach-meta-row"><span class="dot dot-cyan"></span>First: ${founderName}</div>`;
+        }
+    }
+
+    div.innerHTML = `
+        <div class="ach-header">
+            <div class="ach-icon">${icon}</div>
+            <div class="ach-title-wrap">
+                <div class="ach-name">${ach.name}</div>
+                <div class="ach-badges">${badgeHTML}</div>
+            </div>
+        </div>
+        <p class="ach-desc">${ach.desc}</p>
+        ${metaHTML ? `<div class="ach-meta">${metaHTML}</div>` : ''}
+    `;
+
+    return div;
+}
+
+// ── PROFILE BANNER ────────────────────────────────────────────────────
+function showProfile(userId) {
+    const userData = allUserData[userId];
+    if (!userData) return;
+
+    const earned  = Object.keys(userData.achievements?.earned  || {}).length;
+    const founded = Object.keys(userData.achievements?.founded || {}).length;
+    const total   = Object.values(achData).reduce((s, v) => s + Object.keys(v).length, 0);
+    const pct     = total > 0 ? Math.round(((earned + founded) / total) * 100) : 0;
+
+    const name = userData.username || userId;
+    document.getElementById('profileName').textContent   = name;
+    document.getElementById('profileStats').textContent  =
+        `${earned + founded} / ${total} earned (${pct}%)${founded > 0 ? ` · ${founded} founded` : ''}`;
+    document.getElementById('progressFill').style.width  = pct + '%';
+    document.getElementById('profileBanner').classList.add('visible');
+    
+    // Try to fetch Twitch profile picture
+    const avatarEl = document.getElementById('avatarEl');
+    avatarEl.style.backgroundImage = 'none';
+    avatarEl.textContent = name[0].toUpperCase();
+    
+    if (userData.username) {
+        fetch(`https://decapi.me/twitch/avatar/${userData.username}`)
+            .then(res => res.text())
+            .then(url => {
+                if (url && !url.includes('User not found') && !url.includes('error')) {
+                    avatarEl.style.backgroundImage = `url(${url})`;
+                    avatarEl.style.backgroundSize = 'cover';
+                    avatarEl.style.backgroundPosition = 'center';
+                    avatarEl.textContent = '';
+                }
+            })
+            .catch(() => { /* keep default letter */ });
+    }
+}
+
+function hideProfile() {
+    document.getElementById('profileBanner').classList.remove('visible');
+}
+
+// ── STATUS BAR ────────────────────────────────────────────────────────
+function updateStatus(count) {
+    const bar = document.getElementById('statusBar');
+    bar.textContent = `SHOWING ${count} ACHIEVEMENT${count !== 1 ? 'S' : ''}`;
+}
+
+// ── LOAD USER ────────────────────────────────────────────────────────
+function loadUser(usernameOrId) {
+    if (!usernameOrId) return;
+    let userId = usernameOrId.trim();
+
+    if (isNaN(Number(userId))) {
+        const resolved = usernameMap[userId.toLowerCase()];
+        if (!resolved) { showToast('Username not found', true); return; }
+        userId = resolved;
+    }
+
+    if (!allUserData[userId]) {
+        showToast('No data found for that user', true);
+        return;
+    }
+
+    currentUserId = userId;
+    currentFilter = 'all';
+    updateFilterChips();
+    buildSortOptions();
+    document.getElementById('filterRow').classList.add('visible');
+    showProfile(userId);
+    updateTabBadges();
+    renderAchievements();
+}
+
+// ── FILTER CHIPS ──────────────────────────────────────────────────────
+function updateFilterChips() {
+    document.querySelectorAll('.filter-chip').forEach(c => {
+        c.classList.toggle('active', c.dataset.filter === currentFilter);
+    });
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────
+async function initPage() {
+    buildTabs(Object.keys(achData));
+    buildSortOptions();
+
+    const userParam = new URLSearchParams(window.location.search).get('user');
+    if (userParam) {
+        loadUser(userParam);
+    } else {
+        currentFilter = 'all';
+        updateFilterChips();
+        renderAchievements();
     }
 }
 
@@ -1223,7 +1536,6 @@ document.getElementById('userIdInput').addEventListener('keydown', e => {
     }
 });
 
-// Click on autocomplete item
 document.getElementById('autocomplete').addEventListener('click', e => {
     const item = e.target.closest('.autocomplete-item');
     if (item) {
@@ -1232,7 +1544,6 @@ document.getElementById('autocomplete').addEventListener('click', e => {
     }
 });
 
-// Close autocomplete when clicking outside
 document.addEventListener('click', e => {
     const input = document.getElementById('userIdInput');
     const dropdown = document.getElementById('autocomplete');
@@ -1247,7 +1558,7 @@ document.getElementById('showAllBtn').addEventListener('click', () => {
     updateFilterChips();
     buildSortOptions();
     hideProfile();
-    document.getElementById('controlsRow').classList.remove('visible');
+    document.getElementById('filterRow').classList.remove('visible');
     document.getElementById('userIdInput').value = '';
     document.getElementById('autocomplete').classList.remove('visible');
     updateTabBadges();
@@ -1260,14 +1571,14 @@ document.getElementById('clearBtn').addEventListener('click', () => {
     updateFilterChips();
     buildSortOptions();
     hideProfile();
-    document.getElementById('controlsRow').classList.remove('visible');
+    document.getElementById('filterRow').classList.remove('visible');
     document.getElementById('userIdInput').value = '';
     document.getElementById('autocomplete').classList.remove('visible');
     updateTabBadges();
     renderAchievements();
 });
 
-document.getElementById('controlsRow').addEventListener('click', e => {
+document.getElementById('filterRow').addEventListener('click', e => {
     const chip = e.target.closest('.filter-chip');
     if (!chip) return;
     currentFilter = chip.dataset.filter;
