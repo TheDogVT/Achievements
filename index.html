@@ -170,8 +170,58 @@
         }
         #userIdInput::placeholder { color: var(--muted); }
         #userIdInput:focus { border-color: var(--gold); }
-        #userIdInput:focus + .focus-ring {
-            opacity: 1;
+
+        /* ── AUTOCOMPLETE ── */
+        #autocomplete {
+            position: absolute;
+            top: calc(100% + 4px);
+            left: 0;
+            right: 0;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            max-height: 240px;
+            overflow-y: auto;
+            z-index: 10;
+            display: none;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+        }
+        #autocomplete.visible { display: block; }
+        .autocomplete-item {
+            padding: 10px 14px;
+            cursor: pointer;
+            transition: background 0.12s;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text);
+            border-bottom: 1px solid var(--border);
+        }
+        .autocomplete-item:last-child { border-bottom: none; }
+        .autocomplete-item:hover,
+        .autocomplete-item.selected {
+            background: var(--card);
+            color: var(--gold);
+        }
+        .autocomplete-item .username {
+            color: var(--text);
+        }
+        .autocomplete-item:hover .username,
+        .autocomplete-item.selected .username {
+            color: var(--gold);
+        }
+        .autocomplete-item .id {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--muted);
+            margin-left: 6px;
+        }
+        .autocomplete-empty {
+            padding: 14px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.85rem;
+            font-style: italic;
         }
 
         .btn {
@@ -263,19 +313,12 @@
             gap: 14px;
         }
         .tabs-header {
-            display: flex;
-            gap: 4px;
+             display: flex;
+            gap: 7px;
             overflow-x: auto;
             scrollbar-width: none;
             padding-bottom: 2px;
             flex-wrap: wrap;
-        }
-
-        .tabs-header::before {
-
-        }
-        .tabs-header::after {
-
         }
         .tabs-header::-webkit-scrollbar { display: none; }
         .tab-btn {
@@ -313,15 +356,15 @@
             color: #0d0d0f;
         }
 
-        /* ── FILTER ROW ── */
-        .filter-row {
+        /* ── FILTER & SORT ROW ── */
+        .controls-row {
             display: none;
             align-items: center;
             gap: 10px;
             flex-wrap: wrap;
         }
-        .filter-row.visible { display: flex; }
-        .filter-label {
+        .controls-row.visible { display: flex; }
+        .control-label {
             font-family: 'Space Mono', monospace;
             font-size: 0.72rem;
             color: var(--muted);
@@ -341,6 +384,22 @@
         }
         .filter-chip:hover { border-color: var(--gold-dim); color: var(--text); }
         .filter-chip.active { border-color: var(--green); color: var(--green); background: rgba(34,197,94,0.07); }
+
+        .sort-select {
+            padding: 4px 10px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            color: var(--text);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            outline: none;
+            transition: border-color 0.15s;
+        }
+        .sort-select:hover { border-color: var(--gold-dim); }
+        .sort-select option { background: var(--card); color: var(--text); }
 
         /* ── ACHIEVEMENT GRID ── */
         #achievementsContainer {
@@ -398,20 +457,45 @@
             background: linear-gradient(135deg, #0f1f13, #111a14);
             border-color: rgba(34,197,94,0.25);
         }
-        /* founder bg + glow */
+        /* founder bg + COOL ANIMATIONS */
         .achievement.founded {
             background: linear-gradient(135deg, #0a1c24, #091820);
             border-color: rgba(0,212,255,0.3);
             box-shadow: 0 0 18px rgba(0,212,255,0.12);
+            animation: founderPulse 3s ease-in-out infinite;
+        }
+        @keyframes founderPulse {
+            0%, 100% { box-shadow: 0 0 18px rgba(0,212,255,0.12); }
+            50%      { box-shadow: 0 0 28px rgba(0,212,255,0.25), 0 0 40px rgba(0,212,255,0.08); }
+        }
+        /* Founder shimmer overlay */
+        .achievement.founded::before {
+            background: linear-gradient(
+                120deg,
+                transparent 20%,
+                rgba(0,212,255,0.15) 40%,
+                rgba(0,212,255,0.25) 50%,
+                rgba(0,212,255,0.15) 60%,
+                transparent 80%
+            );
+            animation: founderShimmer 4s ease-in-out infinite;
+        }
+        @keyframes founderShimmer {
+            0%   { transform: translateX(-150%); }
+            50%  { transform: translateX(150%); }
+            100% { transform: translateX(-150%); }
         }
         .achievement.unlocked:hover { border-color: rgba(34,197,94,0.55); }
-        .achievement.founded:hover  { border-color: rgba(0,212,255,0.6); box-shadow: 0 0 28px rgba(0,212,255,0.22); }
+        .achievement.founded:hover  {
+            border-color: rgba(0,212,255,0.6);
+            box-shadow: 0 0 32px rgba(0,212,255,0.3), 0 8px 24px rgba(0,0,0,0.4);
+        }
 
         .ach-header {
             display: flex;
             align-items: flex-start;
             gap: 10px;
-            margin-left: 8px; /* room for stripe */
+            margin-left: 8px;
         }
         .ach-icon {
             width: 34px; height: 34px;
@@ -450,6 +534,7 @@
         .badge-earned  { background: rgba(34,197,94,0.15); color: var(--green); border: 1px solid rgba(34,197,94,0.3); }
         .badge-founder { background: rgba(0,212,255,0.15); color: var(--cyan); border: 1px solid rgba(0,212,255,0.3); }
         .badge-locked  { background: rgba(100,100,120,0.15); color: var(--muted); border: 1px solid var(--border); }
+        .badge-rarity  { background: rgba(245,197,24,0.15); color: var(--gold); border: 1px solid rgba(245,197,24,0.3); }
 
         .ach-desc {
             font-size: 0.9rem;
@@ -546,7 +631,7 @@
     <div class="loading-bar-wrap">
         <div class="loading-bar-fill" id="loadingBarFill"></div>
     </div>
-    <div id="loadingStatus">Initialising…</div>
+    <div id="loadingStatus">Initializing…</div>
 </div>
 
 <!-- MAIN APP (hidden until loaded) -->
@@ -566,6 +651,7 @@
             <div class="input-wrap">
                 <span class="icon">⌕</span>
                 <input id="userIdInput" type="text" placeholder="Enter username or ID…" autocomplete="off" spellcheck="false">
+                <div id="autocomplete"></div>
             </div>
             <button class="btn btn-primary" id="loadBtn">Search</button>
             <button class="btn btn-ghost" id="showAllBtn">All</button>
@@ -586,12 +672,16 @@
     <!-- TABS -->
     <div class="tabs-wrap">
         <div class="tabs-header" id="tabsHeader"><!-- built by JS --></div>
-        <div class="filter-row" id="filterRow">
-            <span class="filter-label">SHOW:</span>
+        <div class="controls-row" id="controlsRow">
+            <span class="control-label">SHOW:</span>
             <button class="filter-chip active" data-filter="all">All</button>
             <button class="filter-chip" data-filter="unlocked">Earned</button>
             <button class="filter-chip" data-filter="locked">Locked</button>
             <button class="filter-chip" data-filter="founder">Founder</button>
+            <span class="control-label" style="margin-left: 8px;">SORT:</span>
+            <select class="sort-select" id="sortSelect">
+                <!-- options built by JS based on context -->
+            </select>
         </div>
         <div id="statusBar"></div>
     </div>
@@ -606,17 +696,19 @@
 <div id="toast"></div>
 
 <script>
-// ── CONFIG ──────────────────────────────────────────────────────────────
+// ── CONFIG ────────────────────────────────────────────────────────────
 const BASE_URL = 'https://raw.githubusercontent.com/TheDogVT/Achievements/main';
 
 // ── DATA ──────────────────────────────────────────────────────────────
 let achData      = {};   // loaded from achievements.json
-let foundersData = {};   // loaded from founders.json
+let foundersData = {};   // derived from user files after load
 let usernameMap  = {};   // loaded from username_map.json
 let allUserData  = {};   // loaded from users/*.json
+let rarityData   = {};   // computed: { achId: percentage }
 let currentUserId   = null;
 let currentCategory = 'all';
 let currentFilter   = 'all';
+let currentSort     = 'recent'; // changes based on context
 
 // ── LOADING ───────────────────────────────────────────────────────────
 function setLoadProgress(pct, msg) {
@@ -627,20 +719,17 @@ function setLoadProgress(pct, msg) {
 async function loadAllData() {
     // 1. Core JSON files in parallel
     setLoadProgress(5, 'Loading achievements…');
-    const [achRes, foundersRes, mapRes] = await Promise.all([
+    const [achRes, mapRes] = await Promise.all([
         fetch(`${BASE_URL}/achievements.json`),
-        fetch(`${BASE_URL}/founders.json`),
         fetch(`${BASE_URL}/username_map.json`),
     ]);
-    achData      = await achRes.json();
-    foundersData = foundersRes.ok ? await foundersRes.json() : {};
-    usernameMap  = mapRes.ok      ? await mapRes.json()      : {};
+    achData     = await achRes.json();
+    usernameMap = mapRes.ok ? await mapRes.json() : {};
 
     setLoadProgress(20, 'Loading user data…');
 
-    // 2. Fetch all user files concurrently (batch to avoid overwhelming the browser)
-    const userIds    = Object.values(usernameMap);
-    const uniqueIds  = [...new Set(userIds)];
+    // 2. Fetch all user files concurrently in batches
+    const uniqueIds  = [...new Set(Object.values(usernameMap))];
     const BATCH_SIZE = 50;
     let loaded = 0;
 
@@ -650,17 +739,52 @@ async function loadAllData() {
             try {
                 const res = await fetch(`${BASE_URL}/users/${id}.json`);
                 if (res.ok) allUserData[id] = await res.json();
-            } catch (_) { /* user file doesn't exist yet, skip */ }
+            } catch (_) { /* no file yet for this user, skip */ }
             loaded++;
         }));
-        const pct = 20 + Math.round((loaded / uniqueIds.length) * 75);
+        const pct = 20 + Math.round((loaded / uniqueIds.length) * 70);
         setLoadProgress(pct, `Loading users… ${loaded} / ${uniqueIds.length}`);
     }
 
-    setLoadProgress(100, 'Done!');
-    await new Promise(r => setTimeout(r, 300)); // brief pause to show 100%
+    // 3. Derive foundersData from user files
+    setLoadProgress(92, 'Building founder data…');
+    for (const [userId, userData] of Object.entries(allUserData)) {
+        const founded = userData?.achievements?.founded || {};
+        for (const [achId, timestamp] of Object.entries(founded)) {
+            const existing = foundersData[achId];
+            if (!existing || timestamp < existing.founded_at) {
+                foundersData[achId] = {
+                    founder_id:   userId,
+                    founder_name: userData.username || userId,
+                    founded_at:   timestamp,
+                };
+            }
+        }
+    }
 
-    // 3. Reveal app
+    // 4. Compute rarity percentages
+    setLoadProgress(96, 'Computing rarity…');
+    const totalUsers = Object.keys(allUserData).length;
+    const achCounts  = {}; // { achId: count of users who have it }
+
+    for (const userData of Object.values(allUserData)) {
+        const earned  = Object.keys(userData?.achievements?.earned  || {});
+        const founded = Object.keys(userData?.achievements?.founded || {});
+        const all = new Set([...earned, ...founded]);
+        for (const achId of all) {
+            achCounts[achId] = (achCounts[achId] || 0) + 1;
+        }
+    }
+
+    for (const achId of Object.keys(achCounts)) {
+        const count = achCounts[achId];
+        rarityData[achId] = totalUsers > 0 ? ((count / totalUsers) * 100) : 0;
+    }
+
+    setLoadProgress(100, 'Done!');
+    await new Promise(r => setTimeout(r, 300));
+
+    // 5. Reveal app
     const screen = document.getElementById('loadingScreen');
     screen.classList.add('fade-out');
     setTimeout(() => screen.remove(), 400);
@@ -715,16 +839,60 @@ function makeTabBtn(cat, icon, label) {
 }
 
 function updateTabBadges() {
+    const userData = currentUserId ? allUserData[currentUserId] : null;
     const allCats = ['all', ...Object.keys(achData)];
+
     for (const cat of allCats) {
         const badge = document.getElementById(`badge-${cat}`);
         if (!badge) continue;
-        if (cat === 'all') {
-            badge.textContent = Object.values(achData).reduce((s, v) => s + Object.keys(v).length, 0);
+
+        if (!userData) {
+            // No user loaded: show total count for each category
+            if (cat === 'all') {
+                badge.textContent = Object.values(achData).reduce((s, v) => s + Object.keys(v).length, 0);
+            } else {
+                badge.textContent = Object.keys(achData[cat] || {}).length;
+            }
         } else {
-            badge.textContent = Object.keys(achData[cat] || {}).length;
+            // User loaded: show how many they have in each category
+            const earned  = userData.achievements?.earned  || {};
+            const founded = userData.achievements?.founded || {};
+            const userAchs = new Set([...Object.keys(earned), ...Object.keys(founded)]);
+
+            if (cat === 'all') {
+                badge.textContent = userAchs.size;
+            } else {
+                const catAchs = Object.keys(achData[cat] || {});
+                const count = catAchs.filter(id => userAchs.has(id)).length;
+                badge.textContent = count;
+            }
         }
     }
+}
+
+// ── BUILD SORT DROPDOWN ───────────────────────────────────────────────
+function buildSortOptions() {
+    const select = document.getElementById('sortSelect');
+    select.innerHTML = '';
+
+    if (!currentUserId) {
+        // No user loaded
+        select.innerHTML = `
+            <option value="name">Name (A-Z)</option>
+            <option value="rarity">Rarity (Rarest first)</option>
+            <option value="founded">Most recently founded</option>
+        `;
+        currentSort = 'name';
+    } else {
+        // User loaded
+        select.innerHTML = `
+            <option value="recent">Most recently unlocked</option>
+            <option value="rarity">Rarity (Rarest first)</option>
+            <option value="name">Name (A-Z)</option>
+        `;
+        currentSort = 'recent';
+    }
+    select.value = currentSort;
 }
 
 // ── RENDER ────────────────────────────────────────────────────────────
@@ -737,71 +905,91 @@ function renderAchievements() {
         ? Object.keys(achData)
         : [currentCategory];
 
-    let items = [];
-    let count = 0;
+    let items = []; // { id, ach, isEarned, isFounder, earnedTs, rarity }
 
     for (const cat of catsToShow) {
         for (const [id, ach] of Object.entries(achData[cat] || {})) {
             const earnedTs  = userData?.achievements?.earned?.[id];
             const foundedTs = userData?.achievements?.founded?.[id];
-
-            const earnedTime  = earnedTs  ? new Date(earnedTs).getTime() : 0;
-            const foundedTime = foundedTs ? new Date(foundedTs).getTime() : 0;
-            const ts          = Math.max(earnedTime, foundedTime);
-
             const isEarned  = !!(earnedTs || foundedTs);
             const isFounder = !!foundedTs;
+            const rarity    = rarityData[id] || 0;
 
+            // Filter
             if (currentFilter === 'all'      && userData && !isEarned) continue;
             if (currentFilter === 'unlocked' && (!isEarned || isFounder)) continue;
             if (currentFilter === 'locked'   && isEarned) continue;
             if (currentFilter === 'founder'  && !isFounder) continue;
 
-            const card = buildCard(id, ach, isEarned, isFounder, earnedTs || foundedTs);
-            items.push({ card, ts });
-            count++;
+            items.push({
+                id, ach, cat, isEarned, isFounder,
+                earnedTs: earnedTs || foundedTs,
+                rarity,
+            });
         }
     }
 
-    // newest first when viewing a user
-    if (userData) {
-        items.sort((a, b) => b.ts - a.ts);
+    // Sort
+    if (currentSort === 'name') {
+        items.sort((a, b) => a.ach.name.localeCompare(b.ach.name));
+    } else if (currentSort === 'rarity') {
+        items.sort((a, b) => a.rarity - b.rarity); // rarest first (lowest %)
+    } else if (currentSort === 'recent') {
+        items.sort((a, b) => {
+            if (!a.earnedTs) return 1;
+            if (!b.earnedTs) return -1;
+            return new Date(b.earnedTs) - new Date(a.earnedTs);
+        });
+    } else if (currentSort === 'founded') {
+        items.sort((a, b) => {
+            const aFounder = foundersData[a.id];
+            const bFounder = foundersData[b.id];
+            if (!aFounder) return 1;
+            if (!bFounder) return -1;
+            return new Date(bFounder.founded_at) - new Date(aFounder.founded_at);
+        });
     }
 
-    // render with stagger
-    let delay = 0;
-    for (const item of items) {
-        item.card.style.animationDelay = `${delay * 30}ms`;
-        container.appendChild(item.card);
-        delay++;
-    }
+    // Render cards
+    items.forEach((item, idx) => {
+        const card = buildCard(item, userData);
+        card.style.animationDelay = `${idx * 20}ms`;
+        container.appendChild(card);
+    });
 
-    if (count === 0) {
+    if (items.length === 0) {
         const empty = document.createElement('div');
         empty.className = 'empty-state';
-        let msg = userData
+        const msg = userData
             ? 'No achievements match this filter.'
             : 'Search for a user to see their achievements, or switch filter to All.';
         empty.innerHTML = `<div class="icon">🎯</div><p>${msg}</p>`;
         container.appendChild(empty);
     }
 
-    updateStatus(count);
+    updateStatus(items.length);
 }
 
-function buildCard(id, ach, isEarned, isFounder, earnedTs) {
+function buildCard(item, userData) {
+    const { id, ach, cat, isEarned, isFounder, earnedTs, rarity } = item;
+
     const div = document.createElement('div');
     div.className = 'achievement' +
         (isFounder ? ' founded' : isEarned ? ' unlocked' : '');
 
-    const catForIcon = Object.keys(achData).find(c => achData[c][id]) || '';
-    const icon = CAT_ICONS[catForIcon] || '🔹';
+    const icon = CAT_ICONS[cat] || '🔹';
 
     // Badges
     let badgeHTML = '';
     if (isFounder) badgeHTML += `<span class="ach-badge badge-founder">FOUNDER</span>`;
     if (isEarned && !isFounder) badgeHTML += `<span class="ach-badge badge-earned">EARNED</span>`;
     if (!isEarned) badgeHTML += `<span class="ach-badge badge-locked">LOCKED</span>`;
+    
+    // Rarity badge (only if user is loaded)
+    if (userData && isEarned && rarity > 0) {
+        const pct = rarity.toFixed(1);
+        badgeHTML += `<span class="ach-badge badge-rarity">Top ${pct}%</span>`;
+    }
 
     // Date meta
     let metaHTML = '';
@@ -815,9 +1003,14 @@ function buildCard(id, ach, isEarned, isFounder, earnedTs) {
         const label    = isFounder ? 'Founded' : 'Unlocked';
         metaHTML += `<div class="ach-meta-row"><span class="dot ${dotClass}"></span>${label}: ${formatted}</div>`;
     }
+
+    // "First:" line — only if founder exists AND it's NOT this user
     if (foundersData[id]) {
-        const fn = foundersData[id].founder_name;
-        metaHTML += `<div class="ach-meta-row"><span class="dot dot-cyan"></span>First: ${fn}</div>`;
+        const founderUserId = foundersData[id].founder_id;
+        const founderName   = foundersData[id].founder_name;
+        if (!userData || currentUserId !== founderUserId) {
+            metaHTML += `<div class="ach-meta-row"><span class="dot dot-cyan"></span>First: ${founderName}</div>`;
+        }
     }
 
     div.innerHTML = `
@@ -885,8 +1078,10 @@ function loadUser(usernameOrId) {
     currentUserId = userId;
     currentFilter = 'all';
     updateFilterChips();
-    document.getElementById('filterRow').classList.add('visible');
+    buildSortOptions();
+    document.getElementById('controlsRow').classList.add('visible');
     showProfile(userId);
+    updateTabBadges();
     renderAchievements();
 }
 
@@ -901,11 +1096,12 @@ function updateFilterChips() {
 async function initPage() {
     // All data is pre-loaded by loadAllData() before this runs
     buildTabs(Object.keys(achData));
+    buildSortOptions();
 
     // URL param
     const userParam = new URLSearchParams(window.location.search).get('user');
     if (userParam) {
-        await loadUser(userParam);
+        loadUser(userParam);
     } else {
         currentFilter = 'all';
         updateFilterChips();
@@ -913,16 +1109,135 @@ async function initPage() {
     }
 }
 
+// ── AUTOCOMPLETE ──────────────────────────────────────────────────────
+let autocompleteIndex = -1;
+let autocompleteMatches = [];
+
+function updateAutocomplete(query) {
+    const dropdown = document.getElementById('autocomplete');
+    
+    if (!query || query.length < 2) {
+        dropdown.classList.remove('visible');
+        autocompleteMatches = [];
+        return;
+    }
+
+    // Search usernames (case-insensitive)
+    const lowerQuery = query.toLowerCase();
+    const matches = Object.entries(usernameMap)
+        .filter(([username, id]) => 
+            username.toLowerCase().includes(lowerQuery) || 
+            id.includes(query)
+        )
+        .slice(0, 10); // limit to 10 results
+
+    autocompleteMatches = matches;
+    autocompleteIndex = -1;
+
+    if (matches.length === 0) {
+        dropdown.innerHTML = '<div class="autocomplete-empty">No users found</div>';
+        dropdown.classList.add('visible');
+        return;
+    }
+
+    dropdown.innerHTML = matches.map(([username, id], idx) => {
+        const highlight = username.toLowerCase().indexOf(lowerQuery);
+        let displayName = username;
+        
+        if (highlight >= 0) {
+            const before = username.slice(0, highlight);
+            const match = username.slice(highlight, highlight + query.length);
+            const after = username.slice(highlight + query.length);
+            displayName = `${before}<strong>${match}</strong>${after}`;
+        }
+        
+        return `
+            <div class="autocomplete-item" data-index="${idx}">
+                <span class="username">${displayName}</span>
+                <span class="id">${id}</span>
+            </div>
+        `;
+    }).join('');
+
+    dropdown.classList.add('visible');
+}
+
+function selectAutocompleteItem(index) {
+    if (index < 0 || index >= autocompleteMatches.length) return;
+    const [username] = autocompleteMatches[index];
+    document.getElementById('userIdInput').value = username;
+    document.getElementById('autocomplete').classList.remove('visible');
+    loadUser(username);
+}
+
+function highlightAutocompleteItem(index) {
+    const items = document.querySelectorAll('.autocomplete-item');
+    items.forEach((item, idx) => {
+        item.classList.toggle('selected', idx === index);
+    });
+    
+    // Scroll into view if needed
+    if (index >= 0 && items[index]) {
+        items[index].scrollIntoView({ block: 'nearest' });
+    }
+}
+
 // ── EVENTS ────────────────────────────────────────────────────────────
 document.getElementById('loadBtn').addEventListener('click', () => {
     const v = document.getElementById('userIdInput').value.trim();
-    if (v) loadUser(v);
+    if (v) {
+        document.getElementById('autocomplete').classList.remove('visible');
+        loadUser(v);
+    }
+});
+
+document.getElementById('userIdInput').addEventListener('input', e => {
+    updateAutocomplete(e.target.value);
 });
 
 document.getElementById('userIdInput').addEventListener('keydown', e => {
-    if (e.key === 'Enter') {
-        const v = e.target.value.trim();
-        if (v) loadUser(v);
+    const dropdown = document.getElementById('autocomplete');
+    const isOpen = dropdown.classList.contains('visible');
+
+    if (e.key === 'ArrowDown' && isOpen) {
+        e.preventDefault();
+        autocompleteIndex = Math.min(autocompleteIndex + 1, autocompleteMatches.length - 1);
+        highlightAutocompleteItem(autocompleteIndex);
+    } else if (e.key === 'ArrowUp' && isOpen) {
+        e.preventDefault();
+        autocompleteIndex = Math.max(autocompleteIndex - 1, -1);
+        highlightAutocompleteItem(autocompleteIndex);
+    } else if (e.key === 'Enter') {
+        e.preventDefault();
+        if (isOpen && autocompleteIndex >= 0) {
+            selectAutocompleteItem(autocompleteIndex);
+        } else {
+            const v = e.target.value.trim();
+            if (v) {
+                dropdown.classList.remove('visible');
+                loadUser(v);
+            }
+        }
+    } else if (e.key === 'Escape' && isOpen) {
+        dropdown.classList.remove('visible');
+    }
+});
+
+// Click on autocomplete item
+document.getElementById('autocomplete').addEventListener('click', e => {
+    const item = e.target.closest('.autocomplete-item');
+    if (item) {
+        const index = parseInt(item.dataset.index);
+        selectAutocompleteItem(index);
+    }
+});
+
+// Close autocomplete when clicking outside
+document.addEventListener('click', e => {
+    const input = document.getElementById('userIdInput');
+    const dropdown = document.getElementById('autocomplete');
+    if (!input.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.classList.remove('visible');
     }
 });
 
@@ -930,9 +1245,12 @@ document.getElementById('showAllBtn').addEventListener('click', () => {
     currentUserId = null;
     currentFilter = 'all';
     updateFilterChips();
+    buildSortOptions();
     hideProfile();
-    document.getElementById('filterRow').classList.remove('visible');
+    document.getElementById('controlsRow').classList.remove('visible');
     document.getElementById('userIdInput').value = '';
+    document.getElementById('autocomplete').classList.remove('visible');
+    updateTabBadges();
     renderAchievements();
 });
 
@@ -940,17 +1258,25 @@ document.getElementById('clearBtn').addEventListener('click', () => {
     currentUserId = null;
     currentFilter = 'all';
     updateFilterChips();
+    buildSortOptions();
     hideProfile();
-    document.getElementById('filterRow').classList.remove('visible');
+    document.getElementById('controlsRow').classList.remove('visible');
     document.getElementById('userIdInput').value = '';
+    document.getElementById('autocomplete').classList.remove('visible');
+    updateTabBadges();
     renderAchievements();
 });
 
-document.getElementById('filterRow').addEventListener('click', e => {
+document.getElementById('controlsRow').addEventListener('click', e => {
     const chip = e.target.closest('.filter-chip');
     if (!chip) return;
     currentFilter = chip.dataset.filter;
     updateFilterChips();
+    renderAchievements();
+});
+
+document.getElementById('sortSelect').addEventListener('change', e => {
+    currentSort = e.target.value;
     renderAchievements();
 });
 
