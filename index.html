@@ -1009,7 +1009,7 @@ function buildCard(item, userData) {
         const founderUserId = foundersData[id].founder_id;
         const founderName   = foundersData[id].founder_name;
         if (!userData || currentUserId !== founderUserId) {
-            metaHTML += `<div class="ach-meta-row"><span class="dot dot-cyan"></span>First: ${founderName}</div>`;
+            metaHTML += `<div class="ach-meta-row"><span class="dot dot-cyan"></span>Founder: ${founderName}</div>`;
         }
     }
 
