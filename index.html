@@ -87,6 +87,11 @@
             z-index: 0;
             pointer-events: none;
         }
+        body.star-game-active #constellation {
+            pointer-events: auto;
+            cursor: crosshair;
+            z-index: 10;
+        }
 
         .page-wrap {
             position: relative;
@@ -128,6 +133,196 @@
             color: var(--muted);
             font-size: 1rem;
             font-weight: 500;
+        }
+
+        /* ── LEADERBOARD ── */
+        .leaderboard {
+            background: rgba(37, 36, 36, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 20px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        .leaderboard-timer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: rgba(198, 232, 232, 0.15);
+            border-radius: 14px 14px 0 0;
+            overflow: hidden;
+            display: none;
+        }
+        .leaderboard-timer-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--cyan), var(--cyan-bright));
+            width: 100%;
+            transition: width 5s linear;
+            box-shadow: 0 0 8px rgba(198, 232, 232, 0.6);
+        }
+        .leaderboard.auto-collapsing .leaderboard-timer-fill {
+            width: 0%;
+        }
+        .leaderboard-timer-label {
+            position: absolute;
+            top: -18px;
+            right: 20px;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.6rem;
+            color: rgba(198, 232, 232, 0.4);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            display: none;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .leaderboard-timer-label:hover {
+            color: rgba(198, 232, 232, 0.7);
+        }
+        .leaderboard.auto-collapsing .leaderboard-timer-label {
+            display: block;
+        }
+        .leaderboard-keep-open {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            color: var(--muted);
+            cursor: pointer;
+            margin-left: 8px;
+            transition: color 0.2s;
+        }
+        .leaderboard-keep-open:hover {
+            color: var(--cyan);
+        }
+        .leaderboard-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+            padding-bottom: 16px;
+            transition: all 0.2s;
+        }
+        .leaderboard-header:hover {
+            color: var(--cyan-bright);
+        }
+        .leaderboard.collapsed .leaderboard-header {
+            padding-bottom: 0;
+        }
+        .leaderboard-title {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            color: var(--cyan);
+            text-transform: uppercase;
+            text-shadow: 0 0 8px rgba(198, 232, 232, 0.4);
+        }
+        .leaderboard-toggle {
+            font-size: 0.8rem;
+            transition: transform 0.3s;
+        }
+        .leaderboard.collapsed .leaderboard-toggle {
+            transform: rotate(180deg);
+        }
+        .leaderboard-content {
+            max-height: 1000px;
+            overflow: hidden;
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+            opacity: 1;
+        }
+        .leaderboard.collapsed .leaderboard-content {
+            max-height: 0;
+            opacity: 0;
+        }
+        .leaderboard-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+        .leaderboard-column {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .leaderboard-category {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--cyan-bright);
+            text-align: center;
+            margin-bottom: 4px;
+            letter-spacing: 0.05em;
+        }
+        .leaderboard-item {
+            background: rgba(45, 44, 44, 0.6);
+            border: 1px solid rgba(198, 232, 232, 0.15);
+            border-radius: 8px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+        .leaderboard-item:hover {
+            background: rgba(198, 232, 232, 0.08);
+            border-color: rgba(198, 232, 232, 0.3);
+            transform: translateY(-1px);
+        }
+        .leaderboard-user {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .leaderboard-user:hover {
+            opacity: 0.8;
+        }
+        .leaderboard-avatar {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--cyan), var(--cyan-dim));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #1B1A1A;
+            flex-shrink: 0;
+            box-shadow: 0 0 8px rgba(198, 232, 232, 0.3);
+        }
+        .leaderboard-username {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex: 1;
+        }
+        .leaderboard-ach-name {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--cyan);
+            line-height: 1.2;
+        }
+        .leaderboard-ach-desc {
+            font-size: 0.65rem;
+            color: var(--muted);
+            line-height: 1.3;
+        }
+        .leaderboard-rarity {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.6rem;
+            color: #ffd700;
+            text-shadow: 0 0 4px rgba(255, 215, 0, 0.4);
+            margin-top: 2px;
+        }
+        @media (max-width: 768px) {
+            .leaderboard-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* ── SEARCH BAR ── */
@@ -323,6 +518,36 @@
             transition: color 0.15s;
         }
         .btn-clear:hover { color: var(--text); }
+        
+        .btn-claim {
+            padding: 6px 14px;
+            background: rgba(198, 232, 232, 0.15);
+            border: 1px solid var(--cyan);
+            border-radius: 6px;
+            color: var(--cyan);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+            box-shadow: 0 0 8px rgba(198, 232, 232, 0.2);
+        }
+        .btn-claim:hover {
+            background: rgba(198, 232, 232, 0.25);
+            box-shadow: 0 0 16px rgba(198, 232, 232, 0.4);
+            transform: translateY(-1px);
+        }
+        .btn-claim.claimed {
+            background: rgba(100, 100, 120, 0.1);
+            border-color: var(--muted);
+            color: var(--muted);
+            cursor: default;
+            box-shadow: none;
+        }
+        .btn-claim.claimed:hover {
+            transform: none;
+        }
 
         /* ── TABS ── */
         .tabs-wrap {
@@ -445,6 +670,8 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
             gap: 14px;
+            grid-auto-rows: minmax(auto, auto);
+            align-items: start;
         }
 
         /* ── ACHIEVEMENT CARD ── */
@@ -459,6 +686,8 @@
             transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
             cursor: default;
             animation: cardIn 0.25s ease both;
+            display: flex;
+            flex-direction: column;
         }
         @keyframes cardIn {
             from { opacity: 0; transform: translateY(8px); }
@@ -696,6 +925,11 @@
             line-height: 1.5;
             font-weight: 500;
         }
+        
+        /* Spacer to push expand button to bottom */
+        .ach-spacer {
+            flex: 1;
+        }
 
         .ach-meta {
             margin-top: 12px;
@@ -722,6 +956,99 @@
         .dot-cyan  { background: var(--cyan); box-shadow: 0 0 4px rgba(198, 232, 232, 0.6); }
         .dot-bright { background: var(--cyan-bright); box-shadow: 0 0 6px rgba(224, 245, 245, 0.8); }
         .dot-gray  { background: rgba(198, 232, 232, 0.2); }
+
+        /* ── EXPANDABLE RECENT USERS ── */
+        .ach-expand-btn {
+            margin: 8px 0 0 0;
+            padding: 8px 0;
+            background: transparent;
+            border: none;
+            border-top: 1px solid rgba(198, 232, 232, 0.1);
+            color: var(--cyan);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .ach-expand-btn:hover {
+            color: var(--cyan-bright);
+        }
+        .ach-expand-btn .arrow {
+            transition: transform 0.2s;
+            font-size: 0.6rem;
+        }
+        .achievement.expanded .ach-expand-btn .arrow {
+            transform: rotate(180deg);
+        }
+        
+        .ach-recent-users {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            margin: 0 8px;
+        }
+        .achievement.expanded .ach-recent-users {
+            max-height: 300px;
+        }
+        .ach-recent-title {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--muted);
+            letter-spacing: 0.05em;
+            margin: 12px 0 8px 0;
+            text-transform: uppercase;
+        }
+        .recent-user-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 8px;
+            background: rgba(198, 232, 232, 0.05);
+            border-radius: 6px;
+            margin-bottom: 4px;
+            border: 1px solid rgba(198, 232, 232, 0.1);
+            transition: all 0.2s;
+        }
+        .recent-user-item:hover {
+            background: rgba(198, 232, 232, 0.1);
+            border-color: rgba(198, 232, 232, 0.2);
+        }
+        .recent-user-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--cyan), var(--cyan-dim));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #1B1A1A;
+            flex-shrink: 0;
+        }
+        .recent-user-info {
+            flex: 1;
+            min-width: 0;
+        }
+        .recent-user-name {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .recent-user-date {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.6rem;
+            color: var(--muted);
+        }
 
         /* ── EMPTY STATE ── */
         .empty-state {
@@ -766,6 +1093,385 @@
         }
         #toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
         #toast.error { border-color: #ff6b6b; color: #ff9999; }
+        #toast.founder-toast {
+            border-color: #19D0EA;
+            color: #19D0EA;
+            box-shadow: 0 0 24px rgba(25, 208, 234, 0.5), 0 4px 24px rgba(0,0,0,0.6);
+            animation: founderToastGlow 2s ease-in-out infinite;
+        }
+        @keyframes founderToastGlow {
+            0%, 100% { box-shadow: 0 0 24px rgba(25, 208, 234, 0.5), 0 4px 24px rgba(0,0,0,0.6); }
+            50%      { box-shadow: 0 0 36px rgba(25, 208, 234, 0.8), 0 4px 24px rgba(0,0,0,0.6); }
+        }
+
+        /* ── STAR GAME BUTTON ── */
+        .star-game-btn {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: rgba(27, 26, 26, 0.9);
+            border: 2px solid var(--cyan);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 99;
+            transition: all 0.3s;
+            box-shadow: 0 0 20px rgba(198, 232, 232, 0.4), 0 4px 12px rgba(0,0,0,0.5);
+        }
+        .star-game-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(198, 232, 232, 0.6), 0 4px 12px rgba(0,0,0,0.5);
+        }
+        .star-game-btn svg {
+            width: 28px;
+            height: 28px;
+        }
+        
+        /* Game mode - hide UI */
+        body.star-game-active #appContent,
+        body.star-game-active #toast {
+            opacity: 0;
+            pointer-events: none;
+        }
+        body.star-game-active .star-game-btn {
+            background: rgba(27, 26, 26, 0.95);
+            border-color: #ff6b6b;
+        }
+        
+        /* Star game score display */
+        .star-game-score {
+            position: fixed;
+            top: 28px;
+            right: 28px;
+            background: rgba(27, 26, 26, 0.95);
+            border: 2px solid var(--cyan);
+            border-radius: 12px;
+            padding: 16px 24px;
+            font-family: 'Space Mono', monospace;
+            color: var(--cyan);
+            z-index: 99;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            box-shadow: 0 0 20px rgba(198, 232, 232, 0.4);
+        }
+        body.star-game-active .star-game-score {
+            opacity: 1;
+        }
+        .star-game-score .score {
+            font-size: 2rem;
+            font-weight: 700;
+            text-shadow: 0 0 8px rgba(198, 232, 232, 0.6);
+            transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .star-game-score .score.pop {
+            transform: scale(1.3);
+        }
+        .star-game-score .label {
+            font-size: 0.7rem;
+            color: var(--muted);
+            margin-top: 4px;
+            transition: color 0.3s;
+        }
+        .star-game-score .label.danger {
+            color: #ff6b6b;
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        .star-game-score .record {
+            font-size: 0.65rem;
+            color: var(--gold);
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid var(--border);
+        }
+        
+        /* Game Over Modal */
+        .game-over-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(27, 26, 26, 0.95);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+        }
+        .game-over-modal.visible {
+            display: flex;
+        }
+        .game-over-content {
+            background: rgba(37, 36, 36, 0.95);
+            border: 2px solid var(--cyan);
+            border-radius: 16px;
+            padding: 32px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 0 40px rgba(198, 232, 232, 0.6);
+            font-family: 'Space Mono', monospace;
+            text-align: center;
+        }
+        .game-over-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--cyan);
+            margin-bottom: 16px;
+            text-shadow: 0 0 12px rgba(198, 232, 232, 0.6);
+        }
+        .game-over-score {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--cyan-bright);
+            margin: 12px 0;
+            text-shadow: 0 0 16px rgba(198, 232, 232, 0.8);
+        }
+        .game-over-label {
+            font-size: 0.7rem;
+            color: var(--muted);
+            letter-spacing: 0.15em;
+            margin-bottom: 24px;
+        }
+        .game-over-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin: 24px 0;
+            padding: 20px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        @media (max-width: 600px) {
+            .game-over-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .game-over-stat {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--cyan);
+        }
+        .stat-label {
+            font-size: 0.7rem;
+            color: var(--text);
+            font-weight: 600;
+        }
+        .stat-subtext {
+            font-size: 0.6rem;
+            color: var(--muted);
+        }
+        .game-over-record {
+            font-size: 0.85rem;
+            color: var(--gold);
+            margin: 16px 0;
+            min-height: 20px;
+        }
+        .game-over-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+        }
+        .game-over-btn {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            letter-spacing: 0.05em;
+        }
+        .game-over-btn-primary {
+            background: var(--cyan);
+            color: #1B1A1A;
+            box-shadow: 0 0 16px rgba(198, 232, 232, 0.4);
+        }
+        .game-over-btn-primary:hover {
+            background: var(--cyan-bright);
+            box-shadow: 0 0 24px rgba(198, 232, 232, 0.6);
+            transform: translateY(-2px);
+        }
+        .game-over-btn-secondary {
+            background: transparent;
+            color: var(--muted);
+            border: 1px solid var(--border);
+        }
+        .game-over-btn-secondary:hover {
+            color: var(--text);
+            border-color: var(--cyan);
+        }
+        .game-over-warning {
+            font-size: 0.6rem;
+            color: rgba(198, 232, 232, 0.3);
+            margin-top: 20px;
+            font-style: italic;
+        }
+        
+        /* Cheat Warning Modal */
+        .cheat-warning-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(27, 26, 26, 0.98);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 101;
+            backdrop-filter: blur(10px);
+        }
+        .cheat-warning-modal.visible {
+            display: flex;
+        }
+        .cheat-warning-content {
+            background: rgba(37, 36, 36, 0.95);
+            border: 2px solid #ff6b6b;
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 0 40px rgba(255, 107, 107, 0.5);
+            font-family: 'Space Mono', monospace;
+            text-align: center;
+        }
+        .cheat-warning-emoji {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        .cheat-warning-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ff6b6b;
+            margin-bottom: 16px;
+        }
+        .cheat-warning-text {
+            font-size: 1rem;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+        .cheat-warning-subtext {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-bottom: 24px;
+        }
+        
+        /* Mode Select Modal */
+        .mode-select-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(27, 26, 26, 0.98);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 102;
+            backdrop-filter: blur(10px);
+        }
+        .mode-select-modal.visible {
+            display: flex;
+        }
+        .mode-select-content {
+            background: rgba(37, 36, 36, 0.95);
+            border: 2px solid var(--cyan);
+            border-radius: 16px;
+            padding: 32px;
+            max-width: 700px;
+            width: 95%;
+            box-shadow: 0 0 40px rgba(198, 232, 232, 0.6);
+        }
+        .mode-select-title {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--cyan);
+            text-align: center;
+            margin-bottom: 24px;
+            text-shadow: 0 0 12px rgba(198, 232, 232, 0.6);
+        }
+        .mode-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 600px) {
+            .mode-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .mode-card {
+            position: relative;
+            background: rgba(45, 44, 44, 0.8);
+            border: 2px solid rgba(198, 232, 232, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        .mode-card:hover:not(.locked) {
+            border-color: var(--cyan);
+            background: rgba(45, 44, 44, 1);
+            transform: translateY(-4px);
+            box-shadow: 0 0 20px rgba(198, 232, 232, 0.4);
+        }
+        .mode-card.locked {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .mode-lock {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            font-size: 1.2rem;
+        }
+        .mode-icon {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+        .mode-name {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--cyan);
+            margin-bottom: 8px;
+        }
+        .mode-desc {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+        .mode-unlock {
+            font-size: 0.65rem;
+            color: var(--muted);
+            font-style: italic;
+        }
+        .mode-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px;
+            background: rgba(198, 232, 232, 0.1);
+            border-radius: 8px;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--muted);
+        }
+        .mode-info-icon {
+            font-size: 1rem;
+        }
 
         /* ── MOBILE ── */
         @media (max-width: 520px) {
@@ -798,8 +1504,25 @@
     <header>
         <div class="eyebrow">⬡ Cosmic Playground</div>
         <h1>Achievements</h1>
-        <p class="subtitle">Track your progress across time.</p>
+        <p class="subtitle">Track your progress across time</p>
     </header>
+
+    <!-- LEADERBOARD -->
+    <div class="leaderboard" id="leaderboard">
+        <div class="leaderboard-timer-label" id="leaderboardTimerLabel">Keep Open</div>
+        <div class="leaderboard-timer" id="leaderboardTimer">
+            <div class="leaderboard-timer-fill" id="leaderboardTimerFill"></div>
+        </div>
+        <div class="leaderboard-header" id="leaderboardHeader">
+            <div class="leaderboard-title">⭐ Top Achievers ⭐</div>
+            <div class="leaderboard-toggle">▼</div>
+        </div>
+        <div class="leaderboard-content">
+            <div class="leaderboard-grid" id="leaderboardGrid">
+                <!-- Built by JS -->
+            </div>
+        </div>
+    </div>
 
     <!-- SEARCH -->
     <div class="search-card">
@@ -821,6 +1544,7 @@
                     <div class="progress-bar-fill" id="progressFill" style="width:0%"></div>
                 </div>
             </div>
+            <button class="btn-claim" id="claimBtn" title="Save as my profile">This is me!</button>
             <button class="btn-clear" id="clearBtn" title="Clear user">✕</button>
         </div>
     </div>
@@ -834,7 +1558,6 @@
             <span class="control-label">SHOW:</span>
             <button class="filter-chip active" data-filter="all">All</button>
             <button class="filter-chip" data-filter="unlocked">Earned</button>
-            <button class="filter-chip" data-filter="locked">Locked</button>
             <button class="filter-chip" data-filter="founder">Founder</button>
         </div>
         
@@ -858,12 +1581,142 @@
 <!-- TOAST -->
 <div id="toast"></div>
 
+<!-- STAR GAME BUTTON -->
+<button class="star-game-btn" id="starGameBtn" title="Star Hunt Game">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9" fill="rgba(198, 232, 232, 0.2)" stroke="#C6E8E8"/>
+    </svg>
+</button>
+
+<!-- STAR GAME SCORE -->
+<div class="star-game-score" id="starGameScore">
+    <div class="score" id="gameScore">0</div>
+    <div class="label">STARS COLLECTED</div>
+    <div class="record" id="gameRecord">Record: 0</div>
+</div>
+
+<!-- GAME OVER MODAL -->
+<div class="game-over-modal" id="gameOverModal">
+    <div class="game-over-content">
+        <div class="game-over-title">Game Over!</div>
+        <div class="game-over-score" id="gameOverScore">0</div>
+        <div class="game-over-label">FINAL SCORE</div>
+        
+        <div class="game-over-stats">
+            <div class="game-over-stat">
+                <div class="stat-value" id="statRegular">0</div>
+                <div class="stat-label">Standard Stars</div>
+                <div class="stat-subtext">1 pt each</div>
+            </div>
+            <div class="game-over-stat">
+                <div class="stat-value" id="statTwinkle">0</div>
+                <div class="stat-label">Twinkle Stars</div>
+                <div class="stat-subtext">2 pts each</div>
+            </div>
+            <div class="game-over-stat">
+                <div class="stat-value" id="statBonus">0</div>
+                <div class="stat-label">Bonus Stars</div>
+                <div class="stat-subtext">5 pts each</div>
+            </div>
+            <div class="game-over-stat">
+                <div class="stat-value" id="statComet">0</div>
+                <div class="stat-label">Comets</div>
+                <div class="stat-subtext">15 pts each</div>
+            </div>
+        </div>
+        
+        <div class="game-over-record" id="gameOverRecord"></div>
+        
+        <div class="game-over-buttons">
+            <button class="game-over-btn game-over-btn-primary" id="tryAgainBtn">Try Again</button>
+            <button class="game-over-btn game-over-btn-secondary" id="closeGameBtn">Close</button>
+        </div>
+        
+        <div class="game-over-warning">⚠ Game data stored locally in browser</div>
+    </div>
+</div>
+
+<!-- CHEAT WARNING MODAL -->
+<div class="cheat-warning-modal" id="cheatWarningModal">
+    <div class="cheat-warning-content">
+        <div class="cheat-warning-emoji">😔</div>
+        <div class="cheat-warning-title">Hey, not cool man :(</div>
+        <div class="cheat-warning-text">Don't use auto-clickers or macros!</div>
+        <div class="cheat-warning-subtext">Play fair and have fun 🌟</div>
+        <button class="game-over-btn game-over-btn-primary" id="cheatOkBtn">I'll play fair!</button>
+    </div>
+</div>
+
+<!-- MODE SELECT MODAL -->
+<div class="mode-select-modal" id="modeSelectModal">
+    <div class="mode-select-content">
+        <div class="mode-select-title">Select Game Mode</div>
+        
+        <div class="mode-grid">
+            <button class="mode-card" data-mode="normal">
+                <div class="mode-icon">⭐</div>
+                <div class="mode-name">Normal</div>
+                <div class="mode-desc">All star types, 60 seconds</div>
+            </button>
+            
+            <button class="mode-card" data-mode="twinkle" id="modeTwinkle">
+                <div class="mode-lock" id="lockTwinkle">🔒</div>
+                <div class="mode-icon">✨</div>
+                <div class="mode-name">Twinkle Twinkle</div>
+                <div class="mode-desc">Only cyan stars spawn</div>
+                <div class="mode-unlock">Unlock: Pop 20 bonus stars</div>
+            </button>
+            
+            <button class="mode-card" data-mode="comet" id="modeComet">
+                <div class="mode-lock" id="lockComet">🔒</div>
+                <div class="mode-icon">🌠</div>
+                <div class="mode-name">Comet Rush</div>
+                <div class="mode-desc">Comets everywhere!</div>
+                <div class="mode-unlock">Unlock: Catch 3 comets</div>
+            </button>
+            
+            <button class="mode-card" data-mode="starclear" id="modeStarclear">
+                <div class="mode-lock" id="lockStarclear">🔒</div>
+                <div class="mode-icon">🌌</div>
+                <div class="mode-name">Star Clear</div>
+                <div class="mode-desc">Clear TONS of stars!</div>
+                <div class="mode-unlock">Unlock: Pop 150 total stars</div>
+            </button>
+        </div>
+        
+        <div class="mode-info">
+            <span class="mode-info-icon">ℹ️</span>
+            <span class="mode-info-text">Complete challenges in Normal mode to unlock new modes!</span>
+        </div>
+    </div>
+</div>
+
 <script>
 // ── CONSTELLATION BACKGROUND ──────────────────────────────────────────
+const TWINKLING_STARS_COUNT = 30; // Adjust this to control how many twinkling stars
+
+// ── STAR GAME STATE ───────────────────────────────────────────────────
+let starGameActive = false;
+let starGameScore = 0;
+let starGameRecord = getCookie('starGameRecord') || 0;
+let fastTwinklers = []; // 5-point fast stars
+let starGameTimeLeft = 60; // 60 second timer
+let starGameTimerInterval = null;
+let starGameStats = { regular: 0, twinkle: 0, bonus: 0, comet: 0 }; // Track star types collected
+let particles = []; // Particle effects for star collection
+let clickTimes = []; // Track click timestamps for anti-cheat
+const MAX_CPS = 8; // Maximum clicks per second allowed (adjustable for testing)
+let shootingStar = null; // Shooting star object
+let shootingStarTimer = null; // Timer for spawning shooting stars
+let lastTickTime = 0; // Prevent tick from playing too frequently
+let gameMode = 'normal'; // Current game mode
+let lifetimeStats = getCookie('starGameLifetimeStats') || { bonusStars: 0, comets: 0, totalStars: 0 }; // Lifetime stats for unlocks
+
 const canvas = document.getElementById('constellation');
 const ctx = canvas.getContext('2d');
 
 let stars = [];
+let twinklingStars = [];
 let mouse = { x: null, y: null };
 let w, h;
 
@@ -873,7 +1726,13 @@ function initConstellation() {
     
     // Create stars
     stars = [];
-    const starCount = Math.floor((w * h) / 8000);
+    let starCount;
+    if (gameMode === 'starclear') {
+        starCount = Math.floor((w * h) / 2000); // 4x more stars in star clear mode!
+    } else {
+        starCount = Math.floor((w * h) / 8000);
+    }
+    
     for (let i = 0; i < starCount; i++) {
         stars.push({
             x: Math.random() * w,
@@ -884,6 +1743,37 @@ function initConstellation() {
             brightness: Math.random() * 0.5 + 0.5,
         });
     }
+    
+    // Initialize twinkling stars array
+    twinklingStars = [];
+}
+
+function spawnTwinklingStar() {
+    // Mode-specific spawning
+    if (gameMode === 'comet') return; // No twinkle stars in comet mode
+    if (gameMode === 'starclear') return; // No twinkle stars in star clear mode
+    
+    let isFast;
+    if (gameMode === 'twinkle') {
+        isFast = Math.random() < 0.3; // 30% chance in twinkle mode (more bonus stars)
+    } else {
+        isFast = Math.random() < 0.2; // 20% chance normally
+    }
+    
+    const lifetime = isFast ? 2.5 : (5 + Math.random() * 5); // Fast: 2.5s, Normal: 5-10s
+    const star = {
+        x: Math.random() * w,
+        y: Math.random() * h,
+        radius: isFast ? (Math.random() * 2.5 + 2) : (Math.random() * 2 + 1), // Fast stars bigger
+        lifetime: lifetime,
+        age: 0,
+        fadeIn: isFast ? 0.5 : 2, // Fast: 0.5s, Normal: 2s
+        fadeOut: isFast ? 0.5 : 2, // Fast: 0.5s, Normal: 2s
+        points: isFast ? 5 : 2,
+        isFast: isFast
+    };
+    twinklingStars.push(star);
+    if (isFast) fastTwinklers.push(star);
 }
 
 function drawConstellation() {
@@ -929,15 +1819,15 @@ function drawConstellation() {
                 ctx.stroke();
                 ctx.lineWidth = 0.5;
                 
-                // Pull star toward mouse gently
+                // Pull star toward mouse gently (1/10th original force)
                 const force = (1 - dist / 150) * 0.5;
-                star.vx += (mouse.x - star.x) * force * 0.0001;
-                star.vy += (mouse.y - star.y) * force * 0.0001;
+                star.vx += (mouse.x - star.x) * force * 0.00001;
+                star.vy += (mouse.y - star.y) * force * 0.00001;
             }
         }
     }
     
-    // Draw stars
+    // Draw permanent stars
     for (const star of stars) {
         // Update position
         star.x += star.vx;
@@ -971,6 +1861,73 @@ function drawConstellation() {
         ctx.fill();
     }
     
+    // Update and draw twinkling stars (only in game mode)
+    if (starGameActive) {
+        const dt = 1/60; // Assume 60fps
+        for (let i = twinklingStars.length - 1; i >= 0; i--) {
+            const star = twinklingStars[i];
+            star.age += dt;
+            
+            // Remove if expired
+            if (star.age >= star.lifetime) {
+                twinklingStars.splice(i, 1);
+                const fastIdx = fastTwinklers.indexOf(star);
+                if (fastIdx >= 0) fastTwinklers.splice(fastIdx, 1);
+                continue;
+            }
+            
+            // Calculate opacity based on age
+            let alpha = 1;
+            if (star.age < star.fadeIn) {
+                // Fading in
+                alpha = star.age / star.fadeIn;
+            } else if (star.age > star.lifetime - star.fadeOut) {
+                // Fading out
+                alpha = (star.lifetime - star.age) / star.fadeOut;
+            }
+            
+            // Draw twinkling star - bright cyan for fast stars, normal for regular
+            const glow = star.radius * 3;
+            const gradient = ctx.createRadialGradient(star.x, star.y, 0, star.x, star.y, glow);
+            
+            if (star.isFast) {
+                // Bright cyan for 5-point fast stars
+                gradient.addColorStop(0, `rgba(224, 245, 245, ${alpha})`);
+                gradient.addColorStop(0.5, `rgba(142, 216, 216, ${alpha * 0.7})`);
+                gradient.addColorStop(1, 'rgba(198, 232, 232, 0)');
+            } else {
+                // Normal color for 2-point stars
+                gradient.addColorStop(0, `rgba(224, 245, 245, ${alpha * 0.9})`);
+                gradient.addColorStop(0.5, `rgba(198, 232, 232, ${alpha * 0.5})`);
+                gradient.addColorStop(1, 'rgba(198, 232, 232, 0)');
+            }
+            
+            ctx.fillStyle = gradient;
+            ctx.fillRect(star.x - glow, star.y - glow, glow * 2, glow * 2);
+            
+            // Core - brighter for fast stars
+            if (star.isFast) {
+                ctx.fillStyle = `rgba(142, 216, 216, ${alpha})`;
+            } else {
+                ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+            }
+            ctx.beginPath();
+            ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+            ctx.fill();
+        }
+        
+        // Spawn new twinkling stars to maintain count (only in game mode)
+        if (twinklingStars.length < TWINKLING_STARS_COUNT && Math.random() < 0.05) {
+            spawnTwinklingStar();
+        }
+    }
+    
+    // Draw particles (only in game mode)
+    if (starGameActive) {
+        updateAndDrawParticles();
+        updateAndDrawShootingStar();
+    }
+    
     requestAnimationFrame(drawConstellation);
 }
 
@@ -987,8 +1944,791 @@ window.addEventListener('mouseleave', () => {
 initConstellation();
 drawConstellation();
 
+// ── GAME MODE SELECT ──────────────────────────────────────────────────
+function checkUnlocks() {
+    return {
+        twinkle: lifetimeStats.bonusStars >= 20,
+        comet: lifetimeStats.comets >= 3,
+        starclear: lifetimeStats.totalStars >= 150
+    };
+}
+
+function showModeSelect() {
+    const modal = document.getElementById('modeSelectModal');
+    const unlocks = checkUnlocks();
+    
+    // Update lock states
+    document.getElementById('modeTwinkle').classList.toggle('locked', !unlocks.twinkle);
+    document.getElementById('lockTwinkle').style.display = unlocks.twinkle ? 'none' : 'block';
+    
+    document.getElementById('modeComet').classList.toggle('locked', !unlocks.comet);
+    document.getElementById('lockComet').style.display = unlocks.comet ? 'none' : 'block';
+    
+    document.getElementById('modeStarclear').classList.toggle('locked', !unlocks.starclear);
+    document.getElementById('lockStarclear').style.display = unlocks.starclear ? 'none' : 'block';
+    
+    modal.classList.add('visible');
+}
+
+function startGameWithMode(mode) {
+    gameMode = mode;
+    document.getElementById('modeSelectModal').classList.remove('visible');
+    initConstellation(); // Reinitialize stars for the mode
+    toggleStarGame();
+}
+
+// ── STAR GAME ─────────────────────────────────────────────────────────
+function toggleStarGame() {
+    starGameActive = !starGameActive;
+    document.body.classList.toggle('star-game-active', starGameActive);
+    
+    const btn = document.getElementById('starGameBtn');
+    if (starGameActive) {
+        starGameScore = 0;
+        starGameTimeLeft = 60;
+        starGameStats = { regular: 0, twinkle: 0, bonus: 0, comet: 0 };
+        clickTimes = [];
+        shootingStar = null;
+        updateGameScore();
+        showToast('⭐ Click stars to collect them! Bright cyan = 5pts ⭐', false);
+        btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>`;
+        btn.title = 'Exit Game';
+        
+        // Start countdown timer
+        starGameTimerInterval = setInterval(() => {
+            starGameTimeLeft--;
+            
+            // Play tick sound in last 10 seconds
+            if (starGameTimeLeft <= 10 && starGameTimeLeft > 0) {
+                playTickSound();
+            }
+            
+            updateGameScore();
+            if (starGameTimeLeft <= 0) {
+                toggleStarGame(); // End game when time runs out
+            }
+        }, 1000);
+        
+        // Start shooting star spawner
+        scheduleNextShootingStar();
+    } else {
+        // Stop timer
+        if (starGameTimerInterval) {
+            clearInterval(starGameTimerInterval);
+            starGameTimerInterval = null;
+        }
+        
+        // Stop shooting star timer
+        if (shootingStarTimer) {
+            clearTimeout(shootingStarTimer);
+            shootingStarTimer = null;
+        }
+        
+        // Clear particles and shooting star
+        particles = [];
+        shootingStar = null;
+        
+        btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9" fill="rgba(198, 232, 232, 0.2)" stroke="#C6E8E8"/>
+        </svg>`;
+        btn.title = 'Star Hunt Game';
+        
+        // Show game over modal
+        showGameOverModal();
+    }
+}
+
+function showGameOverModal() {
+    const modal = document.getElementById('gameOverModal');
+    const isNewRecord = starGameScore > starGameRecord;
+    
+    if (isNewRecord) {
+        starGameRecord = starGameScore;
+        setCookie('starGameRecord', starGameRecord);
+        playNewRecordSound();
+    } else {
+        playGameOverSound();
+    }
+    
+    // Update lifetime stats (only in normal mode)
+    if (gameMode === 'normal') {
+        const oldUnlocks = checkUnlocks();
+        
+        lifetimeStats.bonusStars += starGameStats.bonus;
+        lifetimeStats.comets += starGameStats.comet;
+        lifetimeStats.totalStars += (starGameStats.regular + starGameStats.twinkle + starGameStats.bonus + starGameStats.comet);
+        
+        setCookie('starGameLifetimeStats', lifetimeStats);
+        
+        // Check if new modes were unlocked
+        const newUnlocks = checkUnlocks();
+        if (newUnlocks.twinkle && !oldUnlocks.twinkle) {
+            setTimeout(() => showToast('🎉 Unlocked: Twinkle Twinkle mode!'), 2000);
+        }
+        if (newUnlocks.comet && !oldUnlocks.comet) {
+            setTimeout(() => showToast('🎉 Unlocked: Comet Rush mode!'), 2000);
+        }
+        if (newUnlocks.starclear && !oldUnlocks.starclear) {
+            setTimeout(() => showToast('🎉 Unlocked: Star Clear mode!'), 2000);
+        }
+    }
+    
+    // Update modal content
+    document.getElementById('gameOverScore').textContent = starGameScore;
+    document.getElementById('statRegular').textContent = starGameStats.regular;
+    document.getElementById('statTwinkle').textContent = starGameStats.twinkle;
+    document.getElementById('statBonus').textContent = starGameStats.bonus;
+    document.getElementById('statComet').textContent = starGameStats.comet;
+    
+    const recordEl = document.getElementById('gameOverRecord');
+    if (isNewRecord) {
+        recordEl.textContent = '🏆 NEW RECORD! 🏆';
+        recordEl.style.color = 'var(--gold)';
+    } else {
+        recordEl.textContent = `Record: ${starGameRecord}`;
+        recordEl.style.color = 'var(--muted)';
+    }
+    
+    modal.classList.add('visible');
+}
+
+function updateGameScore() {
+    const scoreEl = document.getElementById('gameScore');
+    const labelEl = document.querySelector('.star-game-score .label');
+    
+    // Animate score change
+    scoreEl.textContent = starGameScore;
+    scoreEl.classList.add('pop');
+    setTimeout(() => scoreEl.classList.remove('pop'), 150);
+    
+    document.getElementById('gameRecord').textContent = `Record: ${starGameRecord}`;
+    
+    // Update label to show time remaining
+    if (starGameActive && labelEl) {
+        labelEl.textContent = `TIME: ${starGameTimeLeft}s`;
+        
+        // Make timer red in last 10 seconds (tick sound handled in timer interval)
+        if (starGameTimeLeft <= 10) {
+            labelEl.classList.add('danger');
+        } else {
+            labelEl.classList.remove('danger');
+        }
+    } else if (labelEl) {
+        labelEl.textContent = 'STARS COLLECTED';
+        labelEl.classList.remove('danger');
+    }
+}
+
+// ── SOUND GENERATION ──────────────────────────────────────────────────
+const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+function playPopSound(type = 'regular') {
+    if (!starGameActive) return;
+    
+    const now = audioContext.currentTime;
+    
+    if (type === 'comet') {
+        // Epic explosion sound for comets - deep and powerful
+        // Bass explosion layer
+        const bass = audioContext.createOscillator();
+        const bassGain = audioContext.createGain();
+        bass.connect(bassGain);
+        bassGain.connect(audioContext.destination);
+        
+        bass.type = 'sine';
+        bass.frequency.setValueAtTime(150, now);
+        bass.frequency.exponentialRampToValueAtTime(40, now + 0.3);
+        
+        bassGain.gain.setValueAtTime(0, now);
+        bassGain.gain.linearRampToValueAtTime(0.4, now + 0.02);
+        bassGain.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
+        
+        bass.start(now);
+        bass.stop(now + 0.4);
+        
+        // Mid-range crackle
+        const mid = audioContext.createOscillator();
+        const midGain = audioContext.createGain();
+        const midFilter = audioContext.createBiquadFilter();
+        
+        mid.connect(midFilter);
+        midFilter.connect(midGain);
+        midGain.connect(audioContext.destination);
+        
+        mid.type = 'sawtooth';
+        mid.frequency.setValueAtTime(300, now);
+        mid.frequency.exponentialRampToValueAtTime(100, now + 0.2);
+        
+        midFilter.type = 'lowpass';
+        midFilter.frequency.setValueAtTime(800, now);
+        midFilter.frequency.exponentialRampToValueAtTime(200, now + 0.2);
+        
+        midGain.gain.setValueAtTime(0, now);
+        midGain.gain.linearRampToValueAtTime(0.25, now + 0.01);
+        midGain.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
+        
+        mid.start(now);
+        mid.stop(now + 0.25);
+        
+        // High impact "crash"
+        const bufferSize = audioContext.sampleRate * 0.15;
+        const buffer = audioContext.createBuffer(1, bufferSize, audioContext.sampleRate);
+        const data = buffer.getChannelData(0);
+        for (let i = 0; i < bufferSize; i++) {
+            data[i] = (Math.random() * 2 - 1) * Math.exp(-i / bufferSize * 8);
+        }
+        const noise = audioContext.createBufferSource();
+        const noiseGain = audioContext.createGain();
+        const noiseFilter = audioContext.createBiquadFilter();
+        
+        noise.buffer = buffer;
+        noise.connect(noiseFilter);
+        noiseFilter.connect(noiseGain);
+        noiseGain.connect(audioContext.destination);
+        
+        noiseFilter.type = 'bandpass';
+        noiseFilter.frequency.setValueAtTime(400, now);
+        noiseGain.gain.setValueAtTime(0.2, now);
+        noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
+        
+        noise.start(now);
+        
+    } else if (type === 'bonus') {
+        // Magical "power-up" sound for bonus stars - lower and warmer
+        const osc1 = audioContext.createOscillator();
+        const osc2 = audioContext.createOscillator();
+        const gain1 = audioContext.createGain();
+        const gain2 = audioContext.createGain();
+        const filter = audioContext.createBiquadFilter();
+        
+        osc1.connect(gain1);
+        osc2.connect(gain2);
+        gain1.connect(filter);
+        gain2.connect(filter);
+        filter.connect(audioContext.destination);
+        
+        // Two oscillators for a richer sound
+        osc1.type = 'sine';
+        osc2.type = 'sine';
+        
+        // Lower frequency range - more pleasant
+        osc1.frequency.setValueAtTime(400, now);
+        osc1.frequency.exponentialRampToValueAtTime(600, now + 0.15);
+        
+        osc2.frequency.setValueAtTime(500, now); // Fifth above
+        osc2.frequency.exponentialRampToValueAtTime(750, now + 0.15);
+        
+        // Gentle lowpass filter for smoothness
+        filter.type = 'lowpass';
+        filter.frequency.setValueAtTime(1500, now);
+        filter.frequency.exponentialRampToValueAtTime(2500, now + 0.1);
+        filter.Q.setValueAtTime(2, now);
+        
+        // Volume envelopes
+        gain1.gain.setValueAtTime(0, now);
+        gain1.gain.linearRampToValueAtTime(0.15, now + 0.02);
+        gain1.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
+        
+        gain2.gain.setValueAtTime(0, now);
+        gain2.gain.linearRampToValueAtTime(0.1, now + 0.02);
+        gain2.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
+        
+        osc1.start(now);
+        osc1.stop(now + 0.25);
+        osc2.start(now);
+        osc2.stop(now + 0.25);
+        
+    } else if (type === 'twinkle') {
+        // Warmer pop with slight pitch wobble for twinkle stars
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        const filter = audioContext.createBiquadFilter();
+        
+        oscillator.connect(filter);
+        filter.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        
+        oscillator.type = 'triangle'; // Warmer than sine
+        oscillator.frequency.setValueAtTime(700, now);
+        oscillator.frequency.exponentialRampToValueAtTime(500, now + 0.08);
+        
+        // Bandpass for character
+        filter.type = 'bandpass';
+        filter.frequency.setValueAtTime(800, now);
+        filter.Q.setValueAtTime(3, now);
+        
+        gainNode.gain.setValueAtTime(0, now);
+        gainNode.gain.linearRampToValueAtTime(0.18, now + 0.01);
+        gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
+        
+        oscillator.start(now);
+        oscillator.stop(now + 0.12);
+        
+    } else {
+        // Snappy bass pop for regular stars
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        
+        oscillator.type = 'sine';
+        oscillator.frequency.setValueAtTime(300, now);
+        oscillator.frequency.exponentialRampToValueAtTime(80, now + 0.04);
+        
+        // Punchy envelope
+        gainNode.gain.setValueAtTime(0, now);
+        gainNode.gain.linearRampToValueAtTime(0.2, now + 0.005);
+        gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.06);
+        
+        oscillator.start(now);
+        oscillator.stop(now + 0.06);
+    }
+}
+
+function playGameOverSound() {
+    const now = audioContext.currentTime;
+    
+    // Sad descending arpeggio
+    const notes = [600, 550, 500, 400, 350];
+    notes.forEach((freq, i) => {
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        const filter = audioContext.createBiquadFilter();
+        
+        oscillator.connect(filter);
+        filter.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        
+        oscillator.type = 'triangle';
+        oscillator.frequency.setValueAtTime(freq, now);
+        
+        filter.type = 'lowpass';
+        filter.frequency.setValueAtTime(1000 - (i * 100), now);
+        
+        const startTime = now + (i * 0.12);
+        gainNode.gain.setValueAtTime(0, startTime);
+        gainNode.gain.linearRampToValueAtTime(0.15, startTime + 0.01);
+        gainNode.gain.exponentialRampToValueAtTime(0.001, startTime + 0.25);
+        
+        oscillator.start(startTime);
+        oscillator.stop(startTime + 0.25);
+    });
+    
+    // Add low "thud" at the end
+    const bass = audioContext.createOscillator();
+    const bassGain = audioContext.createGain();
+    bass.connect(bassGain);
+    bassGain.connect(audioContext.destination);
+    
+    bass.type = 'sine';
+    bass.frequency.setValueAtTime(100, now + 0.5);
+    bass.frequency.exponentialRampToValueAtTime(40, now + 0.7);
+    
+    bassGain.gain.setValueAtTime(0, now + 0.5);
+    bassGain.gain.linearRampToValueAtTime(0.3, now + 0.52);
+    bassGain.gain.exponentialRampToValueAtTime(0.001, now + 0.8);
+    
+    bass.start(now + 0.5);
+    bass.stop(now + 0.8);
+}
+
+function playNewRecordSound() {
+    const now = audioContext.currentTime;
+    
+    // Epic victory fanfare with chord progressions
+    const melody = [
+        { freq: 523, time: 0 },      // C
+        { freq: 659, time: 0.15 },   // E
+        { freq: 784, time: 0.3 },    // G
+        { freq: 1047, time: 0.45 }   // C (high)
+    ];
+    
+    melody.forEach((note, i) => {
+        // Main melody
+        const osc = audioContext.createOscillator();
+        const gain = audioContext.createGain();
+        const filter = audioContext.createBiquadFilter();
+        
+        osc.connect(filter);
+        filter.connect(gain);
+        gain.connect(audioContext.destination);
+        
+        osc.type = 'square';
+        osc.frequency.setValueAtTime(note.freq, now + note.time);
+        
+        filter.type = 'lowpass';
+        filter.frequency.setValueAtTime(2000, now + note.time);
+        filter.Q.setValueAtTime(1, now + note.time);
+        
+        gain.gain.setValueAtTime(0, now + note.time);
+        gain.gain.linearRampToValueAtTime(0.12, now + note.time + 0.01);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + note.time + 0.2);
+        
+        osc.start(now + note.time);
+        osc.stop(now + note.time + 0.2);
+        
+        // Harmony (third above)
+        const harm = audioContext.createOscillator();
+        const harmGain = audioContext.createGain();
+        
+        harm.connect(harmGain);
+        harmGain.connect(audioContext.destination);
+        
+        harm.type = 'sine';
+        harm.frequency.setValueAtTime(note.freq * 1.25, now + note.time);
+        
+        harmGain.gain.setValueAtTime(0, now + note.time);
+        harmGain.gain.linearRampToValueAtTime(0.06, now + note.time + 0.01);
+        harmGain.gain.exponentialRampToValueAtTime(0.001, now + note.time + 0.2);
+        
+        harm.start(now + note.time);
+        harm.stop(now + note.time + 0.2);
+    });
+    
+    // Add shimmer at the end
+    for (let i = 0; i < 5; i++) {
+        const shimmer = audioContext.createOscillator();
+        const shimmerGain = audioContext.createGain();
+        
+        shimmer.connect(shimmerGain);
+        shimmerGain.connect(audioContext.destination);
+        
+        shimmer.type = 'sine';
+        shimmer.frequency.setValueAtTime(2000 + (i * 400), now + 0.5 + (i * 0.05));
+        
+        shimmerGain.gain.setValueAtTime(0.05, now + 0.5 + (i * 0.05));
+        shimmerGain.gain.exponentialRampToValueAtTime(0.001, now + 0.7 + (i * 0.05));
+        
+        shimmer.start(now + 0.5 + (i * 0.05));
+        shimmer.stop(now + 0.7 + (i * 0.05));
+    }
+}
+
+function playTickSound() {
+    if (!starGameActive) return;
+    
+    // Prevent tick from playing more than once per second
+    const now = Date.now();
+    if (now - lastTickTime < 900) return; // 900ms cooldown
+    lastTickTime = now;
+    
+    const audioNow = audioContext.currentTime;
+    const osc = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+    
+    osc.connect(gain);
+    gain.connect(audioContext.destination);
+    
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(800, audioNow);
+    
+    gain.gain.setValueAtTime(0.1, audioNow);
+    gain.gain.exponentialRampToValueAtTime(0.001, audioNow + 0.05);
+    
+    osc.start(audioNow);
+    osc.stop(audioNow + 0.05);
+}
+
+// ── PARTICLE EFFECTS ──────────────────────────────────────────────────
+function createParticles(x, y, color, count = 8) {
+    if (!starGameActive) return;
+    
+    for (let i = 0; i < count; i++) {
+        const angle = (Math.PI * 2 * i) / count;
+        const speed = 2 + Math.random() * 3;
+        particles.push({
+            x: x,
+            y: y,
+            vx: Math.cos(angle) * speed,
+            vy: Math.sin(angle) * speed,
+            life: 1.0,
+            decay: 0.02 + Math.random() * 0.02,
+            size: 2 + Math.random() * 2,
+            color: color
+        });
+    }
+}
+
+function updateAndDrawParticles() {
+    if (!starGameActive || particles.length === 0) return;
+    
+    for (let i = particles.length - 1; i >= 0; i--) {
+        const p = particles[i];
+        
+        // Update
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.1; // Gravity
+        p.life -= p.decay;
+        
+        // Remove dead particles
+        if (p.life <= 0) {
+            particles.splice(i, 1);
+            continue;
+        }
+        
+        // Draw
+        const alpha = p.life;
+        ctx.fillStyle = `rgba(${p.color}, ${alpha})`;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+        
+        // Glow
+        const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size * 2);
+        gradient.addColorStop(0, `rgba(${p.color}, ${alpha * 0.5})`);
+        gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+        ctx.fillStyle = gradient;
+        ctx.fillRect(p.x - p.size * 2, p.y - p.size * 2, p.size * 4, p.size * 4);
+    }
+}
+
+// ── SHOOTING STAR ─────────────────────────────────────────────────────
+function spawnShootingStar() {
+    if (!starGameActive || shootingStar) return;
+    
+    // Random starting position (from edges)
+    const side = Math.floor(Math.random() * 4); // 0=top, 1=right, 2=bottom, 3=left
+    let x, y, vx, vy;
+    
+    if (side === 0) { // Top
+        x = Math.random() * w;
+        y = -20;
+        vx = (Math.random() - 0.5) * 6.4; // 8 * 0.8 = 6.4
+        vy = 4.8 + Math.random() * 3.2; // (6 + random 4) * 0.8
+    } else if (side === 1) { // Right
+        x = w + 20;
+        y = Math.random() * h;
+        vx = -(4.8 + Math.random() * 3.2);
+        vy = (Math.random() - 0.5) * 6.4;
+    } else if (side === 2) { // Bottom
+        x = Math.random() * w;
+        y = h + 20;
+        vx = (Math.random() - 0.5) * 6.4;
+        vy = -(4.8 + Math.random() * 3.2);
+    } else { // Left
+        x = -20;
+        y = Math.random() * h;
+        vx = 4.8 + Math.random() * 3.2;
+        vy = (Math.random() - 0.5) * 6.4;
+    }
+    
+    shootingStar = {
+        x: x,
+        y: y,
+        vx: vx,
+        vy: vy,
+        trail: [],
+        radius: 6, // 4 * 1.5 = 6 (50% bigger)
+        points: 15
+    };
+    
+    // Schedule next shooting star
+    scheduleNextShootingStar();
+}
+
+function scheduleNextShootingStar() {
+    if (!starGameActive) return;
+    
+    let delay;
+    if (gameMode === 'comet') {
+        delay = (1 + Math.random() * 2) * 1000; // 1-3 seconds in comet mode!
+    } else if (gameMode === 'twinkle' || gameMode === 'starclear') {
+        return; // No comets in these modes
+    } else {
+        delay = (5 + Math.random() * 10) * 1000; // 5-15 seconds normally
+    }
+    
+    shootingStarTimer = setTimeout(spawnShootingStar, delay);
+}
+
+function updateAndDrawShootingStar() {
+    if (!shootingStar) return;
+    
+    // Update position
+    shootingStar.x += shootingStar.vx;
+    shootingStar.y += shootingStar.vy;
+    
+    // Add to trail
+    shootingStar.trail.push({ x: shootingStar.x, y: shootingStar.y });
+    if (shootingStar.trail.length > 15) {
+        shootingStar.trail.shift();
+    }
+    
+    // Remove if offscreen
+    if (shootingStar.x < -50 || shootingStar.x > w + 50 ||
+        shootingStar.y < -50 || shootingStar.y > h + 50) {
+        shootingStar = null;
+        return;
+    }
+    
+    // Draw trail
+    for (let i = 0; i < shootingStar.trail.length; i++) {
+        const t = shootingStar.trail[i];
+        const alpha = (i / shootingStar.trail.length) * 0.8;
+        const size = (i / shootingStar.trail.length) * shootingStar.radius;
+        
+        // Red gradient trail
+        const gradient = ctx.createRadialGradient(t.x, t.y, 0, t.x, t.y, size * 3);
+        gradient.addColorStop(0, `rgba(255, 100, 100, ${alpha})`);
+        gradient.addColorStop(0.5, `rgba(255, 150, 100, ${alpha * 0.5})`);
+        gradient.addColorStop(1, 'rgba(255, 200, 100, 0)');
+        ctx.fillStyle = gradient;
+        ctx.fillRect(t.x - size * 3, t.y - size * 3, size * 6, size * 6);
+    }
+    
+    // Draw shooting star core
+    const coreGradient = ctx.createRadialGradient(
+        shootingStar.x, shootingStar.y, 0,
+        shootingStar.x, shootingStar.y, shootingStar.radius * 3
+    );
+    coreGradient.addColorStop(0, 'rgba(255, 255, 255, 1)');
+    coreGradient.addColorStop(0.3, 'rgba(255, 100, 100, 0.8)');
+    coreGradient.addColorStop(1, 'rgba(255, 100, 100, 0)');
+    ctx.fillStyle = coreGradient;
+    ctx.fillRect(
+        shootingStar.x - shootingStar.radius * 3,
+        shootingStar.y - shootingStar.radius * 3,
+        shootingStar.radius * 6,
+        shootingStar.radius * 6
+    );
+    
+    // Draw star core
+    ctx.fillStyle = 'rgba(255, 255, 255, 1)';
+    ctx.beginPath();
+    ctx.arc(shootingStar.x, shootingStar.y, shootingStar.radius, 0, Math.PI * 2);
+    ctx.fill();
+}
+
+// ── ANTI-CHEAT ────────────────────────────────────────────────────────
+function showCheatWarning() {
+    const modal = document.getElementById('cheatWarningModal');
+    modal.classList.add('visible');
+    
+    // Pause game but don't end it
+    if (starGameTimerInterval) {
+        clearInterval(starGameTimerInterval);
+        starGameTimerInterval = null;
+    }
+}
+
+function checkStarClick(x, y) {
+    if (!starGameActive) return;
+    
+    // Anti-cheat: Check click rate
+    const now = Date.now();
+    clickTimes.push(now);
+    
+    // Keep only clicks from the last second
+    clickTimes = clickTimes.filter(time => now - time < 1000);
+    
+    // If too many clicks per second, show warning
+    if (clickTimes.length > MAX_CPS) {
+        showCheatWarning();
+        return false;
+    }
+    
+    const clickRadius = 20;
+    
+    // Check shooting star first (highest priority)
+    if (shootingStar) {
+        const dx = shootingStar.x - x;
+        const dy = shootingStar.y - y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        
+        if (dist < clickRadius) {
+            starGameScore += shootingStar.points;
+            starGameStats.comet++; // Track as comet, not bonus
+            createParticles(shootingStar.x, shootingStar.y, '255, 100, 100', 30); // HUGE red explosion
+            playPopSound('comet'); // Special comet explosion sound
+            updateGameScore();
+            shootingStar = null;
+            return true;
+        }
+    }
+    
+    // Check twinkling stars
+    for (let i = twinklingStars.length - 1; i >= 0; i--) {
+        const star = twinklingStars[i];
+        const dx = star.x - x;
+        const dy = star.y - y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        
+        if (dist < clickRadius) {
+            starGameScore += star.points;
+            
+            // Track star type and create effects
+            if (star.isFast) {
+                starGameStats.bonus++;
+                createParticles(star.x, star.y, '142, 216, 216', 12); // Bright cyan, more particles
+                playPopSound('bonus');
+            } else {
+                starGameStats.twinkle++;
+                createParticles(star.x, star.y, '198, 232, 232', 8); // Normal cyan
+                playPopSound('twinkle');
+            }
+            
+            updateGameScore();
+            twinklingStars.splice(i, 1);
+            
+            // Remove from fastTwinklers if present
+            const fastIdx = fastTwinklers.indexOf(star);
+            if (fastIdx >= 0) fastTwinklers.splice(fastIdx, 1);
+            
+            // Spawn replacement
+            spawnTwinklingStar();
+            return true;
+        }
+    }
+    
+    // Check constellation stars (1 point, respawn immediately)
+    for (const star of stars) {
+        const dx = star.x - x;
+        const dy = star.y - y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        
+        if (dist < clickRadius) {
+            starGameScore += 1;
+            starGameStats.regular++;
+            createParticles(star.x, star.y, '255, 255, 255', 6); // White particles
+            playPopSound('regular');
+            updateGameScore();
+            
+            // Respawn star at new position
+            star.x = Math.random() * w;
+            star.y = Math.random() * h;
+            return true;
+        }
+    }
+    
+    return false;
+}
+
 // ── CONFIG ────────────────────────────────────────────────────────────
 const BASE_URL = 'https://raw.githubusercontent.com/TheDogVT/Achievements/main';
+
+// ── COOKIE HELPERS ────────────────────────────────────────────────────
+function setCookie(name, value, days = 365) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    document.cookie = `${name}=${JSON.stringify(value)};expires=${date.toUTCString()};path=/`;
+}
+
+function getCookie(name) {
+    const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    if (match) {
+        try {
+            return JSON.parse(match[2]);
+        } catch {
+            return null;
+        }
+    }
+    return null;
+}
 
 // ── DATA ──────────────────────────────────────────────────────────────
 let achData      = {};
@@ -1079,6 +2819,129 @@ async function loadAllData() {
     screen.classList.add('fade-out');
     setTimeout(() => screen.remove(), 400);
     document.getElementById('appContent').style.display = 'block';
+}
+
+// ── BUILD LEADERBOARD ─────────────────────────────────────────────────
+function buildLeaderboard() {
+    const grid = document.getElementById('leaderboardGrid');
+    
+    // Define categories and their achievement prefixes
+    const categories = [
+        { name: 'Bits', prefix: 'cheer', icon: '⚡' },
+        { name: 'Donations', prefix: 'donation', icon: '💸' },
+        { name: 'Gifted Subs', prefix: 'gifted', icon: '🎁' }
+    ];
+    
+    grid.innerHTML = '';
+    
+    for (const category of categories) {
+        const column = document.createElement('div');
+        column.className = 'leaderboard-column';
+        
+        const title = document.createElement('div');
+        title.className = 'leaderboard-category';
+        title.textContent = `${category.icon} ${category.name}`;
+        column.appendChild(title);
+        
+        // Find each user's highest achievement amount in this category
+        const userMaxAchs = [];
+        for (const [userId, userData] of Object.entries(allUserData)) {
+            let maxAmount = 0;
+            let maxAch = null;
+            let maxAchId = null;
+            let maxAchTs = null;
+            
+            for (const cat of Object.keys(achData)) {
+                for (const [id, ach] of Object.entries(achData[cat])) {
+                    if (id.startsWith(category.prefix) && ach.amount) {
+                        const earned = userData.achievements?.earned?.[id];
+                        const founded = userData.achievements?.founded?.[id];
+                        if (earned || founded) {
+                            if (ach.amount > maxAmount) {
+                                maxAmount = ach.amount;
+                                maxAch = ach;
+                                maxAchId = id;
+                                maxAchTs = earned || founded;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            if (maxAch) {
+                userMaxAchs.push({
+                    userId,
+                    username: userData.username || userId,
+                    achId: maxAchId,
+                    achName: maxAch.name,
+                    achDesc: maxAch.desc,
+                    amount: maxAmount,
+                    timestamp: maxAchTs,
+                    rarity: rarityData[maxAchId]?.percentage || 100
+                });
+            }
+        }
+        
+        // Sort by amount (desc), then by timestamp (most recent first)
+        userMaxAchs.sort((a, b) => {
+            if (b.amount !== a.amount) return b.amount - a.amount;
+            return new Date(b.timestamp) - new Date(a.timestamp);
+        });
+        
+        // Take top 3
+        const top3 = userMaxAchs.slice(0, 3);
+        
+        // Create leaderboard items
+        for (const entry of top3) {
+            const item = document.createElement('div');
+            item.className = 'leaderboard-item';
+            
+            const userDiv = document.createElement('div');
+            userDiv.className = 'leaderboard-user';
+            userDiv.style.cursor = 'pointer';
+            userDiv.addEventListener('click', () => {
+                loadUser(entry.userId);
+                document.getElementById('userIdInput').value = entry.username;
+            });
+            
+            const avatar = document.createElement('div');
+            avatar.className = 'leaderboard-avatar';
+            avatar.dataset.username = entry.username;
+            avatar.textContent = entry.username[0].toUpperCase();
+            avatar.style.backgroundSize = 'cover';
+            avatar.style.backgroundPosition = 'center';
+            
+            const username = document.createElement('div');
+            username.className = 'leaderboard-username';
+            username.textContent = entry.username;
+            
+            userDiv.appendChild(avatar);
+            userDiv.appendChild(username);
+            
+            const achName = document.createElement('div');
+            achName.className = 'leaderboard-ach-name';
+            achName.textContent = entry.achName;
+            
+            const achDesc = document.createElement('div');
+            achDesc.className = 'leaderboard-ach-desc';
+            achDesc.textContent = entry.achDesc;
+            
+            const rarity = document.createElement('div');
+            rarity.className = 'leaderboard-rarity';
+            rarity.textContent = `Top ${entry.rarity.toFixed(1)}%`;
+            
+            item.appendChild(userDiv);
+            item.appendChild(achName);
+            item.appendChild(achDesc);
+            item.appendChild(rarity);
+            column.appendChild(item);
+        }
+        
+        grid.appendChild(column);
+    }
+    
+    // Fetch Twitch pfps for leaderboard after building
+    setTimeout(() => fetchTwitchPfps(), 100);
 }
 
 // ── CATEGORY ICONS ────────────────────────────────────────────────────
@@ -1275,7 +3138,6 @@ function renderAchievements() {
 
             if (currentFilter === 'all'      && userData && !isEarned) continue;
             if (currentFilter === 'unlocked' && (!isEarned || isFounder)) continue;
-            if (currentFilter === 'locked'   && isEarned) continue;
             if (currentFilter === 'founder'  && !isFounder) continue;
 
             items.push({
@@ -1312,6 +3174,9 @@ function renderAchievements() {
         card.style.animationDelay = `${idx * 20}ms`;
         container.appendChild(card);
     });
+    
+    // Normalize card heights within each row after rendering
+    setTimeout(() => normalizeCardHeights(), 100);
 
     if (items.length === 0) {
         const empty = document.createElement('div');
@@ -1324,6 +3189,55 @@ function renderAchievements() {
     }
 
     updateStatus(items.length);
+    
+    // Fetch Twitch pfps for recent users after rendering
+    setTimeout(() => fetchTwitchPfps(), 100);
+}
+
+// ── NORMALIZE CARD HEIGHTS ────────────────────────────────────────────
+function normalizeCardHeights() {
+    const container = document.getElementById('achievementsContainer');
+    const cards = Array.from(container.querySelectorAll('.achievement'));
+    
+    if (cards.length === 0) return;
+    
+    // Group cards by row based on their offsetTop
+    const rows = new Map();
+    cards.forEach(card => {
+        const top = card.offsetTop;
+        if (!rows.has(top)) rows.set(top, []);
+        rows.get(top).push(card);
+    });
+    
+    // Set min-height for each row to match the tallest card
+    rows.forEach(rowCards => {
+        const maxHeight = Math.max(...rowCards.map(c => c.offsetHeight));
+        rowCards.forEach(c => {
+            c.style.minHeight = maxHeight + 'px';
+            c.dataset.rowHeight = maxHeight;
+        });
+    });
+}
+
+// ── FETCH TWITCH PFPS ─────────────────────────────────────────────────
+function fetchTwitchPfps() {
+    // Only fetch for leaderboard avatars, not recent users (too many API calls)
+    document.querySelectorAll('.leaderboard-avatar[data-username]').forEach(avatar => {
+        const username = avatar.dataset.username;
+        if (username) {
+            fetch(`https://decapi.me/twitch/avatar/${username}`)
+                .then(res => res.text())
+                .then(url => {
+                    if (url && !url.includes('User not found') && !url.includes('error')) {
+                        avatar.style.backgroundImage = `url(${url})`;
+                        avatar.style.backgroundSize = 'cover';
+                        avatar.style.backgroundPosition = 'center';
+                        avatar.textContent = '';
+                    }
+                })
+                .catch(() => {});
+        }
+    });
 }
 
 function buildCard(item, userData) {
@@ -1385,6 +3299,43 @@ function buildCard(item, userData) {
         }
     }
 
+    // Build recent users list (last 5 to unlock this achievement)
+    let recentHTML = '';
+    const recentUsers = [];
+    for (const [uid, udata] of Object.entries(allUserData)) {
+        const earned = udata.achievements?.earned?.[id];
+        const founded = udata.achievements?.founded?.[id];
+        const ts = earned || founded;
+        if (ts) {
+            recentUsers.push({
+                userId: uid,
+                username: udata.username || uid,
+                timestamp: ts
+            });
+        }
+    }
+    recentUsers.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+    const last5 = recentUsers.slice(0, 5);
+    
+    if (last5.length > 0) {
+        recentHTML = last5.map(u => {
+            const d = new Date(u.timestamp);
+            const formatted = d.toLocaleString('en-US', {
+                month: 'short', day: 'numeric', year: 'numeric'
+            });
+            const initial = u.username[0].toUpperCase();
+            return `
+                <div class="recent-user-item" data-userid="${u.userId}" style="cursor: pointer;">
+                    <div class="recent-user-avatar" data-username="${u.username}">${initial}</div>
+                    <div class="recent-user-info">
+                        <div class="recent-user-name">${u.username}</div>
+                        <div class="recent-user-date">${formatted}</div>
+                    </div>
+                </div>
+            `;
+        }).join('');
+    }
+
     div.innerHTML = `
         <div class="ach-header">
             <div class="ach-icon">${icon}</div>
@@ -1395,7 +3346,28 @@ function buildCard(item, userData) {
         </div>
         <p class="ach-desc">${ach.desc}</p>
         ${metaHTML ? `<div class="ach-meta">${metaHTML}</div>` : ''}
+        <div class="ach-spacer"></div>
+        ${recentHTML ? `
+            <button class="ach-expand-btn">
+                <span class="arrow">▼</span>
+                <span>Recently Unlocked</span>
+                <span class="arrow">▼</span>
+            </button>
+            <div class="ach-recent-users">
+                <div class="ach-recent-title">Last 5 Users</div>
+                ${recentHTML}
+            </div>
+        ` : ''}
     `;
+    
+    // Add click handler for expand button
+    const expandBtn = div.querySelector('.ach-expand-btn');
+    if (expandBtn) {
+        expandBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            div.classList.toggle('expanded');
+        });
+    }
 
     return div;
 }
@@ -1416,6 +3388,19 @@ function showProfile(userId) {
         `${earned + founded} / ${total} earned (${pct}%)${founded > 0 ? ` · ${founded} founded` : ''}`;
     document.getElementById('progressFill').style.width  = pct + '%';
     document.getElementById('profileBanner').classList.add('visible');
+    
+    // Update claim button state (with small delay to ensure DOM is ready)
+    const claimBtn = document.getElementById('claimBtn');
+    const savedUser = getCookie('myAchievementsUser');
+    setTimeout(() => {
+        if (savedUser && savedUser.userId === userId) {
+            claimBtn.classList.add('claimed');
+            claimBtn.textContent = 'Saved ✓';
+        } else {
+            claimBtn.classList.remove('claimed');
+            claimBtn.textContent = 'This is me!';
+        }
+    }, 50);
     
     // Try to fetch Twitch profile picture
     const avatarEl = document.getElementById('avatarEl');
@@ -1444,7 +3429,7 @@ function hideProfile() {
 // ── STATUS BAR ────────────────────────────────────────────────────────
 function updateStatus(count) {
     const bar = document.getElementById('statusBar');
-    bar.textContent = `SHOWING ${count} ACHIEVEMENT${count !== 1 ? 'S' : ''}`;
+    bar.textContent = `SHOWING ${count} DISCOVERED ACHIEVEMENT${count !== 1 ? 'S' : ''}`;
 }
 
 // ── LOAD USER ────────────────────────────────────────────────────────
@@ -1471,6 +3456,9 @@ function loadUser(usernameOrId) {
     showProfile(userId);
     updateTabBadges();
     renderAchievements();
+    
+    // Scroll to top smoothly
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 // ── FILTER CHIPS ──────────────────────────────────────────────────────
@@ -1484,15 +3472,132 @@ function updateFilterChips() {
 async function initPage() {
     buildTabs(Object.keys(achData));
     buildSortOptions();
+    buildLeaderboard();
+    
+    // Start leaderboard auto-collapse timer
+    startLeaderboardTimer();
 
     const userParam = new URLSearchParams(window.location.search).get('user');
+    const savedUser = getCookie('myAchievementsUser');
+    
     if (userParam) {
         loadUser(userParam);
+    } else if (savedUser && savedUser.userId) {
+        // Auto-load saved user
+        loadUser(savedUser.userId);
+        checkNewAchievements(savedUser);
     } else {
         currentFilter = 'all';
         updateFilterChips();
         renderAchievements();
     }
+}
+
+// ── LEADERBOARD AUTO-COLLAPSE TIMER ───────────────────────────────────
+let leaderboardTimer = null;
+function startLeaderboardTimer() {
+    const leaderboard = document.getElementById('leaderboard');
+    const timer = document.getElementById('leaderboardTimer');
+    const timerFill = document.getElementById('leaderboardTimerFill');
+    const timerLabel = document.getElementById('leaderboardTimerLabel');
+    
+    // Reset animation
+    leaderboard.classList.remove('auto-collapsing');
+    timer.style.display = 'block';
+    timerLabel.style.display = 'block';
+    
+    // Force reflow to restart animation
+    void timerFill.offsetWidth;
+    
+    // Start animation
+    leaderboard.classList.add('auto-collapsing');
+    
+    leaderboardTimer = setTimeout(() => {
+        leaderboard.classList.add('collapsed');
+        timer.style.display = 'none';
+        timerLabel.style.display = 'none';
+        leaderboard.classList.remove('auto-collapsing');
+    }, 5000);
+}
+
+function cancelLeaderboardTimer() {
+    if (leaderboardTimer) {
+        clearTimeout(leaderboardTimer);
+        leaderboardTimer = null;
+    }
+    const leaderboard = document.getElementById('leaderboard');
+    const timer = document.getElementById('leaderboardTimer');
+    const timerLabel = document.getElementById('leaderboardTimerLabel');
+    leaderboard.classList.remove('auto-collapsing');
+    timer.style.display = 'none';
+    timerLabel.style.display = 'none';
+}
+
+// ── CHECK NEW ACHIEVEMENTS ────────────────────────────────────────────
+function checkNewAchievements(savedUser) {
+    const userData = allUserData[savedUser.userId];
+    if (!userData) return;
+    
+    const lastCheck = savedUser.lastAchievementDate ? new Date(savedUser.lastAchievementDate) : null;
+    
+    // Check for new founded achievements
+    const founded = userData.achievements?.founded || {};
+    const newFounded = [];
+    for (const [achId, timestamp] of Object.entries(founded)) {
+        const achDate = new Date(timestamp);
+        if (!lastCheck || achDate > lastCheck) {
+            // Find achievement details
+            for (const cat of Object.keys(achData)) {
+                if (achData[cat][achId]) {
+                    newFounded.push({ id: achId, ach: achData[cat][achId], date: achDate });
+                    break;
+                }
+            }
+        }
+    }
+    
+    // Check for new earned achievements
+    const earned = userData.achievements?.earned || {};
+    const newEarned = [];
+    for (const [achId, timestamp] of Object.entries(earned)) {
+        const achDate = new Date(timestamp);
+        if (!lastCheck || achDate > lastCheck) {
+            for (const cat of Object.keys(achData)) {
+                if (achData[cat][achId]) {
+                    newEarned.push({ id: achId, ach: achData[cat][achId], date: achDate });
+                    break;
+                }
+            }
+        }
+    }
+    
+    // Sort by date (most recent first)
+    newFounded.sort((a, b) => b.date - a.date);
+    newEarned.sort((a, b) => b.date - a.date);
+    
+    // Show notifications
+    if (newFounded.length > 0) {
+        setTimeout(() => {
+            showCongratsToast(newFounded[0].ach.name, true);
+        }, 500);
+    } else if (newEarned.length > 0) {
+        setTimeout(() => {
+            showCongratsToast(newEarned[0].ach.name, false);
+        }, 500);
+    }
+}
+
+function showCongratsToast(achName, isFounder) {
+    const el = document.getElementById('toast');
+    if (isFounder) {
+        el.textContent = `🌟 Congrats on founding "${achName}"! 🌟`;
+        el.className = 'show founder-toast';
+    } else {
+        el.textContent = `✨ Congrats on earning "${achName}"! ✨`;
+        el.className = 'show';
+    }
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => { el.className = ''; }, 5000);
 }
 
 // ── EVENTS ────────────────────────────────────────────────────────────
@@ -1576,6 +3681,111 @@ document.getElementById('clearBtn').addEventListener('click', () => {
     document.getElementById('autocomplete').classList.remove('visible');
     updateTabBadges();
     renderAchievements();
+});
+
+document.getElementById('claimBtn').addEventListener('click', () => {
+    if (!currentUserId) return;
+    
+    const userData = allUserData[currentUserId];
+    if (!userData) return;
+    
+    // Find most recent achievement
+    const earned = userData.achievements?.earned || {};
+    const founded = userData.achievements?.founded || {};
+    const all = { ...earned, ...founded };
+    
+    let mostRecentDate = null;
+    for (const timestamp of Object.values(all)) {
+        const date = new Date(timestamp);
+        if (!mostRecentDate || date > mostRecentDate) {
+            mostRecentDate = date;
+        }
+    }
+    
+    // Save to cookie
+    setCookie('myAchievementsUser', {
+        userId: currentUserId,
+        username: userData.username || currentUserId,
+        lastAchievementDate: mostRecentDate ? mostRecentDate.toISOString() : null
+    });
+    
+    showToast('Saved! Your achievements will auto-load next time.');
+});
+
+document.getElementById('leaderboardHeader').addEventListener('click', (e) => {
+    document.getElementById('leaderboard').classList.toggle('collapsed');
+    cancelLeaderboardTimer();
+});
+
+document.getElementById('leaderboardTimerLabel').addEventListener('click', (e) => {
+    e.stopPropagation();
+    cancelLeaderboardTimer();
+    showToast('Leaderboard will stay open');
+});
+
+// Star game button - show mode select
+document.getElementById('starGameBtn').addEventListener('click', () => {
+    if (starGameActive) {
+        toggleStarGame(); // If game is active, end it
+    } else {
+        showModeSelect(); // Otherwise show mode select
+    }
+});
+
+// Canvas click for star game (canvas already declared at top of script)
+canvas.addEventListener('click', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    checkStarClick(x, y);
+});
+
+// Game over modal buttons
+document.getElementById('tryAgainBtn').addEventListener('click', () => {
+    document.getElementById('gameOverModal').classList.remove('visible');
+    toggleStarGame(); // Start a new game
+});
+
+document.getElementById('closeGameBtn').addEventListener('click', () => {
+    document.getElementById('gameOverModal').classList.remove('visible');
+});
+
+// Cheat warning modal button
+document.getElementById('cheatOkBtn').addEventListener('click', () => {
+    document.getElementById('cheatWarningModal').classList.remove('visible');
+    clickTimes = []; // Reset click tracking
+    
+    // Resume timer if game is still active
+    if (starGameActive && !starGameTimerInterval) {
+        starGameTimerInterval = setInterval(() => {
+            starGameTimeLeft--;
+            updateGameScore();
+            if (starGameTimeLeft <= 0) {
+                toggleStarGame();
+            }
+        }, 1000);
+    }
+});
+
+// Mode select cards
+document.querySelectorAll('.mode-card').forEach(card => {
+    card.addEventListener('click', () => {
+        if (card.classList.contains('locked')) {
+            showToast('Complete the challenge to unlock this mode!', true);
+            return;
+        }
+        const mode = card.dataset.mode;
+        startGameWithMode(mode);
+    });
+});
+
+// Event delegation for clicking recent user items in dropdowns
+document.getElementById('achievementsContainer').addEventListener('click', (e) => {
+    const recentItem = e.target.closest('.recent-user-item');
+    if (recentItem && recentItem.dataset.userid) {
+        loadUser(recentItem.dataset.userid);
+        document.getElementById('userIdInput').value = recentItem.querySelector('.recent-user-name').textContent;
+    }
 });
 
 document.getElementById('filterRow').addEventListener('click', e => {
