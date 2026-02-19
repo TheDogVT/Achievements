@@ -92,6 +92,11 @@
             cursor: crosshair;
             z-index: 10;
         }
+        body.save-stars-active #constellation {
+            pointer-events: auto;
+            cursor: crosshair;
+            z-index: 10;
+        }
 
         .page-wrap {
             position: relative;
@@ -539,9 +544,9 @@
             transform: translateY(-1px);
         }
         .btn-claim.claimed {
-            background: rgba(100, 100, 120, 0.1);
-            border-color: var(--muted);
-            color: var(--muted);
+            background: rgba(80, 80, 90, 0.3);
+            border-color: rgba(150, 150, 160, 0.4);
+            color: rgba(180, 180, 190, 0.8);
             cursor: default;
             box-shadow: none;
         }
@@ -1093,6 +1098,13 @@
         }
         #toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
         #toast.error { border-color: #ff6b6b; color: #ff9999; }
+        #toast.gold { 
+            border-color: var(--gold); 
+            color: var(--gold);
+            background: rgba(255, 215, 0, 0.1);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+            font-weight: 700;
+        }
         #toast.founder-toast {
             border-color: #19D0EA;
             color: #19D0EA;
@@ -1136,6 +1148,21 @@
         body.star-game-active #toast {
             opacity: 0;
             pointer-events: none;
+        }
+        body.save-stars-active #appContent,
+        body.save-stars-active #toast {
+            opacity: 0;
+            pointer-events: none;
+        }
+        body.star-game-active #toast.gold {
+            opacity: 1 !important;
+            pointer-events: auto;
+            z-index: 150;
+        }
+        body.save-stars-active #toast {
+            opacity: 1 !important;
+            pointer-events: auto;
+            z-index: 150;
         }
         body.star-game-active .star-game-btn {
             background: rgba(27, 26, 26, 0.95);
@@ -1278,9 +1305,15 @@
             min-height: 20px;
         }
         .game-over-buttons {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 12px;
             margin-top: 24px;
+        }
+        @media (max-width: 600px) {
+            .game-over-buttons {
+                grid-template-columns: 1fr;
+            }
         }
         .game-over-btn {
             flex: 1;
@@ -1376,6 +1409,8 @@
             justify-content: center;
             z-index: 102;
             backdrop-filter: blur(10px);
+            overflow-y: auto;
+            padding: 20px;
         }
         .mode-select-modal.visible {
             display: flex;
@@ -1388,6 +1423,35 @@
             max-width: 700px;
             width: 95%;
             box-shadow: 0 0 40px rgba(198, 232, 232, 0.6);
+            margin: auto;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        .mode-select-settings-btn {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            width: 40px;
+            height: 40px;
+            background: rgba(198, 232, 232, 0.1);
+            border: 1px solid rgba(198, 232, 232, 0.3);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .mode-select-settings-btn svg {
+            width: 20px;
+            height: 20px;
+            color: var(--cyan);
+        }
+        .mode-select-settings-btn:hover {
+            background: rgba(198, 232, 232, 0.2);
+            border-color: var(--cyan);
+            transform: rotate(90deg);
         }
         .mode-select-title {
             font-family: 'Space Mono', monospace;
@@ -1457,6 +1521,13 @@
             color: var(--muted);
             font-style: italic;
         }
+        .mode-highscore {
+            font-size: 0.7rem;
+            color: var(--cyan);
+            margin-top: 8px;
+            font-weight: 700;
+            text-shadow: 0 0 8px rgba(198, 232, 232, 0.6);
+        }
         .mode-info {
             display: flex;
             align-items: center;
@@ -1471,6 +1542,222 @@
         }
         .mode-info-icon {
             font-size: 1rem;
+        }
+        
+        /* Accessibility Notice Modal */
+        .accessibility-notice-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(27, 26, 26, 0.98);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 103;
+            backdrop-filter: blur(10px);
+        }
+        .accessibility-notice-modal.visible {
+            display: flex;
+        }
+        .accessibility-notice-content {
+            background: rgba(37, 36, 36, 0.95);
+            border: 2px solid var(--cyan);
+            border-radius: 16px;
+            padding: 32px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 0 40px rgba(198, 232, 232, 0.6);
+            font-family: 'Space Mono', monospace;
+        }
+        .accessibility-notice-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--cyan);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .accessibility-notice-text {
+            font-size: 0.95rem;
+            color: var(--text);
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        .accessibility-notice-highlight {
+            background: rgba(198, 232, 232, 0.15);
+            border-left: 3px solid var(--cyan);
+            padding: 12px 16px;
+            font-size: 0.9rem;
+            color: var(--text);
+            margin-bottom: 16px;
+            line-height: 1.5;
+            border-radius: 4px;
+        }
+        .accessibility-notice-highlight strong {
+            color: var(--cyan);
+        }
+        .accessibility-notice-footer {
+            font-size: 0.8rem;
+            color: var(--muted);
+            text-align: center;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        /* Accessibility Settings Modal */
+        .accessibility-settings-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(27, 26, 26, 0.98);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 103;
+            backdrop-filter: blur(10px);
+        }
+        .accessibility-settings-modal.visible {
+            display: flex;
+        }
+        .accessibility-settings-content {
+            background: rgba(37, 36, 36, 0.95);
+            border: 2px solid var(--cyan);
+            border-radius: 16px;
+            padding: 32px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 0 40px rgba(198, 232, 232, 0.6);
+            font-family: 'Space Mono', monospace;
+        }
+        .accessibility-settings-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--cyan);
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .accessibility-setting-group {
+            margin-bottom: 24px;
+        }
+        .accessibility-setting-label {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--cyan);
+            margin-bottom: 12px;
+        }
+        .accessibility-radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .accessibility-radio {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+        .accessibility-radio:hover {
+            background: rgba(198, 232, 232, 0.1);
+        }
+        .accessibility-radio input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        .accessibility-radio span {
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+        .accessibility-description {
+            font-size: 0.75rem;
+            color: var(--muted);
+            line-height: 1.5;
+            padding: 12px;
+            background: rgba(198, 232, 232, 0.05);
+            border-radius: 8px;
+        }
+        
+        /* Konami Modal */
+        .konami-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 200;
+            backdrop-filter: blur(15px);
+        }
+        .konami-modal.visible {
+            display: flex;
+            animation: konamiFadeIn 0.5s ease-out;
+        }
+        @keyframes konamiFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .konami-content {
+            text-align: center;
+            padding: 60px 40px;
+        }
+        .konami-title {
+            font-family: 'Space Mono', monospace;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--cyan);
+            margin-bottom: 40px;
+            text-shadow: 0 0 20px rgba(198, 232, 232, 0.8);
+            animation: konamiPulse 2s ease-in-out infinite;
+        }
+        @keyframes konamiPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .konami-start-btn {
+            font-size: 1.5rem;
+            padding: 20px 50px;
+            animation: konamiGlow 1.5s ease-in-out infinite;
+        }
+        @keyframes konamiGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(198, 232, 232, 0.4); }
+            50% { box-shadow: 0 0 40px rgba(198, 232, 232, 0.8); }
+        }
+        
+        /* Save the Stars UI */
+        .save-stars-ui {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: none;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 90;
+            pointer-events: none;
+        }
+        body.save-stars-active .save-stars-ui {
+            display: flex;
+        }
+        .save-stars-stat {
+            background: rgba(37, 36, 36, 0.9);
+            border: 2px solid var(--cyan);
+            border-radius: 12px;
+            padding: 12px 20px;
+            text-align: center;
+            min-width: 120px;
+        }
+        .save-stars-label {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--cyan);
+            margin-bottom: 4px;
+        }
+        .save-stars-value {
+            font-family: 'Space Mono', monospace;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text);
         }
 
         /* ── MOBILE ── */
@@ -1595,6 +1882,18 @@
     <div class="record" id="gameRecord">Record: 0</div>
 </div>
 
+<!-- SAVE THE STARS UI -->
+<div class="save-stars-ui" id="saveStarsUI">
+    <div class="save-stars-stat">
+        <div class="save-stars-label">❤️ HP</div>
+        <div id="saveStarsHP" class="save-stars-value">100</div>
+    </div>
+    <div class="save-stars-stat">
+        <div class="save-stars-label">⏱️ TIME</div>
+        <div id="saveStarsTime" class="save-stars-value">0</div>
+    </div>
+</div>
+
 <!-- GAME OVER MODAL -->
 <div class="game-over-modal" id="gameOverModal">
     <div class="game-over-content">
@@ -1629,6 +1928,7 @@
         
         <div class="game-over-buttons">
             <button class="game-over-btn game-over-btn-primary" id="tryAgainBtn">Try Again</button>
+            <button class="game-over-btn game-over-btn-secondary" id="changeModeBtn">Change Mode</button>
             <button class="game-over-btn game-over-btn-secondary" id="closeGameBtn">Close</button>
         </div>
         
@@ -1650,6 +1950,13 @@
 <!-- MODE SELECT MODAL -->
 <div class="mode-select-modal" id="modeSelectModal">
     <div class="mode-select-content">
+        <button class="mode-select-settings-btn" id="modeSelectSettingsBtn" title="Accessibility Settings">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M12 1v6m0 6v6m0-18a2 2 0 0 1 2 2v16a2 2 0 0 1-4 0V3a2 2 0 0 1 2-2z"></path>
+                <path d="m19.14 4.93-4.24 4.24m0 5.66 4.24 4.24M4.86 4.93l4.24 4.24m0 5.66-4.24 4.24"></path>
+            </svg>
+        </button>
         <div class="mode-select-title">Select Game Mode</div>
         
         <div class="mode-grid">
@@ -1664,7 +1971,7 @@
                 <div class="mode-icon">✨</div>
                 <div class="mode-name">Twinkle Twinkle</div>
                 <div class="mode-desc">Only cyan stars spawn</div>
-                <div class="mode-unlock">Unlock: Pop 20 bonus stars</div>
+                <div class="mode-unlock">Unlock: Get 20 bonus stars in one game</div>
             </button>
             
             <button class="mode-card" data-mode="comet" id="modeComet">
@@ -1672,7 +1979,7 @@
                 <div class="mode-icon">🌠</div>
                 <div class="mode-name">Comet Rush</div>
                 <div class="mode-desc">Comets everywhere!</div>
-                <div class="mode-unlock">Unlock: Catch 3 comets</div>
+                <div class="mode-unlock">Unlock: Catch 3 comets in one game</div>
             </button>
             
             <button class="mode-card" data-mode="starclear" id="modeStarclear">
@@ -1680,7 +1987,7 @@
                 <div class="mode-icon">🌌</div>
                 <div class="mode-name">Star Clear</div>
                 <div class="mode-desc">Clear TONS of stars!</div>
-                <div class="mode-unlock">Unlock: Pop 150 total stars</div>
+                <div class="mode-unlock">Unlock: Collect 150 stars in one game</div>
             </button>
         </div>
         
@@ -1691,6 +1998,72 @@
     </div>
 </div>
 
+<!-- ACCESSIBILITY NOTICE MODAL -->
+<div class="accessibility-notice-modal" id="accessibilityNoticeModal">
+    <div class="accessibility-notice-content">
+        <div class="accessibility-notice-title">Hey! Quick heads up 👋</div>
+        <div class="accessibility-notice-text">
+            This game involves a lot of clicking. If that's tough on your hands or joints, 
+            I've added some options in the settings to help out!
+        </div>
+        <div class="accessibility-notice-highlight">
+            <strong>Spacebar Click</strong>: lets you press space to click, which is way easier on your hands. 
+        </div>
+        <div class="accessibility-notice-highlight">
+            <strong>Always on</strong>: a mode that auto-clicks for you, but fair warning: it makes the game pretty easy. 
+        </div>
+        <div class="accessibility-notice-footer">
+            You can change these anytime from the icon in the game menu.
+        </div>
+        <button class="game-over-btn game-over-btn-primary" id="accessibilityOkBtn">Got it, thanks!</button>
+    </div>
+</div>
+
+<!-- ACCESSIBILITY SETTINGS MODAL -->
+<div class="accessibility-settings-modal" id="accessibilitySettingsModal">
+    <div class="accessibility-settings-content">
+        <div class="accessibility-settings-title">♿ Accessibility Settings</div>
+        
+        <div class="accessibility-setting-group">
+            <div class="accessibility-setting-label">Click Mode:</div>
+            <div class="accessibility-radio-group">
+                <label class="accessibility-radio">
+                    <input type="radio" name="accessMode" value="none" checked>
+                    <span>Mouse Only (Default)</span>
+                </label>
+                <label class="accessibility-radio">
+                    <input type="radio" name="accessMode" value="spacebar">
+                    <span>Spacebar Click (Recommended)</span>
+                </label>
+                <label class="accessibility-radio">
+                    <input type="radio" name="accessMode" value="alwayson">
+                    <span>Always On Cursor (Easy Mode)</span>
+                </label>
+            </div>
+            <div class="accessibility-description">
+                <strong>Spacebar:</strong> Press space to click at cursor position. Saves your clicking hand!<br>
+                <strong>Always On:</strong> Automatically clicks stars near your cursor. Much easier!
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 16px; font-size: 0.75rem; color: var(--muted); font-style: italic;">
+            PS: Old school gamers might find something extra here... 🎮
+        </div>
+        
+        <button class="game-over-btn game-over-btn-primary" id="saveAccessibilityBtn">Save Settings</button>
+    </div>
+</div>
+
+<!-- KONAMI CODE MODAL -->
+<div class="konami-modal" id="konamiModal">
+    <div class="konami-content">
+        <div class="konami-title">You're asking for it now huh...</div>
+        <button class="game-over-btn game-over-btn-primary konami-start-btn" id="konamiStartBtn">
+            Start / Select!
+        </button>
+    </div>
+</div>
+
 <script>
 // ── CONSTELLATION BACKGROUND ──────────────────────────────────────────
 const TWINKLING_STARS_COUNT = 30; // Adjust this to control how many twinkling stars
@@ -1698,19 +2071,31 @@ const TWINKLING_STARS_COUNT = 30; // Adjust this to control how many twinkling s
 // ── STAR GAME STATE ───────────────────────────────────────────────────
 let starGameActive = false;
 let starGameScore = 0;
-let starGameRecord = getCookie('starGameRecord') || 0;
+let modeRecords = getCookie('starGameModeRecords') || { normal: 0, twinkle: 0, comet: 0, starclear: 0 };
 let fastTwinklers = []; // 5-point fast stars
 let starGameTimeLeft = 60; // 60 second timer
 let starGameTimerInterval = null;
 let starGameStats = { regular: 0, twinkle: 0, bonus: 0, comet: 0 }; // Track star types collected
 let particles = []; // Particle effects for star collection
 let clickTimes = []; // Track click timestamps for anti-cheat
-const MAX_CPS = 8; // Maximum clicks per second allowed (adjustable for testing)
+const MAX_CPS = 5; // Maximum clicks per second allowed - one every 200ms
 let shootingStar = null; // Shooting star object
+let shootingStars = []; // Array of shooting stars for comet rush mode
 let shootingStarTimer = null; // Timer for spawning shooting stars
 let lastTickTime = 0; // Prevent tick from playing too frequently
 let gameMode = 'normal'; // Current game mode
-let lifetimeStats = getCookie('starGameLifetimeStats') || { bonusStars: 0, comets: 0, totalStars: 0 }; // Lifetime stats for unlocks
+let accessibilitySettings = getCookie('accessibilitySettings') || { mode: 'none', shownNotice: false };
+
+// Save the Stars mode variables
+let saveStarsActive = false;
+let blackHoles = [];
+let redBlackHoles = [];
+let playerHP = 500;
+let survivalTime = 0;
+let saveStarsTimer = null;
+let saveStarsInterval = null;
+let blackHoleSpawnTimer = null;
+let nextBlackHoleDelay = 1500; // Start at 1.5 seconds
 
 const canvas = document.getElementById('constellation');
 const ctx = canvas.getContext('2d');
@@ -1779,90 +2164,106 @@ function spawnTwinklingStar() {
 function drawConstellation() {
     ctx.clearRect(0, 0, w, h);
     
-    // Draw connections first
-    ctx.strokeStyle = 'rgba(198, 232, 232, 0.15)';
-    ctx.lineWidth = 0.5;
+    // Draw connections first (skip on mobile during game mode for performance)
+    const isMobile = window.innerWidth < 768;
+    const skipConnections = isMobile && starGameActive;
     
-    for (let i = 0; i < stars.length; i++) {
-        const star = stars[i];
+    if (!skipConnections) {
+        ctx.strokeStyle = 'rgba(198, 232, 232, 0.15)';
+        ctx.lineWidth = 0.5;
         
-        // Connect to nearby stars
-        for (let j = i + 1; j < stars.length; j++) {
-            const other = stars[j];
-            const dx = star.x - other.x;
-            const dy = star.y - other.y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
+        for (let i = 0; i < stars.length; i++) {
+            const star = stars[i];
             
-            if (dist < 120) {
-                const opacity = (1 - dist / 120) * 0.3;
-                ctx.strokeStyle = `rgba(198, 232, 232, ${opacity})`;
-                ctx.beginPath();
-                ctx.moveTo(star.x, star.y);
-                ctx.lineTo(other.x, other.y);
-                ctx.stroke();
-            }
-        }
-        
-        // Connect to mouse if nearby
-        if (mouse.x && mouse.y) {
-            const dx = star.x - mouse.x;
-            const dy = star.y - mouse.y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            
-            if (dist < 150) {
-                const opacity = (1 - dist / 150) * 0.5;
-                ctx.strokeStyle = `rgba(198, 232, 232, ${opacity})`;
-                ctx.lineWidth = 1;
-                ctx.beginPath();
-                ctx.moveTo(star.x, star.y);
-                ctx.lineTo(mouse.x, mouse.y);
-                ctx.stroke();
-                ctx.lineWidth = 0.5;
+            // Connect to nearby stars
+            for (let j = i + 1; j < stars.length; j++) {
+                const other = stars[j];
+                const dx = star.x - other.x;
+                const dy = star.y - other.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
                 
-                // Pull star toward mouse gently (1/10th original force)
-                const force = (1 - dist / 150) * 0.5;
-                star.vx += (mouse.x - star.x) * force * 0.00001;
-                star.vy += (mouse.y - star.y) * force * 0.00001;
+                if (dist < 120) {
+                    const opacity = (1 - dist / 120) * 0.3;
+                    ctx.strokeStyle = `rgba(198, 232, 232, ${opacity})`;
+                    ctx.beginPath();
+                    ctx.moveTo(star.x, star.y);
+                    ctx.lineTo(other.x, other.y);
+                    ctx.stroke();
+                }
+            }
+            
+            // Connect to mouse if nearby
+            if (mouse.x && mouse.y) {
+                const dx = star.x - mouse.x;
+                const dy = star.y - mouse.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                
+                if (dist < 150) {
+                    const opacity = (1 - dist / 150) * 0.5;
+                    ctx.strokeStyle = `rgba(198, 232, 232, ${opacity})`;
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(star.x, star.y);
+                    ctx.lineTo(mouse.x, mouse.y);
+                    ctx.stroke();
+                    ctx.lineWidth = 0.5;
+                    
+                    // Pull star toward mouse gently (1/10th original force)
+                    const force = (1 - dist / 150) * 0.5;
+                    star.vx += (mouse.x - star.x) * force * 0.00001;
+                    star.vy += (mouse.y - star.y) * force * 0.00001;
+                }
             }
         }
     }
     
-    // Draw permanent stars
-    for (const star of stars) {
-        // Update position
-        star.x += star.vx;
-        star.y += star.vy;
-        
-        // Damping
-        star.vx *= 0.99;
-        star.vy *= 0.99;
-        
-        // Wrap around edges
-        if (star.x < 0) star.x = w;
-        if (star.x > w) star.x = 0;
-        if (star.y < 0) star.y = h;
-        if (star.y > h) star.y = 0;
-        
-        // Draw star
-        const alpha = star.brightness * 0.8;
-        const glow = star.radius * 2;
-        
-        // Glow
-        const gradient = ctx.createRadialGradient(star.x, star.y, 0, star.x, star.y, glow);
-        gradient.addColorStop(0, `rgba(198, 232, 232, ${alpha * 0.8})`);
-        gradient.addColorStop(1, 'rgba(198, 232, 232, 0)');
-        ctx.fillStyle = gradient;
-        ctx.fillRect(star.x - glow, star.y - glow, glow * 2, glow * 2);
-        
-        // Core
-        ctx.fillStyle = `rgba(224, 245, 245, ${alpha})`;
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-        ctx.fill();
+    // Draw permanent stars (skip in twinkle mode - only show twinkle/bonus stars)
+    if (gameMode !== 'twinkle') {
+        for (const star of stars) {
+            // Update position
+            star.x += star.vx;
+            star.y += star.vy;
+            
+            // Damping
+            star.vx *= 0.99;
+            star.vy *= 0.99;
+            
+            // Wrap around edges
+            if (star.x < 0) star.x = w;
+            if (star.x > w) star.x = 0;
+            if (star.y < 0) star.y = h;
+            if (star.y > h) star.y = 0;
+            
+            // Draw star
+            const alpha = star.brightness * 0.8;
+            const glow = star.radius * 2;
+            
+            // Change color based on danger level (Save the Stars mode)
+            const dangerLevel = star.danger || 0;
+            const r = 198 + (255 - 198) * dangerLevel;
+            const g = 232 * (1 - dangerLevel);
+            const b = 232 * (1 - dangerLevel);
+            
+            // Glow
+            const gradient = ctx.createRadialGradient(star.x, star.y, 0, star.x, star.y, glow);
+            gradient.addColorStop(0, `rgba(${r}, ${g}, ${b}, ${alpha * 0.8})`);
+            gradient.addColorStop(1, `rgba(${r}, ${g}, ${b}, 0)`);
+            ctx.fillStyle = gradient;
+            ctx.fillRect(star.x - glow, star.y - glow, glow * 2, glow * 2);
+            
+            // Core
+            const coreR = 224 + (255 - 224) * dangerLevel;
+            const coreG = 245 * (1 - dangerLevel);
+            const coreB = 245 * (1 - dangerLevel);
+            ctx.fillStyle = `rgba(${coreR}, ${coreG}, ${coreB}, ${alpha})`;
+            ctx.beginPath();
+            ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+            ctx.fill();
+        }
     }
     
-    // Update and draw twinkling stars (only in game mode)
-    if (starGameActive) {
+    // Update and draw twinkling stars (only in game modes)
+    if (starGameActive || saveStarsActive) {
         const dt = 1/60; // Assume 60fps
         for (let i = twinklingStars.length - 1; i >= 0; i--) {
             const star = twinklingStars[i];
@@ -1922,10 +2323,16 @@ function drawConstellation() {
         }
     }
     
-    // Draw particles (only in game mode)
+    // Draw particles (only in game modes)
     if (starGameActive) {
         updateAndDrawParticles();
         updateAndDrawShootingStar();
+    }
+    
+    // Draw Save the Stars mode
+    if (saveStarsActive) {
+        updateAndDrawBlackHoles();
+        updateAndDrawParticles(); // Draw particles for black hole destruction
     }
     
     requestAnimationFrame(drawConstellation);
@@ -1945,15 +2352,52 @@ initConstellation();
 drawConstellation();
 
 // ── GAME MODE SELECT ──────────────────────────────────────────────────
+let unlockedDuringGame = { twinkle: false, comet: false, starclear: false }; // Track what's been unlocked this session
+
 function checkUnlocks() {
     return {
-        twinkle: lifetimeStats.bonusStars >= 20,
-        comet: lifetimeStats.comets >= 3,
-        starclear: lifetimeStats.totalStars >= 150
+        twinkle: getCookie('twinkleUnlocked') || false,
+        comet: getCookie('cometUnlocked') || false,
+        starclear: getCookie('starclearUnlocked') || false
     };
 }
 
+function checkForUnlocksDuringGame() {
+    // Check unlocks based on THIS game's stats (not lifetime)
+    
+    // Check Twinkle mode unlock (20 bonus stars in one game)
+    if (!unlockedDuringGame.twinkle && !getCookie('twinkleUnlocked') && starGameStats.bonus >= 20) {
+        unlockedDuringGame.twinkle = true;
+        setCookie('twinkleUnlocked', true);
+        playUnlockSound();
+        showToast('🎉 Unlocked: Twinkle Twinkle mode! 🎉', false, 'gold');
+    }
+    
+    // Check Comet Rush unlock (3 comets in one game)
+    if (!unlockedDuringGame.comet && !getCookie('cometUnlocked') && starGameStats.comet >= 3) {
+        unlockedDuringGame.comet = true;
+        setCookie('cometUnlocked', true);
+        playUnlockSound();
+        showToast('🎉 Unlocked: Comet Rush mode! 🎉', false, 'gold');
+    }
+    
+    // Check Star Clear unlock (150 total stars in one game)
+    const totalStarsThisGame = starGameStats.regular + starGameStats.twinkle + starGameStats.bonus + starGameStats.comet;
+    if (!unlockedDuringGame.starclear && !getCookie('starclearUnlocked') && totalStarsThisGame >= 150) {
+        unlockedDuringGame.starclear = true;
+        setCookie('starclearUnlocked', true);
+        playUnlockSound();
+        showToast('🎉 Unlocked: Star Clear mode! 🎉', false, 'gold');
+    }
+}
+
 function showModeSelect() {
+    // Show accessibility notice if first time
+    if (!accessibilitySettings.shownNotice) {
+        document.getElementById('accessibilityNoticeModal').classList.add('visible');
+        return; // Don't show mode select yet
+    }
+    
     const modal = document.getElementById('modeSelectModal');
     const unlocks = checkUnlocks();
     
@@ -1966,6 +2410,18 @@ function showModeSelect() {
     
     document.getElementById('modeStarclear').classList.toggle('locked', !unlocks.starclear);
     document.getElementById('lockStarclear').style.display = unlocks.starclear ? 'none' : 'block';
+    
+    // Update high scores
+    document.querySelectorAll('.mode-card').forEach(card => {
+        const mode = card.dataset.mode;
+        let scoreEl = card.querySelector('.mode-highscore');
+        if (!scoreEl) {
+            scoreEl = document.createElement('div');
+            scoreEl.className = 'mode-highscore';
+            card.appendChild(scoreEl);
+        }
+        scoreEl.textContent = `Best: ${modeRecords[mode] || 0}`;
+    });
     
     modal.classList.add('visible');
 }
@@ -1989,6 +2445,8 @@ function toggleStarGame() {
         starGameStats = { regular: 0, twinkle: 0, bonus: 0, comet: 0 };
         clickTimes = [];
         shootingStar = null;
+        shootingStars = []; // Clear comet array
+        unlockedDuringGame = { twinkle: false, comet: false, starclear: false }; // Reset unlock tracking
         updateGameScore();
         showToast('⭐ Click stars to collect them! Bright cyan = 5pts ⭐', false);
         btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2030,51 +2488,42 @@ function toggleStarGame() {
         // Clear particles and shooting star
         particles = [];
         shootingStar = null;
+        shootingStars = []; // Clear comet array too
+        
+        // Save current mode before resetting (for game over modal)
+        const playedMode = gameMode;
+        
+        // Reset game mode and stars to normal
+        gameMode = 'normal';
+        initConstellation();
         
         btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9" fill="rgba(198, 232, 232, 0.2)" stroke="#C6E8E8"/>
         </svg>`;
         btn.title = 'Star Hunt Game';
         
-        // Show game over modal
-        showGameOverModal();
+        // Show game over modal with the mode that was played
+        showGameOverModal(playedMode);
     }
 }
 
-function showGameOverModal() {
+function showGameOverModal(playedMode) {
     const modal = document.getElementById('gameOverModal');
-    const isNewRecord = starGameScore > starGameRecord;
+    const currentModeRecord = modeRecords[playedMode] || 0;
+    const isNewRecord = starGameScore > currentModeRecord;
     
+    // Update record if new high score
     if (isNewRecord) {
-        starGameRecord = starGameScore;
-        setCookie('starGameRecord', starGameRecord);
+        modeRecords[playedMode] = starGameScore;
+        // Create fresh object to ensure proper cookie serialization
+        setCookie('starGameModeRecords', { ...modeRecords });
         playNewRecordSound();
     } else {
         playGameOverSound();
     }
     
-    // Update lifetime stats (only in normal mode)
-    if (gameMode === 'normal') {
-        const oldUnlocks = checkUnlocks();
-        
-        lifetimeStats.bonusStars += starGameStats.bonus;
-        lifetimeStats.comets += starGameStats.comet;
-        lifetimeStats.totalStars += (starGameStats.regular + starGameStats.twinkle + starGameStats.bonus + starGameStats.comet);
-        
-        setCookie('starGameLifetimeStats', lifetimeStats);
-        
-        // Check if new modes were unlocked
-        const newUnlocks = checkUnlocks();
-        if (newUnlocks.twinkle && !oldUnlocks.twinkle) {
-            setTimeout(() => showToast('🎉 Unlocked: Twinkle Twinkle mode!'), 2000);
-        }
-        if (newUnlocks.comet && !oldUnlocks.comet) {
-            setTimeout(() => showToast('🎉 Unlocked: Comet Rush mode!'), 2000);
-        }
-        if (newUnlocks.starclear && !oldUnlocks.starclear) {
-            setTimeout(() => showToast('🎉 Unlocked: Star Clear mode!'), 2000);
-        }
-    }
+    // Get the final record to display (either the new score or the old record)
+    const displayRecord = isNewRecord ? starGameScore : currentModeRecord;
     
     // Update modal content
     document.getElementById('gameOverScore').textContent = starGameScore;
@@ -2085,26 +2534,34 @@ function showGameOverModal() {
     
     const recordEl = document.getElementById('gameOverRecord');
     if (isNewRecord) {
-        recordEl.textContent = '🏆 NEW RECORD! 🏆';
+        recordEl.textContent = `🏆 NEW ${playedMode.toUpperCase()} RECORD! 🏆`;
         recordEl.style.color = 'var(--gold)';
     } else {
-        recordEl.textContent = `Record: ${starGameRecord}`;
+        // Show the current mode's name and best score
+        const modeName = playedMode.charAt(0).toUpperCase() + playedMode.slice(1);
+        const modeNameFormatted = modeName === 'Starclear' ? 'Star Clear' : modeName;
+        recordEl.textContent = `${modeNameFormatted} Best: ${displayRecord}`;
         recordEl.style.color = 'var(--muted)';
     }
     
     modal.classList.add('visible');
 }
 
-function updateGameScore() {
+function updateGameScore(animateScore = false) {
     const scoreEl = document.getElementById('gameScore');
     const labelEl = document.querySelector('.star-game-score .label');
     
-    // Animate score change
-    scoreEl.textContent = starGameScore;
-    scoreEl.classList.add('pop');
-    setTimeout(() => scoreEl.classList.remove('pop'), 150);
+    // Only animate score if explicitly requested (on star collection)
+    if (animateScore) {
+        scoreEl.classList.add('pop');
+        setTimeout(() => scoreEl.classList.remove('pop'), 150);
+    }
     
-    document.getElementById('gameRecord').textContent = `Record: ${starGameRecord}`;
+    scoreEl.textContent = starGameScore;
+    
+    // Show current mode's record
+    const currentModeRecord = modeRecords[gameMode] || 0;
+    document.getElementById('gameRecord').textContent = `Record: ${currentModeRecord}`;
     
     // Update label to show time remaining
     if (starGameActive && labelEl) {
@@ -2408,6 +2865,51 @@ function playNewRecordSound() {
     }
 }
 
+function playUnlockSound() {
+    const now = audioContext.currentTime;
+    
+    // Three ascending arpeggios - C major, D major, E major
+    const arpeggios = [
+        [261.63, 329.63, 392.00, 523.25], // C major arpeggio (C-E-G-C)
+        [293.66, 369.99, 440.00, 587.33], // D major arpeggio (D-F#-A-D)
+        [329.63, 415.30, 493.88, 659.25]  // E major arpeggio (E-G#-B-E)
+    ];
+    
+    let timeOffset = 0;
+    
+    arpeggios.forEach((arpeggio, arpeggioIndex) => {
+        arpeggio.forEach((freq, noteIndex) => {
+            const osc = audioContext.createOscillator();
+            const gain = audioContext.createGain();
+            const filter = audioContext.createBiquadFilter();
+            
+            osc.connect(filter);
+            filter.connect(gain);
+            gain.connect(audioContext.destination);
+            
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(freq, now + timeOffset);
+            
+            // Bright filter
+            filter.type = 'lowpass';
+            filter.frequency.setValueAtTime(3000, now + timeOffset);
+            filter.Q.setValueAtTime(2, now + timeOffset);
+            
+            // Quick attack, sustain
+            gain.gain.setValueAtTime(0, now + timeOffset);
+            gain.gain.linearRampToValueAtTime(0.15, now + timeOffset + 0.01);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + timeOffset + 0.25);
+            
+            osc.start(now + timeOffset);
+            osc.stop(now + timeOffset + 0.25);
+            
+            timeOffset += 0.1; // 100ms between notes
+        });
+        
+        timeOffset += 0.1; // Extra gap between arpeggios
+    });
+}
+
 function playTickSound() {
     if (!starGameActive) return;
     
@@ -2435,7 +2937,7 @@ function playTickSound() {
 
 // ── PARTICLE EFFECTS ──────────────────────────────────────────────────
 function createParticles(x, y, color, count = 8) {
-    if (!starGameActive) return;
+    if (!starGameActive && !saveStarsActive) return;
     
     for (let i = 0; i < count; i++) {
         const angle = (Math.PI * 2 * i) / count;
@@ -2489,43 +2991,90 @@ function updateAndDrawParticles() {
 
 // ── SHOOTING STAR ─────────────────────────────────────────────────────
 function spawnShootingStar() {
-    if (!starGameActive || shootingStar) return;
-    
-    // Random starting position (from edges)
-    const side = Math.floor(Math.random() * 4); // 0=top, 1=right, 2=bottom, 3=left
-    let x, y, vx, vy;
-    
-    if (side === 0) { // Top
-        x = Math.random() * w;
-        y = -20;
-        vx = (Math.random() - 0.5) * 6.4; // 8 * 0.8 = 6.4
-        vy = 4.8 + Math.random() * 3.2; // (6 + random 4) * 0.8
-    } else if (side === 1) { // Right
-        x = w + 20;
-        y = Math.random() * h;
-        vx = -(4.8 + Math.random() * 3.2);
-        vy = (Math.random() - 0.5) * 6.4;
-    } else if (side === 2) { // Bottom
-        x = Math.random() * w;
-        y = h + 20;
-        vx = (Math.random() - 0.5) * 6.4;
-        vy = -(4.8 + Math.random() * 3.2);
-    } else { // Left
-        x = -20;
-        y = Math.random() * h;
-        vx = 4.8 + Math.random() * 3.2;
-        vy = (Math.random() - 0.5) * 6.4;
+    // In comet mode, allow multiple comets
+    if (gameMode === 'comet') {
+        if (shootingStars.length >= 3) return; // Max 3 comets at once
+    } else {
+        if (shootingStar) return; // Only one in other modes
     }
     
-    shootingStar = {
+    if (!starGameActive) return;
+    
+    // Detect mobile
+    const isMobile = window.innerWidth < 768;
+    
+    // Random starting position
+    let x, y, vx, vy;
+    
+    if (isMobile) {
+        // On mobile: spawn from left/right edges, always go through middle, faster
+        const fromLeft = Math.random() < 0.5;
+        const verticalPos = h * 0.3 + Math.random() * h * 0.4; // 30-70% of screen height
+        
+        // Speed multiplier based on mode
+        let speedMult = 1.0;
+        if (gameMode === 'comet') speedMult = 1.4; // 40% faster in comet rush
+        else if (gameMode === 'normal') speedMult = 1.2; // 20% faster in normal
+        
+        if (fromLeft) {
+            x = -20;
+            y = verticalPos;
+            vx = (7 + Math.random() * 5) * speedMult; // Increased range: 7-12
+            vy = (Math.random() - 0.5) * 3 * speedMult;
+        } else {
+            x = w + 20;
+            y = verticalPos;
+            vx = -(7 + Math.random() * 5) * speedMult;
+            vy = (Math.random() - 0.5) * 3 * speedMult;
+        }
+    } else {
+        // Desktop: original behavior from any edge
+        const side = Math.floor(Math.random() * 4);
+        
+        // Speed multiplier based on mode
+        let speedMult = 1.0;
+        if (gameMode === 'comet') speedMult = 1.4; // 40% faster in comet rush
+        else if (gameMode === 'normal') speedMult = 1.2; // 20% faster in normal
+        
+        if (side === 0) { // Top
+            x = Math.random() * w;
+            y = -20;
+            vx = (Math.random() - 0.5) * 7 * speedMult; // Increased range
+            vy = (4.8 + Math.random() * 4) * speedMult; // 4.8-8.8
+        } else if (side === 1) { // Right
+            x = w + 20;
+            y = Math.random() * h;
+            vx = -(4.8 + Math.random() * 4) * speedMult;
+            vy = (Math.random() - 0.5) * 7 * speedMult;
+        } else if (side === 2) { // Bottom
+            x = Math.random() * w;
+            y = h + 20;
+            vx = (Math.random() - 0.5) * 7 * speedMult;
+            vy = -(4.8 + Math.random() * 4) * speedMult;
+        } else { // Left
+            x = -20;
+            y = Math.random() * h;
+            vx = (4.8 + Math.random() * 4) * speedMult;
+            vy = (Math.random() - 0.5) * 7 * speedMult;
+        }
+    }
+    
+    const newComet = {
         x: x,
         y: y,
         vx: vx,
         vy: vy,
         trail: [],
-        radius: 6, // 4 * 1.5 = 6 (50% bigger)
+        radius: 6,
         points: 15
     };
+    
+    // In comet mode, add to array; otherwise use single comet
+    if (gameMode === 'comet') {
+        shootingStars.push(newComet);
+    } else {
+        shootingStar = newComet;
+    }
     
     // Schedule next shooting star
     scheduleNextShootingStar();
@@ -2547,30 +3096,46 @@ function scheduleNextShootingStar() {
 }
 
 function updateAndDrawShootingStar() {
-    if (!shootingStar) return;
-    
-    // Update position
-    shootingStar.x += shootingStar.vx;
-    shootingStar.y += shootingStar.vy;
-    
-    // Add to trail
-    shootingStar.trail.push({ x: shootingStar.x, y: shootingStar.y });
-    if (shootingStar.trail.length > 15) {
-        shootingStar.trail.shift();
+    // Handle single comet (normal modes)
+    if (shootingStar) {
+        updateSingleComet(shootingStar);
+        
+        // Remove if offscreen
+        if (shootingStar.x < -50 || shootingStar.x > w + 50 ||
+            shootingStar.y < -50 || shootingStar.y > h + 50) {
+            shootingStar = null;
+        }
     }
     
-    // Remove if offscreen
-    if (shootingStar.x < -50 || shootingStar.x > w + 50 ||
-        shootingStar.y < -50 || shootingStar.y > h + 50) {
-        shootingStar = null;
-        return;
+    // Handle multiple comets (comet rush mode)
+    for (let i = shootingStars.length - 1; i >= 0; i--) {
+        const comet = shootingStars[i];
+        updateSingleComet(comet);
+        
+        // Remove if offscreen
+        if (comet.x < -50 || comet.x > w + 50 ||
+            comet.y < -50 || comet.y > h + 50) {
+            shootingStars.splice(i, 1);
+        }
+    }
+}
+
+function updateSingleComet(star) {
+    // Update position
+    star.x += star.vx;
+    star.y += star.vy;
+    
+    // Add to trail
+    star.trail.push({ x: star.x, y: star.y });
+    if (star.trail.length > 15) {
+        star.trail.shift();
     }
     
     // Draw trail
-    for (let i = 0; i < shootingStar.trail.length; i++) {
-        const t = shootingStar.trail[i];
-        const alpha = (i / shootingStar.trail.length) * 0.8;
-        const size = (i / shootingStar.trail.length) * shootingStar.radius;
+    for (let i = 0; i < star.trail.length; i++) {
+        const t = star.trail[i];
+        const alpha = (i / star.trail.length) * 0.8;
+        const size = (i / star.trail.length) * star.radius;
         
         // Red gradient trail
         const gradient = ctx.createRadialGradient(t.x, t.y, 0, t.x, t.y, size * 3);
@@ -2583,24 +3148,24 @@ function updateAndDrawShootingStar() {
     
     // Draw shooting star core
     const coreGradient = ctx.createRadialGradient(
-        shootingStar.x, shootingStar.y, 0,
-        shootingStar.x, shootingStar.y, shootingStar.radius * 3
+        star.x, star.y, 0,
+        star.x, star.y, star.radius * 3
     );
     coreGradient.addColorStop(0, 'rgba(255, 255, 255, 1)');
     coreGradient.addColorStop(0.3, 'rgba(255, 100, 100, 0.8)');
     coreGradient.addColorStop(1, 'rgba(255, 100, 100, 0)');
     ctx.fillStyle = coreGradient;
     ctx.fillRect(
-        shootingStar.x - shootingStar.radius * 3,
-        shootingStar.y - shootingStar.radius * 3,
-        shootingStar.radius * 6,
-        shootingStar.radius * 6
+        star.x - star.radius * 3,
+        star.y - star.radius * 3,
+        star.radius * 6,
+        star.radius * 6
     );
     
     // Draw star core
     ctx.fillStyle = 'rgba(255, 255, 255, 1)';
     ctx.beginPath();
-    ctx.arc(shootingStar.x, shootingStar.y, shootingStar.radius, 0, Math.PI * 2);
+    ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
     ctx.fill();
 }
 
@@ -2632,21 +3197,51 @@ function checkStarClick(x, y) {
         return false;
     }
     
-    const clickRadius = 20;
+    const clickRadius = 25; // Increased from 20 for easier comet clicking
     
-    // Check shooting star first (highest priority)
+    // Check single shooting star first (normal modes)
     if (shootingStar) {
         const dx = shootingStar.x - x;
         const dy = shootingStar.y - y;
         const dist = Math.sqrt(dx * dx + dy * dy);
         
-        if (dist < clickRadius) {
+        if (dist < clickRadius + 5) { // Extra 5px for comets
             starGameScore += shootingStar.points;
-            starGameStats.comet++; // Track as comet, not bonus
-            createParticles(shootingStar.x, shootingStar.y, '255, 100, 100', 30); // HUGE red explosion
-            playPopSound('comet'); // Special comet explosion sound
-            updateGameScore();
+            starGameStats.comet++;
+            createParticles(shootingStar.x, shootingStar.y, '255, 100, 100', 30);
+            playPopSound('comet');
+            updateGameScore(true);
+            
+            // Check for unlocks during gameplay (only in normal mode)
+            if (gameMode === 'normal') {
+                checkForUnlocksDuringGame();
+            }
+            
             shootingStar = null;
+            return true;
+        }
+    }
+    
+    // Check multiple shooting stars (comet rush mode)
+    for (let i = shootingStars.length - 1; i >= 0; i--) {
+        const star = shootingStars[i];
+        const dx = star.x - x;
+        const dy = star.y - y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        
+        if (dist < clickRadius + 5) {
+            starGameScore += star.points;
+            starGameStats.comet++;
+            createParticles(star.x, star.y, '255, 100, 100', 30);
+            playPopSound('comet');
+            updateGameScore(true);
+            
+            // Check for unlocks during gameplay (only in normal mode)
+            if (gameMode === 'normal') {
+                checkForUnlocksDuringGame();
+            }
+            
+            shootingStars.splice(i, 1);
             return true;
         }
     }
@@ -2666,13 +3261,18 @@ function checkStarClick(x, y) {
                 starGameStats.bonus++;
                 createParticles(star.x, star.y, '142, 216, 216', 12); // Bright cyan, more particles
                 playPopSound('bonus');
+                
+                // Check for unlocks during gameplay (only in normal mode)
+                if (gameMode === 'normal') {
+                    checkForUnlocksDuringGame();
+                }
             } else {
                 starGameStats.twinkle++;
                 createParticles(star.x, star.y, '198, 232, 232', 8); // Normal cyan
                 playPopSound('twinkle');
             }
             
-            updateGameScore();
+            updateGameScore(true); // Animate score
             twinklingStars.splice(i, 1);
             
             // Remove from fastTwinklers if present
@@ -2685,7 +3285,10 @@ function checkStarClick(x, y) {
         }
     }
     
-    // Check constellation stars (1 point, respawn immediately)
+    // Check constellation stars (skip in twinkle mode - only twinkle/bonus stars there)
+    if (gameMode === 'twinkle') return false;
+    
+    // Check constellation stars (1 point, respawn immediately except in star clear mode)
     for (const star of stars) {
         const dx = star.x - x;
         const dy = star.y - y;
@@ -2696,11 +3299,22 @@ function checkStarClick(x, y) {
             starGameStats.regular++;
             createParticles(star.x, star.y, '255, 255, 255', 6); // White particles
             playPopSound('regular');
-            updateGameScore();
+            updateGameScore(true); // Animate score
             
-            // Respawn star at new position
-            star.x = Math.random() * w;
-            star.y = Math.random() * h;
+            // Check for unlocks during gameplay (only in normal mode)
+            if (gameMode === 'normal') {
+                checkForUnlocksDuringGame();
+            }
+            
+            // In star clear mode, remove the star permanently
+            if (gameMode === 'starclear') {
+                const index = stars.indexOf(star);
+                if (index > -1) stars.splice(index, 1);
+            } else {
+                // In other modes, respawn star at new position
+                star.x = Math.random() * w;
+                star.y = Math.random() * h;
+            }
             return true;
         }
     }
@@ -2957,12 +3571,15 @@ const CAT_ICONS = {
 
 // ── TOAST ─────────────────────────────────────────────────────────────
 let toastTimer;
-function showToast(msg, isError = false) {
+function showToast(msg, isError = false, variant = 'default') {
     const el = document.getElementById('toast');
     el.textContent = msg;
-    el.className = 'show' + (isError ? ' error' : '');
+    let className = 'show';
+    if (isError) className += ' error';
+    if (variant === 'gold') className += ' gold';
+    el.className = className;
     clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => { el.className = ''; }, 3000);
+    toastTimer = setTimeout(() => { el.className = ''; }, 4000); // Longer for unlock messages
 }
 
 // ── BUILD TABS ────────────────────────────────────────────────────────
@@ -3709,6 +4326,11 @@ document.getElementById('claimBtn').addEventListener('click', () => {
         lastAchievementDate: mostRecentDate ? mostRecentDate.toISOString() : null
     });
     
+    // Update button state immediately
+    const claimBtn = document.getElementById('claimBtn');
+    claimBtn.classList.add('claimed');
+    claimBtn.textContent = 'Saved ✓';
+    
     showToast('Saved! Your achievements will auto-load next time.');
 });
 
@@ -3732,14 +4354,6 @@ document.getElementById('starGameBtn').addEventListener('click', () => {
     }
 });
 
-// Canvas click for star game (canvas already declared at top of script)
-canvas.addEventListener('click', (e) => {
-    const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    checkStarClick(x, y);
-});
-
 // Game over modal buttons
 document.getElementById('tryAgainBtn').addEventListener('click', () => {
     document.getElementById('gameOverModal').classList.remove('visible');
@@ -3748,6 +4362,11 @@ document.getElementById('tryAgainBtn').addEventListener('click', () => {
 
 document.getElementById('closeGameBtn').addEventListener('click', () => {
     document.getElementById('gameOverModal').classList.remove('visible');
+});
+
+document.getElementById('changeModeBtn').addEventListener('click', () => {
+    document.getElementById('gameOverModal').classList.remove('visible');
+    showModeSelect();
 });
 
 // Cheat warning modal button
@@ -3777,6 +4396,694 @@ document.querySelectorAll('.mode-card').forEach(card => {
         const mode = card.dataset.mode;
         startGameWithMode(mode);
     });
+});
+
+// Mode select settings button
+document.getElementById('modeSelectSettingsBtn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    document.getElementById('modeSelectModal').classList.remove('visible');
+    openAccessibilitySettings();
+});
+
+// Accessibility notice OK button
+document.getElementById('accessibilityOkBtn').addEventListener('click', () => {
+    accessibilitySettings.shownNotice = true;
+    setCookie('accessibilitySettings', accessibilitySettings);
+    document.getElementById('accessibilityNoticeModal').classList.remove('visible');
+    showModeSelect(); // Now show the mode select
+});
+
+// Accessibility settings
+function openAccessibilitySettings() {
+    const modal = document.getElementById('accessibilitySettingsModal');
+    // Set current selection
+    document.querySelector(`input[name="accessMode"][value="${accessibilitySettings.mode}"]`).checked = true;
+    modal.classList.add('visible');
+}
+
+document.getElementById('saveAccessibilityBtn').addEventListener('click', () => {
+    const selected = document.querySelector('input[name="accessMode"]:checked').value;
+    accessibilitySettings.mode = selected;
+    setCookie('accessibilitySettings', accessibilitySettings);
+    applyAccessibilitySettings();
+    document.getElementById('accessibilitySettingsModal').classList.remove('visible');
+    showToast('Accessibility settings saved!');
+    showModeSelect(); // Return to mode select
+});
+
+// Apply accessibility settings
+function applyAccessibilitySettings() {
+    // Clear any existing intervals
+    if (window.accessibilityInterval) {
+        clearInterval(window.accessibilityInterval);
+        window.accessibilityInterval = null;
+    }
+    
+    // Remove previous spacebar handler if exists
+    if (window.spaceHandler) {
+        document.removeEventListener('keydown', window.spaceHandler);
+        window.spaceHandler = null;
+    }
+    
+    // Abort previous canvas click listeners
+    if (window.canvasAbortController) {
+        window.canvasAbortController.abort();
+    }
+    window.canvasAbortController = new AbortController();
+    
+    if (accessibilitySettings.mode === 'spacebar') {
+        // Spacebar click mode
+        window.spaceHandler = (e) => {
+            if (e.code === 'Space' && (starGameActive || saveStarsActive)) {
+                e.preventDefault();
+                if (saveStarsActive) {
+                    checkBlackHoleClick(mouse.x, mouse.y);
+                } else {
+                    checkStarClick(mouse.x, mouse.y);
+                }
+            }
+        };
+        document.addEventListener('keydown', window.spaceHandler);
+        
+        // Still allow mouse clicks
+        canvas.addEventListener('click', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            if (saveStarsActive) {
+                checkBlackHoleClick(x, y);
+            } else {
+                checkStarClick(x, y);
+            }
+        }, { signal: window.canvasAbortController.signal });
+        
+    } else if (accessibilitySettings.mode === 'alwayson') {
+        // Always-on cursor mode - 4 clicks per second (every 250ms)
+        window.accessibilityInterval = setInterval(() => {
+            if (starGameActive && mouse.x && mouse.y) {
+                checkStarClick(mouse.x, mouse.y);
+            } else if (saveStarsActive && mouse.x && mouse.y) {
+                checkBlackHoleClick(mouse.x, mouse.y);
+            }
+        }, 250); // 4 times per second
+        
+        // Still allow manual clicks
+        canvas.addEventListener('click', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            if (saveStarsActive) {
+                checkBlackHoleClick(x, y);
+            } else {
+                checkStarClick(x, y);
+            }
+        }, { signal: window.canvasAbortController.signal });
+        
+    } else {
+        // Default mouse-only mode
+        canvas.addEventListener('click', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            if (saveStarsActive) {
+                checkBlackHoleClick(x, y);
+            } else {
+                checkStarClick(x, y);
+            }
+        }, { signal: window.canvasAbortController.signal });
+    }
+}
+
+// Initialize accessibility on load
+applyAccessibilitySettings();
+
+// Easter egg hint for the nerds
+console.log('%c↑↑↓↓←→←→BA', 'font-size: 20px; color: #C6E8E8; font-weight: bold;');
+console.log('%cClassic gamers know... 🎮', 'color: #999; font-style: italic;');
+
+// ── KONAMI CODE ───────────────────────────────────────────────────────
+const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 
+                        'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 
+                        'KeyB', 'KeyA'];
+let konamiIndex = 0;
+
+function playKonamiChime(isCorrect, isFirst = false) {
+    const now = audioContext.currentTime;
+    const osc = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+    
+    osc.connect(gain);
+    gain.connect(audioContext.destination);
+    
+    if (isCorrect) {
+        // Ascending chime for correct keys
+        const freq = 400 + (konamiIndex * 100); // Gets higher with each correct key
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, now);
+        
+        gain.gain.setValueAtTime(0.15, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
+        
+        osc.start(now);
+        osc.stop(now + 0.2);
+    } else {
+        // Womp womp for wrong key
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(200, now);
+        osc.frequency.exponentialRampToValueAtTime(100, now + 0.3);
+        
+        gain.gain.setValueAtTime(0.1, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+        
+        osc.start(now);
+        osc.stop(now + 0.3);
+    }
+}
+
+function playKonamiFanfare() {
+    const now = audioContext.currentTime;
+    
+    // Epic ascending fanfare
+    const notes = [523.25, 659.25, 783.99, 1046.50]; // C-E-G-C octave
+    
+    notes.forEach((freq, i) => {
+        const osc = audioContext.createOscillator();
+        const gain = audioContext.createGain();
+        
+        osc.connect(gain);
+        gain.connect(audioContext.destination);
+        
+        osc.type = 'square';
+        osc.frequency.setValueAtTime(freq, now + (i * 0.15));
+        
+        gain.gain.setValueAtTime(0.2, now + (i * 0.15));
+        gain.gain.exponentialRampToValueAtTime(0.001, now + (i * 0.15) + 0.3);
+        
+        osc.start(now + (i * 0.15));
+        osc.stop(now + (i * 0.15) + 0.3);
+    });
+}
+
+document.addEventListener('keydown', (e) => {
+    // Only listen when not in active game
+    if (starGameActive || saveStarsActive) return;
+    
+    if (e.code === konamiSequence[konamiIndex]) {
+        konamiIndex++;
+        playKonamiChime(true, konamiIndex === 1);
+        
+        if (konamiIndex === konamiSequence.length) {
+            // Code complete!
+            playKonamiFanfare();
+            setTimeout(() => {
+                showKonamiModal();
+            }, 600);
+            konamiIndex = 0;
+        }
+    } else if (konamiSequence.includes(e.code)) {
+        // Wrong key in sequence
+        playKonamiChime(false);
+        konamiIndex = 0;
+    }
+});
+
+function showKonamiModal() {
+    document.getElementById('konamiModal').classList.add('visible');
+}
+
+// ── SAVE THE STARS MODE ───────────────────────────────────────────────
+
+// Konami start button
+document.getElementById('konamiStartBtn').addEventListener('click', () => {
+    document.getElementById('konamiModal').classList.remove('visible');
+    startSaveTheStarsMode();
+});
+
+function startSaveTheStarsMode() {
+    // Make sure star game is off
+    if (starGameActive) {
+        toggleStarGame();
+    }
+    
+    // Hide profile banner if visible
+    document.getElementById('profileBanner').classList.remove('visible');
+    document.getElementById('filterRow').classList.remove('visible');
+    
+    // Set up Save the Stars mode
+    saveStarsActive = true;
+    playerHP = 500;
+    survivalTime = 0;
+    blackHoles = [];
+    redBlackHoles = [];
+    nextBlackHoleDelay = 1500;
+    
+    // Add body class for game mode
+    document.body.classList.add('save-stars-active');
+    
+    // Update game timer display
+    updateSaveStarsUI();
+    
+    // Start survival timer (counts seconds)
+    saveStarsTimer = setInterval(() => {
+        survivalTime++;
+        updateSaveStarsUI();
+    }, 1000);
+    
+    // Start black hole spawning
+    scheduleNextBlackHole();
+    
+    showToast('Save the stars from the black holes!');
+}
+
+function updateSaveStarsUI() {
+    // Update HP and time display (will create UI elements)
+    const hpDisplay = document.getElementById('saveStarsHP');
+    const timeDisplay = document.getElementById('saveStarsTime');
+    
+    if (hpDisplay) hpDisplay.textContent = playerHP;
+    if (timeDisplay) timeDisplay.textContent = survivalTime;
+}
+
+function scheduleNextBlackHole() {
+    if (!saveStarsActive) return;
+    
+    // Difficulty scaling - much slower now
+    
+    nextBlackHoleDelay = Math.max(650, nextBlackHoleDelay * 0.995); 
+    
+
+    blackHoleSpawnTimer = setTimeout(() => {
+        spawnBlackHole();
+        scheduleNextBlackHole();
+    }, nextBlackHoleDelay);
+}
+
+function spawnBlackHole() {
+    const isRed = survivalTime >= 60 && (survivalTime < 90 ? Math.random() < 0.3 : Math.random() < 0.7);
+    
+    // Fixed center size - only grows for red holes when consuming
+    const centerSize = 12; // Fixed small clickable target
+    
+    // Determine event horizon size based on time
+    let minEventSize, maxEventSize;
+    if (survivalTime < 10) {
+        minEventSize = 40;
+        maxEventSize = 60;
+    } else if (survivalTime < 30) {
+        minEventSize = 50;
+        maxEventSize = 80;
+    } else {
+        minEventSize = 60;
+        maxEventSize = 100;
+    }
+    
+    const targetEventSize = minEventSize + Math.random() * (maxEventSize - minEventSize);
+    
+    // Safe boundaries for spawning (account for mobile, leave 100px margin)
+    const margin = 100;
+    const safeMinX = margin;
+    const safeMaxX = w - margin;
+    const safeMinY = margin;
+    const safeMaxY = h - margin;
+    
+    // Try to find a position away from stars (up to 10 attempts)
+    let x, y, tooClose;
+    let attempts = 0;
+    do {
+        x = safeMinX + Math.random() * (safeMaxX - safeMinX);
+        y = safeMinY + Math.random() * (safeMaxY - safeMinY);
+        
+        // Check if too close to any star
+        tooClose = false;
+        const minDistanceFromStar = 80; // Stay at least 80px from stars
+        for (const star of stars) {
+            const dx = star.x - x;
+            const dy = star.y - y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < minDistanceFromStar) {
+                tooClose = true;
+                break;
+            }
+        }
+        attempts++;
+    } while (tooClose && attempts < 10);
+    
+    const blackHole = {
+        x: x,
+        y: y,
+        centerRadius: 0, // Start at 0 for spawn animation
+        eventRadius: 0, // Start at 0 for spawn animation
+        targetCenterRadius: centerSize, // Target size
+        targetEventRadius: targetEventSize, // Target size
+        growthRate: 0.5, // pixels per frame for center
+        eventGrowthRate: 2, // Event horizon grows 2x faster
+        hp: isRed ? centerSize * 3 : 0, // Red holes have HP (increased since center is smaller)
+        maxHP: isRed ? centerSize * 3 : 0,
+        isRed: isRed,
+        age: 0,
+        spawning: true, // Flag for spawn animation
+        spawnProgress: 0 // 0 to 1
+    };
+    
+    if (isRed) {
+        redBlackHoles.push(blackHole);
+    } else {
+        blackHoles.push(blackHole);
+    }
+}
+
+function updateAndDrawBlackHoles() {
+    const allBlackHoles = [...blackHoles, ...redBlackHoles];
+    
+    for (const bh of allBlackHoles) {
+        bh.age++;
+        
+        // Handle spawn animation
+        if (bh.spawning) {
+            bh.spawnProgress += 0.022; // Fast spawn animation
+            if (bh.spawnProgress >= 1) {
+                bh.spawnProgress = 1;
+                bh.spawning = false;
+            }
+            // Ease-in cubic for smooth spawn
+            const easeProgress = bh.spawnProgress * bh.spawnProgress * bh.spawnProgress;
+            bh.centerRadius = bh.targetCenterRadius * easeProgress;
+            bh.eventRadius = bh.targetEventRadius * easeProgress;
+        } else {
+            // Normal growth after spawn
+            // Event horizon grows faster after 60 seconds for purple holes
+            let eventGrowthMultiplier = 1;
+            if (!bh.isRed && survivalTime >= 30 && survivalTime <= 60) {
+                eventGrowthMultiplier = 2; // 4) Double speed after 60s for purple
+            }
+            if (!bh.isRed && survivalTime >= 60 && survivalTime <= 120) {
+                eventGrowthMultiplier = 4; // 4) Double speed after 60s for purple
+            }
+            if (!bh.isRed && survivalTime >= 120) {
+                eventGrowthMultiplier = 6; // 4) Double speed after 60s for purple
+            }
+            if(bh.isRed && survivalTime >= 90 && survivalTime <= 120){
+                eventGrowthMultiplier = 2;
+            }
+            if(bh.isRed && survivalTime >= 120){
+                eventGrowthMultiplier = 4;
+            }
+            bh.eventRadius += bh.eventGrowthRate * 0.016 * eventGrowthMultiplier;
+            // Center only grows for red holes when consuming (handled in consumeStar)
+        }
+        
+        // Draw event horizon (transparent purple/red circle with swirl)
+        const gradient = ctx.createRadialGradient(bh.x, bh.y, 0, bh.x, bh.y, Math.max(1, bh.eventRadius));
+        if (bh.isRed) {
+            gradient.addColorStop(0, 'rgba(150, 0, 50, 0.8)');
+            gradient.addColorStop(0.5, 'rgba(100, 0, 50, 0.4)');
+            gradient.addColorStop(1, 'rgba(50, 0, 30, 0)');
+        } else {
+            gradient.addColorStop(0, 'rgba(100, 0, 150, 0.8)');
+            gradient.addColorStop(0.5, 'rgba(80, 0, 120, 0.4)');
+            gradient.addColorStop(1, 'rgba(50, 0, 80, 0)');
+        }
+        
+        ctx.fillStyle = gradient;
+        ctx.beginPath();
+        ctx.arc(bh.x, bh.y, bh.eventRadius, 0, Math.PI * 2);
+        ctx.fill();
+        
+        // Draw swirl effect - each arc spins at different speed
+        ctx.save();
+        ctx.translate(bh.x, bh.y);
+        ctx.strokeStyle = bh.isRed ? 'rgba(255, 50, 100, 0.3)' : 'rgba(150, 100, 255, 0.3)';
+        ctx.lineWidth = 2;
+        
+        const speeds = [0.05, 0.08, 0.12]; // Different rotation speeds for each arc
+        for (let i = 0; i < 3; i++) {
+            ctx.save();
+            ctx.rotate(bh.age * speeds[i]); // Each arc rotates at different speed
+            const swirlRadius = Math.max(1, bh.eventRadius * 0.7 - (i * 10)); // Prevent negative
+            ctx.beginPath();
+            ctx.arc(0, 0, swirlRadius, 0, Math.PI * 1.5);
+            ctx.stroke();
+            ctx.restore();
+        }
+        ctx.restore();
+        
+        // Draw center (clickable death zone)
+        const centerGradient = ctx.createRadialGradient(bh.x, bh.y, 0, bh.x, bh.y, bh.centerRadius);
+        if (bh.isRed) {
+            centerGradient.addColorStop(0, 'rgba(200, 0, 50, 1)');
+            centerGradient.addColorStop(1, 'rgba(100, 0, 50, 0.8)');
+        } else {
+            centerGradient.addColorStop(0, 'rgba(150, 0, 200, 1)');
+            centerGradient.addColorStop(1, 'rgba(100, 0, 150, 0.8)');
+        }
+        ctx.fillStyle = centerGradient;
+        ctx.beginPath();
+        ctx.arc(bh.x, bh.y, bh.centerRadius, 0, Math.PI * 2);
+        ctx.fill();
+        
+        // Apply gravity to stars
+        applyBlackHoleGravity(bh);
+    }
+}
+
+function applyBlackHoleGravity(bh) {
+    for (const star of stars) {
+        const dx = bh.x - star.x;
+        const dy = bh.y - star.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        
+        // Check if in event horizon
+        if (dist < bh.eventRadius) {
+            // Check for consumption (center collision)
+            if (dist < bh.centerRadius) {
+                consumeStar(star, bh);
+                continue;
+            }
+            
+            // Apply gravity pull (inverse square, stronger near center)
+            const pullStrength = (bh.eventRadius / dist) * 0.5;
+            const normalizedDist = dist / bh.eventRadius; // 0-1, where 0 is center
+            const gravityMultiplier = Math.pow(1 - normalizedDist, 2); // Quadratic falloff
+            
+            star.vx += (dx / dist) * pullStrength * gravityMultiplier * 0.05;
+            star.vy += (dy / dist) * pullStrength * gravityMultiplier * 0.05;
+            
+            // Turn red as they get closer
+            star.danger = 1 - normalizedDist; // 0-1, where 1 is most danger
+        } else {
+            star.danger = 0;
+        }
+    }
+}
+
+function consumeStar(star, bh) {
+    // Determine star HP value
+    let starHP = 1; // Default small star
+    
+    // Check if it's a twinkle star
+    const isTwinkle = twinklingStars.some(ts => 
+        Math.abs(ts.x - star.x) < 5 && Math.abs(ts.y - star.y) < 5
+    );
+    
+    if (isTwinkle) {
+        const twinkleStar = twinklingStars.find(ts => 
+            Math.abs(ts.x - star.x) < 5 && Math.abs(ts.y - star.y) < 5
+        );
+        if (twinkleStar) {
+            starHP = twinkleStar.isFast ? 5 : 2;
+            // Remove from twinkle array
+            const idx = twinklingStars.indexOf(twinkleStar);
+            if (idx > -1) twinklingStars.splice(idx, 1);
+        }
+    }
+    
+    // Damage player
+    playerHP = Math.max(0, playerHP - starHP);
+    
+    // Red black holes grow when consuming
+    if (bh.isRed) {
+        const growthAmount = starHP * 0.02; // 2% per HP
+        bh.centerRadius *= (1 + growthAmount);
+        bh.eventRadius *= (1 + growthAmount);
+        bh.hp += starHP * 5; // Gain HP too
+        bh.maxHP += starHP * 5;
+        
+        // Red pulse effect
+        playRedBlackHoleConsume();
+    } else {
+        playBlackHoleConsume();
+    }
+    
+    // Respawn star
+    star.x = Math.random() * w;
+    star.y = Math.random() * h;
+    star.vx = (Math.random() - 0.5) * 0.3;
+    star.vy = (Math.random() - 0.5) * 0.3;
+    star.danger = 0;
+    
+    updateSaveStarsUI();
+    
+    // Check game over
+    if (playerHP <= 0) {
+        endSaveTheStarsMode();
+    }
+}
+
+function playBlackHoleConsume() {
+    const now = audioContext.currentTime;
+    const osc = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+    
+    osc.connect(gain);
+    gain.connect(audioContext.destination);
+    
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(150, now);
+    osc.frequency.exponentialRampToValueAtTime(50, now + 0.3);
+    
+    gain.gain.setValueAtTime(0.15, now);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+    
+    osc.start(now);
+    osc.stop(now + 0.3);
+}
+
+function playRedBlackHoleConsume() {
+    const now = audioContext.currentTime;
+    
+    // More aggressive sound
+    const osc = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+    const filter = audioContext.createBiquadFilter();
+    
+    osc.connect(filter);
+    filter.connect(gain);
+    gain.connect(audioContext.destination);
+    
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(200, now);
+    osc.frequency.exponentialRampToValueAtTime(30, now + 0.4);
+    
+    filter.type = 'lowpass';
+    filter.frequency.setValueAtTime(1000, now);
+    filter.frequency.exponentialRampToValueAtTime(100, now + 0.4);
+    
+    gain.gain.setValueAtTime(0.2, now);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
+    
+    osc.start(now);
+    osc.stop(now + 0.4);
+}
+
+function endSaveTheStarsMode() {
+    saveStarsActive = false;
+    document.body.classList.remove('save-stars-active');
+    
+    clearInterval(saveStarsTimer);
+    clearTimeout(blackHoleSpawnTimer);
+    
+    blackHoles = [];
+    redBlackHoles = [];
+    
+    // Reset all stars
+    for (const star of stars) {
+        star.danger = 0;
+    }
+    
+    showToast(`Game Over! You survived ${survivalTime} seconds!`);
+}
+
+function checkBlackHoleClick(x, y) {
+    const clickRadius = 25; // Increased from 10 for easier clicking
+    
+    // Check red black holes first (priority)
+    for (let i = redBlackHoles.length - 1; i >= 0; i--) {
+        const bh = redBlackHoles[i];
+        const dx = bh.x - x;
+        const dy = bh.y - y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        
+        if (dist < bh.centerRadius + clickRadius) {
+            console.log('Red black hole clicked!', 'HP:', bh.hp, 'Radius:', bh.centerRadius);
+            if (bh.hp > 20) {
+                // Damage the black hole
+                bh.hp -= 10;
+                bh.centerRadius = Math.max(5, bh.centerRadius * 0.95); // Shrink but minimum 5px
+                bh.eventRadius = Math.max(10, bh.eventRadius * 0.95); // Minimum 10px
+                playBlackHoleHit();
+            } else {
+                // Destroy it
+                redBlackHoles.splice(i, 1);
+                playBlackHoleDestroy();
+                createParticles(bh.x, bh.y, '255, 0, 100', 25); // Bright red/pink particles
+            }
+            return;
+        }
+    }
+    
+    // Check normal black holes
+    for (let i = blackHoles.length - 1; i >= 0; i--) {
+        const bh = blackHoles[i];
+        const dx = bh.x - x;
+        const dy = bh.y - y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        
+        if (dist < bh.centerRadius + clickRadius) {
+            console.log('Normal black hole clicked! Destroying...');
+            blackHoles.splice(i, 1);
+            playBlackHoleDestroy();
+            createParticles(bh.x, bh.y, '180, 100, 255', 20); // Bright purple particles
+            return;
+        }
+    }
+    
+    console.log('No black hole hit at', x, y, 'Normal holes:', blackHoles.length, 'Red holes:', redBlackHoles.length);
+}
+
+function playBlackHoleHit() {
+    const now = audioContext.currentTime;
+    const osc = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+    
+    osc.connect(gain);
+    gain.connect(audioContext.destination);
+    
+    osc.type = 'square';
+    osc.frequency.setValueAtTime(300, now);
+    
+    gain.gain.setValueAtTime(0.1, now);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
+    
+    osc.start(now);
+    osc.stop(now + 0.1);
+}
+
+function playBlackHoleDestroy() {
+    const now = audioContext.currentTime;
+    
+    // Satisfying pop
+    const osc = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+    
+    osc.connect(gain);
+    gain.connect(audioContext.destination);
+    
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(600, now);
+    osc.frequency.exponentialRampToValueAtTime(200, now + 0.2);
+    
+    gain.gain.setValueAtTime(0.2, now);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
+    
+    osc.start(now);
+    osc.stop(now + 0.2);
+}
+
+// Click outside mode select to close it
+document.getElementById('modeSelectModal').addEventListener('click', (e) => {
+    if (e.target.id === 'modeSelectModal') {
+        document.getElementById('modeSelectModal').classList.remove('visible');
+    }
 });
 
 // Event delegation for clicking recent user items in dropdowns
