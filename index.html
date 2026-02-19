@@ -3013,8 +3013,8 @@ function spawnShootingStar() {
         
         // Speed multiplier based on mode
         let speedMult = 1.0;
-        if (gameMode === 'comet') speedMult = 1.4; // 40% faster in comet rush
-        else if (gameMode === 'normal') speedMult = 1.2; // 20% faster in normal
+        if (gameMode === 'comet') speedMult = 1.2; // 20% faster in comet rush on mobile (since it's already more intense)
+        else if (gameMode === 'normal') speedMult = 1; // normal speed on mobile, smaller screen leaves less reaction time
         
         if (fromLeft) {
             x = -20;
