@@ -2,641 +2,885 @@
   "chat": {
     "chat_dog_god": {
       "name": "Dog Loyalist",
-      "desc": "Awarded for believing in the dog god."
+      "desc": "Awarded for believing in the dog god.",
+      "type": "contains"
     },
     "chat_true_form": {
       "name": "Dog Understander",
-      "desc": "Awarded for knowing the true desires of dog."
+      "desc": "Awarded for knowing the true desires of dog.",
+      "type": "contains"
     },
     "chat_ball": {
       "name": "Ball? WHERE?",
-      "desc": "Awarded for baiting dog with toys."
+      "desc": "Awarded for baiting dog with toys.",
+      "type": "contains"
     },
     "chat_walk": {
       "name": "Walkies?!",
-      "desc": "Awarded for baiting dog with a walk."
+      "desc": "Awarded for baiting dog with a walk.",
+      "type": "contains"
     },
     "chat_bork": {
       "name": "Certified Barker",
-      "desc": "Awarded for speaking the sacred tongue."
+      "desc": "Awarded for speaking the sacred tongue.",
+      "type": "contains"
     },
     "chat_goodboy": {
       "name": "Who's A Good Doggo?",
-      "desc": "Awarded for praising the divine pupper."
+      "desc": "Awarded for praising the divine pupper.",
+      "type": "contains"
     },
     "chat_treats": {
       "name": "Treat Dispenser",
-      "desc": "Awarded for attempting to bribe the dog."
+      "desc": "Awarded for attempting to bribe the dog.",
+      "type": "contains"
     },
     "chat_squirrel": {
       "name": "SQUIRREL?!",
-      "desc": "Awarded for invoking ancient prey instincts."
+      "desc": "Awarded for invoking ancient prey instincts.",
+      "type": "contains"
     },
     "chat_pet": {
       "name": "Headpats Initiate",
-      "desc": "Awarded for petting the divine creature."
+      "desc": "Awarded for petting the divine creature.",
+      "type": "contains"
     },
     "chat_stinky": {
       "name": "Rude Human",
-      "desc": "Awarded for calling dog stinky."
+      "desc": "Awarded for calling dog stinky.",
+      "type": "contains"
     },
     "chat_fetch": {
       "name": "Thrower Of Objects",
-      "desc": "Awarded for commanding fetch."
+      "desc": "Awarded for commanding fetch.",
+      "type": "contains"
     },
     "chat_sleepy": {
       "name": "Nap Whisperer",
-      "desc": "Awarded for noting the yawn."
+      "desc": "Awarded for noting the yawn.",
+      "type": "contains"
     },
     "chat_rage": {
       "name": "Zoomie Summoner",
-      "desc": "Awarded for invoking chaos."
+      "desc": "Awarded for invoking chaos.",
+      "type": "contains"
     },
     "chat_tail": {
       "name": "Tail Enthusiast",
-      "desc": "Awarded for noticing the tail physics."
+      "desc": "Awarded for noticing the tail physics.",
+      "type": "contains"
     },
     "chat_bellyrub": {
       "name": "Dangerous Temptation",
-      "desc": "Awarded for offering forbidden tummy rubs."
+      "desc": "Awarded for offering forbidden tummy rubs.",
+      "type": "contains"
     },
     "chat_howl": {
       "name": "Moon Choir Recruit",
-      "desc": "Awarded for attempting to summon howls."
+      "desc": "Awarded for attempting to summon howls.",
+      "type": "contains"
     },
     "chat_stick": {
       "name": "Stick Provider",
-      "desc": "Awarded for offering quality lumber."
+      "desc": "Awarded for offering quality lumber.",
+      "type": "contains"
     },
     "chat_biscuits": {
       "name": "Economist",
-      "desc": "Awarded for discussing stellar-based wealth."
+      "desc": "Awarded for discussing stellar-based wealth.",
+      "type": "contains"
     },
     "chat_chaos": {
       "name": "Mischief Encourager",
-      "desc": "Awarded for promoting chaos energy."
+      "desc": "Awarded for promoting chaos energy.",
+      "type": "contains"
     },
     "chat_sniff": {
       "name": "Sniff Scholar",
-      "desc": "Awarded for understanding the sacred sniff ritual."
+      "desc": "Awarded for understanding the sacred sniff ritual.",
+      "type": "contains"
     },
     "chat_protect": {
       "name": "Guardian Vibes",
-      "desc": "Awarded for swearing loyalty and protection."
+      "desc": "Awarded for swearing loyalty and protection.",
+      "type": "contains"
     },
     "chat_bath": {
       "name": "Soapy Betrayer",
-      "desc": "Awarded for suggesting a bath."
+      "desc": "Awarded for suggesting a bath.",
+      "type": "contains"
     },
     "chat_boop": {
       "name": "Nose Booper",
-      "desc": "Awarded for the ultimate snoot touch."
+      "desc": "Awarded for the ultimate snoot touch.",
+      "type": "contains"
     },
     "chat_scratch": {
       "name": "Scratch Specialist",
-      "desc": "Awarded for targeting those itchy spots."
+      "desc": "Awarded for targeting those itchy spots.",
+      "type": "contains"
     },
     "chat_paw": {
       "name": "Paw Shaker",
-      "desc": "Awarded for sealing deals with floofy handshakes."
+      "desc": "Awarded for sealing deals with floofy handshakes.",
+      "type": "contains"
     },
     "chat_sit": {
       "name": "Obedience Whisperer",
-      "desc": "Awarded for basic command mastery."
+      "desc": "Awarded for basic command mastery.",
+      "type": "contains"
     },
     "chat_rollover": {
       "name": "Trick Teaser",
-      "desc": "Awarded for flipping the script on pup."
+      "desc": "Awarded for flipping the script on pup.",
+      "type": "contains"
     },
     "chat_lick": {
       "name": "Slobber Survivor",
-      "desc": "Awarded for enduring wet kisses."
+      "desc": "Awarded for enduring wet kisses.",
+      "type": "contains"
     },
     "chat_dig": {
       "name": "Hole Digger",
-      "desc": "Awarded for unearthing buried treasures."
+      "desc": "Awarded for unearthing buried treasures.",
+      "type": "contains"
     },
     "chat_puppyeyes": {
       "name": "Weakness Exploiter",
-      "desc": "Awarded for weaponizing cuteness."
+      "desc": "Awarded for weaponizing cuteness.",
+      "type": "contains"
     },
     "chat_baddog": {
       "name": "Rebel Rouser",
-      "desc": "Awarded for calling out naughty vibes."
+      "desc": "Awarded for calling out naughty vibes.",
+      "type": "contains"
     },
     "chat_frisbee": {
       "name": "Disc Jockey",
-      "desc": "Awarded for aerial fetch upgrades."
+      "desc": "Awarded for aerial fetch upgrades.",
+      "type": "contains"
     },
     "chat_woofwoof": {
       "name": "Double Barker",
-      "desc": "Awarded for the classic double woof."
+      "desc": "Awarded for the classic double woof.",
+      "type": "contains"
     },
     "chat_pupper": {
       "name": "Pupper Aficionado",
-      "desc": "Awarded for using ultimate cute slang."
+      "desc": "Awarded for using ultimate cute slang.",
+      "type": "contains"
     },
     "chat_doge": {
       "name": "Meme Lord",
-      "desc": "Awarded for invoking the original doge."
+      "desc": "Awarded for invoking the original doge.",
+      "type": "contains"
     },
     "chat_leash": {
       "name": "Leash Handler",
-      "desc": "Awarded for taking control of the walk."
+      "desc": "Awarded for taking control of the walk.",
+      "type": "contains"
     },
     "chat_pawfive": {
       "name": "High Paw Hero",
-      "desc": "Awarded for celebrating with slaps."
+      "desc": "Awarded for celebrating with slaps.",
+      "type": "contains"
     },
     "chat_snoot": {
       "name": "Snoot Connoisseur",
-      "desc": "Awarded for appreciating the noble nose."
+      "desc": "Awarded for appreciating the noble nose.",
+      "type": "contains"
     },
     "chat_floof": {
       "name": "Floof Fanatic",
-      "desc": "Awarded for fluff obsession."
+      "desc": "Awarded for fluff obsession.",
+      "type": "contains"
     },
     "chat_trick": {
       "name": "Trick Trainer",
-      "desc": "Awarded for teaching new moves."
+      "desc": "Awarded for teaching new moves.",
+      "type": "contains"
     },
     "chat_park": {
       "name": "Park Adventurer",
-      "desc": "Awarded for dreaming of open fields."
+      "desc": "Awarded for dreaming of open fields.",
+      "type": "contains"
     },
     "chat_bone": {
       "name": "Bone Burier",
-      "desc": "Awarded for hiding treasures."
+      "desc": "Awarded for hiding treasures.",
+      "type": "contains"
     },
     "chat_shake": {
       "name": "Shake Off Pro",
-      "desc": "Awarded for post-bath chaos."
+      "desc": "Awarded for post-bath chaos.",
+      "type": "contains"
     },
     "chat_cuddle": {
       "name": "Cuddle Bug",
-      "desc": "Awarded for snuggle demands."
+      "desc": "Awarded for snuggle demands.",
+      "type": "contains"
     },
     "chat_vet": {
       "name": "Vet Avoider",
-      "desc": "Awarded for dreading the doc."
+      "desc": "Awarded for dreading the doc.",
+      "type": "contains"
     },
     "chat_spelled_forbidden": {
       "name": "Pupper Confusion",
-      "desc": "Awarded for spelling out the scary words with sneaky spaces, thinking pup won't notice. Spoiler: pup notices."
+      "desc": "Awarded for spelling out the scary words with sneaky spaces, thinking pup won't notice. Spoiler: pup notices.",
+      "type": "contains"
     },
     "chat_peanut": {
       "name": "PB Dealer",
-      "desc": "Awarded for offering the legendary sticky treat."
+      "desc": "Awarded for offering the legendary sticky treat.",
+      "type": "contains"
     },
     "chat_chasetail": {
       "name": "Tail Chaser",
-      "desc": "Awarded for witnessing the eternal spin cycle."
+      "desc": "Awarded for witnessing the eternal spin cycle.",
+      "type": "contains"
     },
     "chat_growl": {
       "name": "Growl Translator",
-      "desc": "Awarded for decoding the warning rumbles."
+      "desc": "Awarded for decoding the warning rumbles.",
+      "type": "contains"
+    },
+    "chat_beach": {
+      "name": "Beach Bum Planner",
+      "desc": "Awarded for visions of sand, waves, and zoomies.",
+      "type": "contains"
     },
     "chat_floofy": {
       "name": "Floof Inspector",
-      "desc": "Awarded for fluff quality control."
+      "desc": "Awarded for fluff quality control.",
+      "type": "contains"
     },
     "chat_carride": {
       "name": "Window Licker",
-      "desc": "Awarded for promising the greatest adventure: sticking your head out the window."
+      "desc": "Awarded for promising the greatest adventure: sticking your head out the window.",
+      "type": "contains"
     },
     "chat_vacuum": {
       "name": "The monster vacoom",
-      "desc": "Awarded for declaring war on the loud monster."
+      "desc": "Awarded for declaring war on the loud monster.",
+      "type": "contains"
     },
     "chat_brush": {
       "name": "Brush Evader",
-      "desc": "Awarded for dramatic escape attempts during grooming."
+      "desc": "Awarded for dramatic escape attempts during grooming.",
+      "type": "contains"
     },
     "chat_mailman": {
       "name": "Mailman Menace",
-      "desc": "Awarded for treating every delivery person like a personal nemesis."
+      "desc": "Awarded for treating every delivery person like a personal nemesis.",
+      "type": "contains"
     },
     "chat_yap": {
       "name": "Yapper Supreme",
-      "desc": "Awarded for high-pitched tiny barks (even if you're a big dog)."
+      "desc": "Awarded for high-pitched tiny barks (even if you're a big dog).",
+      "type": "contains"
     },
     "chat_playdead": {
       "name": "Oscar Winner",
-      "desc": "Awarded for the ultimate dramatic flop."
+      "desc": "Awarded for the ultimate dramatic flop.",
+      "type": "contains"
     },
     "chat_tug": {
       "name": "Tug Champion",
-      "desc": "Awarded for rope toy warfare."
+      "desc": "Awarded for rope toy warfare.",
+      "type": "contains"
     },
     "chat_pupcup": {
       "name": "Pup Cup Connoisseur",
-      "desc": "Awarded for demanding frozen dairy treats."
+      "desc": "Awarded for demanding frozen dairy treats.",
+      "type": "contains"
+    },
+    "chat_wholet": {
+      "name": "Baha Men Echo",
+      "desc": "Awarded for the eternal question.",
+      "type": "contains"
     },
     "chat_10": {
       "name": "Curious Chatter.",
-      "desc": "Awarded for yapping 10 times."
+      "desc": "Awarded for yapping 10 times.",
+      "amount": 10,
+      "type": "cumulative"
     },
     "chat_100": {
       "name": "Entry Level Yapper.",
-      "desc": "Awarded for yapping 100 times."
+      "desc": "Awarded for yapping 100 times.",
+      "amount": 100,
+      "type": "cumulative"
     },
     "chat_500": {
       "name": "Little Yapper.",
-      "desc": "Awarded for yapping 500 times."
+      "desc": "Awarded for yapping 500 times.",
+      "amount": 500,
+      "type": "cumulative"
     },
     "chat_1k": {
       "name": "Yapper.",
-      "desc": "Awarded for yapping 1,000 times."
+      "desc": "Awarded for yapping 1,000 times.",
+      "amount": 1000,
+      "type": "cumulative"
     },
     "chat_5k": {
       "name": "Little Big Yapper.",
-      "desc": "Awarded for yapping 5,000 times."
+      "desc": "Awarded for yapping 5,000 times.",
+      "amount": 5000,
+      "type": "cumulative"
     },
     "chat_10k": {
       "name": "Big Yapper.",
-      "desc": "Awarded for yapping 10,000 times."
+      "desc": "Awarded for yapping 10,000 times.",
+      "amount": 10000,
+      "type": "cumulative"
     },
     "chat_day_halloween_2": {
       "name": "Spook 2, electric spook-a-lo.",
-      "desc": "Awarded for being present during Halloween 2025."
+      "desc": "Awarded for being present during Halloween 2025.",
+      "type": "date"
     },
     "chat_day_special_2": {
       "name": "Day Achivement 2.",
-      "desc": "Awarded being present during the day delta was testing day achivement code for 2.0."
+      "desc": "Awarded being present during the day delta was testing day achivement code for 2.0.",
+      "type": "date"
     },
     "subathon_2025": {
       "name": "I WAS THERE AT THE START! 2025!",
-      "desc": "Awarded for being present on the first day of the subathon in 2025."
+      "desc": "Awarded for being present on the first day of the subathon in 2025.",
+      "type": "date"
     },
     "subathon_2025_any": {
       "name": "I WAS THERE! 2025!",
-      "desc": "Awarded for being present during the 2025 subathon."
+      "desc": "Awarded for being present during the 2025 subathon.",
+      "type": "date"
     },
     "birthday_2025": {
       "name": "Happy Birthday Dog! (2025)",
-      "desc": "Awarded for being present on dogs birthday in 2025."
+      "desc": "Awarded for being present on dogs birthday in 2025.",
+      "type": "date"
     }
   },
   "gamble": {
     "gamble_loss_total_100k": {
       "name": "Noteable Failure",
-      "desc": "Awarded for losing 100,000 kibble in gambling."
+      "desc": "Awarded for losing 100,000 kibble in gambling.",
+      "amount": 100000,
+      "type": "loss"
     },
     "gamble_loss_total_1m": {
       "name": "Huge Failure",
-      "desc": "Awarded for losing 1,000,000 kibble in gambling."
+      "desc": "Awarded for losing 1,000,000 kibble in gambling.",
+      "amount": 1000000,
+      "type": "loss"
     },
     "gamble_loss_total_10m": {
       "name": "??? Failure",
-      "desc": "Awarded for losing 10,000,000 kibble in gambling."
+      "desc": "Awarded for losing 10,000,000 kibble in gambling.",
+      "amount": 10000000,
+      "type": "loss"
     },
     "gamble_loss_total_100m": {
       "name": "Gambler Without Logic.",
-      "desc": "Awarded for losing 100,000,000 kibble in gambling."
+      "desc": "Awarded for losing 100,000,000 kibble in gambling.",
+      "amount": 100000000,
+      "type": "loss"
     },
     "gamble_loss_total_1b": {
       "name": "(Platinum) One False Gambler",
-      "desc": "Awarded for losing 1,000,000,000 kibble in gambling."
+      "desc": "Awarded for losing 1,000,000,000 kibble in gambling.",
+      "amount": 1000000000,
+      "type": "loss"
     },
     "gamble_win_total_10k": {
       "name": "Taste of Winning",
-      "desc": "Awarded for winning 10,000 kibble in gambling."
+      "desc": "Awarded for winning 10,000 kibble in gambling.",
+      "amount": 10000,
+      "type": "win"
     },
     "gamble_win_total_100k": {
       "name": "Noteable Winner",
-      "desc": "Awarded for winning 100,000 kibble in gambling."
+      "desc": "Awarded for winning 100,000 kibble in gambling.",
+      "amount": 100000,
+      "type": "win"
     },
     "gamble_win_total_1m": {
       "name": "Huge Winner",
-      "desc": "Awarded for winning 1,000,000 kibble in gambling."
+      "desc": "Awarded for winning 1,000,000 kibble in gambling.",
+      "amount": 1000000,
+      "type": "win"
     },
     "gamble_win_total_10m": {
       "name": "??? Winner",
-      "desc": "Awarded for winning 10,000,000 kibble in gambling."
+      "desc": "Awarded for winning 10,000,000 kibble in gambling.",
+      "amount": 10000000,
+      "type": "win"
     },
     "gamble_win_total_100m": {
       "name": "Most Logical Gambler.",
-      "desc": "Awarded for winning 100,000,000 kibble in gambling."
+      "desc": "Awarded for winning 100,000,000 kibble in gambling.",
+      "amount": 100000000,
+      "type": "win"
     },
     "gamble_jackpot_total_1": {
       "name": "Taste of Luck.",
-      "desc": "Awarded for getting your first Jackpot while gambling."
+      "desc": "Awarded for getting your first Jackpot while gambling.",
+      "amount": 1,
+      "type": "jackpot"
     },
     "gamble_total_1": {
       "name": "Curious Gambler",
-      "desc": "Awarded for gambling for the first time! YAY GAMBLING!"
+      "desc": "Awarded for gambling for the first time! YAY GAMBLING!",
+      "amount": 1,
+      "type": "total"
     },
     "gamble_total_5": {
       "name": "Gambler",
-      "desc": "Awarded for gambling for the 5th time."
+      "desc": "Awarded for gambling for the 5th time.",
+      "amount": 5,
+      "type": "total"
     },
     "gamble_total_win_1": {
       "name": "Walk Away Now",
-      "desc": "Awarded for winning at gambling for the first time!"
+      "desc": "Awarded for winning at gambling for the first time!",
+      "amount": 1,
+      "type": "win_total"
     },
     "gamble_total_loss_1": {
       "name": "Shouldn't Have Tried",
-      "desc": "Awarded for losing at gambling for the first time.."
+      "desc": "Awarded for losing at gambling for the first time..",
+      "amount": 1,
+      "type": "loss_total"
     }
   },
   "cheer": {
     "cheer_message_100": {
       "name": "Generoius Bit Giver.",
-      "desc": "Awarded for cheering 100 or more bits in a message."
+      "desc": "Awarded for cheering 100 or more bits in a message.",
+      "amount": 100,
+      "type": "threshold"
     },
     "cheer_message_1k": {
       "name": "Big Bit Giver.",
-      "desc": "Awarded for cheering 1,000 or more bits in a message."
+      "desc": "Awarded for cheering 1,000 or more bits in a message.",
+      "amount": 1000,
+      "type": "threshold"
     },
     "cheer_message_10k": {
       "name": "Massive Bit Giver.",
-      "desc": "Awarded for cheering 10,000 or more bits in a single message."
+      "desc": "Awarded for cheering 10,000 or more bits in a single message.",
+      "amount": 10000,
+      "type": "threshold"
     },
     "cheer_cumulative_10k": {
       "name": "Famous Cheerer.",
-      "desc": "Awarded for cheering 10,000 bits overall."
+      "desc": "Awarded for cheering 10,000 bits overall.",
+      "amount": 10000,
+      "type": "cumulative"
     },
     "cheer_cumulative_20k": {
       "name": "Food Buyer.",
-      "desc": "Awarded for cheering 20,000 bits overall."
+      "desc": "Awarded for cheering 20,000 bits overall.",
+      "amount": 20000,
+      "type": "cumulative"
     },
     "cheer_time_1": {
       "name": "Babys First Cheer.",
-      "desc": "Awarded for cheering once."
+      "desc": "Awarded for cheering once.",
+      "amount": 1,
+      "type": "times"
     },
     "cheer_time_10": {
       "name": "Bit Farmer.",
-      "desc": "Awarded for cheering 10 times!."
+      "desc": "Awarded for cheering 10 times!.",
+      "amount": 10,
+      "type": "times"
     },
     "cheer_1": {
       "name": "Bit Giver.",
-      "desc": "Awarded for cheering exactly 1 bit."
+      "desc": "Awarded for cheering exactly 1 bit.",
+      "amount": 1,
+      "type": "exact"
     },
     "cheer_2": {
       "name": "Two's Legacy.",
-      "desc": "Awarded for cheering exactly 2 bits"
+      "desc": "Awarded for cheering exactly 2 bits",
+      "amount": 2,
+      "type": "exact"
     },
     "cheer_3": {
       "name": "A Slice of Pi.",
-      "desc": "Awarded for cheering exactly 3 bits"
+      "desc": "Awarded for cheering exactly 3 bits",
+      "amount": 3,
+      "type": "exact"
     },
     "cheer_4": {
       "name": "2, but 2 times.",
-      "desc": "Awarded for cheering exactly 4 bits"
+      "desc": "Awarded for cheering exactly 4 bits",
+      "amount": 4,
+      "type": "exact"
     },
     "cheer_7": {
       "name": "Lucky!",
-      "desc": "Awarded for cheering exactly 7 bits"
+      "desc": "Awarded for cheering exactly 7 bits",
+      "amount": 7,
+      "type": "exact"
     },
     "cheer_8": {
       "name": "2, but grown up.",
-      "desc": "Awarded for cheering exactly 8 bits"
+      "desc": "Awarded for cheering exactly 8 bits",
+      "amount": 8,
+      "type": "exact"
     },
     "cheer_10": {
       "name": "Not much, but it's honest bits.",
-      "desc": "Awarded for cheering exactly 10 bits"
+      "desc": "Awarded for cheering exactly 10 bits",
+      "amount": 10,
+      "type": "exact"
     },
     "cheer_12": {
       "name": "First 1 Then 2.",
-      "desc": "Awarded for cheering exactly 12 bits"
+      "desc": "Awarded for cheering exactly 12 bits",
+      "amount": 12,
+      "type": "exact"
     },
     "cheer_13": {
       "name": "Unlucky!",
-      "desc": "Awarded for cheering exactly 13 bits"
+      "desc": "Awarded for cheering exactly 13 bits",
+      "amount": 13,
+      "type": "exact"
     },
     "cheer_16": {
       "name": "16 Bit Game?",
-      "desc": "Awarded for cheering exactly 16 bits"
+      "desc": "Awarded for cheering exactly 16 bits",
+      "amount": 16,
+      "type": "exact"
     },
     "cheer_25": {
       "name": "You know what's funnier? 25.",
-      "desc": "Awarded for cheering exactly 25 bits"
+      "desc": "Awarded for cheering exactly 25 bits",
+      "amount": 25,
+      "type": "exact"
     },
     "cheer_42": {
       "name": "The meaning of life the universe and everything.",
-      "desc": "Awarded for cheering exactly 42 bits"
+      "desc": "Awarded for cheering exactly 42 bits",
+      "amount": 42,
+      "type": "exact"
     },
     "cheer_69": {
       "name": "Nice Bitties.",
-      "desc": "Awarded for cheering exactly 69 bits"
+      "desc": "Awarded for cheering exactly 69 bits",
+      "amount": 69,
+      "type": "exact"
     },
     "cheer_99": {
       "name": "Almost Greatness.",
-      "desc": "Awarded for cheering exactly 99 bits"
+      "desc": "Awarded for cheering exactly 99 bits",
+      "amount": 99,
+      "type": "exact"
     },
     "cheer_100": {
       "name": "A dollar for doggo.",
-      "desc": "Awarded for cheering exactly 100 bits"
+      "desc": "Awarded for cheering exactly 100 bits",
+      "amount": 100,
+      "type": "exact"
     },
     "79": {
       "name": "Oh! For Me?",
-      "desc": "Awarded for cheering exactly 1000 bits"
+      "desc": "Awarded for cheering exactly 1000 bits",
+      "amount": 1000,
+      "type": "exact"
     },
     "cheer_10000": {
       "name": "(Platinum) A True Doggo Lover.",
-      "desc": "Awarded for cheering exactly 10000 bits"
+      "desc": "Awarded for cheering exactly 10000 bits",
+      "amount": 10000,
+      "type": "exact"
     }
   },
   "donation": {
     "donate_date_2": {
       "name": "Direct Deposit Tester",
-      "desc": "Awarded for... dog?"
+      "desc": "Awarded for... dog?",
+      "type": "date"
     },
     "donation_1": {
       "name": "Dollar For Your Thoughts?",
-      "desc": "Awarded for donating 1 or more dollars at a time."
+      "desc": "Awarded for donating 1 or more dollars at a time.",
+      "amount": 1,
+      "type": "threshold"
     },
     "donation_10": {
       "name": "Many Dollars For Your Thoughts?",
-      "desc": "Awarded for donating 10 or more dollars at a time."
+      "desc": "Awarded for donating 10 or more dollars at a time.",
+      "amount": 10,
+      "type": "threshold"
     },
     "donation_exact_13": {
       "name": "Unlucky Donation",
-      "desc": "Awarded for donating exactly 13 dollars."
+      "desc": "Awarded for donating exactly 13 dollars.",
+      "amount": 13,
+      "type": "exact"
     },
     "donation_cumulative_200": {
       "name": "Direct Food Buyer.",
-      "desc": "Awarded for donating 200 dollars overall."
+      "desc": "Awarded for donating 200 dollars overall.",
+      "amount": 200,
+      "type": "cumulative"
     }
   },
   "gifted": {
     "gifted_times_1": {
       "name": "A present for Doggo, and friend",
-      "desc": "Awarded gifting for the first time."
+      "desc": "Awarded gifting for the first time.",
+      "amount": 1,
+      "type": "times"
     },
     "gifted_times_2": {
       "name": "Presents for Doggo, and friends",
-      "desc": "Awarded gifting for the second time."
+      "desc": "Awarded gifting for the second time.",
+      "amount": 2,
+      "type": "times"
     },
     "gifted_times_5": {
       "name": "Many Presents for Doggo, and friends",
-      "desc": "Awarded gifting for the 5th time."
+      "desc": "Awarded gifting for the 5th time.",
+      "amount": 5,
+      "type": "times"
     },
     "gifted_times_10": {
       "name": "Ad Hater.",
-      "desc": "Awarded gifting for the 10th time."
+      "desc": "Awarded gifting for the 10th time.",
+      "amount": 10,
+      "type": "times"
     },
     "gifted_times_20": {
       "name": "Big Ad Hater.",
-      "desc": "Awarded gifting for the 20th time."
+      "desc": "Awarded gifting for the 20th time.",
+      "amount": 20,
+      "type": "times"
     },
     "gifted_cumulative_5": {
       "name": "Mini Santa",
-      "desc": "Awarded for 5 cumulative gifted subs."
+      "desc": "Awarded for 5 cumulative gifted subs.",
+      "amount": 5,
+      "type": "cumulative"
     },
     "gifted_cumulative_10": {
       "name": "Little Santa",
-      "desc": "Awarded for 10 cumulative gifted subs."
+      "desc": "Awarded for 10 cumulative gifted subs.",
+      "amount": 10,
+      "type": "cumulative"
     },
     "gifted_cumulative_15": {
       "name": "Santa",
-      "desc": "Awarded for 15 cumulative gifted subs."
+      "desc": "Awarded for 15 cumulative gifted subs.",
+      "amount": 15,
+      "type": "cumulative"
     },
     "gifted_cumulative_20": {
       "name": "Big Santa",
-      "desc": "Awarded for 20 cumulative gifted subs."
+      "desc": "Awarded for 20 cumulative gifted subs.",
+      "amount": 20,
+      "type": "cumulative"
     },
     "gifted_cumulative_25": {
       "name": "Very Big Santa",
-      "desc": "Awarded for 25 cumulative gifted subs."
+      "desc": "Awarded for 25 cumulative gifted subs.",
+      "amount": 25,
+      "type": "cumulative"
     },
     "gifted_cumulative_30": {
       "name": "Massive Santa",
-      "desc": "Awarded for 30 cumulative gifted subs."
+      "desc": "Awarded for 30 cumulative gifted subs.",
+      "amount": 30,
+      "type": "cumulative"
     },
     "gifted_cumulative_40": {
       "name": "Gigantic Santa",
-      "desc": "Awarded for 40 cumulative gifted subs."
+      "desc": "Awarded for 40 cumulative gifted subs.",
+      "amount": 40,
+      "type": "cumulative"
     },
     "gifted_cumulative_50": {
       "name": "UH OH Santa",
-      "desc": "Awarded for 50 cumulative gifted subs."
+      "desc": "Awarded for 50 cumulative gifted subs.",
+      "amount": 50,
+      "type": "cumulative"
     },
     "gifted_cumulative_75": {
       "name": "Santa Evolution",
-      "desc": "Awarded for 75 cumulative gifted subs."
+      "desc": "Awarded for 75 cumulative gifted subs.",
+      "amount": 75,
+      "type": "cumulative"
     },
     "gifted_cumulative_100": {
       "name": "Doggo Promoter",
-      "desc": "Awarded for 100 cumulative gifted subs."
+      "desc": "Awarded for 100 cumulative gifted subs.",
+      "amount": 100,
+      "type": "cumulative"
     },
     "gifted_cumulative_150": {
       "name": "Big Doggo Promoter",
-      "desc": "Awarded for 150 cumulative gifted subs."
+      "desc": "Awarded for 150 cumulative gifted subs.",
+      "amount": 150,
+      "type": "cumulative"
     },
     "gifted_instance_5": {
       "name": "Gifty Bomba",
-      "desc": "Awarded for gifting 5 subs at once."
+      "desc": "Awarded for gifting 5 subs at once.",
+      "amount": 5,
+      "type": "instance"
     },
     "gifted_instance_10": {
       "name": "Big Gifty Bomba",
-      "desc": "Awarded for gifting 10 subs at once."
+      "desc": "Awarded for gifting 10 subs at once.",
+      "amount": 10,
+      "type": "instance"
     },
     "gifted_instance_20": {
       "name": "Gifted Bomb Run",
-      "desc": "Awarded for gifting 20 subs at once."
+      "desc": "Awarded for gifting 20 subs at once.",
+      "amount": 20,
+      "type": "instance"
     }
   },
   "redeem": {
     "redeem_checkin_1": {
       "name": "Welcome Home Comutt.",
-      "desc": "Awarded for your first check-in."
+      "desc": "Awarded for your first check-in.",
+      "amount": 1
     },
     "redeem_checkin_2": {
       "name": "Welcome Back Comutt.",
-      "desc": "Awarded for your second check-in."
+      "desc": "Awarded for your second check-in.",
+      "amount": 2
     },
     "redeem_checkin_5": {
       "name": "Reporting for view-y.",
-      "desc": "Awarded for your 5th check-in."
+      "desc": "Awarded for your 5th check-in.",
+      "amount": 5
     },
     "redeem_checkin_10": {
       "name": "I'm here, I'm here!",
-      "desc": "Awarded for your 10th check-in."
+      "desc": "Awarded for your 10th check-in.",
+      "amount": 10
     },
     "redeem_checkin_30": {
       "name": "A Month Of Dedication!",
-      "desc": "Awarded for your 31st check-in."
+      "desc": "Awarded for your 31st check-in.",
+      "amount": 31
     },
     "redeem_checkin_60": {
       "name": "Two Months of Dedication!",
-      "desc": "Awarded for your 60th check-in."
+      "desc": "Awarded for your 60th check-in.",
+      "amount": 60
     },
     "redeem_pet_1": {
       "name": "He's a good boy, yes he is!",
-      "desc": "Awarded for petting the dog."
+      "desc": "Awarded for petting the dog.",
+      "amount": 1
     },
     "redeem_pet_5": {
       "name": "Touch The Floof",
-      "desc": "Awarded for petting the dog 5 times."
+      "desc": "Awarded for petting the dog 5 times.",
+      "amount": 5
     },
     "redeem_pet_10": {
       "name": "Fluff The Floof",
-      "desc": "Awarded for petting the dog 10 times."
+      "desc": "Awarded for petting the dog 10 times.",
+      "amount": 10
     },
     "redeem_pet_25": {
       "name": "Floof Enjoyer",
-      "desc": "Awarded for petting the dog 25 times."
+      "desc": "Awarded for petting the dog 25 times.",
+      "amount": 25
     },
     "redeem_pet_50": {
       "name": "Floof Obsessed",
-      "desc": "Awarded for petting the dog 50 times."
+      "desc": "Awarded for petting the dog 50 times.",
+      "amount": 50
     },
     "redeem_pet_100": {
       "name": "Floof Addict",
-      "desc": "Awarded for petting the dog 100 times."
+      "desc": "Awarded for petting the dog 100 times.",
+      "amount": 100
     },
     "redeem_first_1": {
       "name": "Me First!",
-      "desc": "Awarded for getting first for the first time."
+      "desc": "Awarded for getting first for the first time.",
+      "amount": 1
     },
     "redeem_first_10": {
       "name": "Got First On Lock",
-      "desc": "Awarded for getting first for the 10th time."
+      "desc": "Awarded for getting first for the 10th time.",
+      "amount": 10
     },
     "redeem_first_25": {
       "name": "Queue Skipper",
-      "desc": "Awarded for getting first for the 25th time."
+      "desc": "Awarded for getting first for the 25th time.",
+      "amount": 25
     },
     "redeem_first_31": {
       "name": "A month of me.",
-      "desc": "Awarded for getting first for the 31st time."
+      "desc": "Awarded for getting first for the 31st time.",
+      "amount": 31
     },
     "redeem_total_5": {
       "name": "Curious Redeemer.",
-      "desc": "Awarded for using 5 channel point redeems."
+      "desc": "Awarded for using 5 channel point redeems.",
+      "amount": 5,
+      "type": "total"
     },
     "redeem_total_10": {
       "name": "Semi-Active Redeemer.",
-      "desc": "Awarded for using 10 channel point redeems."
+      "desc": "Awarded for using 10 channel point redeems.",
+      "amount": 10,
+      "type": "total"
     },
     "redeem_total_25": {
       "name": "Active Redeemer.",
-      "desc": "Awarded for using 25 channel point redeems."
+      "desc": "Awarded for using 25 channel point redeems.",
+      "amount": 25,
+      "type": "total"
     },
     "redeem_total_50": {
       "name": "Very Active Redeemer.",
-      "desc": "Awarded for using 50 channel point redeems."
+      "desc": "Awarded for using 50 channel point redeems.",
+      "amount": 50,
+      "type": "total"
     },
     "redeem_total_100": {
       "name": "Obsessive Redeemer.",
-      "desc": "Awarded for using 100 channel point redeems."
+      "desc": "Awarded for using 100 channel point redeems.",
+      "amount": 100,
+      "type": "total"
     },
     "redeem_total_150": {
       "name": "Playtime with Dog",
-      "desc": "Awarded for using 150 channel point redeems."
+      "desc": "Awarded for using 150 channel point redeems.",
+      "amount": 150,
+      "type": "total"
     },
     "redeem_total_200": {
       "name": "Lots of playtime with Dog",
-      "desc": "Awarded for using 200 channel point redeems."
+      "desc": "Awarded for using 200 channel point redeems.",
+      "amount": 200,
+      "type": "total"
     },
     "redeem_total_300": {
       "name": "Can't stop playing with Dog",
-      "desc": "Awarded for using 300 channel point redeems."
+      "desc": "Awarded for using 300 channel point redeems.",
+      "amount": 300,
+      "type": "total"
     },
     "redeem_total_400": {
       "name": "Too much playing with dog?",
-      "desc": "Awarded for using 400 channel point redeems."
+      "desc": "Awarded for using 400 channel point redeems.",
+      "amount": 400,
+      "type": "total"
     }
   },
   "specific": {
