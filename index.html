@@ -2993,7 +2993,7 @@ function updateAndDrawParticles() {
 function spawnShootingStar() {
     // In comet mode, allow multiple comets
     if (gameMode === 'comet') {
-        if (shootingStars.length >= 3) return; // Max 3 comets at once
+        if (shootingStars.length >= 5) return; // Max 5 comets at once
     } else {
         if (shootingStar) return; // Only one in other modes
     }
@@ -3019,12 +3019,12 @@ function spawnShootingStar() {
         if (fromLeft) {
             x = -20;
             y = verticalPos;
-            vx = (7 + Math.random() * 5) * speedMult; // Increased range: 7-12
+            vx = (7 + Math.random() * 3) * speedMult; // Increased range: 8-10
             vy = (Math.random() - 0.5) * 3 * speedMult;
         } else {
             x = w + 20;
             y = verticalPos;
-            vx = -(7 + Math.random() * 5) * speedMult;
+            vx = -(7 + Math.random() * 3) * speedMult;
             vy = (Math.random() - 0.5) * 3 * speedMult;
         }
     } else {
@@ -3089,7 +3089,7 @@ function scheduleNextShootingStar() {
     } else if (gameMode === 'twinkle' || gameMode === 'starclear') {
         return; // No comets in these modes
     } else {
-        delay = (5 + Math.random() * 10) * 1000; // 5-15 seconds normally
+        delay = (3 + Math.random() * 7) * 1000; // 3-10 seconds in normal mode
     }
     
     shootingStarTimer = setTimeout(spawnShootingStar, delay);
