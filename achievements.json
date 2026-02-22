@@ -891,6 +891,12 @@
       "desc": "Awarded for using 400 channel point redeems.",
       "amount": 400,
       "type": "total"
+    },
+    "redeem_total_500": {
+      "name": "Stardust sniffer",
+      "desc": "Awarded for using 500 channel point redeems.",
+      "amount": 500,
+      "type": "total"
     }
   },
   "specific": {
