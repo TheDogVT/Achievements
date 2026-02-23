@@ -250,6 +250,11 @@
       "desc": "Awarded for visions of sand, waves, and zoomies.",
       "type": "contains"
     },
+    "chat_derp": {
+      "name": "Derp Spotter",
+      "desc": "Awarded for catching the legendary eye seperation.",
+      "type": "contains"
+    },
     "chat_floofy": {
       "name": "Floof Inspector",
       "desc": "Awarded for fluff quality control.",
