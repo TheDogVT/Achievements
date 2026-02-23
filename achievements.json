@@ -662,6 +662,12 @@
       "amount": 20,
       "type": "times"
     },
+    "gifted_times_30": {
+      "name": "Massive Ad Hater.",
+      "desc": "Awarded gifting for the 30th time.",
+      "amount": 30,
+      "type": "times"
+    },
     "gifted_cumulative_5": {
       "name": "Mini Santa",
       "desc": "Awarded for 5 cumulative gifted subs.",
