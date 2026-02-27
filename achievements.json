@@ -739,6 +739,12 @@
       "amount": 150,
       "type": "cumulative"
     },
+    "gifted_cumulative_200": {
+      "name": "Massive Doggo Promoter",
+      "desc": "Awarded for 200 cumulative gifted subs.",
+      "amount": 200,
+      "type": "cumulative"
+    },
     "gifted_instance_5": {
       "name": "Gifty Bomba",
       "desc": "Awarded for gifting 5 subs at once.",
