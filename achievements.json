@@ -574,6 +574,12 @@
       "amount": 42,
       "type": "exact"
     },
+    "cheer_51": {
+      "name": "There are aliens here!",
+      "desc": "Awarded for cheering exactly 51 bits",
+      "amount": 51,
+      "type": "exact"
+    },
     "cheer_69": {
       "name": "Nice Bitties.",
       "desc": "Awarded for cheering exactly 69 bits",
