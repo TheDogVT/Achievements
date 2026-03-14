@@ -265,6 +265,11 @@
       "desc": "Awarded for promising the greatest adventure: sticking your head out the window.",
       "type": "contains"
     },
+    "chat_doorbell": {
+      "name": "Doorbell Defender",
+      "desc": "Awarded for going full security mode at the sound of a ding.",
+      "type": "contains"
+    },
     "chat_vacuum": {
       "name": "The monster vacoom",
       "desc": "Awarded for declaring war on the loud monster.",
