@@ -210,6 +210,11 @@
       "desc": "Awarded for hiding treasures.",
       "type": "contains"
     },
+    "chat_yawn": {
+      "name": "Yawn Mimic",
+      "desc": "Awarded for contagious sleepy vibes.",
+      "type": "contains"
+    },
     "chat_shake": {
       "name": "Shake Off Pro",
       "desc": "Awarded for post-bath chaos.",
