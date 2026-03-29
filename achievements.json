@@ -816,6 +816,11 @@
       "desc": "Awarded for your 90th check-in.",
       "amount": 90
     },
+    "redeem_checkin_120": {
+      "name": "4 months! Still here.",
+      "desc": "Awarded for your 120th check-in.",
+      "amount": 120
+    },
     "redeem_pet_1": {
       "name": "He's a good boy, yes he is!",
       "desc": "Awarded for petting the dog.",
