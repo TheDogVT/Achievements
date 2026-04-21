@@ -632,6 +632,12 @@
       "amount": 420,
       "type": "exact"
     },
+    "cheer_666": {
+      "name": "DEVIL NUMBER!",
+      "desc": "Awarded for cheering exactly 666 bits",
+      "amount": 666,
+      "type": "exact"
+    },
     "cheer_999": {
       "name": "One away...",
       "desc": "Awarded for cheering exactly 999 bits",
@@ -648,6 +654,12 @@
       "name": "Counting to greatness.",
       "desc": "Awarded for cheering exactly 1234 bits",
       "amount": 1234,
+      "type": "exact"
+    },
+    "cheer_1337": {
+      "name": "LEET",
+      "desc": "Awarded for cheering exactly 1337 bits",
+      "amount": 1337,
       "type": "exact"
     },
     "cheer_3141": {
