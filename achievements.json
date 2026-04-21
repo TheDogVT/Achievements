@@ -614,6 +614,18 @@
       "amount": 123,
       "type": "exact"
     },
+    "cheer_128": {
+      "name": "2 but WAOW.",
+      "desc": "Awarded for cheering exactly 128 bits",
+      "amount": 128,
+      "type": "exact"
+    },
+    "cheer_256": {
+      "name": "There be colors!",
+      "desc": "Awarded for cheering exactly 256 bits",
+      "amount": 256,
+      "type": "exact"
+    },
     "cheer_314": {
       "name": "Mmm PIE!",
       "desc": "Awarded for cheering exactly 314 bits",
@@ -632,6 +644,12 @@
       "amount": 420,
       "type": "exact"
     },
+    "cheer_512": {
+      "name": "Oh, that's growing fast.",
+      "desc": "Awarded for cheering exactly 512 bits",
+      "amount": 512,
+      "type": "exact"
+    },
     "cheer_666": {
       "name": "DEVIL NUMBER!",
       "desc": "Awarded for cheering exactly 666 bits",
@@ -648,6 +666,12 @@
       "name": "Oh! For Me?",
       "desc": "Awarded for cheering exactly 1000 bits",
       "amount": 1000,
+      "type": "exact"
+    },
+    "cheer_1024": {
+      "name": "Stop the 2! Please!",
+      "desc": "Awarded for cheering exactly 1024 bits",
+      "amount": 1024,
       "type": "exact"
     },
     "cheer_1234": {
