@@ -686,6 +686,12 @@
       "amount": 1337,
       "type": "exact"
     },
+    "cheer_2048": {
+      "name": "ItKeepsGoingPleaseStopIt!",
+      "desc": "Awarded for cheering exactly 2048 bits",
+      "amount": 2048,
+      "type": "exact"
+    },
     "cheer_3141": {
       "name": "Pi, But A Little Less.",
       "desc": "Awarded for cheering exactly 3141 bits",
