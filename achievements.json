@@ -626,6 +626,12 @@
       "amount": 321,
       "type": "exact"
     },
+    "cheer_429": {
+      "name": "Hahahah pot.",
+      "desc": "Awarded for cheering exactly 420 bits",
+      "amount": 420,
+      "type": "exact"
+    },
     "cheer_999": {
       "name": "One away...",
       "desc": "Awarded for cheering exactly 999 bits",
