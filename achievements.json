@@ -620,6 +620,12 @@
       "amount": 314,
       "type": "exact"
     },
+    "cheer_321": {
+      "name": "Actual Final Countdown.",
+      "desc": "Awarded for cheering exactly 321 bits",
+      "amount": 321,
+      "type": "exact"
+    },
     "cheer_999": {
       "name": "One away...",
       "desc": "Awarded for cheering exactly 999 bits",
