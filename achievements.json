@@ -608,6 +608,12 @@
       "amount": 100,
       "type": "exact"
     },
+    "cheer_123": {
+      "name": "I can count!",
+      "desc": "Awarded for cheering exactly 123 bits",
+      "amount": 123,
+      "type": "exact"
+    },
     "cheer_314": {
       "name": "Mmm PIE!",
       "desc": "Awarded for cheering exactly 314 bits",
@@ -624,6 +630,12 @@
       "name": "Oh! For Me?",
       "desc": "Awarded for cheering exactly 1000 bits",
       "amount": 1000,
+      "type": "exact"
+    },
+    "cheer_1234": {
+      "name": "Counting to greatness.",
+      "desc": "Awarded for cheering exactly 1234 bits",
+      "amount": 1234,
       "type": "exact"
     },
     "cheer_3141": {
