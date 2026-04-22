@@ -698,6 +698,12 @@
       "amount": 3141,
       "type": "exact"
     },
+    "cheer_4096": {
+      "name": "OHNOTWOSTOP",
+      "desc": "Awarded for cheering exactly 4096 bits",
+      "amount": 4096,
+      "type": "exact"
+    },
     "cheer_10000": {
       "name": "(Platinum) A True Doggo Lover.",
       "desc": "Awarded for cheering exactly 10000 bits",
