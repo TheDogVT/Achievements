@@ -1,5 +1,10 @@
 {
   "chat": {
+    "debug_1": {
+      "name": "Debugger",
+      "desc": "Awarded for - Debug 1.",
+      "type": "contains"
+    },
     "chat_dog_god": {
       "name": "Dog Loyalist",
       "desc": "Awarded for believing in the dog god.",
