@@ -3345,11 +3345,12 @@ function getCookie(name) {
 }
 
 // ── DATA ──────────────────────────────────────────────────────────────
-let achData      = {};
-let foundersData = {};
-let usernameMap  = {};
-let allUserData  = {};
-let rarityData   = {};
+let achData        = {};
+let foundersData   = {};
+let usernameMap    = {};
+let allUserData    = {};
+let rarityData     = {};
+let pfpByUsername  = {};  // username.toLowerCase() → pfp_url, built after load
 let currentUserId   = null;
 let currentCategory = 'all';
 let currentFilter   = 'all';
@@ -3427,6 +3428,13 @@ async function loadAllData() {
     }
 
     setLoadProgress(100, 'Done!');
+
+    for (const data of Object.values(allUserData)) {
+        if (data.pfp_url && data.username) {
+            pfpByUsername[data.username.toLowerCase()] = data.pfp_url;
+        }
+    }
+
     await new Promise(r => setTimeout(r, 300));
 
     const screen = document.getElementById('loadingScreen');
@@ -3521,9 +3529,14 @@ function buildLeaderboard() {
             const avatar = document.createElement('div');
             avatar.className = 'leaderboard-avatar';
             avatar.dataset.username = entry.username;
-            avatar.textContent = entry.username[0].toUpperCase();
-            avatar.style.backgroundSize = 'cover';
-            avatar.style.backgroundPosition = 'center';
+            const leaderPfp = pfpByUsername[entry.username.toLowerCase()];
+            if (leaderPfp) {
+                applyPfp(avatar, leaderPfp);
+            } else {
+                avatar.textContent = entry.username[0].toUpperCase();
+                avatar.style.backgroundSize = 'cover';
+                avatar.style.backgroundPosition = 'center';
+            }
             
             const username = document.createElement('div');
             username.className = 'leaderboard-username';
@@ -3837,19 +3850,26 @@ function normalizeCardHeights() {
 }
 
 // ── FETCH TWITCH PFPS ─────────────────────────────────────────────────
+function applyPfp(el, url) {
+    el.style.backgroundImage = `url(${url})`;
+    el.style.backgroundSize = 'cover';
+    el.style.backgroundPosition = 'center';
+    el.textContent = '';
+}
+
 function fetchTwitchPfps() {
-    // Only fetch for leaderboard avatars, not recent users (too many API calls)
-    document.querySelectorAll('.leaderboard-avatar[data-username]').forEach(avatar => {
+    document.querySelectorAll('.leaderboard-avatar[data-username], .recent-user-avatar[data-username]').forEach(avatar => {
         const username = avatar.dataset.username;
-        if (username) {
+        if (!username) return;
+        const cached = pfpByUsername[username.toLowerCase()];
+        if (cached) {
+            applyPfp(avatar, cached);
+        } else {
             fetch(`https://decapi.me/twitch/avatar/${username}`)
                 .then(res => res.text())
                 .then(url => {
                     if (url && !url.includes('User not found') && !url.includes('error')) {
-                        avatar.style.backgroundImage = `url(${url})`;
-                        avatar.style.backgroundSize = 'cover';
-                        avatar.style.backgroundPosition = 'center';
-                        avatar.textContent = '';
+                        applyPfp(avatar, url);
                     }
                 })
                 .catch(() => {});
@@ -3940,10 +3960,12 @@ function buildCard(item, userData) {
             const formatted = d.toLocaleString('en-US', {
                 month: 'short', day: 'numeric', year: 'numeric'
             });
-            const initial = u.username[0].toUpperCase();
+            const recentPfp = pfpByUsername[u.username.toLowerCase()];
+            const initial = recentPfp ? '' : u.username[0].toUpperCase();
+            const recentPfpStyle = recentPfp ? `background-image:url(${recentPfp});background-size:cover;background-position:center;` : '';
             return `
                 <div class="recent-user-item" data-userid="${u.userId}" style="cursor: pointer;">
-                    <div class="recent-user-avatar" data-username="${u.username}">${initial}</div>
+                    <div class="recent-user-avatar" data-username="${u.username}" style="${recentPfpStyle}">${initial}</div>
                     <div class="recent-user-info">
                         <div class="recent-user-name">${u.username}</div>
                         <div class="recent-user-date">${formatted}</div>
@@ -4023,19 +4045,21 @@ function showProfile(userId) {
     const avatarEl = document.getElementById('avatarEl');
     avatarEl.style.backgroundImage = 'none';
     avatarEl.textContent = name[0].toUpperCase();
-    
+
     if (userData.username) {
-        fetch(`https://decapi.me/twitch/avatar/${userData.username}`)
-            .then(res => res.text())
-            .then(url => {
-                if (url && !url.includes('User not found') && !url.includes('error')) {
-                    avatarEl.style.backgroundImage = `url(${url})`;
-                    avatarEl.style.backgroundSize = 'cover';
-                    avatarEl.style.backgroundPosition = 'center';
-                    avatarEl.textContent = '';
-                }
-            })
-            .catch(() => { /* keep default letter */ });
+        const cached = pfpByUsername[userData.username.toLowerCase()];
+        if (cached) {
+            applyPfp(avatarEl, cached);
+        } else {
+            fetch(`https://decapi.me/twitch/avatar/${userData.username}`)
+                .then(res => res.text())
+                .then(url => {
+                    if (url && !url.includes('User not found') && !url.includes('error')) {
+                        applyPfp(avatarEl, url);
+                    }
+                })
+                .catch(() => { /* keep default letter */ });
+        }
     }
 }
 
