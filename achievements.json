@@ -784,6 +784,12 @@
       "amount": 30,
       "type": "times"
     },
+    "gifted_times_40": {
+      "name": "Insane Ad Hater.",
+      "desc": "Awarded gifting for the 40th time.",
+      "amount": 40,
+      "type": "times"
+    },
     "gifted_cumulative_5": {
       "name": "Mini Santa",
       "desc": "Awarded for 5 cumulative gifted subs.",
