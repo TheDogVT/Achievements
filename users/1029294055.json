@@ -1,13 +1,17 @@
 {
   "user_id": "1029294055",
   "username": "suborbitalhammer",
-  "pfp_url": "",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/720d130f-84cc-4828-b6de-4824002d8882-profile_image-300x300.jpeg",
   "achievements": {
     "earned": {
       "chat_10": "2026-04-04T21:22:26.344941+00:00",
       "chat_bath": "2026-04-04T21:38:14.197418+00:00",
       "chat_park": "2026-04-10T20:49:56.832312+00:00",
-      "redeem_checkin_1": "2026-04-18T20:11:45.129741+00:00"
+      "redeem_checkin_1": "2026-04-18T20:11:45.129741+00:00",
+      "gamble_win_total_10k": "2026-04-25T00:23:40.858963+00:00",
+      "gamble_win_total_100k": "2026-04-25T00:23:40.858963+00:00",
+      "gamble_total_win_1": "2026-04-25T00:23:40.859460+00:00",
+      "gamble_total_1": "2026-04-25T00:23:40.859460+00:00"
     },
     "founded": {}
   }
