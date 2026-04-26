@@ -3864,15 +3864,6 @@ function fetchTwitchPfps() {
         const cached = pfpByUsername[username.toLowerCase()];
         if (cached) {
             applyPfp(avatar, cached);
-        } else {
-            fetch(`https://decapi.me/twitch/avatar/${username}`)
-                .then(res => res.text())
-                .then(url => {
-                    if (url && !url.includes('User not found') && !url.includes('error')) {
-                        applyPfp(avatar, url);
-                    }
-                })
-                .catch(() => {});
         }
     });
 }
@@ -4041,7 +4032,6 @@ function showProfile(userId) {
         }
     }, 50);
     
-    // Try to fetch Twitch profile picture
     const avatarEl = document.getElementById('avatarEl');
     avatarEl.style.backgroundImage = 'none';
     avatarEl.textContent = name[0].toUpperCase();
@@ -4050,15 +4040,6 @@ function showProfile(userId) {
         const cached = pfpByUsername[userData.username.toLowerCase()];
         if (cached) {
             applyPfp(avatarEl, cached);
-        } else {
-            fetch(`https://decapi.me/twitch/avatar/${userData.username}`)
-                .then(res => res.text())
-                .then(url => {
-                    if (url && !url.includes('User not found') && !url.includes('error')) {
-                        applyPfp(avatarEl, url);
-                    }
-                })
-                .catch(() => { /* keep default letter */ });
         }
     }
 }
