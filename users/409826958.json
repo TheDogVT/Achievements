@@ -1,6 +1,6 @@
 {
   "user_id": "409826958",
-  "username": "bananaarenotreal",
+  "username": "BananaAreNotReal",
   "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/5664d03b-08f5-440e-b5d9-cd4648926b8e-profile_image-300x300.png",
   "achievements": {
     "earned": {
@@ -65,14 +65,14 @@
       "debug_1": "2026-04-24T15:01:26.648160+00:00"
     },
     "founded": {
+      "chat_tail": "2025-11-06T17:58:48.065489+00:00",
+      "chat_pet": "2025-11-06T20:57:54.506189+00:00",
+      "redeem_first_1": "2025-11-06T21:01:00.121994+00:00",
+      "redeem_checkin_1": "2025-11-06T21:01:03.401249+00:00",
       "gifted_cumulative_75": "2025-12-25T00:01:44.478139+00:00",
       "gifted_cumulative_100": "2025-12-25T00:01:44.480652+00:00",
       "gifted_cumulative_150": "2025-12-25T00:01:44.481651+00:00",
       "gifted_instance_20": "2025-12-25T00:18:16.495540+00:00",
-      "chat_tail": "2025-11-08T17:37:41.834964+00:00",
-      "chat_pet": "2025-12-05T00:04:59.156844+00:00",
-      "redeem_first_1": "2025-11-15T20:58:12.237901+00:00",
-      "redeem_checkin_1": "2025-11-11T22:21:20.485472+00:00",
       "gifted_cumulative_200": "2026-02-27T21:35:27.095454+00:00"
     }
   }
