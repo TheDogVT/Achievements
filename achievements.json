@@ -726,6 +726,12 @@
       "amount": 1,
       "type": "jackpot"
     },
+    "gamble_jackpot_total_3": {
+      "name": "Lucky Gambler.",
+      "desc": "Awarded for getting 3 Jackpots while gambling.",
+      "amount": 3,
+      "type": "jackpot"
+    },
     "gamble_total_5": {
       "name": "Gambler",
       "desc": "Awarded for gambling for the 5th time.",
