@@ -930,6 +930,41 @@
       "desc": "Awarded for your half year check-in.",
       "amount": 180
     },
+    "redeem_checkin_210": {
+      "name": "On my way to a year.",
+      "desc": "Awarded for your 210th check-in.",
+      "amount": 210
+    },
+    "redeem_checkin_240": {
+      "name": "Still here! I Won't leave you behind.",
+      "desc": "Awarded for your 240th check-in.",
+      "amount": 240
+    },
+    "redeem_checkin_270": {
+      "name": "Hi hi! We still support dog!",
+      "desc": "Awarded for your 270th check-in.",
+      "amount": 270
+    },
+    "redeem_checkin_300": {
+      "name": "We Won't Stop!",
+      "desc": "Awarded for your 300th check-in.",
+      "amount": 300
+    },
+    "redeem_checkin_330": {
+      "name": "One year, here I come!",
+      "desc": "Awarded for your 330th check-in.",
+      "amount": 330
+    },
+    "redeem_checkin_365": {
+      "name": "This is just the start.",
+      "desc": "Awarded for your year of check-ins.",
+      "amount": 365
+    },
+    "redeem_checkin_485": {
+      "name": "Told you I'd still be here.",
+      "desc": "Awarded for your 485th check-in.",
+      "amount": 485
+    },
     "redeem_pet_1": {
       "name": "He's a good boy, yes he is!",
       "desc": "Awarded for petting the dog.",
@@ -1055,6 +1090,18 @@
       "name": "Stardust Addict",
       "desc": "Awarded for using 700 channel point redeems.",
       "amount": 700,
+      "type": "total"
+    },
+    "redeem_total_800": {
+      "name": "Stardust Consumer",
+      "desc": "Awarded for using 800 channel point redeems.",
+      "amount": 800,
+      "type": "total"
+    },
+    "redeem_total_900": {
+      "name": "Stardust Infused",
+      "desc": "Awarded for using 900 channel point redeems.",
+      "amount": 900,
       "type": "total"
     }
   }
