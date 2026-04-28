@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile — Cosmic Playground</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="has-nav">
+
+<!-- NAVIGATION -->
+<nav class="site-nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-brand">⬡ Cosmic Playground</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="achievements.html">Achievements</a>
+            <a href="profile.html" class="active">My Profile</a>
+        </div>
+    </div>
+</nav>
+
+<!-- CONSTELLATION CANVAS -->
+<canvas id="constellation"></canvas>
+
+<!-- LOADING SCREEN -->
+<div id="loadingScreen">
+    <div class="loading-title">⬡ Profile</div>
+    <div class="loading-bar-wrap">
+        <div class="loading-bar-fill" id="loadingBarFill"></div>
+    </div>
+    <div id="loadingStatus">Loading data…</div>
+</div>
+
+<!-- MAIN APP (hidden until loaded) -->
+<div id="appContent">
+<div class="page-wrap" style="max-width:700px; margin:0 auto;">
+
+    <div id="profileContent">
+        <!-- Built by JS -->
+    </div>
+
+</div>
+</div><!-- /appContent -->
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<script src="data.js"></script>
+<script src="constellation.js"></script>
+<script>
+
+// ── PROFILE PAGE ──────────────────────────────────────────────────────
+
+function buildProfilePage(userId) {
+    const userData = allUserData[userId];
+    if (!userData) {
+        showProfileSearch('User not found.');
+        return;
+    }
+
+    const earned  = userData.achievements?.earned  || {};
+    const founded = userData.achievements?.founded || {};
+    const allUserAchs = { ...earned, ...founded };
+    const earnedCount  = Object.keys(earned).length;
+    const foundedCount = Object.keys(founded).length;
+    const total = Object.values(achData).reduce((s, v) => s + Object.keys(v).length, 0);
+    const pct   = total > 0 ? Math.round(((earnedCount + foundedCount) / total) * 100) : 0;
+    const name  = userData.username || userId;
+
+    // ── HERO ──
+    const pfp = pfpByUsername[name.toLowerCase()];
+    const avatarStyle = pfp ? `background-image:url(${pfp});background-size:cover;background-position:center;` : '';
+    const avatarInitial = pfp ? '' : name[0].toUpperCase();
+
+    const savedUser = getCookie('myAchievementsUser');
+    const isSaved = savedUser && savedUser.userId === userId;
+
+    // ── CATEGORY BREAKDOWN ──
+    const catRows = Object.entries(achData).map(([cat, achs]) => {
+        const catIds = Object.keys(achs);
+        const userCount = catIds.filter(id => allUserAchs[id]).length;
+        const pctCat = catIds.length > 0 ? Math.round((userCount / catIds.length) * 100) : 0;
+        const icon = CAT_ICONS[cat] || '🔹';
+        return `
+            <div class="cat-row">
+                <div class="cat-header">
+                    <span class="cat-icon">${icon}</span>
+                    <span class="cat-name">${capitalize(cat)}</span>
+                    <span class="cat-count">${userCount} / ${catIds.length}</span>
+                </div>
+                <div class="cat-bar-wrap">
+                    <div class="cat-bar-fill" style="width:${pctCat}%"></div>
+                </div>
+            </div>`;
+    }).join('');
+
+    // ── ACHIEVEMENT TIMELINE ──
+    const timelineItems = [];
+    for (const [achId, ts] of Object.entries(allUserAchs)) {
+        let achName = achId, achCat = 'specific';
+        for (const [cat, achs] of Object.entries(achData)) {
+            if (achs[achId]) { achName = achs[achId].name; achCat = cat; break; }
+        }
+        const isFounder = !!founded[achId];
+        timelineItems.push({ achId, achName, achCat, ts, isFounder });
+    }
+    timelineItems.sort((a, b) => new Date(b.ts) - new Date(a.ts));
+
+    const timelineHTML = timelineItems.slice(0, 20).map(item => {
+        const d = new Date(item.ts);
+        const dateStr = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        const icon = CAT_ICONS[item.achCat] || '🔹';
+        const founderBadge = item.isFounder
+            ? '<span class="timeline-badge">FOUNDER</span>'
+            : '';
+        return `
+            <div class="timeline-item">
+                <div class="timeline-dot${item.isFounder ? ' founder' : ''}"></div>
+                <div class="timeline-body">
+                    <div class="timeline-name">${icon} ${item.achName}</div>
+                    <div class="timeline-meta">${item.isFounder ? 'Founded' : 'Unlocked'} · ${dateStr}</div>
+                </div>
+                ${founderBadge}
+            </div>`;
+    }).join('');
+
+    const moreCount = timelineItems.length > 20 ? timelineItems.length - 20 : 0;
+
+    document.getElementById('profileContent').innerHTML = `
+        <div class="profile-hero">
+            <div class="profile-hero-avatar" id="heroAvatar" style="${avatarStyle}">${avatarInitial}</div>
+            <div class="profile-hero-info">
+                <div class="profile-hero-name">${name}</div>
+                <div class="profile-hero-sub">${earnedCount + foundedCount} / ${total} achievements · ${pct}%${foundedCount > 0 ? ` · ${foundedCount} founded` : ''}</div>
+                <div class="profile-hero-bar-wrap">
+                    <div class="profile-hero-bar-fill" style="width:${pct}%"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-stat-grid">
+            <div class="profile-stat">
+                <div class="profile-stat-value">${earnedCount + foundedCount}</div>
+                <div class="profile-stat-label">Total Earned</div>
+            </div>
+            <div class="profile-stat">
+                <div class="profile-stat-value">${foundedCount}</div>
+                <div class="profile-stat-label">Founded</div>
+            </div>
+            <div class="profile-stat">
+                <div class="profile-stat-value">${pct}%</div>
+                <div class="profile-stat-label">Completion</div>
+            </div>
+        </div>
+
+        <div class="profile-cat-breakdown">
+            <div class="profile-cat-title">By Category</div>
+            ${catRows}
+        </div>
+
+        ${timelineHTML ? `
+        <div class="profile-timeline-card">
+            <div class="profile-timeline-title">Achievement Timeline</div>
+            ${timelineHTML}
+            ${moreCount > 0 ? `<a href="achievements.html?user=${encodeURIComponent(name)}" class="timeline-more">+ ${moreCount} more achievements →</a>` : ''}
+        </div>` : ''}
+
+        <div class="profile-actions">
+            <a href="achievements.html?user=${encodeURIComponent(name)}" class="btn btn-primary" style="text-decoration:none">View All Achievements</a>
+            ${isSaved
+                ? `<button class="btn btn-ghost" id="unclaimBtn">Forget me</button>`
+                : `<button class="btn btn-ghost" id="claimProfileBtn">This is me!</button>`}
+        </div>
+    `;
+
+    // Claim / unclaim handlers
+    const claimBtn = document.getElementById('claimProfileBtn');
+    if (claimBtn) {
+        claimBtn.addEventListener('click', () => {
+            const allTs = Object.values(allUserAchs);
+            let mostRecent = null;
+            for (const ts of allTs) {
+                const d = new Date(ts);
+                if (!mostRecent || d > mostRecent) mostRecent = d;
+            }
+            setCookie('myAchievementsUser', {
+                userId,
+                username: name,
+                lastAchievementDate: mostRecent ? mostRecent.toISOString() : null,
+            });
+            claimBtn.textContent = 'Saved ✓';
+            claimBtn.disabled = true;
+            showToast('Saved! This profile will auto-load next visit.');
+        });
+    }
+
+    const unclaimBtn = document.getElementById('unclaimBtn');
+    if (unclaimBtn) {
+        unclaimBtn.addEventListener('click', () => {
+            setCookie('myAchievementsUser', null, -1);
+            unclaimBtn.textContent = 'Cleared';
+            unclaimBtn.disabled = true;
+            showToast('Profile cleared.');
+        });
+    }
+}
+
+function showProfileSearch(msg) {
+    const savedUser = getCookie('myAchievementsUser');
+
+    document.getElementById('profileContent').innerHTML = `
+        <div class="profile-search-card">
+            <div class="profile-search-title">⬡ My Profile</div>
+            <div class="profile-no-user">
+                ${msg ? `<p style="color:var(--muted)">${msg}</p>` : ''}
+                ${savedUser
+                    ? `<p>Your saved profile: <strong style="color:var(--cyan)">${savedUser.username}</strong></p>
+                       <a href="profile.html?user=${encodeURIComponent(savedUser.username)}" class="btn btn-primary" style="text-decoration:none">View My Profile</a>`
+                    : `<p>Search for your username on the <a href="achievements.html" style="color:var(--cyan)">Achievements</a> page and click "This is me!" to save your profile.</p>
+                       <a href="achievements.html" class="btn btn-primary" style="text-decoration:none">Browse Achievements</a>`}
+            </div>
+        </div>`;
+}
+
+// ── STARTUP ───────────────────────────────────────────────────────────
+loadAllData().then(() => {
+    const userParam = new URLSearchParams(window.location.search).get('user');
+    const savedUser = getCookie('myAchievementsUser');
+
+    let userId = null;
+    if (userParam) {
+        userId = isNaN(Number(userParam))
+            ? usernameMap[userParam.toLowerCase()]
+            : userParam;
+    } else if (savedUser?.userId) {
+        userId = savedUser.userId;
+    }
+
+    if (userId && allUserData[userId]) {
+        buildProfilePage(userId);
+    } else {
+        showProfileSearch(userParam ? 'User not found.' : null);
+    }
+
+});
+
+</script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cosmic Playground</title>
+    <title>Achievements — Cosmic Playground</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -15,8 +15,8 @@
     <div class="nav-inner">
         <a href="index.html" class="nav-brand">⬡ Cosmic Playground</a>
         <div class="nav-links">
-            <a href="index.html" class="active">Home</a>
-            <a href="achievements.html">Achievements</a>
+            <a href="index.html">Home</a>
+            <a href="achievements.html" class="active">Achievements</a>
             <a href="profile.html">My Profile</a>
         </div>
     </div>
@@ -27,7 +27,7 @@
 
 <!-- LOADING SCREEN -->
 <div id="loadingScreen">
-    <div class="loading-title">⬡ Cosmic Playground</div>
+    <div class="loading-title">⬡ Achievements</div>
     <div class="loading-bar-wrap">
         <div class="loading-bar-fill" id="loadingBarFill"></div>
     </div>
@@ -45,33 +45,56 @@
         <p class="subtitle">Track your progress across time</p>
     </header>
 
-    <!-- LEADERBOARD -->
-    <div class="leaderboard" id="leaderboard">
-        <div class="leaderboard-timer-label" id="leaderboardTimerLabel">Keep Open</div>
-        <div class="leaderboard-timer" id="leaderboardTimer">
-            <div class="leaderboard-timer-fill" id="leaderboardTimerFill"></div>
-        </div>
-        <div class="leaderboard-header" id="leaderboardHeader">
-            <div class="leaderboard-title">⭐ Top Achievers ⭐</div>
-            <div class="leaderboard-toggle">▼</div>
-        </div>
-        <div class="leaderboard-content">
-            <div class="leaderboard-grid" id="leaderboardGrid">
-                <!-- Built by JS -->
+    <!-- SEARCH -->
+    <div class="search-card">
+        <div class="search-row">
+            <div class="input-wrap">
+                <span class="icon">⌕</span>
+                <input id="userIdInput" type="text" placeholder="Enter username or ID…" autocomplete="off" spellcheck="false">
+                <div id="autocomplete"></div>
             </div>
+            <button class="btn btn-primary" id="loadBtn">Search</button>
+            <button class="btn btn-ghost" id="showAllBtn">All</button>
+        </div>
+        <div id="profileBanner">
+            <div class="avatar" id="avatarEl">?</div>
+            <div class="profile-info">
+                <div class="profile-name" id="profileName">—</div>
+                <div class="profile-stats" id="profileStats">0 earned</div>
+                <div class="progress-bar-wrap">
+                    <div class="progress-bar-fill" id="progressFill" style="width:0%"></div>
+                </div>
+            </div>
+            <button class="btn-claim" id="claimBtn" title="Save as my profile">This is me!</button>
+            <button class="btn-clear" id="clearBtn" title="Clear user">✕</button>
         </div>
     </div>
 
-    <!-- RECENTLY UNLOCKED FEED -->
-    <div class="feed-card">
-        <div class="feed-header">
-            <span class="feed-title">🕐 Recently Unlocked</span>
-            <span class="feed-subtitle">LIVE ACTIVITY</span>
+    <!-- TABS -->
+    <div class="tabs-wrap">
+        <div class="tabs-header" id="tabsHeader"><!-- built by JS --></div>
+
+        <!-- FILTER ROW (only when user loaded) -->
+        <div class="filter-row" id="filterRow">
+            <span class="control-label">SHOW:</span>
+            <button class="filter-chip active" data-filter="all">All</button>
+            <button class="filter-chip" data-filter="unlocked">Earned</button>
+            <button class="filter-chip" data-filter="founder">Founder</button>
         </div>
-        <div class="feed-list" id="feedList">
-            <!-- Built by JS -->
+
+        <!-- SORT ROW (always visible) -->
+        <div class="sort-row">
+            <span class="control-label">SORT:</span>
+            <select class="sort-select" id="sortSelect">
+                <!-- options built by JS based on context -->
+            </select>
         </div>
+
+        <div id="statusBar"></div>
     </div>
+
+    <!-- ACHIEVEMENT GRID -->
+    <div id="achievementsContainer"></div>
 
 </div>
 </div><!-- /appContent -->
@@ -265,6 +288,6 @@
 
 <script src="data.js"></script>
 <script src="constellation.js"></script>
-<script src="index.js"></script>
+<script src="achievements.js"></script>
 </body>
 </html>

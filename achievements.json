@@ -637,20 +637,20 @@
       "type": "threshold"
     },
     "donation_10": {
-      "name": "Many Dollars For Your Thoughts?",
+      "name": "Big Woof Energy.",
       "desc": "Awarded for donating 10 or more dollars at a time.",
       "amount": 10,
       "type": "threshold"
     },
     "donation_exact_13": {
-      "name": "Unlucky Donation",
-      "desc": "Awarded for donating exactly 13 dollars.",
+      "name": "Unlucky Donation.",
+      "desc": "Awarded for donating exactly $13.",
       "amount": 13,
       "type": "exact"
     },
     "donation_cumulative_200": {
-      "name": "Direct Food Buyer.",
-      "desc": "Awarded for donating 200 dollars overall.",
+      "name": "A Month Of Food.",
+      "desc": "Awarded for donating $200 overall.",
       "amount": 200,
       "type": "cumulative"
     }
