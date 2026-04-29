@@ -134,7 +134,7 @@ function buildProfilePage(userId) {
             <div class="profile-hero-avatar" id="heroAvatar" style="${avatarStyle}">${avatarInitial}</div>
             <div class="profile-hero-info">
                 <div class="profile-hero-name">${name}</div>
-                <div class="profile-hero-sub">${earnedCount + foundedCount} / ${total} achievements · ${pct}%${foundedCount > 0 ? ` · ${foundedCount} founded` : ''}</div>
+                <div class="profile-hero-sub">${earnedCount + foundedCount} / ${total} discovered · ${pct}% of found${foundedCount > 0 ? ` · ${foundedCount} founded` : ''}</div>
                 <div class="profile-hero-bar-wrap">
                     <div class="profile-hero-bar-fill" style="width:${pct}%"></div>
                 </div>
@@ -152,7 +152,7 @@ function buildProfilePage(userId) {
             </div>
             <div class="profile-stat">
                 <div class="profile-stat-value">${pct}%</div>
-                <div class="profile-stat-label">Completion</div>
+                <div class="profile-stat-label">of Found</div>
             </div>
         </div>
 

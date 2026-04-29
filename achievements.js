@@ -254,9 +254,11 @@ function buildCard(item, userData) {
     const { id, ach, cat, isEarned, isFounder, earnedTs, rarity } = item;
 
     const isRare = rarity.percentage > 0 && rarity.percentage <= 5;
+    const isPlat = ach.name.startsWith('(Platinum)');
 
     const div = document.createElement('div');
     let classList = 'achievement';
+    if (isPlat) classList += ' plat';
     if (isFounder) {
         classList += ' founded';
         if (isRare) classList += ' rare';
@@ -269,6 +271,7 @@ function buildCard(item, userData) {
     const icon = CAT_ICONS[cat] || '🔹';
 
     let badgeHTML = '';
+    if (isPlat) badgeHTML += `<span class="ach-badge badge-plat">PLATINUM</span>`;
     if (isFounder) {
         const founderClass = isRare ? 'badge-founder rare' : 'badge-founder common';
         badgeHTML += `<span class="ach-badge ${founderClass}">FOUNDER</span>`;
@@ -382,7 +385,7 @@ function showProfile(userId) {
     const name = userData.username || userId;
     document.getElementById('profileName').textContent   = name;
     document.getElementById('profileStats').textContent  =
-        `${earned + founded} / ${total} earned (${pct}%)${founded > 0 ? ` · ${founded} founded` : ''}`;
+        `${earned + founded} / ${total} found (${pct}% of discovered)${founded > 0 ? ` · ${founded} founded` : ''}`;
     document.getElementById('progressFill').style.width  = pct + '%';
     document.getElementById('profileBanner').classList.add('visible');
     
@@ -457,30 +460,6 @@ function updateFilterChips() {
     });
 }
 
-// ── INIT ──────────────────────────────────────────────────────────────
-async function initPage() {
-    buildTabs(Object.keys(achData));
-    buildSortOptions();
-    buildLeaderboard();
-    
-    // Start leaderboard auto-collapse timer
-    startLeaderboardTimer();
-
-    const userParam = new URLSearchParams(window.location.search).get('user');
-    const savedUser = getCookie('myAchievementsUser');
-    
-    if (userParam) {
-        loadUser(userParam);
-    } else if (savedUser && savedUser.userId) {
-        // Auto-load saved user
-        loadUser(savedUser.userId);
-        checkNewAchievements(savedUser);
-    } else {
-        currentFilter = 'all';
-        updateFilterChips();
-        renderAchievements();
-    }
-}
 
 // ── EVENTS ────────────────────────────────────────────────────────────
 document.getElementById('loadBtn').addEventListener('click', () => {
@@ -609,8 +588,6 @@ document.getElementById('sortSelect').addEventListener('change', e => {
     currentSort = e.target.value;
     renderAchievements();
 });
-
-// ── STARTUP ───────────────────────────────────────────────────────────
 
 // ── INIT ──────────────────────────────────────────────────────────────
 async function initPage() {

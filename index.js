@@ -125,56 +125,30 @@ function buildLeaderboard() {
     setTimeout(() => fetchTwitchPfps(), 100);
 }
 
-// ── LEADERBOARD AUTO-COLLAPSE TIMER ───────────────────────────────────
-let leaderboardTimer = null;
-function startLeaderboardTimer() {
-    const leaderboard = document.getElementById('leaderboard');
-    const timer = document.getElementById('leaderboardTimer');
-    const timerFill = document.getElementById('leaderboardTimerFill');
-    const timerLabel = document.getElementById('leaderboardTimerLabel');
-    
-    // Reset animation
-    leaderboard.classList.remove('auto-collapsing');
-    timer.style.display = 'block';
-    timerLabel.style.display = 'block';
-    
-    // Force reflow to restart animation
-    void timerFill.offsetWidth;
-    
-    // Start animation
-    leaderboard.classList.add('auto-collapsing');
-    
-    leaderboardTimer = setTimeout(() => {
-        leaderboard.classList.add('collapsed');
-        timer.style.display = 'none';
-        timerLabel.style.display = 'none';
-        leaderboard.classList.remove('auto-collapsing');
-    }, 5000);
-}
-
-function cancelLeaderboardTimer() {
-    if (leaderboardTimer) {
-        clearTimeout(leaderboardTimer);
-        leaderboardTimer = null;
-    }
-    const leaderboard = document.getElementById('leaderboard');
-    const timer = document.getElementById('leaderboardTimer');
-    const timerLabel = document.getElementById('leaderboardTimerLabel');
-    leaderboard.classList.remove('auto-collapsing');
-    timer.style.display = 'none';
-    timerLabel.style.display = 'none';
-}
-
-document.getElementById('leaderboardHeader').addEventListener('click', (e) => {
+document.getElementById('leaderboardHeader').addEventListener('click', () => {
     document.getElementById('leaderboard').classList.toggle('collapsed');
-    cancelLeaderboardTimer();
 });
 
-document.getElementById('leaderboardTimerLabel').addEventListener('click', (e) => {
-    e.stopPropagation();
-    cancelLeaderboardTimer();
-    showToast('Leaderboard will stay open');
-});
+// ── HOME STATS ────────────────────────────────────────────────────────
+function buildHomeStats() {
+    const discovered = Object.values(achData).reduce((s, v) => s + Object.keys(v).length, 0);
+    const total      = metaData.total_achievements || discovered;
+    const users      = metaData.total_users        || Object.keys(allUserData).length;
+
+    document.getElementById('homeStatRow').innerHTML = `
+        <div class="home-stat">
+            <span class="home-stat-value">${discovered}</span>
+            <span class="home-stat-slash">/</span>
+            <span class="home-stat-total">${total}</span>
+            <span class="home-stat-label">achievements found</span>
+        </div>
+        <div class="home-stat-divider"></div>
+        <div class="home-stat">
+            <span class="home-stat-value">${users}</span>
+            <span class="home-stat-label">players tracked</span>
+        </div>
+    `;
+}
 
 
 // ── RECENTLY UNLOCKED FEED ────────────────────────────────────────────
@@ -245,7 +219,7 @@ function buildRecentFeed() {
 
 // ── STARTUP ───────────────────────────────────────────────────────────
 loadAllData().then(() => {
+    buildHomeStats();
     buildLeaderboard();
     buildRecentFeed();
-    startLeaderboardTimer();
 });

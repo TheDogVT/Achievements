@@ -213,15 +213,8 @@
             text-transform: uppercase;
             text-shadow: 0 0 8px rgba(198, 232, 232, 0.4);
         }
-        .leaderboard-toggle {
-            font-size: 0.8rem;
-            transition: transform 0.3s;
-        }
-        .leaderboard.collapsed .leaderboard-toggle {
-            transform: rotate(180deg);
-        }
         .leaderboard-content {
-            max-height: 1000px;
+            max-height: 4000px;
             overflow: hidden;
             transition: max-height 0.3s ease, opacity 0.3s ease;
             opacity: 1;
@@ -560,13 +553,13 @@
         .tabs-header::-webkit-scrollbar { display: none; }
         .tab-btn {
             flex-shrink: 0;
-            padding: 7px 16px;
+            padding: 8px 18px;
             border: 1px solid var(--border);
             border-radius: 99px;
             background: transparent;
             color: var(--muted);
             font-family: 'Rajdhani', sans-serif;
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: 600;
             letter-spacing: 0.04em;
             cursor: pointer;
@@ -597,7 +590,13 @@
             color: #1B1A1A;
         }
 
-        /* ── FILTER ROW (separate from sort) ── */
+        /* ── CONTROLS ROW (filter + sort together) ── */
+        .controls-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
         .filter-row {
             display: none;
             align-items: center;
@@ -605,13 +604,11 @@
             flex-wrap: wrap;
         }
         .filter-row.visible { display: flex; }
-        
-        /* ── SORT ROW (always visible) ── */
         .sort-row {
             display: flex;
             align-items: center;
             gap: 10px;
-            flex-wrap: wrap;
+            margin-left: auto;
         }
 
         .control-label {
@@ -662,8 +659,8 @@
         /* ── ACHIEVEMENT GRID ── */
         #achievementsContainer {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 14px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
             grid-auto-rows: minmax(auto, auto);
             align-items: start;
         }
@@ -674,7 +671,7 @@
             backdrop-filter: blur(8px);
             border: 1px solid var(--border);
             border-radius: var(--radius);
-            padding: 16px;
+            padding: 18px;
             position: relative;
             overflow: hidden;
             transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
@@ -813,10 +810,10 @@
             margin-left: 8px;
         }
         .ach-icon {
-            width: 34px; height: 34px;
+            width: 38px; height: 38px;
             border-radius: 8px;
             display: flex; align-items: center; justify-content: center;
-            font-size: 1.15rem;
+            font-size: 1.25rem;
             flex-shrink: 0;
             background: rgba(37, 36, 36, 0.6);
             border: 1px solid var(--border);
@@ -843,7 +840,7 @@
 
         .ach-title-wrap { flex: 1; min-width: 0; }
         .ach-name {
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: var(--text);
             line-height: 1.2;
@@ -909,6 +906,99 @@
         @keyframes goldPulse {
             0%, 100% { box-shadow: 0 0 8px rgba(255, 215, 0, 0.4); }
             50%      { box-shadow: 0 0 12px rgba(255, 215, 0, 0.6), 0 0 16px rgba(255, 215, 0, 0.3); }
+        }
+
+        /* ── PLATINUM ACHIEVEMENT ── */
+        .achievement.plat {
+            background: rgba(192, 192, 220, 0.1);
+            border-color: rgba(200, 200, 235, 0.5);
+            box-shadow: 0 0 20px rgba(192, 192, 220, 0.2);
+            animation: platPulse 4s ease-in-out infinite;
+        }
+        .achievement.plat::after {
+            background: linear-gradient(180deg, #b0b0d0, #e0e0ff, #b0b0d0);
+            box-shadow: 0 0 14px rgba(192, 192, 230, 0.8);
+        }
+        .achievement.plat::before {
+            background: linear-gradient(
+                120deg,
+                transparent 20%,
+                rgba(220, 220, 255, 0.18) 40%,
+                rgba(240, 240, 255, 0.3) 50%,
+                rgba(220, 220, 255, 0.18) 60%,
+                transparent 80%
+            );
+            animation: founderShimmer 3.5s ease-in-out infinite;
+        }
+        @keyframes platPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(192, 192, 220, 0.2); }
+            50% { box-shadow: 0 0 36px rgba(210, 210, 245, 0.45), 0 0 52px rgba(192, 192, 220, 0.18); }
+        }
+        .achievement.plat .ach-icon {
+            background: rgba(192, 192, 220, 0.2);
+            border-color: rgba(210, 210, 240, 0.5);
+            box-shadow: 0 0 10px rgba(192, 192, 220, 0.4);
+        }
+        .achievement.plat .ach-name {
+            background: linear-gradient(135deg, #c8c8e8 0%, #e8e8ff 50%, #c8c8e8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: none;
+        }
+        .achievement.plat:hover {
+            border-color: rgba(225, 225, 255, 0.8);
+            box-shadow: 0 0 42px rgba(210, 210, 250, 0.5), 0 8px 24px rgba(0,0,0,0.4);
+        }
+        .badge-plat {
+            background: rgba(192, 192, 220, 0.2);
+            color: #d0d0f8;
+            border: 1px solid rgba(200, 200, 235, 0.5);
+            box-shadow: 0 0 6px rgba(192, 192, 220, 0.4);
+        }
+
+        /* ── HOME STATS ── */
+        .home-stat-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+        .home-stat {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+        }
+        .home-stat-value {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--cyan);
+            text-shadow: 0 0 12px rgba(198, 232, 232, 0.4);
+        }
+        .home-stat-slash {
+            font-family: 'Space Mono', monospace;
+            font-size: 1rem;
+            color: var(--muted);
+        }
+        .home-stat-total {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--muted);
+        }
+        .home-stat-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            color: var(--muted);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+        .home-stat-divider {
+            width: 1px;
+            height: 28px;
+            background: var(--border);
         }
 
         .ach-desc {
@@ -1758,10 +1848,29 @@
 
         /* ── MOBILE ── */
         @media (max-width: 520px) {
-            .page-wrap { padding: 20px 14px 48px; gap: 20px; }
+            .page-wrap { padding-right: 14px; padding-bottom: 48px; padding-left: 14px; gap: 20px; }
             #achievementsContainer { grid-template-columns: 1fr; }
             .search-row { flex-direction: column; }
             .btn { width: 100%; }
+            .controls-row { gap: 8px; }
+            .profile-hero { flex-direction: column; text-align: center; padding: 20px; }
+            .profile-hero-info { width: 100%; }
+            .profile-hero-bar-wrap { max-width: 100%; }
+            .profile-hero-avatar { width: 64px; height: 64px; font-size: 1.8rem; }
+            .profile-hero-name { font-size: 1.6rem; }
+        }
+
+        /* ── MOBILE NAV ── */
+        @media (max-width: 600px) {
+            .nav-brand { font-size: 0.9rem; letter-spacing: 0.04em; }
+            .nav-links { gap: 2px; }
+            .nav-links a { padding: 5px 8px; font-size: 0.6rem; }
+        }
+        @media (max-width: 420px) {
+            .nav-inner { padding: 0 10px; }
+            .nav-brand { font-size: 0.75rem; letter-spacing: 0; }
+            .nav-links { gap: 0; }
+            .nav-links a { padding: 4px 5px; font-size: 0.55rem; letter-spacing: 0.04em; }
         }
 
 /* ── SITE NAVIGATION ── */

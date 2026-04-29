@@ -74,20 +74,20 @@
     <div class="tabs-wrap">
         <div class="tabs-header" id="tabsHeader"><!-- built by JS --></div>
 
-        <!-- FILTER ROW (only when user loaded) -->
-        <div class="filter-row" id="filterRow">
-            <span class="control-label">SHOW:</span>
-            <button class="filter-chip active" data-filter="all">All</button>
-            <button class="filter-chip" data-filter="unlocked">Earned</button>
-            <button class="filter-chip" data-filter="founder">Founder</button>
-        </div>
-
-        <!-- SORT ROW (always visible) -->
-        <div class="sort-row">
-            <span class="control-label">SORT:</span>
-            <select class="sort-select" id="sortSelect">
-                <!-- options built by JS based on context -->
-            </select>
+        <!-- CONTROLS ROW: filter chips (when user loaded) + sort (always) -->
+        <div class="controls-row">
+            <div class="filter-row" id="filterRow">
+                <span class="control-label">SHOW:</span>
+                <button class="filter-chip active" data-filter="all">All</button>
+                <button class="filter-chip" data-filter="unlocked">Earned</button>
+                <button class="filter-chip" data-filter="founder">Founder</button>
+            </div>
+            <div class="sort-row">
+                <span class="control-label">SORT:</span>
+                <select class="sort-select" id="sortSelect">
+                    <!-- options built by JS based on context -->
+                </select>
+            </div>
         </div>
 
         <div id="statusBar"></div>

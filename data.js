@@ -31,6 +31,7 @@ let allUserData    = {};
 let rarityData     = {};
 let recentByAch    = {};  // achId → [{userId, username, timestamp}] sorted desc, top 5
 let pfpByUsername  = {};  // username.toLowerCase() → pfp_url, built after load
+let metaData       = {};  // { total_achievements, discovered_achievements, total_users }
 let currentUserId   = null;
 let currentCategory = 'all';
 let currentFilter   = 'all';
@@ -44,12 +45,14 @@ function setLoadProgress(pct, msg) {
 
 async function loadAllData() {
     setLoadProgress(5, 'Loading achievements…');
-    const [achRes, mapRes] = await Promise.all([
+    const [achRes, mapRes, metaRes] = await Promise.all([
         fetch(`${BASE_URL}/achievements.json`),
         fetch(`${BASE_URL}/username_map.json`),
+        fetch(`${BASE_URL}/meta.json`),
     ]);
     achData     = await achRes.json();
     usernameMap = mapRes.ok ? await mapRes.json() : {};
+    metaData    = metaRes.ok ? await metaRes.json() : {};
 
     setLoadProgress(20, 'Loading user data…');
 
