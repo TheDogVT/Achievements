@@ -228,7 +228,7 @@ function renderAchievements() {
 // ── NORMALIZE CARD HEIGHTS ────────────────────────────────────────────
 function normalizeCardHeights() {
     const container = document.getElementById('achievementsContainer');
-    const cards = Array.from(container.querySelectorAll('.achievement'));
+    const cards = Array.from(container.querySelectorAll('.achievement:not(.plat)'));
     
     if (cards.length === 0) return;
     
@@ -248,6 +248,26 @@ function normalizeCardHeights() {
             c.dataset.rowHeight = maxHeight;
         });
     });
+}
+
+function buildPlatSky(isFounder) {
+    let starsHTML = '';
+    for (let i = 0; i < 40; i++) {
+        const x    = (5  + Math.random() * 90).toFixed(1);
+        const y    = (5  + Math.random() * 90).toFixed(1);
+        const size = Math.random() < 0.15 ? 2 : 1;
+        const op   = (0.3 + Math.random() * 0.7).toFixed(2);
+        const t    = (Math.random() * 5).toFixed(2);
+        starsHTML += `<span class="plat-star" style="left:${x}%;top:${y}%;width:${size}px;height:${size}px;--op:${op};--t:${t}"></span>`;
+    }
+    const auroraHTML = isFounder ? `
+        <div class="aurora-layer">
+            <div class="aurora-band a1"></div>
+            <div class="aurora-band a2"></div>
+            <div class="aurora-band a3"></div>
+            <div class="aurora-band a4"></div>
+        </div>` : '';
+    return `<div class="plat-sky">${starsHTML}${auroraHTML}<div class="plat-moon"></div></div>`;
 }
 
 function buildCard(item, userData) {
@@ -271,8 +291,12 @@ function buildCard(item, userData) {
     const icon = CAT_ICONS[cat] || '🔹';
 
     let badgeHTML = '';
-    if (isPlat) badgeHTML += `<span class="ach-badge badge-plat">PLATINUM</span>`;
-    if (isFounder) {
+    if (isPlat && isFounder) {
+        badgeHTML += `<span class="ach-badge badge-plat-founder">✦ PLATINUM FOUNDER</span>`;
+    } else if (isPlat) {
+        badgeHTML += `<span class="ach-badge badge-plat">PLATINUM</span>`;
+    }
+    if (!isPlat && isFounder) {
         const founderClass = isRare ? 'badge-founder rare' : 'badge-founder common';
         badgeHTML += `<span class="ach-badge ${founderClass}">FOUNDER</span>`;
     }
@@ -337,11 +361,12 @@ function buildCard(item, userData) {
         }).join('');
     }
 
-    div.innerHTML = `
+    const displayName = isPlat ? ach.name.replace(/^\(Platinum\)\s*/, '') : ach.name;
+    const cardContent = `
         <div class="ach-header">
             <div class="ach-icon">${icon}</div>
             <div class="ach-title-wrap">
-                <div class="ach-name">${ach.name}</div>
+                <div class="ach-name">${displayName}</div>
                 <div class="ach-badges">${badgeHTML}</div>
             </div>
         </div>
@@ -360,7 +385,10 @@ function buildCard(item, userData) {
             </div>
         ` : ''}
     `;
-    
+    div.innerHTML = isPlat
+        ? `${buildPlatSky(isFounder)}<div class="plat-content">${cardContent}</div>`
+        : cardContent;
+
     // Add click handler for expand button
     const expandBtn = div.querySelector('.ach-expand-btn');
     if (expandBtn) {
