@@ -22,5 +22,11 @@
       "redeem_total_25": "2026-04-23T20:47:31.406674+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 442,
+    "active_months": 1,
+    "first_seen": "2026-4"
+  },
+  "top_months": []
 }

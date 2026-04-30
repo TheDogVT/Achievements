@@ -11,5 +11,11 @@
       "chat_treats": "2025-12-23T22:20:38.655481+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 9,
+    "active_months": 2,
+    "first_seen": "2025-11"
+  },
+  "top_months": []
 }

@@ -89,5 +89,20 @@
       "gifted_instance_20": "2025-12-25T00:18:16.495540+00:00",
       "gifted_cumulative_200": "2026-02-27T21:35:27.095454+00:00"
     }
-  }
+  },
+  "stats": {
+    "messages": 1130,
+    "active_months": 6,
+    "first_seen": "2025-11"
+  },
+  "top_months": [
+    {
+      "month": "2025-12",
+      "kind": "gifted"
+    },
+    {
+      "month": "2026-2",
+      "kind": "gifted"
+    }
+  ]
 }

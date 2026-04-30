@@ -11,5 +11,11 @@
       "redeem_pet_1": "2026-02-13T21:03:57.736500+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 9,
+    "active_months": 1,
+    "first_seen": "2026-2"
+  },
+  "top_months": []
 }

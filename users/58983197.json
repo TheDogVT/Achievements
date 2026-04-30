@@ -125,5 +125,20 @@
       "gamble_jackpot_total_1": "2025-11-28T23:53:26.874572+00:00",
       "chat_floof": "2026-02-07T21:41:52.537729+00:00"
     }
-  }
+  },
+  "stats": {
+    "messages": 7670,
+    "active_months": 6,
+    "first_seen": "2025-11"
+  },
+  "top_months": [
+    {
+      "month": "2025-12",
+      "kind": "donations"
+    },
+    {
+      "month": "2026-1",
+      "kind": "cheers"
+    }
+  ]
 }

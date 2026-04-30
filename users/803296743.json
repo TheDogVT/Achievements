@@ -13,5 +13,11 @@
       "subathon_2025_any": "2025-12-24T21:37:12.878739+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 68,
+    "active_months": 2,
+    "first_seen": "2025-11"
+  },
+  "top_months": []
 }

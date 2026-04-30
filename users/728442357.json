@@ -9,5 +9,11 @@
       "chat_stick": "2025-12-23T22:28:39.458920+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 64,
+    "active_months": 1,
+    "first_seen": "2025-12"
+  },
+  "top_months": []
 }

@@ -20,5 +20,11 @@
       "gamble_total_win_1": "2026-04-18T00:44:31.099561+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 419,
+    "active_months": 6,
+    "first_seen": "2025-11"
+  },
+  "top_months": []
 }

@@ -9,5 +9,11 @@
       "gamble_total_1": "2026-01-25T01:07:21.555359+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 33,
+    "active_months": 1,
+    "first_seen": "2026-1"
+  },
+  "top_months": []
 }

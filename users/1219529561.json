@@ -7,5 +7,11 @@
       "chat_goodboy": "2026-01-04T21:10:02.308670+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 1,
+    "active_months": 1,
+    "first_seen": "2026-1"
+  },
+  "top_months": []
 }

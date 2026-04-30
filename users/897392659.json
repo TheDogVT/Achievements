@@ -9,5 +9,11 @@
       "chat_10": "2026-01-04T21:16:03.899939+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 10,
+    "active_months": 1,
+    "first_seen": "2026-1"
+  },
+  "top_months": []
 }

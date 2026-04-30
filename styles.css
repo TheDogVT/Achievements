@@ -2464,6 +2464,105 @@ body.has-nav .page-wrap { padding-top: 80px; }
     min-width: 2px;
 }
 
+/* ── STREAM STATS ── */
+.stream-stats-card {
+    background: rgba(37, 36, 36, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(var(--cyan-rgb), 0.15);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+}
+.stream-stats-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cyan-dim);
+    margin-bottom: 14px;
+}
+.stream-stat-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-family: 'Space Mono', monospace;
+}
+.stream-stat-row:last-child { border-bottom: none; }
+.stream-stat-icon { font-size: 1rem; width: 22px; text-align: center; flex-shrink: 0; }
+.stream-stat-label { font-size: 0.65rem; color: var(--muted); flex: 1; }
+.stream-stat-value {
+    font-size: 0.8rem;
+    color: var(--cyan-bright);
+    font-weight: 700;
+    text-align: right;
+}
+
+/* ── TOP OF THE MONTH ── */
+.top-months-card {
+    background: rgba(37, 36, 36, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(var(--cyan-rgb), 0.15);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+}
+.top-months-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cyan-dim);
+    margin-bottom: 14px;
+}
+.top-months-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.top-month-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(var(--cyan-rgb), 0.1);
+    border-radius: 8px;
+}
+.top-month-trophy { font-size: 1rem; flex-shrink: 0; }
+.top-month-body { flex: 1; }
+.top-month-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+.top-month-kind {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--cyan-bright);
+}
+.top-month-badge {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #ffd700;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.25);
+    border-radius: 4px;
+    padding: 2px 6px;
+    flex-shrink: 0;
+}
+
 /* ── PROFILE ACTIONS ── */
 .profile-actions {
     display: flex;

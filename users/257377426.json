@@ -57,5 +57,16 @@
       "cheer_69": "2025-11-24T21:26:20.248496+00:00",
       "cheer_cumulative_20k": "2025-12-24T00:03:51.592620+00:00"
     }
-  }
+  },
+  "stats": {
+    "messages": 1511,
+    "active_months": 5,
+    "first_seen": "2025-11"
+  },
+  "top_months": [
+    {
+      "month": "2025-11",
+      "kind": "cheers"
+    }
+  ]
 }

@@ -78,5 +78,16 @@
       "chat_ball": "2025-11-06T21:03:46.235392+00:00",
       "chat_goodboy": "2025-11-06T21:09:27.219956+00:00"
     }
-  }
+  },
+  "stats": {
+    "messages": 23447,
+    "active_months": 6,
+    "first_seen": "2025-10"
+  },
+  "top_months": [
+    {
+      "month": "2025-10",
+      "kind": "chat"
+    }
+  ]
 }

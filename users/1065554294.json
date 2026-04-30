@@ -7,5 +7,11 @@
       "chat_stick": "2026-04-12T21:36:54.297828+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 4,
+    "active_months": 1,
+    "first_seen": "2026-4"
+  },
+  "top_months": []
 }

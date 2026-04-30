@@ -59,5 +59,36 @@
       "donation_10": "2025-10-31T18:34:14.209031+00:00",
       "cheer_10000": "2025-11-14T23:26:23.986765+00:00"
     }
-  }
+  },
+  "stats": {
+    "messages": 1995,
+    "active_months": 6,
+    "first_seen": "2025-11"
+  },
+  "top_months": [
+    {
+      "month": "2025-11",
+      "kind": "donations"
+    },
+    {
+      "month": "2026-1",
+      "kind": "gifted"
+    },
+    {
+      "month": "2026-2",
+      "kind": "donations"
+    },
+    {
+      "month": "2026-3",
+      "kind": "cheers"
+    },
+    {
+      "month": "2026-3",
+      "kind": "gifted"
+    },
+    {
+      "month": "2026-3",
+      "kind": "donations"
+    }
+  ]
 }

@@ -76,5 +76,11 @@
       "chat_trick": "2026-03-23T20:37:35.748356+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 2967,
+    "active_months": 6,
+    "first_seen": "2025-11"
+  },
+  "top_months": []
 }

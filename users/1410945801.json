@@ -76,5 +76,11 @@
       "chat_trick": "2026-02-09T00:17:56.464945+00:00",
       "chat_cuddle": "2026-02-09T00:23:39.623920+00:00"
     }
-  }
+  },
+  "stats": {
+    "messages": 1124,
+    "active_months": 3,
+    "first_seen": "2026-2"
+  },
+  "top_months": []
 }

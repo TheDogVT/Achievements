@@ -9,5 +9,11 @@
       "chat_sleepy": "2026-04-14T20:10:42.201494+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 122,
+    "active_months": 5,
+    "first_seen": "2025-11"
+  },
+  "top_months": []
 }

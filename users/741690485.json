@@ -40,5 +40,11 @@
     "founded": {
       "chat_stick": "2025-11-06T23:34:20.151936+00:00"
     }
-  }
+  },
+  "stats": {
+    "messages": 1211,
+    "active_months": 5,
+    "first_seen": "2025-11"
+  },
+  "top_months": []
 }

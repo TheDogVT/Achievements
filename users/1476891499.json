@@ -32,5 +32,11 @@
       "chat_woofwoof": "2026-04-25T00:18:45.056998+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 976,
+    "active_months": 1,
+    "first_seen": "2026-4"
+  },
+  "top_months": []
 }

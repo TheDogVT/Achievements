@@ -8,5 +8,11 @@
       "donation_10": "2026-02-23T23:28:38.862592+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 0,
+    "active_months": 1,
+    "first_seen": "2026-2"
+  },
+  "top_months": []
 }

@@ -14,5 +14,11 @@
       "chat_bone": "2026-02-24T23:57:00.696232+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 70,
+    "active_months": 4,
+    "first_seen": "2025-11"
+  },
+  "top_months": []
 }

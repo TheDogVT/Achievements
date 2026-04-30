@@ -44,5 +44,11 @@
     "founded": {
       "chat_yawn": "2026-03-17T23:41:03.646791+00:00"
     }
-  }
+  },
+  "stats": {
+    "messages": 1026,
+    "active_months": 6,
+    "first_seen": "2025-11"
+  },
+  "top_months": []
 }

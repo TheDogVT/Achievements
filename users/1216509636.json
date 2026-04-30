@@ -16,5 +16,11 @@
       "redeem_checkin_30": "2026-04-26T20:05:49.299036+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 21,
+    "active_months": 2,
+    "first_seen": "2026-3"
+  },
+  "top_months": []
 }

@@ -102,5 +102,11 @@
       "chat_leash": "2026-02-09T00:05:11.057248+00:00",
       "chat_pupper": "2026-02-09T00:06:44.575760+00:00"
     }
-  }
+  },
+  "stats": {
+    "messages": 8507,
+    "active_months": 6,
+    "first_seen": "2025-11"
+  },
+  "top_months": []
 }

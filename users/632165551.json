@@ -111,5 +111,24 @@
       "cheer_2048": "2026-04-21T23:14:18.110619+00:00",
       "cheer_4096": "2026-04-21T23:24:18.110619+00:00"
     }
-  }
+  },
+  "stats": {
+    "messages": 4605,
+    "active_months": 6,
+    "first_seen": "2025-11"
+  },
+  "top_months": [
+    {
+      "month": "2025-11",
+      "kind": "gifted"
+    },
+    {
+      "month": "2025-12",
+      "kind": "cheers"
+    },
+    {
+      "month": "2026-2",
+      "kind": "cheers"
+    }
+  ]
 }

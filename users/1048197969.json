@@ -88,5 +88,11 @@
     "founded": {
       "chat_food_bowl": "2025-11-08T22:26:04.482908+00:00"
     }
-  }
+  },
+  "stats": {
+    "messages": 2444,
+    "active_months": 6,
+    "first_seen": "2025-11"
+  },
+  "top_months": []
 }

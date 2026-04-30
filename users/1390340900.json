@@ -7,5 +7,11 @@
       "chat_bork": "2025-11-08T21:43:33.583606+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 2,
+    "active_months": 1,
+    "first_seen": "2025-11"
+  },
+  "top_months": []
 }

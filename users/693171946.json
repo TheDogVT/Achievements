@@ -68,5 +68,11 @@
       "redeem_first_31": "2026-01-24T21:39:01.650753+00:00",
       "redeem_pet_150": "2026-02-19T21:33:31.496801+00:00"
     }
-  }
+  },
+  "stats": {
+    "messages": 2970,
+    "active_months": 6,
+    "first_seen": "2025-11"
+  },
+  "top_months": []
 }

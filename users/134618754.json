@@ -19,5 +19,16 @@
       "donation_10": "2026-02-18T17:21:17.133141+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 108,
+    "active_months": 5,
+    "first_seen": "2025-11"
+  },
+  "top_months": [
+    {
+      "month": "2026-4",
+      "kind": "donations"
+    }
+  ]
 }

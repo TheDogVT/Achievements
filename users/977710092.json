@@ -17,5 +17,11 @@
     "founded": {
       "chat_floofy": "2026-02-07T21:41:32.420162+00:00"
     }
-  }
+  },
+  "stats": {
+    "messages": 95,
+    "active_months": 4,
+    "first_seen": "2025-12"
+  },
+  "top_months": []
 }

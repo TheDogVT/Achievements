@@ -9,5 +9,11 @@
       "chat_yap": "2026-04-17T21:58:56.441079+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 28,
+    "active_months": 1,
+    "first_seen": "2026-4"
+  },
+  "top_months": []
 }

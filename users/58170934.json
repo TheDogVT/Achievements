@@ -14,5 +14,11 @@
       "chat_pupper": "2026-03-09T21:04:09.509527+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 74,
+    "active_months": 5,
+    "first_seen": "2025-11"
+  },
+  "top_months": []
 }

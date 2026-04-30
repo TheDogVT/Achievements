@@ -11,5 +11,11 @@
       "cheer_100": "2025-12-27T01:01:42.857301+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 7,
+    "active_months": 1,
+    "first_seen": "2025-12"
+  },
+  "top_months": []
 }

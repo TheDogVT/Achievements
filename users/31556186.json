@@ -17,5 +17,11 @@
       "chat_yap": "2026-02-17T21:38:31.983440+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 130,
+    "active_months": 3,
+    "first_seen": "2025-12"
+  },
+  "top_months": []
 }

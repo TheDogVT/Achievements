@@ -64,5 +64,11 @@
       "chat_park": "2026-02-08T23:54:07.568570+00:00",
       "chat_doorbell": "2026-03-14T22:03:15.740207+00:00"
     }
-  }
+  },
+  "stats": {
+    "messages": 2217,
+    "active_months": 3,
+    "first_seen": "2026-2"
+  },
+  "top_months": []
 }

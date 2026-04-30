@@ -31,5 +31,11 @@
       "chat_biscuits": "2025-11-08T22:55:35.690348+00:00",
       "chat_protect": "2025-11-08T22:55:35.690848+00:00"
     }
-  }
+  },
+  "stats": {
+    "messages": 20,
+    "active_months": 2,
+    "first_seen": "2025-11"
+  },
+  "top_months": []
 }

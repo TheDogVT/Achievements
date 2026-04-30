@@ -32,5 +32,11 @@
       "gamble_loss_total_100m": "2025-11-08T22:23:43.067489+00:00",
       "gamble_loss_total_1b": "2025-11-08T22:23:43.067986+00:00"
     }
-  }
+  },
+  "stats": {
+    "messages": 533,
+    "active_months": 6,
+    "first_seen": "2025-11"
+  },
+  "top_months": []
 }

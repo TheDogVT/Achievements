@@ -7,5 +7,11 @@
       "redeem_pet_1": "2025-12-04T21:41:32.761853+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 2,
+    "active_months": 1,
+    "first_seen": "2025-12"
+  },
+  "top_months": []
 }

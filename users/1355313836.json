@@ -9,5 +9,11 @@
       "chat_sniff": "2026-02-03T21:05:14.931372+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 9,
+    "active_months": 2,
+    "first_seen": "2026-1"
+  },
+  "top_months": []
 }

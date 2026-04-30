@@ -19,5 +19,11 @@
       "chat_paw": "2026-04-28T00:07:56.549594+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 192,
+    "active_months": 1,
+    "first_seen": "2026-4"
+  },
+  "top_months": []
 }

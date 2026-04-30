@@ -86,5 +86,11 @@
       "chat_doge": "2026-02-09T21:09:29.324348+00:00",
       "chat_spelled_forbidden": "2026-02-09T21:24:25.991749+00:00"
     }
-  }
+  },
+  "stats": {
+    "messages": 2876,
+    "active_months": 4,
+    "first_seen": "2026-1"
+  },
+  "top_months": []
 }

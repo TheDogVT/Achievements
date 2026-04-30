@@ -9,5 +9,11 @@
       "chat_ball": "2026-02-24T00:44:52.326002+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 37,
+    "active_months": 1,
+    "first_seen": "2026-2"
+  },
+  "top_months": []
 }

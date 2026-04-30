@@ -12,5 +12,11 @@
       "chat_bath": "2026-04-17T22:08:44.891527+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 34,
+    "active_months": 3,
+    "first_seen": "2025-11"
+  },
+  "top_months": []
 }

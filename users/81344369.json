@@ -129,5 +129,11 @@
       "redeem_total_800": "2026-04-27T20:21:23.055965+00:00",
       "redeem_total_900": "2026-04-27T20:21:23.266267+00:00"
     }
-  }
+  },
+  "stats": {
+    "messages": 6262,
+    "active_months": 6,
+    "first_seen": "2025-11"
+  },
+  "top_months": []
 }

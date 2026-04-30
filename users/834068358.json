@@ -9,5 +9,11 @@
       "gifted_times_1": "2026-01-09T21:29:45.784510+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 42,
+    "active_months": 2,
+    "first_seen": "2025-12"
+  },
+  "top_months": []
 }

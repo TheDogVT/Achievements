@@ -111,5 +111,36 @@
       "redeem_checkin_120": "2026-03-29T20:09:00.206039+00:00",
       "gamble_win_total_100m": "2026-04-26T21:47:15.120102+00:00"
     }
-  }
+  },
+  "stats": {
+    "messages": 36557,
+    "active_months": 6,
+    "first_seen": "2025-11"
+  },
+  "top_months": [
+    {
+      "month": "2025-11",
+      "kind": "chat"
+    },
+    {
+      "month": "2025-12",
+      "kind": "chat"
+    },
+    {
+      "month": "2026-1",
+      "kind": "chat"
+    },
+    {
+      "month": "2026-2",
+      "kind": "chat"
+    },
+    {
+      "month": "2026-3",
+      "kind": "chat"
+    },
+    {
+      "month": "2026-4",
+      "kind": "chat"
+    }
+  ]
 }

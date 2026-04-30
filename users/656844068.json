@@ -33,5 +33,11 @@
     "founded": {
       "gifted_instance_10": "2025-12-24T21:22:19.032812+00:00"
     }
-  }
+  },
+  "stats": {
+    "messages": 569,
+    "active_months": 6,
+    "first_seen": "2025-11"
+  },
+  "top_months": []
 }

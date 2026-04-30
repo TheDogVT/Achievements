@@ -9,5 +9,11 @@
       "chat_howl": "2026-04-04T20:12:12.689806+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 17,
+    "active_months": 1,
+    "first_seen": "2026-4"
+  },
+  "top_months": []
 }

@@ -12,5 +12,11 @@
       "chat_lick": "2026-04-05T21:25:03.006366+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 76,
+    "active_months": 6,
+    "first_seen": "2025-11"
+  },
+  "top_months": []
 }

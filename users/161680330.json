@@ -14,5 +14,11 @@
       "chat_100": "2026-02-22T21:25:33.537964+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 159,
+    "active_months": 5,
+    "first_seen": "2025-12"
+  },
+  "top_months": []
 }

@@ -100,5 +100,11 @@
       "chat_mailman": "2026-02-09T00:03:45.778839+00:00",
       "gamble_jackpot_total_3": "2026-04-27T22:18:14.503855+00:00"
     }
-  }
+  },
+  "stats": {
+    "messages": 4299,
+    "active_months": 6,
+    "first_seen": "2025-11"
+  },
+  "top_months": []
 }

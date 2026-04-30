@@ -16,5 +16,11 @@
       "chat_tail": "2026-02-23T22:15:08.714743+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 532,
+    "active_months": 5,
+    "first_seen": "2025-11"
+  },
+  "top_months": []
 }

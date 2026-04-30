@@ -8,5 +8,11 @@
       "chat_stick": "2026-01-13T21:29:43.447889+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 72,
+    "active_months": 4,
+    "first_seen": "2026-1"
+  },
+  "top_months": []
 }

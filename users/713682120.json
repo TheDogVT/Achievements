@@ -51,5 +51,11 @@
       "gamble_total_5": "2026-04-27T22:18:29.807141+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 1660,
+    "active_months": 6,
+    "first_seen": "2025-11"
+  },
+  "top_months": []
 }

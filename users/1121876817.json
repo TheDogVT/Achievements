@@ -12,5 +12,11 @@
       "chat_beach": "2026-02-17T23:49:21.774740+00:00"
     },
     "founded": {}
-  }
+  },
+  "stats": {
+    "messages": 35,
+    "active_months": 2,
+    "first_seen": "2025-12"
+  },
+  "top_months": []
 }
