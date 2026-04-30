@@ -105,7 +105,8 @@
   "top_months": [
     {
       "month": "2026-4",
-      "kind": "cheers"
+      "kind": "cheers",
+      "rank": 1
     }
   ]
 }

@@ -31,7 +31,8 @@
   "top_months": [
     {
       "month": "2026-1",
-      "kind": "donations"
+      "kind": "donations",
+      "rank": 1
     }
   ]
 }

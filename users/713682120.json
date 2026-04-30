@@ -57,5 +57,11 @@
     "active_months": 6,
     "first_seen": "2025-11"
   },
-  "top_months": []
+  "top_months": [
+    {
+      "month": "2026-1",
+      "kind": "donations",
+      "rank": 3
+    }
+  ]
 }

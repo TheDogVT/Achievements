@@ -109,7 +109,10 @@ function buildProfilePage(userId) {
     };
 
     const formatMonth = ym => {
-        const [y, m] = ym.split('-');
+        if (!ym) return '';
+        // Full ISO timestamp → extract YYYY-MM portion first
+        const parts = ym.includes('T') ? ym.split('T')[0].split('-') : ym.split('-');
+        const [y, m] = parts;
         return new Date(+y, +m - 1, 1).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
     };
 
@@ -125,21 +128,28 @@ function buildProfilePage(userId) {
         return `<div class="stream-stats-card"><div class="stream-stats-title">📊 Stream Stats</div>${rows.join('')}</div>`;
     })();
 
+    const RANK_META = {
+        1: { badge: '#1', cls: 'rank-gold',   trophy: '🥇' },
+        2: { badge: '#2', cls: 'rank-silver', trophy: '🥈' },
+        3: { badge: '#3', cls: 'rank-bronze', trophy: '🥉' },
+    };
+
     const topMonthsHTML = (() => {
         if (!topMonths.length) return '';
-        const items = topMonths.map(({ month, kind }) => {
-            const meta = KIND_LABELS[kind] || { icon: '🏆', label: kind };
+        const items = topMonths.map(({ month, kind, rank }) => {
+            const meta   = KIND_LABELS[kind] || { icon: '🏆', label: kind };
+            const rankM  = RANK_META[rank] || RANK_META[3];
             return `
                 <div class="top-month-item">
-                    <span class="top-month-trophy">🏆</span>
+                    <span class="top-month-trophy">${rankM.trophy}</span>
                     <div class="top-month-body">
                         <div class="top-month-label">${formatMonth(month)}</div>
                         <div class="top-month-kind">${meta.icon} ${meta.label}</div>
                     </div>
-                    <span class="top-month-badge">#1</span>
+                    <span class="top-month-badge ${rankM.cls}">${rankM.badge}</span>
                 </div>`;
         }).join('');
-        return `<div class="top-months-card"><div class="top-months-title">🥇 Top of the Month</div><div class="top-months-list">${items}</div></div>`;
+        return `<div class="top-months-card"><div class="top-months-title">🏆 Top of the Month</div><div class="top-months-list">${items}</div></div>`;
     })();
 
     // ── ACHIEVEMENT TIMELINE ──

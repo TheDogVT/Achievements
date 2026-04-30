@@ -82,5 +82,11 @@
     "active_months": 3,
     "first_seen": "2026-2"
   },
-  "top_months": []
+  "top_months": [
+    {
+      "month": "2026-2",
+      "kind": "gifted",
+      "rank": 2
+    }
+  ]
 }

@@ -133,12 +133,44 @@
   },
   "top_months": [
     {
+      "month": "2025-11",
+      "kind": "cheers",
+      "rank": 3
+    },
+    {
       "month": "2025-12",
-      "kind": "donations"
+      "kind": "donations",
+      "rank": 1
+    },
+    {
+      "month": "2025-12",
+      "kind": "chat",
+      "rank": 3
+    },
+    {
+      "month": "2025-12",
+      "kind": "cheers",
+      "rank": 3
     },
     {
       "month": "2026-1",
-      "kind": "cheers"
+      "kind": "cheers",
+      "rank": 1
+    },
+    {
+      "month": "2026-1",
+      "kind": "gifted",
+      "rank": 3
+    },
+    {
+      "month": "2026-2",
+      "kind": "gifted",
+      "rank": 3
+    },
+    {
+      "month": "2026-3",
+      "kind": "donations",
+      "rank": 3
     }
   ]
 }

@@ -87,7 +87,18 @@
   "top_months": [
     {
       "month": "2025-10",
-      "kind": "chat"
+      "kind": "chat",
+      "rank": 1
+    },
+    {
+      "month": "2025-11",
+      "kind": "chat",
+      "rank": 2
+    },
+    {
+      "month": "2026-2",
+      "kind": "donations",
+      "rank": 3
     }
   ]
 }

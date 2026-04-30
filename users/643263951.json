@@ -118,5 +118,16 @@
     "active_months": 6,
     "first_seen": "2025-11"
   },
-  "top_months": []
+  "top_months": [
+    {
+      "month": "2026-1",
+      "kind": "cheers",
+      "rank": 2
+    },
+    {
+      "month": "2026-2",
+      "kind": "cheers",
+      "rank": 2
+    }
+  ]
 }

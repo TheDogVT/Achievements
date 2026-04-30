@@ -2555,13 +2555,13 @@ body.has-nav .page-wrap { padding-top: 80px; }
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #ffd700;
-    background: rgba(255,215,0,0.08);
-    border: 1px solid rgba(255,215,0,0.25);
     border-radius: 4px;
     padding: 2px 6px;
     flex-shrink: 0;
 }
+.top-month-badge.rank-gold   { color: #ffd700; background: rgba(255,215,0,0.10); border: 1px solid rgba(255,215,0,0.30); }
+.top-month-badge.rank-silver { color: #c0c0c0; background: rgba(192,192,192,0.10); border: 1px solid rgba(192,192,192,0.30); }
+.top-month-badge.rank-bronze { color: #cd7f32; background: rgba(205,127,50,0.10); border: 1px solid rgba(205,127,50,0.30); }
 
 /* ── PROFILE ACTIONS ── */
 .profile-actions {

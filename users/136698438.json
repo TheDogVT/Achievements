@@ -83,5 +83,31 @@
     "active_months": 6,
     "first_seen": "2025-11"
   },
-  "top_months": []
+  "top_months": [
+    {
+      "month": "2025-12",
+      "kind": "chat",
+      "rank": 2
+    },
+    {
+      "month": "2026-1",
+      "kind": "chat",
+      "rank": 3
+    },
+    {
+      "month": "2026-2",
+      "kind": "chat",
+      "rank": 2
+    },
+    {
+      "month": "2026-3",
+      "kind": "chat",
+      "rank": 2
+    },
+    {
+      "month": "2026-4",
+      "kind": "chat",
+      "rank": 3
+    }
+  ]
 }

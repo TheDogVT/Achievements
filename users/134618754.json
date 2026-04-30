@@ -27,8 +27,19 @@
   },
   "top_months": [
     {
+      "month": "2025-12",
+      "kind": "donations",
+      "rank": 2
+    },
+    {
+      "month": "2026-3",
+      "kind": "donations",
+      "rank": 2
+    },
+    {
       "month": "2026-4",
-      "kind": "donations"
+      "kind": "donations",
+      "rank": 1
     }
   ]
 }
