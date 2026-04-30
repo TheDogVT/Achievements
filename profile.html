@@ -184,6 +184,32 @@ function buildProfilePage(userId) {
 
     const moreCount = timelineItems.length > 20 ? timelineItems.length - 20 : 0;
 
+    // ── ACHIEVEMENTS PER MONTH CHART ──
+    const achByMonth = {};
+    for (const [, ts] of Object.entries(earned)) {
+        const ym = ts.split('T')[0].slice(0, 7);
+        if (!achByMonth[ym]) achByMonth[ym] = { earned: 0, founded: 0 };
+        achByMonth[ym].earned++;
+    }
+    for (const [, ts] of Object.entries(founded)) {
+        const ym = ts.split('T')[0].slice(0, 7);
+        if (!achByMonth[ym]) achByMonth[ym] = { earned: 0, founded: 0 };
+        achByMonth[ym].founded++;
+    }
+    const chartMonths = Object.keys(achByMonth).sort();
+    const chartData   = chartMonths.map(m => achByMonth[m]);
+    const showChart   = chartMonths.length > 0;
+
+    const achChartHTML = showChart ? `
+        <div class="ach-chart-card">
+            <div class="ach-chart-title">📅 Achievements by Month</div>
+            <canvas id="achChart" style="width:100%;display:block;"></canvas>
+            <div class="ach-chart-legend">
+                <span class="ach-legend-dot" style="background:#4ecdc4;"></span><span>Earned</span>
+                <span class="ach-legend-dot" style="background:#ffd700;"></span><span>Founded</span>
+            </div>
+        </div>` : '';
+
     document.getElementById('profileContent').innerHTML = `
         <div class="profile-hero">
             <div class="profile-hero-avatar" id="heroAvatar" style="${avatarStyle}">${avatarInitial}</div>
@@ -211,14 +237,16 @@ function buildProfilePage(userId) {
             </div>
         </div>
 
+        ${topMonthsHTML}
+
+        ${streamStatsHTML}
+
         <div class="profile-cat-breakdown">
             <div class="profile-cat-title">By Category</div>
             ${catRows}
         </div>
 
-        ${streamStatsHTML}
-
-        ${topMonthsHTML}
+        ${achChartHTML}
 
         ${timelineHTML ? `
         <div class="profile-timeline-card">
@@ -234,6 +262,8 @@ function buildProfilePage(userId) {
                 : `<button class="btn btn-ghost" id="claimProfileBtn">This is me!</button>`}
         </div>
     `;
+
+    if (showChart) requestAnimationFrame(() => drawAchChart(chartMonths, chartData));
 
     // Claim / unclaim handlers
     const claimBtn = document.getElementById('claimProfileBtn');
@@ -265,6 +295,100 @@ function buildProfilePage(userId) {
             showToast('Profile cleared.');
         });
     }
+}
+
+function drawAchChart(months, data) {
+    const canvas = document.getElementById('achChart');
+    if (!canvas) return;
+
+    const dpr  = window.devicePixelRatio || 1;
+    const W    = canvas.getBoundingClientRect().width || 600;
+    const H    = 140;
+    canvas.width        = Math.round(W * dpr);
+    canvas.height       = Math.round(H * dpr);
+    canvas.style.height = H + 'px';
+
+    const ctx    = canvas.getContext('2d');
+    ctx.scale(dpr, dpr);
+
+    const pad    = { top: 12, right: 8, bottom: 32, left: 26 };
+    const chartW = W - pad.left - pad.right;
+    const chartH = H - pad.top  - pad.bottom;
+    const n      = months.length;
+    const maxVal = Math.max(...data.map(d => d.earned + d.founded), 1);
+
+    // Bar sizing — cap width and centre if few months
+    const gap     = 3;
+    const rawBarW = (chartW - gap * (n - 1)) / n;
+    const barW    = Math.min(36, Math.max(4, rawBarW));
+    const totalW  = barW * n + gap * (n - 1);
+    const originX = pad.left + (chartW - totalW) / 2;
+
+    // Grid lines + y labels
+    const gridSteps = 4;
+    for (let i = 0; i <= gridSteps; i++) {
+        const y = pad.top + chartH - (i / gridSteps) * chartH;
+        ctx.strokeStyle = i === 0 ? 'rgba(255,255,255,0.10)' : 'rgba(255,255,255,0.04)';
+        ctx.lineWidth   = 1;
+        ctx.beginPath(); ctx.moveTo(pad.left, y); ctx.lineTo(pad.left + chartW, y); ctx.stroke();
+        if (i > 0 && maxVal > 0) {
+            ctx.fillStyle  = '#38385a';
+            ctx.font       = '9px Consolas, monospace';
+            ctx.textAlign  = 'right';
+            ctx.fillText(Math.round((i / gridSteps) * maxVal), pad.left - 3, y + 3);
+        }
+    }
+
+    // Bars + x labels
+    const labelEvery = n > 24 ? 3 : n > 12 ? 2 : 1;
+    let lastYear = null;
+
+    months.forEach((ym, i) => {
+        const x       = originX + i * (barW + gap);
+        const earned  = data[i].earned;
+        const founded = data[i].founded;
+        const total   = earned + founded;
+
+        if (earned > 0) {
+            const bh    = (earned / maxVal) * chartH;
+            const by    = pad.top + chartH - bh - (founded / maxVal) * chartH;
+            const grad  = ctx.createLinearGradient(0, by, 0, by + bh);
+            grad.addColorStop(0, '#6edcd8');
+            grad.addColorStop(1, '#3ab5ae');
+            ctx.fillStyle = grad;
+            ctx.beginPath();
+            if (ctx.roundRect) ctx.roundRect(x, by, barW, bh, [2, 2, 0, 0]);
+            else ctx.rect(x, by, barW, bh);
+            ctx.fill();
+        }
+
+        if (founded > 0) {
+            const fh   = (founded / maxVal) * chartH;
+            const fy   = pad.top + chartH - (total / maxVal) * chartH;
+            const grad = ctx.createLinearGradient(0, fy, 0, fy + fh);
+            grad.addColorStop(0, '#ffe040');
+            grad.addColorStop(1, '#c8a000');
+            ctx.fillStyle = grad;
+            ctx.beginPath();
+            if (ctx.roundRect) ctx.roundRect(x, fy, barW, fh, [2, 2, 0, 0]);
+            else ctx.rect(x, fy, barW, fh);
+            ctx.fill();
+        }
+
+        if (i % labelEvery === 0) {
+            const [y, m]  = ym.split('-');
+            const monthLbl = new Date(+y, +m - 1).toLocaleDateString('en-US', { month: 'short' });
+            ctx.fillStyle  = '#484870';
+            ctx.font       = '9px Consolas, monospace';
+            ctx.textAlign  = 'center';
+            ctx.fillText(monthLbl, x + barW / 2, pad.top + chartH + 13);
+            if (y !== lastYear) {
+                ctx.fillStyle = '#303055';
+                ctx.fillText(y, x + barW / 2, pad.top + chartH + 24);
+                lastYear = y;
+            }
+        }
+    });
 }
 
 function showProfileSearch(msg) {

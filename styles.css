@@ -2563,6 +2563,43 @@ body.has-nav .page-wrap { padding-top: 80px; }
 .top-month-badge.rank-silver { color: #c0c0c0; background: rgba(192,192,192,0.10); border: 1px solid rgba(192,192,192,0.30); }
 .top-month-badge.rank-bronze { color: #cd7f32; background: rgba(205,127,50,0.10); border: 1px solid rgba(205,127,50,0.30); }
 
+/* ── ACHIEVEMENTS BY MONTH CHART ── */
+.ach-chart-card {
+    background: rgba(37, 36, 36, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(var(--cyan-rgb), 0.15);
+    border-radius: 12px;
+    padding: 20px 24px 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+}
+.ach-chart-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cyan-dim);
+    margin-bottom: 12px;
+}
+.ach-chart-legend {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 10px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+}
+.ach-legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
 /* ── PROFILE ACTIONS ── */
 .profile-actions {
     display: flex;
