@@ -408,6 +408,12 @@
       "amount": 20000,
       "type": "cumulative"
     },
+    "cheer_cumulative_50k": {
+      "name": "Bit Burrier.",
+      "desc": "Awarded for cheering 50,000 bits overall.",
+      "amount": 50000,
+      "type": "cumulative"
+    },
     "cheer_time_1": {
       "name": "Babys First Cheer.",
       "desc": "Awarded for cheering once.",

@@ -64,6 +64,16 @@
     "founder_name": "kiteman61",
     "founded_at": "2026-02-17T23:47:40.242775+00:00"
   },
+  "cheer_message_100": {
+    "founder_id": "58170934",
+    "founder_name": "nelseru",
+    "founded_at": "2026-05-01T20:37:11.241678+00:00"
+  },
+  "cheer_time_1": {
+    "founder_id": "58170934",
+    "founder_name": "nelseru",
+    "founded_at": "2026-05-01T20:37:11.504172+00:00"
+  },
   "gifted_instance_10": {
     "founder_id": "656844068",
     "founder_name": "oculusvisionss",
@@ -333,6 +343,11 @@
     "founder_id": "159474409",
     "founder_name": "kosdomos",
     "founded_at": "2026-05-01T20:18:42.315930+00:00"
+  },
+  "cheer_cumulative_50k": {
+    "founder_id": "159474409",
+    "founder_name": "kosdomos",
+    "founded_at": "2026-05-01T20:37:18.282892+00:00"
   },
   "chat_scratch": {
     "founder_id": "54948328",
