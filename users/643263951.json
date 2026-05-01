@@ -129,6 +129,11 @@
       "month": "2026-2",
       "kind": "cheers",
       "rank": 2
+    },
+    {
+      "month": "2026-5",
+      "kind": "gifted",
+      "rank": 2
     }
   ]
 }
