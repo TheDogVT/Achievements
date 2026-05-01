@@ -356,11 +356,6 @@
       "amount": 10000,
       "type": "cumulative"
     },
-    "chat_day_halloween_2": {
-      "name": "Spook 2, electric spook-a-lo.",
-      "desc": "Awarded for being present during Halloween 2025.",
-      "type": "date"
-    },
     "chat_day_special_2": {
       "name": "Day Achivement 2.",
       "desc": "Awarded being present during the day delta was testing day achivement code for 2.0.",
@@ -491,12 +486,6 @@
       "amount": 25,
       "type": "exact"
     },
-    "cheer_42": {
-      "name": "The meaning of life the universe and everything.",
-      "desc": "Awarded for cheering exactly 42 bits",
-      "amount": 42,
-      "type": "exact"
-    },
     "cheer_51": {
       "name": "There are aliens here!",
       "desc": "Awarded for cheering exactly 51 bits",
@@ -625,11 +614,6 @@
     }
   },
   "donation": {
-    "donate_date_2": {
-      "name": "Direct Deposit Tester",
-      "desc": "Awarded for... dog?",
-      "type": "date"
-    },
     "donation_1": {
       "name": "Dollar For Your Thoughts?",
       "desc": "Awarded for donating 1 or more dollars at a time.",
