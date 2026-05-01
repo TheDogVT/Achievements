@@ -4,7 +4,8 @@
   "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/07fabe1b-292b-4096-bc1d-f6d3019742bb-profile_image-300x300.png",
   "achievements": {
     "earned": {
-      "chat_fetch": "2026-05-01T01:22:58.488857+00:00"
+      "chat_fetch": "2026-05-01T01:22:58.488857+00:00",
+      "chat_yap": "2026-05-01T19:59:54.311023+00:00"
     },
     "founded": {
       "chat_10": "2026-05-01T01:22:53.580646+00:00",
@@ -16,8 +17,8 @@
     }
   },
   "stats": {
-    "messages": 23609,
-    "active_months": 6,
+    "messages": 23629,
+    "active_months": 7,
     "first_seen": "2025-10"
   },
   "top_months": [
@@ -35,6 +36,11 @@
       "month": "2026-2",
       "kind": "donations",
       "rank": 3
+    },
+    {
+      "month": "2026-5",
+      "kind": "chat",
+      "rank": 1
     }
   ]
 }

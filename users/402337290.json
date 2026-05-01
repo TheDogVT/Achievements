@@ -13,9 +13,15 @@
     "founded": {}
   },
   "stats": {
-    "messages": 144,
-    "active_months": 6,
+    "messages": 145,
+    "active_months": 7,
     "first_seen": "2025-11"
   },
-  "top_months": []
+  "top_months": [
+    {
+      "month": "2026-5",
+      "kind": "chat",
+      "rank": 2
+    }
+  ]
 }
