@@ -320,6 +320,11 @@
       "desc": "Awarded for the eternal question.",
       "type": "contains"
     },
+    "chat_smol": {
+      "name": "Smol Bean Advocate",
+      "desc": "Awarded for recognizing tiny, precious things.",
+      "type": "contains"
+    },
     "chat_10": {
       "name": "Curious Chatter.",
       "desc": "Awarded for yapping 10 times.",
