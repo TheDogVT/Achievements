@@ -419,6 +419,12 @@
       "amount": 50000,
       "type": "cumulative"
     },
+    "cheer_cumulative_75k": {
+      "name": "High Bitroller.",
+      "desc": "Awarded for cheering 75,000 bits overall.",
+      "amount": 75000,
+      "type": "cumulative"
+    },
     "cheer_time_1": {
       "name": "Babys First Cheer.",
       "desc": "Awarded for cheering once.",
