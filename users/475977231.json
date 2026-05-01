@@ -5,13 +5,14 @@
   "achievements": {
     "earned": {
       "cheer_message_100": "2026-01-09T22:34:48.320160+00:00",
-      "cheer_time_1": "2026-01-09T22:34:48.320660+00:00"
+      "cheer_time_1": "2026-01-09T22:34:48.320660+00:00",
+      "chat_10": "2026-05-01T20:17:01.834925+00:00"
     },
     "founded": {}
   },
   "stats": {
-    "messages": 8,
-    "active_months": 2,
+    "messages": 10,
+    "active_months": 3,
     "first_seen": "2026-1"
   },
   "top_months": []
