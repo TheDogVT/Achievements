@@ -28,11 +28,5 @@
     "active_months": 2,
     "first_seen": "2026-4"
   },
-  "top_months": [
-    {
-      "month": "2026-5",
-      "kind": "chat",
-      "rank": 3
-    }
-  ]
+  "top_months": []
 }
