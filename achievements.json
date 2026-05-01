@@ -320,6 +320,11 @@
       "desc": "Awarded for the eternal question.",
       "type": "contains"
     },
+    "chat_blep": {
+      "name": "Blep Patrol",
+      "desc": "Awarded for spotting a rogue tongue tip.",
+      "type": "contains"
+    },
     "chat_smol": {
       "name": "Smol Bean Advocate",
       "desc": "Awarded for recognizing tiny, precious things.",

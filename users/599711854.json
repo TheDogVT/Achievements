@@ -22,13 +22,14 @@
       "chat_treats": "2026-04-17T21:06:26.749763+00:00",
       "chat_boop": "2026-04-21T23:33:45.079959+00:00",
       "redeem_total_50": "2026-04-24T20:06:09.883570+00:00",
-      "redeem_checkin_60": "2026-04-27T20:19:32.644473+00:00"
+      "redeem_checkin_60": "2026-04-27T20:19:32.644473+00:00",
+      "chat_blep": "2026-05-01T22:39:07.337185+00:00"
     },
     "founded": {}
   },
   "stats": {
-    "messages": 75,
-    "active_months": 5,
+    "messages": 77,
+    "active_months": 6,
     "first_seen": "2025-11"
   },
   "top_months": []
