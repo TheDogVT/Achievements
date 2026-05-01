@@ -1,7 +1,7 @@
 {
   "user_id": "1469950665",
   "username": "hyacine_addict",
-  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/7b7b01bf-c2b4-46b9-acf7-cf462a336a30-profile_image-300x300.png",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/a6f54924-eedc-4657-9d28-aa906a51aa28-profile_image-300x300.png",
   "achievements": {
     "earned": {
       "redeem_checkin_1": "2026-04-04T21:00:50.968364+00:00",
@@ -24,9 +24,15 @@
     "founded": {}
   },
   "stats": {
-    "messages": 442,
-    "active_months": 1,
+    "messages": 449,
+    "active_months": 2,
     "first_seen": "2026-4"
   },
-  "top_months": []
+  "top_months": [
+    {
+      "month": "2026-5",
+      "kind": "chat",
+      "rank": 3
+    }
+  ]
 }
