@@ -7,13 +7,14 @@
       "redeem_checkin_1": "2026-03-31T20:52:02.490275+00:00",
       "redeem_checkin_2": "2026-04-02T22:26:19.364015+00:00",
       "chat_10": "2026-04-05T23:12:59.340828+00:00",
-      "chat_goodboy": "2026-04-30T20:11:47.915130+00:00"
+      "chat_goodboy": "2026-04-30T20:11:47.915130+00:00",
+      "redeem_total_5": "2026-05-01T21:18:08.474713+00:00"
     },
     "founded": {}
   },
   "stats": {
-    "messages": 19,
-    "active_months": 2,
+    "messages": 20,
+    "active_months": 3,
     "first_seen": "2026-3"
   },
   "top_months": []
