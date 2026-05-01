@@ -91,7 +91,7 @@
     }
   },
   "stats": {
-    "messages": 1131,
+    "messages": 1133,
     "active_months": 7,
     "first_seen": "2025-11"
   },
@@ -115,6 +115,11 @@
       "month": "2026-4",
       "kind": "gifted",
       "rank": 3
+    },
+    {
+      "month": "2026-5",
+      "kind": "cheers",
+      "rank": 2
     }
   ]
 }
