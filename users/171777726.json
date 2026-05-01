@@ -10,10 +10,12 @@
       "chat_smol": "2026-05-01T21:57:11.173352+00:00",
       "chat_stick": "2026-05-01T22:03:33.501473+00:00"
     },
-    "founded": {}
+    "founded": {
+      "chat_ball": "2026-05-01T22:06:12.054101+00:00"
+    }
   },
   "stats": {
-    "messages": 64,
+    "messages": 69,
     "active_months": 2,
     "first_seen": "2026-2"
   },
