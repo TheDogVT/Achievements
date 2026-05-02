@@ -211,13 +211,78 @@
   },
   "donation_10": {
     "founder_id": "1237882084",
-    "founder_name": "maypleleafvt",
+    "founder_name": "MAYPLELeafVT",
     "founded_at": "2025-10-31T18:34:14.209031+00:00"
   },
   "cheer_10000": {
     "founder_id": "1237882084",
-    "founder_name": "maypleleafvt",
+    "founder_name": "MAYPLELeafVT",
     "founded_at": "2025-11-14T23:26:23.986765+00:00"
+  },
+  "donation_5": {
+    "founder_id": "1237882084",
+    "founder_name": "MAYPLELeafVT",
+    "founded_at": "2026-05-02T20:50:53.444804+00:00"
+  },
+  "donation_20": {
+    "founder_id": "1237882084",
+    "founder_name": "MAYPLELeafVT",
+    "founded_at": "2026-05-02T20:50:53.712136+00:00"
+  },
+  "donation_50": {
+    "founder_id": "1237882084",
+    "founder_name": "MAYPLELeafVT",
+    "founded_at": "2026-05-02T20:50:55.110836+00:00"
+  },
+  "donation_100": {
+    "founder_id": "1237882084",
+    "founder_name": "MAYPLELeafVT",
+    "founded_at": "2026-05-02T20:50:56.105029+00:00"
+  },
+  "donation_200": {
+    "founder_id": "1237882084",
+    "founder_name": "MAYPLELeafVT",
+    "founded_at": "2026-05-02T20:50:56.380160+00:00"
+  },
+  "donation_cumulative_25": {
+    "founder_id": "1237882084",
+    "founder_name": "MAYPLELeafVT",
+    "founded_at": "2026-05-02T20:50:58.112745+00:00"
+  },
+  "donation_cumulative_50": {
+    "founder_id": "1237882084",
+    "founder_name": "MAYPLELeafVT",
+    "founded_at": "2026-05-02T20:50:58.383568+00:00"
+  },
+  "donation_cumulative_100": {
+    "founder_id": "1237882084",
+    "founder_name": "MAYPLELeafVT",
+    "founded_at": "2026-05-02T20:51:00.112087+00:00"
+  },
+  "donation_cumulative_250": {
+    "founder_id": "1237882084",
+    "founder_name": "MAYPLELeafVT",
+    "founded_at": "2026-05-02T20:51:01.118877+00:00"
+  },
+  "donation_cumulative_500": {
+    "founder_id": "1237882084",
+    "founder_name": "MAYPLELeafVT",
+    "founded_at": "2026-05-02T20:51:01.367322+00:00"
+  },
+  "donation_cumulative_1000": {
+    "founder_id": "1237882084",
+    "founder_name": "MAYPLELeafVT",
+    "founded_at": "2026-05-02T20:51:03.108704+00:00"
+  },
+  "donation_cumulative_2500": {
+    "founder_id": "1237882084",
+    "founder_name": "MAYPLELeafVT",
+    "founded_at": "2026-05-02T20:51:04.105527+00:00"
+  },
+  "donation_cumulative_5000": {
+    "founder_id": "1237882084",
+    "founder_name": "MAYPLELeafVT",
+    "founded_at": "2026-05-02T20:51:04.371139+00:00"
   },
   "chat_food_bowl": {
     "founder_id": "1048197969",

@@ -1,6 +1,6 @@
 {
   "user_id": "1237882084",
-  "username": "maypleleafvt",
+  "username": "MAYPLELeafVT",
   "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/421916b2-5503-48a5-abf8-5160b7ccc79a-profile_image-300x300.png",
   "achievements": {
     "earned": {
@@ -59,7 +59,20 @@
     },
     "founded": {
       "donation_10": "2025-10-31T18:34:14.209031+00:00",
-      "cheer_10000": "2025-11-14T23:26:23.986765+00:00"
+      "cheer_10000": "2025-11-14T23:26:23.986765+00:00",
+      "donation_5": "2026-05-02T20:50:53.444804+00:00",
+      "donation_20": "2026-05-02T20:50:53.712136+00:00",
+      "donation_50": "2026-05-02T20:50:55.110836+00:00",
+      "donation_100": "2026-05-02T20:50:56.105029+00:00",
+      "donation_200": "2026-05-02T20:50:56.380160+00:00",
+      "donation_cumulative_25": "2026-05-02T20:50:58.112745+00:00",
+      "donation_cumulative_50": "2026-05-02T20:50:58.383568+00:00",
+      "donation_cumulative_100": "2026-05-02T20:51:00.112087+00:00",
+      "donation_cumulative_250": "2026-05-02T20:51:01.118877+00:00",
+      "donation_cumulative_500": "2026-05-02T20:51:01.367322+00:00",
+      "donation_cumulative_1000": "2026-05-02T20:51:03.108704+00:00",
+      "donation_cumulative_2500": "2026-05-02T20:51:04.105527+00:00",
+      "donation_cumulative_5000": "2026-05-02T20:51:04.371139+00:00"
     }
   },
   "stats": {
@@ -100,6 +113,11 @@
     },
     {
       "month": "2026-3",
+      "kind": "donations",
+      "rank": 1
+    },
+    {
+      "month": "2026-5",
       "kind": "donations",
       "rank": 1
     }

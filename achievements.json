@@ -642,10 +642,40 @@
       "amount": 1,
       "type": "threshold"
     },
+    "donation_5": {
+      "name": "Five Bucks For The Pup.",
+      "desc": "Awarded for donating 5 or more dollars at a time.",
+      "amount": 5,
+      "type": "threshold"
+    },
     "donation_10": {
       "name": "Big Woof Energy.",
       "desc": "Awarded for donating 10 or more dollars at a time.",
       "amount": 10,
+      "type": "threshold"
+    },
+    "donation_20": {
+      "name": "That's A Lot Of Treats.",
+      "desc": "Awarded for donating 20 or more dollars at a time.",
+      "amount": 20,
+      "type": "threshold"
+    },
+    "donation_50": {
+      "name": "Howling With Generosity.",
+      "desc": "Awarded for donating 50 or more dollars at a time.",
+      "amount": 50,
+      "type": "threshold"
+    },
+    "donation_100": {
+      "name": "(Platinum) Absolute Unit Donor.",
+      "desc": "Awarded for donating 100 or more dollars at a time.",
+      "amount": 100,
+      "type": "threshold"
+    },
+    "donation_200": {
+      "name": "(Platinum) It's on me.",
+      "desc": "Awarded for donating 100 or more dollars at a time.",
+      "amount": 200,
       "type": "threshold"
     },
     "donation_exact_13": {
@@ -654,10 +684,58 @@
       "amount": 13,
       "type": "exact"
     },
+    "donation_cumulative_25": {
+      "name": "Treat Buyer.",
+      "desc": "Awarded for donating $25 overall.",
+      "amount": 25,
+      "type": "cumulative"
+    },
+    "donation_cumulative_50": {
+      "name": "Kibble Contributor.",
+      "desc": "Awarded for donating $50 overall.",
+      "amount": 50,
+      "type": "cumulative"
+    },
+    "donation_cumulative_100": {
+      "name": "Squeaky Toy Sponsor.",
+      "desc": "Awarded for donating $100 overall.",
+      "amount": 100,
+      "type": "cumulative"
+    },
     "donation_cumulative_200": {
       "name": "A Month Of Food.",
       "desc": "Awarded for donating $200 overall.",
       "amount": 200,
+      "type": "cumulative"
+    },
+    "donation_cumulative_250": {
+      "name": "Kibble For The Month.",
+      "desc": "Awarded for donating $250 overall.",
+      "amount": 250,
+      "type": "cumulative"
+    },
+    "donation_cumulative_500": {
+      "name": "Two And A Half Months Fed.",
+      "desc": "Awarded for donating $500 overall.",
+      "amount": 500,
+      "type": "cumulative"
+    },
+    "donation_cumulative_1000": {
+      "name": "Five Months Of Meals.",
+      "desc": "Awarded for donating $1,000 overall.",
+      "amount": 1000,
+      "type": "cumulative"
+    },
+    "donation_cumulative_2500": {
+      "name": "Over A Year Of Groceries.",
+      "desc": "Awarded for donating $2,500 overall.",
+      "amount": 2500,
+      "type": "cumulative"
+    },
+    "donation_cumulative_5000": {
+      "name": "(Platinum) Personal Chef Unlocked.",
+      "desc": "Awarded for donating $5,000 overall.",
+      "amount": 5000,
       "type": "cumulative"
     }
   },
