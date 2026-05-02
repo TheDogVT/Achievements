@@ -1037,6 +1037,21 @@
       "desc": "Awarded for getting first for the 31st time.",
       "amount": 31
     },
+    "redeem_first_45": {
+      "name": "First? Always.",
+      "desc": "Awarded for getting first for the 50th time.",
+      "amount": 50
+    },
+    "redeem_first_60": {
+      "name": "Two months of me.",
+      "desc": "Awarded for getting first for the 60th time.",
+      "amount": 60
+    },
+    "redeem_first_90": {
+      "name": "Sick of me yet?",
+      "desc": "Awarded for getting first for the 90th time.",
+      "amount": 90
+    },
     "redeem_total_5": {
       "name": "Curious Redeemer.",
       "desc": "Awarded for using 5 channel point redeems.",
