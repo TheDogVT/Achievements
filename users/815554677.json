@@ -12,13 +12,14 @@
       "redeem_checkin_2": "2025-12-31T21:01:36.295605+00:00",
       "redeem_total_5": "2026-01-05T21:04:02.891921+00:00",
       "redeem_checkin_5": "2026-01-19T21:35:43.433804+00:00",
-      "redeem_total_10": "2026-01-20T21:37:33.644698+00:00"
+      "redeem_total_10": "2026-01-20T21:37:33.644698+00:00",
+      "chat_boop": "2026-05-02T21:48:11.923005+00:00"
     },
     "founded": {}
   },
   "stats": {
-    "messages": 81,
-    "active_months": 3,
+    "messages": 84,
+    "active_months": 4,
     "first_seen": "2025-12"
   },
   "top_months": []
