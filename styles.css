@@ -306,6 +306,25 @@
             text-shadow: 0 0 4px rgba(255, 215, 0, 0.4);
             margin-top: 2px;
         }
+        .leaderboard-view-achs {
+            display: inline-block;
+            margin-top: 4px;
+            font-size: 0.6rem;
+            font-family: 'Space Mono', monospace;
+            color: var(--cyan);
+            text-decoration: none;
+            opacity: 0.6;
+            transition: opacity 0.15s;
+        }
+        .leaderboard-view-achs:hover {
+            opacity: 1;
+        }
+        .leaderboard-avatar:hover {
+            box-shadow: 0 0 12px rgba(198, 232, 232, 0.6);
+        }
+        .leaderboard-username:hover {
+            color: var(--cyan);
+        }
         @media (max-width: 768px) {
             .leaderboard-grid {
                 grid-template-columns: 1fr;
@@ -2171,6 +2190,10 @@ body.has-nav .page-wrap { padding-top: 80px; }
     background-size: cover;
     background-position: center;
 }
+.feed-pfp-link:hover {
+    border-color: var(--cyan);
+    box-shadow: 0 0 8px rgba(198, 232, 232, 0.4);
+}
 .feed-body { flex: 1; min-width: 0; }
 .feed-line {
     font-family: 'Rajdhani', sans-serif;
@@ -2215,6 +2238,7 @@ body.has-nav .page-wrap { padding-top: 80px; }
     gap: 24px;
 }
 .profile-hero {
+    position: relative;
     background: rgba(37, 36, 36, 0.7);
     backdrop-filter: blur(12px);
     border: 1px solid var(--border);
@@ -2273,6 +2297,26 @@ body.has-nav .page-wrap { padding-top: 80px; }
     border-radius: 99px;
     transition: width 0.8s ease;
     box-shadow: 0 0 8px rgba(var(--cyan-rgb), 0.6);
+}
+.profile-hero-achs-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 5px 14px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--cyan);
+    border: 1px solid rgba(198, 232, 232, 0.35);
+    border-radius: 99px;
+    text-decoration: none;
+    transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
+.profile-hero-achs-btn:hover {
+    background: rgba(198, 232, 232, 0.08);
+    border-color: var(--cyan);
+    box-shadow: 0 0 8px rgba(198, 232, 232, 0.25);
 }
 .profile-stat-grid {
     background: rgba(37, 36, 36, 0.7);

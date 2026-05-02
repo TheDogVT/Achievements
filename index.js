@@ -75,14 +75,15 @@ function buildLeaderboard() {
             
             const userDiv = document.createElement('div');
             userDiv.className = 'leaderboard-user';
-            userDiv.style.cursor = 'pointer';
-            userDiv.addEventListener('click', () => {
-                window.location.href = `achievements.html?user=${encodeURIComponent(entry.username)}`;
-            });
-            
+
             const avatar = document.createElement('div');
             avatar.className = 'leaderboard-avatar';
             avatar.dataset.username = entry.username;
+            avatar.style.cursor = 'pointer';
+            avatar.title = `View ${entry.username}'s profile`;
+            avatar.addEventListener('click', () => {
+                window.location.href = `profile.html?user=${encodeURIComponent(entry.username)}`;
+            });
             const leaderPfp = pfpByUsername[entry.username.toLowerCase()];
             if (leaderPfp) {
                 applyPfp(avatar, leaderPfp);
@@ -91,30 +92,41 @@ function buildLeaderboard() {
                 avatar.style.backgroundSize = 'cover';
                 avatar.style.backgroundPosition = 'center';
             }
-            
+
             const username = document.createElement('div');
             username.className = 'leaderboard-username';
+            username.style.cursor = 'pointer';
+            username.title = `View ${entry.username}'s profile`;
+            username.addEventListener('click', () => {
+                window.location.href = `profile.html?user=${encodeURIComponent(entry.username)}`;
+            });
             username.textContent = entry.username;
-            
+
             userDiv.appendChild(avatar);
             userDiv.appendChild(username);
-            
+
             const achName = document.createElement('div');
             achName.className = 'leaderboard-ach-name';
             achName.textContent = entry.achName;
-            
+
             const achDesc = document.createElement('div');
             achDesc.className = 'leaderboard-ach-desc';
             achDesc.textContent = entry.achDesc;
-            
+
             const rarity = document.createElement('div');
             rarity.className = 'leaderboard-rarity';
             rarity.textContent = `Top ${entry.rarity.toFixed(1)}%`;
-            
+
+            const viewAchs = document.createElement('a');
+            viewAchs.className = 'leaderboard-view-achs';
+            viewAchs.href = `achievements.html?user=${encodeURIComponent(entry.username)}`;
+            viewAchs.textContent = 'View Achievements →';
+
             item.appendChild(userDiv);
             item.appendChild(achName);
             item.appendChild(achDesc);
             item.appendChild(rarity);
+            item.appendChild(viewAchs);
             column.appendChild(item);
         }
         
@@ -193,7 +205,7 @@ function buildRecentFeed() {
         const pfpStyle = pfp ? `background-image:url(${pfp});background-size:cover;background-position:center;` : '';
         return `
             <div class="feed-item" data-username="${ev.username}">
-                <div class="feed-avatar" style="${pfpStyle}">${initial}</div>
+                <div class="feed-avatar feed-pfp-link" data-username="${ev.username}" style="${pfpStyle}" title="View ${ev.username}'s profile">${initial}</div>
                 <div class="feed-body">
                     <div class="feed-line"><span class="feed-user">${ev.username}</span> unlocked <span class="feed-ach">${ev.achName}</span></div>
                     <div class="feed-time">${timeAgo}</div>
@@ -205,6 +217,14 @@ function buildRecentFeed() {
     list.querySelectorAll('.feed-item').forEach(item => {
         item.addEventListener('click', () => {
             window.location.href = `achievements.html?user=${encodeURIComponent(item.dataset.username)}`;
+        });
+    });
+
+    list.querySelectorAll('.feed-pfp-link').forEach(avatar => {
+        avatar.style.cursor = 'pointer';
+        avatar.addEventListener('click', e => {
+            e.stopPropagation();
+            window.location.href = `profile.html?user=${encodeURIComponent(avatar.dataset.username)}`;
         });
     });
 
