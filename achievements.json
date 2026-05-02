@@ -719,24 +719,6 @@
       "desc": "Awarded for donating $500 overall.",
       "amount": 500,
       "type": "cumulative"
-    },
-    "donation_cumulative_1000": {
-      "name": "Five Months Of Meals.",
-      "desc": "Awarded for donating $1,000 overall.",
-      "amount": 1000,
-      "type": "cumulative"
-    },
-    "donation_cumulative_2500": {
-      "name": "Over A Year Of Groceries.",
-      "desc": "Awarded for donating $2,500 overall.",
-      "amount": 2500,
-      "type": "cumulative"
-    },
-    "donation_cumulative_5000": {
-      "name": "(Platinum) Personal Chef Unlocked.",
-      "desc": "Awarded for donating $5,000 overall.",
-      "amount": 5000,
-      "type": "cumulative"
     }
   },
   "gamble": {

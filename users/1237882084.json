@@ -69,14 +69,11 @@
       "donation_cumulative_50": "2026-05-02T20:50:58.383568+00:00",
       "donation_cumulative_100": "2026-05-02T20:51:00.112087+00:00",
       "donation_cumulative_250": "2026-05-02T20:51:01.118877+00:00",
-      "donation_cumulative_500": "2026-05-02T20:51:01.367322+00:00",
-      "donation_cumulative_1000": "2026-05-02T20:51:03.108704+00:00",
-      "donation_cumulative_2500": "2026-05-02T20:51:04.105527+00:00",
-      "donation_cumulative_5000": "2026-05-02T20:51:04.371139+00:00"
+      "donation_cumulative_500": "2026-05-02T20:51:01.367322+00:00"
     }
   },
   "stats": {
-    "messages": 2132,
+    "messages": 2165,
     "active_months": 7,
     "first_seen": "2025-11"
   },
