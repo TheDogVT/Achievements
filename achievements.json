@@ -951,6 +951,14 @@
       "type": "instance"
     }
   },
+  "quotes": {
+    "quote_1": {
+      "name": "A Little Quotable",
+      "desc": "Awarded for having 1 quote approved.",
+      "amount": 1,
+      "type": "cumulative"
+    }
+  },
   "redeems": {
     "redeem_checkin_1": {
       "name": "Welcome Home Comutt.",
