@@ -136,12 +136,12 @@
     },
     {
       "month": "2026-5",
-      "kind": "gifted",
-      "rank": 2
+      "kind": "cheers",
+      "rank": 3
     },
     {
       "month": "2026-5",
-      "kind": "cheers",
+      "kind": "gifted",
       "rank": 3
     }
   ]

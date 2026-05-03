@@ -9,14 +9,24 @@
       "cheer_100": "2026-02-06T22:26:01.175626+00:00",
       "redeem_checkin_1": "2026-02-13T20:59:57.561289+00:00",
       "chat_10": "2026-02-13T21:01:20.483634+00:00",
-      "redeem_checkin_2": "2026-02-20T21:01:53.835156+00:00"
+      "redeem_checkin_2": "2026-02-20T21:01:53.835156+00:00",
+      "gifted_instance_5": "2026-05-03T20:19:45.102359+00:00"
     },
-    "founded": {}
+    "founded": {
+      "gifted_cumulative_5": "2026-05-03T20:19:43.692261+00:00",
+      "gifted_times_1": "2026-05-03T20:19:44.005294+00:00"
+    }
   },
   "stats": {
     "messages": 15,
-    "active_months": 3,
+    "active_months": 4,
     "first_seen": "2025-11"
   },
-  "top_months": []
+  "top_months": [
+    {
+      "month": "2026-5",
+      "kind": "gifted",
+      "rank": 2
+    }
+  ]
 }
