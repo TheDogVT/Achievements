@@ -1,5 +1,10 @@
 {
   "chat": {
+    "BALSDJHAUISKHDHUIOAS": {
+      "name": "BALSDJHAUISKHDHUIOAS",
+      "desc": "BALSDJHAUISKHDHUIOAS",
+      "type": "contains"
+    },
     "debug_1": {
       "name": "Debugger",
       "desc": "Awarded for - Debug 1.",
