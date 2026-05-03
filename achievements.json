@@ -962,6 +962,12 @@
       "desc": "Awarded for having 1 quote approved.",
       "amount": 1,
       "type": "cumulative"
+    },
+    "quote_2": {
+      "name": "Pretty Quotable",
+      "desc": "Awarded for having 2 quote approved.",
+      "amount": 2,
+      "type": "cumulative"
     }
   },
   "redeems": {
