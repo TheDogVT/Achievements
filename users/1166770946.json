@@ -4,12 +4,13 @@
   "pfp_url": "https://static-cdn.jtvnw.net/user-default-pictures-uv/998f01ae-def8-11e9-b95c-784f43822e80-profile_image-300x300.png",
   "achievements": {
     "earned": {
-      "chat_boop": "2026-05-02T02:34:45.745245+00:00"
+      "chat_boop": "2026-05-02T02:34:45.745245+00:00",
+      "chat_10": "2026-05-03T20:00:00.259648+00:00"
     },
     "founded": {}
   },
   "stats": {
-    "messages": 4,
+    "messages": 16,
     "active_months": 1,
     "first_seen": "2026-5"
   },
