@@ -96,7 +96,8 @@
       "cheer_message_10k": "2026-05-01T22:12:09.405478+00:00",
       "cheer_cumulative_20k": "2026-05-01T22:12:09.910433+00:00",
       "redeem_total_300": "2026-05-02T20:13:00.034803+00:00",
-      "chat_puppyeyes": "2026-05-02T21:06:45.859869+00:00"
+      "chat_puppyeyes": "2026-05-02T21:06:45.859869+00:00",
+      "BALSDJHAUISKHDHUIOAS": "2026-05-03T20:12:00.827319+00:00"
     },
     "founded": {
       "gamble_loss_total_1m": "2025-11-08T21:02:10.507374+00:00",
@@ -110,7 +111,7 @@
     }
   },
   "stats": {
-    "messages": 8683,
+    "messages": 8688,
     "active_months": 7,
     "first_seen": "2025-11"
   },
