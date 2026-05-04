@@ -1,7 +1,7 @@
 {
   "user_id": "746510845",
   "username": "goth_goblin20",
-  "pfp_url": "",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/f9c152e0-63d3-43e1-a740-78c26dc16b3e-profile_image-300x300.jpeg",
   "achievements": {
     "earned": {
       "redeem_checkin_1": "2026-05-03T22:44:20.531253+00:00"
@@ -11,8 +11,8 @@
     }
   },
   "stats": {
-    "messages": 0,
-    "active_months": 0,
+    "messages": 5,
+    "active_months": 1,
     "first_seen": "2026-05-03T22:44:20.275261+00:00"
   },
   "top_months": []
