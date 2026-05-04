@@ -5,14 +5,15 @@
   "achievements": {
     "earned": {
       "redeem_checkin_1": "2026-05-03T22:44:20.531253+00:00",
-      "redeem_checkin_2": "2026-05-04T21:19:45.771024+00:00"
+      "redeem_checkin_2": "2026-05-04T21:19:45.771024+00:00",
+      "redeem_total_5": "2026-05-04T21:21:27.726155+00:00"
     },
     "founded": {
       "redeem_pet_1": "2026-05-03T22:44:34.935837+00:00"
     }
   },
   "stats": {
-    "messages": 5,
+    "messages": 7,
     "active_months": 1,
     "first_seen": "2026-05-03T22:44:20.275261+00:00"
   },
