@@ -316,7 +316,15 @@ function drawAchChart(months, data) {
     const chartW = W - pad.left - pad.right;
     const chartH = H - pad.top  - pad.bottom;
     const n      = months.length;
-    const maxVal = Math.max(...data.map(d => d.earned + d.founded), 1);
+    const rawMax = Math.max(...data.map(d => d.earned + d.founded), 1);
+
+    // Snap to a clean scale so y-axis labels are round numbers
+    const gridSteps = 4;
+    const rawStep   = rawMax / gridSteps;
+    const mag       = Math.pow(10, Math.floor(Math.log10(rawStep || 1)));
+    const norm      = rawStep / mag;
+    const niceStep  = (norm <= 1 ? 1 : norm <= 2 ? 2 : norm <= 5 ? 5 : 10) * mag;
+    const maxVal    = niceStep * gridSteps;
 
     // Bar sizing — cap width and centre if few months
     const gap     = 3;
@@ -326,17 +334,16 @@ function drawAchChart(months, data) {
     const originX = pad.left + (chartW - totalW) / 2;
 
     // Grid lines + y labels
-    const gridSteps = 4;
     for (let i = 0; i <= gridSteps; i++) {
         const y = pad.top + chartH - (i / gridSteps) * chartH;
         ctx.strokeStyle = i === 0 ? 'rgba(255,255,255,0.10)' : 'rgba(255,255,255,0.04)';
         ctx.lineWidth   = 1;
         ctx.beginPath(); ctx.moveTo(pad.left, y); ctx.lineTo(pad.left + chartW, y); ctx.stroke();
-        if (i > 0 && maxVal > 0) {
-            ctx.fillStyle  = '#38385a';
+        if (i > 0) {
+            ctx.fillStyle  = '#5a5a80';
             ctx.font       = '9px Consolas, monospace';
             ctx.textAlign  = 'right';
-            ctx.fillText(Math.round((i / gridSteps) * maxVal), pad.left - 3, y + 3);
+            ctx.fillText((i / gridSteps) * maxVal, pad.left - 3, y + 3);
         }
     }
 
@@ -384,7 +391,7 @@ function drawAchChart(months, data) {
             ctx.textAlign  = 'center';
             ctx.fillText(monthLbl, x + barW / 2, pad.top + chartH + 13);
             if (y !== lastYear) {
-                ctx.fillStyle = '#303055';
+                ctx.fillStyle = '#484870';
                 ctx.fillText(y, x + barW / 2, pad.top + chartH + 24);
                 lastYear = y;
             }
