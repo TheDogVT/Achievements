@@ -6,13 +6,14 @@
     "earned": {
       "redeem_checkin_1": "2026-04-16T20:06:43.024271+00:00",
       "chat_10": "2026-04-16T20:20:34.666962+00:00",
-      "redeem_checkin_2": "2026-04-17T20:28:22.648634+00:00"
+      "redeem_checkin_2": "2026-04-17T20:28:22.648634+00:00",
+      "redeem_total_5": "2026-05-04T20:14:27.643939+00:00"
     },
     "founded": {}
   },
   "stats": {
-    "messages": 11,
-    "active_months": 1,
+    "messages": 12,
+    "active_months": 2,
     "first_seen": "2026-4"
   },
   "top_months": []
