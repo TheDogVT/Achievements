@@ -2661,6 +2661,12 @@ body.has-nav .page-wrap { padding-top: 80px; }
 }
 
 /* ── ACHIEVEMENT DETAIL PAGE ── */
+#achContent {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
 .ach-detail-hero {
     background: rgba(37, 36, 36, 0.7);
     backdrop-filter: blur(12px);
