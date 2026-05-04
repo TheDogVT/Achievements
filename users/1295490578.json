@@ -6,10 +6,12 @@
     "earned": {
       "chat_10": "2026-05-03T20:36:42.928350+00:00"
     },
-    "founded": {}
+    "founded": {
+      "chat_bath": "2026-05-04T21:08:59.517309+00:00"
+    }
   },
   "stats": {
-    "messages": 28,
+    "messages": 36,
     "active_months": 1,
     "first_seen": "2026-05-03T20:31:48.772685+00:00"
   },
