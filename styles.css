@@ -2651,3 +2651,210 @@ body.has-nav .page-wrap { padding-top: 80px; }
     justify-content: center;
     flex-wrap: wrap;
 }
+
+/* ── ACHIEVEMENT DETAIL PAGE ── */
+.ach-detail-hero {
+    background: rgba(37, 36, 36, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 24px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+}
+.ach-detail-cat {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+}
+.ach-detail-name {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #fff 0%, var(--cyan) 60%, var(--cyan-dim) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+.ach-detail-desc {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+.ach-detail-type {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(var(--cyan-rgb), 0.06);
+    border: 1px solid rgba(var(--cyan-rgb), 0.15);
+    border-radius: 6px;
+    padding: 5px 12px;
+}
+.ach-detail-type-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+.ach-detail-type-value {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--cyan);
+}
+
+/* ── FOUNDER HIGHLIGHT ── */
+.founder-highlight-card {
+    background: rgba(255, 215, 0, 0.05);
+    border: 1px solid rgba(255, 215, 0, 0.25);
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.3), 0 0 20px rgba(255,215,0,0.06);
+}
+.founder-highlight-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.8;
+    margin-bottom: 12px;
+}
+.founder-highlight-inner {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s;
+}
+.founder-highlight-inner:hover { opacity: 0.8; }
+.founder-highlight-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(255, 215, 0, 0.12);
+    border: 2px solid rgba(255, 215, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--gold);
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+}
+.founder-highlight-info { flex: 1; }
+.founder-highlight-name {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--gold);
+}
+.founder-highlight-date {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: rgba(255, 215, 0, 0.5);
+    margin-top: 2px;
+}
+.founder-highlight-arrow {
+    font-size: 1.4rem;
+    color: rgba(255, 215, 0, 0.4);
+}
+
+/* ── EARNERS LIST ── */
+.earners-card {
+    background: rgba(37, 36, 36, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+}
+.earners-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cyan-dim);
+    margin-bottom: 14px;
+}
+.earners-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.earner-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.15s;
+}
+.earner-row:hover { background: rgba(var(--cyan-rgb), 0.05); }
+.earner-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(var(--cyan-rgb), 0.1);
+    border: 1px solid rgba(var(--cyan-rgb), 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--cyan-dim);
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+}
+.earner-info {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.earner-name {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+}
+.earner-founder-badge {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.5rem;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+.earner-date {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--muted);
+    flex-shrink: 0;
+}
+.earners-more {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--muted);
+    text-align: center;
+    padding-top: 12px;
+    margin-top: 8px;
+    border-top: 1px solid rgba(var(--cyan-rgb), 0.08);
+}

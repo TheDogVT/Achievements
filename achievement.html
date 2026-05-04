@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievement — Cosmic Playground</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="has-nav">
+
+<!-- NAVIGATION -->
+<nav class="site-nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-brand">⬡ Cosmic Playground</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="achievements.html">Achievements</a>
+            <a href="profile.html">My Profile</a>
+        </div>
+    </div>
+</nav>
+
+<!-- CONSTELLATION CANVAS -->
+<canvas id="constellation"></canvas>
+
+<!-- LOADING SCREEN -->
+<div id="loadingScreen">
+    <div class="loading-title">⬡ Achievement</div>
+    <div class="loading-bar-wrap">
+        <div class="loading-bar-fill" id="loadingBarFill"></div>
+    </div>
+    <div id="loadingStatus">Loading data…</div>
+</div>
+
+<!-- MAIN APP (hidden until loaded) -->
+<div id="appContent">
+<div class="page-wrap" style="max-width:700px; margin:0 auto;">
+    <div id="achContent">
+        <!-- Built by JS -->
+    </div>
+</div>
+</div><!-- /appContent -->
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<script src="data.js"></script>
+<script src="constellation.js"></script>
+<script>
+
+// ── ACHIEVEMENT DETAIL PAGE ────────────────────────────────────────────
+
+function findAchievement(achId) {
+    for (const [cat, achs] of Object.entries(achData)) {
+        if (achs[achId]) return { cat, def: achs[achId] };
+    }
+    return null;
+}
+
+function buildAchievementPage(achId) {
+    const found = findAchievement(achId);
+    if (!found) {
+        document.getElementById('achContent').innerHTML = `
+            <div class="profile-search-card">
+                <div class="profile-search-title">⬡ Achievement</div>
+                <div class="profile-no-user">
+                    <p style="color:var(--muted)">Achievement not found.</p>
+                    <a href="achievements.html" class="btn btn-primary" style="text-decoration:none">Browse Achievements</a>
+                </div>
+            </div>`;
+        return;
+    }
+
+    const { cat, def } = found;
+    const catIcon = CAT_ICONS[cat] || '🔹';
+    const founderInfo = foundersData[achId];
+
+    // Collect all earners across all user data
+    const earners = [];
+    for (const [uid, userData] of Object.entries(allUserData)) {
+        const earned  = userData.achievements?.earned?.[achId];
+        const founded = userData.achievements?.founded?.[achId];
+        if (earned || founded) {
+            earners.push({
+                userId:    uid,
+                username:  userData.username,
+                pfp:       userData.pfp_url,
+                ts:        founded || earned,
+                isFounder: !!founded,
+            });
+        }
+    }
+
+    // Oldest first so the founder appears at the top naturally
+    earners.sort((a, b) => new Date(a.ts) - new Date(b.ts));
+
+    const earnerCount      = earners.length;
+    const totalUserCount   = Object.keys(allUserData).length;
+    const rarityPct        = totalUserCount > 0 ? ((earnerCount / totalUserCount) * 100).toFixed(1) : '0.0';
+
+    const fmtDate = ts => {
+        if (!ts) return '—';
+        return new Date(ts).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    };
+
+    // Type/condition pill
+    const typeHTML = (() => {
+        if (!def.type || def.amount == null) return '';
+        const labels = {
+            threshold:  `Reach ${Number(def.amount).toLocaleString()}`,
+            cumulative: `Accumulate ${Number(def.amount).toLocaleString()}`,
+            times:      `Do it ${Number(def.amount).toLocaleString()} time${def.amount === 1 ? '' : 's'}`,
+            exact:      `Hit exactly ${Number(def.amount).toLocaleString()}`,
+        };
+        const label = labels[def.type] || def.type;
+        return `
+            <div class="ach-detail-type">
+                <span class="ach-detail-type-label">Condition</span>
+                <span class="ach-detail-type-value">${label}</span>
+            </div>`;
+    })();
+
+    // Founder highlight card
+    const founderHTML = (() => {
+        if (!founderInfo) return '';
+        const fd = allUserData[founderInfo.founder_id];
+        const pfp = fd?.pfp_url || '';
+        const avatarStyle = pfp
+            ? `background-image:url(${pfp});background-size:cover;background-position:center;`
+            : '';
+        const avatarInitial = pfp ? '' : (founderInfo.founder_name?.[0] || '?').toUpperCase();
+        return `
+            <div class="founder-highlight-card">
+                <div class="founder-highlight-label">🌟 First Founder</div>
+                <a href="profile.html?user=${encodeURIComponent(founderInfo.founder_name)}" class="founder-highlight-inner">
+                    <div class="founder-highlight-avatar" style="${avatarStyle}">${avatarInitial}</div>
+                    <div class="founder-highlight-info">
+                        <div class="founder-highlight-name">${founderInfo.founder_name}</div>
+                        <div class="founder-highlight-date">Founded ${fmtDate(founderInfo.founded_at)}</div>
+                    </div>
+                    <span class="founder-highlight-arrow">›</span>
+                </a>
+            </div>`;
+    })();
+
+    // Earners list
+    const shown = earners.slice(0, 30);
+    const moreCount = earners.length > 30 ? earners.length - 30 : 0;
+
+    const earnersListHTML = shown.length
+        ? shown.map(e => {
+            const avatarStyle = e.pfp
+                ? `background-image:url(${e.pfp});background-size:cover;background-position:center;`
+                : '';
+            const avatarInitial = e.pfp ? '' : (e.username?.[0] || '?').toUpperCase();
+            const badge = e.isFounder
+                ? '<span class="earner-founder-badge">FOUNDER</span>'
+                : '';
+            return `
+                <a href="profile.html?user=${encodeURIComponent(e.username)}" class="earner-row">
+                    <div class="earner-avatar" style="${avatarStyle}">${avatarInitial}</div>
+                    <div class="earner-info">
+                        <span class="earner-name">${e.username}</span>
+                        ${badge}
+                    </div>
+                    <span class="earner-date">${fmtDate(e.ts)}</span>
+                </a>`;
+        }).join('')
+        : '<p style="color:var(--muted);text-align:center;padding:16px;font-family:\'Space Mono\',monospace;font-size:0.75rem;">No one has unlocked this yet.</p>';
+
+    const firstUnlockedLabel = founderInfo ? fmtDate(founderInfo.founded_at).replace(',', '') : '—';
+
+    document.getElementById('achContent').innerHTML = `
+        <div class="ach-detail-hero">
+            <div class="ach-detail-cat">${catIcon} ${capitalize(cat)}</div>
+            <h1 class="ach-detail-name">${def.name}</h1>
+            ${def.desc ? `<p class="ach-detail-desc">${def.desc}</p>` : ''}
+            ${typeHTML}
+        </div>
+
+        <div class="profile-stat-grid">
+            <div class="profile-stat">
+                <div class="profile-stat-value">${earnerCount.toLocaleString()}</div>
+                <div class="profile-stat-label">Earners</div>
+            </div>
+            <div class="profile-stat">
+                <div class="profile-stat-value">${rarityPct}%</div>
+                <div class="profile-stat-label">of Chatters</div>
+            </div>
+            <div class="profile-stat">
+                <div class="profile-stat-value">${earnerCount > 0 ? firstUnlockedLabel : '—'}</div>
+                <div class="profile-stat-label">First Unlocked</div>
+            </div>
+        </div>
+
+        ${founderHTML}
+
+        <div class="earners-card">
+            <div class="earners-title">Unlocked by (${earnerCount.toLocaleString()})</div>
+            <div class="earners-list">${earnersListHTML}</div>
+            ${moreCount > 0 ? `<div class="earners-more">+ ${moreCount} more earners</div>` : ''}
+        </div>
+
+        <div class="profile-actions">
+            <a href="achievements.html" class="btn btn-ghost" style="text-decoration:none">← All Achievements</a>
+        </div>
+    `;
+}
+
+// ── STARTUP ───────────────────────────────────────────────────────────
+loadAllData().then(() => {
+    const achId = new URLSearchParams(window.location.search).get('ach');
+    if (achId) {
+        const found = findAchievement(achId);
+        if (found) document.title = `${found.def.name} — Cosmic Playground`;
+        buildAchievementPage(achId);
+    } else {
+        document.getElementById('achContent').innerHTML = `
+            <div class="profile-search-card">
+                <div class="profile-search-title">⬡ Achievements</div>
+                <div class="profile-no-user">
+                    <p style="color:var(--muted)">No achievement specified.</p>
+                    <a href="achievements.html" class="btn btn-primary" style="text-decoration:none">Browse Achievements</a>
+                </div>
+            </div>`;
+    }
+});
+
+</script>
+</body>
+</html>
