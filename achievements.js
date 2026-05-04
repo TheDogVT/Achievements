@@ -366,7 +366,7 @@ function buildCard(item, userData) {
         <div class="ach-header">
             <div class="ach-icon">${icon}</div>
             <div class="ach-title-wrap">
-                <div class="ach-name">${displayName}</div>
+                <a class="ach-name" href="achievement.html?ach=${id}">${displayName}</a>
                 <div class="ach-badges">${badgeHTML}</div>
             </div>
         </div>

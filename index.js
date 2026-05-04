@@ -105,8 +105,9 @@ function buildLeaderboard() {
             userDiv.appendChild(avatar);
             userDiv.appendChild(username);
 
-            const achName = document.createElement('div');
+            const achName = document.createElement('a');
             achName.className = 'leaderboard-ach-name';
+            achName.href = `achievement.html?ach=${entry.achId}`;
             achName.textContent = entry.achName;
 
             const achDesc = document.createElement('div');
@@ -207,7 +208,7 @@ function buildRecentFeed() {
             <div class="feed-item" data-username="${ev.username}">
                 <div class="feed-avatar feed-pfp-link" data-username="${ev.username}" style="${pfpStyle}" title="View ${ev.username}'s profile">${initial}</div>
                 <div class="feed-body">
-                    <div class="feed-line"><span class="feed-user">${ev.username}</span> unlocked <span class="feed-ach">${ev.achName}</span></div>
+                    <div class="feed-line"><span class="feed-user">${ev.username}</span> unlocked <a class="feed-ach" href="achievement.html?ach=${ev.achId}">${ev.achName}</a></div>
                     <div class="feed-time">${timeAgo}</div>
                 </div>
                 <span class="feed-cat-icon">${icon}</span>

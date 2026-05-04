@@ -293,6 +293,7 @@
             font-weight: 700;
             color: var(--cyan);
             line-height: 1.2;
+            text-decoration: none;
         }
         .leaderboard-ach-desc {
             font-size: 0.65rem;
@@ -864,7 +865,10 @@
             color: var(--text);
             line-height: 1.2;
             letter-spacing: 0.02em;
+            text-decoration: none;
+            display: block;
         }
+        .ach-name:hover { text-decoration: underline; }
         .achievement.unlocked .ach-name { color: var(--cyan-bright); }
         .achievement.founded  .ach-name {
             color: var(--cyan-bright);
@@ -2205,7 +2209,8 @@ body.has-nav .page-wrap { padding-top: 80px; }
     text-overflow: ellipsis;
 }
 .feed-line .feed-user { color: var(--cyan); }
-.feed-line .feed-ach  { color: var(--gold); }
+.feed-line .feed-ach  { color: var(--gold); text-decoration: none; }
+.feed-line .feed-ach:hover { text-decoration: underline; }
 .feed-time {
     font-family: 'Space Mono', monospace;
     font-size: 0.6rem;
@@ -2387,7 +2392,10 @@ body.has-nav .page-wrap { padding-top: 80px; }
     font-size: 0.95rem;
     font-weight: 600;
     color: var(--text);
+    text-decoration: none;
+    display: block;
 }
+.timeline-name:hover { text-decoration: underline; }
 .timeline-meta {
     font-family: 'Space Mono', monospace;
     font-size: 0.6rem;

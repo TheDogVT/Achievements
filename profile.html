@@ -175,7 +175,7 @@ function buildProfilePage(userId) {
             <div class="timeline-item">
                 <div class="timeline-dot${item.isFounder ? ' founder' : ''}"></div>
                 <div class="timeline-body">
-                    <div class="timeline-name">${icon} ${item.achName}</div>
+                    <a class="timeline-name" href="achievement.html?ach=${item.achId}">${icon} ${item.achName}</a>
                     <div class="timeline-meta">${item.isFounder ? 'Founded' : 'Unlocked'} · ${dateStr}</div>
                 </div>
                 ${founderBadge}
