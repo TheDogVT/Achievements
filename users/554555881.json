@@ -2,6 +2,7 @@
   "user_id": "554555881",
   "username": "bardron1",
   "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/b5bc9352-1a51-4c9c-b28e-9a90423e878f-profile_image-300x300.jpeg",
+  "legacy": 1,
   "achievements": {
     "earned": {
       "redeem_checkin_1": "2026-02-02T21:33:16.712571+00:00"

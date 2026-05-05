@@ -2,6 +2,7 @@
   "user_id": "1217525523",
   "username": "humandperson",
   "pfp_url": "https://static-cdn.jtvnw.net/user-default-pictures-uv/41780b5a-def8-11e9-94d9-784f43822e80-profile_image-300x300.png",
+  "legacy": 1,
   "achievements": {
     "earned": {
       "redeem_checkin_1": "2025-11-08T21:12:35.954402+00:00",
