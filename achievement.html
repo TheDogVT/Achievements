@@ -137,7 +137,7 @@ function buildAchievementPage(achId) {
                 <a href="profile.html?user=${encodeURIComponent(founderInfo.founder_name)}" class="founder-highlight-inner">
                     <div class="founder-highlight-avatar" style="${avatarStyle}">${avatarInitial}</div>
                     <div class="founder-highlight-info">
-                        <div class="founder-highlight-name">${founderInfo.founder_name}</div>
+                        <div class="founder-highlight-name">${(() => { const lc = legacyClass(allUserData[founderInfo.founder_id]?.legacy || 0); return lc ? `<span class="${lc} legacy-name">${founderInfo.founder_name}</span>` : founderInfo.founder_name; })()}</div>
                         <div class="founder-highlight-date">Founded ${fmtDate(founderInfo.founded_at)}</div>
                     </div>
                     <span class="founder-highlight-arrow">›</span>
@@ -162,7 +162,7 @@ function buildAchievementPage(achId) {
                 <a href="profile.html?user=${encodeURIComponent(e.username)}" class="earner-row">
                     <div class="earner-avatar" style="${avatarStyle}">${avatarInitial}</div>
                     <div class="earner-info">
-                        <span class="earner-name">${e.username}</span>
+                        <span class="earner-name">${(() => { const lc = legacyClass(allUserData[e.userId]?.legacy || 0); return lc ? `<span class="${lc} legacy-name">${e.username}</span>` : e.username; })()}</span>
                         ${badge}
                     </div>
                     <span class="earner-date">${fmtDate(e.ts)}</span>

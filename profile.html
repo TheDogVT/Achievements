@@ -80,6 +80,11 @@ function buildProfilePage(userId) {
     const legacy = userData.legacy || 0;
     const legacyHeroCls = legacy === 2 ? 'legacy-hero-2' : legacy === 1 ? 'legacy-hero-1' : '';
     const legacyNameCls = legacyClass(legacy);
+    const legacyBadgeHTML = legacy === 2
+        ? '<div class="profile-legacy-badge legacy-badge-2">Legendary Legacy</div>'
+        : legacy === 1
+        ? '<div class="profile-legacy-badge legacy-badge-1">Legacy</div>'
+        : '';
 
     // ── CATEGORY BREAKDOWN ──
     const catRows = Object.entries(achData).map(([cat, achs]) => {
@@ -218,6 +223,7 @@ function buildProfilePage(userId) {
             <div class="profile-hero-avatar" id="heroAvatar" style="${avatarStyle}">${avatarInitial}</div>
             <div class="profile-hero-info">
                 <div class="profile-hero-name ${legacyNameCls}">${name}</div>
+                ${legacyBadgeHTML}
                 <div class="profile-hero-sub">${earnedCount + foundedCount} / ${total} discovered · ${pct}% of found${foundedCount > 0 ? ` · ${foundedCount} founded` : ''}</div>
                 <div class="profile-hero-bar-wrap">
                     <div class="profile-hero-bar-fill" style="width:${pct}%"></div>
