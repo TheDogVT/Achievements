@@ -332,7 +332,9 @@ function buildCard(item, userData) {
         const founderUserId = foundersData[id].founder_id;
         const founderName   = foundersData[id].founder_name;
         if (!userData || currentUserId !== founderUserId) {
-            metaHTML += `<div class="ach-meta-row"><span class="dot dot-cyan"></span>First: ${founderName}</div>`;
+            const fLegacy = legacyClass(allUserData[founderUserId]?.legacy || 0);
+            const fName = fLegacy ? `<span class="${fLegacy} legacy-name">${founderName}</span>` : founderName;
+            metaHTML += `<div class="ach-meta-row"><span class="dot dot-cyan"></span>First: ${fName}</div>`;
         }
     }
 
@@ -353,7 +355,7 @@ function buildCard(item, userData) {
                 <div class="recent-user-item" data-userid="${u.userId}">
                     <div class="recent-user-avatar" data-username="${u.username}" style="${recentPfpStyle}">${initial}</div>
                     <div class="recent-user-info">
-                        <div class="recent-user-name">${u.username}</div>
+                        <div class="recent-user-name">${(() => { const lc = legacyClass(allUserData[u.userId]?.legacy || 0); return lc ? `<span class="${lc} legacy-name">${u.username}</span>` : u.username; })()}</div>
                         <div class="recent-user-date">${formatted}</div>
                     </div>
                 </div>
@@ -411,7 +413,9 @@ function showProfile(userId) {
     const pct     = total > 0 ? Math.round(((earned + founded) / total) * 100) : 0;
 
     const name = userData.username || userId;
-    document.getElementById('profileName').textContent   = name;
+    const profileNameEl = document.getElementById('profileName');
+    const pnLegacy = legacyClass(userData.legacy || 0);
+    profileNameEl.innerHTML = pnLegacy ? `<span class="${pnLegacy} legacy-name">${name}</span>` : name;
     document.getElementById('profileStats').textContent  =
         `${earned + founded} / ${total} found (${pct}% of discovered)${founded > 0 ? ` · ${founded} founded` : ''}`;
     document.getElementById('progressFill').style.width  = pct + '%';

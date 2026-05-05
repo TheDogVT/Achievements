@@ -144,6 +144,13 @@ async function loadAllData() {
     document.getElementById('appContent').style.display = 'block';
 }
 
+// ── LEGACY ────────────────────────────────────────────────────────────
+function legacyClass(legacy) {
+    if (legacy >= 2) return 'legacy-2';
+    if (legacy >= 1) return 'legacy-1';
+    return '';
+}
+
 // ── CATEGORY ICONS ────────────────────────────────────────────────────
 const CAT_ICONS = {
     chat:     '💬',

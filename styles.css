@@ -2254,6 +2254,37 @@ body.has-nav .page-wrap { padding-top: 80px; }
     gap: 20px;
     box-shadow: 0 4px 24px rgba(0,0,0,0.3);
 }
+/* ── LEGACY ── */
+.legacy-1.profile-hero-name,
+.legacy-1.profile-name,
+.legacy-1.legacy-name {
+    background: linear-gradient(135deg, #c0c0c0 0%, #a78bfa 50%, #c0c0c0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.legacy-2.profile-hero-name,
+.legacy-2.profile-name,
+.legacy-2.legacy-name {
+    background: linear-gradient(90deg, #ffd700 0%, #fff4a3 30%, #ffb300 60%, #ffd700 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: legacy-gold-shimmer 3s linear infinite;
+}
+@keyframes legacy-gold-shimmer {
+    to { background-position: 200% center; }
+}
+.profile-hero.legacy-hero-1 {
+    border-color: rgba(167, 139, 250, 0.4);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.3), 0 0 18px rgba(167, 139, 250, 0.14);
+}
+.profile-hero.legacy-hero-2 {
+    border-color: rgba(255, 215, 0, 0.45);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.3), 0 0 28px rgba(255, 215, 0, 0.2);
+}
+
 .profile-hero-avatar {
     width: 80px;
     height: 80px;
