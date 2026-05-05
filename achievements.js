@@ -1,3 +1,9 @@
+function legacyClass(legacy) {
+    if (legacy >= 2) return 'legacy-2';
+    if (legacy >= 1) return 'legacy-1';
+    return '';
+}
+
 // ── BUILD TABS ────────────────────────────────────────────────────────
 function buildTabs(cats) {
     const header = document.getElementById('tabsHeader');
