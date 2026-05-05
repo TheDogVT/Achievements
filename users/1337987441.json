@@ -46,12 +46,13 @@
       "redeem_pet_25": "2026-04-18T23:06:35.118375+00:00",
       "chat_stick": "2026-04-25T23:26:43.648233+00:00",
       "redeem_checkin_120": "2026-04-28T23:08:25.891947+00:00",
-      "gamble_jackpot_total_1": "2026-05-05T20:25:13.767429+00:00"
+      "gamble_jackpot_total_1": "2026-05-05T20:25:13.767429+00:00",
+      "chat_squirrel": "2026-05-05T20:42:46.724028+00:00"
     },
     "founded": {}
   },
   "stats": {
-    "messages": 927,
+    "messages": 932,
     "active_months": 7,
     "first_seen": "2025-11"
   },
