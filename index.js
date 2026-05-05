@@ -100,7 +100,8 @@ function buildLeaderboard() {
             username.addEventListener('click', () => {
                 window.location.href = `profile.html?user=${encodeURIComponent(entry.username)}`;
             });
-            username.textContent = entry.username;
+            const uLegacy = legacyClass(allUserData[entry.userId]?.legacy || 0);
+            username.innerHTML = uLegacy ? `<span class="${uLegacy} legacy-name">${entry.username}</span>` : entry.username;
 
             userDiv.appendChild(avatar);
             userDiv.appendChild(username);
@@ -208,7 +209,7 @@ function buildRecentFeed() {
             <div class="feed-item" data-username="${ev.username}">
                 <div class="feed-avatar feed-pfp-link" data-username="${ev.username}" style="${pfpStyle}" title="View ${ev.username}'s profile">${initial}</div>
                 <div class="feed-body">
-                    <div class="feed-line"><span class="feed-user">${ev.username}</span> unlocked <a class="feed-ach" href="achievement.html?ach=${ev.achId}">${ev.achName}</a></div>
+                    <div class="feed-line"><span class="feed-user">${(() => { const lc = legacyClass(allUserData[ev.userId]?.legacy || 0); return lc ? `<span class="${lc} legacy-name">${ev.username}</span>` : ev.username; })()}</span> unlocked <a class="feed-ach" href="achievement.html?ach=${ev.achId}">${ev.achName}</a></div>
                     <div class="feed-time">${timeAgo}</div>
                 </div>
                 <span class="feed-cat-icon">${icon}</span>
