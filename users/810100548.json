@@ -11,10 +11,12 @@
       "chat_boop": "2026-04-22T00:03:59.311628+00:00",
       "redeem_total_5": "2026-05-03T20:19:16.226202+00:00"
     },
-    "founded": {}
+    "founded": {
+      "chat_goodboy": "2026-05-05T00:03:19.514911+00:00"
+    }
   },
   "stats": {
-    "messages": 60,
+    "messages": 65,
     "active_months": 2,
     "first_seen": "2026-4"
   },
