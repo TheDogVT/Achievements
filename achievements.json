@@ -1,4 +1,18 @@
 {
+  "attendance": {
+    "attend_3": {
+      "name": "New in the Pack",
+      "desc": "Awarded for attending your first 3 streams.",
+      "amount": 3,
+      "type": "attended"
+    },
+    "streak_3": {
+      "name": "Hat Trick Howler",
+      "desc": "Awarded for attending 3 streams in a row. The borks are multiplying.",
+      "amount": 3,
+      "type": "streak"
+    }
+  },
   "chat": {
     "BALSDJHAUISKHDHUIOAS": {
       "name": "BALSDJHAUISKHDHUIOAS",
