@@ -361,6 +361,11 @@
       "desc": "Awarded for recognizing tiny, precious things.",
       "type": "contains"
     },
+    "chat_beg": {
+      "name": "Sad Eyes Enabler",
+      "desc": "Awarded for cracking under the begging stare.",
+      "type": "contains"
+    },
     "chat_10": {
       "name": "Curious Chatter.",
       "desc": "Awarded for yapping 10 times.",
