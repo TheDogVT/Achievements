@@ -5,12 +5,13 @@
   "legacy": 0,
   "achievements": {
     "earned": {
-      "chat_bork": "2026-05-08T00:08:22.736405+00:00"
+      "chat_bork": "2026-05-08T00:08:22.736405+00:00",
+      "chat_10": "2026-05-08T00:12:13.988559+00:00"
     },
     "founded": {}
   },
   "stats": {
-    "messages": 6,
+    "messages": 13,
     "active_months": 1,
     "first_seen": "2026-05-08T00:08:02.882218+00:00"
   },
