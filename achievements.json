@@ -1002,7 +1002,7 @@
     },
     "quote_3": {
       "name": "Quotable",
-      "desc": "Awarded for having 2 quote approved.",
+      "desc": "Awarded for having 3 quote approved.",
       "amount": 3,
       "type": "cumulative"
     },
