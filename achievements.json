@@ -987,13 +987,6 @@
       "type": "instance"
     }
   },
-  "manual": {
-    "bog_sputter": {
-      "name": "Bog Sputter",
-      "desc": "Awarded for helping dog find a bug in the code (Manual).",
-      "type": "manual"
-    }
-  },
   "quotes": {
     "quote_1": {
       "name": "A Little Quotable",
