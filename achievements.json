@@ -13,13 +13,13 @@
       "type": "attended"
     },
     "streak_3": {
-      "name": "Hat Trick Howler",
+      "name": "3 Day Streak!",
       "desc": "Awarded for attending 3 streams in a row. The borks are multiplying.",
       "amount": 3,
       "type": "streak"
     },
     "streak_5": {
-      "name": "On a Roll of Treats",
+      "name": "5 Day Streak!",
       "desc": "Awarded for attending 5 streams in a row. Someone is getting spoiled.",
       "amount": 5,
       "type": "streak"
