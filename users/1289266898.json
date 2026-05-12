@@ -5,13 +5,14 @@
   "legacy": 0,
   "achievements": {
     "earned": {
-      "chat_10": "2026-01-25T23:28:28.347733+00:00"
+      "chat_10": "2026-01-25T23:28:28.347733+00:00",
+      "chat_ball": "2026-05-12T20:38:58.359159+00:00"
     },
     "founded": {}
   },
   "stats": {
-    "messages": 31,
-    "active_months": 2,
+    "messages": 38,
+    "active_months": 3,
     "first_seen": "2026-1"
   },
   "top_months": []
