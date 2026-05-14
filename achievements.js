@@ -357,11 +357,12 @@ function buildCard(item, userData) {
             const recentPfp = pfpByUsername[u.username.toLowerCase()];
             const initial = recentPfp ? '' : u.username[0].toUpperCase();
             const recentPfpStyle = recentPfp ? `background-image:url(${recentPfp});background-size:cover;background-position:center;` : '';
+            const profileHref = `profile.html?user=${encodeURIComponent(u.username)}`;
             return `
                 <div class="recent-user-item" data-userid="${u.userId}">
-                    <div class="recent-user-avatar" data-username="${u.username}" style="${recentPfpStyle}">${initial}</div>
+                    <a class="recent-user-avatar recent-user-profile-link" data-username="${u.username}" style="${recentPfpStyle}" href="${profileHref}" title="View ${u.username}'s profile">${initial}</a>
                     <div class="recent-user-info">
-                        <div class="recent-user-name">${(() => { const lc = legacyClass(allUserData[u.userId]?.legacy || 0); return lc ? `<span class="${lc} legacy-name">${u.username}</span>` : u.username; })()}</div>
+                        <a class="recent-user-name recent-user-profile-link" href="${profileHref}" title="View ${u.username}'s profile">${(() => { const lc = legacyClass(allUserData[u.userId]?.legacy || 0); return lc ? `<span class="${lc} legacy-name">${u.username}</span>` : u.username; })()}</a>
                         <div class="recent-user-date">${formatted}</div>
                     </div>
                 </div>
@@ -420,8 +421,14 @@ function showProfile(userId) {
 
     const name = userData.username || userId;
     const profileNameEl = document.getElementById('profileName');
+    const profileHref = `profile.html?user=${encodeURIComponent(name)}`;
     const pnLegacy = legacyClass(userData.legacy || 0);
     profileNameEl.innerHTML = pnLegacy ? `<span class="${pnLegacy} legacy-name">${name}</span>` : name;
+    profileNameEl.style.cursor = 'pointer';
+    profileNameEl.title = `View ${name}'s profile`;
+    profileNameEl.onclick = () => {
+        window.location.href = profileHref;
+    };
     document.getElementById('profileStats').textContent  =
         `${earned + founded} / ${total} found (${pct}% of discovered)${founded > 0 ? ` · ${founded} founded` : ''}`;
     document.getElementById('progressFill').style.width  = pct + '%';
@@ -443,6 +450,11 @@ function showProfile(userId) {
     const avatarEl = document.getElementById('avatarEl');
     avatarEl.style.backgroundImage = 'none';
     avatarEl.textContent = name[0].toUpperCase();
+    avatarEl.style.cursor = 'pointer';
+    avatarEl.title = `View ${name}'s profile`;
+    avatarEl.onclick = () => {
+        window.location.href = profileHref;
+    };
 
     if (userData.username) {
         const cached = pfpByUsername[userData.username.toLowerCase()];
@@ -607,6 +619,9 @@ document.getElementById('claimBtn').addEventListener('click', () => {
 });
 
 document.getElementById('achievementsContainer').addEventListener('click', (e) => {
+    if (e.target.closest('.recent-user-profile-link')) {
+        return;
+    }
     const recentItem = e.target.closest('.recent-user-item');
     if (recentItem && recentItem.dataset.userid) {
         loadUser(recentItem.dataset.userid);
