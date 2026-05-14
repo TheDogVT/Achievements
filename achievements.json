@@ -12,6 +12,12 @@
       "amount": 5,
       "type": "attended"
     },
+    "attend_10": {
+      "name": "Regular at the Dog House",
+      "desc": "Awarded for attending 10 streams.",
+      "amount": 10,
+      "type": "attended"
+    },
     "streak_3": {
       "name": "3 Day Streak!",
       "desc": "Awarded for attending 3 streams in a row. The borks are multiplying.",
