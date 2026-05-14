@@ -209,7 +209,7 @@ function buildRecentFeed() {
             <div class="feed-item" data-username="${ev.username}">
                 <div class="feed-avatar feed-pfp-link" data-username="${ev.username}" style="${pfpStyle}" title="View ${ev.username}'s profile">${initial}</div>
                 <div class="feed-body">
-                    <div class="feed-line"><span class="feed-user">${(() => { const lc = legacyClass(allUserData[ev.userId]?.legacy || 0); return lc ? `<span class="${lc} legacy-name">${ev.username}</span>` : ev.username; })()}</span> unlocked <a class="feed-ach" href="achievement.html?ach=${ev.achId}">${ev.achName}</a></div>
+                    <div class="feed-line"><a class="feed-user feed-user-link" href="profile.html?user=${encodeURIComponent(ev.username)}" title="View ${ev.username}'s profile">${(() => { const lc = legacyClass(allUserData[ev.userId]?.legacy || 0); return lc ? `<span class="${lc} legacy-name">${ev.username}</span>` : ev.username; })()}</a> unlocked <a class="feed-ach" href="achievement.html?ach=${ev.achId}">${ev.achName}</a></div>
                     <div class="feed-time">${timeAgo}</div>
                 </div>
                 <span class="feed-cat-icon">${icon}</span>
@@ -227,6 +227,12 @@ function buildRecentFeed() {
         avatar.addEventListener('click', e => {
             e.stopPropagation();
             window.location.href = `profile.html?user=${encodeURIComponent(avatar.dataset.username)}`;
+        });
+    });
+
+    list.querySelectorAll('.feed-user-link').forEach(link => {
+        link.addEventListener('click', e => {
+            e.stopPropagation();
         });
     });
 
