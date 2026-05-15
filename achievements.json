@@ -628,12 +628,6 @@
       "amount": 999,
       "type": "exact"
     },
-    "79": {
-      "name": "Oh! For Me?",
-      "desc": "Awarded for cheering exactly 1000 bits",
-      "amount": 1000,
-      "type": "exact"
-    },
     "cheer_1024": {
       "name": "Stop the 2! Please!",
       "desc": "Awarded for cheering exactly 1024 bits",
