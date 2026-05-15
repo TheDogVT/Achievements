@@ -9,13 +9,14 @@
       "redeem_checkin_1": "2025-12-19T22:18:22.802071+00:00",
       "redeem_checkin_2": "2025-12-22T21:51:20.998731+00:00",
       "redeem_pet_1": "2025-12-22T21:55:45.498872+00:00",
-      "subathon_2025_any": "2025-12-24T00:34:15.393109+00:00"
+      "subathon_2025_any": "2025-12-24T00:34:15.393109+00:00",
+      "chat_doge": "2026-05-15T22:14:11.067886+00:00"
     },
     "founded": {}
   },
   "stats": {
-    "messages": 95,
-    "active_months": 5,
+    "messages": 97,
+    "active_months": 6,
     "first_seen": "2025-12"
   },
   "top_months": []
