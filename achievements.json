@@ -454,6 +454,12 @@
       "amount": 10000,
       "type": "threshold"
     },
+    "cheer_cumulative_1k": {
+      "name": "Bit Curious.",
+      "desc": "Awarded for cheering 1,000 bits overall.",
+      "amount": 1000,
+      "type": "cumulative"
+    },
     "cheer_cumulative_10k": {
       "name": "Famous Cheerer.",
       "desc": "Awarded for cheering 10,000 bits overall.",

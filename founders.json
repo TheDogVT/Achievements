@@ -1113,5 +1113,10 @@
     "founder_id": "746510845",
     "founder_name": "goth_goblin20",
     "founded_at": "2026-05-03T22:44:34.935837+00:00"
+  },
+  "cheer_cumulative_1k": {
+    "founder_id": "debug_id",
+    "founder_name": "TestUser",
+    "founded_at": "2026-05-18T17:06:11.644955+00:00"
   }
 }
