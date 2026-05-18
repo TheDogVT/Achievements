@@ -1,0 +1,19 @@
+{
+  "user_id": "debug_id",
+  "username": "CHEERTEST",
+  "pfp_url": "",
+  "legacy": 0,
+  "achievements": {
+    "earned": {
+      "cheer_message_100": "2026-05-18T16:02:49.118553+00:00",
+      "cheer_time_1": "2026-05-18T16:02:49.381548+00:00"
+    },
+    "founded": {}
+  },
+  "stats": {
+    "messages": 0,
+    "active_months": 1,
+    "first_seen": "2026-05-18T16:02:48.570885+00:00"
+  },
+  "top_months": []
+}
