@@ -35,6 +35,12 @@
       "desc": "Awarded for attending 7 streams in a row. One full week of peak loyalty.",
       "amount": 7,
       "type": "streak"
+    },
+    "streak_10": {
+      "name": "10 Day Streak!",
+      "desc": "Awarded for attending 10 streams in a row. This is getting serious.",
+      "amount": 10,
+      "type": "streak"
     }
   },
   "chat": {
