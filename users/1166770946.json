@@ -36,7 +36,7 @@
     "founded": {}
   },
   "stats": {
-    "messages": 2154,
+    "messages": 2158,
     "active_months": 1,
     "first_seen": "2026-5"
   },
@@ -44,7 +44,7 @@
     {
       "month": "2026-5",
       "kind": "chat",
-      "rank": 3
+      "rank": 2
     }
   ]
 }
