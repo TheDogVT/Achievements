@@ -374,6 +374,11 @@
       "desc": "Awarded for spotting a rogue tongue tip.",
       "type": "contains"
     },
+    "chat_heckin": {
+      "name": "Heckin Linguist",
+      "desc": "Awarded for fluent doggo speak.",
+      "type": "contains"
+    },
     "chat_smol": {
       "name": "Smol Bean Advocate",
       "desc": "Awarded for recognizing tiny, precious things.",
