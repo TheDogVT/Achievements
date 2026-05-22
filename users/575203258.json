@@ -5,12 +5,13 @@
   "legacy": 0,
   "achievements": {
     "earned": {
-      "chat_10": "2026-02-10T01:05:57.885504+00:00"
+      "chat_10": "2026-02-10T01:05:57.885504+00:00",
+      "redeem_checkin_1": "2026-05-22T20:07:13.593067+00:00"
     },
     "founded": {}
   },
   "stats": {
-    "messages": 50,
+    "messages": 51,
     "active_months": 3,
     "first_seen": "2026-2"
   },
