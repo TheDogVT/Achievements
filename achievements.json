@@ -41,6 +41,12 @@
       "desc": "Awarded for attending 10 streams in a row. This is getting serious.",
       "amount": 10,
       "type": "streak"
+    },
+    "streak_14": {
+      "name": "14 Day Streak!",
+      "desc": "Awarded for attending 14 streams in a row. The dedication is unreal.",
+      "amount": 14,
+      "type": "streak"
     }
   },
   "chat": {
