@@ -390,6 +390,11 @@
       "desc": "Awarded for recognizing tiny, precious things.",
       "type": "contains"
     },
+    "chat_pawty": {
+      "name": "Pun Offender",
+      "desc": "Awarded for committing dog puns in chat.",
+      "type": "contains"
+    },
     "chat_beg": {
       "name": "Sad Eyes Enabler",
       "desc": "Awarded for cracking under the begging stare.",
