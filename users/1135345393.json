@@ -6,12 +6,13 @@
   "achievements": {
     "earned": {
       "redeem_checkin_1": "2026-04-30T21:28:03.633430+00:00",
-      "redeem_checkin_2": "2026-05-10T21:18:13.723715+00:00"
+      "redeem_checkin_2": "2026-05-10T21:18:13.723715+00:00",
+      "redeem_total_5": "2026-05-25T21:17:51.512538+00:00"
     },
     "founded": {}
   },
   "stats": {
-    "messages": 3,
+    "messages": 5,
     "active_months": 2,
     "first_seen": "2026-4"
   },
