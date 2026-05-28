@@ -1,7 +1,7 @@
 {
   "user_id": "1303013967",
   "username": "clever_diamonds",
-  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/6f343c9a-996e-44d8-8f8e-6bcc3c9049d2-profile_image-300x300.jpeg",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/9c3cb009-896e-4a1a-8ae1-55e84b4bfdcd-profile_image-300x300.jpeg",
   "legacy": 1,
   "achievements": {
     "earned": {
@@ -20,12 +20,13 @@
       "redeem_checkin_30": "2026-04-14T20:13:29.392991+00:00",
       "attend_3": "2026-05-08T20:32:35.767027+00:00",
       "streak_3": "2026-05-08T20:32:35.998966+00:00",
-      "attend_5": "2026-05-09T21:13:18.173833+00:00"
+      "attend_5": "2026-05-09T21:13:18.173833+00:00",
+      "redeem_total_100": "2026-05-28T21:19:28.660886+00:00"
     },
     "founded": {}
   },
   "stats": {
-    "messages": 88,
+    "messages": 89,
     "active_months": 4,
     "first_seen": "2026-2"
   },
