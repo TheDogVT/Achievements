@@ -20,31 +20,31 @@
     },
     "streak_3": {
       "name": "3 Day Streak!",
-      "desc": "Awarded for attending 3 streams in a row. The borks are multiplying.",
+      "desc": "Three days running. Someone is getting spoiled.",
       "amount": 3,
       "type": "streak"
     },
     "streak_5": {
       "name": "5 Day Streak!",
-      "desc": "Awarded for attending 5 streams in a row. Someone is getting spoiled.",
+      "desc": "Five days running. The week is calling.",
       "amount": 5,
       "type": "streak"
     },
     "streak_7": {
       "name": "7 Day Streak!",
-      "desc": "Awarded for attending 7 streams in a row. One full week of peak loyalty.",
+      "desc": "A full week. This is getting serious.",
       "amount": 7,
       "type": "streak"
     },
     "streak_10": {
       "name": "10 Day Streak!",
-      "desc": "Awarded for attending 10 streams in a row. This is getting serious.",
+      "desc": "Ten days in. The dedication is unreal.",
       "amount": 10,
       "type": "streak"
     },
     "streak_14": {
       "name": "14 Day Streak!",
-      "desc": "Awarded for attending 14 streams in a row. The dedication is unreal.",
+      "desc": "Two weeks. Peak regularity achieved.",
       "amount": 14,
       "type": "streak"
     }
