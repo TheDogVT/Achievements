@@ -5,12 +5,13 @@
   "legacy": 0,
   "achievements": {
     "earned": {
-      "redeem_pet_1": "2026-05-28T22:47:04.902301+00:00"
+      "redeem_pet_1": "2026-05-28T22:47:04.902301+00:00",
+      "chat_10": "2026-05-28T22:49:08.003824+00:00"
     },
     "founded": {}
   },
   "stats": {
-    "messages": 7,
+    "messages": 10,
     "active_months": 1,
     "first_seen": "2026-05-28T22:43:52.239208+00:00"
   },
