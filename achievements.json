@@ -1316,6 +1316,12 @@
       "desc": "Awarded for using 900 channel point redeems.",
       "amount": 900,
       "type": "total"
+    },
+    "redeem_total_1000": {
+      "name": "Stardust",
+      "desc": "Awarded for using 1000 channel point redeems.",
+      "amount": 1000,
+      "type": "total"
     }
   }
 }
