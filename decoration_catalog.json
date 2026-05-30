@@ -3007,7 +3007,7 @@
     "achievement_id": "chat_dog_god",
     "config": {
       "font_family": "Grenze Gotisch",
-      "offset_x": "14px",
+      "offset_x": "3px",
       "outline": "basic",
       "text": "The Believer",
       "unlock": {

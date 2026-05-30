@@ -195,10 +195,15 @@
       "prefix_93",
       "suffix_71"
     ],
-    "active": {}
+    "active": {
+      "name_prefix": "prefix_12",
+      "name_suffix": "suffix_8",
+      "washi_color": "washi_pink",
+      "washi_position": "washi_top_center"
+    }
   },
   "stats": {
-    "messages": 6973,
+    "messages": 6984,
     "active_months": 7,
     "first_seen": "2025-11"
   },

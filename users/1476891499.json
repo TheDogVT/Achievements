@@ -38,7 +38,8 @@
       "attend_3": "2026-05-17T20:21:34.185409+00:00",
       "chat_floofy": "2026-05-17T21:40:36.863792+00:00",
       "quote_2": "2026-05-17T21:55:28.239106+00:00",
-      "attend_5": "2026-05-30T21:19:37.615992+00:00"
+      "attend_5": "2026-05-30T21:19:37.615992+00:00",
+      "chat_blep": "2026-05-30T21:47:50.288421+00:00"
     },
     "founded": {
       "chat_beg": "2026-05-08T22:47:05.690889+00:00",
@@ -65,12 +66,17 @@
       "prefix_79",
       "suffix_57",
       "prefix_80",
-      "suffix_58"
+      "suffix_58",
+      "prefix_14",
+      "suffix_56"
     ],
-    "active": {}
+    "active": {
+      "name_prefix": "prefix_19",
+      "name_suffix": "suffix_7"
+    }
   },
   "stats": {
-    "messages": 2039,
+    "messages": 2099,
     "active_months": 2,
     "first_seen": "2026-4"
   },
