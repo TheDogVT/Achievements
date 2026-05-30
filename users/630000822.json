@@ -50,6 +50,33 @@
     },
     "founded": {}
   },
+  "decorations": {
+    "unlocked": [
+      "prefix_10",
+      "prefix_11",
+      "prefix_18",
+      "prefix_2",
+      "prefix_3",
+      "prefix_7",
+      "prefix_8",
+      "name_1",
+      "suffix_8",
+      "prefix_76",
+      "suffix_19",
+      "prefix_77",
+      "prefix_79",
+      "prefix_80",
+      "prefix_89",
+      "suffix_57",
+      "suffix_58",
+      "suffix_67",
+      "prefix_101",
+      "suffix_79",
+      "prefix_81",
+      "suffix_59"
+    ],
+    "active": {}
+  },
   "stats": {
     "messages": 815,
     "active_months": 7,

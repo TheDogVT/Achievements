@@ -84,6 +84,34 @@
       "chat_wholet": "2026-02-17T21:24:26.432645+00:00"
     }
   },
+  "decorations": {
+    "unlocked": [
+      "prefix_11",
+      "prefix_12",
+      "prefix_15",
+      "prefix_16",
+      "prefix_17",
+      "prefix_18",
+      "prefix_19",
+      "prefix_2",
+      "prefix_3",
+      "prefix_4",
+      "prefix_7",
+      "prefix_8",
+      "name_1",
+      "suffix_3",
+      "suffix_4",
+      "suffix_5",
+      "suffix_7",
+      "suffix_8",
+      "prefix_76",
+      "suffix_19",
+      "prefix_77",
+      "prefix_79",
+      "suffix_57"
+    ],
+    "active": {}
+  },
   "stats": {
     "messages": 1486,
     "active_months": 5,

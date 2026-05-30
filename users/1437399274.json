@@ -19,6 +19,14 @@
       "redeem_pet_5": "2026-05-03T22:24:23.983707+00:00"
     }
   },
+  "decorations": {
+    "unlocked": [
+      "prefix_7",
+      "prefix_8",
+      "name_1"
+    ],
+    "active": {}
+  },
   "stats": {
     "messages": 13,
     "active_months": 1,

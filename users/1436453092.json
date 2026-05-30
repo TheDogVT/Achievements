@@ -76,6 +76,39 @@
       "chat_doorbell": "2026-03-14T22:03:15.740207+00:00"
     }
   },
+  "decorations": {
+    "unlocked": [
+      "prefix_11",
+      "prefix_12",
+      "prefix_15",
+      "prefix_16",
+      "prefix_18",
+      "prefix_2",
+      "prefix_3",
+      "prefix_4",
+      "prefix_7",
+      "suffix_3",
+      "suffix_4",
+      "suffix_7",
+      "suffix_8",
+      "prefix_14",
+      "prefix_77",
+      "suffix_56",
+      "prefix_79",
+      "prefix_80",
+      "prefix_81",
+      "prefix_89",
+      "prefix_90",
+      "prefix_91",
+      "suffix_57",
+      "suffix_58",
+      "suffix_59",
+      "suffix_67",
+      "suffix_68",
+      "suffix_69"
+    ],
+    "active": {}
+  },
   "stats": {
     "messages": 2554,
     "active_months": 4,

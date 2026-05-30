@@ -26,6 +26,17 @@
       "chat_woofwoof": "2026-02-08T21:17:33.170573+00:00"
     }
   },
+  "decorations": {
+    "unlocked": [
+      "prefix_11",
+      "prefix_16",
+      "prefix_19",
+      "prefix_2",
+      "prefix_7",
+      "prefix_77"
+    ],
+    "active": {}
+  },
   "stats": {
     "messages": 187,
     "active_months": 3,

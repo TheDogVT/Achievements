@@ -18,6 +18,16 @@
     },
     "founded": {}
   },
+  "decorations": {
+    "unlocked": [
+      "prefix_7",
+      "prefix_79",
+      "suffix_57",
+      "prefix_80",
+      "suffix_58"
+    ],
+    "active": {}
+  },
   "stats": {
     "messages": 40,
     "active_months": 1,

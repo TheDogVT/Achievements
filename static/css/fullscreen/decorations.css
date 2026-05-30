@@ -1,0 +1,60 @@
+/* ── Text emphasis: circle underline ── */
+.em-circle {
+    position: relative;
+    display: inline-block;
+    padding: 1px 6px;
+}
+.em-circle::before {
+    content: '';
+    position: absolute;
+    inset: -3px -2px -2px -2px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 40' preserveAspectRatio='none'%3E%3Cpath d='M 20,8 Q 50,2 82,10 Q 96,20 86,32 Q 50,40 14,30 Q 4,20 18,7 Q 30,4 50,5' stroke='%236A3818' stroke-width='1.5' fill='none' stroke-linecap='round' opacity='0.65'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+/* ── Text emphasis: shout line ── */
+.shout-line {
+    display: inline;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 8' preserveAspectRatio='none'%3E%3Cpath d='M2,5 Q 25,1 50,4 T 98,3' stroke='%236A3818' stroke-width='1.4' fill='none' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E");
+    background-size: 100% 6px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    padding-bottom: 4px;
+}
+
+/* ── Text emphasis: strikethrough ── */
+.em-strike {
+    color: rgba(45,26,8,0.55);
+    text-decoration: line-through;
+    text-decoration-color: rgba(106,56,24,0.6);
+    text-decoration-thickness: 2px;
+}
+
+/* ── Washi tape ── */
+.washi {
+    position: absolute;
+    width: 56px; height: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.20);
+    z-index: 3; opacity: 0.82;
+}
+.washi.pink     { background-color:#f8a8c0; background-image:repeating-linear-gradient(45deg,rgba(255,255,255,0.30),rgba(255,255,255,0.30) 3px,transparent 3px,transparent 7px); }
+.washi.mint     { background-color:#a8d8c4; background-image:radial-gradient(circle,rgba(255,255,255,0.4) 1px,transparent 1.5px); background-size:6px 6px; }
+.washi.gold     { background-color:#e8c878; background-image:repeating-linear-gradient(90deg,rgba(180,130,40,0.25),rgba(180,130,40,0.25) 4px,transparent 4px,transparent 9px); }
+.washi.lavender { background-color:#c8b0e0; background-image:repeating-linear-gradient(0deg,rgba(255,255,255,0.30),rgba(255,255,255,0.30) 2px,transparent 2px,transparent 5px); }
+.washi.top-left   { top:-8px; left:20px;  transform:rotate(-5deg); }
+.washi.top-right  { top:-8px; right:22px; transform:rotate(6deg); }
+.washi.top-center { top:-9px; left:50%;   transform:translateX(-50%) rotate(-3deg); }
+.washi.corner-tl  { top:-6px; left:-10px; transform:rotate(-38deg); }
+
+/* ── Stains ── */
+.coffee-ring { position:absolute; top:34px; right:20px; width:42px; height:42px; border-radius:50%; border:3px solid rgba(110,65,25,0.17); background:radial-gradient(circle at center,transparent 60%,rgba(110,65,25,0.08) 70%,transparent 80%); box-shadow:inset 0 0 6px rgba(110,65,25,0.10); pointer-events:none; z-index:0; }
+.ink-blot    { position:absolute; top:12px; right:34px; width:13px; height:13px; border-radius:60% 40% 55% 45%/50% 60% 40% 50%; background:radial-gradient(ellipse at 35% 30%,rgba(20,15,5,0.85) 0%,rgba(40,25,10,0.55) 45%,rgba(60,40,15,0.20) 90%,transparent 100%); pointer-events:none; z-index:0; }
+.smudge      { position:absolute; bottom:16px; left:28px; width:48px; height:11px; background:linear-gradient(90deg,transparent,rgba(60,40,20,0.18) 30%,rgba(60,40,20,0.10) 60%,transparent); border-radius:50%; transform:rotate(-3deg); filter:blur(1.5px); pointer-events:none; z-index:0; }
+
+/* ── Doodles ── */
+.doodle { position:absolute; opacity:0.82; pointer-events:none; z-index:2; }
+.doodle.tl { top:4px; left:4px; }
+.doodle.tr { top:4px; right:4px; }
+.doodle.bl { bottom:4px; left:4px; }

@@ -42,8 +42,46 @@
       "streak_3": "2026-05-07T20:02:09.956278+00:00"
     }
   },
+  "decorations": {
+    "unlocked": [
+      "prefix_14",
+      "prefix_15",
+      "prefix_2",
+      "prefix_3",
+      "prefix_4",
+      "prefix_5",
+      "prefix_6",
+      "prefix_7",
+      "suffix_4",
+      "suffix_5",
+      "prefix_16",
+      "suffix_56",
+      "prefix_79",
+      "prefix_80",
+      "prefix_89",
+      "prefix_90",
+      "suffix_57",
+      "suffix_58",
+      "suffix_67",
+      "suffix_68",
+      "prefix_81",
+      "suffix_59",
+      "prefix_91",
+      "suffix_69",
+      "prefix_92",
+      "suffix_70",
+      "prefix_93",
+      "suffix_71",
+      "prefix_10"
+    ],
+    "active": {
+      "message_text": "message_3",
+      "name_prefix": "prefix_22",
+      "name_suffix": "suffix_22"
+    }
+  },
   "stats": {
-    "messages": 25728,
+    "messages": 25743,
     "active_months": 7,
     "first_seen": "2025-10"
   },

@@ -21,6 +21,29 @@
       "streak_7": "2026-05-16T20:12:23.970039+00:00"
     }
   },
+  "decorations": {
+    "unlocked": [
+      "prefix_2",
+      "prefix_7",
+      "prefix_79",
+      "prefix_80",
+      "prefix_81",
+      "prefix_89",
+      "prefix_90",
+      "prefix_91",
+      "suffix_57",
+      "suffix_58",
+      "suffix_59",
+      "suffix_67",
+      "suffix_68",
+      "suffix_69",
+      "prefix_92",
+      "suffix_70",
+      "prefix_93",
+      "suffix_71"
+    ],
+    "active": {}
+  },
   "stats": {
     "messages": 173,
     "active_months": 7,

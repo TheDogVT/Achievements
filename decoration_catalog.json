@@ -1,0 +1,3385 @@
+{
+  "prestige_cheer_static": {
+    "slot": "card_background",
+    "display_name": "Prestige Cheer",
+    "achievement_name": "Bit Burrier.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_cumulative_50k",
+    "config": {
+      "background_class": "bg-chat-prestige-cheer",
+      "background_mode": "class",
+      "opacity": "100",
+      "text": "Prestige Cheer",
+      "theme": "prestige-cheer",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_cumulative_50k"
+      }
+    }
+  },
+  "prestige_donation_static": {
+    "slot": "card_background",
+    "display_name": "Prestige Donation",
+    "achievement_name": "Two And A Half Months Fed.",
+    "achievement_category": "donation",
+    "achievement_id": "donation_cumulative_500",
+    "config": {
+      "background_class": "bg-chat-prestige-donation",
+      "background_mode": "class",
+      "opacity": "100",
+      "text": "Prestige Donation",
+      "theme": "prestige-donation",
+      "unlock": {
+        "type": "achievement",
+        "category": "donation",
+        "id": "donation_cumulative_500"
+      }
+    }
+  },
+  "prefix_10": {
+    "slot": "name_prefix",
+    "display_name": "eepy",
+    "achievement_name": "Nap Whisperer",
+    "achievement_category": "chat",
+    "achievement_id": "chat_sleepy",
+    "config": {
+      "text": "eepy",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "chat",
+        "id": "chat_sleepy"
+      }
+    }
+  },
+  "prefix_101": {
+    "slot": "name_prefix",
+    "display_name": "First Claim",
+    "achievement_name": "Me First!",
+    "achievement_category": "redeems",
+    "achievement_id": "redeem_first_1",
+    "config": {
+      "outline": "basic",
+      "text": "First Claim",
+      "unlock": {
+        "type": "achievement",
+        "category": "redeems",
+        "id": "redeem_first_1"
+      }
+    }
+  },
+  "prefix_102": {
+    "slot": "name_prefix",
+    "display_name": "Quickdraw",
+    "achievement_name": "Got First On Lock",
+    "achievement_category": "redeems",
+    "achievement_id": "redeem_first_10",
+    "config": {
+      "outline": "basic",
+      "text": "Quickdraw",
+      "unlock": {
+        "type": "achievement",
+        "category": "redeems",
+        "id": "redeem_first_10"
+      }
+    }
+  },
+  "prefix_103": {
+    "slot": "name_prefix",
+    "display_name": "Front Runner",
+    "achievement_name": "Queue Skipper",
+    "achievement_category": "redeems",
+    "achievement_id": "redeem_first_25",
+    "config": {
+      "outline": "basic",
+      "text": "Front Runner",
+      "unlock": {
+        "type": "achievement",
+        "category": "redeems",
+        "id": "redeem_first_25"
+      }
+    }
+  },
+  "prefix_104": {
+    "slot": "name_prefix",
+    "display_name": "Priority",
+    "achievement_name": "A month of me.",
+    "achievement_category": "redeems",
+    "achievement_id": "redeem_first_31",
+    "config": {
+      "font_family": "Varela Round",
+      "outline": "basic",
+      "text": "Priority",
+      "text_gradient": [
+        {
+          "color": "#facc15",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "redeems",
+        "id": "redeem_first_31"
+      }
+    }
+  },
+  "prefix_105": {
+    "slot": "name_prefix",
+    "display_name": "Lead Slot",
+    "achievement_name": "First? Always.",
+    "achievement_category": "redeems",
+    "achievement_id": "redeem_first_45",
+    "config": {
+      "font_family": "Varela Round",
+      "outline": "basic",
+      "text": "Lead Slot",
+      "text_gradient": [
+        {
+          "color": "#facc15",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "redeems",
+        "id": "redeem_first_45"
+      }
+    }
+  },
+  "prefix_106": {
+    "slot": "name_prefix",
+    "display_name": "First Class",
+    "achievement_name": "Two months of me.",
+    "achievement_category": "redeems",
+    "achievement_id": "redeem_first_60",
+    "config": {
+      "font_family": "Varela Round",
+      "outline": "basic",
+      "text": "First Class",
+      "text_gradient": [
+        {
+          "color": "#facc15",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "redeems",
+        "id": "redeem_first_60"
+      }
+    }
+  },
+  "prefix_107": {
+    "slot": "name_prefix",
+    "display_name": "Untouched",
+    "achievement_name": "Sick of me yet?",
+    "achievement_category": "redeems",
+    "achievement_id": "redeem_first_90",
+    "config": {
+      "font_family": "Varela Round",
+      "outline": "basic",
+      "text": "Untouched",
+      "text_gradient": [
+        {
+          "color": "#facc15",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#67e8f9",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "redeems",
+        "id": "redeem_first_90"
+      }
+    }
+  },
+  "prefix_119": {
+    "slot": "name_prefix",
+    "display_name": "Prestige Cheer Name",
+    "achievement_name": "Bit Burrier.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_cumulative_50k",
+    "config": {
+      "animation": "glitch",
+      "effects_layers": [
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "chroma_echo",
+          "enabled": true,
+          "engine": "text",
+          "interval": "",
+          "knobs": {
+            "intensity": 1,
+            "speed": 3
+          },
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "",
+          "plane": "text",
+          "random_range": "",
+          "scale": "",
+          "z_index": "6"
+        }
+      ],
+      "font_family": "VT323",
+      "font_size": "16px",
+      "font_style": "normal",
+      "font_weight": "700",
+      "glow_color": "rgba(0, 212, 255, 0.66)",
+      "glow_layers": [
+        {
+          "animation": "pulse",
+          "color": "rgba(255, 79, 216, 0.56)",
+          "distance": "12",
+          "fade": "66",
+          "plane": "back",
+          "spread": "90"
+        }
+      ],
+      "label": "Prestige Cheer Name",
+      "style": "neon",
+      "text": "Bit Runner",
+      "text_color": "#fff7d6",
+      "theme": "prestige-cheer",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_cumulative_50k"
+      }
+    }
+  },
+  "prefix_12": {
+    "slot": "name_prefix",
+    "display_name": "the betrayer ",
+    "achievement_name": "Soapy Betrayer",
+    "achievement_category": "chat",
+    "achievement_id": "chat_bath",
+    "config": {
+      "text": "the betrayer ",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "chat",
+        "id": "chat_bath"
+      }
+    }
+  },
+  "prefix_121": {
+    "slot": "name_prefix",
+    "display_name": "Prestige Donation Name",
+    "achievement_name": "Two And A Half Months Fed.",
+    "achievement_category": "donation",
+    "achievement_id": "donation_cumulative_500",
+    "config": {
+      "font_family": "Cormorant Garamond",
+      "font_size": "16px",
+      "font_style": "normal",
+      "font_weight": "500",
+      "glow_color": "rgba(255, 168, 86, 0.62)",
+      "glow_layers": [
+        {
+          "animation": "breathe",
+          "color": "rgba(255, 168, 86, 0.58)",
+          "distance": "10",
+          "fade": "72",
+          "plane": "back",
+          "spread": "80"
+        }
+      ],
+      "label": "Prestige Donation Name",
+      "text": "Dream Maker",
+      "text_color": "#ffe6ac",
+      "theme": "prestige-donation",
+      "unlock": {
+        "type": "achievement",
+        "category": "donation",
+        "id": "donation_cumulative_500"
+      }
+    }
+  },
+  "prefix_13": {
+    "slot": "name_prefix",
+    "display_name": "puppy eyed",
+    "achievement_name": "Sad Eyes Enabler",
+    "achievement_category": "chat",
+    "achievement_id": "chat_beg",
+    "config": {
+      "text": "puppy eyed",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "chat",
+        "id": "chat_beg"
+      }
+    }
+  },
+  "prefix_14": {
+    "slot": "name_prefix",
+    "display_name": ":p",
+    "achievement_name": "Blep Patrol",
+    "achievement_category": "chat",
+    "achievement_id": "chat_blep",
+    "config": {
+      "text": ":p",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "chat",
+        "id": "chat_blep"
+      }
+    }
+  },
+  "prefix_15": {
+    "slot": "name_prefix",
+    "display_name": "Boop!",
+    "achievement_name": "Nose Booper",
+    "achievement_category": "chat",
+    "achievement_id": "chat_boop",
+    "config": {
+      "text": "Boop!",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "chat",
+        "id": "chat_boop"
+      }
+    }
+  },
+  "prefix_16": {
+    "slot": "name_prefix",
+    "display_name": "Chaos bringer",
+    "achievement_name": "Mischief Encourager",
+    "achievement_category": "chat",
+    "achievement_id": "chat_chaos",
+    "config": {
+      "glow_layers": [
+        {
+          "animation": "flicker",
+          "color": "#ff0000",
+          "distance": "",
+          "fade": "",
+          "plane": "back",
+          "spread": ""
+        }
+      ],
+      "text": "Chaos bringer",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "chat",
+        "id": "chat_chaos"
+      }
+    }
+  },
+  "prefix_17": {
+    "slot": "name_prefix",
+    "display_name": "Cuddly",
+    "achievement_name": "Cuddle Bug",
+    "achievement_category": "chat",
+    "achievement_id": "chat_cuddle",
+    "config": {
+      "text": "Cuddly",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "chat",
+        "id": "chat_cuddle"
+      }
+    }
+  },
+  "prefix_18": {
+    "slot": "name_prefix",
+    "display_name": "Good Girl",
+    "achievement_name": "Who's A Good Doggo?",
+    "achievement_category": "chat",
+    "achievement_id": "chat_goodboy",
+    "config": {
+      "text": "Good Girl",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "chat",
+        "id": "chat_goodboy"
+      }
+    }
+  },
+  "prefix_19": {
+    "slot": "name_prefix",
+    "display_name": "Awooo",
+    "achievement_name": "Moon Choir Recruit",
+    "achievement_category": "chat",
+    "achievement_id": "chat_howl",
+    "config": {
+      "effects_layers": [
+        {
+          "blend_mode": "",
+          "delay": "0.3",
+          "duration": "",
+          "effect": "dust_motes",
+          "enabled": true,
+          "engine": "particle",
+          "interval": "",
+          "knobs": {
+            "canvas_rotation": 0,
+            "color1": "#52ffeb",
+            "intensity": 0.8,
+            "origin_x": 0,
+            "range": 40,
+            "speed": 4
+          },
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "0.2",
+          "plane": "front",
+          "random_range": "1.5",
+          "scale": "0.25",
+          "z_index": "7"
+        }
+      ],
+      "text": "Awooo",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "chat",
+        "id": "chat_howl"
+      }
+    }
+  },
+  "prefix_2": {
+    "slot": "name_prefix",
+    "display_name": "OwO",
+    "achievement_name": "Entry Level Yapper.",
+    "achievement_category": "chat",
+    "achievement_id": "chat_100",
+    "config": {
+      "text": "OwO",
+      "unlock": {
+        "type": "achievement",
+        "category": "chat",
+        "id": "chat_100"
+      }
+    }
+  },
+  "prefix_20": {
+    "slot": "name_prefix",
+    "display_name": "π",
+    "achievement_name": "A Slice of Pi.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_3",
+    "config": {
+      "outline": "basic",
+      "text": "π",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_3"
+      }
+    }
+  },
+  "prefix_21": {
+    "slot": "name_prefix",
+    "display_name": "Lucky",
+    "achievement_name": "Lucky!",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_7",
+    "config": {
+      "outline": "basic",
+      "text": "Lucky",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_7"
+      }
+    }
+  },
+  "prefix_22": {
+    "slot": "name_prefix",
+    "display_name": "8-Bit",
+    "achievement_name": "2, but grown up.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_8",
+    "config": {
+      "outline": "basic",
+      "text": "8-Bit",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_8"
+      }
+    }
+  },
+  "prefix_23": {
+    "slot": "name_prefix",
+    "display_name": "Bit",
+    "achievement_name": "Not much, but it's honest bits.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_10",
+    "config": {
+      "font_family": "VT323",
+      "outline": "basic",
+      "text": "Bit",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_10"
+      }
+    }
+  },
+  "prefix_24": {
+    "slot": "name_prefix",
+    "display_name": "Coded",
+    "achievement_name": "First 1 Then 2.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_12",
+    "config": {
+      "font_family": "VT323",
+      "outline": "basic",
+      "text": "Coded",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_12"
+      }
+    }
+  },
+  "prefix_25": {
+    "slot": "name_prefix",
+    "display_name": "16-Bit",
+    "achievement_name": "16 Bit Game?",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_16",
+    "config": {
+      "outline": "basic",
+      "text": "16-Bit",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_16"
+      }
+    }
+  },
+  "prefix_3": {
+    "slot": "name_prefix",
+    "display_name": "It's",
+    "achievement_name": "Little Yapper.",
+    "achievement_category": "chat",
+    "achievement_id": "chat_500",
+    "config": {
+      "text": "It's",
+      "unlock": {
+        "type": "achievement",
+        "category": "chat",
+        "id": "chat_500"
+      }
+    }
+  },
+  "prefix_31": {
+    "slot": "name_prefix",
+    "display_name": "Area",
+    "achievement_name": "There are aliens here!",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_51",
+    "config": {
+      "outline": "basic",
+      "text": "Area",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_51"
+      }
+    }
+  },
+  "prefix_33": {
+    "slot": "name_prefix",
+    "display_name": "trouble maker",
+    "achievement_name": "Almost Greatness.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_99",
+    "config": {
+      "outline": "basic",
+      "text": "trouble maker",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_99"
+      }
+    }
+  },
+  "prefix_34": {
+    "slot": "name_prefix",
+    "display_name": "Bit",
+    "achievement_name": "2 but WAOW.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_128",
+    "config": {
+      "font_family": "VT323",
+      "outline": "basic",
+      "text": "Bit",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_128"
+      }
+    }
+  },
+  "prefix_36": {
+    "slot": "name_prefix",
+    "display_name": "3.14",
+    "achievement_name": "Mmm PIE!",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_314",
+    "config": {
+      "outline": "basic",
+      "text": "3.14",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_314"
+      }
+    }
+  },
+  "prefix_37": {
+    "slot": "name_prefix",
+    "display_name": "3, 2, 1...",
+    "achievement_name": "Actual Final Countdown.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_321",
+    "config": {
+      "outline": "basic",
+      "text": "3, 2, 1...",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_321"
+      }
+    }
+  },
+  "prefix_4": {
+    "slot": "name_prefix",
+    "display_name": "Yapper",
+    "achievement_name": "Yapper.",
+    "achievement_category": "chat",
+    "achievement_id": "chat_1k",
+    "config": {
+      "text": "Yapper",
+      "unlock": {
+        "type": "achievement",
+        "category": "chat",
+        "id": "chat_1k"
+      }
+    }
+  },
+  "prefix_41": {
+    "slot": "name_prefix",
+    "display_name": "Byte",
+    "achievement_name": "Oh, that's growing fast.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_512",
+    "config": {
+      "font_family": "VT323",
+      "outline": "basic",
+      "text": "Byte",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_512"
+      }
+    }
+  },
+  "prefix_43": {
+    "slot": "name_prefix",
+    "display_name": "666",
+    "achievement_name": "DEVIL NUMBER!",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_666",
+    "config": {
+      "outline": "basic",
+      "text": "666",
+      "text_gradient": [
+        {
+          "color": "#ff3333",
+          "pos": null
+        },
+        {
+          "color": "#ff8888",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_666"
+      }
+    }
+  },
+  "prefix_47": {
+    "slot": "name_prefix",
+    "display_name": "shortie",
+    "achievement_name": "One away...",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_999",
+    "config": {
+      "outline": "basic",
+      "text": "shortie",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#7de8ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_999"
+      }
+    }
+  },
+  "prefix_49": {
+    "slot": "name_prefix",
+    "display_name": "Bit",
+    "achievement_name": "Stop the 2! Please!",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_1024",
+    "config": {
+      "font_family": "VT323",
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "Bit",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#9900ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_1024"
+      }
+    }
+  },
+  "prefix_5": {
+    "slot": "name_prefix",
+    "display_name": "Yapper",
+    "achievement_name": "Little Big Yapper.",
+    "achievement_category": "chat",
+    "achievement_id": "chat_5k",
+    "config": {
+      "animation": "none",
+      "font_family": "Varela Round",
+      "font_size": "10px",
+      "offset_x": "7px",
+      "outline": "none",
+      "text": "Yapper",
+      "unlock": {
+        "type": "achievement",
+        "category": "chat",
+        "id": "chat_5k"
+      }
+    }
+  },
+  "prefix_51": {
+    "slot": "name_prefix",
+    "display_name": "Coded",
+    "achievement_name": "Counting to greatness.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_1234",
+    "config": {
+      "font_family": "VT323",
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "Coded",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#9900ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_1234"
+      }
+    }
+  },
+  "prefix_52": {
+    "slot": "name_prefix",
+    "display_name": "h4x0r",
+    "achievement_name": "LEET",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_1337",
+    "config": {
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "h4x0r",
+      "text_gradient": [
+        {
+          "color": "#00ff41",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#00cc33",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_1337"
+      }
+    }
+  },
+  "prefix_56": {
+    "slot": "name_prefix",
+    "display_name": "Game Over:",
+    "achievement_name": "ItKeepsGoingPleaseStopIt!",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_2048",
+    "config": {
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "Game Over:",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#9900ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_2048"
+      }
+    }
+  },
+  "prefix_59": {
+    "slot": "name_prefix",
+    "display_name": "Byte",
+    "achievement_name": "OHNOTWOSTOP",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_4096",
+    "config": {
+      "font_family": "VT323",
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "Byte",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#9900ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_4096"
+      }
+    }
+  },
+  "prefix_6": {
+    "slot": "name_prefix",
+    "display_name": "The Yapper",
+    "achievement_name": "Big Yapper.",
+    "achievement_category": "chat",
+    "achievement_id": "chat_10k",
+    "config": {
+      "font_family": "Varela Round",
+      "offset_y": "1px",
+      "text": "The Yapper",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "chat",
+        "id": "chat_10k"
+      }
+    }
+  },
+  "prefix_67": {
+    "slot": "name_prefix",
+    "display_name": "Bit Giver,",
+    "achievement_name": "(Platinum) A True Doggo Lover.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_10000",
+    "config": {
+      "glow_layers": [
+        {
+          "animation": "breathe",
+          "color": "#00d4ff",
+          "distance": "",
+          "fade": "",
+          "plane": "back",
+          "spread": ""
+        }
+      ],
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "Bit Giver,",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#9900ff",
+          "pos": null
+        },
+        {
+          "color": "#00d4ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_10000"
+      }
+    }
+  },
+  "prefix_7": {
+    "slot": "name_prefix",
+    "display_name": "Sincerely,",
+    "achievement_name": "Curious Chatter.",
+    "achievement_category": "chat",
+    "achievement_id": "chat_10",
+    "config": {
+      "font_size": "25px",
+      "outline": "basic",
+      "text": "Sincerely,",
+      "unlock": {
+        "type": "achievement",
+        "category": "chat",
+        "id": "chat_10"
+      }
+    }
+  },
+  "prefix_74": {
+    "slot": "name_prefix",
+    "display_name": "nice",
+    "achievement_name": "Nice Bitties.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_69",
+    "config": {
+      "outline": "basic",
+      "text": "nice",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_69"
+      }
+    }
+  },
+  "prefix_75": {
+    "slot": "name_prefix",
+    "display_name": "little",
+    "achievement_name": "Bit Giver.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_1",
+    "config": {
+      "text": "little",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_1"
+      }
+    }
+  },
+  "prefix_76": {
+    "slot": "name_prefix",
+    "display_name": "good girl,",
+    "achievement_name": "A dollar for doggo.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_100",
+    "config": {
+      "outline": "basic",
+      "text": "good girl,",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_100"
+      }
+    }
+  },
+  "prefix_77": {
+    "slot": "name_prefix",
+    "display_name": "ball chaser",
+    "achievement_name": "Ball? WHERE?",
+    "achievement_category": "chat",
+    "achievement_id": "chat_ball",
+    "config": {
+      "offset_y": "1px",
+      "text": "ball chaser",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "chat",
+        "id": "chat_ball"
+      }
+    }
+  },
+  "prefix_78": {
+    "slot": "name_prefix",
+    "display_name": "Debugger",
+    "achievement_name": "Bog Sputter",
+    "achievement_category": "manual",
+    "achievement_id": "bog_sputter",
+    "config": {
+      "edge_animation": "ripple",
+      "effects_layers": [
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "snow_fall",
+          "enabled": false,
+          "engine": "particle",
+          "interval": "",
+          "knobs": {
+            "opacity": 0.45,
+            "range": 75,
+            "size": 10,
+            "speed": 2
+          },
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "",
+          "plane": "rear",
+          "random_range": "",
+          "scale": "",
+          "z_index": "3"
+        },
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "dust_field",
+          "enabled": true,
+          "engine": "render",
+          "interval": "",
+          "knobs": {},
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "",
+          "plane": "front",
+          "random_range": "",
+          "scale": "",
+          "z_index": "7"
+        }
+      ],
+      "font_family": "Orbitron",
+      "font_style": "italic",
+      "glow_layers": [
+        {
+          "animation": "",
+          "color": "#000000",
+          "distance": "6",
+          "fade": "75",
+          "plane": "back",
+          "spread": "200"
+        }
+      ],
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "outline_color": "#4dff00",
+      "outline_light_blur": "6.5",
+      "outline_light_color": "#00ff4c",
+      "outline_light_z_index": "1",
+      "outline_thickness": "3",
+      "style": "foil",
+      "text": "Debugger",
+      "text_color": "#6dca2f",
+      "text_gradient": [
+        {
+          "color": "#c3fe20",
+          "pos": null
+        },
+        {
+          "color": "#63be19",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "type": "achievement",
+        "category": "manual",
+        "id": "bog_sputter"
+      }
+    }
+  },
+  "prefix_79": {
+    "slot": "name_prefix",
+    "display_name": "seen",
+    "achievement_name": "New in the Pack",
+    "achievement_category": "attendance",
+    "achievement_id": "attend_3",
+    "config": {
+      "outline": "basic",
+      "text": "seen",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "attendance",
+        "id": "attend_3"
+      }
+    }
+  },
+  "prefix_8": {
+    "slot": "name_prefix",
+    "display_name": "Sincerely,",
+    "achievement_name": "Babys First Cheer.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_time_1",
+    "config": {
+      "font_family": "Pacifico",
+      "font_size": "16.5px",
+      "font_style": "italic",
+      "font_weight": "100",
+      "offset_y": "-8.5px",
+      "outline": "basic",
+      "text": "Sincerely,",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_time_1"
+      }
+    }
+  },
+  "prefix_80": {
+    "slot": "name_prefix",
+    "display_name": "Recognized",
+    "achievement_name": "Getting Familiar",
+    "achievement_category": "attendance",
+    "achievement_id": "attend_5",
+    "config": {
+      "outline": "basic",
+      "text": "Recognized",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "attendance",
+        "id": "attend_5"
+      }
+    }
+  },
+  "prefix_81": {
+    "slot": "name_prefix",
+    "display_name": "Regular",
+    "achievement_name": "Regular at the Dog House",
+    "achievement_category": "attendance",
+    "achievement_id": "attend_10",
+    "config": {
+      "font_family": "Varela Round",
+      "outline": "basic",
+      "text": "Regular",
+      "text_gradient": [
+        {
+          "color": "#38bdf8",
+          "pos": null
+        },
+        {
+          "color": "#facc15",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "attendance",
+        "id": "attend_10"
+      }
+    }
+  },
+  "prefix_89": {
+    "slot": "name_prefix",
+    "display_name": "Active",
+    "achievement_name": "3 Day Streak!",
+    "achievement_category": "attendance",
+    "achievement_id": "streak_3",
+    "config": {
+      "outline": "basic",
+      "text": "Active",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "attendance",
+        "id": "streak_3"
+      }
+    }
+  },
+  "prefix_9": {
+    "slot": "name_prefix",
+    "display_name": "With Love - ",
+    "achievement_name": "Bit Farmer.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_time_10",
+    "config": {
+      "font_family": "Pacifico",
+      "font_size": "25px",
+      "font_style": "italic",
+      "font_weight": "100",
+      "outline": "basic",
+      "text": "With Love - ",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_time_10"
+      }
+    }
+  },
+  "prefix_90": {
+    "slot": "name_prefix",
+    "display_name": "Locked In",
+    "achievement_name": "5 Day Streak!",
+    "achievement_category": "attendance",
+    "achievement_id": "streak_5",
+    "config": {
+      "outline": "basic",
+      "text": "Locked In",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "attendance",
+        "id": "streak_5"
+      }
+    }
+  },
+  "prefix_91": {
+    "slot": "name_prefix",
+    "display_name": "Week Streak",
+    "achievement_name": "7 Day Streak!",
+    "achievement_category": "attendance",
+    "achievement_id": "streak_7",
+    "config": {
+      "font_family": "Varela Round",
+      "outline": "basic",
+      "text": "Week Streak",
+      "text_gradient": [
+        {
+          "color": "#ff7a18",
+          "pos": null
+        },
+        {
+          "color": "#ffd166",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "attendance",
+        "id": "streak_7"
+      }
+    }
+  },
+  "prefix_92": {
+    "slot": "name_prefix",
+    "display_name": "No Misses",
+    "achievement_name": "10 Day Streak!",
+    "achievement_category": "attendance",
+    "achievement_id": "streak_10",
+    "config": {
+      "font_family": "Varela Round",
+      "outline": "basic",
+      "text": "No Misses",
+      "text_gradient": [
+        {
+          "color": "#ff7a18",
+          "pos": null
+        },
+        {
+          "color": "#ffd166",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "attendance",
+        "id": "streak_10"
+      }
+    }
+  },
+  "prefix_93": {
+    "slot": "name_prefix",
+    "display_name": "Untouched",
+    "achievement_name": "14 Day Streak!",
+    "achievement_category": "attendance",
+    "achievement_id": "streak_14",
+    "config": {
+      "font_family": "Varela Round",
+      "outline": "basic",
+      "text": "Untouched",
+      "text_gradient": [
+        {
+          "color": "#ff7a18",
+          "pos": null
+        },
+        {
+          "color": "#ffd166",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "attendance",
+        "id": "streak_14"
+      }
+    }
+  },
+  "name_10": {
+    "slot": "name_base",
+    "display_name": "name_10",
+    "achievement_name": "Treat Buyer.",
+    "achievement_category": "donation",
+    "achievement_id": "donation_cumulative_25",
+    "config": {
+      "unlock": {
+        "type": "achievement",
+        "category": "donation",
+        "id": "donation_cumulative_25"
+      }
+    }
+  },
+  "name_11": {
+    "slot": "name_base",
+    "display_name": "name_11",
+    "achievement_name": "Kibble Contributor.",
+    "achievement_category": "donation",
+    "achievement_id": "donation_cumulative_50",
+    "config": {
+      "font_family": "Rubik Glitch",
+      "font_style": "normal",
+      "font_weight": "100",
+      "gradient_animation": "sheen",
+      "outline": "ink_soft",
+      "outline_thickness": "1",
+      "text_gradient": [
+        {
+          "color": "#f2a145",
+          "pos": 30
+        },
+        {
+          "color": "#fef3c7",
+          "pos": 100
+        }
+      ],
+      "unlock": {
+        "type": "achievement",
+        "category": "donation",
+        "id": "donation_cumulative_50"
+      }
+    }
+  },
+  "name_12": {
+    "slot": "name_base",
+    "display_name": "name_12",
+    "achievement_name": "Squeaky Toy Sponsor.",
+    "achievement_category": "donation",
+    "achievement_id": "donation_cumulative_100",
+    "config": {
+      "font_family": "Rubik Glitch",
+      "font_style": "normal",
+      "font_weight": "100",
+      "glow_layers": [
+        {
+          "animation": "pulse",
+          "color": "#d97706",
+          "distance": "14",
+          "fade": "0",
+          "plane": "back",
+          "spread": "70"
+        }
+      ],
+      "gradient_animation": "sheen",
+      "outline": "ink_soft",
+      "outline_light_blur": "10.25",
+      "outline_light_color": "#ff7b00",
+      "outline_light_z_index": "3",
+      "outline_thickness": "1",
+      "text_gradient": [
+        {
+          "color": "#d97706",
+          "pos": null
+        },
+        {
+          "color": "#fef3c7",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "type": "achievement",
+        "category": "donation",
+        "id": "donation_cumulative_100"
+      }
+    }
+  },
+  "name_13": {
+    "slot": "name_base",
+    "display_name": "name_13",
+    "achievement_name": "A Month Of Food.",
+    "achievement_category": "donation",
+    "achievement_id": "donation_cumulative_200",
+    "config": {
+      "edge_animation": "pulse",
+      "effects_layers": [
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "fire_embers",
+          "enabled": true,
+          "engine": "particle",
+          "interval": "",
+          "knobs": {
+            "color1": "#ff5100",
+            "glow": 0.1,
+            "origin_x": 0,
+            "particle_count": 50,
+            "range": 55,
+            "size": 20,
+            "speed": 1.9,
+            "spread": 30
+          },
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "50",
+          "phase": "",
+          "plane": "rear",
+          "random_range": "",
+          "scale": "1",
+          "z_index": "3"
+        },
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "lens_fleck",
+          "enabled": true,
+          "engine": "render",
+          "interval": "",
+          "knobs": {},
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "",
+          "plane": "text",
+          "random_range": "",
+          "scale": "",
+          "z_index": "6"
+        }
+      ],
+      "font_family": "Rubik Glitch",
+      "font_style": "normal",
+      "font_weight": "100",
+      "glow_layers": [
+        {
+          "animation": "breathe",
+          "color": "#d97706",
+          "distance": "",
+          "fade": "",
+          "plane": "back",
+          "spread": ""
+        },
+        {
+          "animation": "pulse",
+          "color": "#92400e",
+          "distance": "",
+          "fade": "",
+          "plane": "back",
+          "spread": ""
+        }
+      ],
+      "gradient_animation": "burn",
+      "outline": "ink_soft",
+      "outline_light_blur": "3.25",
+      "outline_light_color": "#ff9742",
+      "outline_light_thickness": "1.75",
+      "outline_light_z_index": "5",
+      "outline_thickness": "1",
+      "text_gradient": [
+        {
+          "color": "#cd6d32",
+          "pos": null
+        },
+        {
+          "color": "#d97706",
+          "pos": null
+        },
+        {
+          "color": "#fef3c7",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "type": "achievement",
+        "category": "donation",
+        "id": "donation_cumulative_200"
+      }
+    }
+  },
+  "name_14": {
+    "slot": "name_base",
+    "display_name": "name_14",
+    "achievement_name": "Mini Santa",
+    "achievement_category": "gifted",
+    "achievement_id": "gifted_cumulative_5",
+    "config": {
+      "outline": "basic",
+      "outline_thickness": "1",
+      "text_color": "#f43f5e",
+      "unlock": {
+        "type": "achievement",
+        "category": "gifted",
+        "id": "gifted_cumulative_5"
+      }
+    }
+  },
+  "name_15": {
+    "slot": "name_base",
+    "display_name": "name_15",
+    "achievement_name": "Little Santa",
+    "achievement_category": "gifted",
+    "achievement_id": "gifted_cumulative_10",
+    "config": {
+      "outline": "basic",
+      "outline_color": "#000000",
+      "outline_position": "outer_fake",
+      "outline_thickness": "0.5",
+      "text_color": "#e54897",
+      "unlock": {
+        "type": "achievement",
+        "category": "gifted",
+        "id": "gifted_cumulative_10"
+      }
+    }
+  },
+  "name_16": {
+    "slot": "name_base",
+    "display_name": "name_16",
+    "achievement_name": "Santa",
+    "achievement_category": "gifted",
+    "achievement_id": "gifted_cumulative_15",
+    "config": {
+      "outline": "basic",
+      "outline_thickness": "1",
+      "text_gradient": [
+        {
+          "color": "#f43f5e",
+          "pos": null
+        },
+        {
+          "color": "#ec4899",
+          "pos": null
+        },
+        {
+          "color": "#a855f7",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "type": "achievement",
+        "category": "gifted",
+        "id": "gifted_cumulative_15"
+      }
+    }
+  },
+  "name_17": {
+    "slot": "name_base",
+    "display_name": "name_17",
+    "achievement_name": "Big Santa",
+    "achievement_category": "gifted",
+    "achievement_id": "gifted_cumulative_20",
+    "config": {
+      "font_family": "Satisfy",
+      "gradient_animation": "sheen",
+      "outline": "ink_soft",
+      "outline_thickness": "1",
+      "text_gradient": [
+        {
+          "color": "#ec4899",
+          "pos": null
+        },
+        {
+          "color": "#a855f7",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "type": "achievement",
+        "category": "gifted",
+        "id": "gifted_cumulative_20"
+      }
+    }
+  },
+  "name_18": {
+    "slot": "name_base",
+    "display_name": "name_18",
+    "achievement_name": "Very Big Santa",
+    "achievement_category": "gifted",
+    "achievement_id": "gifted_cumulative_25",
+    "config": {
+      "font_family": "Satisfy",
+      "outline": "ink_soft",
+      "outline_color": "#f1b4fe",
+      "outline_thickness": "1",
+      "text_gradient": [
+        {
+          "color": "#f43f5e",
+          "pos": null
+        },
+        {
+          "color": "#ec4899",
+          "pos": null
+        },
+        {
+          "color": "#a855f7",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "type": "achievement",
+        "category": "gifted",
+        "id": "gifted_cumulative_25"
+      }
+    }
+  },
+  "name_19": {
+    "slot": "name_base",
+    "display_name": "name_19",
+    "achievement_name": "Massive Santa",
+    "achievement_category": "gifted",
+    "achievement_id": "gifted_cumulative_30",
+    "config": {
+      "edge_animation": "flicker",
+      "font_family": "Satisfy",
+      "gradient_animation": "sheen",
+      "outline": "ink_soft",
+      "outline_color": "#febedd",
+      "outline_position": "outer_fake",
+      "outline_thickness": "4",
+      "text_gradient": [
+        {
+          "color": "#f43f5e",
+          "pos": null
+        },
+        {
+          "color": "#ec4899",
+          "pos": null
+        },
+        {
+          "color": "#a855f7",
+          "pos": null
+        },
+        {
+          "color": "#e9d5ff",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "type": "achievement",
+        "category": "gifted",
+        "id": "gifted_cumulative_30"
+      }
+    }
+  },
+  "name_2": {
+    "slot": "name_base",
+    "display_name": "name_2",
+    "achievement_name": "Bit Farmer.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_time_10",
+    "config": {
+      "font_family": "Pacifico",
+      "font_weight": "100",
+      "outline": "basic",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_time_10"
+      }
+    }
+  },
+  "name_20": {
+    "slot": "name_base",
+    "display_name": "name_20",
+    "achievement_name": "Gigantic Santa",
+    "achievement_category": "gifted",
+    "achievement_id": "gifted_cumulative_40",
+    "config": {
+      "font_family": "Satisfy",
+      "glow_layers": [
+        {
+          "animation": "pulse",
+          "color": "#ec4899",
+          "distance": "",
+          "fade": "",
+          "plane": "back",
+          "spread": ""
+        }
+      ],
+      "gradient_animation": "sheen",
+      "outline": "ink_soft",
+      "outline_color": "#ffc2f2",
+      "outline_light_blur": "6",
+      "outline_light_color": "#ffa8f8",
+      "outline_light_thickness": "4.25",
+      "outline_light_z_index": "5",
+      "outline_thickness": "3.75",
+      "text_gradient": [
+        {
+          "color": "#ec4899",
+          "pos": null
+        },
+        {
+          "color": "#a855f7",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "type": "achievement",
+        "category": "gifted",
+        "id": "gifted_cumulative_40"
+      }
+    }
+  },
+  "name_21": {
+    "slot": "name_base",
+    "display_name": "name_21",
+    "achievement_name": "UH OH Santa",
+    "achievement_category": "gifted",
+    "achievement_id": "gifted_cumulative_50",
+    "config": {
+      "edge_animation": "flicker",
+      "font_family": "Satisfy",
+      "glow_layers": [
+        {
+          "animation": "pulse",
+          "color": "#ec4899",
+          "distance": "",
+          "fade": "",
+          "plane": "back",
+          "spread": ""
+        }
+      ],
+      "gradient_animation": "sheen",
+      "outline": "ink_soft",
+      "outline_color": "#ffc2f2",
+      "outline_light_blur": "6",
+      "outline_light_color": "#ffa8f8",
+      "outline_light_thickness": "4.25",
+      "outline_light_z_index": "5",
+      "outline_thickness": "3.75",
+      "text_gradient": [
+        {
+          "color": "#ec4899",
+          "pos": null
+        },
+        {
+          "color": "#a855f7",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "type": "achievement",
+        "category": "gifted",
+        "id": "gifted_cumulative_50"
+      }
+    }
+  },
+  "name_22": {
+    "slot": "name_base",
+    "display_name": "name_22",
+    "achievement_name": "Santa Evolution",
+    "achievement_category": "gifted",
+    "achievement_id": "gifted_cumulative_75",
+    "config": {
+      "effects_layers": [
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "petals",
+          "enabled": true,
+          "engine": "particle",
+          "interval": "",
+          "knobs": {
+            "origin_y": 10,
+            "range": 75,
+            "size": 12,
+            "speed": 2.5
+          },
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "",
+          "plane": "rear",
+          "random_range": "",
+          "scale": "",
+          "z_index": "8"
+        },
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "dust_field",
+          "enabled": true,
+          "engine": "render",
+          "interval": "",
+          "knobs": {
+            "color1": "#ffebf6",
+            "effect_opacity": 1,
+            "intensity": 0.9,
+            "speed": 3
+          },
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "",
+          "plane": "text",
+          "random_range": "",
+          "scale": "",
+          "z_index": "6"
+        }
+      ],
+      "font_family": "Satisfy",
+      "glow_layers": [
+        {
+          "animation": "breathe",
+          "color": "#ec4899",
+          "distance": "",
+          "fade": "",
+          "plane": "back",
+          "spread": ""
+        },
+        {
+          "animation": "pulse",
+          "color": "#a855f7",
+          "distance": "",
+          "fade": "",
+          "plane": "back",
+          "spread": ""
+        }
+      ],
+      "gradient_animation": "aurora",
+      "outline": "ink_soft",
+      "outline_color": "#ffc2f2",
+      "outline_thickness": "2",
+      "text_gradient": [
+        {
+          "color": "#fe7c8f",
+          "pos": null
+        },
+        {
+          "color": "#f070b0",
+          "pos": null
+        },
+        {
+          "color": "#df99ff",
+          "pos": null
+        },
+        {
+          "color": "#e9d5ff",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "type": "achievement",
+        "category": "gifted",
+        "id": "gifted_cumulative_75"
+      }
+    }
+  },
+  "name_24": {
+    "slot": "name_base",
+    "display_name": "name_24",
+    "achievement_name": "Bog Sputter",
+    "achievement_category": "manual",
+    "achievement_id": "bog_sputter",
+    "config": {
+      "edge_animation": "ripple",
+      "effects_layers": [
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "snow_fall",
+          "enabled": true,
+          "engine": "particle",
+          "interval": "",
+          "knobs": {
+            "color1": "#ffffff",
+            "opacity": 0.45,
+            "range": 75,
+            "size": 10,
+            "speed": 2
+          },
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "",
+          "plane": "rear",
+          "random_range": "",
+          "scale": "",
+          "z_index": "3"
+        },
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "dust_field",
+          "enabled": true,
+          "engine": "render",
+          "interval": "",
+          "knobs": {},
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "",
+          "plane": "front",
+          "random_range": "",
+          "scale": "",
+          "z_index": "7"
+        }
+      ],
+      "font_family": "Orbitron",
+      "font_size": "25.5px",
+      "glow_layers": [
+        {
+          "animation": "",
+          "color": "#000000",
+          "distance": "6",
+          "fade": "75",
+          "plane": "back",
+          "spread": "200"
+        }
+      ],
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "outline_cast_angle": "281",
+      "outline_color": "#4dff00",
+      "outline_light_blur": "6.5",
+      "outline_light_color": "#00ff4c",
+      "outline_light_thickness": "6",
+      "outline_light_z_index": "1",
+      "outline_thickness": "3",
+      "style": "foil",
+      "text_color": "#6dca2f",
+      "text_gradient": [
+        {
+          "color": "#c3fe20",
+          "pos": null
+        },
+        {
+          "color": "#63be19",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "type": "achievement",
+        "category": "manual",
+        "id": "bog_sputter"
+      }
+    }
+  },
+  "name_4": {
+    "slot": "name_base",
+    "display_name": "name_4",
+    "achievement_name": "Bit Curious.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_cumulative_1k",
+    "config": {
+      "outline": "basic",
+      "outline_color": "#000000",
+      "outline_thickness": "1",
+      "text_color": "#00d4ff",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_cumulative_1k"
+      }
+    }
+  },
+  "name_5": {
+    "slot": "name_base",
+    "display_name": "name_5",
+    "achievement_name": "Cheer Chewer.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_cumulative_2500",
+    "config": {
+      "outline": "basic",
+      "outline_position": "outer_fake",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#9147ff",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_cumulative_2500"
+      }
+    }
+  },
+  "name_6": {
+    "slot": "name_base",
+    "display_name": "name_6",
+    "achievement_name": "Bit of Bits.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_cumulative_5k",
+    "config": {
+      "font_family": "VT323",
+      "gradient_animation": "sheen",
+      "outline": "ink_soft",
+      "outline_thickness": "1",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#9147ff",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_cumulative_5k"
+      }
+    }
+  },
+  "name_7": {
+    "slot": "name_base",
+    "display_name": "name_7",
+    "achievement_name": "Famous Cheerer.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_cumulative_10k",
+    "config": {
+      "effects_layers": [
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "chroma_echo",
+          "enabled": true,
+          "engine": "text",
+          "interval": "",
+          "knobs": {},
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "",
+          "plane": "text",
+          "random_range": "",
+          "scale": "",
+          "z_index": "5"
+        }
+      ],
+      "font_family": "VT323",
+      "glow_layers": [
+        {
+          "animation": "pulse",
+          "color": "#00d4ff",
+          "distance": "",
+          "fade": "",
+          "plane": "back",
+          "spread": ""
+        }
+      ],
+      "gradient_animation": "sheen",
+      "outline": "ink_soft",
+      "outline_thickness": "1",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#9147ff",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_cumulative_10k"
+      }
+    }
+  },
+  "name_8": {
+    "slot": "name_base",
+    "display_name": "name_8",
+    "achievement_name": "Food Buyer.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_cumulative_20k",
+    "config": {
+      "effects_layers": [
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "mist_roll",
+          "enabled": true,
+          "engine": "render",
+          "interval": "",
+          "knobs": {
+            "color1": "#6600ff",
+            "effect_opacity": 0.35,
+            "intensity": 0.1,
+            "speed": 2
+          },
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "",
+          "plane": "front",
+          "random_range": "",
+          "scale": "0.7",
+          "z_index": "7"
+        },
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "spark_trail",
+          "enabled": true,
+          "engine": "particle",
+          "interval": "",
+          "knobs": {
+            "canvas_rotation": 90,
+            "color1": "#962eff",
+            "intensity": 1,
+            "length": 40,
+            "origin_x": 0,
+            "range": 45,
+            "speed": 5
+          },
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "",
+          "plane": "rear",
+          "random_range": "",
+          "scale": "",
+          "z_index": "3"
+        },
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "rune_jitter",
+          "enabled": true,
+          "engine": "text",
+          "interval": "",
+          "knobs": {},
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "",
+          "plane": "rear",
+          "random_range": "",
+          "scale": "",
+          "z_index": "5"
+        },
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "chroma_echo",
+          "enabled": true,
+          "engine": "text",
+          "interval": "",
+          "knobs": {},
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "",
+          "plane": "text",
+          "random_range": "",
+          "scale": "",
+          "z_index": "5"
+        }
+      ],
+      "font_family": "VT323",
+      "glow_layers": [
+        {
+          "animation": "breathe",
+          "color": "#00d4ff",
+          "distance": "",
+          "fade": "",
+          "plane": "back",
+          "spread": ""
+        },
+        {
+          "animation": "pulse",
+          "color": "#9147ff",
+          "distance": "",
+          "fade": "",
+          "plane": "back",
+          "spread": ""
+        }
+      ],
+      "gradient_animation": "aurora",
+      "outline": "ink_soft",
+      "outline_thickness": "2",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#9147ff",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_cumulative_20k"
+      }
+    }
+  },
+  "prestige_cheer_name": {
+    "slot": "name_base",
+    "display_name": "Prestige Cheer Name",
+    "achievement_name": "Bit Burrier.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_cumulative_50k",
+    "config": {
+      "animation": "glitch",
+      "effects_layers": [
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "chroma_echo",
+          "enabled": true,
+          "engine": "text",
+          "interval": "",
+          "knobs": {
+            "intensity": 1,
+            "speed": 3
+          },
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "",
+          "plane": "text",
+          "random_range": "",
+          "scale": "",
+          "z_index": "6"
+        }
+      ],
+      "font_family": "VT323",
+      "font_style": "normal",
+      "font_weight": "700",
+      "glow_color": "rgba(0, 212, 255, 0.66)",
+      "glow_layers": [
+        {
+          "animation": "pulse",
+          "color": "rgba(255, 79, 216, 0.56)",
+          "distance": "12",
+          "fade": "66",
+          "plane": "back",
+          "spread": "90"
+        }
+      ],
+      "label": "Prestige Cheer Name",
+      "style": "neon",
+      "text_color": "#fff7d6",
+      "theme": "prestige-cheer",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_cumulative_50k"
+      }
+    }
+  },
+  "prestige_donation_name": {
+    "slot": "name_base",
+    "display_name": "Prestige Donation Name",
+    "achievement_name": "Two And A Half Months Fed.",
+    "achievement_category": "donation",
+    "achievement_id": "donation_cumulative_500",
+    "config": {
+      "font_family": "Cormorant Garamond",
+      "font_size": "22px",
+      "font_style": "normal",
+      "font_weight": "500",
+      "glow_color": "rgba(255, 168, 86, 0.62)",
+      "glow_layers": [
+        {
+          "animation": "breathe",
+          "color": "rgba(255, 168, 86, 0.58)",
+          "distance": "10",
+          "fade": "72",
+          "plane": "back",
+          "spread": "80"
+        }
+      ],
+      "label": "Prestige Donation Name",
+      "text": "Comutt",
+      "text_color": "#ffe6ac",
+      "theme": "prestige-donation",
+      "unlock": {
+        "type": "achievement",
+        "category": "donation",
+        "id": "donation_cumulative_500"
+      }
+    }
+  },
+  "message_1": {
+    "slot": "message_text",
+    "display_name": "Prestige Donation Name",
+    "achievement_name": "Two And A Half Months Fed.",
+    "achievement_category": "donation",
+    "achievement_id": "donation_cumulative_500",
+    "config": {
+      "font_family": "Cormorant Garamond",
+      "font_size": "31px",
+      "font_style": "normal",
+      "font_weight": "500",
+      "glow_color": "rgba(255, 168, 86, 0.62)",
+      "glow_layers": [
+        {
+          "animation": "breathe",
+          "color": "rgba(255, 168, 86, 0.58)",
+          "distance": "10",
+          "fade": "72",
+          "plane": "back",
+          "spread": "80"
+        }
+      ],
+      "label": "Prestige Donation Name",
+      "text": "Test Message",
+      "text_color": "#ffe6ac",
+      "theme": "prestige-donation",
+      "unlock": {
+        "type": "achievement",
+        "category": "donation",
+        "id": "donation_cumulative_500"
+      }
+    }
+  },
+  "message_2": {
+    "slot": "message_text",
+    "display_name": "Prestige Cheer Name",
+    "achievement_name": "Bit Burrier.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_cumulative_50k",
+    "config": {
+      "edge_animation": "shimmer",
+      "font_family": "VT323",
+      "font_size": "31px",
+      "font_style": "normal",
+      "font_weight": "700",
+      "glow_color": "rgba(0, 212, 255, 0.66)",
+      "glow_layers": [
+        {
+          "animation": "chain",
+          "color": "rgba(255, 79, 216, 0.68)",
+          "distance": "2.5",
+          "fade": "16",
+          "plane": "back",
+          "spread": "0"
+        }
+      ],
+      "label": "Prestige Cheer Name",
+      "outline_light_blur": "3.75",
+      "outline_light_color": "#9e33b9",
+      "outline_light_opacity": "72",
+      "outline_light_thickness": "2.75",
+      "outline_light_z_index": "1",
+      "style": "neon",
+      "text": "Test",
+      "text_color": "#a6dbe7",
+      "theme": "prestige-cheer",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_cumulative_50k"
+      }
+    }
+  },
+  "suffix_10": {
+    "slot": "name_suffix",
+    "display_name": "the seed",
+    "achievement_name": "Two's Legacy.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_2",
+    "config": {
+      "outline": "basic",
+      "text": "the seed",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_2"
+      }
+    }
+  },
+  "suffix_11": {
+    "slot": "name_suffix",
+    "display_name": "2²",
+    "achievement_name": "2, but 2 times.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_4",
+    "config": {
+      "outline": "basic",
+      "text": "2²",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_4"
+      }
+    }
+  },
+  "suffix_12": {
+    "slot": "name_suffix",
+    "display_name": "[10]",
+    "achievement_name": "Not much, but it's honest bits.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_10",
+    "config": {
+      "font_family": "VT323",
+      "outline": "basic",
+      "text": "[10]",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_10"
+      }
+    }
+  },
+  "suffix_13": {
+    "slot": "name_suffix",
+    "display_name": "[12]",
+    "achievement_name": "First 1 Then 2.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_12",
+    "config": {
+      "font_family": "VT323",
+      "outline": "basic",
+      "text": "[12]",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_12"
+      }
+    }
+  },
+  "suffix_14": {
+    "slot": "name_suffix",
+    "display_name": "the unlucky",
+    "achievement_name": "Unlucky!",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_13",
+    "config": {
+      "outline": "basic",
+      "text": "the unlucky",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_13"
+      }
+    }
+  },
+  "suffix_15": {
+    "slot": "name_suffix",
+    "display_name": ", that's funnier",
+    "achievement_name": "You know what's funnier? 25.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_25",
+    "config": {
+      "outline": "basic",
+      "text": ", that's funnier",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_25"
+      }
+    }
+  },
+  "suffix_18": {
+    "slot": "name_suffix",
+    "display_name": "nice",
+    "achievement_name": "Nice Bitties.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_69",
+    "config": {
+      "outline": "basic",
+      "text": "nice",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_69"
+      }
+    }
+  },
+  "suffix_19": {
+    "slot": "name_suffix",
+    "display_name": ", good boi",
+    "achievement_name": "A dollar for doggo.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_100",
+    "config": {
+      "outline": "basic",
+      "text": ", good boi",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_100"
+      }
+    }
+  },
+  "suffix_20": {
+    "slot": "name_suffix",
+    "display_name": "123 go!",
+    "achievement_name": "I can count!",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_123",
+    "config": {
+      "outline": "basic",
+      "text": "123 go!",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_123"
+      }
+    }
+  },
+  "suffix_21": {
+    "slot": "name_suffix",
+    "display_name": "[128]",
+    "achievement_name": "2 but WAOW.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_128",
+    "config": {
+      "font_family": "VT323",
+      "outline": "basic",
+      "text": "[128]",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_128"
+      }
+    }
+  },
+  "suffix_22": {
+    "slot": "name_suffix",
+    "display_name": "of 256",
+    "achievement_name": "There be colors!",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_256",
+    "config": {
+      "outline": "basic",
+      "text": "of 256",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_256"
+      }
+    }
+  },
+  "suffix_23": {
+    "slot": "name_suffix",
+    "display_name": "go!",
+    "achievement_name": "Actual Final Countdown.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_321",
+    "config": {
+      "outline": "basic",
+      "text": "go!",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_321"
+      }
+    }
+  },
+  "suffix_27": {
+    "slot": "name_suffix",
+    "display_name": "blaze it",
+    "achievement_name": "Hahahah pot.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_429",
+    "config": {
+      "outline": "basic",
+      "text": "blaze it",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_429"
+      }
+    }
+  },
+  "suffix_28": {
+    "slot": "name_suffix",
+    "display_name": "[512]",
+    "achievement_name": "Oh, that's growing fast.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_512",
+    "config": {
+      "font_family": "VT323",
+      "outline": "basic",
+      "text": "[512]",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_512"
+      }
+    }
+  },
+  "suffix_31": {
+    "slot": "name_suffix",
+    "display_name": ", devil.",
+    "achievement_name": "DEVIL NUMBER!",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_666",
+    "config": {
+      "outline": "basic",
+      "text": ", devil.",
+      "text_gradient": [
+        {
+          "color": "#ff3333",
+          "pos": null
+        },
+        {
+          "color": "#ff8888",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_666"
+      }
+    }
+  },
+  "suffix_36": {
+    "slot": "name_suffix",
+    "display_name": "[1024]",
+    "achievement_name": "Stop the 2! Please!",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_1024",
+    "config": {
+      "font_family": "VT323",
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "[1024]",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#9900ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_1024"
+      }
+    }
+  },
+  "suffix_37": {
+    "slot": "name_suffix",
+    "display_name": "[1234]",
+    "achievement_name": "Counting to greatness.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_1234",
+    "config": {
+      "font_family": "VT323",
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "[1234]",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#9900ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_1234"
+      }
+    }
+  },
+  "suffix_38": {
+    "slot": "name_suffix",
+    "display_name": "1337",
+    "achievement_name": "LEET",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_1337",
+    "config": {
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "1337",
+      "text_gradient": [
+        {
+          "color": "#00ff41",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#00cc33",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_1337"
+      }
+    }
+  },
+  "suffix_4": {
+    "slot": "name_suffix",
+    "display_name": "the booper",
+    "achievement_name": "Nose Booper",
+    "achievement_category": "chat",
+    "achievement_id": "chat_boop",
+    "config": {
+      "outline": "basic",
+      "text": "the booper",
+      "unlock": {
+        "type": "achievement",
+        "category": "chat",
+        "id": "chat_boop"
+      }
+    }
+  },
+  "suffix_40": {
+    "slot": "name_suffix",
+    "display_name": "< π",
+    "achievement_name": "Pi, But A Little Less.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_3141",
+    "config": {
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "< π",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#9900ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_3141"
+      }
+    }
+  },
+  "suffix_42": {
+    "slot": "name_suffix",
+    "display_name": "[4096]",
+    "achievement_name": "OHNOTWOSTOP",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_4096",
+    "config": {
+      "font_family": "VT323",
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "[4096]",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#9900ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_4096"
+      }
+    }
+  },
+  "suffix_49": {
+    "slot": "name_suffix",
+    "display_name": "The Generous",
+    "achievement_name": "(Platinum) A True Doggo Lover.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_10000",
+    "config": {
+      "glow_layers": [
+        {
+          "animation": "breathe",
+          "color": "#00d4ff",
+          "distance": "",
+          "fade": "",
+          "plane": "back",
+          "spread": ""
+        }
+      ],
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "The Generous",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#9900ff",
+          "pos": null
+        },
+        {
+          "color": "#00d4ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_10000"
+      }
+    }
+  },
+  "suffix_5": {
+    "slot": "name_suffix",
+    "display_name": "The Believer",
+    "achievement_name": "Dog Loyalist",
+    "achievement_category": "chat",
+    "achievement_id": "chat_dog_god",
+    "config": {
+      "font_family": "Grenze Gotisch",
+      "offset_x": "14px",
+      "outline": "basic",
+      "text": "The Believer",
+      "unlock": {
+        "type": "achievement",
+        "category": "chat",
+        "id": "chat_dog_god"
+      }
+    }
+  },
+  "suffix_56": {
+    "slot": "name_suffix",
+    "display_name": ":p",
+    "achievement_name": "Blep Patrol",
+    "achievement_category": "chat",
+    "achievement_id": "chat_blep",
+    "config": {
+      "text": ":p",
+      "unlock": {
+        "type": "achievement",
+        "category": "chat",
+        "id": "chat_blep"
+      }
+    }
+  },
+  "suffix_57": {
+    "slot": "name_suffix",
+    "display_name": "[3 STREAMS]",
+    "achievement_name": "New in the Pack",
+    "achievement_category": "attendance",
+    "achievement_id": "attend_3",
+    "config": {
+      "outline": "basic",
+      "text": "[3 STREAMS]",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "attendance",
+        "id": "attend_3"
+      }
+    }
+  },
+  "suffix_58": {
+    "slot": "name_suffix",
+    "display_name": "[5 STREAMS]",
+    "achievement_name": "Getting Familiar",
+    "achievement_category": "attendance",
+    "achievement_id": "attend_5",
+    "config": {
+      "outline": "basic",
+      "text": "[5 STREAMS]",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "attendance",
+        "id": "attend_5"
+      }
+    }
+  },
+  "suffix_59": {
+    "slot": "name_suffix",
+    "display_name": "[10 STREAMS]",
+    "achievement_name": "Regular at the Dog House",
+    "achievement_category": "attendance",
+    "achievement_id": "attend_10",
+    "config": {
+      "font_family": "VT323",
+      "outline": "basic",
+      "text": "[10 STREAMS]",
+      "text_gradient": [
+        {
+          "color": "#38bdf8",
+          "pos": null
+        },
+        {
+          "color": "#facc15",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "attendance",
+        "id": "attend_10"
+      }
+    }
+  },
+  "suffix_67": {
+    "slot": "name_suffix",
+    "display_name": "[LOCKED]",
+    "achievement_name": "3 Day Streak!",
+    "achievement_category": "attendance",
+    "achievement_id": "streak_3",
+    "config": {
+      "outline": "basic",
+      "text": "[LOCKED]",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "attendance",
+        "id": "streak_3"
+      }
+    }
+  },
+  "suffix_68": {
+    "slot": "name_suffix",
+    "display_name": "[STREAK]",
+    "achievement_name": "5 Day Streak!",
+    "achievement_category": "attendance",
+    "achievement_id": "streak_5",
+    "config": {
+      "outline": "basic",
+      "text": "[STREAK]",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "attendance",
+        "id": "streak_5"
+      }
+    }
+  },
+  "suffix_69": {
+    "slot": "name_suffix",
+    "display_name": "[NO MISS]",
+    "achievement_name": "7 Day Streak!",
+    "achievement_category": "attendance",
+    "achievement_id": "streak_7",
+    "config": {
+      "font_family": "VT323",
+      "outline": "basic",
+      "text": "[NO MISS]",
+      "text_gradient": [
+        {
+          "color": "#ff7a18",
+          "pos": null
+        },
+        {
+          "color": "#ffd166",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "attendance",
+        "id": "streak_7"
+      }
+    }
+  },
+  "suffix_7": {
+    "slot": "name_suffix",
+    "display_name": "The Floof",
+    "achievement_name": "Floof Fanatic",
+    "achievement_category": "chat",
+    "achievement_id": "chat_floof",
+    "config": {
+      "font_family": "Grenze Gotisch",
+      "offset_x": "14px",
+      "outline": "basic",
+      "text": "The Floof",
+      "unlock": {
+        "type": "achievement",
+        "category": "chat",
+        "id": "chat_floof"
+      }
+    }
+  },
+  "suffix_70": {
+    "slot": "name_suffix",
+    "display_name": "[CLEAN]",
+    "achievement_name": "10 Day Streak!",
+    "achievement_category": "attendance",
+    "achievement_id": "streak_10",
+    "config": {
+      "font_family": "VT323",
+      "outline": "basic",
+      "text": "[CLEAN]",
+      "text_gradient": [
+        {
+          "color": "#ff7a18",
+          "pos": null
+        },
+        {
+          "color": "#ffd166",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "attendance",
+        "id": "streak_10"
+      }
+    }
+  },
+  "suffix_71": {
+    "slot": "name_suffix",
+    "display_name": "[UNBROKEN]",
+    "achievement_name": "14 Day Streak!",
+    "achievement_category": "attendance",
+    "achievement_id": "streak_14",
+    "config": {
+      "font_family": "VT323",
+      "outline": "basic",
+      "text": "[UNBROKEN]",
+      "text_gradient": [
+        {
+          "color": "#ff7a18",
+          "pos": null
+        },
+        {
+          "color": "#ffd166",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "attendance",
+        "id": "streak_14"
+      }
+    }
+  },
+  "suffix_79": {
+    "slot": "name_suffix",
+    "display_name": "[FIRST]",
+    "achievement_name": "Me First!",
+    "achievement_category": "redeems",
+    "achievement_id": "redeem_first_1",
+    "config": {
+      "font_family": "VT323",
+      "outline": "basic",
+      "text": "[FIRST]",
+      "unlock": {
+        "type": "achievement",
+        "category": "redeems",
+        "id": "redeem_first_1"
+      }
+    }
+  },
+  "suffix_8": {
+    "slot": "name_suffix",
+    "display_name": "The Good Boy",
+    "achievement_name": "Who's A Good Doggo?",
+    "achievement_category": "chat",
+    "achievement_id": "chat_goodboy",
+    "config": {
+      "outline": "basic",
+      "text": "The Good Boy",
+      "unlock": {
+        "type": "achievement",
+        "category": "chat",
+        "id": "chat_goodboy"
+      }
+    }
+  },
+  "suffix_80": {
+    "slot": "name_suffix",
+    "display_name": "[10 FIRSTS]",
+    "achievement_name": "Got First On Lock",
+    "achievement_category": "redeems",
+    "achievement_id": "redeem_first_10",
+    "config": {
+      "font_family": "VT323",
+      "outline": "basic",
+      "text": "[10 FIRSTS]",
+      "unlock": {
+        "type": "achievement",
+        "category": "redeems",
+        "id": "redeem_first_10"
+      }
+    }
+  },
+  "suffix_81": {
+    "slot": "name_suffix",
+    "display_name": "[25 FIRSTS]",
+    "achievement_name": "Queue Skipper",
+    "achievement_category": "redeems",
+    "achievement_id": "redeem_first_25",
+    "config": {
+      "font_family": "VT323",
+      "outline": "basic",
+      "text": "[25 FIRSTS]",
+      "unlock": {
+        "type": "achievement",
+        "category": "redeems",
+        "id": "redeem_first_25"
+      }
+    }
+  },
+  "suffix_82": {
+    "slot": "name_suffix",
+    "display_name": "[31 FIRSTS]",
+    "achievement_name": "A month of me.",
+    "achievement_category": "redeems",
+    "achievement_id": "redeem_first_31",
+    "config": {
+      "font_family": "VT323",
+      "outline": "basic",
+      "text": "[31 FIRSTS]",
+      "unlock": {
+        "type": "achievement",
+        "category": "redeems",
+        "id": "redeem_first_31"
+      }
+    }
+  },
+  "suffix_83": {
+    "slot": "name_suffix",
+    "display_name": "[50 FIRSTS]",
+    "achievement_name": "First? Always.",
+    "achievement_category": "redeems",
+    "achievement_id": "redeem_first_45",
+    "config": {
+      "font_family": "VT323",
+      "outline": "basic",
+      "text": "[50 FIRSTS]",
+      "unlock": {
+        "type": "achievement",
+        "category": "redeems",
+        "id": "redeem_first_45"
+      }
+    }
+  },
+  "suffix_84": {
+    "slot": "name_suffix",
+    "display_name": "[60 FIRSTS]",
+    "achievement_name": "Two months of me.",
+    "achievement_category": "redeems",
+    "achievement_id": "redeem_first_60",
+    "config": {
+      "font_family": "VT323",
+      "outline": "basic",
+      "text": "[60 FIRSTS]",
+      "unlock": {
+        "type": "achievement",
+        "category": "redeems",
+        "id": "redeem_first_60"
+      }
+    }
+  },
+  "suffix_85": {
+    "slot": "name_suffix",
+    "display_name": "[90 FIRSTS]",
+    "achievement_name": "Sick of me yet?",
+    "achievement_category": "redeems",
+    "achievement_id": "redeem_first_90",
+    "config": {
+      "font_family": "VT323",
+      "outline": "basic",
+      "text": "[90 FIRSTS]",
+      "unlock": {
+        "type": "achievement",
+        "category": "redeems",
+        "id": "redeem_first_90"
+      }
+    }
+  },
+  "suffix_9": {
+    "slot": "name_suffix",
+    "display_name": "the bit",
+    "achievement_name": "Bit Giver.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_1",
+    "config": {
+      "outline": "basic",
+      "text": "the bit",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_1"
+      }
+    }
+  }
+}

@@ -29,6 +29,15 @@
     },
     "founded": {}
   },
+  "decorations": {
+    "unlocked": [
+      "prefix_79",
+      "suffix_57",
+      "prefix_89",
+      "suffix_67"
+    ],
+    "active": {}
+  },
   "stats": {
     "messages": 0,
     "active_months": 0,

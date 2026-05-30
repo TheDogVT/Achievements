@@ -24,6 +24,31 @@
       "attend_10": "2026-05-14T20:00:34.473856+00:00"
     }
   },
+  "decorations": {
+    "unlocked": [
+      "prefix_2",
+      "prefix_3",
+      "prefix_4",
+      "prefix_7",
+      "prefix_79",
+      "prefix_80",
+      "prefix_81",
+      "prefix_89",
+      "prefix_90",
+      "prefix_91",
+      "suffix_57",
+      "suffix_58",
+      "suffix_59",
+      "suffix_67",
+      "suffix_68",
+      "suffix_69",
+      "prefix_92",
+      "suffix_70",
+      "prefix_93",
+      "suffix_71"
+    ],
+    "active": {}
+  },
   "stats": {
     "messages": 1898,
     "active_months": 7,

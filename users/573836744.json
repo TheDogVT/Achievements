@@ -11,6 +11,12 @@
       "chat_beach": "2026-02-17T23:47:40.242775+00:00"
     }
   },
+  "decorations": {
+    "unlocked": [
+      "prefix_7"
+    ],
+    "active": {}
+  },
   "stats": {
     "messages": 70,
     "active_months": 2,

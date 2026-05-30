@@ -42,6 +42,23 @@
       "chat_stick": "2025-11-06T23:34:20.151936+00:00"
     }
   },
+  "decorations": {
+    "unlocked": [
+      "prefix_10",
+      "prefix_11",
+      "prefix_16",
+      "prefix_19",
+      "prefix_2",
+      "prefix_3",
+      "prefix_4",
+      "prefix_7",
+      "prefix_8",
+      "name_1",
+      "suffix_7",
+      "prefix_77"
+    ],
+    "active": {}
+  },
   "stats": {
     "messages": 1219,
     "active_months": 6,

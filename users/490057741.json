@@ -20,6 +20,13 @@
       "chat_puppyeyes": "2026-02-13T00:36:19.497028+00:00"
     }
   },
+  "decorations": {
+    "unlocked": [
+      "prefix_2",
+      "prefix_7"
+    ],
+    "active": {}
+  },
   "stats": {
     "messages": 138,
     "active_months": 5,

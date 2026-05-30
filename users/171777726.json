@@ -21,6 +21,17 @@
       "chat_bork": "2026-05-01T22:39:32.859474+00:00"
     }
   },
+  "decorations": {
+    "unlocked": [
+      "prefix_11",
+      "prefix_14",
+      "prefix_2",
+      "prefix_7",
+      "prefix_77",
+      "suffix_56"
+    ],
+    "active": {}
+  },
   "stats": {
     "messages": 132,
     "active_months": 2,

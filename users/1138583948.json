@@ -14,6 +14,12 @@
       "chat_howl": "2026-05-06T00:02:14.036979+00:00"
     }
   },
+  "decorations": {
+    "unlocked": [
+      "prefix_19"
+    ],
+    "active": {}
+  },
   "stats": {
     "messages": 9,
     "active_months": 3,

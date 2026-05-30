@@ -1,0 +1,865 @@
+.pbg-renderer {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border-radius: inherit;
+    pointer-events: none;
+    isolation: isolate;
+}
+
+.pbg-renderer-mounted.bg-chat-prestige-cheer {
+    background-image: none;
+    box-shadow: none;
+    filter: none;
+}
+
+.pbg-renderer-mounted.bg-chat-prestige-cheer::before,
+.pbg-renderer-mounted.bg-chat-prestige-cheer::after,
+.pbg-renderer-mounted.bg-chat-prestige-cheer-animated::before,
+.pbg-renderer-mounted.bg-chat-prestige-cheer-animated::after {
+    content: none;
+    display: none;
+}
+
+.pbg-renderer-mounted.bg-chat-prestige-attendance {
+    background-image: none;
+    box-shadow: none;
+    filter: none;
+}
+
+.pbg-renderer-mounted.bg-chat-prestige-attendance::before,
+.pbg-renderer-mounted.bg-chat-prestige-attendance::after,
+.pbg-renderer-mounted.bg-chat-prestige-attendance-animated::before,
+.pbg-renderer-mounted.bg-chat-prestige-attendance-animated::after {
+    content: none;
+    display: none;
+}
+
+.pbg-renderer-mounted.bg-chat-prestige-streak {
+    background-image: none;
+    box-shadow: none;
+    filter: none;
+}
+
+.pbg-renderer-mounted.bg-chat-prestige-streak::before,
+.pbg-renderer-mounted.bg-chat-prestige-streak::after,
+.pbg-renderer-mounted.bg-chat-prestige-streak-animated::before,
+.pbg-renderer-mounted.bg-chat-prestige-streak-animated::after {
+    content: none;
+    display: none;
+}
+
+.pbg-layer {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+.pbg-cheer-crt {
+    background: #170d32;
+}
+
+.pbg-cheer-crt .pbg-image {
+    inset: -3%;
+    z-index: 1;
+    background:
+        linear-gradient(90deg, rgba(10, 3, 24, 0.56), rgba(10, 3, 24, 0.10) 38%, rgba(10, 3, 24, 0.48)),
+        linear-gradient(180deg, rgba(9, 5, 30, 0.52), rgba(9, 5, 30, 0.05) 42%, rgba(9, 5, 30, 0.45)),
+        var(--pbg-image-url) center / cover no-repeat,
+        #170d32;
+    transform: perspective(520px) translateZ(0) scaleX(1.012) scaleY(1.004);
+    filter: saturate(1.08) contrast(1.03);
+    box-shadow:
+        inset 0 0 22px rgba(255, 255, 255, 0.10),
+        inset 0 0 48px rgba(0, 212, 255, 0.10),
+        inset 0 0 80px rgba(255, 79, 216, 0.10);
+    animation: pbg-crt-glass 12s ease-in-out infinite;
+}
+
+.pbg-cheer-crt .pbg-sun-pulse {
+    inset: -3%;
+    z-index: 2;
+    background: radial-gradient(ellipse at 50% 63%, rgba(0, 224, 255, 0.24) 0 7%, rgba(0, 178, 255, 0.12) 14%, transparent 30%);
+    mix-blend-mode: screen;
+    animation: pbg-sun-core-pulse 7s ease-in-out infinite;
+}
+
+.pbg-cheer-crt .pbg-blooms {
+    z-index: 3;
+    background:
+        radial-gradient(ellipse at 18% 30%, rgba(0, 212, 255, 0.18) 0 8%, transparent 34%),
+        radial-gradient(ellipse at 82% 68%, rgba(255, 79, 216, 0.16) 0 7%, transparent 32%),
+        radial-gradient(ellipse at 50% 78%, rgba(255, 224, 122, 0.10) 0 6%, transparent 30%),
+        radial-gradient(ellipse at 50% 46%, rgba(255, 255, 255, 0.15) 0 7%, transparent 35%);
+    animation: pbg-phosphor-pulse 8.5s ease-in-out infinite;
+    mix-blend-mode: screen;
+}
+
+.pbg-cheer-crt .pbg-scanlines {
+    z-index: 4;
+    background:
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.055) 0 1px, rgba(0, 0, 0, 0.14) 1px 3px, transparent 3px 40px),
+        repeating-linear-gradient(0deg, transparent 0 24px, rgba(0, 224, 255, 0.05) 26px, rgba(255, 79, 216, 0.04) 28px, transparent 40px);
+    background-size: 100% 40px, 100% 40px;
+    animation: pbg-scanline-drift 9.5s linear infinite;
+    mix-blend-mode: normal;
+}
+
+.pbg-cheer-crt .pbg-sweep {
+    z-index: 5;
+    background: linear-gradient(180deg, transparent 0 47%, rgba(255, 255, 255, 0.04) 49%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.04) 51%, transparent 53%);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    opacity: 0;
+    animation: pbg-crt-sweep 8.5s linear infinite;
+    mix-blend-mode: screen;
+}
+
+.pbg-cheer-crt .pbg-vignette {
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 50%, transparent 0 45%, rgba(4, 2, 18, 0.44) 75%, rgba(0, 0, 0, 0.86) 100%);
+    animation: pbg-crt-vignette 10s ease-in-out infinite;
+}
+
+.pbg-cheer-crt .pbg-glitch {
+    inset: -4% -3%;
+    z-index: 7;
+    background:
+        linear-gradient(90deg, transparent 0 2%, rgba(255, 72, 214, 0.26) 3%, transparent 4% 44%, rgba(0, 212, 255, 0.22) 45%, transparent 47%),
+        linear-gradient(180deg, transparent 0 36%, rgba(255, 255, 255, 0.15) 37%, transparent 39% 68%, rgba(255, 79, 216, 0.18) 69%, transparent 71%);
+    opacity: 0;
+    mix-blend-mode: screen;
+    animation: pbg-crt-glitch 4.8s steps(1) infinite;
+}
+
+/* z8 — ruled paper lines on top, so the card reads as a written message. */
+.pbg-cheer-crt .pbg-lines {
+    z-index: 8;
+    background: repeating-linear-gradient(
+        transparent, transparent 36px,
+        rgba(0, 212, 255, 0.14) 36px, rgba(0, 212, 255, 0.14) 37px);
+}
+
+@keyframes pbg-crt-glass {
+    0%, 100% { opacity: 0.98; }
+    50% { opacity: 1; }
+}
+
+@keyframes pbg-sun-core-pulse {
+    0%, 100% { opacity: 0.52; transform: scale(0.92); filter: saturate(1.04); }
+    50% { opacity: 0.86; transform: scale(1.12); filter: saturate(1.18); }
+}
+
+@keyframes pbg-phosphor-pulse {
+    0%, 100% { opacity: 0.82; filter: brightness(0.97) saturate(1); }
+    42% { opacity: 1; filter: brightness(1.05) saturate(1.12); }
+    68% { opacity: 0.9; filter: brightness(1) saturate(1.05); }
+}
+
+@keyframes pbg-scanline-drift {
+    from { background-position: 0 0, 0 40px; }
+    to { background-position: 0 40px, 0 -40px; }
+}
+
+@keyframes pbg-crt-sweep {
+    0% { opacity: 0; transform: translateY(-115%); }
+    8% { opacity: 0.62; }
+    42% { opacity: 0.52; transform: translateY(115%); }
+    46% { opacity: 0; transform: translateY(115%); }
+    100% { opacity: 0; transform: translateY(115%); }
+}
+
+@keyframes pbg-crt-vignette {
+    0%, 100% { opacity: 0.96; filter: brightness(0.98); }
+    50% { opacity: 1; filter: brightness(1.04); }
+}
+
+@keyframes pbg-crt-glitch {
+    0%, 82%, 100% { opacity: 0; transform: translate3d(0, 0, 0) skewX(0deg); clip-path: inset(0); }
+    83% { opacity: 0.22; transform: translate3d(-1px, 0, 0) skewX(-0.8deg); clip-path: inset(18% 0 70% 0); }
+    84% { opacity: 0.14; transform: translate3d(1px, 0, 0) skewX(0.6deg); clip-path: inset(54% 0 35% 0); }
+    85% { opacity: 0.18; transform: translate3d(1px, 0, 0) skewX(0.4deg); clip-path: inset(68% 0 22% 0); }
+    86% { opacity: 0; transform: translate3d(0, 0, 0) skewX(0deg); clip-path: inset(0); }
+}
+
+/* ---- Gifted: sakura bloom (bright daytime art, soft dreamy motion) ---- */
+
+.pbg-renderer-mounted.bg-chat-prestige-gifted {
+    background-image: none;
+    box-shadow: none;
+    filter: none;
+}
+
+.pbg-renderer-mounted.bg-chat-prestige-gifted::before,
+.pbg-renderer-mounted.bg-chat-prestige-gifted::after,
+.pbg-renderer-mounted.bg-chat-prestige-gifted-animated::before,
+.pbg-renderer-mounted.bg-chat-prestige-gifted-animated::after {
+    content: none;
+    display: none;
+}
+
+.pbg-gifted-bloom {
+    background: #f4dbe8;
+}
+
+/* z1 — sakura branch swaying in the wind: gusty rotate/drift pivoting near the
+   branch root (right side). Independent of the sun's breath. */
+.pbg-gifted-bloom .pbg-image {
+    inset: -6%;
+    z-index: 1;
+    background:
+        linear-gradient(180deg, rgba(255, 244, 250, 0.10), rgba(244, 210, 228, 0.04) 50%, rgba(120, 60, 90, 0.12)),
+        var(--pbg-image-url) center / cover no-repeat,
+        #f4dbe8;
+    filter: saturate(1.08);
+    transform-origin: 82% 68%;
+    transform: translateZ(0) scale(1.05);
+    animation: pbg-branch-sway 9s ease-in-out infinite;
+}
+
+/* z2 — light veil under the centre; breathes on its own cycle (13s, phase-offset). */
+.pbg-gifted-bloom .pbg-scrim {
+    z-index: 2;
+    background: radial-gradient(ellipse 72% 60% at 50% 56%, rgba(255, 250, 253, 0.55), rgba(255, 246, 251, 0.24) 46%, transparent 72%);
+    animation: pbg-scrim-breathe 13s ease-in-out -4s infinite;
+}
+
+/* z3 — sun sitting ON the top-left corner: a quarter-disc peeking in from the edge. */
+.pbg-gifted-bloom .pbg-sun {
+    z-index: 3;
+    background: radial-gradient(
+        circle at -4% -6%,
+        rgba(255, 253, 246, 1) 0 7%,
+        rgba(255, 246, 220, 0.95) 11%,
+        rgba(255, 232, 192, 0.64) 18%,
+        rgba(255, 216, 197, 0.27) 28%,
+        transparent 42%);
+    mix-blend-mode: screen;
+    transform-origin: 0% 0%;
+    animation: pbg-sun-glow 7s ease-in-out infinite;
+}
+
+/* z4 — god rays fanning OUT from the sun's top-left corner (conic, screen-blend). */
+.pbg-gifted-bloom .pbg-rays {
+    inset: 0 -25% -25% 0;
+    z-index: 4;
+    background: repeating-conic-gradient(
+        from 6deg at -4% -6%,
+        transparent 0deg 7deg,
+        rgba(255, 245, 250, 0.10) 9deg,
+        rgba(255, 228, 198, 0.22) 12deg,
+        rgba(255, 245, 250, 0.10) 15deg,
+        transparent 17deg 26deg);
+    mix-blend-mode: screen;
+    opacity: 0.75;
+    transform-origin: 0% 0%;
+    animation: pbg-rays-sweep 6.5s ease-in-out infinite alternate;
+}
+
+/* z4 — centre bloom breathing on its own cycle (8s, phase-offset). */
+.pbg-gifted-bloom .pbg-bloom {
+    z-index: 4;
+    background: radial-gradient(ellipse at 50% 42%, rgba(255, 255, 255, 0.28), transparent 55%);
+    mix-blend-mode: screen;
+    animation: pbg-bloom-pulse 8s ease-in-out -2s infinite;
+}
+
+/* z5 — canvas host for PARTICLE_ENGINE 'petals' (falling petals, in front of glow). */
+.pbg-gifted-bloom .pbg-petals {
+    inset: 0;
+    z-index: 5;
+}
+
+/* z6 — twinkling sparkle motes. */
+.pbg-gifted-bloom .pbg-sparkle {
+    z-index: 6;
+    background:
+        radial-gradient(circle at 24% 32%, rgba(255, 255, 255, 0.95) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 70% 26%, rgba(255, 240, 248, 0.88) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 58% 64%, rgba(255, 255, 255, 0.82) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 86% 58%, rgba(255, 236, 245, 0.82) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 38% 80%, rgba(255, 255, 255, 0.78) 0 1.5px, transparent 2.5px);
+    background-size: 170px 140px, 230px 190px, 200px 210px, 250px 170px, 190px 200px;
+    mix-blend-mode: screen;
+    animation: pbg-sparkle-twinkle 2.6s ease-in-out infinite;
+}
+
+/* z7 — vignette frame (static). */
+.pbg-gifted-bloom .pbg-vignette {
+    z-index: 7;
+    background: radial-gradient(ellipse at 50% 50%, transparent 0 58%, rgba(90, 40, 66, 0.16) 82%, rgba(60, 24, 44, 0.34) 100%);
+}
+
+/* z8 — ruled paper lines on top, so the card reads as a written message. */
+.pbg-gifted-bloom .pbg-lines {
+    z-index: 8;
+    background: repeating-linear-gradient(
+        transparent, transparent 36px,
+        rgba(110, 55, 88, 0.16) 36px, rgba(110, 55, 88, 0.16) 37px);
+}
+
+@keyframes pbg-branch-sway {
+    0%   { transform: translateZ(0) scale(1.05) rotate(-1.1deg) translateX(-0.5%); }
+    20%  { transform: translateZ(0) scale(1.05) rotate(0.6deg)  translateX(0.3%); }
+    38%  { transform: translateZ(0) scale(1.05) rotate(-0.3deg) translateX(-0.1%); }
+    55%  { transform: translateZ(0) scale(1.05) rotate(1.3deg)  translateX(0.7%); }
+    74%  { transform: translateZ(0) scale(1.05) rotate(0.1deg)  translateX(0.1%); }
+    100% { transform: translateZ(0) scale(1.05) rotate(-1.1deg) translateX(-0.5%); }
+}
+
+@keyframes pbg-scrim-breathe {
+    0%, 100% { opacity: 0.78; }
+    50% { opacity: 1; }
+}
+
+@keyframes pbg-bloom-pulse {
+    0%, 100% { opacity: 0.40; transform: scale(0.96); }
+    50% { opacity: 0.85; transform: scale(1.06); }
+}
+
+@keyframes pbg-rays-sweep {
+    from { transform: rotate(-6.5deg); opacity: 0.55; }
+    to { transform: rotate(6.5deg); opacity: 0.85; }
+}
+
+@keyframes pbg-sun-glow {
+    0%, 100% { opacity: 0.78; transform: scale(0.97); }
+    50% { opacity: 1; transform: scale(1.1); }
+}
+
+@keyframes pbg-sparkle-twinkle {
+    0%, 100% { opacity: 0.30; }
+    50% { opacity: 1; }
+}
+
+/* ---- Attendance: constellation log (quiet night sky, earned over time) ---- */
+
+.pbg-attendance-constellation {
+    background: #050817;
+}
+
+.pbg-attendance-constellation .pbg-nebula {
+    z-index: 1;
+    background:
+        radial-gradient(ellipse at 18% 18%, rgba(78, 147, 255, 0.20), transparent 36%),
+        radial-gradient(ellipse at 82% 72%, rgba(132, 92, 255, 0.18), transparent 42%),
+        radial-gradient(ellipse at 48% 92%, rgba(29, 185, 218, 0.13), transparent 48%),
+        linear-gradient(180deg, #070a1f 0%, #070b19 48%, #030512 100%);
+    animation: pbg-attendance-nebula 14s ease-in-out infinite;
+}
+
+.pbg-attendance-constellation .pbg-starfield {
+    z-index: 2;
+    background:
+        radial-gradient(circle at 12% 22%, rgba(255, 255, 255, 0.75) 0 1px, transparent 1.8px),
+        radial-gradient(circle at 30% 68%, rgba(184, 225, 255, 0.60) 0 1px, transparent 1.8px),
+        radial-gradient(circle at 58% 24%, rgba(255, 255, 255, 0.72) 0 1px, transparent 1.8px),
+        radial-gradient(circle at 83% 44%, rgba(166, 214, 255, 0.54) 0 1px, transparent 1.8px),
+        radial-gradient(circle at 74% 82%, rgba(255, 248, 211, 0.58) 0 1px, transparent 1.8px),
+        radial-gradient(circle at 42% 46%, rgba(215, 237, 255, 0.46) 0 1px, transparent 1.8px);
+    background-size: 94px 76px, 132px 118px, 170px 130px, 116px 96px, 188px 144px, 150px 110px;
+    mix-blend-mode: screen;
+    animation: pbg-attendance-stars 7.5s ease-in-out infinite;
+}
+
+.pbg-attendance-constellation .pbg-constellation {
+    z-index: 3;
+}
+
+.pbg-attendance-constellation .pbg-trace {
+    z-index: 4;
+    background: linear-gradient(105deg, transparent 0 36%, rgba(142, 219, 255, 0.00) 44%, rgba(184, 235, 255, 0.18) 49%, rgba(255, 255, 255, 0.30) 50%, rgba(184, 235, 255, 0.18) 51%, rgba(142, 219, 255, 0.00) 56%, transparent 64%);
+    background-repeat: no-repeat;
+    background-size: 120% 100%;
+    opacity: 0;
+    mix-blend-mode: screen;
+    animation: pbg-attendance-trace 9s ease-in-out infinite;
+}
+
+.pbg-attendance-constellation .pbg-vignette {
+    z-index: 5;
+    background:
+        radial-gradient(ellipse at 50% 48%, transparent 0 48%, rgba(4, 7, 24, 0.42) 78%, rgba(0, 0, 0, 0.78) 100%),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.34), transparent 26% 74%, rgba(0, 0, 0, 0.34));
+}
+
+.pbg-attendance-constellation .pbg-lines {
+    z-index: 6;
+    background: repeating-linear-gradient(
+        transparent, transparent 36px,
+        rgba(139, 202, 255, 0.11) 36px, rgba(139, 202, 255, 0.11) 37px);
+}
+
+@keyframes pbg-attendance-nebula {
+    0%, 100% { opacity: 0.90; filter: saturate(0.95); }
+    50% { opacity: 1; filter: saturate(1.14); }
+}
+
+@keyframes pbg-attendance-stars {
+    0%, 100% { opacity: 0.62; transform: translate3d(0, 0, 0); }
+    45% { opacity: 0.94; transform: translate3d(1px, -1px, 0); }
+    70% { opacity: 0.72; transform: translate3d(-1px, 0, 0); }
+}
+
+@keyframes pbg-attendance-trace {
+    0%, 62%, 100% { opacity: 0; transform: translateX(-78%); }
+    68% { opacity: 0.42; }
+    82% { opacity: 0.18; transform: translateX(70%); }
+    86% { opacity: 0; transform: translateX(70%); }
+}
+
+/* ---- Attendance: Pillars of Creation (slow foundation, quiet star map) ---- */
+
+.pbg-attendance-pillars {
+    background: #050817;
+}
+
+.pbg-attendance-pillars .pbg-video {
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    background:
+        var(--pbg-image-url) 50% 48% / cover no-repeat,
+        #050817;
+}
+
+.pbg-attendance-pillars .pbg-video-el {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(1.02) contrast(1.02) brightness(0.94);
+}
+
+.pbg-attendance-pillars .pbg-image {
+    inset: 0;
+    z-index: 1;
+    background:
+        var(--pbg-image-url) 50% 48% / cover no-repeat,
+        #050817;
+    filter: saturate(1.02) contrast(1.02) brightness(0.94);
+    animation: pbg-pillars-drift 22s ease-in-out infinite;
+}
+
+.pbg-attendance-pillars .pbg-rim {
+    z-index: 2;
+    background:
+        radial-gradient(ellipse at 44% 42%, rgba(106, 238, 255, 0.18), transparent 34%),
+        radial-gradient(ellipse at 44% 68%, rgba(255, 226, 138, 0.12), transparent 42%),
+        linear-gradient(90deg, transparent 0 34%, rgba(102, 238, 255, 0.13) 42%, transparent 58%);
+    mix-blend-mode: screen;
+    animation: pbg-pillars-rim 9s ease-in-out infinite;
+}
+
+.pbg-attendance-pillars .pbg-starfield {
+    z-index: 2;
+    background:
+        radial-gradient(circle at 16% 24%, rgba(255, 255, 255, 0.72) 0 1px, transparent 1.8px),
+        radial-gradient(circle at 72% 18%, rgba(255, 230, 190, 0.62) 0 1px, transparent 1.8px),
+        radial-gradient(circle at 88% 76%, rgba(178, 234, 255, 0.52) 0 1px, transparent 1.8px),
+        radial-gradient(circle at 28% 78%, rgba(255, 248, 218, 0.50) 0 1px, transparent 1.8px);
+    background-size: 118px 86px, 190px 126px, 160px 132px, 214px 150px;
+    mix-blend-mode: screen;
+    animation: pbg-pillars-stars 8s ease-in-out infinite;
+}
+
+.pbg-attendance-pillars .pbg-constellation {
+    z-index: 3;
+    opacity: 0.74;
+}
+
+.pbg-attendance-pillars .pbg-trace {
+    z-index: 5;
+    background: linear-gradient(110deg, transparent 0 38%, rgba(144, 235, 255, 0.00) 45%, rgba(144, 235, 255, 0.16) 49%, rgba(255, 255, 255, 0.26) 50%, rgba(255, 232, 164, 0.15) 51%, rgba(144, 235, 255, 0.00) 56%, transparent 64%);
+    background-repeat: no-repeat;
+    background-size: 118% 100%;
+    opacity: 0;
+    mix-blend-mode: screen;
+    animation: pbg-pillars-trace 11s ease-in-out infinite;
+}
+
+.pbg-attendance-pillars .pbg-vignette {
+    z-index: 6;
+    background:
+        radial-gradient(ellipse at 50% 50%, transparent 0 50%, rgba(4, 7, 24, 0.42) 76%, rgba(0, 0, 0, 0.80) 100%),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.36), transparent 22% 78%, rgba(0, 0, 0, 0.36));
+}
+
+.pbg-attendance-pillars .pbg-lines {
+    z-index: 2;
+    background: repeating-linear-gradient(
+        transparent, transparent 36px,
+        rgba(120, 75, 35, 0.22) 36px, rgba(120, 75, 35, 0.22) 37px
+    );
+}
+
+/* ---- Streak: WR124 burn (stable image, pulsing core and outward pressure) ---- */
+
+.pbg-streak-wr124 {
+    background: #050305;
+}
+
+.pbg-streak-wr124 .pbg-image {
+    inset: -5%;
+    z-index: 1;
+    background:
+        linear-gradient(90deg, rgba(0, 0, 0, 0.36), transparent 32% 68%, rgba(0, 0, 0, 0.36)),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.24), transparent 35%, rgba(0, 0, 0, 0.40)),
+        var(--pbg-image-url) center / cover no-repeat,
+        #050305;
+    filter: saturate(1.1) contrast(1.08) brightness(0.9);
+    transform: scale(1.03);
+    animation: pbg-wr124-breathe 12s ease-in-out infinite;
+}
+
+.pbg-streak-wr124 .pbg-expansion {
+    z-index: 2;
+    inset: -8%;
+    overflow: hidden;
+    opacity: 0.64;
+    mix-blend-mode: screen;
+}
+
+.pbg-streak-wr124 .pbg-expansion::before,
+.pbg-streak-wr124 .pbg-expansion::after,
+.pbg-streak-wr124 .pbg-expansion .pbg-expansion-copy {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 50% 50%, rgba(255, 180, 74, 0.22), transparent 33%),
+        var(--pbg-image-url) center / cover no-repeat;
+    filter: saturate(1.12) contrast(1.05) brightness(0.84) blur(0.15px);
+    opacity: 0;
+    transform-origin: 50% 50%;
+    animation: pbg-wr124-endless-expansion 8.4s linear infinite;
+}
+
+.pbg-streak-wr124 .pbg-expansion::after {
+    animation-delay: -2.8s;
+}
+
+.pbg-streak-wr124 .pbg-expansion .pbg-expansion-copy {
+    animation-delay: -5.6s;
+}
+
+.pbg-streak-wr124 .pbg-edge-stars {
+    z-index: 3;
+    opacity: 0.58;
+    mix-blend-mode: screen;
+    mask-image: radial-gradient(circle at 50% 50%, transparent 0 36%, black 58%, black 100%);
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, transparent 0 36%, black 58%, black 100%);
+}
+
+.pbg-streak-wr124 .pbg-heat {
+    z-index: 4;
+    background:
+        repeating-conic-gradient(
+            from 0deg at 50% 50%,
+            transparent 0deg 10deg,
+            rgba(255, 176, 76, 0.055) 13deg,
+            transparent 17deg 28deg),
+        radial-gradient(circle at 50% 50%, transparent 0 21%, rgba(255, 119, 32, 0.12) 30%, rgba(255, 180, 76, 0.06) 42%, transparent 58%);
+    mix-blend-mode: screen;
+    opacity: 0.34;
+    filter: blur(1.4px);
+    transform-origin: 50% 50%;
+    animation: pbg-wr124-heat-haze 13s linear infinite;
+}
+
+.pbg-streak-wr124 .pbg-core {
+    z-index: 5;
+    background:
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.70) 0 1.6%, rgba(255, 234, 194, 0.38) 4%, rgba(255, 165, 84, 0.24) 10%, rgba(255, 62, 19, 0.10) 24%, transparent 42%),
+        radial-gradient(ellipse at 50% 52%, rgba(255, 131, 30, 0.14), transparent 48%);
+    mix-blend-mode: screen;
+    animation: pbg-wr124-core 6.8s ease-in-out infinite, pbg-wr124-fire-breath 10.5s ease-in-out infinite, pbg-wr124-stellar-pulse 8.8s steps(1) infinite;
+}
+
+.pbg-streak-wr124 .pbg-core::before,
+.pbg-streak-wr124 .pbg-core::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 86px;
+    height: 86px;
+    pointer-events: none;
+    background:
+        radial-gradient(ellipse 48% 5% at 50% 50%, rgba(255, 255, 255, 0.62) 0 8%, rgba(255, 235, 170, 0.26) 28%, rgba(255, 203, 104, 0.08) 56%, transparent 100%),
+        radial-gradient(ellipse 5% 48% at 50% 50%, rgba(255, 255, 255, 0.56) 0 8%, rgba(255, 235, 170, 0.22) 28%, rgba(255, 203, 104, 0.07) 56%, transparent 100%),
+        radial-gradient(circle, rgba(255, 255, 255, 0.78) 0 2px, rgba(255, 227, 145, 0.42) 6px, rgba(255, 161, 62, 0.10) 16px, transparent 28px);
+    mix-blend-mode: screen;
+    filter: blur(1.2px) drop-shadow(0 0 12px rgba(255, 235, 160, 0.58));
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(12deg) scale(0.44);
+    animation: pbg-wr124-star-twinkle 5.7s steps(1) infinite;
+}
+
+.pbg-streak-wr124 .pbg-core::after {
+    width: 46px;
+    height: 46px;
+    filter: blur(0.75px) drop-shadow(0 0 8px rgba(255, 255, 225, 0.62));
+    transform: translate(-50%, -50%) rotate(57deg) scale(0.34);
+    animation: pbg-wr124-star-twinkle-small 3.9s steps(1) infinite;
+}
+
+.pbg-streak-wr124 .pbg-embers {
+    z-index: 6;
+    opacity: 0.72;
+    mix-blend-mode: screen;
+    animation: pbg-wr124-ember-breath 10.5s ease-in-out infinite;
+}
+
+.pbg-streak-wr124 .pbg-vignette {
+    z-index: 7;
+    background:
+        radial-gradient(circle at 50% 50%, transparent 0 46%, rgba(0, 0, 0, 0.34) 72%, rgba(0, 0, 0, 0.82) 100%),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.30), transparent 24% 76%, rgba(0, 0, 0, 0.30));
+}
+
+.pbg-streak-wr124 .pbg-lines {
+    z-index: 8;
+    background: repeating-linear-gradient(
+        transparent, transparent 36px,
+        rgba(255, 165, 84, 0.12) 36px, rgba(255, 165, 84, 0.12) 37px);
+}
+
+@keyframes pbg-pillars-drift {
+    0%, 100% { transform: scale(1.04) translate3d(0, 0, 0); }
+    50% { transform: scale(1.055) translate3d(0, -1.2%, 0); }
+}
+
+@keyframes pbg-pillars-rim {
+    0%, 100% { opacity: 0.46; filter: saturate(0.95); }
+    50% { opacity: 0.82; filter: saturate(1.16); }
+}
+
+@keyframes pbg-pillars-stars {
+    0%, 100% { opacity: 0.42; }
+    50% { opacity: 0.82; }
+}
+
+@keyframes pbg-pillars-trace {
+    0%, 66%, 100% { opacity: 0; transform: translateX(-72%); }
+    72% { opacity: 0.34; }
+    86% { opacity: 0.12; transform: translateX(72%); }
+    90% { opacity: 0; transform: translateX(72%); }
+}
+
+@keyframes pbg-wr124-breathe {
+    0%, 100% { transform: scale(1.03); filter: saturate(1.08) contrast(1.06) brightness(0.88); }
+    50% { transform: scale(1.045); filter: saturate(1.2) contrast(1.12) brightness(0.96); }
+}
+
+@keyframes pbg-wr124-endless-expansion {
+    0% { opacity: 0.35; transform: scale(0.98); filter: saturate(1.2) contrast(1.08) brightness(1.05) blur(0.1px); }
+    10% { opacity: 0.35; transform: scale(1.11); filter: saturate(1.12) contrast(1.05) brightness(0.92) blur(0.16px); }
+    28% { opacity: 0.10; transform: scale(1.17); filter: saturate(1.08) contrast(1.04) brightness(0.84) blur(0.24px); }
+    58% { opacity: 0.055; transform: scale(1.24); filter: saturate(1.02) contrast(1.02) brightness(0.74) blur(0.38px); }
+    100% { opacity: 0; transform: scale(1.31); filter: saturate(0.96) contrast(1) brightness(0.68) blur(0.55px); }
+}
+
+@keyframes pbg-wr124-core {
+    0%, 100% { opacity: 0.38; transform: scale(0.92); }
+    50% { opacity: 0.72; transform: scale(1.08); }
+}
+
+@keyframes pbg-wr124-fire-breath {
+    0%, 100% { filter: brightness(0.88) saturate(0.96); }
+    50% { filter: brightness(1.24) saturate(1.18); }
+}
+
+@keyframes pbg-wr124-ember-breath {
+    0%, 100% { opacity: 0.56; filter: brightness(0.88); }
+    50% { opacity: 0.84; filter: brightness(1.24); }
+}
+
+@keyframes pbg-wr124-heat-haze {
+    0% { opacity: 0.24; transform: rotate(0deg) scale(0.98); }
+    45% { opacity: 0.42; transform: rotate(7deg) scale(1.03); }
+    100% { opacity: 0.24; transform: rotate(14deg) scale(0.98); }
+}
+
+@keyframes pbg-wr124-stellar-pulse {
+    0%, 72%, 75%, 100% { opacity: 0.68; filter: brightness(1) saturate(1); }
+    73% { opacity: 1; filter: brightness(1.82) saturate(1.28); }
+    74% { opacity: 0.78; filter: brightness(1.12) saturate(1.06); }
+    76% { opacity: 0.96; filter: brightness(1.52) saturate(1.18); }
+    77% { opacity: 0.70; filter: brightness(1.02) saturate(1); }
+}
+
+@keyframes pbg-wr124-star-twinkle {
+    0%, 58%, 62%, 66%, 100% { opacity: 0; transform: translate(-50%, -50%) rotate(12deg) scale(0.44); }
+    59% { opacity: 0.48; transform: translate(-50%, -50%) rotate(12deg) scale(0.78); }
+    60% { opacity: 0.18; transform: translate(-50%, -50%) rotate(12deg) scale(0.54); }
+    63% { opacity: 0.68; transform: translate(-50%, -50%) rotate(12deg) scale(0.98); }
+    64% { opacity: 0.22; transform: translate(-50%, -50%) rotate(12deg) scale(0.62); }
+}
+
+@keyframes pbg-wr124-star-twinkle-small {
+    0%, 23%, 27%, 74%, 79%, 100% { opacity: 0; transform: translate(-50%, -50%) rotate(57deg) scale(0.34); }
+    24% { opacity: 0.42; transform: translate(-50%, -50%) rotate(57deg) scale(0.76); }
+    25% { opacity: 0.12; transform: translate(-50%, -50%) rotate(57deg) scale(0.44); }
+    75% { opacity: 0.56; transform: translate(-50%, -50%) rotate(57deg) scale(0.92); }
+    77% { opacity: 0.18; transform: translate(-50%, -50%) rotate(57deg) scale(0.48); }
+}
+
+/* ---- Donation: wish (a starry night with drifting meteors - wish on a falling
+   star). Lets the base sky video carry the card; CSS only grades and frames it. ---- */
+
+/* Suppress the static donation class + its gold/ember pseudo-elements once the
+   renderer mounts, so only the starry video shows (mirrors the other families). */
+.pbg-renderer-mounted.bg-chat-prestige-donation {
+    background-image: none;
+    box-shadow: none;
+    filter: none;
+}
+
+.pbg-renderer-mounted.bg-chat-prestige-donation::before,
+.pbg-renderer-mounted.bg-chat-prestige-donation::after,
+.pbg-renderer-mounted.bg-chat-prestige-donation-animated::before,
+.pbg-renderer-mounted.bg-chat-prestige-donation-animated::after {
+    content: none;
+    display: none;
+}
+
+.pbg-donation-wish {
+    background: #070b1f;
+}
+
+/* z1 - starry-night video (Milky Way over a horizon, drifting meteors). Poster
+   image sits behind it as the still fallback while the video loads. */
+.pbg-donation-wish .pbg-video {
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    background:
+        var(--pbg-image-url) 50% 50% / cover no-repeat,
+        #070b1f;
+}
+
+.pbg-donation-wish .pbg-video-el {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(1.08) contrast(1.05) brightness(0.96);
+}
+
+/* z2 - scrim: a soft veil over the busy Milky Way so the centred name/message
+   stays legible, plus a cool-top / warm-base grade that deepens the sky. Static. */
+.pbg-donation-wish .pbg-scrim {
+    z-index: 2;
+    background:
+        radial-gradient(ellipse 88% 72% at 50% 52%,
+            rgba(6, 10, 28, 0.48), rgba(6, 10, 28, 0.20) 58%, transparent 84%),
+        linear-gradient(180deg, rgba(8, 18, 40, 0.30), transparent 30% 64%, rgba(20, 10, 26, 0.30));
+}
+
+/* z3 - warm bloom lifting off the horizon glow already in the footage; gentle breath. */
+.pbg-donation-wish .pbg-glow {
+    z-index: 3;
+    background: radial-gradient(ellipse 92% 50% at 50% 112%,
+        rgba(255, 186, 102, 0.38), rgba(255, 146, 70, 0.14) 44%, transparent 74%);
+    mix-blend-mode: screen;
+    animation: pbg-wish-glow 11s ease-in-out -3s infinite;
+}
+
+/* z4 - orange source light at the horizon, echoing the town/lava glow in the
+   footage. Sits behind the fog so the fog reads as backlit. Slow breath. */
+.pbg-donation-wish .pbg-source {
+    z-index: 4;
+    background:
+        radial-gradient(ellipse 42% 18% at 52% 96%, rgba(255, 232, 166, 0.13), rgba(255, 146, 54, 0.07) 38%, rgba(255, 100, 34, 0.025) 68%, transparent 100%),
+        radial-gradient(ellipse 40% 17% at 73% 96%, rgba(255, 232, 166, 0.13), rgba(255, 146, 54, 0.07) 38%, rgba(255, 100, 34, 0.025) 68%, transparent 100%),
+        linear-gradient(180deg, transparent 0 68%, rgba(255, 146, 54, 0.045) 88%, rgba(255, 100, 34, 0.03) 100%);
+    mix-blend-mode: screen;
+    animation: pbg-wish-source 9s ease-in-out infinite;
+}
+
+/* z5 - faint fog rolling along the bottom. Oversized sheets move with transform
+   instead of animated tiled backgrounds, which avoids visible seams and keeps
+   the texture cheaper to render. */
+.pbg-donation-wish .pbg-fog {
+    z-index: 5;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(180deg, transparent 72%, rgba(0, 0, 0, 0.72) 88%, #000 100%);
+    mask-image: linear-gradient(180deg, transparent 72%, rgba(0, 0, 0, 0.72) 88%, #000 100%);
+    mix-blend-mode: screen;
+}
+
+.pbg-donation-wish .pbg-fog::before,
+.pbg-donation-wish .pbg-fog::after {
+    content: '';
+    position: absolute;
+    inset: 56% -28% -8%;
+    background-image:
+        linear-gradient(180deg, transparent 0 18%, rgba(232, 218, 206, 0.15) 48%, rgba(255, 198, 140, 0.07) 100%),
+        radial-gradient(ellipse 44% 42% at 18% 68%, rgba(236, 224, 214, 0.34), transparent 68%),
+        radial-gradient(ellipse 52% 34% at 54% 78%, rgba(238, 219, 202, 0.24), transparent 72%),
+        radial-gradient(ellipse 38% 30% at 86% 72%, rgba(255, 210, 162, 0.18), transparent 70%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='240'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.018 0.034' numOctaves='4' seed='5' stitchTiles='stitch' result='t'/%3E%3CfeColorMatrix in='t' type='matrix' values='1.6 0 0 0 0 0 1.6 0 0 0 0 0 1.6 0 0 0 0 0 1.35 -0.18' result='m'/%3E%3CfeFlood flood-color='rgb(238,224,210)' result='c'/%3E%3CfeComposite in='c' in2='m' operator='in'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='1.65'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='400' height='240' filter='url(%23f)'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 100% 100%, 76% 74%, 86% 68%, 68% 62%, 100% 100%;
+    background-position: 50% 100%, 0% 100%, 50% 100%, 100% 100%, 50% 100%;
+    mix-blend-mode: screen;
+    opacity: 0.12;
+    filter: contrast(1.18) blur(0.65px);
+    transform: translate3d(-2.5%, 0, 0);
+    will-change: transform, opacity;
+    animation: pbg-wish-fog-sheet-a 26s ease-in-out infinite;
+}
+
+.pbg-donation-wish .pbg-fog::after {
+    inset: 62% -34% -10%;
+    background-image:
+        linear-gradient(180deg, transparent 0 12%, rgba(222, 206, 198, 0.12) 48%, rgba(255, 170, 112, 0.06) 100%),
+        radial-gradient(ellipse 52% 36% at 28% 74%, rgba(232, 218, 210, 0.22), transparent 72%),
+        radial-gradient(ellipse 46% 34% at 72% 70%, rgba(255, 214, 168, 0.16), transparent 70%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='240'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.015 0.030' numOctaves='4' seed='12' stitchTiles='stitch' result='t'/%3E%3CfeColorMatrix in='t' type='matrix' values='1.45 0 0 0 0 0 1.45 0 0 0 0 0 1.45 0 0 0 0 0 1.25 -0.14' result='m'/%3E%3CfeFlood flood-color='rgb(230,214,202)' result='c'/%3E%3CfeComposite in='c' in2='m' operator='in'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='1.35'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='400' height='240' filter='url(%23f)'/%3E%3C/svg%3E");
+    background-size: 100% 100%, 86% 68%, 76% 60%, 100% 100%;
+    background-position: 50% 100%, 0% 100%, 100% 100%, 50% 100%;
+    opacity: 0.09;
+    filter: contrast(1.14) blur(0.9px);
+    transform: translate3d(3%, 0, 0);
+    animation: pbg-wish-fog-sheet-b 34s ease-in-out infinite;
+}
+
+/* z6 - vignette frame. */
+.pbg-donation-wish .pbg-vignette {
+    z-index: 6;
+    background: radial-gradient(ellipse at 50% 46%, transparent 0 56%, rgba(8, 10, 28, 0.40) 88%, rgba(4, 6, 20, 0.62) 100%);
+}
+
+/* z7 - faint warm ruled lines on top, so the card still reads as a written note. */
+.pbg-donation-wish .pbg-lines {
+    z-index: 7;
+    background: repeating-linear-gradient(
+        transparent, transparent 36px,
+        rgba(255, 232, 190, 0.30) 36px, rgba(255, 232, 190, 0.30) 37px);
+}
+
+@keyframes pbg-wish-glow {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes pbg-wish-source {
+    0%, 100% { opacity: 0.78; }
+    50% { opacity: 1; }
+}
+
+@keyframes pbg-wish-fog-sheet-a {
+    0%, 100% { opacity: 0.08; transform: translate3d(-3%, 0, 0); }
+    45% { opacity: 0.14; transform: translate3d(3%, -1.5%, 0); }
+    72% { opacity: 0.10; transform: translate3d(0.5%, 0.8%, 0); }
+}
+
+@keyframes pbg-wish-fog-sheet-b {
+    0%, 100% { opacity: 0.055; transform: translate3d(3.5%, 0.5%, 0); }
+    52% { opacity: 0.10; transform: translate3d(-3%, -1%, 0); }
+}

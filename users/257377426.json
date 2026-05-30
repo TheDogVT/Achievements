@@ -59,6 +59,36 @@
       "cheer_cumulative_20k": "2025-12-24T00:03:51.592620+00:00"
     }
   },
+  "decorations": {
+    "unlocked": [
+      "prefix_10",
+      "prefix_11",
+      "prefix_12",
+      "prefix_2",
+      "prefix_3",
+      "prefix_4",
+      "prefix_7",
+      "prefix_8",
+      "prefix_9",
+      "name_1",
+      "name_2",
+      "suffix_3",
+      "prefix_23",
+      "prefix_25",
+      "prefix_74",
+      "prefix_76",
+      "name_14",
+      "name_15",
+      "name_7",
+      "name_8",
+      "suffix_12",
+      "suffix_14",
+      "suffix_18",
+      "suffix_19",
+      "prefix_77"
+    ],
+    "active": {}
+  },
   "stats": {
     "messages": 1511,
     "active_months": 5,

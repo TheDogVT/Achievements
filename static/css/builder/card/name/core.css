@@ -1,0 +1,493 @@
+/* ============================================================
+   Name tag CORE — layout, structure, gradient + outline plumbing.
+   Animations live in animations.css. Special effects live in
+   effects.css (see EFFECTS.md for the catalog).
+   ============================================================ */
+
+.content {
+    position: relative;
+    z-index: 4;
+    min-height: 174px;
+    padding: 20px 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #180d06;
+}
+.message {
+    font-family: 'Caveat', cursive;
+    font-size: 36px;
+    line-height: 1.08;
+}
+.name-line {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Caveat', cursive;
+    font-size: 33px;
+    font-weight: 700;
+    line-height: 1.34;
+    color: #3d1e0a;
+    padding-bottom: 0.14em;
+    overflow: visible;
+}
+.decor-card.theme-synthwave .content { color: #f1ecff; }
+.decor-card.theme-synthwave .name-line { color: #ffd9f5; }
+.decor-card.theme-synthwave .name-prefix,
+.decor-card.theme-synthwave .name-suffix { color: #bdefff; opacity: 0.95; }
+.decor-card.theme-synthwave .message { text-shadow: 0 0 10px rgba(142,148,255,0.32); }
+.decor-card.theme-big-spender .content { color: #241203; }
+.decor-card.theme-christmas .content { color: #1f130a; }
+.decor-card.bg-card-night .content,
+.decor-card.bg-card-cosmic .content,
+.decor-card.bg-card-forest .content {
+    color: #f4efe3;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.62), 0 0 9px rgba(0,0,0,0.34);
+}
+.decor-card.bg-card-night .name-line { color: #f6dda1; }
+.decor-card.bg-card-cosmic .name-line { color: #f5d9ff; }
+.decor-card.bg-card-forest .name-line { color: #e8d69a; }
+.decor-card.bg-card-night .name-prefix,
+.decor-card.bg-card-night .name-suffix,
+.decor-card.bg-card-cosmic .name-prefix,
+.decor-card.bg-card-cosmic .name-suffix,
+.decor-card.bg-card-forest .name-prefix,
+.decor-card.bg-card-forest .name-suffix {
+    color: rgba(245,239,227,0.88);
+}
+.name-prefix,
+.name-suffix {
+    display: inline-block;
+    font-size: 24px;
+    font-style: normal;
+    letter-spacing: 0.02em;
+    opacity: 0.94;
+    line-height: 1.28;
+    padding-bottom: 0.16em;
+    overflow: visible;
+}
+.name-suffix {
+    margin-left: 0.25em;
+}
+.name-base {
+    display: inline-block;
+    font-style: italic;
+    position: relative;
+    z-index: 2;
+    line-height: 1.28;
+    padding-bottom: 0.16em;
+    overflow: visible;
+}
+
+/* ---- Legacy name-base effects (applied to #name-base via the
+        "name_effects" slot — distinct from the new tag system). ---- */
+
+.name-effects-none {}
+.name-effects-softglow {
+    text-shadow: 0 0 6px rgba(176,42,47,0.42), 0 0 12px rgba(176,42,47,0.20);
+}
+.name-effects-grad {
+    background: linear-gradient(180deg, #a53f4b 0%, #7c1222 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: none;
+}
+.name-effects-etched {
+    color: #5d2a0f;
+    text-shadow: 0 1px 0 rgba(255, 230, 170, 0.65), 0 -1px 0 rgba(70, 35, 8, 0.25);
+}
+.name-effects-holly {
+    color: #7d151f;
+    text-shadow: 0 1px 0 rgba(255,238,238,0.75), 0 0 8px rgba(34,124,70,0.28);
+    animation: christmas-name-glow 2.2s ease-in-out infinite;
+}
+.name-effects-auric {
+    background: linear-gradient(180deg, #ffecad 0%, #d6a13b 55%, #8b5d10 100%);
+    background-size: 100% 170%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 12px rgba(226,178,68,0.40);
+    animation: whale-name-shimmer 3.2s ease-in-out infinite;
+}
+.name-effects-synth {
+    background: linear-gradient(180deg, #ff86db 0%, #72d0ff 100%);
+    background-size: 100% 165%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 12px rgba(255,118,228,0.35);
+    animation: synth-name-flicker 1.5s ease-in-out infinite;
+}
+@keyframes name-sparkle {
+    0%, 100% {
+        background-position: 0% 50%;
+        filter: brightness(1.0);
+    }
+    50% {
+        background-position: 100% 50%;
+        filter: brightness(1.09);
+    }
+}
+@keyframes sparkle-dust {
+    0%, 100% { opacity: 0.26; transform: translateY(0) scale(0.95); }
+    45% { opacity: 0.82; transform: translateY(-1px) scale(1.05); }
+}
+@keyframes name-wave {
+    0%, 100% { transform: translateY(0) rotate(-0.3deg); }
+    30% { transform: translateY(-1px) rotate(0.7deg); }
+    60% { transform: translateY(1px) rotate(-0.5deg); }
+}
+.name-effects-sparkly {
+    background:
+        linear-gradient(90deg, #7a3c10 0%, #c97921 24%, #fff1ba 38%, #9a4d16 52%, #f4c66b 75%, #6b330f 100%);
+    background-size: 220% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 1px 0 rgba(72, 36, 10, 0.18);
+    animation: name-sparkle 2.1s ease-in-out infinite;
+}
+.name-effects-sparkly::before,
+.name-effects-sparkly::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle, rgba(255, 250, 210, 0.95) 0 1px, transparent 2px),
+        radial-gradient(circle, rgba(255, 210, 116, 0.45) 0 3px, transparent 4px);
+    pointer-events: none;
+    animation: sparkle-dust 2.4s ease-in-out infinite;
+}
+.name-effects-sparkly::before {
+    top: -7px;
+    right: 12%;
+}
+.name-effects-sparkly::after {
+    bottom: -5px;
+    left: 16%;
+    animation-delay: -0.9s;
+}
+.name-effects-wavy {
+    color: #4f2611;
+    display: inline-block;
+    transform-origin: center;
+    text-shadow: 0 1px 0 rgba(255, 224, 165, 0.55);
+    animation: name-wave 3.2s ease-in-out infinite;
+}
+.name-effects-wavy::after {
+    content: '';
+    position: absolute;
+    left: 4%;
+    right: 2%;
+    bottom: -5px;
+    height: 5px;
+    background:
+        radial-gradient(ellipse at 8px 3px, rgba(96, 48, 18, 0.45) 0 2px, transparent 3px) 0 0 / 16px 5px repeat-x;
+    opacity: 0.58;
+}
+
+/* ---- New tag system: prefix/suffix wrapper, gradient + outline plumbing ---- */
+
+.name-tag {
+    position: relative;
+    display: inline-block;
+    isolation: isolate;
+    z-index: 1;
+    overflow: visible;
+    --tag-text-color: currentColor;
+    --tag-outline-color: rgba(58, 30, 12, 0.85);
+    --tag-glow-color: rgba(58, 30, 12, 0.5);
+    --tag-outline-thickness: 1px;
+    --tag-outline-light-thickness: 0px;
+    --tag-outline-light-color: rgba(255, 255, 255, 0.95);
+    --tag-outline-light-blur: 0px;
+    --tag-outline-light-opacity: 1;
+    --tag-outline-light-z-index: 60;
+    --tag-outline-offset-x: 0px;
+    --tag-outline-offset-y: 0px;
+    --tag-gradient: none;
+    --tag-glow-near-radius: 8px;
+    --tag-glow-far-radius: 16px;
+    --tag-frontglow-blur: 1px;
+    --tag-glow-near-transparent: 44%;
+    --tag-glow-far-transparent: 64%;
+    --tag-glow-near-transparent-boost: 30%;
+    --tag-glow-far-transparent-boost: 50%;
+    --tag-glow-near-transparent-dim: 68%;
+    --tag-glow-far-transparent-dim: 84%;
+    --tag-frontglow-opacity: 0.55;
+    --tag-text-animation: none;
+    --tag-gradient-animation: none;
+    --tag-glow-animation: none;
+    --tag-frontglow-animation: none;
+    will-change: auto;
+}
+.tag-motion-layer {
+    position: relative;
+    display: inline-block;
+    isolation: isolate;
+    font: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    transform-origin: center;
+    animation:
+        var(--tag-text-animation),
+        var(--tag-glow-animation);
+    animation-fill-mode: both;
+    will-change: transform, opacity, background-position, background-size, text-shadow;
+}
+.tag-fill-layer {
+    position: relative;
+    z-index: 50;
+    display: inline-block;
+    font: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    color: var(--tag-text-color);
+    -webkit-text-fill-color: currentColor;
+    animation: var(--tag-gradient-animation);
+    animation-fill-mode: both;
+    will-change: background-position, background-size, filter, text-shadow;
+}
+.name-tag[class*="tag-frontglow-"]::after {
+    content: attr(data-tag-text);
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    white-space: inherit;
+    z-index: 70;
+    color: var(--tag-glow-color);
+    opacity: var(--tag-frontglow-opacity);
+    animation: var(--tag-frontglow-animation);
+    animation-fill-mode: both;
+    transform-origin: center;
+}
+.tag-has-gradient {
+    display: inline-block;
+    width: fit-content;
+    background-image: var(--tag-gradient);
+    background-color: var(--tag-text-color);
+    background-size: var(--tag-gradient-size, 100% 100%);
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    overflow: visible;
+}
+.tag-uses-gradient {
+}
+.tag-uses-gradient .tag-fill-layer {
+    /* Expand the background-clip area so gradient covers script-font
+       descenders and side overhangs, then cancel layout impact with
+       matching negative margins so the flex-centered name line doesn't
+       shift. Painted area bleeds into padding via overflow: visible. */
+    padding-right: 0.18em;
+    padding-left: 0.08em;
+    padding-bottom: 0.28em;
+    margin-right: -0.18em;
+    margin-left: -0.08em;
+    margin-bottom: -0.28em;
+}
+.name-base.tag-uses-gradient .tag-fill-layer {
+    /* name-base is italic by default — the rightward lean needs significantly
+       more clip-box clearance than the non-italic prefix/suffix baseline. */
+    padding-right: 0.42em;
+    margin-right: -0.42em;
+}
+
+.tag-style-flat {}
+.tag-style-etched {
+    text-shadow:
+        0 1px 0 rgba(255, 236, 192, 0.7),
+        0 -1px 0 rgba(70, 35, 10, 0.28);
+}
+.tag-style-foil {
+    filter: saturate(1.12);
+    text-shadow: 0 1px 0 rgba(255, 245, 210, 0.42);
+}
+.tag-style-neon {
+    text-shadow:
+        0 0 8px color-mix(in srgb, var(--tag-glow-color), transparent 40%),
+        0 0 16px color-mix(in srgb, var(--tag-glow-color), transparent 62%);
+}
+.tag-style-inked {
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.24);
+}
+
+.tag-outline-basic {
+    -webkit-text-stroke: var(--tag-outline-thickness) var(--tag-outline-color);
+}
+.tag-outline-ink-soft {
+    -webkit-text-stroke: var(--tag-outline-thickness) var(--tag-outline-color);
+}
+.tag-outline-ink-strong {
+    -webkit-text-stroke: var(--tag-outline-thickness) var(--tag-outline-color);
+}
+.tag-outline-light-edge {
+    -webkit-text-stroke: var(--tag-outline-thickness) color-mix(in srgb, var(--tag-outline-color), #fff 18%);
+}
+.tag-outline-neon-edge {
+    -webkit-text-stroke: var(--tag-outline-thickness) color-mix(in srgb, var(--tag-outline-color), #fff 8%);
+    text-shadow: 0 0 8px color-mix(in srgb, var(--tag-glow-color), transparent 55%);
+}
+.tag-outline-layer {
+    position: absolute;
+    inset: 0;
+    display: block;
+    z-index: 40;
+    pointer-events: none;
+    white-space: inherit;
+    overflow: visible;
+    font: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    padding: inherit;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none !important;
+    filter: none !important;
+    mix-blend-mode: normal !important;
+    paint-order: stroke fill;
+}
+.tag-outline-layer.tag-outline-cast {
+    transform: translate(var(--tag-outline-offset-x), var(--tag-outline-offset-y));
+}
+.tag-outline-light-layer {
+    position: absolute;
+    inset: 0;
+    display: block;
+    z-index: var(--tag-outline-light-z-index);
+    pointer-events: none;
+    white-space: inherit;
+    overflow: visible;
+    font: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    padding: inherit;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: var(--tag-outline-light-thickness) var(--tag-outline-light-color);
+    opacity: var(--tag-outline-light-opacity);
+    filter:
+        blur(var(--tag-outline-light-blur))
+        brightness(1.12)
+        saturate(1.1);
+    text-shadow:
+        0 0 calc(var(--tag-outline-light-thickness) * 0.5)
+        color-mix(in srgb, var(--tag-outline-light-color), transparent 30%);
+    mix-blend-mode: screen;
+}
+.tag-outline-light-layer.tag-outline-cast,
+.tag-outline-light-layer.tag-outline-light-outer-fake {
+    transform: translate(var(--tag-outline-offset-x), var(--tag-outline-offset-y));
+}
+.tag-glow-layer {
+    position: absolute;
+    inset: 0;
+    display: block;
+    pointer-events: none;
+    white-space: inherit;
+    overflow: visible;
+    font: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    padding: inherit;
+    color: var(--tag-glow-color);
+    -webkit-text-fill-color: currentColor;
+}
+.name-tag[class*="tag-frontglow-"]::after {
+    font: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    padding: inherit;
+}
+.tag-glow-layer.is-back {
+    z-index: 20;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+        0 0 var(--tag-glow-near-radius) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-near-transparent)),
+        0 0 var(--tag-glow-far-radius) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-far-transparent));
+}
+.tag-glow-layer.is-front {
+    z-index: 70;
+    filter: blur(var(--tag-frontglow-blur));
+    opacity: var(--tag-frontglow-opacity);
+    text-shadow: 0 0 calc(var(--tag-glow-near-radius) * 0.45)
+        color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-near-transparent));
+}
+
+.tag-backglow-soft-halo {
+    text-shadow:
+        0 0 var(--tag-glow-near-radius) color-mix(in srgb, var(--tag-glow-color), #ffca8a 24%),
+        0 0 var(--tag-glow-far-radius) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-far-transparent));
+}
+.tag-backglow-cool-halo {
+    text-shadow:
+        0 0 var(--tag-glow-near-radius) color-mix(in srgb, var(--tag-glow-color), #9ed8ff 22%),
+        0 0 calc(var(--tag-glow-far-radius) * 1.1) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-far-transparent));
+}
+.tag-backglow-edge-bloom {
+    text-shadow:
+        0 0 var(--tag-glow-near-radius) color-mix(in srgb, var(--tag-glow-color), #ffd86a 24%),
+        0 0 calc(var(--tag-glow-far-radius) * 1.12) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-far-transparent));
+}
+.tag-backglow-neon-aura {
+    text-shadow:
+        0 0 calc(var(--tag-glow-near-radius) * 1.1) color-mix(in srgb, var(--tag-glow-color), #d7e8ff 15%),
+        0 0 calc(var(--tag-glow-far-radius) * 1.25) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-far-transparent));
+}
+.tag-frontglow-mist::after,
+.tag-glow-layer.is-front.tag-frontglow-mist {
+    filter: blur(calc(var(--tag-frontglow-blur) * 1.5));
+    opacity: calc(var(--tag-frontglow-opacity) * 0.72);
+}
+.tag-frontglow-shimmer::after,
+.tag-glow-layer.is-front.tag-frontglow-shimmer {
+    filter: blur(calc(var(--tag-frontglow-blur) * 0.7)) brightness(1.22);
+    opacity: calc(var(--tag-frontglow-opacity) * 0.9);
+}
+.tag-frontglow-prism::after,
+.tag-glow-layer.is-front.tag-frontglow-prism {
+    filter: blur(var(--tag-frontglow-blur)) saturate(1.35);
+    opacity: calc(var(--tag-frontglow-opacity) * 1.05);
+    mix-blend-mode: screen;
+}
+
+.tag-effect-layer,
+.tag-special-layer {
+    position: absolute;
+    inset: 0;
+    display: block;
+    pointer-events: none;
+    overflow: visible;
+    white-space: inherit;
+}
+
+.tag-effect-layer.tag-effect-engine-text {
+    font: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    padding: inherit;
+    color: var(--tag-glow-color);
+    -webkit-text-fill-color: currentColor;
+}
+
+.tag-effect-layer.tag-effect-plane-text {
+    display: inline-block;
+    font: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    padding: inherit;
+    white-space: inherit;
+    width: max-content;
+    min-width: 100%;
+    height: 100%;
+}

@@ -44,6 +44,28 @@
       "chat_pawty": "2026-05-25T20:53:54.957297+00:00"
     }
   },
+  "decorations": {
+    "unlocked": [
+      "prefix_11",
+      "prefix_12",
+      "prefix_13",
+      "prefix_15",
+      "prefix_18",
+      "prefix_19",
+      "prefix_2",
+      "prefix_3",
+      "prefix_4",
+      "prefix_7",
+      "suffix_3",
+      "suffix_4",
+      "suffix_7",
+      "suffix_8",
+      "prefix_77",
+      "prefix_79",
+      "suffix_57"
+    ],
+    "active": {}
+  },
   "stats": {
     "messages": 2037,
     "active_months": 2,

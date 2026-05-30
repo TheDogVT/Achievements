@@ -9,6 +9,12 @@
     },
     "founded": {}
   },
+  "decorations": {
+    "unlocked": [
+      "prefix_16"
+    ],
+    "active": {}
+  },
   "stats": {
     "messages": 1,
     "active_months": 1,

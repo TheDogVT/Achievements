@@ -22,6 +22,18 @@
       "cheer_time_1": "2026-05-01T20:37:11.504172+00:00"
     }
   },
+  "decorations": {
+    "unlocked": [
+      "prefix_18",
+      "prefix_7",
+      "prefix_8",
+      "name_1",
+      "suffix_8",
+      "prefix_79",
+      "suffix_57"
+    ],
+    "active": {}
+  },
   "stats": {
     "messages": 86,
     "active_months": 6,

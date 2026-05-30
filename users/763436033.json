@@ -33,6 +33,22 @@
       "chat_protect": "2025-11-08T22:55:35.690848+00:00"
     }
   },
+  "decorations": {
+    "unlocked": [
+      "prefix_10",
+      "prefix_11",
+      "prefix_12",
+      "prefix_16",
+      "prefix_18",
+      "prefix_19",
+      "prefix_7",
+      "suffix_3",
+      "suffix_5",
+      "suffix_8",
+      "prefix_77"
+    ],
+    "active": {}
+  },
   "stats": {
     "messages": 20,
     "active_months": 2,

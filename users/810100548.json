@@ -19,6 +19,18 @@
       "chat_goodboy": "2026-05-05T00:03:19.514911+00:00"
     }
   },
+  "decorations": {
+    "unlocked": [
+      "prefix_15",
+      "prefix_18",
+      "prefix_7",
+      "suffix_4",
+      "suffix_8",
+      "prefix_79",
+      "suffix_57"
+    ],
+    "active": {}
+  },
   "stats": {
     "messages": 78,
     "active_months": 2,

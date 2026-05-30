@@ -1,0 +1,774 @@
+.bg-forged-steel {
+    background-color: #17191d;
+    background-image:
+        linear-gradient(120deg, rgba(255,255,255,0.10), transparent 28%, rgba(0,0,0,0.24) 62%, rgba(255,255,255,0.08)),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0 1px, transparent 1px 18px),
+        linear-gradient(180deg, #252a30, #111316);
+}
+.bg-volcanic-glass {
+    background-color: #130d0c;
+    background-image:
+        linear-gradient(42deg, transparent 0 42%, rgba(255,95,38,0.50) 43%, transparent 45%),
+        linear-gradient(128deg, transparent 0 62%, rgba(255,154,57,0.28) 63%, transparent 65%),
+        radial-gradient(circle at 78% 68%, rgba(255,96,34,0.32), transparent 26%),
+        linear-gradient(180deg, #201312, #0b0808);
+}
+.bg-blueprint {
+    background-color: #09213a;
+    background-image:
+        linear-gradient(rgba(84,201,255,0.20) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(84,201,255,0.20) 1px, transparent 1px),
+        radial-gradient(circle at 80% 24%, rgba(84,201,255,0.18), transparent 28%),
+        linear-gradient(180deg, #0b2b4d, #06172a);
+    background-size: 22px 22px, 22px 22px, 100% 100%, 100% 100%;
+}
+.bg-cyber-circuit {
+    background-color: #071712;
+    background-image:
+        linear-gradient(90deg, transparent 0 16px, rgba(0,255,178,0.24) 17px, transparent 18px),
+        linear-gradient(0deg, transparent 0 28px, rgba(0,255,178,0.18) 29px, transparent 30px),
+        radial-gradient(circle at 18% 26%, rgba(0,255,178,0.42) 0 2px, transparent 3px),
+        linear-gradient(180deg, #0b211a, #06100d);
+    background-size: 58px 58px, 58px 58px, 100% 100%, 100% 100%;
+}
+.bg-clockwork-brass {
+    background-color: #6c4a19;
+    background-image:
+        radial-gradient(circle at 18% 28%, transparent 0 16px, rgba(55,30,7,0.24) 17px 20px, transparent 21px),
+        radial-gradient(circle at 82% 70%, transparent 0 24px, rgba(55,30,7,0.20) 25px 29px, transparent 30px),
+        linear-gradient(135deg, rgba(255,220,120,0.24), transparent 38%),
+        linear-gradient(180deg, #8c651f, #3b260d);
+}
+.bg-stormfront {
+    background-color: #1a2636;
+    background-image:
+        radial-gradient(ellipse at 28% 28%, rgba(170,190,210,0.18), transparent 38%),
+        radial-gradient(ellipse at 72% 50%, rgba(80,96,122,0.32), transparent 45%),
+        linear-gradient(122deg, transparent 0 66%, rgba(210,232,255,0.26) 67%, transparent 69%),
+        linear-gradient(180deg, #26344a, #111824);
+}
+.bg-arcade-crt {
+    background-color: #080b12;
+    background-image:
+        repeating-linear-gradient(transparent, transparent 3px, rgba(120,245,255,0.09) 4px),
+        radial-gradient(ellipse at 50% 50%, rgba(80,180,255,0.20), transparent 60%),
+        linear-gradient(180deg, #111827, #05070b);
+}
+.bg-space-command {
+    background-color: #07101d;
+    background-image:
+        radial-gradient(circle at 18% 30%, rgba(180,230,255,0.80) 0 1px, transparent 2px),
+        linear-gradient(38deg, transparent 0 38%, rgba(80,190,255,0.22) 39%, transparent 40%),
+        linear-gradient(90deg, transparent 0 74%, rgba(80,190,255,0.16) 75%, transparent 76%),
+        linear-gradient(180deg, #071322, #02060d);
+}
+.bg-workshop-bench {
+    background-color: #3a2114;
+    background-image:
+        linear-gradient(90deg, rgba(255,220,155,0.10), transparent 38%, rgba(0,0,0,0.18)),
+        repeating-linear-gradient(8deg, rgba(255,255,255,0.05) 0 2px, transparent 2px 18px),
+        linear-gradient(180deg, #4d2e1d, #20110a);
+}
+.bg-racing-carbon {
+    background-color: #121316;
+    background-image:
+        linear-gradient(45deg, rgba(255,255,255,0.05) 25%, transparent 25% 50%, rgba(255,255,255,0.05) 50% 75%, transparent 75%),
+        linear-gradient(135deg, rgba(255,255,255,0.04) 25%, transparent 25% 50%, rgba(255,255,255,0.04) 50% 75%, transparent 75%),
+        linear-gradient(90deg, transparent 0 72%, rgba(210,38,38,0.38) 73% 75%, transparent 76%);
+    background-size: 18px 18px, 18px 18px, 100% 100%;
+}
+
+.bg-moonlit-blossom {
+    background-color: #151829;
+    background-image:
+        radial-gradient(circle at 78% 18%, rgba(245,230,255,0.42), transparent 20%),
+        radial-gradient(circle at 24% 34%, rgba(255,138,184,0.42) 0 2px, transparent 3px),
+        radial-gradient(circle at 34% 28%, rgba(255,170,205,0.30) 0 2px, transparent 3px),
+        linear-gradient(180deg, #111729, #262032);
+}
+.bg-crystal-garden {
+    background-color: #d8eef1;
+    background-image:
+        linear-gradient(130deg, rgba(105,190,210,0.38), transparent 34%),
+        linear-gradient(40deg, transparent 0 48%, rgba(238,160,215,0.34) 49% 62%, transparent 63%),
+        linear-gradient(180deg, #edf7f4, #b9dde4);
+}
+.bg-aurora-veil {
+    background-color: #0b1722;
+    background-image:
+        linear-gradient(115deg, transparent 0 18%, rgba(94,226,166,0.42) 30%, transparent 48%),
+        linear-gradient(72deg, transparent 0 28%, rgba(210,105,230,0.32) 45%, transparent 62%),
+        linear-gradient(180deg, #07111e, #15253a);
+}
+.bg-rose-velvet {
+    background-color: #3b1222;
+    background-image:
+        radial-gradient(ellipse at 26% 18%, rgba(255,170,190,0.22), transparent 34%),
+        repeating-linear-gradient(105deg, rgba(255,255,255,0.035) 0 2px, transparent 2px 12px),
+        linear-gradient(180deg, #551c32, #240915);
+}
+.bg-stained-glass-bloom {
+    background-color: #171629;
+    background-image:
+        linear-gradient(42deg, rgba(255,108,170,0.42), transparent 35%),
+        linear-gradient(132deg, transparent 0 44%, rgba(82,206,215,0.34) 45% 58%, transparent 59%),
+        linear-gradient(90deg, transparent 0 72%, rgba(248,205,84,0.34) 73% 86%, transparent 87%),
+        linear-gradient(180deg, #18142a, #080812);
+}
+.bg-pearl-tide {
+    background-color: #dcebea;
+    background-image:
+        radial-gradient(ellipse at 28% 30%, rgba(255,255,255,0.58), transparent 34%),
+        repeating-linear-gradient(168deg, rgba(96,156,170,0.16) 0 2px, transparent 2px 22px),
+        linear-gradient(180deg, #f3f2e9, #a9d0d5);
+}
+.bg-lavender-mist {
+    background-color: #d8c9e8;
+    background-image:
+        radial-gradient(circle at 18% 26%, rgba(255,255,255,0.46), transparent 28%),
+        radial-gradient(circle at 80% 70%, rgba(170,125,210,0.26), transparent 34%),
+        linear-gradient(180deg, #eee4f2, #bda9d7);
+}
+.bg-botanical-greenhouse {
+    background-color: #d9e7cc;
+    background-image:
+        linear-gradient(90deg, rgba(255,255,255,0.30) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(255,255,255,0.25) 1px, transparent 1px),
+        radial-gradient(ellipse at 72% 24%, rgba(64,132,72,0.24), transparent 32%),
+        linear-gradient(180deg, #edf0d9, #b7d0a7);
+    background-size: 58px 58px, 58px 58px, 100% 100%, 100% 100%;
+}
+.bg-celestial-lace {
+    background-color: #151629;
+    background-image:
+        radial-gradient(circle at 24% 36%, rgba(245,220,255,0.72) 0 1px, transparent 2px),
+        radial-gradient(circle at 74% 28%, rgba(245,220,255,0.52) 0 1px, transparent 2px),
+        repeating-linear-gradient(34deg, transparent 0 26px, rgba(255,230,255,0.10) 27px, transparent 28px),
+        linear-gradient(180deg, #14162a, #090912);
+}
+.bg-candy-prism {
+    background-color: #f8d5e7;
+    background-image:
+        linear-gradient(120deg, rgba(255,255,255,0.38), transparent 28%),
+        linear-gradient(40deg, rgba(255,138,190,0.42), transparent 40%),
+        linear-gradient(135deg, transparent 0 54%, rgba(108,210,238,0.38) 55% 72%, transparent 73%),
+        linear-gradient(180deg, #ffe7f2, #cdeefa);
+}
+
+@keyframes chat-water-breathe {
+    0%, 100% {
+        background-position: 0 0, 0 0, 50% 50%, 0 0;
+        filter: saturate(1) brightness(1);
+    }
+    50% {
+        background-position: 18px 5px, -14px 8px, 48% 53%, 0 0;
+        filter: saturate(1.1) brightness(1.04);
+    }
+}
+@keyframes chat-water-caustics {
+    0% {
+        transform: translate3d(-3%, -4%, 0) rotate(-1deg) scale(1.05);
+        opacity: 0.66;
+    }
+    50% {
+        transform: translate3d(3%, 2%, 0) rotate(1deg) scale(1.08);
+        opacity: 0.88;
+    }
+    100% {
+        transform: translate3d(-3%, -4%, 0) rotate(-1deg) scale(1.05);
+        opacity: 0.66;
+    }
+}
+@keyframes chat-water-glints {
+    0%, 100% {
+        background-position: 0 0, 0 0, 0 0;
+        opacity: 0.72;
+    }
+    50% {
+        background-position: 22px -8px, -18px 9px, 0 0;
+        opacity: 0.92;
+    }
+}
+@keyframes chat-water-sourced-offset-x {
+    from { left: -100%; }
+    to { left: 0%; }
+}
+@keyframes chat-water-sourced-offset-y {
+    from { top: -100%; }
+    to { top: 0%; }
+}
+@keyframes chat-water-sourced-move-forever {
+    0% { transform: translate3d(-90px, 0, 0); }
+    100% { transform: translate3d(85px, 0, 0); }
+}
+@keyframes chat-space-drift {
+    0%, 100% { background-position: 0 0, 0 0, 0 0, 0 0; }
+    50% { background-position: 8px -4px, -6px 4px, 0 0, 0 0; }
+}
+@keyframes chat-biolume-pulse {
+    0%, 100% { filter: saturate(0.96) brightness(1); }
+    50% { filter: saturate(1.14) brightness(1.07); }
+}
+@keyframes prestige-ember-bed {
+    0%, 100% { opacity: 0.48; transform: translateY(0) scale(1); }
+    50% { opacity: 0.82; transform: translateY(-3px) scale(1.03); }
+}
+@keyframes prestige-sparks-up {
+    from { background-position: 0 120px, 0 104px, 0 140px; opacity: 0.74; }
+    to { background-position: 18px -120px, -12px -104px, 28px -140px; opacity: 0.28; }
+}
+@keyframes prestige-scan-sweep {
+    0%, 35% { transform: translateX(-115%); opacity: 0; }
+    50% { opacity: 0.84; }
+    75%, 100% { transform: translateX(115%); opacity: 0; }
+}
+@keyframes prestige-bit-twinkle {
+    0%, 100% { opacity: 0.38; filter: brightness(1); }
+    50% { opacity: 0.92; filter: brightness(1.5); }
+}
+@keyframes prestige-crt-scan {
+    from { background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; }
+    to { background-position: 0 0, 0 0, 0 0, 9px 4px, -7px 5px, 0 6px; }
+}
+@keyframes prestige-synth-grid {
+    from { background-position: 0 0, 0 0; }
+    to { background-position: 52px 0, 0 18px; }
+}
+@keyframes prestige-petals-fall {
+    from { background-position: 0 -150px, 42px -134px, 10px -170px; }
+    to { background-position: 28px 150px, -12px 134px, 44px 170px; }
+}
+@keyframes prestige-soft-bloom {
+    0%, 100% { opacity: 0.22; transform: scale(0.92); }
+    50% { opacity: 0.52; transform: scale(1.08); }
+}
+@keyframes prestige-star-drift {
+    0%, 100% { background-position: 0 0, 0 0, 0 0; opacity: 0.66; }
+    50% { background-position: 10px -6px, -8px 5px, 14px -3px; opacity: 0.98; }
+}
+@keyframes prestige-orbit-pulse {
+    0%, 100% { opacity: 0.34; transform: rotate(-1deg) scale(0.98); }
+    50% { opacity: 0.70; transform: rotate(1deg) scale(1.03); }
+}
+@keyframes prestige-ignition-line {
+    0%, 25% { transform: translateX(-110%); opacity: 0; }
+    45% { opacity: 1; }
+    72%, 100% { transform: translateX(110%); opacity: 0; }
+}
+
+.bg-chat-dragonscale {
+    background-color: #182620;
+    background-image:
+        radial-gradient(ellipse at 50% 100%, rgba(88, 152, 98, 0.42) 0 28%, transparent 30%),
+        radial-gradient(ellipse at 50% 100%, rgba(20, 35, 28, 0.72) 0 31%, transparent 33%),
+        linear-gradient(135deg, rgba(218, 178, 70, 0.12), transparent 35%),
+        linear-gradient(180deg, #223b31, #0c1714);
+    background-size: 34px 26px, 34px 26px, 100% 100%, 100% 100%;
+    background-position: 0 0, 17px 13px, 0 0, 0 0;
+}
+.bg-chat-water {
+    overflow: hidden;
+    isolation: isolate;
+    border-radius: inherit;
+    background-color: #063f56;
+    background-image:
+        radial-gradient(ellipse at 14% 18%, rgba(157, 255, 237, 0.42) 0%, transparent 40%),
+        radial-gradient(ellipse at 88% 82%, rgba(44, 92, 190, 0.40) 0%, transparent 46%),
+        radial-gradient(ellipse at 46% 36%, rgba(255, 255, 255, 0.14) 0%, transparent 44%),
+        linear-gradient(145deg, #0d7a89 0%, #087083 35%, #094765 68%, #06263c 100%);
+    background-size: 135% 135%, 125% 125%, 100% 100%, 100% 100%;
+    background-blend-mode: screen, soft-light, screen, normal;
+    box-shadow:
+        inset 0 0 0 1px rgba(177, 247, 246, 0.20),
+        inset 0 -30px 48px rgba(3, 18, 35, 0.44),
+        inset 0 20px 36px rgba(136, 251, 237, 0.08);
+    animation: chat-water-breathe 11s ease-in-out infinite;
+}
+.bg-chat-water::before,
+.bg-chat-water::after {
+    content: '';
+    position: absolute;
+    inset: -20%;
+    pointer-events: none;
+}
+.bg-chat-water::before {
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 720 260'%3E%3Cg fill='none' stroke='%23e8fff8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath opacity='.28' stroke-width='1.8' d='M-18 68c44-24 83-28 119-11 37 18 66 19 103-7 43-30 85-25 126 7 42 32 82 31 126-2 42-31 85-31 132-2 37 23 78 25 150-13'/%3E%3Cpath opacity='.24' stroke-width='1.4' d='M-20 142c58-26 102-24 135 8 33 31 71 32 112 2 47-34 92-34 135 2 39 33 80 32 123-1 48-37 98-36 166 10'/%3E%3Cpath opacity='.20' stroke-width='1.2' d='M32 216c47-35 93-38 137-9 40 27 78 27 116-1 48-35 91-31 132 6 38 34 78 32 122-2 39-30 82-29 139 5'/%3E%3Cpath opacity='.20' stroke-width='1.15' d='M42 24c34 19 66 18 98-3 34-22 66-17 96 9 30 26 63 28 98 7 39-23 76-17 113 16'/%3E%3Cpath opacity='.18' stroke-width='1.1' d='M119 98c24-16 48-15 72 4 25 19 50 18 76-3 31-25 60-25 88 2'/%3E%3Cpath opacity='.16' stroke-width='1' d='M390 68c30 25 60 26 91 2 33-26 68-24 105 5 31 24 63 22 99-4'/%3E%3Cpath opacity='.18' stroke-width='1.1' d='M248 178c28-23 57-24 87-4 31 21 63 19 97-6 35-26 72-23 113 9'/%3E%3Cpath opacity='.12' stroke-width='1' d='M10 100c34 17 69 16 104-4 35-21 70-20 106 2'/%3E%3C/g%3E%3C/svg%3E"),
+        radial-gradient(ellipse at 20% 24%, rgba(222, 255, 250, 0.44), transparent 32%),
+        radial-gradient(ellipse at 82% 70%, rgba(127, 227, 236, 0.20), transparent 36%);
+    background-repeat: no-repeat;
+    background-size: 112% 112%, 70% 70%, 72% 72%;
+    background-position: 50% 49%, 0% 8%, 100% 100%;
+    mix-blend-mode: screen;
+    filter: blur(0.15px);
+    animation: chat-water-caustics 12s ease-in-out infinite;
+}
+.bg-chat-water::after {
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 10% 28%, rgba(255, 255, 255, 0.42) 0 1px, transparent 2px),
+        radial-gradient(circle at 78% 18%, rgba(255, 255, 255, 0.30) 0 1px, transparent 2px),
+        linear-gradient(115deg, transparent 0 30%, rgba(255, 255, 255, 0.18) 35%, transparent 46%),
+        radial-gradient(ellipse at 50% 120%, rgba(1, 13, 27, 0.76) 0%, transparent 54%),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.12), transparent 20%, transparent 78%, rgba(6, 22, 39, 0.36));
+    background-size: 118px 88px, 170px 126px, 100% 100%, 100% 100%, 100% 100%;
+    animation: chat-water-glints 9s ease-in-out infinite;
+}
+
+/*
+  Sourced CSS remix:
+  - Caustics overlay motion adapted from tkb0000's public CodePen "Water caustics" (MIT via CodePen public Pen license):
+    https://codepen.io/tkb0000/pen/ExJyNJL
+  - Wave timing/path adapted from Goodkatz's public CodePen "Simple CSS Waves | Mobile & Full width" (MIT via CodePen public Pen license):
+    https://codepen.io/goodkatz/pen/LYPGxQz
+  - Caustics texture is CC0 by Calinou via OpenGameArt:
+    https://opengameart.org/node/36560
+*/
+.bg-chat-water-sourced {
+    --caustics-speed: 4.1s;
+    --caustics-blur: 1px;
+    --caustics-size: 260px;
+    position: absolute;
+    overflow: hidden;
+    border-radius: inherit;
+    background-color: #0c879b;
+    background-image:
+        radial-gradient(ellipse at 20% 14%, rgba(232, 255, 245, 0.50), transparent 38%),
+        radial-gradient(ellipse at 86% 82%, rgba(8, 40, 92, 0.72), transparent 50%),
+        linear-gradient(40deg, #13a5ab 0%, #0b6a89 48%, #06233d 100%);
+    box-shadow:
+        inset 0 0 0 1px rgba(213, 255, 250, 0.22),
+        inset 0 -38px 64px rgba(0, 10, 28, 0.58),
+        inset 0 20px 42px rgba(228, 255, 247, 0.12);
+}
+.bg-chat-water-sourced::before,
+.bg-chat-water-sourced::after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    pointer-events: none;
+}
+.bg-chat-water-sourced::before {
+    left: -100%;
+    top: 0;
+    background-image: url("../../../img/card/caust00-cc0.png");
+    background-repeat: round;
+    background-size: var(--caustics-size) var(--caustics-size);
+    filter: blur(var(--caustics-blur));
+    mix-blend-mode: soft-light;
+    opacity: 0.54;
+    animation: chat-water-sourced-offset-x calc(var(--caustics-speed) + 0.1s) infinite linear;
+}
+.bg-chat-water-sourced::after {
+    left: 0;
+    top: -100%;
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 24 150 28' preserveAspectRatio='none'%3E%3Cpath fill='rgba(255,255,255,0.34)' d='M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18v44h-352z'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 24 150 28' preserveAspectRatio='none'%3E%3Cpath fill='rgba(255,255,255,0.18)' d='M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18v44h-352z'/%3E%3C/svg%3E"),
+        radial-gradient(circle at 8% 18%, rgba(255, 255, 255, 0.62) 0 1px, transparent 2px),
+        radial-gradient(circle at 70% 58%, rgba(255, 255, 255, 0.32) 0 1px, transparent 2px);
+    background-repeat: repeat-x, repeat-x, repeat, repeat;
+    background-size: 300px 94px, 380px 116px, 150px 110px, 210px 160px;
+    background-position: 0 96%, 0 84%, 0 0, 0 0;
+    filter: blur(0.2px);
+    mix-blend-mode: screen;
+    opacity: 0.56;
+    animation:
+        chat-water-sourced-offset-y var(--caustics-speed) infinite linear,
+        chat-water-sourced-move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.bg-chat-space {
+    background-color: #080b18;
+    background-image:
+        radial-gradient(circle at 15% 25%, rgba(246, 235, 176, 0.9) 0 1px, transparent 2px),
+        radial-gradient(circle at 70% 18%, rgba(180, 221, 255, 0.78) 0 1px, transparent 2px),
+        radial-gradient(ellipse at 70% 74%, rgba(122, 94, 210, 0.30), transparent 38%),
+        linear-gradient(140deg, #060816 0%, #10183a 58%, #24172f 100%);
+    background-size: 140px 90px, 210px 130px, 100% 100%, 100% 100%;
+    animation: chat-space-drift 10s ease-in-out infinite;
+}
+.bg-chat-space-art {
+    overflow: hidden;
+    border-radius: inherit;
+    background-color: #050914;
+    background-image:
+        radial-gradient(ellipse at 26% 30%, rgba(3, 7, 16, 0.54), transparent 42%),
+        radial-gradient(ellipse at 78% 42%, rgba(2, 5, 12, 0.24), transparent 38%),
+        linear-gradient(90deg, rgba(2, 7, 16, 0.68) 0%, rgba(2, 7, 16, 0.32) 38%, rgba(2, 7, 16, 0.14) 100%),
+        url("../../../img/card/backgrounds/space-rawdanitsu-bg3-cc0.png");
+    background-size: 100% 100%, 100% 100%, 100% 100%, cover;
+    background-position: center, center, center, center 32%;
+    box-shadow:
+        inset 0 0 0 1px rgba(186, 238, 255, 0.22),
+        inset 0 -34px 58px rgba(0, 0, 0, 0.52),
+        inset 0 22px 42px rgba(153, 235, 255, 0.08);
+}
+.bg-chat-space-art::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 77% 36%, rgba(255, 236, 166, 0.18), transparent 20%),
+        linear-gradient(115deg, transparent 0 48%, rgba(126, 255, 212, 0.12) 54%, transparent 68%);
+    mix-blend-mode: screen;
+    opacity: 0.72;
+}
+.bg-chat-bioluminescent-cave {
+    background-color: #061d20;
+    background-image:
+        linear-gradient(168deg, rgba(0, 0, 0, 0.46) 0 16%, transparent 17%),
+        radial-gradient(circle at 18% 72%, rgba(75, 255, 214, 0.58) 0 2px, transparent 4px),
+        radial-gradient(circle at 82% 28%, rgba(135, 105, 255, 0.48) 0 2px, transparent 4px),
+        radial-gradient(ellipse at 48% 78%, rgba(30, 210, 180, 0.30), transparent 42%),
+        linear-gradient(180deg, #07141c, #0a2d2d);
+    background-size: 82px 82px, 120px 86px, 150px 110px, 100% 100%, 100% 100%;
+    animation: chat-biolume-pulse 7s ease-in-out infinite;
+}
+.bg-chat-temperate-forest {
+    background-color: #1c2f22;
+    background-image:
+        radial-gradient(ellipse at 20% 20%, rgba(184, 155, 76, 0.18), transparent 30%),
+        linear-gradient(115deg, transparent 0 58%, rgba(82, 126, 70, 0.28) 59% 62%, transparent 63%),
+        linear-gradient(65deg, transparent 0 50%, rgba(125, 156, 82, 0.22) 51% 54%, transparent 55%),
+        linear-gradient(180deg, #102219, #263d25 56%, #1a2b20);
+    background-size: 100% 100%, 76px 76px, 94px 94px, 100% 100%;
+}
+.bg-chat-temperate-forest-art {
+    overflow: hidden;
+    border-radius: inherit;
+    background-color: #8bd2df;
+    background-image:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.08) 42%, rgba(25, 49, 30, 0.52) 100%),
+        linear-gradient(90deg, rgba(207, 248, 229, 0.24), transparent 32%, transparent 70%, rgba(63, 97, 47, 0.18)),
+        url("../../../img/card/backgrounds/temperate-forest-deadkir-cc0.png");
+    background-size: 100% 100%, 100% 100%, cover;
+    background-position: center, center, center 39%;
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.26),
+        inset 0 -34px 56px rgba(24, 41, 21, 0.58),
+        inset 0 20px 36px rgba(232, 255, 250, 0.22);
+}
+.bg-chat-temperate-forest-art::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(ellipse at 18% 18%, rgba(255, 255, 255, 0.34), transparent 34%),
+        radial-gradient(ellipse at 82% 86%, rgba(28, 55, 20, 0.30), transparent 36%);
+}
+.bg-chat-window-glass-dark {
+    background-color: #101927;
+    background-image:
+        linear-gradient(90deg, transparent 48%, rgba(210, 232, 255, 0.22) 49%, rgba(210, 232, 255, 0.22) 51%, transparent 52%),
+        linear-gradient(0deg, transparent 48%, rgba(210, 232, 255, 0.18) 49%, rgba(210, 232, 255, 0.18) 51%, transparent 52%),
+        linear-gradient(118deg, transparent 0 42%, rgba(255, 255, 255, 0.22) 43%, transparent 48%),
+        linear-gradient(180deg, #172238, #07101d);
+}
+.bg-chat-window-glass-light {
+    background-color: #d8ecf2;
+    background-image:
+        linear-gradient(90deg, transparent 48%, rgba(84, 122, 142, 0.22) 49%, rgba(84, 122, 142, 0.22) 51%, transparent 52%),
+        linear-gradient(0deg, transparent 48%, rgba(84, 122, 142, 0.18) 49%, rgba(84, 122, 142, 0.18) 51%, transparent 52%),
+        linear-gradient(118deg, transparent 0 42%, rgba(255, 255, 255, 0.56) 43%, transparent 48%),
+        linear-gradient(180deg, #ecf8f8, #b9d7e2);
+}
+
+/* Static donation: the starry-night poster, graded (wish on a falling star). The
+   animated tier wakes this into video via the donation_wish renderer, which
+   suppresses this base class on mount. Mirrors the POC .donation treatment. */
+.bg-chat-prestige-donation {
+    /* overflow: visible — inherits from .page so washi tape can extend beyond the card edges. The renderer self-clips via .pbg-renderer overflow:hidden. */
+    overflow: visible;
+    isolation: isolate;
+    background-color: #070b1f;
+    background-image:
+        repeating-linear-gradient(transparent, transparent 36px, rgba(255, 232, 190, 0.30) 36px, rgba(255, 232, 190, 0.30) 37px),
+        radial-gradient(ellipse 88% 72% at 50% 52%, rgba(6, 10, 28, 0.48), rgba(6, 10, 28, 0.20) 58%, transparent 84%),
+        radial-gradient(ellipse 120% 26% at 50% 104%, rgba(226, 210, 198, 0.18), rgba(226, 210, 198, 0.06) 50%, transparent 78%),
+        radial-gradient(ellipse 38% 20% at 52% 90%, rgba(255, 138, 46, 0.50), rgba(255, 108, 36, 0.16) 48%, transparent 72%),
+        radial-gradient(ellipse 22% 13% at 73% 92%, rgba(255, 122, 40, 0.40), transparent 62%),
+        radial-gradient(ellipse 92% 50% at 50% 112%, rgba(255, 186, 102, 0.26), rgba(255, 146, 70, 0.08) 44%, transparent 74%),
+        url("../../../resources/backgrounds/stars.jpg");
+    background-position: center;
+    background-size: 100% 100%, auto, auto, auto, auto, auto, cover;
+    background-repeat: no-repeat;
+    box-shadow:
+        inset 0 0 34px rgba(8, 12, 34, 0.50),
+        inset -2px -2px 8px rgba(4, 6, 20, 0.40);
+}
+
+.bg-chat-prestige-cheer {
+    /* overflow: visible — inherits from .page so washi tape can extend beyond the card edges. The renderer self-clips via .pbg-renderer overflow:hidden. */
+    overflow: visible;
+    isolation: isolate;
+    background-color: #170d32;
+    background-image:
+        repeating-linear-gradient(transparent, transparent 36px, rgba(0, 212, 255, 0.25) 36px, rgba(0, 212, 255, 0.25) 37px),
+        linear-gradient(90deg, rgba(10, 3, 24, 0.56), rgba(10, 3, 24, 0.10) 38%, rgba(10, 3, 24, 0.48)),
+        linear-gradient(180deg, rgba(9, 5, 30, 0.52), rgba(9, 5, 30, 0.05) 42%, rgba(9, 5, 30, 0.45)),
+        url("../../../resources/backgrounds/cheer-synthwave-city-reference.jpg");
+    background-position: center;
+    background-size: 100% 100%, auto, auto, cover;
+    background-repeat: repeat, repeat, repeat, no-repeat;
+    box-shadow:
+        inset 0 0 34px rgba(255, 79, 216, 0.15),
+        inset -2px -2px 6px rgba(0, 212, 255, 0.10);
+    filter: saturate(1.08) contrast(1.05);
+}
+.bg-chat-prestige-cheer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(ellipse at 50% 50%, transparent 0 55%, rgba(4, 2, 18, 0.38) 88%, rgba(4, 2, 18, 0.72) 100%),
+        radial-gradient(ellipse at 50% 74%, rgba(0, 212, 255, 0.24), transparent 36%),
+        linear-gradient(90deg, transparent 0 24%, rgba(0, 212, 255, 0.18) 48%, rgba(255, 79, 216, 0.20) 52%, transparent 76%),
+        radial-gradient(circle at 18% 28%, rgba(255,255,255,0.09) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 74% 64%, rgba(0,212,255,0.08) 0 1px, transparent 1.5px),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.08) 0 1px, rgba(0, 0, 0, 0.16) 1px 2px, transparent 2px 5px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 82px 61px, 113px 79px, 100% 6px;
+    opacity: 0.80;
+    mix-blend-mode: screen;
+}
+.bg-chat-prestige-cheer-animated::before {
+    animation: prestige-crt-scan 1.2s linear infinite;
+}
+.bg-chat-prestige-cheer-animated::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(180deg, transparent 0 42%, rgba(255, 255, 255, 0.18) 48%, rgba(0, 212, 255, 0.16) 50%, rgba(255, 79, 216, 0.15) 52%, transparent 58%),
+        linear-gradient(100deg, transparent 0 38%, rgba(255, 240, 167, 0.20) 42%, rgba(255,255,255,0.34) 48%, rgba(255,79,216,0.24) 53%, transparent 60%);
+    background-size: 100% 100%, 100% 100%;
+    mix-blend-mode: screen;
+    animation: prestige-scan-sweep 3.1s ease-in-out infinite;
+}
+
+.bg-chat-prestige-gifted {
+    /* overflow: visible — inherits from .page so washi tape can extend beyond the card edges. The renderer self-clips via .pbg-renderer overflow:hidden. */
+    overflow: visible;
+    isolation: isolate;
+    background-color: #f4dbe8;
+    background-image:
+        repeating-linear-gradient(transparent, transparent 36px, rgba(110, 55, 88, 0.16) 36px, rgba(110, 55, 88, 0.16) 37px),
+        radial-gradient(ellipse at 50% 50%, transparent 0 58%, rgba(90, 40, 66, 0.16) 82%, rgba(60, 24, 44, 0.34) 100%),
+        radial-gradient(ellipse 72% 60% at 50% 56%, rgba(255, 250, 253, 0.55), rgba(255, 246, 251, 0.22) 46%, transparent 72%),
+        linear-gradient(180deg, rgba(255, 244, 250, 0.10), rgba(244, 210, 228, 0.04) 50%, rgba(120, 60, 90, 0.12)),
+        url("../../../resources/backgrounds/Sakura.jpg");
+    background-position: center;
+    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, cover;
+    background-repeat: no-repeat;
+}
+.bg-chat-prestige-gifted::before,
+.bg-chat-prestige-gifted-animated::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    mix-blend-mode: screen;
+}
+.bg-chat-prestige-gifted::before {
+    background:
+        radial-gradient(ellipse at 23% 35%, rgba(255,255,255,0.32) 0 2px, transparent 3px),
+        radial-gradient(ellipse at 53% 21%, rgba(255,196,224,0.30) 0 2px, transparent 3px),
+        linear-gradient(90deg, transparent 0 46%, rgba(255,222,238,0.18) 49%, transparent 52%);
+    background-size: 74px 64px, 96px 82px, 100% 100%;
+}
+.bg-chat-prestige-gifted-animated::after {
+    background:
+        radial-gradient(ellipse at 20% 10%, rgba(255,196,216,0.60) 0 4px, transparent 6px),
+        radial-gradient(ellipse at 68% 18%, rgba(255,145,194,0.54) 0 4px, transparent 6px),
+        radial-gradient(ellipse at 84% 10%, rgba(225,187,255,0.44) 0 4px, transparent 6px),
+        radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.20), transparent 44%);
+    background-size: 118px 150px, 94px 134px, 130px 170px, 100% 100%;
+    animation: prestige-petals-fall 6s linear infinite, prestige-soft-bloom 4s ease-in-out infinite;
+}
+
+.bg-chat-prestige-attendance {
+    /* overflow: visible — inherits from .page so washi tape can extend beyond the card edges. The renderer self-clips via .pbg-renderer overflow:hidden. */
+    overflow: visible;
+    isolation: isolate;
+    background-color: #050817;
+    background-image:
+        repeating-linear-gradient(transparent, transparent 36px, rgba(120, 75, 35, 0.22) 36px, rgba(120, 75, 35, 0.22) 37px),
+        url("../../../resources/backgrounds/pillars.png");
+    background-position: center;
+    background-size: 100% 100%, cover;
+}
+.bg-chat-prestige-attendance-animated::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    mix-blend-mode: screen;
+}
+.bg-chat-prestige-attendance-animated::after {
+    inset: 24px 38px;
+    border: 1px solid rgba(185, 216, 249, 0.20);
+    border-radius: 999px;
+    background:
+        radial-gradient(circle at 12% 30%, rgba(255,236,168,0.75) 0 1px, transparent 2px),
+        radial-gradient(circle at 52% 52%, rgba(185,216,249,0.62) 0 1px, transparent 2px),
+        radial-gradient(circle at 88% 22%, rgba(255,152,117,0.58) 0 1px, transparent 2px);
+    background-size: 90px 70px, 132px 108px, 170px 118px;
+    box-shadow: 0 0 28px rgba(56,189,248,0.14), inset 0 0 18px rgba(250,204,21,0.12);
+    animation: prestige-star-drift 8s ease-in-out infinite, prestige-orbit-pulse 5s ease-in-out infinite;
+}
+
+.bg-chat-prestige-streak {
+    /* overflow: visible — inherits from .page so washi tape can extend beyond the card edges. The renderer self-clips via .pbg-renderer overflow:hidden. */
+    overflow: visible;
+    isolation: isolate;
+    background-color: #050305;
+    background-image:
+        repeating-linear-gradient(transparent, transparent 36px, rgba(255, 196, 134, 0.18) 36px, rgba(255, 196, 134, 0.18) 37px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.40), transparent 32% 68%, rgba(0, 0, 0, 0.40)),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.22), transparent 35%, rgba(0, 0, 0, 0.42)),
+        url("../../../resources/backgrounds/WR124.jpg");
+    background-position: center;
+    background-size: 100% 100%, auto, auto, cover;
+    filter: saturate(1.08) contrast(1.08) brightness(0.9);
+}
+.bg-chat-prestige-streak::before,
+.bg-chat-prestige-streak-animated::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    mix-blend-mode: screen;
+}
+.bg-chat-prestige-streak::before {
+    background:
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.36) 0 2%, rgba(255, 165, 84, 0.20) 8%, rgba(255, 62, 19, 0.10) 22%, transparent 42%),
+        radial-gradient(ellipse at 50% 52%, rgba(255, 131, 30, 0.14), transparent 48%);
+}
+.bg-chat-prestige-streak-animated::after {
+    background:
+        radial-gradient(ellipse at 20% 94%, rgba(255,122,24,0.54), transparent 24%),
+        radial-gradient(ellipse at 44% 96%, rgba(255,209,102,0.42), transparent 22%),
+        radial-gradient(ellipse at 78% 92%, rgba(239,68,68,0.44), transparent 24%),
+        linear-gradient(90deg, transparent, rgba(0,251,255,0.28), rgba(255,255,255,0.22), transparent),
+        radial-gradient(circle at 18% 90%, rgba(255,209,102,0.62) 0 1px, transparent 2px),
+        radial-gradient(circle at 48% 88%, rgba(255,122,24,0.54) 0 1px, transparent 2px),
+        radial-gradient(circle at 78% 96%, rgba(0,251,255,0.38) 0 1px, transparent 2px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 3px, 100px 130px, 76px 108px, 142px 160px;
+    background-position: center, center, center, 0 calc(100% - 36px), 0 0, 0 0, 0 0;
+    animation: prestige-ember-bed 2.1s ease-in-out infinite, prestige-ignition-line 2.7s ease-in-out infinite, prestige-sparks-up 3.5s linear infinite;
+}
+
+.decor-card.bg-card-dark .content {
+    color: #f4efe3;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.62), 0 0 9px rgba(0,0,0,0.34);
+}
+.decor-card.bg-card-steel .name-line { color: #d9e0e8; }
+.decor-card.bg-card-ember .name-line { color: #ffc18b; }
+.decor-card.bg-card-blueprint .name-line,
+.decor-card.bg-card-circuit .name-line,
+.decor-card.bg-card-command .name-line,
+.decor-card.bg-card-crt .name-line { color: #b7f0ff; }
+.decor-card.bg-card-brass .content,
+.decor-card.bg-card-workshop .content { color: #f7e4bd; text-shadow: 0 1px 2px rgba(0,0,0,0.50); }
+.decor-card.bg-card-storm .name-line { color: #d8e9ff; }
+.decor-card.bg-card-carbon .name-line { color: #f3c7c7; }
+.decor-card.bg-card-blossom .name-line { color: #ffd0df; }
+.decor-card.bg-card-crystal .content,
+.decor-card.bg-card-pearl .content,
+.decor-card.bg-card-lavender .content,
+.decor-card.bg-card-greenhouse .content,
+.decor-card.bg-card-candy .content { color: #1f1624; text-shadow: 0 1px 0 rgba(255,255,255,0.38); }
+.decor-card.bg-card-aurora .name-line { color: #c8ffe6; }
+.decor-card.bg-card-rose .name-line { color: #ffc8d6; }
+.decor-card.bg-card-glass .name-line { color: #ffe8a8; }
+.decor-card.bg-card-lace .name-line { color: #f0dcff; }
+.decor-card.bg-card-dragonscale .name-line { color: #e5d28c; }
+.decor-card.bg-card-water .content {
+    color: #eefdf9;
+    text-shadow: 0 2px 3px rgba(2, 13, 28, 0.78), 0 0 12px rgba(4, 25, 42, 0.72);
+}
+.decor-card.bg-card-water .name-line {
+    color: #c9fff3;
+    text-shadow: 0 2px 3px rgba(0, 13, 25, 0.78), 0 0 14px rgba(128, 255, 232, 0.22);
+}
+.decor-card.bg-card-water .name-prefix,
+.decor-card.bg-card-water .name-suffix {
+    color: rgba(202, 255, 245, 0.90);
+}
+.decor-card.bg-card-water-sourced .content {
+    color: #f0fffb;
+    text-shadow: 0 2px 3px rgba(2, 12, 28, 0.80), 0 0 12px rgba(0, 18, 34, 0.70);
+}
+.decor-card.bg-card-water-sourced .name-line {
+    color: #d5fff7;
+    text-shadow: 0 2px 3px rgba(0, 12, 26, 0.84), 0 0 15px rgba(132, 255, 235, 0.26);
+}
+.decor-card.bg-card-water-sourced .name-prefix,
+.decor-card.bg-card-water-sourced .name-suffix {
+    color: rgba(210, 255, 248, 0.92);
+}
+.decor-card.bg-card-space .name-line { color: #d9dcff; }
+.decor-card.bg-card-space-art .content {
+    color: #f2f7ff;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.82), 0 0 14px rgba(2, 9, 21, 0.72);
+}
+.decor-card.bg-card-space-art .name-line {
+    color: #e0fff5;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.82), 0 0 14px rgba(111, 255, 213, 0.20);
+}
+.decor-card.bg-card-biolume .name-line { color: #9fffe6; }
+.decor-card.bg-card-temperate .name-line { color: #d7e8a6; }
+.decor-card.bg-card-temperate-art .content {
+    color: #21331e;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.62), 0 2px 8px rgba(218, 255, 230, 0.42);
+}
+.decor-card.bg-card-temperate-art .name-line {
+    color: #f0ffd8;
+    text-shadow: 0 2px 3px rgba(13, 31, 17, 0.78), 0 0 10px rgba(27, 65, 31, 0.48);
+}
+.decor-card.bg-card-window-dark .name-line { color: #d9ecff; }
+.decor-card.bg-card-window-light .content { color: #173040; text-shadow: 0 1px 0 rgba(255,255,255,0.42); }
+.decor-card.bg-card-prestige-gifted .content,
+.decor-card.bg-card-prestige-attendance .content,
+.decor-card.bg-card-prestige-streak .content {
+    color: rgba(31, 18, 8, 0.88);
+    text-shadow: 0 1px 0 rgba(255, 245, 214, 0.35);
+}
+/* Donation rides on a dark night sky, so body text is light (not the dark ink the
+   other prestige families use). */
+.decor-card.bg-card-prestige-donation .content {
+    color: rgba(255, 234, 200, 0.88);
+    text-shadow: 0 0 8px rgba(255, 168, 86, 0.30), 0 2px 2px rgba(10, 8, 24, 0.82);
+}
+.decor-card.bg-card-prestige-donation .name-line {
+    color: #ffe6ac;
+    text-shadow: 0 0 12px rgba(255, 168, 86, 0.50), 0 2px 3px rgba(10, 8, 24, 0.82);
+}
+.decor-card.bg-card-prestige-cheer .content {
+    color: rgba(205, 246, 255, 0.88);
+    text-shadow: 0 0 8px rgba(0, 212, 255, 0.28), 0 2px 2px rgba(5, 5, 24, 0.80);
+}
+.decor-card.bg-card-prestige-cheer .name-line {
+    color: #fff7d6;
+    text-shadow:
+        0 0 8px rgba(255, 212, 86, 0.62),
+        0 0 20px rgba(255, 79, 216, 0.52),
+        2px 0 rgba(255, 70, 190, 0.66),
+        -2px 0 rgba(0, 212, 255, 0.58),
+        0 2px 2px rgba(5, 5, 24, 0.82);
+}
+.decor-card.bg-card-prestige-gifted .name-line {
+    color: #ffe4f4;
+    text-shadow: 0 0 12px rgba(236, 72, 153, 0.42), 0 2px 2px rgba(45, 7, 30, 0.8);
+}
+.decor-card.bg-card-prestige-attendance .name-line {
+    color: #f5f8ff;
+    text-shadow: 0 0 12px rgba(56, 189, 248, 0.36), 0 2px 3px rgba(2, 8, 18, 0.82);
+}
+.decor-card.bg-card-prestige-streak .name-line {
+    color: #fff7ed;
+    text-shadow: 0 0 12px rgba(255, 209, 102, 0.42), 0 3px 3px rgba(35, 5, 4, 0.8);
+}

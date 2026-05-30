@@ -1,0 +1,475 @@
+/* ============================================================
+   Tag animation library
+     Text     : .tag-textanim-*    (drives --tag-text-animation)
+     Gradient : .tag-gradanim-*    (drives --tag-gradient-animation)
+     Glow     : .tag-glowanim-*    (drives --tag-glow-animation and
+                                    --tag-frontglow-animation, plus
+                                    per-layer .tag-glow-layer variants)
+   Legacy class aliases preserved at the bottom for old configs.
+
+   Intensity scaling: --tag-anim-intensity (1–5) on the wrapper element.
+   Transform-based animations scale amplitude; time-based animations
+   (flicker, glow, gradient) scale frequency (shorter duration = faster).
+   ============================================================ */
+
+/* ---- Text ---- */
+
+@keyframes tag-text-breathe {
+    0%, 100% { transform: translateY(0) scale(1); opacity: 1; }
+    50% { transform: translateY(calc(-3px * var(--tag-anim-intensity, 1))) scale(calc(1 + 0.05 * var(--tag-anim-intensity, 1))); opacity: 0.95; }
+}
+@keyframes tag-text-drift {
+    0%, 100% { transform: translate3d(0, 0, 0) rotate(-0.15deg); }
+    25% { transform: translate3d(0, calc(-1px * var(--tag-anim-intensity, 1)), 0) rotate(calc(0.35deg * var(--tag-anim-intensity, 1))); }
+    50% { transform: translate3d(0, calc(0.5px * var(--tag-anim-intensity, 1)), 0) rotate(calc(0.08deg * var(--tag-anim-intensity, 1))); }
+    75% { transform: translate3d(0, calc(1px * var(--tag-anim-intensity, 1)), 0) rotate(calc(-0.3deg * var(--tag-anim-intensity, 1))); }
+}
+@keyframes tag-text-flicker {
+    0%, 100% { opacity: 1; }
+    18%  { opacity: 0.12; }
+    21%  { opacity: 1; }
+    24%  { opacity: 0.6; }
+    26%  { opacity: 1; }
+    44%  { opacity: 0.08; }
+    47%  { opacity: 1; }
+    68%  { opacity: 0.5; }
+    70%  { opacity: 1; }
+}
+@keyframes tag-text-kinetic {
+    0%, 100% { transform: translateY(0) skewX(0deg); }
+    34% { transform: translateY(calc(-2px * var(--tag-anim-intensity, 1))) skewX(calc(-5deg * var(--tag-anim-intensity, 1))); }
+    66% { transform: translateY(calc(2px * var(--tag-anim-intensity, 1))) skewX(calc(5deg * var(--tag-anim-intensity, 1))); }
+}
+
+.tag-textanim-breathe { --tag-text-animation: tag-text-breathe 2.7s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite; }
+.tag-textanim-drift {
+    transform-origin: center;
+    --tag-text-animation: tag-text-drift 3.4s ease-in-out infinite;
+}
+.tag-textanim-flicker { --tag-text-animation: tag-text-flicker calc(2.1s / var(--tag-anim-intensity, 1)) ease-in-out infinite; }
+.tag-textanim-kinetic {
+    transform-origin: center;
+    --tag-text-animation: tag-text-kinetic 2.9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes tag-text-bounce {
+    0%, 22%, 100% { transform: translateY(0) scaleY(1); }
+    6%  { transform: translateY(calc(-5px * var(--tag-anim-intensity, 1))) scaleY(calc(1 + 0.06 * var(--tag-anim-intensity, 1))); }
+    12% { transform: translateY(0) scaleY(calc(1 - 0.05 * var(--tag-anim-intensity, 1))); }
+    17% { transform: translateY(calc(-2px * var(--tag-anim-intensity, 1))) scaleY(calc(1 + 0.02 * var(--tag-anim-intensity, 1))); }
+}
+@keyframes tag-text-shake {
+    0%, 18%, 100% { transform: translateX(0); }
+    2%  { transform: translateX(calc(-3px * var(--tag-anim-intensity, 1))); }
+    4%  { transform: translateX(calc(3px * var(--tag-anim-intensity, 1))); }
+    6%  { transform: translateX(calc(-2px * var(--tag-anim-intensity, 1))); }
+    8%  { transform: translateX(calc(2px * var(--tag-anim-intensity, 1))); }
+    10% { transform: translateX(calc(-1px * var(--tag-anim-intensity, 1))); }
+    12% { transform: translateX(calc(1px * var(--tag-anim-intensity, 1))); }
+    14% { transform: translateX(0); }
+}
+@keyframes tag-text-glitch {
+    /* Resting baseline */
+    0%, 10%, 100% { transform: translate(0) skewX(0deg); opacity: 1; }
+    /* Burst 1 ~5s in */
+    10.2% { transform: translate(calc(-3px * var(--tag-anim-intensity, 1)), 1px) skewX(calc(-8deg * var(--tag-anim-intensity, 1))); opacity: 0.82; }
+    10.4% { transform: translate(calc(3px * var(--tag-anim-intensity, 1)), -1px) skewX(calc(6deg * var(--tag-anim-intensity, 1))); opacity: 0.91; }
+    10.6% { transform: translate(calc(-1px * var(--tag-anim-intensity, 1)), 0) skewX(0deg); opacity: 0.95; }
+    10.8% { transform: translate(calc(2px * var(--tag-anim-intensity, 1)), 1px) skewX(calc(-3deg * var(--tag-anim-intensity, 1))); opacity: 0.85; }
+    11.0% { transform: translate(0) skewX(0deg); opacity: 1; }
+    11.3% { transform: translate(calc(-2px * var(--tag-anim-intensity, 1)), 0) skewX(calc(-4deg * var(--tag-anim-intensity, 1))); opacity: 0.88; }
+    11.5% { transform: translate(0) skewX(0deg); opacity: 1; }
+    /* Burst 2 ~13.5s in */
+    28.5% { transform: translate(0) skewX(0deg); opacity: 1; }
+    28.7% { transform: translate(calc(3px * var(--tag-anim-intensity, 1)), -1px) skewX(calc(7deg * var(--tag-anim-intensity, 1))); opacity: 0.80; }
+    28.9% { transform: translate(calc(-2px * var(--tag-anim-intensity, 1)), 1px) skewX(calc(-5deg * var(--tag-anim-intensity, 1))); opacity: 0.92; }
+    29.1% { transform: translate(0) skewX(0deg); opacity: 1; }
+    29.4% { transform: translate(calc(-3px * var(--tag-anim-intensity, 1)), 0) skewX(calc(-6deg * var(--tag-anim-intensity, 1))); opacity: 0.85; }
+    29.6% { transform: translate(0) skewX(0deg); opacity: 1; }
+    /* Burst 3 ~20.7s in — triple-snap */
+    43.5% { transform: translate(0) skewX(0deg); opacity: 1; }
+    43.7% { transform: translate(calc(-4px * var(--tag-anim-intensity, 1)), 1px) skewX(calc(-9deg * var(--tag-anim-intensity, 1))); opacity: 0.78; }
+    43.9% { transform: translate(calc(2px * var(--tag-anim-intensity, 1)), -1px) skewX(calc(5deg * var(--tag-anim-intensity, 1))); opacity: 0.93; }
+    44.1% { transform: translate(calc(-1px * var(--tag-anim-intensity, 1)), 1px) skewX(calc(-3deg * var(--tag-anim-intensity, 1))); opacity: 0.87; }
+    44.3% { transform: translate(0) skewX(0deg); opacity: 1; }
+    44.6% { transform: translate(calc(3px * var(--tag-anim-intensity, 1)), 0) skewX(calc(5deg * var(--tag-anim-intensity, 1))); opacity: 0.83; }
+    44.8% { transform: translate(0) skewX(0deg); opacity: 1; }
+    /* Burst 4 ~31.9s in */
+    67.5% { transform: translate(0) skewX(0deg); opacity: 1; }
+    67.7% { transform: translate(calc(3px * var(--tag-anim-intensity, 1)), 1px) skewX(calc(8deg * var(--tag-anim-intensity, 1))); opacity: 0.83; }
+    67.9% { transform: translate(calc(-3px * var(--tag-anim-intensity, 1)), -1px) skewX(calc(-7deg * var(--tag-anim-intensity, 1))); opacity: 0.90; }
+    68.1% { transform: translate(0) skewX(0deg); opacity: 1; }
+    68.4% { transform: translate(calc(2px * var(--tag-anim-intensity, 1)), 0) skewX(calc(4deg * var(--tag-anim-intensity, 1))); opacity: 0.87; }
+    68.6% { transform: translate(0) skewX(0deg); opacity: 1; }
+    /* Burst 5 ~39s in — double-tap */
+    82.5% { transform: translate(0) skewX(0deg); opacity: 1; }
+    82.7% { transform: translate(calc(-2px * var(--tag-anim-intensity, 1)), 1px) skewX(calc(-6deg * var(--tag-anim-intensity, 1))); opacity: 0.86; }
+    82.9% { transform: translate(calc(4px * var(--tag-anim-intensity, 1)), -1px) skewX(calc(9deg * var(--tag-anim-intensity, 1))); opacity: 0.79; }
+    83.1% { transform: translate(calc(-1px * var(--tag-anim-intensity, 1)), 0) skewX(calc(-4deg * var(--tag-anim-intensity, 1))); opacity: 0.91; }
+    83.3% { transform: translate(0) skewX(0deg); opacity: 1; }
+    83.7% { transform: translate(calc(3px * var(--tag-anim-intensity, 1)), 1px) skewX(calc(5deg * var(--tag-anim-intensity, 1))); opacity: 0.84; }
+    83.9% { transform: translate(0) skewX(0deg); opacity: 1; }
+}
+@keyframes tag-text-pop {
+    0%, 14%, 100% { transform: scale(1); }
+    4%  { transform: scale(calc(1 + 0.14 * var(--tag-anim-intensity, 1))); }
+    9%  { transform: scale(calc(1 - 0.06 * var(--tag-anim-intensity, 1))); }
+    12% { transform: scale(calc(1 + 0.04 * var(--tag-anim-intensity, 1))); }
+}
+
+.tag-textanim-bounce {
+    transform-origin: center bottom;
+    --tag-text-animation: tag-text-bounce 3.6s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+}
+.tag-textanim-shake { --tag-text-animation: tag-text-shake 4.2s ease-in-out infinite; }
+.tag-textanim-glitch { --tag-text-animation: tag-text-glitch var(--tag-glitch-duration, 47s) linear var(--tag-glitch-delay, 0s) infinite; }
+.tag-textanim-pop {
+    transform-origin: center;
+    --tag-text-animation: tag-text-pop 4s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+/* ---- Edge ---- */
+
+@keyframes tag-edge-pulse {
+    0%, 100% {
+        opacity: 1;
+        filter: brightness(1);
+    }
+    50% {
+        opacity: 0.84;
+        filter: brightness(1.25);
+    }
+}
+
+@keyframes tag-edge-flicker {
+    0%, 100% { opacity: 1; }
+    16% { opacity: 0.42; }
+    20% { opacity: 1; }
+    52% { opacity: 0.65; }
+    56% { opacity: 1; }
+}
+
+@keyframes tag-edge-shimmer {
+    0%, 100% {
+        filter: brightness(1) saturate(1);
+    }
+    50% {
+        filter: brightness(1.35) saturate(1.22);
+    }
+}
+
+@keyframes tag-edge-ripple {
+    0%, 100% {
+        transform: translate(var(--tag-outline-offset-x), var(--tag-outline-offset-y));
+    }
+    30% {
+        transform: translate(calc(var(--tag-outline-offset-x) + 0.7px), calc(var(--tag-outline-offset-y) - 0.5px));
+    }
+    65% {
+        transform: translate(calc(var(--tag-outline-offset-x) - 0.7px), calc(var(--tag-outline-offset-y) + 0.5px));
+    }
+}
+
+.tag-outline-layer.tag-edgeanim-pulse {
+    animation: tag-edge-pulse calc(2.8s / var(--tag-anim-intensity, 1)) ease-in-out infinite;
+}
+
+.tag-outline-layer.tag-edgeanim-flicker {
+    animation: tag-edge-flicker calc(2s / var(--tag-anim-intensity, 1)) ease-in-out infinite;
+}
+
+.tag-outline-layer.tag-edgeanim-shimmer {
+    animation: tag-edge-shimmer calc(3.4s / var(--tag-anim-intensity, 1)) ease-in-out infinite;
+}
+
+.tag-outline-layer.tag-edgeanim-ripple {
+    animation: tag-edge-ripple calc(3.1s / var(--tag-anim-intensity, 1)) ease-in-out infinite;
+}
+
+/* ---- Gradient ---- */
+
+@keyframes tag-gradient-sheen {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+@keyframes tag-gradient-aurora {
+    0% { background-position: 0% 35%; }
+    50% { background-position: 100% 65%; }
+    100% { background-position: 0% 35%; }
+}
+@keyframes tag-gradient-prism {
+    0% { background-position: 0% 0%; }
+    25% { background-position: 100% 0%; }
+    50% { background-position: 100% 100%; }
+    75% { background-position: 0% 100%; }
+    100% { background-position: 0% 0%; }
+}
+@keyframes tag-gradient-tide {
+    0%, 100% {
+        background-position: 50% 50%;
+        background-size: var(--tag-gradient-size, 100% 100%);
+    }
+    50% {
+        background-position: 45% 55%;
+        background-size: 220% 120%;
+    }
+}
+
+/* background-size must exceed 100% for position-based sweeps to be visible.
+   Each animation class overrides --tag-gradient-size so the background is
+   wider/taller than the element and position movement actually shows. */
+.tag-gradanim-sheen  {
+    --tag-gradient-size: 260% 100%;
+    --tag-gradient-animation: tag-gradient-sheen calc(3.2s / var(--tag-anim-intensity, 1)) linear infinite;
+}
+.tag-gradanim-aurora {
+    --tag-gradient-size: 300% 220%;
+    --tag-gradient-animation: tag-gradient-aurora calc(4.6s / var(--tag-anim-intensity, 1)) ease-in-out infinite;
+}
+.tag-gradanim-prism  {
+    --tag-gradient-size: 320% 320%;
+    --tag-gradient-animation: tag-gradient-prism calc(5.8s / var(--tag-anim-intensity, 1)) linear infinite;
+}
+.tag-gradanim-tide   { --tag-gradient-animation: tag-gradient-tide calc(4.8s / var(--tag-anim-intensity, 1)) ease-in-out infinite; }
+
+@keyframes tag-gradient-hue {
+    0%   { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+@keyframes tag-gradient-burn {
+    0%, 55%, 100% {
+        filter: brightness(1) saturate(1);
+        background-position: 0% 50%;
+    }
+    62% { filter: brightness(1.6) saturate(1.7); background-position: 40% 50%; }
+    72% { filter: brightness(2.1) saturate(2); background-position: 65% 50%; }
+    82% { filter: brightness(1.4) saturate(1.3); background-position: 90% 50%; }
+    92% { filter: brightness(1) saturate(1); background-position: 100% 50%; }
+}
+
+.tag-gradanim-hue  { --tag-gradient-animation: tag-gradient-hue calc(5s / var(--tag-anim-intensity, 1)) linear infinite; }
+.tag-gradanim-burn { --tag-gradient-animation: tag-gradient-burn calc(3.8s / var(--tag-anim-intensity, 1)) ease-in-out infinite; }
+
+/* ---- Glow (parent-driving keyframes) ---- */
+
+@keyframes tag-glow-pulse {
+    0%, 100% {
+        text-shadow:
+            0 0 var(--tag-glow-near-radius) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-near-transparent)),
+            0 0 var(--tag-glow-far-radius) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-far-transparent));
+    }
+    50% {
+        text-shadow:
+            0 0 calc(var(--tag-glow-near-radius) * 1.2) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-near-transparent-boost)),
+            0 0 calc(var(--tag-glow-far-radius) * 1.25) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-far-transparent-boost));
+    }
+}
+@keyframes tag-glow-flicker {
+    0%, 100% {
+        text-shadow:
+            0 0 var(--tag-glow-near-radius) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-near-transparent)),
+            0 0 var(--tag-glow-far-radius) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-far-transparent));
+    }
+    22% {
+        text-shadow:
+            0 0 calc(var(--tag-glow-near-radius) * 0.5) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-near-transparent-dim)),
+            0 0 calc(var(--tag-glow-far-radius) * 0.7) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-far-transparent-dim));
+    }
+    24% {
+        text-shadow:
+            0 0 calc(var(--tag-glow-near-radius) * 1.1) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-near-transparent-boost)),
+            0 0 calc(var(--tag-glow-far-radius) * 1.15) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-far-transparent-boost));
+    }
+}
+@keyframes tag-glow-breathe {
+    0%, 100% {
+        text-shadow:
+            0 0 calc(var(--tag-glow-near-radius) * 0.9) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-near-transparent)),
+            0 0 calc(var(--tag-glow-far-radius) * 0.9) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-far-transparent));
+    }
+    50% {
+        text-shadow:
+            0 0 calc(var(--tag-glow-near-radius) * 1.25) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-near-transparent-boost)),
+            0 0 calc(var(--tag-glow-far-radius) * 1.35) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-far-transparent-boost));
+    }
+}
+@keyframes tag-glow-orbit {
+    0%, 100% {
+        text-shadow:
+            0 0 var(--tag-glow-near-radius) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-near-transparent)),
+            0 0 var(--tag-glow-far-radius) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-far-transparent));
+    }
+    25% {
+        text-shadow:
+            1px -1px calc(var(--tag-glow-near-radius) * 1.15) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-near-transparent-boost)),
+            2px -2px calc(var(--tag-glow-far-radius) * 1.1) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-far-transparent-boost));
+    }
+    50% {
+        text-shadow:
+            -1px 1px calc(var(--tag-glow-near-radius) * 1.25) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-near-transparent-boost)),
+            -2px 2px calc(var(--tag-glow-far-radius) * 1.25) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-far-transparent-boost));
+    }
+    75% {
+        text-shadow:
+            1px 1px calc(var(--tag-glow-near-radius) * 1.15) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-near-transparent-boost)),
+            2px 2px calc(var(--tag-glow-far-radius) * 1.12) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-far-transparent-boost));
+    }
+}
+
+@keyframes tag-frontglow-pulse {
+    0%, 100% { opacity: 0.35; transform: translateY(0) scale(1); }
+    50% { opacity: 0.62; transform: translateY(-0.4px) scale(1.02); }
+}
+@keyframes tag-frontglow-flicker {
+    0%, 100% { opacity: 0.46; }
+    21% { opacity: 0.24; }
+    24% { opacity: 0.58; }
+    62% { opacity: 0.34; }
+    64% { opacity: 0.54; }
+}
+@keyframes tag-frontglow-breathe {
+    0%, 100% { opacity: 0.34; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.025); }
+}
+@keyframes tag-frontglow-orbit {
+    0%, 100% { opacity: 0.44; transform: translate(0, 0); }
+    25% { opacity: 0.55; transform: translate(0.5px, -0.5px); }
+    50% { opacity: 0.6; transform: translate(-0.5px, 0.5px); }
+    75% { opacity: 0.52; transform: translate(0.5px, 0.5px); }
+}
+
+@keyframes tag-glow-surge {
+    0%, 65%, 100% {
+        text-shadow:
+            0 0 var(--tag-glow-near-radius) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-near-transparent)),
+            0 0 var(--tag-glow-far-radius) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-far-transparent));
+    }
+    72% {
+        text-shadow:
+            0 0 calc(var(--tag-glow-near-radius) * 2) color-mix(in srgb, var(--tag-glow-color), transparent 8%),
+            0 0 calc(var(--tag-glow-far-radius) * 2.8) color-mix(in srgb, var(--tag-glow-color), transparent 16%);
+    }
+    86% {
+        text-shadow:
+            0 0 calc(var(--tag-glow-near-radius) * 1.3) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-near-transparent-boost)),
+            0 0 calc(var(--tag-glow-far-radius) * 1.9) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-far-transparent-boost));
+    }
+}
+@keyframes tag-frontglow-surge {
+    0%, 65%, 100% { opacity: 0.35; transform: scale(1); }
+    72% { opacity: 0.9; transform: scale(1.06); }
+    86% { opacity: 0.6; transform: scale(1.02); }
+}
+
+@keyframes tag-glow-chain {
+    0%, 62%, 100% {
+        text-shadow:
+            0 0 var(--tag-glow-near-radius) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-near-transparent)),
+            0 0 var(--tag-glow-far-radius) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-far-transparent));
+    }
+    64% {
+        text-shadow:
+            0 0 calc(var(--tag-glow-near-radius) * 1.5) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-near-transparent-boost)),
+            0 0 calc(var(--tag-glow-far-radius) * 1.6) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-far-transparent-boost));
+    }
+    67% {
+        text-shadow:
+            0 0 calc(var(--tag-glow-near-radius) * 0.5) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-near-transparent-dim)),
+            0 0 calc(var(--tag-glow-far-radius) * 0.6) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-far-transparent-dim));
+    }
+    70% {
+        text-shadow:
+            0 0 calc(var(--tag-glow-near-radius) * 1.6) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-near-transparent-boost)),
+            0 0 calc(var(--tag-glow-far-radius) * 1.7) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-far-transparent-boost));
+    }
+    73% {
+        text-shadow:
+            0 0 var(--tag-glow-near-radius) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-near-transparent)),
+            0 0 var(--tag-glow-far-radius) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-far-transparent));
+    }
+    77% {
+        text-shadow:
+            0 0 calc(var(--tag-glow-near-radius) * 1.4) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-near-transparent-boost)),
+            0 0 calc(var(--tag-glow-far-radius) * 1.5) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-far-transparent-boost));
+    }
+    81% {
+        text-shadow:
+            0 0 var(--tag-glow-near-radius) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-near-transparent)),
+            0 0 var(--tag-glow-far-radius) color-mix(in srgb, var(--tag-glow-color), transparent var(--tag-glow-far-transparent));
+    }
+}
+@keyframes tag-frontglow-chain {
+    0%, 62%, 100% { opacity: 0.38; }
+    64% { opacity: 0.72; }
+    67% { opacity: 0.18; }
+    70% { opacity: 0.78; }
+    73% { opacity: 0.38; }
+    77% { opacity: 0.65; }
+    81% { opacity: 0.38; }
+}
+
+.tag-glowanim-pulse {
+    --tag-glow-animation: tag-glow-pulse calc(2.4s / var(--tag-anim-intensity, 1)) ease-in-out infinite;
+    --tag-frontglow-animation: tag-frontglow-pulse calc(2.4s / var(--tag-anim-intensity, 1)) ease-in-out infinite;
+}
+.tag-glowanim-flicker {
+    --tag-glow-animation: tag-glow-flicker calc(1.8s / var(--tag-anim-intensity, 1)) ease-in-out infinite;
+    --tag-frontglow-animation: tag-frontglow-flicker calc(1.8s / var(--tag-anim-intensity, 1)) ease-in-out infinite;
+}
+.tag-glowanim-breathe {
+    --tag-glow-animation: tag-glow-breathe calc(3s / var(--tag-anim-intensity, 1)) ease-in-out infinite;
+    --tag-frontglow-animation: tag-frontglow-breathe calc(3s / var(--tag-anim-intensity, 1)) ease-in-out infinite;
+}
+.tag-glowanim-orbit {
+    --tag-glow-animation: tag-glow-orbit calc(3.2s / var(--tag-anim-intensity, 1)) ease-in-out infinite;
+    --tag-frontglow-animation: tag-frontglow-orbit calc(3.2s / var(--tag-anim-intensity, 1)) ease-in-out infinite;
+}
+.tag-glowanim-surge {
+    --tag-glow-animation: tag-glow-surge calc(3.8s / var(--tag-anim-intensity, 1)) ease-in-out infinite;
+    --tag-frontglow-animation: tag-frontglow-surge calc(3.8s / var(--tag-anim-intensity, 1)) ease-in-out infinite;
+}
+.tag-glowanim-chain {
+    --tag-glow-animation: tag-glow-chain calc(4.4s / var(--tag-anim-intensity, 1)) ease-in-out infinite;
+    --tag-frontglow-animation: tag-frontglow-chain calc(4.4s / var(--tag-anim-intensity, 1)) ease-in-out infinite;
+}
+.tag-glow-layer.is-back.tag-glowanim-surge    { animation: tag-glow-surge calc(3.8s / var(--tag-anim-intensity, 1)) ease-in-out infinite; }
+.tag-glow-layer.is-front.tag-glowanim-surge   { animation: tag-frontglow-surge calc(3.8s / var(--tag-anim-intensity, 1)) ease-in-out infinite; }
+.tag-glow-layer.is-back.tag-glowanim-chain    { animation: tag-glow-chain calc(4.4s / var(--tag-anim-intensity, 1)) ease-in-out infinite; }
+.tag-glow-layer.is-front.tag-glowanim-chain   { animation: tag-frontglow-chain calc(4.4s / var(--tag-anim-intensity, 1)) ease-in-out infinite; }
+.tag-glow-layer.is-back.tag-glowanim-pulse    { animation: tag-glow-pulse calc(2.4s / var(--tag-anim-intensity, 1)) ease-in-out infinite; }
+.tag-glow-layer.is-front.tag-glowanim-pulse   { animation: tag-frontglow-pulse calc(2.4s / var(--tag-anim-intensity, 1)) ease-in-out infinite; }
+.tag-glow-layer.is-back.tag-glowanim-flicker  { animation: tag-glow-flicker calc(1.8s / var(--tag-anim-intensity, 1)) ease-in-out infinite; }
+.tag-glow-layer.is-front.tag-glowanim-flicker { animation: tag-frontglow-flicker calc(1.8s / var(--tag-anim-intensity, 1)) ease-in-out infinite; }
+.tag-glow-layer.is-back.tag-glowanim-breathe  { animation: tag-glow-breathe calc(3s / var(--tag-anim-intensity, 1)) ease-in-out infinite; }
+.tag-glow-layer.is-front.tag-glowanim-breathe { animation: tag-frontglow-breathe calc(3s / var(--tag-anim-intensity, 1)) ease-in-out infinite; }
+.tag-glow-layer.is-back.tag-glowanim-orbit    { animation: tag-glow-orbit calc(3.2s / var(--tag-anim-intensity, 1)) ease-in-out infinite; }
+.tag-glow-layer.is-front.tag-glowanim-orbit   { animation: tag-frontglow-orbit calc(3.2s / var(--tag-anim-intensity, 1)) ease-in-out infinite; }
+
+/* ---- Legacy class aliases (kept so old saved configs still animate) ---- */
+
+.tag-anim-pulse-soft   { --tag-text-animation: tag-text-breathe 2.7s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite; }
+.tag-anim-flicker-soft { --tag-text-animation: tag-text-flicker calc(2.1s / var(--tag-anim-intensity, 1)) ease-in-out infinite; }
+.tag-anim-wave-slow {
+    transform-origin: center;
+    --tag-text-animation: tag-text-drift 3.4s ease-in-out infinite;
+}
+.tag-anim-shimmer-slow { --tag-gradient-animation: tag-gradient-sheen calc(3.2s / var(--tag-anim-intensity, 1)) linear infinite; }
+.tag-glowanim-pulse-soft {
+    --tag-glow-animation: tag-glow-pulse calc(2.4s / var(--tag-anim-intensity, 1)) ease-in-out infinite;
+    --tag-frontglow-animation: tag-frontglow-pulse calc(2.4s / var(--tag-anim-intensity, 1)) ease-in-out infinite;
+}
+.tag-glowanim-flicker-soft {
+    --tag-glow-animation: tag-glow-flicker calc(1.8s / var(--tag-anim-intensity, 1)) ease-in-out infinite;
+    --tag-frontglow-animation: tag-frontglow-flicker calc(1.8s / var(--tag-anim-intensity, 1)) ease-in-out infinite;
+}
+.tag-glowanim-breathing {
+    --tag-glow-animation: tag-glow-breathe calc(3s / var(--tag-anim-intensity, 1)) ease-in-out infinite;
+    --tag-frontglow-animation: tag-frontglow-breathe calc(3s / var(--tag-anim-intensity, 1)) ease-in-out infinite;
+}
+.tag-glow-layer.is-back.tag-glowanim-pulse-soft    { animation: tag-glow-pulse calc(2.4s / var(--tag-anim-intensity, 1)) ease-in-out infinite; }
+.tag-glow-layer.is-front.tag-glowanim-pulse-soft   { animation: tag-frontglow-pulse calc(2.4s / var(--tag-anim-intensity, 1)) ease-in-out infinite; }
+.tag-glow-layer.is-back.tag-glowanim-flicker-soft  { animation: tag-glow-flicker calc(1.8s / var(--tag-anim-intensity, 1)) ease-in-out infinite; }
+.tag-glow-layer.is-front.tag-glowanim-flicker-soft { animation: tag-frontglow-flicker calc(1.8s / var(--tag-anim-intensity, 1)) ease-in-out infinite; }
+.tag-glow-layer.is-back.tag-glowanim-breathing     { animation: tag-glow-breathe calc(3s / var(--tag-anim-intensity, 1)) ease-in-out infinite; }
+.tag-glow-layer.is-front.tag-glowanim-breathing    { animation: tag-frontglow-breathe calc(3s / var(--tag-anim-intensity, 1)) ease-in-out infinite; }

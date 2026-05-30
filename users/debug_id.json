@@ -10,6 +10,14 @@
     },
     "founded": {}
   },
+  "decorations": {
+    "unlocked": [
+      "prefix_8",
+      "name_1",
+      "name_4"
+    ],
+    "active": {}
+  },
   "stats": {
     "messages": 0,
     "active_months": 1,

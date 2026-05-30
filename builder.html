@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decoration Builder — TheDogVT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Audiowide&family=Bangers&family=Caveat:wght@500;600;700&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@400;600;700&family=Grenze+Gotisch:wght@400;700&family=Lato:wght@400;700&family=Lobster&family=Luckiest+Guy&family=Metamorphous&family=Orbitron:wght@400;700&family=Pacifico&family=Permanent+Marker&family=Playfair+Display:wght@400;700&family=Press+Start+2P&family=Rubik+Glitch&family=VT323&family=Rye&family=Satisfy&family=Shadows+Into+Light&family=Special+Elite&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Bubblegum+Sans&family=Chewy&family=Comfortaa:wght@400;500;600;700&family=DynaPuff:wght@400;500;600;700&family=Fredoka:wght@400;500;600;700&family=Mochiy+Pop+One&family=Nunito:wght@400;600;700;800&family=Quicksand:wght@400;500;600;700&family=Varela+Round&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Black+Ops+One&family=Bowlby+One+SC&family=Bungee+Spice&family=Faster+One&family=Iceland&family=Kanit:ital,wght@0,400;0,700;1,400;1,700&family=Michroma&family=Rubik+Burned&family=Sigmar+One&family=Teko:wght@400;600;700&family=Titan+One&family=Tourney:wght@400;700&family=Wallpoet&family=WindSong:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/builder/card/layout.css">
+    <link rel="stylesheet" href="static/css/builder/card/backgrounds.css">
+    <link rel="stylesheet" href="static/css/builder/card/background-renderers.css">
+    <link rel="stylesheet" href="static/css/builder/card/name/core.css">
+    <link rel="stylesheet" href="static/css/builder/card/name/animations.css">
+    <link rel="stylesheet" href="static/css/builder/card/name/effects.css">
+    <link rel="stylesheet" href="static/css/fullscreen/decorations.css">
+    <style>
+        :root {
+            --builder-accent: #7cd6c4;
+            --builder-accent2: #f2b35d;
+            --builder-panel: #121516;
+            --builder-panel2: #181d1e;
+            --builder-panel3: #202728;
+            --builder-field: #0d1011;
+            --builder-field-border: #3b4547;
+            --builder-text: #f5f7f2;
+            --builder-muted: #9aacaa;
+            --builder-success: #6dca8a;
+            --builder-danger: #ee746d;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: #0d1011;
+            color: var(--builder-text);
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+        }
+
+        .page-header {
+            background: linear-gradient(180deg, #181d1e, #111516);
+            border-bottom: 1px solid #2a3233;
+            padding: 14px 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .page-header h1 {
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            color: var(--builder-text);
+        }
+        .page-header .kicker {
+            font-size: 11px;
+            color: var(--builder-muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .page-header-dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--builder-accent);
+            flex-shrink: 0;
+        }
+
+        .builder-layout {
+            display: grid;
+            grid-template-columns: 340px 1fr;
+            gap: 0;
+            min-height: calc(100vh - 53px);
+        }
+
+        /* ── Controls panel ── */
+        .controls-panel {
+            background: var(--builder-panel2);
+            border-right: 1px solid #242c2d;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        .section {
+            padding: 16px 18px;
+            border-bottom: 1px solid #242c2d;
+        }
+        .section-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--builder-muted);
+            margin-bottom: 10px;
+        }
+
+        .field-row {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            margin-bottom: 10px;
+        }
+        .field-row:last-child { margin-bottom: 0; }
+
+        label {
+            font-size: 11px;
+            color: var(--builder-muted);
+            font-weight: 600;
+            letter-spacing: 0.04em;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            background: var(--builder-field);
+            border: 1px solid var(--builder-field-border);
+            color: var(--builder-text);
+            font-family: 'Lato', sans-serif;
+            font-size: 13px;
+            padding: 7px 10px;
+            border-radius: 5px;
+            outline: none;
+            transition: border-color 0.15s;
+        }
+        input[type="text"]:focus, select:focus {
+            border-color: var(--builder-accent);
+        }
+        select option { background: #1a2022; }
+        select:disabled { opacity: 0.4; cursor: not-allowed; }
+
+        .load-row {
+            display: flex;
+            gap: 8px;
+        }
+        .load-row input { flex: 1; }
+
+        .btn {
+            background: var(--builder-panel3);
+            border: 1px solid var(--builder-field-border);
+            color: var(--builder-text);
+            font-family: 'Lato', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 7px 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background 0.12s, border-color 0.12s;
+            letter-spacing: 0.03em;
+        }
+        .btn:hover { background: #2a3537; border-color: var(--builder-accent); }
+        .btn-accent {
+            background: var(--builder-accent);
+            border-color: var(--builder-accent);
+            color: #0d1011;
+        }
+        .btn-accent:hover { background: #8fe8d5; border-color: #8fe8d5; }
+
+        .status-line {
+            font-size: 11px;
+            min-height: 16px;
+            margin-top: 4px;
+        }
+        .status-line.ok   { color: var(--builder-success); }
+        .status-line.err  { color: var(--builder-danger); }
+        .status-line.info { color: var(--builder-muted); }
+
+        /* ── Command output ── */
+        .command-section {
+            padding: 16px 18px;
+            margin-top: auto;
+            border-top: 1px solid #242c2d;
+            background: #111415;
+        }
+        .command-box {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .command-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--builder-muted);
+        }
+        .command-value {
+            background: var(--builder-field);
+            border: 1px solid var(--builder-field-border);
+            border-radius: 5px;
+            padding: 9px 12px;
+            font-family: 'Special Elite', monospace;
+            font-size: 13px;
+            color: var(--builder-accent);
+            word-break: break-all;
+            min-height: 38px;
+        }
+        .command-copy-row {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        .copy-status {
+            font-size: 11px;
+            color: var(--builder-success);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .copy-status.show { opacity: 1; }
+
+        /* ── Stage (preview) ── */
+        .stage {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:
+                linear-gradient(90deg, rgba(18,21,22,0.045) 1px, transparent 1px) 0 0 / 28px 28px,
+                linear-gradient(180deg, rgba(18,21,22,0.045) 1px, transparent 1px) 0 0 / 28px 28px,
+                #f3f4ef;
+            padding: 48px 24px;
+        }
+
+        .preview-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+        .preview-hint {
+            font-size: 12px;
+            color: #8a9a98;
+            text-align: center;
+            max-width: 280px;
+            line-height: 1.5;
+        }
+
+        /* ── Slot badge in dropdown ── */
+        .slot-badge {
+            display: inline-block;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 1px 5px;
+            border-radius: 3px;
+            margin-left: 4px;
+            background: #2a3537;
+            color: var(--builder-muted);
+            vertical-align: middle;
+        }
+
+        .divider {
+            height: 1px;
+            background: #242c2d;
+            margin: 2px 0;
+        }
+
+        /* Responsive: stack on narrow screens */
+        @media (max-width: 780px) {
+            .builder-layout {
+                grid-template-columns: 1fr;
+            }
+            .stage {
+                padding: 32px 16px;
+                min-height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="page-header">
+    <div class="page-header-dot"></div>
+    <div>
+        <div class="kicker">TheDogVT · PuppyBot</div>
+        <h1>Decoration Builder</h1>
+    </div>
+</header>
+
+<div class="builder-layout">
+
+    <!-- ── Controls ── -->
+    <div class="controls-panel">
+
+        <div class="section">
+            <div class="section-label">Your Account</div>
+            <div class="field-row">
+                <label for="username-input">Twitch Username</label>
+                <div class="load-row">
+                    <input type="text" id="username-input" placeholder="YourName" autocomplete="off" spellcheck="false">
+                    <button class="btn" id="load-btn" onclick="loadUser()">Load</button>
+                </div>
+                <div class="status-line info" id="load-status"></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-label">Message Preview</div>
+            <div class="field-row">
+                <label for="message-input">Test Message</label>
+                <input type="text" id="message-input" placeholder="Type something..." value="This is my chat message!">
+            </div>
+        </div>
+
+        <div class="section" id="quick-section">
+            <div class="section-label">Quick Select by Achievement</div>
+            <div class="field-row">
+                <label for="cat-select">Category</label>
+                <select id="cat-select" disabled onchange="onCategoryChange()">
+                    <option value="">— load your account first —</option>
+                </select>
+            </div>
+            <div class="field-row">
+                <label for="ach-select">Achievement</label>
+                <select id="ach-select" disabled onchange="onAchievementChange()">
+                    <option value="">— pick a category —</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="section" id="slots-section">
+            <div class="section-label">Decoration Slots</div>
+            <div class="field-row">
+                <label for="prefix-select">Prefix</label>
+                <select id="prefix-select" disabled onchange="onSlotChange()">
+                    <option value="">None</option>
+                </select>
+            </div>
+            <div class="field-row">
+                <label for="name-select">Name Style</label>
+                <select id="name-select" disabled onchange="onSlotChange()">
+                    <option value="">None</option>
+                </select>
+            </div>
+            <div class="field-row">
+                <label for="suffix-select">Suffix</label>
+                <select id="suffix-select" disabled onchange="onSlotChange()">
+                    <option value="">None</option>
+                </select>
+            </div>
+            <div class="field-row">
+                <label for="message-select">Message Text Style</label>
+                <select id="message-select" disabled onchange="onSlotChange()">
+                    <option value="">None</option>
+                </select>
+            </div>
+            <div class="field-row">
+                <label for="bg-select">Card Background</label>
+                <select id="bg-select" disabled onchange="onSlotChange()">
+                    <option value="">None</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="command-section">
+            <div class="command-box">
+                <div class="command-label">Chat Command</div>
+                <div class="command-value" id="command-value">!deco</div>
+                <div class="command-copy-row">
+                    <button class="btn btn-accent" id="copy-btn" onclick="copyCommand()">Copy</button>
+                    <span class="copy-status" id="copy-status">Copied!</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ── Stage ── -->
+    <div class="stage">
+        <div class="preview-wrap">
+            <div class="decor-card" id="decor-card">
+                <div class="decor-background" id="decor-background"></div>
+                <div class="content">
+                    <div class="message message-text name-tag" id="preview-message">This is my chat message!</div>
+                    <div class="name-line">
+                        <span class="name-prefix name-tag" id="preview-prefix"></span>
+                        <span class="name-base name-effects-none name-tag" id="preview-name">YourName</span>
+                        <span class="name-suffix name-tag" id="preview-suffix"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="preview-hint" id="preview-hint">Load your account to see your unlocked decorations.</div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    window.DECORATION_NAME_CONFIG = {};
+    window.PUPPY_IMG_BASE = 'static/resources/backgrounds/';
+</script>
+<script src="static/js/builder/card/name/effects_manifest.js"></script>
+<script src="static/js/builder/card/particle_engine.js"></script>
+<script src="static/js/builder/card/background-renderers.js"></script>
+<script src="static/js/builder/card/name/translate-core.js"></script>
+<script src="static/js/builder/card/name/translate-glow.js"></script>
+<script src="static/js/builder/card/name/translate-effects.js"></script>
+<script src="static/js/builder/card/name/name.js"></script>
+<script src="builder/builder.js"></script>
+
+</body>
+</html>

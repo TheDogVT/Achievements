@@ -78,6 +78,32 @@
       "chat_cuddle": "2026-02-09T00:23:39.623920+00:00"
     }
   },
+  "decorations": {
+    "unlocked": [
+      "prefix_10",
+      "prefix_11",
+      "prefix_12",
+      "prefix_15",
+      "prefix_17",
+      "prefix_18",
+      "prefix_19",
+      "prefix_2",
+      "prefix_3",
+      "prefix_4",
+      "prefix_7",
+      "prefix_8",
+      "name_1",
+      "suffix_3",
+      "suffix_4",
+      "suffix_8",
+      "prefix_76",
+      "name_14",
+      "name_15",
+      "suffix_19",
+      "prefix_77"
+    ],
+    "active": {}
+  },
   "stats": {
     "messages": 1169,
     "active_months": 4,

@@ -1,0 +1,1145 @@
+/* ============================================================
+   Special-effect library.
+
+   Each effect is a self-contained block driven by:
+     .tag-special-layer.tag-fx-<id>::before / ::after
+
+   Every tunable value is wrapped in `var(--fx-<knob>, default)`. The
+   fallback in `var(...)` MUST match the `default` field in the matching
+   effect entry in `effects_manifest.js` — they live in two places by
+   design and must stay in sync.
+
+   All effects consume var(--tag-glow-color) (set from the option's
+   glow_color) for the primary tint. Secondary tints come from per-effect
+   `accent` knobs (or `accent2` for two-channel effects like glitch_bars).
+
+   See EFFECTS.md for the full catalog, knob conventions, and the ritual
+   for adding a new effect.
+   ============================================================ */
+
+.tag-effect-layer,
+.tag-special-layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 5;
+    overflow: visible;
+    transform: translate(var(--fx-offset-x, 0px), var(--fx-offset-y, 0px)) scale(var(--fx-scale, 1));
+    transform-origin: center center;
+}
+
+/* When tsParticles engine is active, suppress the CSS pseudo-element fallback. */
+.tag-effect-layer.has-particle-engine::before,
+.tag-effect-layer.has-particle-engine::after,
+.tag-special-layer.has-particle-engine::before,
+.tag-special-layer.has-particle-engine::after {
+    display: none;
+}
+.tag-effect-layer.has-particle-engine canvas,
+.tag-special-layer.has-particle-engine canvas {
+    pointer-events: none !important;
+}
+
+/* ============================================================
+   PARTICLE EFFECTS
+   ============================================================ */
+
+/* ---- floating_stars : two soft star sparkles, breathe pulse ----
+   knobs: EFFECT_KNOBS.floating_stars (speed, intensity, accent) */
+.tag-fx-floating-stars::before,
+.tag-fx-floating-stars::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    pointer-events: none;
+    background:
+        radial-gradient(circle, rgba(255,255,255,0.95) 0 1px, transparent 1.6px),
+        radial-gradient(circle, color-mix(in srgb, var(--tag-glow-color), var(--fx-color1, #ffe8a8) 35%) 0 2px, transparent 3px);
+    animation: tag-star-float var(--fx-speed, 2.6s) ease-in-out infinite;
+}
+.tag-fx-floating-stars::before {
+    top: -6px;
+    right: -8px;
+}
+.tag-fx-floating-stars::after {
+    bottom: -5px;
+    left: -6px;
+    animation-delay: calc(var(--fx-speed, 2.6s) * -0.46);
+}
+@keyframes tag-star-float {
+    0%, 100% { opacity: calc(var(--fx-intensity, 0.85) * 0.3); transform: translateY(0) scale(0.9); }
+    50%      { opacity: var(--fx-intensity, 0.85);             transform: translateY(-1px) scale(1.05); }
+}
+
+/* ---- spark_trail : short streak trailing the right edge ----
+   knobs: EFFECT_KNOBS.spark_trail (speed, length, intensity) */
+.tag-fx-spark-trail::after {
+    content: '';
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    width: var(--fx-length, 16px);
+    height: 3px;
+    transform: translateY(-50%);
+    border-radius: 999px;
+    background: linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--tag-glow-color), transparent 100%) 0%,
+        color-mix(in srgb, var(--tag-glow-color), transparent 30%) 50%,
+        color-mix(in srgb, var(--tag-glow-color), transparent 100%) 100%
+    );
+    animation: tag-trail-pulse var(--fx-speed, 2.3s) ease-in-out infinite;
+}
+@keyframes tag-trail-pulse {
+    0%, 100% { opacity: calc(var(--fx-intensity, 0.8) * 0.3); width: calc(var(--fx-length, 16px) * 0.6); }
+    50%      { opacity: var(--fx-intensity, 0.8);             width: calc(var(--fx-length, 16px) * 1.1); }
+}
+
+/* ---- fire_embers : two ember particles rising from beneath ----
+   knobs: EFFECT_KNOBS.fire_embers (speed, glow, spread, size, color1) */
+.tag-fx-fire-embers {
+    filter: drop-shadow(0 0 6px color-mix(in srgb, var(--fx-color1, #ff4e1a), transparent calc((1 - var(--fx-glow, 0.42)) * 100%)));
+    overflow: visible;
+}
+.tag-fx-fire-embers::before,
+.tag-fx-fire-embers::after {
+    content: '';
+    position: absolute;
+    width: var(--fx-size, 12px);
+    height: calc(var(--fx-size, 12px) * 1.17);
+    border-radius: 50% 50% 45% 45%;
+    pointer-events: none;
+    background:
+        radial-gradient(ellipse at 45% 72%,
+            color-mix(in srgb, var(--fx-color1, #ff6820), #ffffff 75%) 0 20%,
+            color-mix(in srgb, var(--fx-color1, #ff6820), #ffffff 15%) 36%,
+            color-mix(in srgb, var(--fx-color1, #ff6820), transparent 30%) 58%,
+            transparent 82%);
+    filter: blur(0.2px) saturate(1.15);
+    mix-blend-mode: screen;
+    box-shadow:
+        0 0 calc(var(--fx-spread, 18px) * 0.55) color-mix(in srgb, var(--fx-color1, #ff6820), transparent 58%),
+        0 0 var(--fx-spread, 18px)              color-mix(in srgb, var(--fx-color1, #ff9e24), transparent 58%);
+    animation: tag-fire-ember-rise var(--fx-speed, 1.9s) ease-in-out infinite;
+}
+.tag-fx-fire-embers::before {
+    left: -10px;
+    bottom: -5px;
+}
+.tag-fx-fire-embers::after {
+    right: -12px;
+    bottom: -6px;
+    animation-delay: calc(var(--fx-speed, 1.9s) * -0.5);
+}
+@keyframes tag-fire-ember-rise {
+    0%   { opacity: 0;    transform: translate3d(0, 7px, 0) scale(0.74) rotate(-8deg); }
+    18%  { opacity: 0.92; }
+    100% { opacity: 0;    transform: translate3d(1px, -19px, 0) scale(1.24) rotate(9deg); }
+}
+
+/* ---- bubble_drift : two ring bubbles rising on either side ----
+   knobs: EFFECT_KNOBS.bubble_drift (speed, size, accent) */
+.tag-fx-bubble-drift::before,
+.tag-fx-bubble-drift::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    border: 1px solid color-mix(in srgb, var(--fx-color1, #b7f1ff), #ffffff 45%);
+    background: radial-gradient(circle at 30% 28%,
+        rgba(255,255,255,0.88) 0 1px,
+        color-mix(in srgb, var(--fx-color1, #b7f1ff), transparent 70%) 3px,
+        transparent 6px);
+    animation: tag-bubble-float var(--fx-speed, 3.2s) ease-in-out infinite;
+}
+.tag-fx-bubble-drift::before {
+    width: var(--fx-size, 9px);
+    height: var(--fx-size, 9px);
+    left: -8px;
+    bottom: -3px;
+}
+.tag-fx-bubble-drift::after {
+    width: calc(var(--fx-size, 9px) * 0.78);
+    height: calc(var(--fx-size, 9px) * 0.78);
+    right: -7px;
+    bottom: -6px;
+    animation-delay: calc(var(--fx-speed, 3.2s) * -0.44);
+}
+@keyframes tag-bubble-float {
+    0%   { opacity: 0;    transform: translate3d(0, 8px, 0) scale(0.75); }
+    22%  { opacity: 0.75; }
+    100% { opacity: 0;    transform: translate3d(4px, -16px, 0) scale(1.12); }
+}
+
+/* ---- snow_fall : layered radial-gradient flakes drifting down ----
+   knobs: EFFECT_KNOBS.snow_fall (speed, size, intensity, accent) */
+.tag-fx-snow-fall::before,
+.tag-fx-snow-fall::after {
+    content: '';
+    position: absolute;
+    inset: -8px -4px;
+    pointer-events: none;
+    opacity: var(--fx-intensity, 0.85);
+}
+.tag-fx-snow-fall::before {
+    background-image:
+        radial-gradient(circle, var(--fx-color1, #ffffff) 0 calc(var(--fx-size, 5px) * 0.4), transparent calc(var(--fx-size, 5px) * 0.6)),
+        radial-gradient(circle, color-mix(in srgb, var(--fx-color1, #ffffff), transparent 30%) 0 calc(var(--fx-size, 5px) * 0.32), transparent calc(var(--fx-size, 5px) * 0.5));
+    background-size: 32px 48px, 24px 36px;
+    animation: tag-snow-fall-near var(--fx-speed, 4.2s) linear infinite;
+}
+.tag-fx-snow-fall::after {
+    background-image:
+        radial-gradient(circle, color-mix(in srgb, var(--fx-color1, #ffffff), transparent 40%) 0 calc(var(--fx-size, 5px) * 0.26), transparent calc(var(--fx-size, 5px) * 0.4));
+    background-size: 40px 60px;
+    animation: tag-snow-fall-far calc(var(--fx-speed, 4.2s) * 1.6) linear infinite;
+}
+@keyframes tag-snow-fall-near {
+    0%   { background-position: 0 -48px,  14px -36px; }
+    100% { background-position: 0  48px,  14px  36px; }
+}
+@keyframes tag-snow-fall-far {
+    0%   { background-position: 6px -60px; }
+    100% { background-position: 6px  60px; }
+}
+
+/* ---- firefly : two soft floating lights with gentle drift ----
+   knobs: EFFECT_KNOBS.firefly (speed, intensity, accent) */
+.tag-fx-firefly::before,
+.tag-fx-firefly::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(circle,
+        var(--fx-color1, #ffe48a) 0 30%,
+        color-mix(in srgb, var(--fx-color1, #ffe48a), transparent 70%) 60%,
+        transparent 100%);
+    box-shadow:
+        0 0 8px  var(--fx-color1, #ffe48a),
+        0 0 16px color-mix(in srgb, var(--fx-color1, #ffe48a), transparent 60%);
+    opacity: 0;
+    mix-blend-mode: screen;
+    animation: tag-firefly-drift var(--fx-speed, 4s) ease-in-out infinite;
+}
+.tag-fx-firefly::before { top: -8px;    left:  25%; }
+.tag-fx-firefly::after  { bottom: -6px; right: 30%; animation-delay: calc(var(--fx-speed, 4s) * -0.55); }
+@keyframes tag-firefly-drift {
+    0%, 100% { opacity: 0;                                  transform: translate(0, 0); }
+    18%      { opacity: var(--fx-intensity, 0.75);          transform: translate(2px, -3px); }
+    52%      { opacity: calc(var(--fx-intensity, 0.75) * 0.35); transform: translate(-2px, 2px); }
+    78%      { opacity: var(--fx-intensity, 0.75);          transform: translate(3px, -1px); }
+}
+
+/* ---- petals : two cherry-blossom petals rotating as they fall ----
+   knobs: EFFECT_KNOBS.petals (speed, size, accent) */
+.tag-fx-petals::before,
+.tag-fx-petals::after {
+    content: '';
+    position: absolute;
+    width: var(--fx-size, 7px);
+    height: var(--fx-size, 7px);
+    border-radius: 50% 5% 50% 50%;
+    pointer-events: none;
+    background: linear-gradient(135deg,
+        color-mix(in srgb, var(--fx-color1, #ffc4d8), #ffffff 30%) 0%,
+        var(--fx-color1, #ffc4d8) 60%,
+        color-mix(in srgb, var(--fx-color1, #ffc4d8), #000000 25%) 100%);
+    opacity: 0;
+    filter: drop-shadow(0 0 2px color-mix(in srgb, var(--fx-color1, #ffc4d8), transparent 40%));
+    animation: tag-petals-fall var(--fx-speed, 4.8s) linear infinite;
+}
+.tag-fx-petals::before { top: -10px; left:  12%; }
+.tag-fx-petals::after  { top: -10px; right: 18%; animation-delay: calc(var(--fx-speed, 4.8s) * -0.5); }
+@keyframes tag-petals-fall {
+    0%   { opacity: 0;    transform: translate(0, 0) rotate(0deg); }
+    12%  { opacity: 0.9; }
+    100% { opacity: 0;    transform: translate(8px, 36px) rotate(540deg); }
+}
+
+/* ---- dust_motes : slow ambient drift, three layered gradient densities ----
+   knobs: EFFECT_KNOBS.dust_motes (speed, intensity, accent) */
+.tag-fx-dust-motes::before {
+    content: '';
+    position: absolute;
+    inset: -25%;
+    pointer-events: none;
+    background-image:
+        radial-gradient(circle, color-mix(in srgb, var(--fx-color1, #fff2c4), transparent 40%) 0 0.9px, transparent 1.6px),
+        radial-gradient(circle, color-mix(in srgb, var(--fx-color1, #fff2c4), transparent 55%) 0 0.7px, transparent 1.3px),
+        radial-gradient(circle, color-mix(in srgb, var(--fx-color1, #fff2c4), transparent 65%) 0 0.5px, transparent 1.1px);
+    background-size: 52px 78px, 38px 62px, 70px 110px;
+    background-position: 0 0, 18px 22px, 8px 40px;
+    opacity: var(--fx-intensity, 0.45);
+    mix-blend-mode: screen;
+    animation: tag-dust-drift var(--fx-speed, 7.5s) ease-in-out infinite;
+}
+@keyframes tag-dust-drift {
+    0%, 100% { background-position: 0 0,    18px 22px,  8px 40px; }
+    33%      { background-position: 4px -6px, 22px 18px, 12px 36px; }
+    66%      { background-position: -3px 4px, 14px 26px, 4px 44px; }
+}
+
+/* ---- flakes : falling sparkles, two depth planes ----
+   knobs: EFFECT_KNOBS.flakes (speed, size, intensity, color1–color4) */
+.tag-fx-flakes::before,
+.tag-fx-flakes::after {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    filter: brightness(calc(0.6 + var(--fx-intensity, 0.85) * 0.6));
+}
+.tag-fx-flakes::before {
+    background-image:
+        radial-gradient(circle,
+            var(--fx-color1, #fff1a8) 0 calc(var(--fx-size, 5px) * 0.3),
+            var(--fx-color3, #d4a526) calc(var(--fx-size, 5px) * 0.3) calc(var(--fx-size, 5px) * 0.5),
+            transparent calc(var(--fx-size, 5px) * 0.6)),
+        radial-gradient(circle,
+            var(--fx-color2, #ffd86b) 0 calc(var(--fx-size, 5px) * 0.4),
+            var(--fx-color4, #b8810a) calc(var(--fx-size, 5px) * 0.4) calc(var(--fx-size, 5px) * 0.55),
+            transparent calc(var(--fx-size, 5px) * 0.65));
+    background-size: 32px 50px, 44px 68px;
+    animation: tag-flakes-fall-near var(--fx-speed, 3.8s) linear infinite;
+}
+.tag-fx-flakes::after {
+    background-image:
+        radial-gradient(circle,
+            color-mix(in srgb, var(--fx-color2, #ffd86b), #ffffff 25%) 0 calc(var(--fx-size, 5px) * 0.25),
+            color-mix(in srgb, var(--fx-color4, #b8810a), #000000 10%) calc(var(--fx-size, 5px) * 0.25) calc(var(--fx-size, 5px) * 0.45),
+            transparent calc(var(--fx-size, 5px) * 0.55));
+    background-size: 56px 84px;
+    animation: tag-flakes-fall-far calc(var(--fx-speed, 3.8s) * 1.4) linear infinite;
+}
+@keyframes tag-flakes-fall-near {
+    0%   { background-position: 0 -50px, 16px -68px; }
+    100% { background-position: 0  50px, 16px  68px; }
+}
+@keyframes tag-flakes-fall-far {
+    0%   { background-position: 8px -84px; }
+    100% { background-position: 8px  84px; }
+}
+
+/* ============================================================
+   OVERLAY / FILTER EFFECTS
+   ============================================================ */
+
+/* ---- heat_haze : soft blurred duplicate with slow drift ----
+   knobs: EFFECT_KNOBS.heat_haze (speed, intensity, color1) */
+.tag-fx-heat-haze {
+    color: color-mix(in srgb, var(--fx-color1, #ffd29b), var(--tag-glow-color) 45%);
+    mix-blend-mode: screen;
+    filter: blur(calc(0.8px + var(--fx-intensity, 0.52) * 1.4px));
+    opacity: calc(0.32 + var(--fx-intensity, 0.52) * 0.38);
+    animation: tag-heat-haze var(--fx-speed, 2.8s) ease-in-out infinite;
+}
+
+@keyframes tag-heat-haze {
+    0%, 100% { transform: translate(0, 0) skewX(0deg); }
+    30% { transform: translate(0.8px, -0.5px) skewX(1.4deg); }
+    68% { transform: translate(-0.9px, 0.6px) skewX(-1.1deg); }
+}
+
+/* ---- chroma_echo : subtle RGB split echo around the text ----
+   knobs: EFFECT_KNOBS.chroma_echo (speed, intensity, color1, color2) */
+.tag-fx-chroma-echo {
+    color: transparent;
+    text-shadow:
+        calc(-1px * var(--fx-intensity, 0.45) * 2) 0 0 var(--fx-color1, #68d7ff),
+        calc(1px * var(--fx-intensity, 0.45) * 2) 0 0 var(--fx-color2, #ff6fad);
+    opacity: calc(0.22 + var(--fx-intensity, 0.45) * 0.34);
+    animation: tag-chroma-echo var(--fx-speed, 3.6s) ease-in-out infinite;
+}
+
+@keyframes tag-chroma-echo {
+    0%, 100% {
+        transform: translate(0, 0);
+        text-shadow:
+            calc(-1px * var(--fx-intensity, 0.45) * 2) 0 0 var(--fx-color1, #68d7ff),
+            calc(1px * var(--fx-intensity, 0.45) * 2) 0 0 var(--fx-color2, #ff6fad);
+    }
+    50% {
+        transform: translate(0.3px, -0.2px);
+        text-shadow:
+            calc(-1.7px * var(--fx-intensity, 0.45) * 2) 0 0 var(--fx-color1, #68d7ff),
+            calc(1.7px * var(--fx-intensity, 0.45) * 2) 0 0 var(--fx-color2, #ff6fad);
+    }
+}
+
+/* ---- synth_scanlines : CRT scanlines + drifting highlight sweep ----
+   knobs: EFFECT_KNOBS.synth_scanlines (speed, line_opacity, sweep_speed) */
+.tag-fx-synth-scanlines::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    pointer-events: none;
+    background:
+        repeating-linear-gradient(
+            180deg,
+            color-mix(in srgb, var(--tag-glow-color), transparent 58%) 0 2px,
+            transparent 2px 6px
+        );
+    mix-blend-mode: screen;
+    opacity: calc(var(--fx-line-opacity, 0.58) * 1.45);
+    animation: tag-synth-scan var(--fx-speed, 2.1s) linear infinite;
+}
+.tag-fx-synth-scanlines::after {
+    content: '';
+    position: absolute;
+    left: -3%;
+    right: -3%;
+    top: 0;
+    height: 22%;
+    pointer-events: none;
+    background: linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--tag-glow-color), #ffffff 30%) 0%,
+        transparent 100%
+    );
+    opacity: 0.72;
+    filter: blur(1.2px);
+    animation: tag-synth-sweep var(--fx-sweep-speed, 2.7s) ease-in-out infinite;
+}
+@keyframes tag-synth-scan {
+    0%   { background-position: 0 0;   opacity: calc(var(--fx-line-opacity, 0.58) * 0.78); }
+    50%  {                              opacity: var(--fx-line-opacity, 0.58); }
+    100% { background-position: 0 8px; opacity: calc(var(--fx-line-opacity, 0.58) * 0.78); }
+}
+@keyframes tag-synth-sweep {
+    0%   { transform: translateY(-5px); opacity: 0; }
+    25%  { opacity: 0.72; }
+    100% { transform: translateY(18px); opacity: 0; }
+}
+
+.tag-effect-layer.tag-effect-plane-text.tag-fx-synth-scanlines {
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    background:
+        repeating-linear-gradient(
+            180deg,
+            color-mix(in srgb, var(--tag-glow-color), #ffffff 22%) 0 2px,
+            color-mix(in srgb, var(--tag-glow-color), transparent 55%) 2px 4px,
+            transparent 4px 7px
+        );
+    background-clip: text;
+    -webkit-background-clip: text;
+    filter: contrast(1.08) brightness(1.08);
+}
+.tag-effect-layer.tag-effect-plane-text.tag-fx-synth-scanlines::before,
+.tag-effect-layer.tag-effect-plane-text.tag-fx-synth-scanlines::after {
+    display: none;
+}
+
+/* ---- glitch_bars : cyberpunk RGB tear/slice burst ----
+   knobs: EFFECT_KNOBS.glitch_bars (speed, shift_distance, intensity, color1, color2)
+   Ambient: thin scanlines at low opacity. Every few seconds a burst of
+   clip-path slices fires with translateX displacement and a brightness
+   flash — the two channels offset so they rarely fire together. */
+.tag-fx-glitch-bars::before,
+.tag-fx-glitch-bars::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    pointer-events: none;
+    mix-blend-mode: screen;
+}
+/* Channel A — cyan, burst at 88-93% of cycle */
+.tag-fx-glitch-bars::before {
+    background: repeating-linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--fx-color1, #20e0ff), transparent 38%) 0px 2px,
+        transparent 2px 10px
+    );
+    animation: tag-glitch-burst-a calc(var(--fx-speed, 2.5s) * 1.6) steps(1) infinite;
+}
+/* Channel B — magenta, burst at 82-87% of cycle */
+.tag-fx-glitch-bars::after {
+    background: repeating-linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--fx-color2, #ff2080), transparent 42%) 0px 2px,
+        transparent 2px 12px
+    );
+    animation: tag-glitch-burst-b calc(var(--fx-speed, 2.5s) * 1.13) steps(1) infinite;
+}
+
+@keyframes tag-glitch-burst-a {
+    /* ambient */
+    0%,  88%, 100% { opacity: calc(var(--fx-intensity, 0.6) * 0.9); transform: translateX(0);                                    clip-path: none; filter: none; }
+    /* burst: 5 torn slices */
+    89%            { opacity: var(--fx-intensity, 0.6); transform: translateX(calc(var(--fx-shift-distance, 6px) * -1));   clip-path: inset(8%  0 72% 0); filter: brightness(2.2); }
+    90%            { opacity: var(--fx-intensity, 0.6); transform: translateX(calc(var(--fx-shift-distance, 6px) *  0.8)); clip-path: inset(58% 0 28% 0); filter: brightness(2.0); }
+    91%            { opacity: var(--fx-intensity, 0.6); transform: translateX(calc(var(--fx-shift-distance, 6px) * -1.4)); clip-path: inset(32% 0 50% 0); filter: brightness(2.5); }
+    92%            { opacity: var(--fx-intensity, 0.6); transform: translateX(calc(var(--fx-shift-distance, 6px) *  1.2)); clip-path: inset(4%  0 83% 0); filter: brightness(1.8); }
+    93%            { opacity: var(--fx-intensity, 0.6); transform: translateX(0);                                           clip-path: inset(72% 0 6%  0); filter: brightness(2.2); }
+    /* reset */
+    94%            { opacity: calc(var(--fx-intensity, 0.6) * 0.55); transform: translateX(0);                                    clip-path: none; filter: none; }
+}
+
+@keyframes tag-glitch-burst-b {
+    /* ambient */
+    0%,  82%, 100% { opacity: calc(var(--fx-intensity, 0.6) * 0.82); transform: translateX(0);                                    clip-path: none; filter: none; }
+    /* burst: 5 torn slices */
+    83%            { opacity: var(--fx-intensity, 0.6); transform: translateX(calc(var(--fx-shift-distance, 6px) *  0.9)); clip-path: inset(22% 0 64% 0); filter: brightness(2.0); }
+    84%            { opacity: var(--fx-intensity, 0.6); transform: translateX(calc(var(--fx-shift-distance, 6px) * -1.3)); clip-path: inset(48% 0 38% 0); filter: brightness(2.5); }
+    85%            { opacity: var(--fx-intensity, 0.6); transform: translateX(calc(var(--fx-shift-distance, 6px) *  0.6)); clip-path: inset(78% 0 6%  0); filter: brightness(1.8); }
+    86%            { opacity: var(--fx-intensity, 0.6); transform: translateX(calc(var(--fx-shift-distance, 6px) * -1.5)); clip-path: inset(3%  0 82% 0); filter: brightness(2.2); }
+    87%            { opacity: var(--fx-intensity, 0.6); transform: translateX(calc(var(--fx-shift-distance, 6px) *  0.4)); clip-path: inset(40% 0 46% 0); filter: brightness(2.0); }
+    /* reset */
+    88%            { opacity: calc(var(--fx-intensity, 0.6) * 0.45); transform: translateX(0);                                    clip-path: none; filter: none; }
+}
+
+/* ---- holo_shimmer : iridescent prism sweep over the tag ----
+   knobs: EFFECT_KNOBS.holo_shimmer (speed, intensity, color1–color4) */
+.tag-fx-holo-shimmer::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    pointer-events: none;
+    background: linear-gradient(
+        110deg,
+        transparent 30%,
+        color-mix(in srgb, var(--tag-glow-color), var(--fx-color1, #ff80c0) 30%) 38%,
+        color-mix(in srgb, var(--tag-glow-color), var(--fx-color2, #a0b0ff) 30%) 46%,
+        color-mix(in srgb, var(--tag-glow-color), var(--fx-color3, #80ffe0) 30%) 54%,
+        color-mix(in srgb, var(--tag-glow-color), var(--fx-color4, #ffe080) 30%) 62%,
+        transparent 70%
+    );
+    background-size: 280% 100%;
+    background-repeat: no-repeat;
+    mix-blend-mode: screen;
+    opacity: calc(var(--fx-intensity, 0.55) * 1.55);
+    animation: tag-holo-sweep var(--fx-speed, 4.5s) linear infinite;
+}
+@keyframes tag-holo-sweep {
+    0%   { background-position: -50% 50%; }
+    100% { background-position: 180% 50%; }
+}
+
+.tag-effect-layer.tag-effect-plane-text.tag-fx-holo-shimmer {
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(
+        110deg,
+        color-mix(in srgb, var(--tag-glow-color), transparent 60%) 20%,
+        color-mix(in srgb, var(--tag-glow-color), var(--fx-color1, #ff80c0) 45%) 36%,
+        color-mix(in srgb, var(--tag-glow-color), var(--fx-color2, #a0b0ff) 45%) 46%,
+        color-mix(in srgb, var(--tag-glow-color), var(--fx-color3, #80ffe0) 45%) 56%,
+        color-mix(in srgb, var(--tag-glow-color), var(--fx-color4, #ffe080) 45%) 66%,
+        color-mix(in srgb, var(--tag-glow-color), transparent 60%) 82%
+    );
+    background-size: 220% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: tag-holo-sweep var(--fx-speed, 4.5s) linear infinite;
+}
+.tag-effect-layer.tag-effect-plane-text.tag-fx-holo-shimmer::before {
+    display: none;
+}
+
+/* ---- magic_circle : pulsing arcane ring beneath the text ----
+   knobs: EFFECT_KNOBS.magic_circle (speed, intensity) */
+.tag-fx-magic-circle::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    width: 110%;
+    height: 35%;
+    border-radius: 50%;
+    pointer-events: none;
+    border: 1px solid color-mix(in srgb, var(--tag-glow-color), transparent 35%);
+    box-shadow:
+        inset 0 0 12px color-mix(in srgb, var(--tag-glow-color), transparent 60%),
+        0 0 14px        color-mix(in srgb, var(--tag-glow-color), transparent 50%);
+    mix-blend-mode: screen;
+    animation: tag-magic-circle-pulse var(--fx-speed, 3.2s) ease-in-out infinite;
+}
+.tag-fx-magic-circle::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    width: 80%;
+    height: 22%;
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(ellipse at center,
+        color-mix(in srgb, var(--tag-glow-color), transparent 45%) 0%,
+        transparent 60%);
+    mix-blend-mode: screen;
+    animation: tag-magic-circle-glow var(--fx-speed, 3.2s) ease-in-out infinite;
+}
+@keyframes tag-magic-circle-pulse {
+    0%, 100% { opacity: var(--fx-intensity, 0.65);             transform: translate(-50%, -40%) scale(1); }
+    50%      { opacity: calc(var(--fx-intensity, 0.65) * 1.3); transform: translate(-50%, -40%) scale(1.05); }
+}
+@keyframes tag-magic-circle-glow {
+    0%, 100% { opacity: calc(var(--fx-intensity, 0.65) * 0.5); transform: translate(-50%, -45%); }
+    50%      { opacity: calc(var(--fx-intensity, 0.65) * 0.9); transform: translate(-50%, -45%); }
+}
+
+/* ============================================================
+   INTERMITTENT EFFECTS
+   ============================================================ */
+
+/* ---- lightning : occasional flash + jagged bolt streak ----
+   knobs: EFFECT_KNOBS.lightning (interval, intensity, color1)
+   Flash duration is fixed at ~5% of the cycle, baked into the keyframes,
+   so a longer interval makes the flash slightly slower (intentionally —
+   reads as distant vs close lightning). */
+.tag-fx-lightning {
+    overflow: visible;
+}
+.tag-fx-lightning::before {
+    content: '';
+    position: absolute;
+    inset: -20%;
+    pointer-events: none;
+    background: radial-gradient(ellipse at 50% 30%,
+        color-mix(in srgb, var(--fx-color1, #ffffff), transparent 8%)  0%,
+        color-mix(in srgb, var(--fx-color1, #bedeff), transparent 45%) 25%,
+        transparent 60%);
+    mix-blend-mode: screen;
+    opacity: 0;
+    animation: tag-lightning-flash calc(var(--fx-interval, 6s) + (var(--fx-random-range, 0s) * var(--fx-seed-a, 0.4))) ease-out infinite;
+    animation-delay: calc(var(--fx-delay, 0s) + var(--fx-phase, 0s));
+}
+.tag-fx-lightning::after {
+    content: '';
+    position: absolute;
+    left: calc(12% + (var(--fx-seed-b, 0.5) * 66%));
+    top: calc(-14% + (var(--fx-seed-c, 0.2) * 16%));
+    width: 2px;
+    height: 120%;
+    pointer-events: none;
+    background: linear-gradient(180deg,
+        transparent 0%,
+        color-mix(in srgb, var(--fx-color1, #ffffff), transparent  5%) 15%,
+        color-mix(in srgb, var(--fx-color1, #dceaff), transparent 15%) 35%,
+        transparent 45%,
+        color-mix(in srgb, var(--fx-color1, #ffffff), transparent 10%) 55%,
+        color-mix(in srgb, var(--fx-color1, #c8dcff), transparent 30%) 75%,
+        transparent 90%);
+    transform: rotate(calc(-16deg + (var(--fx-seed-d, 0.5) * 32deg)));
+    filter: blur(0.3px) drop-shadow(0 0 4px color-mix(in srgb, var(--fx-color1, #b4d2ff), transparent 10%));
+    mix-blend-mode: screen;
+    opacity: 0;
+    animation: tag-lightning-bolt calc(var(--fx-interval, 6s) + (var(--fx-random-range, 0s) * var(--fx-seed-b, 0.6))) ease-out infinite;
+    animation-delay: calc(var(--fx-delay, 0s) + var(--fx-phase, 0s));
+}
+@keyframes tag-lightning-flash {
+    0%, 100% { opacity: 0; }
+    1.2%     { opacity: var(--fx-intensity, 0.9); }
+    2.4%     { opacity: calc(var(--fx-intensity, 0.9) * 0.3); }
+    3.6%     { opacity: calc(var(--fx-intensity, 0.9) * 0.85); }
+    5%       { opacity: 0; }
+}
+@keyframes tag-lightning-bolt {
+    0%, 100% { opacity: 0; }
+    1.5%     { opacity: 1;   transform: rotate(calc(-16deg + (var(--fx-seed-d, 0.5) * 32deg))); }
+    3%       { opacity: 0.6; transform: rotate(calc(-16deg + (var(--fx-seed-d, 0.5) * 32deg))) translateX(0.5px); }
+    5%       { opacity: 0;   transform: rotate(calc(-16deg + (var(--fx-seed-d, 0.5) * 32deg))); }
+}
+
+/* ============================================================
+   REAR ATMOSPHERICS / FRONT ACCENTS / TEXT MATERIALS
+   ============================================================ */
+
+.tag-fx-smoke-haze::before,
+.tag-fx-smoke-haze::after,
+.tag-fx-mist-roll::before,
+.tag-fx-mist-roll::after,
+.tag-fx-dust-field::before,
+.tag-fx-dust-field::after,
+.tag-fx-light-rays::before,
+.tag-fx-heat-aura::before,
+.tag-fx-halo-ring::before,
+.tag-fx-glint-pass::before,
+.tag-fx-star-ping::before,
+.tag-fx-star-ping::after,
+.tag-fx-prism-flash::before,
+.tag-fx-spark-arc::before,
+.tag-fx-shard-flick::before,
+.tag-fx-lens-fleck::before {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+}
+
+.tag-fx-smoke-haze::before,
+.tag-fx-smoke-haze::after {
+    inset: -20% -14%;
+    border-radius: 999px;
+    background:
+        radial-gradient(ellipse at 35% 45%, color-mix(in srgb, var(--fx-color1, #d7e1f0), transparent 6%) 0%, color-mix(in srgb, var(--fx-color1, #d7e1f0), transparent 64%) 46%, transparent 74%),
+        radial-gradient(ellipse at 68% 56%, color-mix(in srgb, var(--fx-color2, #7482a2), transparent 14%) 0%, color-mix(in srgb, var(--fx-color2, #7482a2), transparent 74%) 50%, transparent 76%);
+    opacity: calc((0.82 + var(--fx-intensity, 0.42) * 0.28) * var(--fx-effect-opacity, 1));
+    filter: blur(calc(7px + var(--fx-intensity, 0.42) * 7px));
+    mix-blend-mode: screen;
+    animation: tag-smoke-haze var(--fx-duration, var(--fx-speed, 6.2s)) ease-in-out infinite;
+    animation-delay: calc(var(--fx-delay, 0s) + var(--fx-phase, 0s));
+}
+.tag-fx-smoke-haze::after {
+    animation-direction: reverse;
+    animation-duration: calc(var(--fx-duration, var(--fx-speed, 6.2s)) * 1.18);
+}
+@keyframes tag-smoke-haze {
+    0%, 100% { transform: translate(-4%, -2%) scale(0.98); }
+    50%      { transform: translate(4%, 3%) scale(1.04); }
+}
+
+.tag-fx-light-rays::before {
+    inset: -36% -12%;
+    background:
+        linear-gradient(var(--fx-angle, -18deg),
+            transparent 20%,
+            color-mix(in srgb, var(--fx-color1, #fff4b8), transparent 52%) 34%,
+            color-mix(in srgb, var(--fx-color1, #fff4b8), transparent 74%) 46%,
+            transparent 70%);
+    opacity: calc(0.3 + var(--fx-intensity, 0.45) * 0.48);
+    filter: blur(6px);
+    mix-blend-mode: screen;
+    animation: tag-light-rays var(--fx-duration, var(--fx-speed, 4.8s)) ease-in-out infinite;
+    animation-delay: calc(var(--fx-delay, 0s) + var(--fx-phase, 0s));
+}
+@keyframes tag-light-rays {
+    0%, 100% { transform: translateX(-8%) rotate(0deg); opacity: calc(0.08 + var(--fx-intensity, 0.45) * 0.28); }
+    50%      { transform: translateX(8%) rotate(2deg);  opacity: calc(0.14 + var(--fx-intensity, 0.45) * 0.42); }
+}
+
+.tag-fx-mist-roll::before,
+.tag-fx-mist-roll::after {
+    inset: auto -12% -32% -12%;
+    height: 72%;
+    border-radius: 999px;
+    background:
+        radial-gradient(ellipse at 25% 55%, color-mix(in srgb, var(--fx-color1, #dff6ff), transparent 24%) 0%, color-mix(in srgb, var(--fx-color1, #dff6ff), transparent 70%) 54%, transparent 76%),
+        radial-gradient(ellipse at 72% 48%, color-mix(in srgb, var(--fx-color1, #dff6ff), transparent 38%) 0%, color-mix(in srgb, var(--fx-color1, #dff6ff), transparent 78%) 52%, transparent 74%);
+    opacity: calc((0.52 + var(--fx-intensity, 0.36) * 0.34) * var(--fx-effect-opacity, 1));
+    filter: blur(7px);
+    mix-blend-mode: screen;
+    animation: tag-mist-roll var(--fx-duration, var(--fx-speed, 7.4s)) ease-in-out infinite;
+    animation-delay: calc(var(--fx-delay, 0s) + var(--fx-phase, 0s));
+}
+.tag-fx-mist-roll::after {
+    inset: auto -8% -28% -8%;
+    animation-direction: reverse;
+    animation-duration: calc(var(--fx-duration, var(--fx-speed, 7.4s)) * 0.82);
+}
+@keyframes tag-mist-roll {
+    0%, 100% { transform: translateX(-5%) translateY(1%); }
+    50%      { transform: translateX(5%) translateY(-2%); }
+}
+
+.tag-fx-dust-field::before,
+.tag-fx-dust-field::after {
+    inset: -16%;
+    background:
+        radial-gradient(circle at 18% 30%, color-mix(in srgb, var(--fx-color1, #fff4d2), transparent 18%) 0 1.15px, transparent 2px),
+        radial-gradient(circle at 46% 68%, color-mix(in srgb, var(--fx-color1, #fff4d2), transparent 26%) 0 1px, transparent 1.85px),
+        radial-gradient(circle at 76% 38%, color-mix(in srgb, var(--fx-color1, #fff4d2), transparent 22%) 0 1.05px, transparent 1.9px),
+        radial-gradient(circle at 64% 16%, color-mix(in srgb, var(--fx-color1, #fff4d2), transparent 32%) 0 0.9px, transparent 1.7px);
+    opacity: calc((0.4 + var(--fx-intensity, 0.34) * 0.56) * var(--fx-effect-opacity, 1));
+    mix-blend-mode: screen;
+    animation: tag-dust-field var(--fx-duration, var(--fx-speed, 8.8s)) linear infinite;
+    animation-delay: calc(var(--fx-delay, 0s) + var(--fx-phase, 0s));
+}
+.tag-fx-dust-field::after {
+    filter: blur(0.5px);
+    animation-direction: reverse;
+    animation-duration: calc(var(--fx-duration, var(--fx-speed, 8.8s)) * 1.24);
+}
+@keyframes tag-dust-field {
+    0%   { transform: translate3d(-2%, -1%, 0); }
+    50%  { transform: translate3d(2%, 2%, 0); }
+    100% { transform: translate3d(-2%, -1%, 0); }
+}
+
+.tag-fx-heat-aura::before {
+    inset: -26% -10% -8% -10%;
+    background:
+        radial-gradient(ellipse at 50% 60%,
+            color-mix(in srgb, var(--fx-color1, #ffb15c), transparent 34%) 0%,
+            color-mix(in srgb, var(--fx-color1, #ffb15c), transparent 68%) 36%,
+            transparent 72%),
+        linear-gradient(180deg,
+            transparent 0%,
+            color-mix(in srgb, var(--fx-color1, #ffb15c), transparent 82%) 48%,
+            transparent 100%);
+    opacity: calc(0.34 + var(--fx-intensity, 0.48) * 0.48);
+    filter: blur(calc(8px + var(--fx-intensity, 0.48) * 12px));
+    mix-blend-mode: screen;
+    animation: tag-heat-aura var(--fx-duration, var(--fx-speed, 3.8s)) ease-in-out infinite;
+    animation-delay: calc(var(--fx-delay, 0s) + var(--fx-phase, 0s));
+}
+@keyframes tag-heat-aura {
+    0%, 100% { transform: scale(0.98) translateY(1px); opacity: calc(0.28 + var(--fx-intensity, 0.48) * 0.34); }
+    50%      { transform: scale(1.06) translateY(-1px); opacity: calc(0.38 + var(--fx-intensity, 0.48) * 0.48); }
+}
+
+.tag-fx-halo-ring::before {
+    left: 50%;
+    top: -36%;
+    width: 34%;
+    height: 16%;
+    transform: translateX(-50%);
+    border-radius: 999px;
+    border: 2px solid color-mix(in srgb, var(--fx-color1, #ffe8a6), transparent 12%);
+    box-shadow:
+        0 0 10px color-mix(in srgb, var(--fx-color1, #ffe8a6), transparent 48%),
+        0 0 22px color-mix(in srgb, var(--fx-color1, #ffe8a6), transparent 68%);
+    opacity: calc((0.66 + var(--fx-intensity, 0.44) * 0.32) * var(--fx-effect-opacity, 1));
+    mix-blend-mode: screen;
+    animation: tag-halo-ring var(--fx-duration, var(--fx-speed, 4.6s)) ease-in-out infinite;
+    animation-delay: calc(var(--fx-delay, 0s) + var(--fx-phase, 0s));
+}
+@keyframes tag-halo-ring {
+    0%, 100% { transform: translateX(-50%) scale(0.97) rotate(-4deg); }
+    50%      { transform: translateX(-50%) scale(1.05) rotate(4deg); }
+}
+
+.tag-fx-glint-pass::before {
+    inset: -10% -18%;
+    background: linear-gradient(112deg,
+        transparent 34%,
+        color-mix(in srgb, var(--fx-color1, #ffffff), transparent 100%) 44%,
+        color-mix(in srgb, var(--fx-color1, #ffffff), transparent 30%) 50%,
+        color-mix(in srgb, var(--fx-color1, #ffffff), transparent 100%) 56%,
+        transparent 66%);
+    opacity: 0;
+    mix-blend-mode: screen;
+    animation: tag-glint-pass calc(var(--fx-interval, 4.8s) + (var(--fx-random-range, 0s) * var(--fx-seed-a, 0.4))) linear infinite;
+    animation-delay: calc(var(--fx-delay, 0s) + var(--fx-phase, 0s));
+}
+@keyframes tag-glint-pass {
+    0%, 76%, 100% { opacity: 0; transform: translateX(-18%); }
+    82%           { opacity: calc((0.55 + var(--fx-intensity, 0.72) * 0.7) * var(--fx-effect-opacity, 1)); }
+    92%           { opacity: calc((0.42 + var(--fx-intensity, 0.72) * 0.55) * var(--fx-effect-opacity, 1)); transform: translateX(16%); }
+}
+
+.tag-effect-layer.tag-effect-plane-text.tag-fx-glint-pass {
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(
+        112deg,
+        color-mix(in srgb, #ffffff, transparent 100%) 32%,
+        color-mix(in srgb, #ffffff, transparent 18%) 46%,
+        color-mix(in srgb, var(--fx-color1, #ffffff), transparent 0%) 50%,
+        color-mix(in srgb, #ffffff, transparent 18%) 54%,
+        color-mix(in srgb, #ffffff, transparent 100%) 68%
+    );
+    background-size: 220% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: tag-holo-sweep calc(var(--fx-duration, 1.4s)) linear infinite;
+}
+.tag-effect-layer.tag-effect-plane-text.tag-fx-glint-pass::before {
+    display: none;
+}
+
+.tag-fx-star-ping::before,
+.tag-fx-star-ping::after {
+    width: 18px;
+    height: 18px;
+    left: calc(14% + (var(--fx-seed-a, 0.4) * 64%));
+    top: calc(16% + (var(--fx-seed-b, 0.3) * 48%));
+    transform: translate(-50%, -50%);
+    background:
+        linear-gradient(90deg, transparent 42%, var(--fx-color1, #fff7d0) 50%, transparent 58%),
+        linear-gradient(0deg, transparent 42%, var(--fx-color1, #fff7d0) 50%, transparent 58%);
+    filter: drop-shadow(0 0 9px color-mix(in srgb, var(--fx-color1, #fff7d0), transparent 28%));
+    opacity: 0;
+    mix-blend-mode: screen;
+    animation: tag-star-ping calc(var(--fx-interval, 5.2s) + (var(--fx-random-range, 0s) * var(--fx-seed-c, 0.3))) linear infinite;
+    animation-delay: calc(var(--fx-delay, 0s) + var(--fx-phase, 0s));
+}
+.tag-fx-star-ping::after {
+    width: 24px;
+    height: 24px;
+    background: radial-gradient(circle, color-mix(in srgb, var(--fx-color1, #fff7d0), transparent 75%) 0%, transparent 62%);
+    animation-duration: calc(var(--fx-interval, 5.2s) + (var(--fx-random-range, 0s) * var(--fx-seed-d, 0.45)));
+}
+@keyframes tag-star-ping {
+    0%, 84%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(0.4) rotate(0deg); }
+    88%           { opacity: calc((0.6 + var(--fx-intensity, 0.75) * 0.72) * var(--fx-effect-opacity, 1)); }
+    92%           { opacity: calc((0.34 + var(--fx-intensity, 0.75) * 0.46) * var(--fx-effect-opacity, 1)); transform: translate(-50%, -50%) scale(1.2) rotate(18deg); }
+}
+
+.tag-fx-prism-flash::before {
+    inset: -14% -12%;
+    background: linear-gradient(120deg,
+        transparent 34%,
+        color-mix(in srgb, var(--fx-color1, #ffb6e7), transparent 44%) 44%,
+        color-mix(in srgb, var(--fx-color2, #98ebff), transparent 34%) 50%,
+        color-mix(in srgb, #ffffff, transparent 56%) 54%,
+        transparent 66%);
+    opacity: 0;
+    filter: blur(1.6px);
+    mix-blend-mode: screen;
+    animation: tag-prism-flash calc(var(--fx-interval, 6.2s) + (var(--fx-random-range, 0s) * var(--fx-seed-a, 0.5))) linear infinite;
+    animation-delay: calc(var(--fx-delay, 0s) + var(--fx-phase, 0s));
+}
+@keyframes tag-prism-flash {
+    0%, 82%, 100% { opacity: 0; transform: translateX(-20%) skewX(-8deg); }
+    90%           { opacity: calc((0.72 + var(--fx-intensity, 0.68) * 0.42) * var(--fx-effect-opacity, 1)); transform: translateX(0%) skewX(-8deg); }
+    96%           { opacity: 0; transform: translateX(18%) skewX(-8deg); }
+}
+
+.tag-fx-spark-arc::before {
+    left: calc(16% + (var(--fx-seed-a, 0.3) * 58%));
+    top: calc(22% + (var(--fx-seed-b, 0.25) * 40%));
+    width: 38px;
+    height: 18px;
+    border-top: 3px solid color-mix(in srgb, var(--fx-color1, #ffe18f), transparent 2%);
+    border-radius: 999px 999px 0 0;
+    filter: drop-shadow(0 0 8px color-mix(in srgb, var(--fx-color1, #ffe18f), transparent 22%));
+    opacity: 0;
+    mix-blend-mode: screen;
+    animation: tag-spark-arc calc(var(--fx-interval, 5.8s) + (var(--fx-random-range, 0s) * var(--fx-seed-c, 0.4))) linear infinite;
+    animation-delay: calc(var(--fx-delay, 0s) + var(--fx-phase, 0s));
+}
+@keyframes tag-spark-arc {
+    0%, 88%, 100% { opacity: 0; transform: translate(-50%, -50%) scaleX(0.5) rotate(-12deg); }
+    91%           { opacity: calc((0.56 + var(--fx-intensity, 0.72) * 0.7) * var(--fx-effect-opacity, 1)); }
+    95%           { opacity: 0; transform: translate(-50%, -50%) scaleX(1.12) rotate(14deg); }
+}
+
+.tag-fx-shard-flick::before {
+    left: calc(18% + (var(--fx-seed-b, 0.35) * 58%));
+    top: calc(14% + (var(--fx-seed-c, 0.3) * 56%));
+    width: 14px;
+    height: 28px;
+    background: linear-gradient(180deg,
+        transparent 0%,
+        color-mix(in srgb, var(--fx-color1, #d1f4ff), transparent 24%) 48%,
+        transparent 100%);
+    clip-path: polygon(50% 0%, 100% 48%, 58% 100%, 0% 66%);
+    filter: drop-shadow(0 0 10px color-mix(in srgb, var(--fx-color1, #d1f4ff), transparent 26%));
+    opacity: 0;
+    mix-blend-mode: screen;
+    animation: tag-shard-flick calc(var(--fx-interval, 5.5s) + (var(--fx-random-range, 0s) * var(--fx-seed-a, 0.55))) linear infinite;
+    animation-delay: calc(var(--fx-delay, 0s) + var(--fx-phase, 0s));
+}
+@keyframes tag-shard-flick {
+    0%, 86%, 100% { opacity: 0; transform: translate(-50%, -50%) rotate(-10deg) scale(0.7); }
+    90%           { opacity: calc((0.52 + var(--fx-intensity, 0.66) * 0.62) * var(--fx-effect-opacity, 1)); }
+    94%           { opacity: 0; transform: translate(-50%, -50%) rotate(12deg) scale(1.08); }
+}
+
+.tag-fx-lens-fleck::before {
+    left: calc(10% + (var(--fx-seed-d, 0.4) * 72%));
+    top: calc(8% + (var(--fx-seed-a, 0.35) * 60%));
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 35% 35%, color-mix(in srgb, #ffffff, transparent 10%) 0%, transparent 38%),
+        radial-gradient(circle, color-mix(in srgb, var(--fx-color1, #ffeccb), transparent 56%) 0%, transparent 70%);
+    filter: blur(0.2px);
+    opacity: 0;
+    mix-blend-mode: screen;
+    animation: tag-lens-fleck calc(var(--fx-interval, 7.4s) + (var(--fx-random-range, 0s) * var(--fx-seed-c, 0.35))) linear infinite;
+    animation-delay: calc(var(--fx-delay, 0s) + var(--fx-phase, 0s));
+}
+@keyframes tag-lens-fleck {
+    0%, 88%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(0.65); }
+    91%           { opacity: calc((0.58 + var(--fx-intensity, 0.52) * 0.34) * var(--fx-effect-opacity, 1)); }
+    95%           { opacity: 0; transform: translate(-50%, -50%) scale(1.15); }
+}
+
+.tag-effect-layer.tag-effect-engine-text.tag-fx-glass,
+.tag-effect-layer.tag-effect-engine-text.tag-fx-chrome,
+.tag-effect-layer.tag-effect-engine-text.tag-fx-pearlescent,
+.tag-effect-layer.tag-effect-engine-text.tag-fx-frosted,
+.tag-effect-layer.tag-effect-engine-text.tag-fx-burnt-metal,
+.tag-effect-layer.tag-effect-engine-text.tag-fx-glitter,
+.tag-effect-layer.tag-effect-engine-text.tag-fx-cracked-enamel,
+.tag-effect-layer.tag-effect-engine-text.tag-fx-liquid-wobble,
+.tag-effect-layer.tag-effect-engine-text.tag-fx-heat-warp,
+.tag-effect-layer.tag-effect-engine-text.tag-fx-rune-jitter,
+.tag-effect-layer.tag-effect-engine-text.tag-fx-flag-wave {
+    display: inline-block;
+    white-space: inherit;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.tag-effect-layer.tag-effect-engine-text.tag-fx-glass {
+    background-image:
+        linear-gradient(180deg,
+            color-mix(in srgb, #ffffff, transparent 12%) 0%,
+            color-mix(in srgb, var(--fx-color1, #d8f6ff), #ffffff 36%) 36%,
+            color-mix(in srgb, var(--fx-color1, #d8f6ff), transparent 12%) 100%);
+    text-shadow: 0 0 calc(3px + var(--fx-intensity, 0.52) * 5px) color-mix(in srgb, var(--fx-color1, #d8f6ff), transparent 76%);
+    filter: saturate(calc(0.9 + var(--fx-intensity, 0.52) * 0.45));
+    animation: tag-glass-shine var(--fx-duration, var(--fx-speed, 3.4s)) linear infinite;
+    animation-delay: calc(var(--fx-delay, 0s) + var(--fx-phase, 0s));
+    background-size: 200% 100%;
+}
+@keyframes tag-glass-shine {
+    0%   { background-position: 0% 0; }
+    100% { background-position: 100% 0; }
+}
+
+.tag-effect-layer.tag-effect-engine-text.tag-fx-chrome {
+    background-image: linear-gradient(180deg,
+        #ffffff 0%,
+        color-mix(in srgb, var(--fx-color1, #f2f7ff), #6a7788 28%) 18%,
+        #ffffff 30%,
+        color-mix(in srgb, var(--fx-color1, #f2f7ff), #526170 42%) 46%,
+        #d7dee8 58%,
+        #ffffff 74%,
+        color-mix(in srgb, var(--fx-color1, #f2f7ff), #263241 24%) 100%);
+    background-size: 100% 220%;
+    filter: contrast(calc(1 + var(--fx-intensity, 0.64) * 0.55));
+    animation: tag-chrome-sheen var(--fx-duration, var(--fx-speed, 2.6s)) ease-in-out infinite;
+    animation-delay: calc(var(--fx-delay, 0s) + var(--fx-phase, 0s));
+}
+@keyframes tag-chrome-sheen {
+    0%, 100% { background-position: 0 0%; }
+    50%      { background-position: 0 100%; }
+}
+
+.tag-effect-layer.tag-effect-engine-text.tag-fx-pearlescent {
+    background-image: linear-gradient(110deg,
+        color-mix(in srgb, var(--fx-color1, #ffe8f6), #ffffff 42%) 0%,
+        color-mix(in srgb, var(--fx-color2, #c7fff8), #ffffff 36%) 34%,
+        #ffffff 50%,
+        color-mix(in srgb, var(--fx-color1, #ffe8f6), #ffffff 28%) 66%,
+        color-mix(in srgb, var(--fx-color2, #c7fff8), #ffffff 32%) 100%);
+    background-size: 220% 100%;
+    filter: saturate(calc(1 + var(--fx-intensity, 0.58) * 0.65));
+    animation: tag-pearlescent-shift var(--fx-duration, var(--fx-speed, 3.8s)) linear infinite;
+    animation-delay: calc(var(--fx-delay, 0s) + var(--fx-phase, 0s));
+}
+@keyframes tag-pearlescent-shift {
+    0%   { background-position: 0% 0; }
+    100% { background-position: 100% 0; }
+}
+
+.tag-effect-layer.tag-effect-engine-text.tag-fx-frosted {
+    background-image:
+        linear-gradient(180deg, color-mix(in srgb, var(--fx-color1, #e9fbff), #ffffff 45%) 0%, color-mix(in srgb, var(--fx-color1, #e9fbff), #8ec0cf 20%) 100%),
+        repeating-linear-gradient(135deg, color-mix(in srgb, #ffffff, transparent 70%) 0 3px, transparent 3px 7px);
+    filter: blur(calc(var(--fx-intensity, 0.46) * 0.25px)) brightness(calc(0.95 + var(--fx-intensity, 0.46) * 0.18));
+    text-shadow: 0 0 calc(3px + var(--fx-intensity, 0.46) * 6px) color-mix(in srgb, var(--fx-color1, #e9fbff), transparent 80%);
+    animation: tag-frosted-glimmer var(--fx-duration, var(--fx-speed, 4.1s)) ease-in-out infinite;
+    animation-delay: calc(var(--fx-delay, 0s) + var(--fx-phase, 0s));
+}
+@keyframes tag-frosted-glimmer {
+    0%, 100% { filter: blur(calc(var(--fx-intensity, 0.46) * 0.25px)) brightness(1); }
+    50%      { filter: blur(calc(var(--fx-intensity, 0.46) * 0.4px)) brightness(calc(1.02 + var(--fx-intensity, 0.46) * 0.18)); }
+}
+
+.tag-effect-layer.tag-effect-engine-text.tag-fx-burnt-metal {
+    background-image: linear-gradient(180deg,
+        color-mix(in srgb, var(--fx-color2, #aab7c7), #1f2328 36%) 0%,
+        color-mix(in srgb, var(--fx-color1, #ff8d4a), #5f3018 18%) 28%,
+        color-mix(in srgb, var(--fx-color2, #aab7c7), #394a58 28%) 52%,
+        color-mix(in srgb, var(--fx-color1, #ff8d4a), #3b2217 52%) 76%,
+        #d9e4f1 100%);
+    filter: saturate(calc(0.85 + var(--fx-intensity, 0.62) * 0.55));
+    animation: tag-burnt-metal var(--fx-duration, var(--fx-speed, 3.1s)) ease-in-out infinite;
+    animation-delay: calc(var(--fx-delay, 0s) + var(--fx-phase, 0s));
+}
+@keyframes tag-burnt-metal {
+    0%, 100% { filter: saturate(calc(0.85 + var(--fx-intensity, 0.62) * 0.45)) brightness(1); }
+    50%      { filter: saturate(calc(0.95 + var(--fx-intensity, 0.62) * 0.58)) brightness(calc(0.96 + var(--fx-intensity, 0.62) * 0.14)); }
+}
+
+.tag-effect-layer.tag-effect-engine-text.tag-fx-glitter {
+    background-image:
+        linear-gradient(180deg, #fffdf4 0%, color-mix(in srgb, var(--fx-color1, #fff4bd), #d2b04c 25%) 100%),
+        radial-gradient(circle at 18% 30%, color-mix(in srgb, #ffffff, transparent 25%) 0 1px, transparent 1.6px),
+        radial-gradient(circle at 56% 58%, color-mix(in srgb, var(--fx-color1, #fff4bd), transparent 35%) 0 0.9px, transparent 1.5px),
+        radial-gradient(circle at 78% 18%, color-mix(in srgb, #ffffff, transparent 40%) 0 0.8px, transparent 1.4px);
+    background-size: 100% 100%, 120% 120%, 100% 100%, 130% 130%;
+    text-shadow: 0 0 calc(2px + var(--fx-intensity, 0.7) * 5px) color-mix(in srgb, var(--fx-color1, #fff4bd), transparent 76%);
+    animation: tag-glitter-sparkle var(--fx-duration, var(--fx-speed, 2.3s)) ease-in-out infinite;
+    animation-delay: calc(var(--fx-delay, 0s) + var(--fx-phase, 0s));
+}
+@keyframes tag-glitter-sparkle {
+    0%, 100% { filter: brightness(1); transform: translate(var(--fx-offset-x, 0px), var(--fx-offset-y, 0px)) scale(var(--fx-scale, 1)); }
+    50%      { filter: brightness(calc(1.04 + var(--fx-intensity, 0.7) * 0.18)); transform: translate(var(--fx-offset-x, 0px), var(--fx-offset-y, 0px)) scale(calc(var(--fx-scale, 1) * 1.01)); }
+}
+
+.tag-effect-layer.tag-effect-engine-text.tag-fx-cracked-enamel {
+    background-image:
+        linear-gradient(180deg, #ffffff 0%, color-mix(in srgb, var(--fx-color1, #fff7ef), #cdb6a0 24%) 100%),
+        repeating-linear-gradient(153deg,
+            transparent 0 8px,
+            color-mix(in srgb, var(--fx-color2, #54391f), transparent calc((1 - var(--fx-intensity, 0.54)) * 100%)) 8px 9px,
+            transparent 9px 15px);
+    filter: contrast(calc(1 + var(--fx-intensity, 0.54) * 0.35));
+    text-shadow: 0 0 2px color-mix(in srgb, #ffffff, transparent 24%);
+    animation: tag-cracked-enamel var(--fx-duration, var(--fx-speed, 4.8s)) ease-in-out infinite;
+    animation-delay: calc(var(--fx-delay, 0s) + var(--fx-phase, 0s));
+}
+@keyframes tag-cracked-enamel {
+    0%, 100% { background-position: 0 0, 0 0; }
+    50%      { background-position: 0 0, 6px 2px; }
+}
+
+.tag-effect-layer.tag-effect-engine-text.tag-fx-liquid-wobble {
+    color: color-mix(in srgb, var(--fx-color1, #baf6ff), #ffffff 40%);
+    -webkit-text-fill-color: currentColor;
+    background: none;
+    filter: blur(calc(var(--fx-intensity, 0.42) * 0.22px));
+    text-shadow: 0 0 6px color-mix(in srgb, var(--fx-color1, #baf6ff), transparent 78%);
+    animation: tag-liquid-wobble var(--fx-duration, var(--fx-speed, 2.2s)) ease-in-out infinite;
+    animation-delay: calc(var(--fx-delay, 0s) + var(--fx-phase, 0s));
+}
+@keyframes tag-liquid-wobble {
+    0%, 100% { transform: translate(var(--fx-offset-x, 0px), var(--fx-offset-y, 0px)) skewX(calc(var(--fx-intensity, 0.42) * -4deg)) scale(var(--fx-scale, 1)); }
+    50%      { transform: translate(var(--fx-offset-x, 0px), var(--fx-offset-y, 0px)) skewX(calc(var(--fx-intensity, 0.42) * 4deg)) scaleY(calc(var(--fx-scale, 1) * 1.03)); }
+}
+
+.tag-effect-layer.tag-effect-engine-text.tag-fx-heat-warp {
+    color: color-mix(in srgb, var(--fx-color1, #ffbf83), #ffffff 32%);
+    -webkit-text-fill-color: currentColor;
+    background: none;
+    filter: blur(calc(0.2px + var(--fx-intensity, 0.48) * 0.45px));
+    text-shadow: 0 0 8px color-mix(in srgb, var(--fx-color1, #ffbf83), transparent 80%);
+    animation: tag-heat-warp var(--fx-duration, var(--fx-speed, 2.6s)) ease-in-out infinite;
+    animation-delay: calc(var(--fx-delay, 0s) + var(--fx-phase, 0s));
+}
+@keyframes tag-heat-warp {
+    0%, 100% { transform: translate(var(--fx-offset-x, 0px), var(--fx-offset-y, 0px)) skewY(calc(var(--fx-intensity, 0.48) * -2deg)) scale(var(--fx-scale, 1)); }
+    50%      { transform: translate(var(--fx-offset-x, 0px), var(--fx-offset-y, 0px)) skewY(calc(var(--fx-intensity, 0.48) * 2deg)) translateY(-0.5px) scaleX(calc(var(--fx-scale, 1) * 1.02)); }
+}
+
+.tag-effect-layer.tag-effect-engine-text.tag-fx-rune-jitter {
+    color: color-mix(in srgb, var(--fx-color1, #b7efff), #ffffff 24%);
+    -webkit-text-fill-color: currentColor;
+    background: none;
+    text-shadow:
+        0 0 4px color-mix(in srgb, var(--fx-color1, #b7efff), transparent 72%),
+        0 0 10px color-mix(in srgb, var(--fx-color1, #b7efff), transparent 86%);
+    animation: tag-rune-jitter var(--fx-duration, var(--fx-speed, 1.7s)) steps(1) infinite;
+    animation-delay: calc(var(--fx-delay, 0s) + var(--fx-phase, 0s));
+}
+@keyframes tag-rune-jitter {
+    0%, 72%, 100% { transform: translate(var(--fx-offset-x, 0px), var(--fx-offset-y, 0px)) scale(var(--fx-scale, 1)); opacity: calc(0.4 + var(--fx-intensity, 0.34) * 0.5); }
+    76%           { transform: translate(calc(var(--fx-offset-x, 0px) - 0.7px), calc(var(--fx-offset-y, 0px) + 0.2px)) scale(var(--fx-scale, 1)); }
+    82%           { transform: translate(calc(var(--fx-offset-x, 0px) + 0.6px), calc(var(--fx-offset-y, 0px) - 0.4px)) scale(var(--fx-scale, 1)); opacity: calc(0.5 + var(--fx-intensity, 0.34) * 0.6); }
+}
+
+.tag-effect-layer.tag-effect-engine-text.tag-fx-flag-wave {
+    color: color-mix(in srgb, var(--fx-color1, #ffffff), var(--tag-glow-color) 32%);
+    -webkit-text-fill-color: currentColor;
+    background: none;
+    animation: tag-flag-wave var(--fx-duration, var(--fx-speed, 2.9s)) ease-in-out infinite;
+    animation-delay: calc(var(--fx-delay, 0s) + var(--fx-phase, 0s));
+    transform-origin: center center;
+}
+@keyframes tag-flag-wave {
+    0%, 100% { transform: translate(var(--fx-offset-x, 0px), var(--fx-offset-y, 0px)) perspective(120px) rotateY(calc(var(--fx-intensity, 0.36) * -5deg)) scale(var(--fx-scale, 1)); }
+    50%      { transform: translate(var(--fx-offset-x, 0px), var(--fx-offset-y, 0px)) perspective(120px) rotateY(calc(var(--fx-intensity, 0.36) * 5deg)) scaleX(calc(var(--fx-scale, 1) * 1.01)); }
+}
