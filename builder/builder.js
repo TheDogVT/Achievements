@@ -7,8 +7,6 @@
         name_suffix:    'suffix-select',
         message_text:   'message-select',
         card_background:'bg-select',
-        washi_color:    'washi-color-select',
-        washi_position: 'washi-pos-select',
     };
 
     const WASHI_VALUE_MAP = {
