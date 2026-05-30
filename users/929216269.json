@@ -72,7 +72,11 @@
       "suffix_70",
       "prefix_93",
       "suffix_71",
-      "prefix_10"
+      "prefix_10",
+      "prefix_119",
+      "prestige_cheer_static",
+      "prestige_cheer_name",
+      "message_2"
     ],
     "active": {
       "name_prefix": "prefix_93",
