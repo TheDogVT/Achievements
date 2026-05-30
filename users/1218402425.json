@@ -28,10 +28,14 @@
       "prefix_80",
       "suffix_58"
     ],
-    "active": {}
+    "active": {
+      "name_prefix": "prefix_2",
+      "washi_color": "washi_mint",
+      "washi_position": "washi_top_right"
+    }
   },
   "stats": {
-    "messages": 191,
+    "messages": 192,
     "active_months": 6,
     "first_seen": "2025-12"
   },

@@ -171,10 +171,15 @@
       "prefix_92",
       "suffix_70"
     ],
-    "active": {}
+    "active": {
+      "name_prefix": "prefix_16",
+      "name_base": "name_15",
+      "washi_color": "washi_gold",
+      "washi_position": "washi_top_left"
+    }
   },
   "stats": {
-    "messages": 42345,
+    "messages": 42352,
     "active_months": 7,
     "first_seen": "2025-11"
   },
