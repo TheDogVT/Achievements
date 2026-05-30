@@ -31,6 +31,7 @@
     color: #3d1e0a;
     padding-bottom: 0.14em;
     overflow: visible;
+    white-space: nowrap;
 }
 .decor-card.theme-synthwave .content { color: #f1ecff; }
 .decor-card.theme-synthwave .name-line { color: #ffd9f5; }

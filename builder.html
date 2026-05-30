@@ -47,6 +47,9 @@
             display: flex;
             align-items: center;
             gap: 12px;
+            position: sticky;
+            top: 0;
+            z-index: 40;
         }
         .page-header h1 {
             font-size: 16px;
@@ -71,7 +74,7 @@
             display: grid;
             grid-template-columns: 340px 1fr;
             gap: 0;
-            min-height: calc(100vh - 53px);
+            height: calc(100vh - 53px);
         }
 
         /* ── Controls panel ── */
@@ -129,6 +132,32 @@
         select option { background: #1a2022; }
         select:disabled { opacity: 0.4; cursor: not-allowed; }
 
+        .select-row {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+        }
+        .select-row select { flex: 1; min-width: 0; }
+        .btn-step {
+            flex-shrink: 0;
+            background: var(--builder-panel3);
+            border: 1px solid var(--builder-field-border);
+            color: var(--builder-text);
+            font-size: 14px;
+            line-height: 1;
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.12s, border-color 0.12s;
+            padding: 0;
+        }
+        .btn-step:hover:not(:disabled) { background: #2a3537; border-color: var(--builder-accent); }
+        .btn-step:disabled { opacity: 0.25; cursor: not-allowed; }
+
         .load-row {
             display: flex;
             gap: 8px;
@@ -169,9 +198,11 @@
         /* ── Command output ── */
         .command-section {
             padding: 16px 18px;
-            margin-top: auto;
             border-top: 1px solid #242c2d;
             background: #111415;
+            position: sticky;
+            bottom: 0;
+            z-index: 20;
         }
         .command-box {
             display: flex;
@@ -212,13 +243,16 @@
         /* ── Stage (preview) ── */
         .stage {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
             background:
                 linear-gradient(90deg, rgba(18,21,22,0.045) 1px, transparent 1px) 0 0 / 28px 28px,
                 linear-gradient(180deg, rgba(18,21,22,0.045) 1px, transparent 1px) 0 0 / 28px 28px,
                 #f3f4ef;
             padding: 48px 24px;
+            overflow-y: auto;
+            height: 100%;      /* override layout.css height: fit-content */
+            align-self: auto;  /* let grid handle it */
         }
 
         .preview-wrap {
@@ -226,6 +260,38 @@
             flex-direction: column;
             align-items: center;
             gap: 16px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        /* Wave dash — mirrors fullscreen chat username-dash */
+        .username-dash {
+            font-family: 'Caveat', cursive;
+            margin-right: 4px;
+        }
+
+        /* Match fullscreen chat card dimensions exactly: min 450 (chat min-width),
+           grows to 530 for long prefix/suffix combos — same as fullscreen */
+        .decor-card {
+            min-width: 450px !important;
+            max-width: 530px !important;
+            width: max-content !important;
+        }
+
+        /* Scaler wrapper — JS sizes it to the SCALED card dimensions so flex centers it.
+           The card is absolutely positioned inside so its 450px layout footprint never
+           overflows or de-centers the scaler; only the JS transform resizes it visually. */
+        #card-scaler {
+            position: relative;
+            overflow: visible;
+            flex-shrink: 0;
+        }
+        #card-scaler .decor-card {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 0 !important;
+            transform-origin: top left;
         }
         .preview-hint {
             font-size: 12px;
@@ -258,12 +324,62 @@
 
         /* Responsive: stack on narrow screens */
         @media (max-width: 780px) {
+            /* Drop the fixed-height grid — flex column so order works */
             .builder-layout {
-                grid-template-columns: 1fr;
+                display: flex;
+                flex-direction: column;
+                height: auto;
             }
+
+            /* Stage hoisted to top, sticky so it stays visible while scrolling */
             .stage {
-                padding: 32px 16px;
-                min-height: 300px;
+                order: -1;
+                position: sticky;
+                top: 53px;
+                z-index: 30;
+                height: 38vh !important;
+                min-height: 200px;
+                padding: 12px 16px;
+                overflow: hidden;
+                box-shadow: 0 3px 12px rgba(0,0,0,0.4);
+                flex-shrink: 0;
+            }
+
+            .preview-wrap {
+                gap: 8px;
+                height: 100%;
+                justify-content: center;
+            }
+
+            /* Scale + origin handled by the #card-scaler rules (top left) — no override here */
+
+            .preview-hint {
+                display: none;
+            }
+
+            /* Controls scroll below */
+            .controls-panel {
+                height: auto;
+                overflow-y: visible;
+            }
+
+            /* Bigger touch targets */
+            select, input[type="text"] {
+                font-size: 16px !important; /* prevents iOS zoom on focus */
+                padding: 10px 12px !important;
+            }
+
+            .btn {
+                padding: 10px 18px !important;
+                font-size: 14px !important;
+            }
+
+            .section {
+                padding: 14px 16px;
+            }
+
+            .command-section {
+                padding: 14px 16px;
             }
         }
     </style>
@@ -272,10 +388,7 @@
 
 <header class="page-header">
     <div class="page-header-dot"></div>
-    <div>
-        <div class="kicker">TheDogVT · PuppyBot</div>
-        <h1>Decoration Builder</h1>
-    </div>
+    <h1>Decoration Builder</h1>
 </header>
 
 <div class="builder-layout">
@@ -295,27 +408,29 @@
             </div>
         </div>
 
-        <div class="section">
-            <div class="section-label">Message Preview</div>
-            <div class="field-row">
-                <label for="message-input">Test Message</label>
-                <input type="text" id="message-input" placeholder="Type something..." value="This is my chat message!">
-            </div>
-        </div>
+        <input type="hidden" id="message-input" value="Sphinx of black quartz, judge my vow!">
 
         <div class="section" id="quick-section">
             <div class="section-label">Quick Select by Achievement</div>
             <div class="field-row">
                 <label for="cat-select">Category</label>
-                <select id="cat-select" disabled onchange="onCategoryChange()">
-                    <option value="">— load your account first —</option>
-                </select>
+                <div class="select-row">
+                    <button class="btn-step" onclick="stepSelect('cat-select','onCategoryChange',-1)">&#8249;</button>
+                    <select id="cat-select" disabled onchange="onCategoryChange()">
+                        <option value=""></option>
+                    </select>
+                    <button class="btn-step" onclick="stepSelect('cat-select','onCategoryChange',1)">&#8250;</button>
+                </div>
             </div>
             <div class="field-row">
                 <label for="ach-select">Achievement</label>
-                <select id="ach-select" disabled onchange="onAchievementChange()">
-                    <option value="">— pick a category —</option>
-                </select>
+                <div class="select-row">
+                    <button class="btn-step" onclick="stepSelect('ach-select','onAchievementChange',-1)">&#8249;</button>
+                    <select id="ach-select" disabled onchange="onAchievementChange()">
+                        <option value="">— pick a category —</option>
+                    </select>
+                    <button class="btn-step" onclick="stepSelect('ach-select','onAchievementChange',1)">&#8250;</button>
+                </div>
             </div>
         </div>
 
@@ -323,33 +438,53 @@
             <div class="section-label">Decoration Slots</div>
             <div class="field-row">
                 <label for="prefix-select">Prefix</label>
-                <select id="prefix-select" disabled onchange="onSlotChange()">
-                    <option value="">None</option>
-                </select>
+                <div class="select-row">
+                    <button class="btn-step" onclick="stepSelect('prefix-select','onSlotChange',-1)">&#8249;</button>
+                    <select id="prefix-select" disabled onchange="onSlotChange()">
+                        <option value="">None</option>
+                    </select>
+                    <button class="btn-step" onclick="stepSelect('prefix-select','onSlotChange',1)">&#8250;</button>
+                </div>
             </div>
             <div class="field-row">
                 <label for="name-select">Name Style</label>
-                <select id="name-select" disabled onchange="onSlotChange()">
-                    <option value="">None</option>
-                </select>
+                <div class="select-row">
+                    <button class="btn-step" onclick="stepSelect('name-select','onSlotChange',-1)">&#8249;</button>
+                    <select id="name-select" disabled onchange="onSlotChange()">
+                        <option value="">None</option>
+                    </select>
+                    <button class="btn-step" onclick="stepSelect('name-select','onSlotChange',1)">&#8250;</button>
+                </div>
             </div>
             <div class="field-row">
                 <label for="suffix-select">Suffix</label>
-                <select id="suffix-select" disabled onchange="onSlotChange()">
-                    <option value="">None</option>
-                </select>
+                <div class="select-row">
+                    <button class="btn-step" onclick="stepSelect('suffix-select','onSlotChange',-1)">&#8249;</button>
+                    <select id="suffix-select" disabled onchange="onSlotChange()">
+                        <option value="">None</option>
+                    </select>
+                    <button class="btn-step" onclick="stepSelect('suffix-select','onSlotChange',1)">&#8250;</button>
+                </div>
             </div>
             <div class="field-row">
                 <label for="message-select">Message Text Style</label>
-                <select id="message-select" disabled onchange="onSlotChange()">
-                    <option value="">None</option>
-                </select>
+                <div class="select-row">
+                    <button class="btn-step" onclick="stepSelect('message-select','onSlotChange',-1)">&#8249;</button>
+                    <select id="message-select" disabled onchange="onSlotChange()">
+                        <option value="">None</option>
+                    </select>
+                    <button class="btn-step" onclick="stepSelect('message-select','onSlotChange',1)">&#8250;</button>
+                </div>
             </div>
             <div class="field-row">
                 <label for="bg-select">Card Background</label>
-                <select id="bg-select" disabled onchange="onSlotChange()">
-                    <option value="">None</option>
-                </select>
+                <div class="select-row">
+                    <button class="btn-step" onclick="stepSelect('bg-select','onSlotChange',-1)">&#8249;</button>
+                    <select id="bg-select" disabled onchange="onSlotChange()">
+                        <option value="">None</option>
+                    </select>
+                    <button class="btn-step" onclick="stepSelect('bg-select','onSlotChange',1)">&#8250;</button>
+                </div>
             </div>
         </div>
 
@@ -369,14 +504,17 @@
     <!-- ── Stage ── -->
     <div class="stage">
         <div class="preview-wrap">
-            <div class="decor-card" id="decor-card">
-                <div class="decor-background" id="decor-background"></div>
-                <div class="content">
-                    <div class="message message-text name-tag" id="preview-message">This is my chat message!</div>
-                    <div class="name-line">
-                        <span class="name-prefix name-tag" id="preview-prefix"></span>
-                        <span class="name-base name-effects-none name-tag" id="preview-name">YourName</span>
-                        <span class="name-suffix name-tag" id="preview-suffix"></span>
+            <div id="card-scaler">
+                <div class="decor-card" id="decor-card">
+                    <div class="decor-background" id="decor-background"></div>
+                    <div class="content">
+                        <div class="message message-text name-tag" id="preview-message">This is my chat message!</div>
+                        <div class="name-line">
+                            <span class="name-prefix name-tag" id="preview-prefix"></span>
+                            <span class="username-dash" id="preview-dash">⁓</span>
+                            <span class="name-base name-effects-none name-tag" id="preview-name">YourName</span>
+                            <span class="name-suffix name-tag" id="preview-suffix"></span>
+                        </div>
                     </div>
                 </div>
             </div>

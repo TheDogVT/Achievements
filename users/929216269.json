@@ -74,14 +74,10 @@
       "suffix_71",
       "prefix_10"
     ],
-    "active": {
-      "message_text": "message_3",
-      "name_prefix": "prefix_22",
-      "name_suffix": "suffix_22"
-    }
+    "active": {}
   },
   "stats": {
-    "messages": 25743,
+    "messages": 25755,
     "active_months": 7,
     "first_seen": "2025-10"
   },
