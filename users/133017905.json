@@ -162,10 +162,16 @@
       "suffix_80",
       "suffix_81"
     ],
-    "active": {}
+    "active": {
+      "name_prefix": "prefix_16",
+      "name_base": "name_8",
+      "name_suffix": "suffix_8",
+      "washi_color": "washi_lavender",
+      "washi_position": "washi_top_left"
+    }
   },
   "stats": {
-    "messages": 9123,
+    "messages": 9132,
     "active_months": 7,
     "first_seen": "2025-11"
   },
