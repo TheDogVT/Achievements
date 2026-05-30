@@ -78,7 +78,10 @@
       "chat_beg": "2026-05-08T22:49:36.604378+00:00",
       "chat_wholet": "2026-05-09T21:40:25.622823+00:00",
       "attend_10": "2026-05-14T20:04:50.188150+00:00",
-      "redeem_checkin_10": "2026-05-30T20:46:17.869720+00:00"
+      "redeem_checkin_10": "2026-05-30T20:46:17.869720+00:00",
+      "cheer_cumulative_1k": "2026-05-30T20:48:56.108209+00:00",
+      "cheer_cumulative_2500": "2026-05-30T20:48:56.412754+00:00",
+      "cheer_cumulative_5k": "2026-05-30T20:48:56.740100+00:00"
     },
     "founded": {
       "cheer_999": "2026-04-20T21:25:35.817871+00:00",
@@ -162,7 +165,10 @@
       "prestige_cheer_message",
       "prestige_cheer_suffix",
       "prefix_119",
-      "message_2"
+      "message_2",
+      "name_4",
+      "name_5",
+      "name_6"
     ],
     "active": {
       "washi_color": "washi_gold",
@@ -175,7 +181,7 @@
     }
   },
   "stats": {
-    "messages": 9981,
+    "messages": 9985,
     "active_months": 5,
     "first_seen": "2026-1"
   },
