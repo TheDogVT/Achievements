@@ -82,10 +82,15 @@
       "prefix_93",
       "suffix_71"
     ],
-    "active": {}
+    "active": {
+      "name_prefix": "prefix_16",
+      "name_suffix": "suffix_71",
+      "washi_color": "washi_mint",
+      "washi_position": "washi_top_right"
+    }
   },
   "stats": {
-    "messages": 1225,
+    "messages": 1228,
     "active_months": 7,
     "first_seen": "2025-11"
   },

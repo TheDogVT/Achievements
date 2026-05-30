@@ -214,10 +214,16 @@
       "prefix_93",
       "suffix_71"
     ],
-    "active": {}
+    "active": {
+      "name_prefix": "prefix_2",
+      "name_base": "name_6",
+      "name_suffix": "suffix_9",
+      "washi_color": "washi_mint",
+      "washi_position": "washi_top_center"
+    }
   },
   "stats": {
-    "messages": 8979,
+    "messages": 8999,
     "active_months": 7,
     "first_seen": "2025-11"
   },

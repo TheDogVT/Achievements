@@ -163,10 +163,18 @@
       "prefix_119",
       "message_2"
     ],
-    "active": {}
+    "active": {
+      "washi_color": "washi_gold",
+      "washi_position": "washi_top_center",
+      "name_prefix": "prefix_78",
+      "name_base": "name_24",
+      "name_suffix": "suffix_31",
+      "message_text": "message_2",
+      "card_background": "prestige_cheer_static"
+    }
   },
   "stats": {
-    "messages": 9964,
+    "messages": 9978,
     "active_months": 5,
     "first_seen": "2026-1"
   },

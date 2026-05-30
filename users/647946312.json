@@ -52,10 +52,13 @@
       "prefix_90",
       "suffix_68"
     ],
-    "active": {}
+    "active": {
+      "name_prefix": "prefix_7",
+      "name_suffix": "suffix_79"
+    }
   },
   "stats": {
-    "messages": 78,
+    "messages": 81,
     "active_months": 7,
     "first_seen": "2025-11"
   },

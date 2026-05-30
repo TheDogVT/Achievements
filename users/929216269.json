@@ -74,10 +74,15 @@
       "suffix_71",
       "prefix_10"
     ],
-    "active": {}
+    "active": {
+      "name_prefix": "prefix_93",
+      "name_suffix": "suffix_70",
+      "washi_color": "washi_mint",
+      "washi_position": "washi_corner_tl"
+    }
   },
   "stats": {
-    "messages": 25811,
+    "messages": 25813,
     "active_months": 7,
     "first_seen": "2025-10"
   },

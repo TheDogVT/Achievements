@@ -192,10 +192,16 @@
       "name_5",
       "name_6"
     ],
-    "active": {}
+    "active": {
+      "name_prefix": "prefix_93",
+      "name_base": "name_7",
+      "name_suffix": "suffix_5",
+      "washi_color": "washi_gold",
+      "washi_position": "washi_top_left"
+    }
   },
   "stats": {
-    "messages": 4282,
+    "messages": 4287,
     "active_months": 7,
     "first_seen": "2025-11"
   },
