@@ -172,14 +172,14 @@
       "suffix_70"
     ],
     "active": {
-      "name_prefix": "prefix_16",
+      "name_prefix": "prefix_12",
       "name_base": "name_15",
-      "washi_color": "washi_gold",
-      "washi_position": "washi_top_left"
+      "washi_color": "washi_pink",
+      "washi_position": "washi_top_right"
     }
   },
   "stats": {
-    "messages": 42366,
+    "messages": 42373,
     "active_months": 7,
     "first_seen": "2025-11"
   },
