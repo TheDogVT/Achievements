@@ -488,6 +488,30 @@
             </div>
         </div>
 
+        <div class="section" id="washi-section">
+            <div class="section-label">Washi Tape (Subscriber Perk)</div>
+            <div class="field-row">
+                <label for="washi-color-select">Tape Color</label>
+                <select id="washi-color-select" onchange="onWashiChange()">
+                    <option value="">None</option>
+                    <option value="washi_pink">Pink</option>
+                    <option value="washi_mint">Mint</option>
+                    <option value="washi_gold">Gold</option>
+                    <option value="washi_lavender">Lavender</option>
+                </select>
+            </div>
+            <div class="field-row">
+                <label for="washi-pos-select">Tape Position</label>
+                <select id="washi-pos-select" onchange="onWashiChange()">
+                    <option value="">None</option>
+                    <option value="washi_top_left">Top Left</option>
+                    <option value="washi_top_right">Top Right</option>
+                    <option value="washi_top_center">Top Center</option>
+                    <option value="washi_corner_tl">Corner</option>
+                </select>
+            </div>
+        </div>
+
         <div class="command-section">
             <div class="command-box">
                 <div class="command-label">Chat Command</div>
@@ -507,6 +531,7 @@
             <div id="card-scaler">
                 <div class="decor-card" id="decor-card">
                     <div class="decor-background" id="decor-background"></div>
+                    <div id="washi-tape" class="washi" style="display:none;"></div>
                     <div class="content">
                         <div class="message message-text name-tag" id="preview-message">This is my chat message!</div>
                         <div class="name-line">

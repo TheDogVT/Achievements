@@ -7,6 +7,13 @@
         name_suffix:    'suffix-select',
         message_text:   'message-select',
         card_background:'bg-select',
+        washi_color:    'washi-color-select',
+        washi_position: 'washi-pos-select',
+    };
+
+    const WASHI_VALUE_MAP = {
+        washi_pink: 'pink', washi_mint: 'mint', washi_gold: 'gold', washi_lavender: 'lavender',
+        washi_top_left: 'top-left', washi_top_right: 'top-right', washi_top_center: 'top-center', washi_corner_tl: 'corner-tl',
     };
     const SLOT_LABELS = {
         name_prefix:    'Prefix',
@@ -108,6 +115,10 @@
         const slotsSection = $('slots-section');
         if (slotsSection) slotsSection.style.display = Object.keys(bySlot).length ? '' : 'none';
 
+        // Set active washi selections
+        if (active.washi_color)    $('washi-color-select').value = active.washi_color;
+        if (active.washi_position) $('washi-pos-select').value = active.washi_position;
+
         // Populate category dropdown
         const categories = new Set();
         for (const id of unlockedSet) {
@@ -179,6 +190,30 @@
         updateCommand();
     };
 
+    window.onWashiChange = function () {
+        renderWashi();
+        updateCommand();
+    };
+
+    // ── Washi tape preview ──────────────────────────────────────────────────
+
+    function renderWashi() {
+        const colorId = $('washi-color-select').value;
+        const posId   = $('washi-pos-select').value;
+        const el      = $('washi-tape');
+        if (!el) return;
+
+        const color = WASHI_VALUE_MAP[colorId];
+        const pos   = WASHI_VALUE_MAP[posId];
+
+        if (color && pos) {
+            el.className = 'washi ' + color + ' ' + pos;
+            el.style.display = '';
+        } else {
+            el.style.display = 'none';
+        }
+    }
+
     // ── Preview rendering ──────────────────────────────────────────────────
 
     function applySlot(el, decoId, baseClass, textOverride) {
@@ -223,6 +258,7 @@
             }
         }
 
+        renderWashi();
         updateCommand();
         scalePreviewCard();
     }
@@ -236,6 +272,8 @@
             $('suffix-select').value,
             $('message-select').value,
             $('bg-select').value,
+            $('washi-color-select').value,
+            $('washi-pos-select').value,
         ].filter(Boolean);
 
         $('command-value').textContent = ids.length ? '!deco ' + ids.join(' ') : '!deco';
