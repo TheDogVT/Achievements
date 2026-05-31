@@ -772,6 +772,18 @@
       "amount": 13,
       "type": "exact"
     },
+    "donation_exact_100": {
+      "name": "Round Number Enjoyer.",
+      "desc": "Awarded for donating exactly $100.",
+      "amount": 100,
+      "type": "exact"
+    },
+    "donation_cumulative_10": {
+      "name": "First Treat.",
+      "desc": "Awarded for donating $10 overall.",
+      "amount": 10,
+      "type": "cumulative"
+    },
     "donation_cumulative_25": {
       "name": "Treat Buyer.",
       "desc": "Awarded for donating $25 overall.",

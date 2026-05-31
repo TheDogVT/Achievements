@@ -839,6 +839,21 @@
     "founder_name": "humandperson",
     "founded_at": "2026-05-02T22:02:45.464650+00:00"
   },
+  "donation_1": {
+    "founder_id": "1217525523",
+    "founder_name": "humandperson",
+    "founded_at": "2026-05-31T20:18:44.169963+00:00"
+  },
+  "donation_cumulative_10": {
+    "founder_id": "1217525523",
+    "founder_name": "humandperson",
+    "founded_at": "2026-05-31T20:18:46.012067+00:00"
+  },
+  "donation_exact_100": {
+    "founder_id": "1217525523",
+    "founder_name": "humandperson",
+    "founded_at": "2026-05-31T20:18:47.512327+00:00"
+  },
   "gifted_cumulative_5": {
     "founder_id": "41576221",
     "founder_name": "exdeathyourjudge",

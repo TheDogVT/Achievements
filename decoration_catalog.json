@@ -2371,6 +2371,23 @@
       }
     }
   },
+  "name_9": {
+    "slot": "name_base",
+    "display_name": "name_9",
+    "achievement_name": "First Treat.",
+    "achievement_category": "donation",
+    "achievement_id": "donation_cumulative_10",
+    "config": {
+      "outline": "basic",
+      "outline_thickness": "1",
+      "text_color": "#d97706",
+      "unlock": {
+        "type": "achievement",
+        "category": "donation",
+        "id": "donation_cumulative_10"
+      }
+    }
+  },
   "prestige_cheer_name": {
     "slot": "name_base",
     "display_name": "Prestige Cheer Name",
