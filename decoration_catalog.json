@@ -1283,6 +1283,34 @@
       }
     }
   },
+  "prefix_82": {
+    "slot": "name_prefix",
+    "display_name": "Certified",
+    "achievement_name": "Pack Member",
+    "achievement_category": "attendance",
+    "achievement_id": "attend_25",
+    "config": {
+      "font_family": "Varela Round",
+      "outline": "basic",
+      "text": "Certified",
+      "text_gradient": [
+        {
+          "color": "#38bdf8",
+          "pos": null
+        },
+        {
+          "color": "#facc15",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "attendance",
+        "id": "attend_25"
+      }
+    }
+  },
   "prefix_89": {
     "slot": "name_prefix",
     "display_name": "Active",
@@ -3091,6 +3119,34 @@
         "type": "achievement",
         "category": "attendance",
         "id": "attend_10"
+      }
+    }
+  },
+  "suffix_60": {
+    "slot": "name_suffix",
+    "display_name": "[25 STREAMS]",
+    "achievement_name": "Pack Member",
+    "achievement_category": "attendance",
+    "achievement_id": "attend_25",
+    "config": {
+      "font_family": "VT323",
+      "outline": "basic",
+      "text": "[25 STREAMS]",
+      "text_gradient": [
+        {
+          "color": "#38bdf8",
+          "pos": null
+        },
+        {
+          "color": "#facc15",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "attendance",
+        "id": "attend_25"
       }
     }
   },

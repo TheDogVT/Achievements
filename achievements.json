@@ -18,6 +18,12 @@
       "amount": 10,
       "type": "attended"
     },
+    "attend_25": {
+      "name": "Pack Member",
+      "desc": "Awarded for attending 25 streams. You are one of us now.",
+      "amount": 25,
+      "type": "attended"
+    },
     "streak_3": {
       "name": "3 Day Streak!",
       "desc": "Three days running. Someone is getting spoiled.",

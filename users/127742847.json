@@ -52,7 +52,9 @@
       "chat_chaos": "2026-05-23T23:08:24.321172+00:00",
       "streak_14": "2026-05-24T20:11:05.385365+00:00"
     },
-    "founded": {}
+    "founded": {
+      "attend_25": "2026-05-31T20:04:20.522037+00:00"
+    }
   },
   "decorations": {
     "unlocked": [
@@ -80,7 +82,9 @@
       "suffix_79",
       "prefix_16",
       "prefix_93",
-      "suffix_71"
+      "suffix_71",
+      "prefix_82",
+      "suffix_60"
     ],
     "active": {
       "name_prefix": "prefix_16",
@@ -90,7 +94,7 @@
     }
   },
   "stats": {
-    "messages": 1238,
+    "messages": 1240,
     "active_months": 7,
     "first_seen": "2025-11"
   },
