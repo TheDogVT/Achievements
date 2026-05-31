@@ -6,18 +6,22 @@
   "achievements": {
     "earned": {
       "chat_10": "2026-01-13T21:24:48.969413+00:00",
-      "chat_stick": "2026-01-13T21:29:43.447889+00:00"
+      "chat_stick": "2026-01-13T21:29:43.447889+00:00",
+      "attend_3": "2026-05-31T20:34:08.496061+00:00",
+      "redeem_checkin_1": "2026-05-31T20:34:36.086930+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
-      "prefix_7"
+      "prefix_7",
+      "prefix_79",
+      "suffix_57"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 89,
+    "messages": 91,
     "active_months": 5,
     "first_seen": "2026-1"
   },
