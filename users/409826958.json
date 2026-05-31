@@ -85,7 +85,8 @@
       "redeem_total_700": "2026-05-24T22:25:52.983458+00:00",
       "attend_10": "2026-05-24T22:27:37.943127+00:00",
       "streak_5": "2026-05-24T22:27:38.232172+00:00",
-      "redeem_pet_100": "2026-05-31T23:29:59.333580+00:00"
+      "redeem_pet_100": "2026-05-31T23:29:59.333580+00:00",
+      "chat_bath": "2026-05-31T23:39:12.733494+00:00"
     },
     "founded": {
       "chat_tail": "2025-11-06T17:58:48.065489+00:00",
@@ -137,12 +138,13 @@
       "prestige_gifted_static",
       "prestige_gifted_name",
       "prestige_gifted_message",
-      "prestige_gifted_suffix"
+      "prestige_gifted_suffix",
+      "prefix_12"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 1273,
+    "messages": 1277,
     "active_months": 7,
     "first_seen": "2025-11"
   },
