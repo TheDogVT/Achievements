@@ -43,11 +43,5 @@
     "active_months": 2,
     "first_seen": "2026-05-28T22:41:45.138941+00:00"
   },
-  "top_months": [
-    {
-      "month": "2026-6",
-      "kind": "chat",
-      "rank": 3
-    }
-  ]
+  "top_months": []
 }
