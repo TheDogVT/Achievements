@@ -111,7 +111,9 @@
       "streak_7": "2026-05-24T21:07:50.647804+00:00",
       "chat_pawty": "2026-05-25T20:54:30.722049+00:00",
       "streak_10": "2026-05-28T20:08:31.904594+00:00",
-      "gamble_jackpot_total_1": "2026-05-31T23:46:11.491013+00:00"
+      "gamble_jackpot_total_1": "2026-05-31T23:46:11.491013+00:00",
+      "attend_25": "2026-06-01T21:09:19.371635+00:00",
+      "streak_14": "2026-06-01T21:09:19.635798+00:00"
     },
     "founded": {
       "chat_chaos": "2025-11-06T20:59:47.540981+00:00",
@@ -170,7 +172,11 @@
       "prefix_91",
       "suffix_69",
       "prefix_92",
-      "suffix_70"
+      "suffix_70",
+      "prefix_82",
+      "suffix_60",
+      "prefix_93",
+      "suffix_71"
     ],
     "active": {
       "name_prefix": "prefix_12",
@@ -180,8 +186,8 @@
     }
   },
   "stats": {
-    "messages": 43094,
-    "active_months": 7,
+    "messages": 43097,
+    "active_months": 8,
     "first_seen": "2025-11"
   },
   "top_months": [
