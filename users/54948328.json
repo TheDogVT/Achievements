@@ -113,7 +113,8 @@
       "redeem_total_500": "2026-05-22T20:16:03.623941+00:00",
       "chat_biscuits": "2026-05-22T20:16:34.418226+00:00",
       "streak_14": "2026-05-24T20:07:07.250440+00:00",
-      "attend_25": "2026-05-31T20:04:48.034366+00:00"
+      "attend_25": "2026-05-31T20:04:48.034366+00:00",
+      "streak_21": "2026-06-01T20:04:15.420733+00:00"
     },
     "founded": {
       "chat_scratch": "2026-02-08T22:42:06.514804+00:00",
@@ -170,7 +171,9 @@
       "prefix_93",
       "suffix_71",
       "prefix_82",
-      "suffix_60"
+      "suffix_60",
+      "prefix_94",
+      "suffix_72"
     ],
     "active": {
       "name_prefix": "prefix_16",
@@ -180,13 +183,18 @@
     }
   },
   "stats": {
-    "messages": 6014,
-    "active_months": 7,
+    "messages": 6017,
+    "active_months": 8,
     "first_seen": "2025-11"
   },
   "top_months": [
     {
       "month": "2026-3",
+      "kind": "chat",
+      "rank": 3
+    },
+    {
+      "month": "2026-6",
       "kind": "chat",
       "rank": 3
     }

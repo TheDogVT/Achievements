@@ -53,6 +53,12 @@
       "desc": "Two weeks. Peak regularity achieved.",
       "amount": 14,
       "type": "streak"
+    },
+    "streak_21": {
+      "name": "21 Day Streak!",
+      "desc": "Three weeks. You are part of the furniture now.",
+      "amount": 21,
+      "type": "streak"
     }
   },
   "chat": {

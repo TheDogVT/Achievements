@@ -76,7 +76,9 @@
       "prefix_119",
       "prestige_cheer_static",
       "prestige_cheer_name",
-      "message_2"
+      "message_2",
+      "prefix_94",
+      "suffix_72"
     ],
     "active": {
       "name_prefix": "prefix_93",
@@ -86,8 +88,8 @@
     }
   },
   "stats": {
-    "messages": 25878,
-    "active_months": 7,
+    "messages": 25888,
+    "active_months": 8,
     "first_seen": "2025-10"
   },
   "top_months": [
@@ -105,6 +107,11 @@
       "month": "2026-2",
       "kind": "donations",
       "rank": 3
+    },
+    {
+      "month": "2026-6",
+      "kind": "chat",
+      "rank": 2
     }
   ]
 }

@@ -1449,6 +1449,39 @@
       }
     }
   },
+  "prefix_94": {
+    "slot": "name_prefix",
+    "display_name": "Streak Demon",
+    "achievement_name": "21 Day Streak!",
+    "achievement_category": "attendance",
+    "achievement_id": "streak_21",
+    "config": {
+      "font_family": "Varela Round",
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "Streak Demon",
+      "text_gradient": [
+        {
+          "color": "#ef4444",
+          "pos": null
+        },
+        {
+          "color": "#ff7a18",
+          "pos": null
+        },
+        {
+          "color": "#ffd166",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "attendance",
+        "id": "streak_21"
+      }
+    }
+  },
   "name_10": {
     "slot": "name_base",
     "display_name": "name_10",
@@ -3300,6 +3333,39 @@
         "type": "achievement",
         "category": "attendance",
         "id": "streak_14"
+      }
+    }
+  },
+  "suffix_72": {
+    "slot": "name_suffix",
+    "display_name": "[DEMON]",
+    "achievement_name": "21 Day Streak!",
+    "achievement_category": "attendance",
+    "achievement_id": "streak_21",
+    "config": {
+      "font_family": "VT323",
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "[DEMON]",
+      "text_gradient": [
+        {
+          "color": "#ef4444",
+          "pos": null
+        },
+        {
+          "color": "#ff7a18",
+          "pos": null
+        },
+        {
+          "color": "#ffd166",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "attendance",
+        "id": "streak_21"
       }
     }
   },
