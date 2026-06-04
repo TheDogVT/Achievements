@@ -19,7 +19,8 @@
       "chat_peanut": "2026-06-01T22:09:32.680749+00:00",
       "redeem_checkin_5": "2026-06-01T22:17:47.540146+00:00",
       "redeem_total_10": "2026-06-01T22:17:47.788348+00:00",
-      "redeem_pet_1": "2026-06-02T21:43:38.963947+00:00"
+      "redeem_pet_1": "2026-06-02T21:43:38.963947+00:00",
+      "streak_5": "2026-06-04T21:25:38.832745+00:00"
     },
     "founded": {}
   },
@@ -32,12 +33,14 @@
       "prefix_80",
       "suffix_58",
       "prefix_89",
-      "suffix_67"
+      "suffix_67",
+      "prefix_90",
+      "suffix_68"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 233,
+    "messages": 235,
     "active_months": 3,
     "first_seen": "2026-4"
   },
