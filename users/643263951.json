@@ -128,7 +128,8 @@
       "cheer_cumulative_1k": "2026-05-26T21:22:18.604436+00:00",
       "cheer_cumulative_2500": "2026-05-26T21:22:18.879846+00:00",
       "cheer_cumulative_5k": "2026-05-26T21:22:19.194791+00:00",
-      "streak_21": "2026-06-02T20:06:53.127104+00:00"
+      "streak_21": "2026-06-02T20:06:53.127104+00:00",
+      "attend_25": "2026-06-04T20:49:54.367717+00:00"
     },
     "founded": {
       "chat_growl": "2026-02-09T00:18:29.458522+00:00"
@@ -193,7 +194,9 @@
       "name_5",
       "name_6",
       "prefix_94",
-      "suffix_72"
+      "suffix_72",
+      "prefix_82",
+      "suffix_60"
     ],
     "active": {
       "name_prefix": "prefix_93",
@@ -204,7 +207,7 @@
     }
   },
   "stats": {
-    "messages": 4462,
+    "messages": 4463,
     "active_months": 8,
     "first_seen": "2025-11"
   },
