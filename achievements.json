@@ -387,6 +387,11 @@
       "desc": "Awarded for the eternal question.",
       "type": "contains"
     },
+    "chat_loaf": {
+      "name": "Bread Inspector",
+      "desc": "Awarded for identifying the dog loaf formation.",
+      "type": "contains"
+    },
     "chat_blep": {
       "name": "Blep Patrol",
       "desc": "Awarded for spotting a rogue tongue tip.",
