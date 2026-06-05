@@ -6,16 +6,19 @@
   "achievements": {
     "earned": {
       "redeem_checkin_1": "2026-06-04T23:51:34.476124+00:00",
-      "redeem_pet_1": "2026-06-04T23:53:40.161366+00:00"
+      "redeem_pet_1": "2026-06-04T23:53:40.161366+00:00",
+      "chat_10": "2026-06-05T00:02:49.228585+00:00"
     },
     "founded": {}
   },
   "decorations": {
-    "unlocked": [],
+    "unlocked": [
+      "prefix_7"
+    ],
     "active": {}
   },
   "stats": {
-    "messages": 8,
+    "messages": 10,
     "active_months": 1,
     "first_seen": "2026-06-04T23:44:18.898256+00:00"
   },
