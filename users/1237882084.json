@@ -59,7 +59,8 @@
       "redeem_checkin_30": "2026-05-02T20:22:37.839741+00:00",
       "cheer_cumulative_1k": "2026-05-28T21:18:05.646578+00:00",
       "cheer_cumulative_2500": "2026-05-28T21:18:05.925515+00:00",
-      "cheer_cumulative_5k": "2026-05-28T21:18:06.180547+00:00"
+      "cheer_cumulative_5k": "2026-05-28T21:18:06.180547+00:00",
+      "attend_3": "2026-06-05T20:29:42.106399+00:00"
     },
     "founded": {
       "donation_10": "2025-10-31T18:34:14.209031+00:00",
@@ -117,13 +118,15 @@
       "message_1",
       "name_4",
       "name_5",
-      "name_6"
+      "name_6",
+      "prefix_79",
+      "suffix_57"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 2211,
-    "active_months": 7,
+    "messages": 2212,
+    "active_months": 8,
     "first_seen": "2025-11"
   },
   "top_months": [
@@ -166,6 +169,11 @@
       "month": "2026-5",
       "kind": "donations",
       "rank": 1
+    },
+    {
+      "month": "2026-6",
+      "kind": "cheers",
+      "rank": 2
     }
   ]
 }
