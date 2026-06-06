@@ -163,9 +163,15 @@
     "active": {}
   },
   "stats": {
-    "messages": 4587,
+    "messages": 4599,
     "active_months": 8,
     "first_seen": "2025-11"
   },
-  "top_months": []
+  "top_months": [
+    {
+      "month": "2026-6",
+      "kind": "cheers",
+      "rank": 2
+    }
+  ]
 }
