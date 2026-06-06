@@ -21,7 +21,8 @@
       "gamble_total_win_1": "2026-04-18T00:44:31.099561+00:00",
       "attend_3": "2026-05-17T22:35:54.627497+00:00",
       "chat_bork": "2026-05-31T23:39:28.929770+00:00",
-      "chat_500": "2026-06-01T00:03:37.132712+00:00"
+      "chat_500": "2026-06-01T00:03:37.132712+00:00",
+      "attend_5": "2026-06-06T20:09:23.730957+00:00"
     },
     "founded": {}
   },
@@ -36,13 +37,15 @@
       "prefix_77",
       "prefix_79",
       "suffix_57",
-      "prefix_3"
+      "prefix_3",
+      "prefix_80",
+      "suffix_58"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 507,
-    "active_months": 7,
+    "messages": 508,
+    "active_months": 8,
     "first_seen": "2025-11"
   },
   "top_months": []
