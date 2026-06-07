@@ -17,20 +17,23 @@
       "subathon_2025_any": "2025-12-25T22:08:00.898787+00:00",
       "birthday_2025": "2025-12-26T23:34:51.120863+00:00",
       "donation_1": "2026-02-18T17:21:17.133141+00:00",
-      "donation_10": "2026-02-18T17:21:17.133141+00:00"
+      "donation_10": "2026-02-18T17:21:17.133141+00:00",
+      "donation_5": "2026-06-07T20:10:54.837557+00:00",
+      "donation_cumulative_10": "2026-06-07T20:10:55.111252+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
       "prefix_2",
-      "prefix_7"
+      "prefix_7",
+      "name_9"
     ],
     "active": {}
   },
   "stats": {
     "messages": 108,
-    "active_months": 5,
+    "active_months": 6,
     "first_seen": "2025-11"
   },
   "top_months": [
@@ -46,6 +49,11 @@
     },
     {
       "month": "2026-4",
+      "kind": "donations",
+      "rank": 1
+    },
+    {
+      "month": "2026-6",
       "kind": "donations",
       "rank": 1
     }
