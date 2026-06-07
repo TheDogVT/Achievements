@@ -47,12 +47,13 @@
       "prefix_93",
       "suffix_71",
       "prefix_94",
-      "suffix_72"
+      "suffix_72",
+      "prefix_10"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 1982,
+    "messages": 1983,
     "active_months": 8,
     "first_seen": "2025-11"
   },
