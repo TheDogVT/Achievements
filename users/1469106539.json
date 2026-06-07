@@ -1,0 +1,26 @@
+{
+  "user_id": "1469106539",
+  "username": "gabeplays1234",
+  "pfp_url": "",
+  "legacy": 0,
+  "achievements": {
+    "earned": {
+      "chat_bork": "2026-06-07T22:57:59.630780+00:00",
+      "chat_boop": "2026-06-07T22:58:25.135663+00:00"
+    },
+    "founded": {}
+  },
+  "decorations": {
+    "unlocked": [
+      "prefix_15",
+      "suffix_4"
+    ],
+    "active": {}
+  },
+  "stats": {
+    "messages": 3,
+    "active_months": 1,
+    "first_seen": "2026-06-07T22:57:59.611752+00:00"
+  },
+  "top_months": []
+}
