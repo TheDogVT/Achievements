@@ -1,20 +1,24 @@
 {
   "user_id": "190980593",
   "username": "dimitrescuthethiccengine",
-  "pfp_url": "",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/08eb622e-71c2-4228-a7c3-b64d8e8ece57-profile_image-300x300.png",
   "legacy": 0,
   "achievements": {
     "earned": {
-      "chat_bork": "2026-06-08T21:53:28.332246+00:00"
+      "chat_bork": "2026-06-08T21:53:28.332246+00:00",
+      "chat_10": "2026-06-08T21:55:04.613015+00:00",
+      "chat_bone": "2026-06-08T21:55:04.875216+00:00"
     },
     "founded": {}
   },
   "decorations": {
-    "unlocked": [],
+    "unlocked": [
+      "prefix_7"
+    ],
     "active": {}
   },
   "stats": {
-    "messages": 7,
+    "messages": 12,
     "active_months": 1,
     "first_seen": "2026-06-08T21:51:53.230946+00:00"
   },
