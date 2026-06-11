@@ -22,7 +22,8 @@
       "streak_3": "2026-05-08T20:32:35.998966+00:00",
       "attend_5": "2026-05-09T21:13:18.173833+00:00",
       "redeem_total_100": "2026-05-28T21:19:28.660886+00:00",
-      "redeem_first_1": "2026-05-29T20:02:33.225551+00:00"
+      "redeem_first_1": "2026-05-29T20:02:33.225551+00:00",
+      "attend_10": "2026-06-11T20:10:01.985786+00:00"
     },
     "founded": {}
   },
@@ -36,13 +37,15 @@
       "suffix_58",
       "suffix_67",
       "prefix_101",
-      "suffix_79"
+      "suffix_79",
+      "prefix_81",
+      "suffix_59"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 90,
-    "active_months": 4,
+    "messages": 91,
+    "active_months": 5,
     "first_seen": "2026-2"
   },
   "top_months": []
