@@ -57,7 +57,8 @@
       "streak_3": "2026-05-14T23:04:20.846852+00:00",
       "chat_yap": "2026-05-14T23:20:06.115830+00:00",
       "chat_bone": "2026-05-21T23:15:45.164994+00:00",
-      "chat_heckin": "2026-05-21T23:28:42.980441+00:00"
+      "chat_heckin": "2026-05-21T23:28:42.980441+00:00",
+      "attend_10": "2026-06-11T20:06:50.258223+00:00"
     },
     "founded": {}
   },
@@ -82,13 +83,15 @@
       "prefix_89",
       "suffix_57",
       "suffix_58",
-      "suffix_67"
+      "suffix_67",
+      "prefix_81",
+      "suffix_59"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 1867,
-    "active_months": 7,
+    "messages": 1869,
+    "active_months": 8,
     "first_seen": "2025-11"
   },
   "top_months": [
