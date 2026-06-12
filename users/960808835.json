@@ -1,7 +1,7 @@
 {
   "user_id": "960808835",
   "username": "darkness20974",
-  "pfp_url": "",
+  "pfp_url": "https://static-cdn.jtvnw.net/user-default-pictures-uv/ebe4cd89-b4f4-4cd9-adac-2f30151b4209-profile_image-300x300.png",
   "legacy": 0,
   "achievements": {
     "earned": {
@@ -16,8 +16,8 @@
     "active": {}
   },
   "stats": {
-    "messages": 30,
-    "active_months": 1,
+    "messages": 32,
+    "active_months": 2,
     "first_seen": "2026-05-08T00:04:22.854321+00:00"
   },
   "top_months": []
