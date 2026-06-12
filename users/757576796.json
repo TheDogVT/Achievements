@@ -12,19 +12,24 @@
       "chat_stinky": "2026-02-21T21:57:19.515154+00:00",
       "redeem_checkin_5": "2026-02-24T23:37:58.897792+00:00",
       "redeem_total_10": "2026-02-24T23:37:58.897792+00:00",
-      "chat_bone": "2026-02-24T23:57:00.696232+00:00"
+      "chat_bone": "2026-02-24T23:57:00.696232+00:00",
+      "attend_3": "2026-06-12T20:17:32.542763+00:00",
+      "redeem_checkin_10": "2026-06-12T20:17:32.855735+00:00",
+      "redeem_total_25": "2026-06-12T20:17:33.095596+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
-      "prefix_7"
+      "prefix_7",
+      "prefix_79",
+      "suffix_57"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 75,
-    "active_months": 5,
+    "messages": 76,
+    "active_months": 6,
     "first_seen": "2025-11"
   },
   "top_months": []
