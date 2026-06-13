@@ -34,7 +34,8 @@
       "redeem_total_50": "2026-05-05T00:13:22.623365+00:00",
       "redeem_total_100": "2026-05-05T00:13:22.929592+00:00",
       "redeem_total_150": "2026-05-05T00:13:23.197618+00:00",
-      "redeem_checkin_150": "2026-05-12T00:29:51.663563+00:00"
+      "redeem_checkin_150": "2026-05-12T00:29:51.663563+00:00",
+      "attend_3": "2026-06-13T22:13:13.179707+00:00"
     },
     "founded": {
       "gamble_loss_total_10m": "2025-11-08T22:23:43.065986+00:00",
@@ -48,13 +49,15 @@
       "prefix_2",
       "prefix_3",
       "prefix_7",
-      "prefix_77"
+      "prefix_77",
+      "prefix_79",
+      "suffix_57"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 546,
-    "active_months": 7,
+    "messages": 549,
+    "active_months": 8,
     "first_seen": "2025-11"
   },
   "top_months": []
