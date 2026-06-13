@@ -7,18 +7,21 @@
     "earned": {
       "chat_bork": "2026-06-08T21:53:28.332246+00:00",
       "chat_10": "2026-06-08T21:55:04.613015+00:00",
-      "chat_bone": "2026-06-08T21:55:04.875216+00:00"
+      "chat_bone": "2026-06-08T21:55:04.875216+00:00",
+      "attend_3": "2026-06-13T21:57:37.854271+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
-      "prefix_7"
+      "prefix_7",
+      "prefix_79",
+      "suffix_57"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 33,
+    "messages": 35,
     "active_months": 1,
     "first_seen": "2026-06-08T21:51:53.230946+00:00"
   },
