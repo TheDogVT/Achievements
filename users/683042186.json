@@ -11,7 +11,8 @@
       "subathon_2025_any": "2025-12-24T22:35:44.558292+00:00",
       "birthday_2025": "2025-12-26T20:06:33.826015+00:00",
       "redeem_checkin_1": "2025-12-30T22:41:00.167972+00:00",
-      "redeem_total_5": "2026-06-14T21:41:14.699992+00:00"
+      "redeem_total_5": "2026-06-14T21:41:14.699992+00:00",
+      "chat_chaos": "2026-06-14T21:45:03.156525+00:00"
     },
     "founded": {}
   },
@@ -19,12 +20,13 @@
     "unlocked": [
       "prefix_10",
       "prefix_2",
-      "prefix_7"
+      "prefix_7",
+      "prefix_16"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 185,
+    "messages": 195,
     "active_months": 4,
     "first_seen": "2025-12"
   },
