@@ -82,7 +82,8 @@
       "redeem_pet_200": "2026-04-30T20:08:51.916697+00:00",
       "redeem_first_45": "2026-05-02T20:07:17.944996+00:00",
       "redeem_first_60": "2026-05-02T20:07:18.220700+00:00",
-      "redeem_first_90": "2026-05-02T20:07:19.118074+00:00"
+      "redeem_first_90": "2026-05-02T20:07:19.118074+00:00",
+      "redeem_first_120": "2026-06-14T20:03:25.217504+00:00"
     }
   },
   "decorations": {
@@ -129,12 +130,14 @@
       "prefix_82",
       "suffix_60",
       "prefix_94",
-      "suffix_72"
+      "suffix_72",
+      "prefix_108",
+      "suffix_86"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 3035,
+    "messages": 3036,
     "active_months": 8,
     "first_seen": "2025-11"
   },

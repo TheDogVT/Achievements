@@ -217,6 +217,38 @@
       }
     }
   },
+  "prefix_108": {
+    "slot": "name_prefix",
+    "display_name": "Ahead",
+    "achievement_name": "They're all slower than me.",
+    "achievement_category": "redeems",
+    "achievement_id": "redeem_first_120",
+    "config": {
+      "font_family": "Varela Round",
+      "outline": "basic",
+      "text": "Ahead",
+      "text_gradient": [
+        {
+          "color": "#facc15",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#67e8f9",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "redeems",
+        "id": "redeem_first_120"
+      }
+    }
+  },
   "prefix_119": {
     "slot": "name_prefix",
     "display_name": "Prestige Cheer Name",
@@ -3501,6 +3533,23 @@
         "type": "achievement",
         "category": "redeems",
         "id": "redeem_first_90"
+      }
+    }
+  },
+  "suffix_86": {
+    "slot": "name_suffix",
+    "display_name": "[120 FIRSTS]",
+    "achievement_name": "They're all slower than me.",
+    "achievement_category": "redeems",
+    "achievement_id": "redeem_first_120",
+    "config": {
+      "font_family": "VT323",
+      "outline": "basic",
+      "text": "[120 FIRSTS]",
+      "unlock": {
+        "type": "achievement",
+        "category": "redeems",
+        "id": "redeem_first_120"
       }
     }
   },

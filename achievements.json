@@ -1262,6 +1262,11 @@
       "desc": "Awarded for getting first for the 90th time.",
       "amount": 90
     },
+    "redeem_first_120": {
+      "name": "They're all slower than me.",
+      "desc": "Awarded for getting first for the 120th time.",
+      "amount": 120
+    },
     "redeem_total_5": {
       "name": "Curious Redeemer.",
       "desc": "Awarded for using 5 channel point redeems.",
