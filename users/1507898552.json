@@ -6,7 +6,8 @@
   "achievements": {
     "earned": {
       "attend_3": "2026-06-08T20:38:24.389291+00:00",
-      "chat_10": "2026-06-12T20:55:53.551163+00:00"
+      "chat_10": "2026-06-12T20:55:53.551163+00:00",
+      "attend_5": "2026-06-14T21:38:52.918434+00:00"
     },
     "founded": {}
   },
@@ -14,12 +15,14 @@
     "unlocked": [
       "prefix_79",
       "suffix_57",
-      "prefix_7"
+      "prefix_7",
+      "prefix_80",
+      "suffix_58"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 10,
+    "messages": 11,
     "active_months": 1,
     "first_seen": "2026-06-06T20:13:06.592519+00:00"
   },

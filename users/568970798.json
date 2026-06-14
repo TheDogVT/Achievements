@@ -1,7 +1,7 @@
 {
   "user_id": "568970798",
   "username": "RubyKitsune_68",
-  "pfp_url": "",
+  "pfp_url": "https://static-cdn.jtvnw.net/user-default-pictures-uv/cdd517fe-def4-11e9-948e-784f43822e80-profile_image-300x300.png",
   "legacy": 0,
   "achievements": {
     "earned": {
@@ -14,8 +14,8 @@
     "active": {}
   },
   "stats": {
-    "messages": 0,
-    "active_months": 0,
+    "messages": 1,
+    "active_months": 1,
     "first_seen": "2026-06-14T21:30:24.407575+00:00"
   },
   "top_months": []
