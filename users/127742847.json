@@ -99,9 +99,15 @@
     }
   },
   "stats": {
-    "messages": 1826,
+    "messages": 1960,
     "active_months": 8,
     "first_seen": "2025-11"
   },
-  "top_months": []
+  "top_months": [
+    {
+      "month": "2026-6",
+      "kind": "chat",
+      "rank": 3
+    }
+  ]
 }
