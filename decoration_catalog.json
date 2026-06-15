@@ -812,6 +812,33 @@
       }
     }
   },
+  "prefix_48": {
+    "slot": "name_prefix",
+    "display_name": "Oh,",
+    "achievement_name": "Oh! For Me?",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_1000",
+    "config": {
+      "outline": "basic",
+      "text": "Oh,",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#7de8ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_1000"
+      }
+    }
+  },
   "prefix_49": {
     "slot": "name_prefix",
     "display_name": "Bit",
@@ -2881,6 +2908,33 @@
         "type": "achievement",
         "category": "cheer",
         "id": "cheer_666"
+      }
+    }
+  },
+  "suffix_35": {
+    "slot": "name_suffix",
+    "display_name": "for me?",
+    "achievement_name": "Oh! For Me?",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_1000",
+    "config": {
+      "outline": "basic",
+      "text": "for me?",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#7de8ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_1000"
       }
     }
   },
