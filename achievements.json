@@ -392,6 +392,11 @@
       "desc": "Awarded for identifying the dog loaf formation.",
       "type": "contains"
     },
+    "chat_mlem": {
+      "name": "Mlem Witness",
+      "desc": "Awarded for catching the sacred slow tongue.",
+      "type": "contains"
+    },
     "chat_blep": {
       "name": "Blep Patrol",
       "desc": "Awarded for spotting a rogue tongue tip.",
