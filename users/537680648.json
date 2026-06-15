@@ -9,18 +9,20 @@
       "chat_10": "2025-12-23T21:30:43.003045+00:00",
       "birthday_2025": "2025-12-26T23:24:58.690054+00:00",
       "chat_treats": "2025-12-27T21:56:13.955917+00:00",
-      "redeem_checkin_1": "2026-04-06T23:40:38.423896+00:00"
+      "redeem_checkin_1": "2026-04-06T23:40:38.423896+00:00",
+      "chat_100": "2026-06-15T23:03:34.054586+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
-      "prefix_7"
+      "prefix_7",
+      "prefix_2"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 93,
+    "messages": 100,
     "active_months": 4,
     "first_seen": "2025-12"
   },

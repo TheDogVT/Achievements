@@ -6,16 +6,19 @@
   "achievements": {
     "earned": {
       "chat_sniff": "2026-06-15T22:35:59.754426+00:00",
-      "chat_dig": "2026-06-15T23:00:12.952617+00:00"
+      "chat_dig": "2026-06-15T23:00:12.952617+00:00",
+      "chat_10": "2026-06-15T23:03:29.887047+00:00"
     },
     "founded": {}
   },
   "decorations": {
-    "unlocked": [],
+    "unlocked": [
+      "prefix_7"
+    ],
     "active": {}
   },
   "stats": {
-    "messages": 9,
+    "messages": 10,
     "active_months": 1,
     "first_seen": "2026-06-15T22:30:29.291467+00:00"
   },
