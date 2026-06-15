@@ -5,7 +5,8 @@
   "legacy": 0,
   "achievements": {
     "earned": {
-      "chat_sniff": "2026-06-15T22:35:59.754426+00:00"
+      "chat_sniff": "2026-06-15T22:35:59.754426+00:00",
+      "chat_dig": "2026-06-15T23:00:12.952617+00:00"
     },
     "founded": {}
   },
@@ -14,7 +15,7 @@
     "active": {}
   },
   "stats": {
-    "messages": 4,
+    "messages": 9,
     "active_months": 1,
     "first_seen": "2026-06-15T22:30:29.291467+00:00"
   },
