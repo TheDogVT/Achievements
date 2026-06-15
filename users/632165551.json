@@ -203,7 +203,7 @@
     "active": {}
   },
   "stats": {
-    "messages": 4917,
+    "messages": 4940,
     "active_months": 8,
     "first_seen": "2025-11"
   },
@@ -237,6 +237,11 @@
       "month": "2026-4",
       "kind": "cheers",
       "rank": 3
+    },
+    {
+      "month": "2026-6",
+      "kind": "gifted",
+      "rank": 2
     }
   ]
 }
