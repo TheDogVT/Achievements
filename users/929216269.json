@@ -80,7 +80,9 @@
       "prefix_94",
       "suffix_72",
       "prefix_19",
-      "prefix_77"
+      "prefix_77",
+      "prefix_18",
+      "suffix_8"
     ],
     "active": {
       "name_prefix": "prefix_93",
@@ -90,7 +92,7 @@
     }
   },
   "stats": {
-    "messages": 26272,
+    "messages": 26292,
     "active_months": 8,
     "first_seen": "2025-10"
   },
