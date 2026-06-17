@@ -1,20 +1,24 @@
 {
   "user_id": "854599182",
   "username": "koguroshii",
-  "pfp_url": "",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/930fa9e1-bca9-42ee-a923-45e60d2fea4f-profile_image-300x300.jpeg",
   "legacy": 0,
   "achievements": {
     "earned": {
-      "chat_sniff": "2026-06-17T00:00:04.263745+00:00"
+      "chat_sniff": "2026-06-17T00:00:04.263745+00:00",
+      "chat_10": "2026-06-17T00:04:12.285652+00:00",
+      "redeem_checkin_1": "2026-06-17T00:04:35.661248+00:00"
     },
     "founded": {}
   },
   "decorations": {
-    "unlocked": [],
+    "unlocked": [
+      "prefix_7"
+    ],
     "active": {}
   },
   "stats": {
-    "messages": 5,
+    "messages": 12,
     "active_months": 1,
     "first_seen": "2026-06-16T23:59:03.155683+00:00"
   },
