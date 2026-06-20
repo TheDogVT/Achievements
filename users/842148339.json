@@ -17,7 +17,8 @@
       "redeem_total_5": "2026-05-04T21:01:51.063278+00:00",
       "redeem_total_10": "2026-05-04T21:01:51.318309+00:00",
       "redeem_total_25": "2026-05-04T21:01:51.572967+00:00",
-      "redeem_total_50": "2026-05-04T21:01:51.805629+00:00"
+      "redeem_total_50": "2026-05-04T21:01:51.805629+00:00",
+      "attend_3": "2026-06-20T00:00:31.615688+00:00"
     },
     "founded": {}
   },
@@ -25,13 +26,15 @@
     "unlocked": [
       "prefix_12",
       "prefix_7",
-      "suffix_3"
+      "suffix_3",
+      "prefix_79",
+      "suffix_57"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 44,
-    "active_months": 4,
+    "messages": 47,
+    "active_months": 5,
     "first_seen": "2025-11"
   },
   "top_months": []
