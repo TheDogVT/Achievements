@@ -7,7 +7,8 @@
     "earned": {
       "chat_bath": "2026-03-27T22:31:36.468159+00:00",
       "chat_10": "2026-05-05T21:46:51.606645+00:00",
-      "redeem_pet_1": "2026-05-05T21:59:20.366256+00:00"
+      "redeem_pet_1": "2026-05-05T21:59:20.366256+00:00",
+      "attend_3": "2026-06-22T22:18:13.499087+00:00"
     },
     "founded": {}
   },
@@ -15,13 +16,15 @@
     "unlocked": [
       "prefix_12",
       "prefix_7",
-      "suffix_3"
+      "suffix_3",
+      "prefix_79",
+      "suffix_57"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 18,
-    "active_months": 2,
+    "messages": 21,
+    "active_months": 3,
     "first_seen": "2026-3"
   },
   "top_months": []
