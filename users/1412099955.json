@@ -1,26 +1,29 @@
 {
   "user_id": "1412099955",
   "username": "lybrookexo",
-  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/ceba11f1-0555-4202-a384-beb9fdb31573-profile_image-300x300.png",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/4ceea489-ca2c-401b-b1c2-8ec77bda21b2-profile_image-300x300.png",
   "legacy": 0,
   "achievements": {
     "earned": {
       "chat_10": "2026-02-15T00:53:08.066173+00:00",
       "redeem_checkin_1": "2026-02-17T23:14:09.529496+00:00",
       "redeem_checkin_2": "2026-03-02T21:02:03.587865+00:00",
-      "redeem_total_5": "2026-03-02T21:02:03.588866+00:00"
+      "redeem_total_5": "2026-03-02T21:02:03.588866+00:00",
+      "chat_100": "2026-06-23T20:41:25.441352+00:00",
+      "redeem_checkin_5": "2026-06-23T20:41:42.827323+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
-      "prefix_7"
+      "prefix_7",
+      "prefix_2"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 84,
-    "active_months": 4,
+    "messages": 104,
+    "active_months": 5,
     "first_seen": "2026-2"
   },
   "top_months": []
