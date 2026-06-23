@@ -6,7 +6,9 @@
   "achievements": {
     "earned": {
       "subathon_2025_any": "2025-12-31T22:19:59.980234+00:00",
-      "redeem_checkin_1": "2026-03-08T20:14:26.797696+00:00"
+      "redeem_checkin_1": "2026-03-08T20:14:26.797696+00:00",
+      "redeem_checkin_2": "2026-06-23T22:10:07.155747+00:00",
+      "redeem_total_5": "2026-06-23T22:10:07.423371+00:00"
     },
     "founded": {}
   },
@@ -15,8 +17,8 @@
     "active": {}
   },
   "stats": {
-    "messages": 5,
-    "active_months": 2,
+    "messages": 7,
+    "active_months": 3,
     "first_seen": "2025-12"
   },
   "top_months": []
