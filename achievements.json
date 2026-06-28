@@ -402,6 +402,11 @@
       "desc": "Awarded for spotting a rogue tongue tip.",
       "type": "contains"
     },
+    "chat_chonk": {
+      "name": "Chonk Surveyor",
+      "desc": "Awarded for measuring the floof-to-mass ratio.",
+      "type": "contains"
+    },
     "chat_heckin": {
       "name": "Heckin Linguist",
       "desc": "Awarded for fluent doggo speak.",
