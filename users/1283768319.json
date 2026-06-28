@@ -5,13 +5,16 @@
   "legacy": 0,
   "achievements": {
     "earned": {
-      "chat_chaos": "2026-06-23T23:04:38.809416+00:00"
+      "chat_chaos": "2026-06-23T23:04:38.809416+00:00",
+      "attend_3": "2026-06-28T21:46:04.476265+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
-      "prefix_16"
+      "prefix_16",
+      "prefix_79",
+      "suffix_57"
     ],
     "active": {}
   },
