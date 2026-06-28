@@ -417,6 +417,11 @@
       "desc": "Awarded for committing dog puns in chat.",
       "type": "contains"
     },
+    "chat_drool": {
+      "name": "Drip Reporter",
+      "desc": "Awarded for documenting the slobber waterfall.",
+      "type": "contains"
+    },
     "chat_beg": {
       "name": "Sad Eyes Enabler",
       "desc": "Awarded for cracking under the begging stare.",
