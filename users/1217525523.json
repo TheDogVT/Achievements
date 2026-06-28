@@ -122,7 +122,8 @@
       "gifted_times_2": "2026-05-02T22:02:45.464650+00:00",
       "donation_1": "2026-05-31T20:18:44.169963+00:00",
       "donation_cumulative_10": "2026-05-31T20:18:46.012067+00:00",
-      "donation_exact_100": "2026-05-31T20:18:47.512327+00:00"
+      "donation_exact_100": "2026-05-31T20:18:47.512327+00:00",
+      "donation_cumulative_200": "2026-06-28T21:53:28.187035+00:00"
     }
   },
   "decorations": {
@@ -167,12 +168,13 @@
       "name_11",
       "name_12",
       "prefix_81",
-      "suffix_59"
+      "suffix_59",
+      "name_13"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 6512,
+    "messages": 6514,
     "active_months": 8,
     "first_seen": "2025-11"
   },
@@ -186,6 +188,11 @@
       "month": "2026-5",
       "kind": "donations",
       "rank": 2
+    },
+    {
+      "month": "2026-6",
+      "kind": "donations",
+      "rank": 1
     }
   ]
 }
