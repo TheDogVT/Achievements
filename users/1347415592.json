@@ -7,19 +7,22 @@
     "earned": {
       "chat_10": "2026-06-20T22:03:33.624314+00:00",
       "chat_ball": "2026-06-20T22:04:58.310498+00:00",
-      "redeem_checkin_1": "2026-06-20T22:08:31.062649+00:00"
+      "redeem_checkin_1": "2026-06-20T22:08:31.062649+00:00",
+      "attend_3": "2026-06-29T21:02:16.137753+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
       "prefix_7",
-      "prefix_77"
+      "prefix_77",
+      "prefix_79",
+      "suffix_57"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 31,
+    "messages": 33,
     "active_months": 1,
     "first_seen": "2026-06-20T22:00:10.334204+00:00"
   },
