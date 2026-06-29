@@ -16,12 +16,14 @@
   },
   "decorations": {
     "unlocked": [
-      "prefix_7"
+      "prefix_7",
+      "prefix_89",
+      "suffix_67"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 87,
+    "messages": 88,
     "active_months": 8,
     "first_seen": "2025-11"
   },
