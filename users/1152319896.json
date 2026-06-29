@@ -10,18 +10,20 @@
       "redeem_checkin_2": "2026-06-23T22:10:07.155747+00:00",
       "redeem_total_5": "2026-06-23T22:10:07.423371+00:00",
       "chat_10": "2026-06-23T22:13:05.937731+00:00",
-      "redeem_checkin_5": "2026-06-29T20:20:28.563487+00:00"
+      "redeem_checkin_5": "2026-06-29T20:20:28.563487+00:00",
+      "chat_sleepy": "2026-06-29T20:25:39.655284+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
-      "prefix_7"
+      "prefix_7",
+      "prefix_10"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 13,
+    "messages": 19,
     "active_months": 3,
     "first_seen": "2025-12"
   },
