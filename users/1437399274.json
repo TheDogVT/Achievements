@@ -14,7 +14,8 @@
       "chat_10": "2026-04-14T22:38:39.505872+00:00",
       "cheer_time_1": "2026-04-19T21:17:10.584916+00:00",
       "redeem_checkin_10": "2026-04-25T21:09:18.061027+00:00",
-      "redeem_total_25": "2026-06-19T20:39:00.318142+00:00"
+      "redeem_total_25": "2026-06-19T20:39:00.318142+00:00",
+      "attend_3": "2026-06-29T20:58:26.084000+00:00"
     },
     "founded": {
       "redeem_pet_5": "2026-05-03T22:24:23.983707+00:00"
@@ -24,13 +25,15 @@
     "unlocked": [
       "prefix_7",
       "prefix_8",
-      "name_1"
+      "name_1",
+      "prefix_79",
+      "suffix_57"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 13,
-    "active_months": 1,
+    "messages": 14,
+    "active_months": 2,
     "first_seen": "2026-4"
   },
   "top_months": []
