@@ -992,6 +992,12 @@
       "amount": 40,
       "type": "times"
     },
+    "gifted_times_50": {
+      "name": "Ad Blocker.",
+      "desc": "Awarded gifting for the 50th time.",
+      "amount": 50,
+      "type": "times"
+    },
     "gifted_cumulative_5": {
       "name": "Mini Santa",
       "desc": "Awarded for 5 cumulative gifted subs.",
