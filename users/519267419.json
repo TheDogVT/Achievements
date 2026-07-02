@@ -26,7 +26,9 @@
       "chat_floofy": "2026-05-28T22:42:43.174688+00:00",
       "redeem_total_25": "2026-05-31T23:21:32.883722+00:00",
       "redeem_checkin_10": "2026-06-02T21:13:39.900910+00:00",
-      "chat_protect": "2026-06-26T20:53:58.638193+00:00"
+      "chat_protect": "2026-06-26T20:53:58.638193+00:00",
+      "gamble_win_total_10k": "2026-07-02T21:36:52.575652+00:00",
+      "gamble_total_win_1": "2026-07-02T21:36:52.850980+00:00"
     },
     "founded": {}
   },
@@ -50,8 +52,8 @@
     "active": {}
   },
   "stats": {
-    "messages": 202,
-    "active_months": 3,
+    "messages": 215,
+    "active_months": 4,
     "first_seen": "2026-4"
   },
   "top_months": []
