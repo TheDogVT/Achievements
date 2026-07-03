@@ -1370,6 +1370,34 @@
       }
     }
   },
+  "prefix_83": {
+    "slot": "name_prefix",
+    "display_name": "Core Chat",
+    "achievement_name": "Loyal Companion",
+    "achievement_category": "attendance",
+    "achievement_id": "attend_50",
+    "config": {
+      "font_family": "Varela Round",
+      "outline": "basic",
+      "text": "Core Chat",
+      "text_gradient": [
+        {
+          "color": "#0ea5e9",
+          "pos": null
+        },
+        {
+          "color": "#fde047",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "attendance",
+        "id": "attend_50"
+      }
+    }
+  },
   "prefix_89": {
     "slot": "name_prefix",
     "display_name": "Active",
@@ -3283,6 +3311,34 @@
         "type": "achievement",
         "category": "attendance",
         "id": "attend_25"
+      }
+    }
+  },
+  "suffix_61": {
+    "slot": "name_suffix",
+    "display_name": "[50 STREAMS]",
+    "achievement_name": "Loyal Companion",
+    "achievement_category": "attendance",
+    "achievement_id": "attend_50",
+    "config": {
+      "font_family": "VT323",
+      "outline": "basic",
+      "text": "[50 STREAMS]",
+      "text_gradient": [
+        {
+          "color": "#0ea5e9",
+          "pos": null
+        },
+        {
+          "color": "#fde047",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "attendance",
+        "id": "attend_50"
       }
     }
   },

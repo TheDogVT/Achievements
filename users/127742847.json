@@ -56,7 +56,8 @@
       "redeem_pet_5": "2026-06-11T22:23:02.540714+00:00"
     },
     "founded": {
-      "attend_25": "2026-05-31T20:04:20.522037+00:00"
+      "attend_25": "2026-05-31T20:04:20.522037+00:00",
+      "attend_50": "2026-07-03T20:13:04.620690+00:00"
     }
   },
   "decorations": {
@@ -89,7 +90,9 @@
       "prefix_82",
       "suffix_60",
       "prefix_94",
-      "suffix_72"
+      "suffix_72",
+      "prefix_83",
+      "suffix_61"
     ],
     "active": {
       "name_prefix": "prefix_16",
@@ -99,7 +102,7 @@
     }
   },
   "stats": {
-    "messages": 2275,
+    "messages": 2276,
     "active_months": 9,
     "first_seen": "2025-11"
   },

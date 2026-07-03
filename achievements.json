@@ -24,6 +24,12 @@
       "amount": 25,
       "type": "attended"
     },
+    "attend_50": {
+      "name": "Loyal Companion",
+      "desc": "Awarded for attending 50 streams. The goodest of regulars.",
+      "amount": 50,
+      "type": "attended"
+    },
     "streak_3": {
       "name": "3 Day Streak!",
       "desc": "Three days running. Someone is getting spoiled.",
