@@ -1,0 +1,31 @@
+{
+  "user_id": "748258718",
+  "username": "anonymoustwink",
+  "pfp_url": "https://static-cdn.jtvnw.net/user-default-pictures-uv/ebe4cd89-b4f4-4cd9-adac-2f30151b4209-profile_image-300x300.png",
+  "legacy": 0,
+  "achievements": {
+    "earned": {
+      "cheer_message_100": "2026-07-03T22:47:37.566305+00:00",
+      "cheer_time_1": "2026-07-03T22:47:37.858147+00:00"
+    },
+    "founded": {}
+  },
+  "decorations": {
+    "unlocked": [
+      "prefix_8"
+    ],
+    "active": {}
+  },
+  "stats": {
+    "messages": 1,
+    "active_months": 1,
+    "first_seen": "2026-07-03T22:46:18.903928+00:00"
+  },
+  "top_months": [
+    {
+      "month": "2026-7",
+      "kind": "cheers",
+      "rank": 1
+    }
+  ]
+}
