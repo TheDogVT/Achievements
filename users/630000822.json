@@ -49,7 +49,8 @@
       "attend_10": "2026-05-22T20:49:29.079496+00:00",
       "redeem_total_100": "2026-06-28T21:27:12.359638+00:00",
       "cheer_cumulative_1k": "2026-06-28T21:51:47.159878+00:00",
-      "cheer_cumulative_2500": "2026-06-28T21:51:47.442078+00:00"
+      "cheer_cumulative_2500": "2026-06-28T21:51:47.442078+00:00",
+      "redeem_checkin_60": "2026-07-03T20:13:45.886214+00:00"
     },
     "founded": {}
   },
@@ -83,8 +84,8 @@
     "active": {}
   },
   "stats": {
-    "messages": 842,
-    "active_months": 8,
+    "messages": 843,
+    "active_months": 9,
     "first_seen": "2025-11"
   },
   "top_months": []
