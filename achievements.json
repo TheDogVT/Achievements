@@ -408,6 +408,11 @@
       "desc": "Awarded for spotting a rogue tongue tip.",
       "type": "contains"
     },
+    "chat_toebeans": {
+      "name": "Bean Counter",
+      "desc": "Awarded for appreciating the most precious legumes.",
+      "type": "contains"
+    },
     "chat_chonk": {
       "name": "Chonk Surveyor",
       "desc": "Awarded for measuring the floof-to-mass ratio.",
