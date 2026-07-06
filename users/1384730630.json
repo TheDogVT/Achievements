@@ -1,7 +1,7 @@
 {
   "user_id": "1384730630",
   "username": "kodajen13",
-  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/b57e03ca-93b6-44d7-83da-0b35c6a59dda-profile_image-300x300.png",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/ae6be59b-1105-4e19-82ad-bc5759a148f5-profile_image-300x300.png",
   "legacy": 0,
   "achievements": {
     "earned": {
@@ -9,7 +9,8 @@
       "redeem_pet_1": "2025-12-14T23:07:45.369541+00:00",
       "redeem_total_5": "2025-12-15T00:41:36.975599+00:00",
       "redeem_checkin_2": "2025-12-16T22:12:53.114156+00:00",
-      "redeem_total_10": "2026-01-09T21:38:08.768551+00:00"
+      "redeem_total_10": "2026-01-09T21:38:08.768551+00:00",
+      "redeem_checkin_5": "2026-07-06T23:19:15.437699+00:00"
     },
     "founded": {}
   },
@@ -18,8 +19,8 @@
     "active": {}
   },
   "stats": {
-    "messages": 2,
-    "active_months": 1,
+    "messages": 3,
+    "active_months": 2,
     "first_seen": "2025-12"
   },
   "top_months": []
