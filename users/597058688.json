@@ -6,18 +6,20 @@
   "achievements": {
     "earned": {
       "chat_10": "2026-07-09T20:28:33.150036+00:00",
-      "chat_frisbee": "2026-07-09T21:28:28.208573+00:00"
+      "chat_frisbee": "2026-07-09T21:28:28.208573+00:00",
+      "chat_100": "2026-07-09T21:49:46.408332+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
-      "prefix_7"
+      "prefix_7",
+      "prefix_2"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 90,
+    "messages": 101,
     "active_months": 1,
     "first_seen": "2026-07-09T20:15:42.016210+00:00"
   },
