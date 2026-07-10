@@ -51,7 +51,8 @@
       "redeem_pet_50": "2026-07-02T22:47:42.596478+00:00",
       "gamble_loss_total_100k": "2026-07-06T23:32:16.323451+00:00",
       "chat_goodboy": "2026-07-07T20:27:53.548072+00:00",
-      "redeem_first_1": "2026-07-10T20:05:42.181310+00:00"
+      "redeem_first_1": "2026-07-10T20:05:42.181310+00:00",
+      "chat_floof": "2026-07-10T22:21:32.661232+00:00"
     },
     "founded": {}
   },
@@ -88,7 +89,8 @@
       "prefix_18",
       "suffix_8",
       "prefix_101",
-      "suffix_79"
+      "suffix_79",
+      "suffix_7"
     ],
     "active": {
       "name_prefix": "prefix_2",
@@ -98,7 +100,7 @@
     }
   },
   "stats": {
-    "messages": 1394,
+    "messages": 1399,
     "active_months": 3,
     "first_seen": "2026-05-11T22:50:16.826171+00:00"
   },
