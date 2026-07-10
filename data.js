@@ -4,6 +4,15 @@ const BASE_URL = 'https://raw.githubusercontent.com/TheDogVT/Achievements/main';
 // ── UTIL ──────────────────────────────────────────────────────────────
 function capitalize(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
 
+function escapeHtml(value) {
+    return String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
 // ── COOKIE HELPERS ────────────────────────────────────────────────────
 function setCookie(name, value, days = 365) {
     const date = new Date();
@@ -43,6 +52,13 @@ function setLoadProgress(pct, msg) {
     document.getElementById('loadingStatus').textContent  = msg;
 }
 
+function showDataLoadFailure(error) {
+    const detail = error && error.message ? ` (${error.message})` : '';
+    setLoadProgress(100, `Unable to load achievement data${detail}. Refresh to try again.`);
+    const fill = document.getElementById('loadingBarFill');
+    if (fill) fill.style.background = '#d85b67';
+}
+
 async function loadAllData() {
     setLoadProgress(5, 'Loading achievements…');
     const [achRes, mapRes, metaRes] = await Promise.all([
@@ -50,6 +66,7 @@ async function loadAllData() {
         fetch(`${BASE_URL}/username_map.json`),
         fetch(`${BASE_URL}/meta.json`),
     ]);
+    if (!achRes.ok) throw new Error(`achievements request returned ${achRes.status}`);
     achData     = await achRes.json();
     usernameMap = mapRes.ok ? await mapRes.json() : {};
     metaData    = metaRes.ok ? await metaRes.json() : {};

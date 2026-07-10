@@ -121,13 +121,15 @@ function updateAutocomplete(query) {
             const before = username.slice(0, highlight);
             const match = username.slice(highlight, highlight + query.length);
             const after = username.slice(highlight + query.length);
-            displayName = `${before}<strong>${match}</strong>${after}`;
+            displayName = `${escapeHtml(before)}<strong>${escapeHtml(match)}</strong>${escapeHtml(after)}`;
+        } else {
+            displayName = escapeHtml(displayName);
         }
         
         return `
             <div class="autocomplete-item" data-index="${idx}">
                 <span class="username">${displayName}</span>
-                <span class="id">${id}</span>
+                <span class="id">${escapeHtml(id)}</span>
             </div>
         `;
     }).join('');
@@ -339,7 +341,8 @@ function buildCard(item, userData) {
         const founderName   = foundersData[id].founder_name;
         if (!userData || currentUserId !== founderUserId) {
             const fLegacy = legacyClass(allUserData[founderUserId]?.legacy || 0);
-            const fName = fLegacy ? `<span class="${fLegacy} legacy-name">${founderName}</span>` : founderName;
+            const safeFounderName = escapeHtml(founderName);
+            const fName = fLegacy ? `<span class="${fLegacy} legacy-name">${safeFounderName}</span>` : safeFounderName;
             metaHTML += `<div class="ach-meta-row"><span class="dot dot-cyan"></span>First: ${fName}</div>`;
         }
     }
@@ -356,13 +359,13 @@ function buildCard(item, userData) {
             });
             const recentPfp = pfpByUsername[u.username.toLowerCase()];
             const initial = recentPfp ? '' : u.username[0].toUpperCase();
-            const recentPfpStyle = recentPfp ? `background-image:url(${recentPfp});background-size:cover;background-position:center;` : '';
             const profileHref = `profile.html?user=${encodeURIComponent(u.username)}`;
+            const safeUsername = escapeHtml(u.username);
             return `
-                <div class="recent-user-item" data-userid="${u.userId}">
-                    <a class="recent-user-avatar recent-user-profile-link" data-username="${u.username}" style="${recentPfpStyle}" href="${profileHref}" title="View ${u.username}'s profile">${initial}</a>
+                <div class="recent-user-item" data-userid="${escapeHtml(u.userId)}">
+                    <a class="recent-user-avatar recent-user-profile-link" data-username="${safeUsername}" href="${profileHref}" title="View ${safeUsername}'s profile">${escapeHtml(initial)}</a>
                     <div class="recent-user-info">
-                        <a class="recent-user-name recent-user-profile-link" href="${profileHref}" title="View ${u.username}'s profile">${(() => { const lc = legacyClass(allUserData[u.userId]?.legacy || 0); return lc ? `<span class="${lc} legacy-name">${u.username}</span>` : u.username; })()}</a>
+                        <a class="recent-user-name recent-user-profile-link" href="${profileHref}" title="View ${safeUsername}'s profile">${(() => { const lc = legacyClass(allUserData[u.userId]?.legacy || 0); return lc ? `<span class="${lc} legacy-name">${safeUsername}</span>` : safeUsername; })()}</a>
                         <div class="recent-user-date">${formatted}</div>
                     </div>
                 </div>
@@ -375,11 +378,11 @@ function buildCard(item, userData) {
         <div class="ach-header">
             <div class="ach-icon">${icon}</div>
             <div class="ach-title-wrap">
-                <a class="ach-name" href="achievement.html?ach=${id}">${displayName}</a>
+                <a class="ach-name" href="achievement.html?ach=${encodeURIComponent(id)}">${escapeHtml(displayName)}</a>
                 <div class="ach-badges">${badgeHTML}</div>
             </div>
         </div>
-        <p class="ach-desc">${ach.desc}</p>
+        <p class="ach-desc">${escapeHtml(ach.desc)}</p>
         ${metaHTML ? `<div class="ach-meta">${metaHTML}</div>` : ''}
         <div class="ach-spacer"></div>
         ${recentHTML ? `
@@ -423,7 +426,15 @@ function showProfile(userId) {
     const profileNameEl = document.getElementById('profileName');
     const profileHref = `profile.html?user=${encodeURIComponent(name)}`;
     const pnLegacy = legacyClass(userData.legacy || 0);
-    profileNameEl.innerHTML = pnLegacy ? `<span class="${pnLegacy} legacy-name">${name}</span>` : name;
+    profileNameEl.replaceChildren();
+    if (pnLegacy) {
+        const legacyName = document.createElement('span');
+        legacyName.className = `${pnLegacy} legacy-name`;
+        legacyName.textContent = name;
+        profileNameEl.appendChild(legacyName);
+    } else {
+        profileNameEl.textContent = name;
+    }
     profileNameEl.style.cursor = 'pointer';
     profileNameEl.title = `View ${name}'s profile`;
     profileNameEl.onclick = () => {
@@ -663,4 +674,4 @@ async function initPage() {
 }
 
 // ── STARTUP ───────────────────────────────────────────────────────────
-loadAllData().then(() => { initPage(); });
+loadAllData().then(() => { initPage(); }).catch(showDataLoadFailure);

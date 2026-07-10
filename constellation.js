@@ -17,6 +17,7 @@ let shootingStars = []; // Array of shooting stars for comet rush mode
 let shootingStarTimer = null; // Timer for spawning shooting stars
 let lastTickTime = 0; // Prevent tick from playing too frequently
 let gameMode = 'normal'; // Current game mode
+let lastPlayedMode = 'normal';
 let accessibilitySettings = getCookie('accessibilitySettings') || { mode: 'none', shownNotice: false };
 
 // Save the Stars mode variables
@@ -441,6 +442,7 @@ function toggleStarGame() {
 }
 
 function showGameOverModal(playedMode) {
+    lastPlayedMode = playedMode;
     const modal = document.getElementById('gameOverModal');
     const currentModeRecord = modeRecords[playedMode] || 0;
     const isNewRecord = starGameScore > currentModeRecord;
@@ -1267,7 +1269,7 @@ document.getElementById('starGameBtn').addEventListener('click', () => {
 // Game over modal buttons
 document.getElementById('tryAgainBtn').addEventListener('click', () => {
     document.getElementById('gameOverModal').classList.remove('visible');
-    toggleStarGame(); // Start a new game
+    startGameWithMode(lastPlayedMode);
 });
 
 document.getElementById('closeGameBtn').addEventListener('click', () => {
@@ -1989,12 +1991,6 @@ function playBlackHoleDestroy() {
     osc.stop(now + 0.2);
 }
 
-// Click outside mode select to close it
-document.getElementById('modeSelectModal').addEventListener('click', (e) => {
-    if (e.target.id === 'modeSelectModal') {
-        document.getElementById('modeSelectModal').classList.remove('visible');
-    }
-});
 
 // Click outside mode select to close it
 document.getElementById('modeSelectModal').addEventListener('click', (e) => {

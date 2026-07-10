@@ -101,7 +101,14 @@ function buildLeaderboard() {
                 window.location.href = `profile.html?user=${encodeURIComponent(entry.username)}`;
             });
             const uLegacy = legacyClass(allUserData[entry.userId]?.legacy || 0);
-            username.innerHTML = uLegacy ? `<span class="${uLegacy} legacy-name">${entry.username}</span>` : entry.username;
+            if (uLegacy) {
+                const legacyName = document.createElement('span');
+                legacyName.className = `${uLegacy} legacy-name`;
+                legacyName.textContent = entry.username;
+                username.appendChild(legacyName);
+            } else {
+                username.textContent = entry.username;
+            }
 
             userDiv.appendChild(avatar);
             userDiv.appendChild(username);
@@ -204,15 +211,18 @@ function buildRecentFeed() {
         const icon = CAT_ICONS[ev.achCat] || '🔹';
         const pfp = pfpByUsername[ev.username.toLowerCase()];
         const initial = pfp ? '' : ev.username[0].toUpperCase();
-        const pfpStyle = pfp ? `background-image:url(${pfp});background-size:cover;background-position:center;` : '';
+        const username = escapeHtml(ev.username);
+        const achievementId = encodeURIComponent(ev.achId);
+        const achievementName = escapeHtml(ev.achName);
+        const timeLabel = escapeHtml(timeAgo);
         return `
-            <div class="feed-item" data-username="${ev.username}">
-                <div class="feed-avatar feed-pfp-link" data-username="${ev.username}" style="${pfpStyle}" title="View ${ev.username}'s profile">${initial}</div>
+            <div class="feed-item" data-username="${username}">
+                <div class="feed-avatar feed-pfp-link" data-username="${username}" title="View ${username}'s profile">${escapeHtml(initial)}</div>
                 <div class="feed-body">
-                    <div class="feed-line"><a class="feed-user feed-user-link" href="profile.html?user=${encodeURIComponent(ev.username)}" title="View ${ev.username}'s profile">${(() => { const lc = legacyClass(allUserData[ev.userId]?.legacy || 0); return lc ? `<span class="${lc} legacy-name">${ev.username}</span>` : ev.username; })()}</a> unlocked <a class="feed-ach" href="achievement.html?ach=${ev.achId}">${ev.achName}</a></div>
-                    <div class="feed-time">${timeAgo}</div>
+                    <div class="feed-line"><a class="feed-user feed-user-link" href="profile.html?user=${encodeURIComponent(ev.username)}" title="View ${username}'s profile">${(() => { const lc = legacyClass(allUserData[ev.userId]?.legacy || 0); return lc ? `<span class="${lc} legacy-name">${username}</span>` : username; })()}</a> unlocked <a class="feed-ach" href="achievement.html?ach=${achievementId}">${achievementName}</a></div>
+                    <div class="feed-time">${timeLabel}</div>
                 </div>
-                <span class="feed-cat-icon">${icon}</span>
+                <span class="feed-cat-icon">${escapeHtml(icon)}</span>
             </div>`;
     }).join('');
 
@@ -250,4 +260,4 @@ loadAllData().then(() => {
     buildHomeStats();
     buildLeaderboard();
     buildRecentFeed();
-});
+}).catch(showDataLoadFailure);

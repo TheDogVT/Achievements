@@ -183,7 +183,7 @@ function buildProfilePage(userId) {
             <div class="timeline-item">
                 <div class="timeline-dot${item.isFounder ? ' founder' : ''}"></div>
                 <div class="timeline-body">
-                    <a class="timeline-name" href="achievement.html?ach=${item.achId}">${icon} ${item.achName}</a>
+                    <a class="timeline-name" href="achievement.html?ach=${encodeURIComponent(item.achId)}">${escapeHtml(icon)} ${escapeHtml(item.achName)}</a>
                     <div class="timeline-meta">${item.isFounder ? 'Founded' : 'Unlocked'} · ${dateStr}</div>
                 </div>
                 ${founderBadge}
@@ -222,7 +222,7 @@ function buildProfilePage(userId) {
         <div class="profile-hero ${legacyHeroCls}">
             <div class="profile-hero-avatar" id="heroAvatar" style="${avatarStyle}">${avatarInitial}</div>
             <div class="profile-hero-info">
-                <div class="profile-hero-name ${legacyNameCls}">${name}</div>
+                <div class="profile-hero-name ${legacyNameCls}">${escapeHtml(name)}</div>
                 ${legacyBadgeHTML}
                 <div class="profile-hero-sub">${earnedCount + foundedCount} / ${total} discovered · ${pct}% of found${foundedCount > 0 ? ` · ${foundedCount} founded` : ''}</div>
                 <div class="profile-hero-bar-wrap">
@@ -415,9 +415,9 @@ function showProfileSearch(msg) {
         <div class="profile-search-card">
             <div class="profile-search-title">⬡ My Profile</div>
             <div class="profile-no-user">
-                ${msg ? `<p style="color:var(--muted)">${msg}</p>` : ''}
+                ${msg ? `<p style="color:var(--muted)">${escapeHtml(msg)}</p>` : ''}
                 ${savedUser
-                    ? `<p>Your saved profile: <strong style="color:var(--cyan)">${savedUser.username}</strong></p>
+                    ? `<p>Your saved profile: <strong style="color:var(--cyan)">${escapeHtml(savedUser.username)}</strong></p>
                        <a href="profile.html?user=${encodeURIComponent(savedUser.username)}" class="btn btn-primary" style="text-decoration:none">View My Profile</a>`
                     : `<p>Search for your username on the <a href="achievements.html" style="color:var(--cyan)">Achievements</a> page and click "This is me!" to save your profile.</p>
                        <a href="achievements.html" class="btn btn-primary" style="text-decoration:none">Browse Achievements</a>`}
@@ -445,7 +445,7 @@ loadAllData().then(() => {
         showProfileSearch(userParam ? 'User not found.' : null);
     }
 
-});
+}).catch(showDataLoadFailure);
 
 </script>
 </body>

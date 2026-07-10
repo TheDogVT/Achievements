@@ -222,6 +222,36 @@
         translator.applyTagPresentation(el, cfg, baseClass);
     }
 
+    function backgroundCssFromOption(option) {
+        const style = { opacity: '', className: '', renderer: '', backgroundColor: '', backgroundImage: '', boxShadow: '', border: '' };
+        if (!option) return style;
+        const opacity = Number(option.opacity);
+        if (Number.isFinite(opacity)) {
+            style.opacity = opacity >= 1 && opacity <= 100
+                ? String(opacity / 100)
+                : String(Math.max(0, Math.min(1, opacity)));
+        }
+        const mode = String(option.background_mode || '').trim().toLowerCase();
+        const solid = String(option.background_solid_color || option.text_color || '').trim();
+        style.className = String(option.background_class || '').trim();
+        style.renderer = String(option.background_renderer || '').trim();
+        if (mode === 'solid' && solid) {
+            style.backgroundColor = solid;
+        } else if (mode === 'gradient') {
+            const angle = Number(option.background_gradient_angle);
+            const start = String(option.background_gradient_start || 'rgba(255,255,255,0.14)');
+            const end = String(option.background_gradient_end || 'rgba(0,0,0,0.05)');
+            style.backgroundImage = `linear-gradient(${Number.isFinite(angle) ? angle : 135}deg, ${start}, ${end})`;
+        }
+        if (String(option.outline_color || '').trim() && Number(option.outline_thickness) > 0) {
+            style.border = `${Number(option.outline_thickness)}px solid ${String(option.outline_color).trim()}`;
+        }
+        if (String(option.glow_color || '').trim()) {
+            style.boxShadow = `inset 0 0 18px ${String(option.glow_color).trim()}`;
+        }
+        return style;
+    }
+
     function renderPreview() {
         const msg      = $('message-input').value || 'This is my chat message!';
         const username = (userRecord && userRecord.username) || $('username-input').value || 'YourName';
@@ -243,16 +273,31 @@
         const bgEl = $('decor-background');
         // Clear previous bg classes/renderers
         card.className = 'decor-card';
-        bgEl.innerHTML = '';
-        if (window.PuppyCardBackgrounds) window.PuppyCardBackgrounds.clear(card);
+        bgEl.className = 'decor-background';
+        bgEl.removeAttribute('style');
+        bgEl.replaceChildren();
+        if (window.PuppyCardBackgrounds) {
+            window.PuppyCardBackgrounds.clear(card);
+            window.PuppyCardBackgrounds.clear(bgEl);
+        }
 
         if (bgId && catalog[bgId]) {
             const bgCfg = catalog[bgId].config || {};
-            if (bgCfg.background_class) {
-                bgCfg.background_class.trim().split(/\s+/).filter(Boolean).forEach(c => card.classList.add(c));
+            const styles = backgroundCssFromOption(bgCfg);
+            if (styles.className) {
+                styles.className.split(/\s+/).filter(Boolean).forEach(c => {
+                    bgEl.classList.add(c);
+                    if (c.startsWith('bg-chat-')) card.classList.add(c.replace(/^bg-chat-/, 'bg-card-'));
+                    if (c.startsWith('bg-card-')) card.classList.add(c);
+                });
             }
-            if (bgCfg.background_renderer && window.PuppyCardBackgrounds) {
-                window.PuppyCardBackgrounds.mount(card, bgCfg.background_renderer);
+            bgEl.style.opacity = styles.opacity || '1';
+            if (styles.backgroundColor) bgEl.style.backgroundColor = styles.backgroundColor;
+            if (styles.backgroundImage) bgEl.style.backgroundImage = styles.backgroundImage;
+            if (styles.boxShadow) bgEl.style.boxShadow = styles.boxShadow;
+            if (styles.border) bgEl.style.border = styles.border;
+            if (styles.renderer && window.PuppyCardBackgrounds) {
+                window.PuppyCardBackgrounds.mount(bgEl, styles.renderer);
             }
         }
 

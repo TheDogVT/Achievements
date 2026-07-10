@@ -114,7 +114,7 @@ function buildAchievementPage(achId) {
             times:      `Do it ${Number(def.amount).toLocaleString()} time${def.amount === 1 ? '' : 's'}`,
             exact:      `Hit exactly ${Number(def.amount).toLocaleString()}`,
         };
-        const label = labels[def.type] || def.type;
+        const label = escapeHtml(labels[def.type] || def.type);
         return `
             <div class="ach-detail-type">
                 <span class="ach-detail-type-label">Condition</span>
@@ -131,13 +131,14 @@ function buildAchievementPage(achId) {
             ? `background-image:url(${pfp});background-size:cover;background-position:center;`
             : '';
         const avatarInitial = pfp ? '' : (founderInfo.founder_name?.[0] || '?').toUpperCase();
+        const founderName = escapeHtml(founderInfo.founder_name);
         return `
             <div class="founder-highlight-card">
                 <div class="founder-highlight-label">🌟 First Founder</div>
                 <a href="profile.html?user=${encodeURIComponent(founderInfo.founder_name)}" class="founder-highlight-inner">
                     <div class="founder-highlight-avatar" style="${avatarStyle}">${avatarInitial}</div>
                     <div class="founder-highlight-info">
-                        <div class="founder-highlight-name">${(() => { const lc = legacyClass(allUserData[founderInfo.founder_id]?.legacy || 0); return lc ? `<span class="${lc} legacy-name">${founderInfo.founder_name}</span>` : founderInfo.founder_name; })()}</div>
+                        <div class="founder-highlight-name">${(() => { const lc = legacyClass(allUserData[founderInfo.founder_id]?.legacy || 0); return lc ? `<span class="${lc} legacy-name">${founderName}</span>` : founderName; })()}</div>
                         <div class="founder-highlight-date">Founded ${fmtDate(founderInfo.founded_at)}</div>
                     </div>
                     <span class="founder-highlight-arrow">›</span>
@@ -155,6 +156,7 @@ function buildAchievementPage(achId) {
                 ? `background-image:url(${e.pfp});background-size:cover;background-position:center;`
                 : '';
             const avatarInitial = e.pfp ? '' : (e.username?.[0] || '?').toUpperCase();
+            const earnerName = escapeHtml(e.username);
             const badge = e.isFounder
                 ? '<span class="earner-founder-badge">FOUNDER</span>'
                 : '';
@@ -162,7 +164,7 @@ function buildAchievementPage(achId) {
                 <a href="profile.html?user=${encodeURIComponent(e.username)}" class="earner-row">
                     <div class="earner-avatar" style="${avatarStyle}">${avatarInitial}</div>
                     <div class="earner-info">
-                        <span class="earner-name">${(() => { const lc = legacyClass(allUserData[e.userId]?.legacy || 0); return lc ? `<span class="${lc} legacy-name">${e.username}</span>` : e.username; })()}</span>
+                        <span class="earner-name">${(() => { const lc = legacyClass(allUserData[e.userId]?.legacy || 0); return lc ? `<span class="${lc} legacy-name">${earnerName}</span>` : earnerName; })()}</span>
                         ${badge}
                     </div>
                     <span class="earner-date">${fmtDate(e.ts)}</span>
@@ -174,9 +176,9 @@ function buildAchievementPage(achId) {
 
     document.getElementById('achContent').innerHTML = `
         <div class="ach-detail-hero">
-            <div class="ach-detail-cat">${catIcon} ${capitalize(cat)}</div>
-            <h1 class="ach-detail-name">${def.name}</h1>
-            ${def.desc ? `<p class="ach-detail-desc">${def.desc}</p>` : ''}
+            <div class="ach-detail-cat">${escapeHtml(catIcon)} ${escapeHtml(capitalize(cat))}</div>
+            <h1 class="ach-detail-name">${escapeHtml(def.name)}</h1>
+            ${def.desc ? `<p class="ach-detail-desc">${escapeHtml(def.desc)}</p>` : ''}
             ${typeHTML}
         </div>
 
@@ -226,7 +228,7 @@ loadAllData().then(() => {
                 </div>
             </div>`;
     }
-});
+}).catch(showDataLoadFailure);
 
 </script>
 </body>
