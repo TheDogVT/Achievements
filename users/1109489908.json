@@ -1,7 +1,7 @@
 {
   "user_id": "1109489908",
   "username": "tartelizbeth",
-  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/cb3e9cda-fc5a-4ed3-9500-2fc334924cab-profile_image-300x300.png",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/f89c534b-08c3-449b-875e-676db25d0b2f-profile_image-300x300.png",
   "legacy": 1,
   "achievements": {
     "earned": {
@@ -11,7 +11,8 @@
       "redeem_checkin_10": "2026-07-12T20:02:41.803803+00:00",
       "redeem_total_5": "2026-07-12T20:02:42.057117+00:00",
       "redeem_total_10": "2026-07-12T20:02:42.326234+00:00",
-      "redeem_total_25": "2026-07-12T20:02:42.590730+00:00"
+      "redeem_total_25": "2026-07-12T20:02:42.590730+00:00",
+      "redeem_pet_1": "2026-07-12T20:12:37.640586+00:00"
     },
     "founded": {}
   },
@@ -20,9 +21,9 @@
     "active": {}
   },
   "stats": {
-    "messages": 0,
-    "active_months": 0,
-    "first_seen": null
+    "messages": 3,
+    "active_months": 1,
+    "first_seen": "2026-7"
   },
   "top_months": []
 }
