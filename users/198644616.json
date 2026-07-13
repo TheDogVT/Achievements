@@ -22,7 +22,8 @@
       "redeem_checkin_10": "2026-03-17T21:52:28.531335+00:00",
       "redeem_total_25": "2026-03-17T21:52:28.531335+00:00",
       "chat_vacuum": "2026-04-10T22:27:13.532985+00:00",
-      "chat_lick": "2026-04-12T23:18:08.910620+00:00"
+      "chat_lick": "2026-04-12T23:18:08.910620+00:00",
+      "attend_3": "2026-07-13T20:10:31.754542+00:00"
     },
     "founded": {}
   },
@@ -31,12 +32,14 @@
       "prefix_11",
       "prefix_2",
       "prefix_7",
-      "prefix_77"
+      "prefix_77",
+      "prefix_79",
+      "suffix_57"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 357,
+    "messages": 358,
     "active_months": 7,
     "first_seen": "2025-11"
   },
