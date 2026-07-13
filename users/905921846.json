@@ -5,12 +5,16 @@
   "legacy": 0,
   "achievements": {
     "earned": {
-      "chat_trick": "2026-07-12T23:05:10.064259+00:00"
+      "chat_trick": "2026-07-12T23:05:10.064259+00:00",
+      "attend_3": "2026-07-13T22:43:05.964123+00:00"
     },
     "founded": {}
   },
   "decorations": {
-    "unlocked": [],
+    "unlocked": [
+      "prefix_79",
+      "suffix_57"
+    ],
     "active": {}
   },
   "stats": {
