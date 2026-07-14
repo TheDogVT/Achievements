@@ -15,18 +15,21 @@
       "redeem_pet_1": "2026-07-12T20:12:37.640586+00:00",
       "chat_tail": "2026-07-12T22:13:03.961221+00:00",
       "chat_10": "2026-07-12T22:24:23.683798+00:00",
-      "redeem_pet_5": "2026-07-13T23:19:00.970447+00:00"
+      "redeem_pet_5": "2026-07-13T23:19:00.970447+00:00",
+      "attend_3": "2026-07-14T21:55:10.233859+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
-      "prefix_7"
+      "prefix_7",
+      "prefix_79",
+      "suffix_57"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 38,
+    "messages": 40,
     "active_months": 1,
     "first_seen": "2026-7"
   },
