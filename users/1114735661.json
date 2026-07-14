@@ -6,7 +6,8 @@
   "achievements": {
     "earned": {
       "chat_10": "2026-07-14T22:22:08.784857+00:00",
-      "chat_ball": "2026-07-14T22:52:39.819055+00:00"
+      "chat_ball": "2026-07-14T22:52:39.819055+00:00",
+      "chat_scratch": "2026-07-14T23:15:39.673996+00:00"
     },
     "founded": {}
   },
@@ -18,7 +19,7 @@
     "active": {}
   },
   "stats": {
-    "messages": 28,
+    "messages": 35,
     "active_months": 3,
     "first_seen": "2026-4"
   },
