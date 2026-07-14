@@ -5,7 +5,9 @@
   "legacy": 0,
   "achievements": {
     "earned": {
-      "chat_bath": "2026-07-14T20:34:53.572057+00:00"
+      "chat_bath": "2026-07-14T20:34:53.572057+00:00",
+      "chat_stinky": "2026-07-14T20:36:29.450916+00:00",
+      "redeem_checkin_1": "2026-07-14T20:37:19.732167+00:00"
     },
     "founded": {}
   },
@@ -16,7 +18,7 @@
     "active": {}
   },
   "stats": {
-    "messages": 5,
+    "messages": 6,
     "active_months": 1,
     "first_seen": "2026-07-14T20:32:54.236895+00:00"
   },
