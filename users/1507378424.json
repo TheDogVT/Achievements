@@ -1,7 +1,7 @@
 {
   "user_id": "1507378424",
   "username": "eli52413",
-  "pfp_url": "",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/9e469ed8-0189-43e7-8106-51741c6dc63f-profile_image-300x300.jpeg",
   "legacy": 0,
   "achievements": {
     "earned": {
@@ -15,8 +15,8 @@
     "active": {}
   },
   "stats": {
-    "messages": 0,
-    "active_months": 0,
+    "messages": 1,
+    "active_months": 1,
     "first_seen": "2026-07-14T22:40:07.214476+00:00"
   },
   "top_months": []
