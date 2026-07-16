@@ -479,6 +479,12 @@
       "amount": 10000,
       "type": "cumulative"
     },
+    "chat_50k": {
+      "name": "Apprentice Yapper.",
+      "desc": "Awarded for yapping 50,000 times.",
+      "amount": 50000,
+      "type": "cumulative"
+    },
     "chat_day_special_2": {
       "name": "Day Achivement 2.",
       "desc": "Awarded being present during the day delta was testing day achivement code for 2.0.",

@@ -2670,6 +2670,60 @@
       }
     }
   },
+  "suffix_1": {
+    "slot": "name_suffix",
+    "display_name": "is typing...",
+    "achievement_name": "Apprentice Yapper.",
+    "achievement_category": "chat",
+    "achievement_id": "chat_50k",
+    "config": {
+      "animation": "bounce",
+      "effects_layers": [
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "spark_trail",
+          "enabled": true,
+          "engine": "particle",
+          "interval": "",
+          "knobs": {
+            "canvas_rotation": 180,
+            "color1": "#ff0000",
+            "intensity": 1,
+            "length": 40,
+            "opacity": 1,
+            "origin_x": -40,
+            "origin_y": -5,
+            "particle_rotation": -180,
+            "range": 0,
+            "speed": 1
+          },
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "",
+          "plane": "front",
+          "random_range": "",
+          "scale": "",
+          "z_index": "7"
+        }
+      ],
+      "font_style": "italic",
+      "letter_spacing": "0px",
+      "offset_x": "5.5px",
+      "offset_y": "1.5px",
+      "opacity": "43",
+      "outline": "basic",
+      "style": "flat",
+      "text": "is typing...",
+      "unlock": {
+        "type": "achievement",
+        "category": "chat",
+        "id": "chat_50k"
+      }
+    }
+  },
   "suffix_10": {
     "slot": "name_suffix",
     "display_name": "the seed",
