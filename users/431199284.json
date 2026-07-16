@@ -12,9 +12,9 @@
     "active": {}
   },
   "stats": {
-    "messages": 0,
-    "active_months": 0,
-    "first_seen": null
+    "messages": 1,
+    "active_months": 1,
+    "first_seen": "2026-7"
   },
   "top_months": []
 }
