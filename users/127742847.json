@@ -55,7 +55,8 @@
       "redeem_checkin_180": "2026-06-05T20:17:02.293235+00:00",
       "redeem_pet_5": "2026-06-11T22:23:02.540714+00:00",
       "chat_yap": "2026-07-03T20:49:33.220353+00:00",
-      "redeem_checkin_210": "2026-07-14T21:35:20.012059+00:00"
+      "redeem_checkin_210": "2026-07-14T21:35:20.012059+00:00",
+      "chat_goodboy": "2026-07-17T20:55:44.610084+00:00"
     },
     "founded": {
       "attend_25": "2026-05-31T20:04:20.522037+00:00",
@@ -94,7 +95,9 @@
       "prefix_94",
       "suffix_72",
       "prefix_83",
-      "suffix_61"
+      "suffix_61",
+      "prefix_18",
+      "suffix_8"
     ],
     "active": {
       "name_prefix": "prefix_16",
@@ -104,7 +107,7 @@
     }
   },
   "stats": {
-    "messages": 3185,
+    "messages": 3186,
     "active_months": 9,
     "first_seen": "2025-11"
   },
