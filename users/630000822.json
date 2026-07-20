@@ -50,7 +50,8 @@
       "redeem_total_100": "2026-06-28T21:27:12.359638+00:00",
       "cheer_cumulative_1k": "2026-06-28T21:51:47.159878+00:00",
       "cheer_cumulative_2500": "2026-06-28T21:51:47.442078+00:00",
-      "redeem_checkin_60": "2026-07-03T20:13:45.886214+00:00"
+      "redeem_checkin_60": "2026-07-03T20:13:45.886214+00:00",
+      "cheer_1000": "2026-07-20T20:45:50.298124+00:00"
     },
     "founded": {}
   },
@@ -79,14 +80,22 @@
       "prefix_81",
       "suffix_59",
       "name_4",
-      "name_5"
+      "name_5",
+      "prefix_48",
+      "suffix_35"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 872,
+    "messages": 875,
     "active_months": 9,
     "first_seen": "2025-11"
   },
-  "top_months": []
+  "top_months": [
+    {
+      "month": "2026-7",
+      "kind": "cheers",
+      "rank": 2
+    }
+  ]
 }
