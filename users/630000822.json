@@ -51,9 +51,12 @@
       "cheer_cumulative_1k": "2026-06-28T21:51:47.159878+00:00",
       "cheer_cumulative_2500": "2026-06-28T21:51:47.442078+00:00",
       "redeem_checkin_60": "2026-07-03T20:13:45.886214+00:00",
-      "cheer_1000": "2026-07-20T20:45:50.298124+00:00"
+      "cheer_1000": "2026-07-20T20:45:50.298124+00:00",
+      "cheer_cumulative_5k": "2026-07-20T20:53:29.462540+00:00"
     },
-    "founded": {}
+    "founded": {
+      "cheer_time_10": "2026-07-20T20:53:29.745328+00:00"
+    }
   },
   "decorations": {
     "unlocked": [
@@ -82,12 +85,15 @@
       "name_4",
       "name_5",
       "prefix_48",
-      "suffix_35"
+      "suffix_35",
+      "name_6",
+      "prefix_9",
+      "name_2"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 875,
+    "messages": 881,
     "active_months": 9,
     "first_seen": "2025-11"
   },
@@ -95,7 +101,7 @@
     {
       "month": "2026-7",
       "kind": "cheers",
-      "rank": 2
+      "rank": 1
     }
   ]
 }

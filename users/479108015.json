@@ -185,7 +185,7 @@
     "active": {}
   },
   "stats": {
-    "messages": 5411,
+    "messages": 5422,
     "active_months": 9,
     "first_seen": "2025-11"
   },
@@ -224,6 +224,11 @@
       "month": "2026-7",
       "kind": "gifted",
       "rank": 2
+    },
+    {
+      "month": "2026-7",
+      "kind": "chat",
+      "rank": 3
     }
   ]
 }
