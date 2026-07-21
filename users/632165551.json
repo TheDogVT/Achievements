@@ -110,7 +110,8 @@
       "donation_5": "2026-07-21T22:38:40.826740+00:00",
       "donation_20": "2026-07-21T22:38:40.854239+00:00",
       "donation_cumulative_10": "2026-07-21T22:38:40.879239+00:00",
-      "donation_cumulative_25": "2026-07-21T22:38:40.911740+00:00"
+      "donation_cumulative_25": "2026-07-21T22:38:40.911740+00:00",
+      "donation_cumulative_50": "2026-07-21T23:03:01.603192+00:00"
     },
     "founded": {
       "chat_bath": "2025-11-06T20:50:44.249561+00:00",
@@ -221,12 +222,13 @@
       "prefix_82",
       "suffix_60",
       "name_9",
-      "name_10"
+      "name_10",
+      "name_11"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 5403,
+    "messages": 5433,
     "active_months": 9,
     "first_seen": "2025-11"
   },
