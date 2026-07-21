@@ -6,18 +6,24 @@
   "achievements": {
     "earned": {
       "subathon_2025_any": "2025-12-28T21:57:24.148152+00:00",
-      "chat_10": "2026-03-24T23:59:48.688991+00:00"
+      "chat_10": "2026-03-24T23:59:48.688991+00:00",
+      "attend_3": "2026-07-21T22:21:52.824565+00:00",
+      "chat_boop": "2026-07-21T22:21:53.122565+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
-      "prefix_7"
+      "prefix_7",
+      "prefix_79",
+      "suffix_57",
+      "prefix_15",
+      "suffix_4"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 14,
+    "messages": 15,
     "active_months": 7,
     "first_seen": "2025-12"
   },
