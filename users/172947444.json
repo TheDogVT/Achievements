@@ -23,19 +23,22 @@
       "redeem_total_25": "2026-05-29T20:14:12.600600+00:00",
       "redeem_total_50": "2026-05-29T20:14:12.853852+00:00",
       "redeem_total_100": "2026-05-29T20:14:13.115094+00:00",
-      "redeem_pet_1": "2026-05-29T21:40:36.681539+00:00"
+      "redeem_pet_1": "2026-05-29T21:40:36.681539+00:00",
+      "redeem_first_1": "2026-07-21T20:21:14.751177+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
-      "prefix_7"
+      "prefix_7",
+      "prefix_101",
+      "suffix_79"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 64,
-    "active_months": 5,
+    "messages": 67,
+    "active_months": 6,
     "first_seen": "2025-12"
   },
   "top_months": []
