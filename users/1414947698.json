@@ -5,7 +5,8 @@
   "legacy": 0,
   "achievements": {
     "earned": {
-      "chat_baddog": "2026-07-23T20:40:05.575189+00:00"
+      "chat_baddog": "2026-07-23T20:40:05.575189+00:00",
+      "chat_sniff": "2026-07-23T20:42:18.922427+00:00"
     },
     "founded": {}
   },
@@ -14,7 +15,7 @@
     "active": {}
   },
   "stats": {
-    "messages": 2,
+    "messages": 5,
     "active_months": 1,
     "first_seen": "2026-07-23T20:40:05.534658+00:00"
   },
