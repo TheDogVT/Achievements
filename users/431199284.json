@@ -6,7 +6,8 @@
   "achievements": {
     "earned": {
       "attend_3": "2026-07-18T21:16:04.698114+00:00",
-      "attend_5": "2026-07-20T21:36:37.224082+00:00"
+      "attend_5": "2026-07-20T21:36:37.224082+00:00",
+      "attend_10": "2026-07-30T20:36:36.668323+00:00"
     },
     "founded": {}
   },
@@ -15,12 +16,14 @@
       "prefix_79",
       "suffix_57",
       "prefix_80",
-      "suffix_58"
+      "suffix_58",
+      "prefix_81",
+      "suffix_59"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 5,
+    "messages": 6,
     "active_months": 1,
     "first_seen": "2026-7"
   },
