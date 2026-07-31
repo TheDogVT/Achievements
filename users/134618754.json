@@ -20,7 +20,9 @@
       "donation_10": "2026-02-18T17:21:17.133141+00:00",
       "donation_5": "2026-06-07T20:10:54.837557+00:00",
       "donation_cumulative_10": "2026-06-07T20:10:55.111252+00:00",
-      "attend_3": "2026-06-22T21:27:58.862476+00:00"
+      "attend_3": "2026-06-22T21:27:58.862476+00:00",
+      "cheer_message_100": "2026-07-31T00:04:56.229118+00:00",
+      "cheer_time_1": "2026-07-31T00:04:56.517522+00:00"
     },
     "founded": {}
   },
@@ -30,13 +32,14 @@
       "prefix_7",
       "name_9",
       "prefix_79",
-      "suffix_57"
+      "suffix_57",
+      "prefix_8"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 108,
-    "active_months": 6,
+    "messages": 109,
+    "active_months": 7,
     "first_seen": "2025-11"
   },
   "top_months": [
@@ -59,6 +62,11 @@
       "month": "2026-6",
       "kind": "donations",
       "rank": 2
+    },
+    {
+      "month": "2026-7",
+      "kind": "cheers",
+      "rank": 3
     }
   ]
 }

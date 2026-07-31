@@ -31,11 +31,5 @@
     "active_months": 4,
     "first_seen": "2026-1"
   },
-  "top_months": [
-    {
-      "month": "2026-7",
-      "kind": "cheers",
-      "rank": 3
-    }
-  ]
+  "top_months": []
 }
