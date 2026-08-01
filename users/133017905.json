@@ -107,7 +107,8 @@
       "attend_10": "2026-05-15T20:39:50.622261+00:00",
       "redeem_checkin_120": "2026-05-22T21:09:21.091957+00:00",
       "attend_25": "2026-06-11T20:05:07.925277+00:00",
-      "gifted_times_2": "2026-06-22T22:14:33.616875+00:00"
+      "gifted_times_2": "2026-06-22T22:14:33.616875+00:00",
+      "attend_50": "2026-08-01T23:10:30.598468+00:00"
     },
     "founded": {
       "gamble_loss_total_1m": "2025-11-08T21:02:10.507374+00:00",
@@ -164,7 +165,9 @@
       "suffix_80",
       "suffix_81",
       "prefix_82",
-      "suffix_60"
+      "suffix_60",
+      "prefix_83",
+      "suffix_61"
     ],
     "active": {
       "name_prefix": "prefix_16",
@@ -175,8 +178,8 @@
     }
   },
   "stats": {
-    "messages": 9624,
-    "active_months": 9,
+    "messages": 9628,
+    "active_months": 10,
     "first_seen": "2025-11"
   },
   "top_months": [
