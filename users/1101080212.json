@@ -5,20 +5,23 @@
   "legacy": 0,
   "achievements": {
     "earned": {
-      "attend_3": "2026-07-04T20:18:31.709316+00:00"
+      "attend_3": "2026-07-04T20:18:31.709316+00:00",
+      "attend_5": "2026-08-01T21:57:58.039560+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
       "prefix_79",
-      "suffix_57"
+      "suffix_57",
+      "prefix_80",
+      "suffix_58"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 6,
-    "active_months": 3,
+    "messages": 7,
+    "active_months": 4,
     "first_seen": "2026-2"
   },
   "top_months": []
