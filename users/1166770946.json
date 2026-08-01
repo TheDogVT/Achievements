@@ -74,7 +74,7 @@
     "active": {}
   },
   "stats": {
-    "messages": 8925,
+    "messages": 8933,
     "active_months": 4,
     "first_seen": "2026-5"
   },
@@ -93,11 +93,6 @@
       "month": "2026-7",
       "kind": "chat",
       "rank": 2
-    },
-    {
-      "month": "2026-8",
-      "kind": "chat",
-      "rank": 3
     }
   ]
 }
