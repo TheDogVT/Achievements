@@ -9,7 +9,8 @@
       "chat_stick": "2026-01-13T21:29:43.447889+00:00",
       "attend_3": "2026-05-31T20:34:08.496061+00:00",
       "redeem_checkin_1": "2026-05-31T20:34:36.086930+00:00",
-      "chat_100": "2026-06-14T22:45:07.141565+00:00"
+      "chat_100": "2026-06-14T22:45:07.141565+00:00",
+      "attend_5": "2026-08-02T20:45:49.693629+00:00"
     },
     "founded": {}
   },
@@ -18,13 +19,15 @@
       "prefix_7",
       "prefix_79",
       "suffix_57",
-      "prefix_2"
+      "prefix_2",
+      "prefix_80",
+      "suffix_58"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 106,
-    "active_months": 6,
+    "messages": 107,
+    "active_months": 7,
     "first_seen": "2026-1"
   },
   "top_months": []
