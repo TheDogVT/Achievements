@@ -1,0 +1,26 @@
+{
+  "user_id": "1512491627",
+  "username": "philipp_lhm",
+  "pfp_url": "https://static-cdn.jtvnw.net/user-default-pictures-uv/ead5c8b2-a4c9-4724-b1dd-9f00b46cbd3d-profile_image-300x300.png",
+  "legacy": 0,
+  "achievements": {
+    "earned": {
+      "attend_3": "2026-08-02T22:44:17.405073+00:00",
+      "redeem_checkin_1": "2026-08-02T22:44:17.812573+00:00"
+    },
+    "founded": {}
+  },
+  "decorations": {
+    "unlocked": [
+      "prefix_79",
+      "suffix_57"
+    ],
+    "active": {}
+  },
+  "stats": {
+    "messages": 8,
+    "active_months": 2,
+    "first_seen": "2026-07-30T21:47:03.322019+00:00"
+  },
+  "top_months": []
+}
