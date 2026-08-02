@@ -21,7 +21,8 @@
       "chat_yap": "2026-02-26T22:27:28.429933+00:00",
       "chat_500": "2026-02-26T22:43:32.656431+00:00",
       "redeem_checkin_5": "2026-03-07T21:02:07.750854+00:00",
-      "redeem_total_25": "2026-07-20T20:53:29.539177+00:00"
+      "redeem_total_25": "2026-07-20T20:53:29.539177+00:00",
+      "attend_3": "2026-08-02T23:15:56.252575+00:00"
     },
     "founded": {}
   },
@@ -34,13 +35,15 @@
       "prefix_3",
       "prefix_7",
       "suffix_3",
-      "prefix_77"
+      "prefix_77",
+      "prefix_79",
+      "suffix_57"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 628,
-    "active_months": 5,
+    "messages": 629,
+    "active_months": 6,
     "first_seen": "2026-1"
   },
   "top_months": []
