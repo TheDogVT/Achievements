@@ -7,20 +7,23 @@
     "earned": {
       "chat_10": "2026-07-14T22:22:08.784857+00:00",
       "chat_ball": "2026-07-14T22:52:39.819055+00:00",
-      "chat_scratch": "2026-07-14T23:15:39.673996+00:00"
+      "chat_scratch": "2026-07-14T23:15:39.673996+00:00",
+      "attend_3": "2026-08-03T21:59:46.798046+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
       "prefix_7",
-      "prefix_77"
+      "prefix_77",
+      "prefix_79",
+      "suffix_57"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 41,
-    "active_months": 3,
+    "messages": 43,
+    "active_months": 4,
     "first_seen": "2026-4"
   },
   "top_months": []
