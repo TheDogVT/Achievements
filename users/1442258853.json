@@ -13,7 +13,8 @@
       "chat_sleepy": "2026-04-17T20:18:22.958045+00:00",
       "redeem_total_10": "2026-04-18T22:58:45.424233+00:00",
       "redeem_checkin_10": "2026-04-25T20:19:59.513642+00:00",
-      "attend_3": "2026-07-18T23:26:28.277607+00:00"
+      "attend_3": "2026-07-18T23:26:28.277607+00:00",
+      "attend_5": "2026-08-03T20:34:32.608808+00:00"
     },
     "founded": {}
   },
@@ -22,13 +23,15 @@
       "prefix_10",
       "prefix_7",
       "prefix_79",
-      "suffix_57"
+      "suffix_57",
+      "prefix_80",
+      "suffix_58"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 88,
-    "active_months": 3,
+    "messages": 90,
+    "active_months": 4,
     "first_seen": "2026-4"
   },
   "top_months": []
