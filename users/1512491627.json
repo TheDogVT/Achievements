@@ -6,14 +6,17 @@
   "achievements": {
     "earned": {
       "attend_3": "2026-08-02T22:44:17.405073+00:00",
-      "redeem_checkin_1": "2026-08-02T22:44:17.812573+00:00"
+      "redeem_checkin_1": "2026-08-02T22:44:17.812573+00:00",
+      "streak_3": "2026-08-03T22:28:42.301546+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
       "prefix_79",
-      "suffix_57"
+      "suffix_57",
+      "prefix_89",
+      "suffix_67"
     ],
     "active": {}
   },
