@@ -25,7 +25,8 @@
       "redeem_first_1": "2026-05-29T20:02:33.225551+00:00",
       "attend_10": "2026-06-11T20:10:01.985786+00:00",
       "chat_bork": "2026-06-12T22:27:53.344445+00:00",
-      "chat_woofwoof": "2026-07-27T23:19:55.435483+00:00"
+      "chat_woofwoof": "2026-07-27T23:19:55.435483+00:00",
+      "chat_100": "2026-08-07T23:40:26.736541+00:00"
     },
     "founded": {}
   },
@@ -41,13 +42,14 @@
       "prefix_101",
       "suffix_79",
       "prefix_81",
-      "suffix_59"
+      "suffix_59",
+      "prefix_2"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 99,
-    "active_months": 6,
+    "messages": 100,
+    "active_months": 7,
     "first_seen": "2026-2"
   },
   "top_months": []
