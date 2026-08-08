@@ -201,7 +201,7 @@
     }
   },
   "stats": {
-    "messages": 53314,
+    "messages": 53480,
     "active_months": 10,
     "first_seen": "2025-11"
   },
@@ -254,7 +254,7 @@
     {
       "month": "2026-8",
       "kind": "chat",
-      "rank": 2
+      "rank": 1
     }
   ]
 }
