@@ -12,19 +12,25 @@
       "redeem_total_5": "2026-08-06T22:31:01.631910+00:00",
       "chat_bork": "2026-08-07T20:04:56.106125+00:00",
       "chat_yawn": "2026-08-07T20:29:23.381983+00:00",
-      "chat_frisbee": "2026-08-07T20:35:57.187008+00:00"
+      "chat_frisbee": "2026-08-07T20:35:57.187008+00:00",
+      "attend_3": "2026-08-08T20:52:25.973691+00:00",
+      "streak_3": "2026-08-08T20:52:26.284778+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
       "prefix_7",
-      "prefix_12"
+      "prefix_12",
+      "prefix_79",
+      "suffix_57",
+      "prefix_89",
+      "suffix_67"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 92,
+    "messages": 93,
     "active_months": 1,
     "first_seen": "2026-08-06T21:36:00.418122+00:00"
   },
