@@ -313,6 +313,11 @@
       "desc": "Awarded for spelling out words with sneaky spaces, thinking pup won't notice. Spoiler: pup notices.",
       "type": "contains"
     },
+    "chat_down": {
+      "name": "Down Commander",
+      "desc": "Awarded for ordering the belly-to-floor maneuver.",
+      "type": "contains"
+    },
     "chat_peanut": {
       "name": "PB Dealer",
       "desc": "Awarded for offering the legendary sticky treat.",
