@@ -6,19 +6,21 @@
   "achievements": {
     "earned": {
       "chat_ball": "2026-08-09T22:00:13.952538+00:00",
-      "chat_10": "2026-08-09T22:03:45.289706+00:00"
+      "chat_10": "2026-08-09T22:03:45.289706+00:00",
+      "chat_cuddle": "2026-08-09T22:37:50.579464+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
       "prefix_77",
-      "prefix_7"
+      "prefix_7",
+      "prefix_17"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 11,
+    "messages": 33,
     "active_months": 1,
     "first_seen": "2026-08-09T21:57:35.063491+00:00"
   },
