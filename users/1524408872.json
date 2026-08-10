@@ -5,18 +5,20 @@
   "legacy": 0,
   "achievements": {
     "earned": {
-      "chat_chaos": "2026-08-10T22:16:27.769121+00:00"
+      "chat_chaos": "2026-08-10T22:16:27.769121+00:00",
+      "chat_10": "2026-08-10T22:18:42.607094+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
-      "prefix_16"
+      "prefix_16",
+      "prefix_7"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 7,
+    "messages": 12,
     "active_months": 1,
     "first_seen": "2026-08-07T21:09:27.944707+00:00"
   },
