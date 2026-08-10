@@ -1236,6 +1236,11 @@
       "desc": "Awarded for your 485th check-in.",
       "amount": 485
     },
+    "redeem_checkin_605": {
+      "name": "Did you think I wasn't serious?",
+      "desc": "Awarded for your 605th check-in.",
+      "amount": 605
+    },
     "redeem_pet_1": {
       "name": "He's a good boy, yes he is!",
       "desc": "Awarded for petting the dog.",
