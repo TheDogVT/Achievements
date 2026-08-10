@@ -60,7 +60,8 @@
       "gifted_cumulative_10": "2026-08-10T21:26:45.215839+00:00",
       "gifted_times_1": "2026-08-10T21:26:45.506795+00:00",
       "gifted_instance_5": "2026-08-10T21:26:45.796131+00:00",
-      "gifted_instance_10": "2026-08-10T21:26:46.066410+00:00"
+      "gifted_instance_10": "2026-08-10T21:26:46.066410+00:00",
+      "cheer_cumulative_10k": "2026-08-10T21:36:03.223914+00:00"
     },
     "founded": {
       "cheer_time_10": "2026-07-20T20:53:29.745328+00:00"
@@ -104,18 +105,24 @@
       "prefix_91",
       "suffix_69",
       "name_14",
-      "name_15"
+      "name_15",
+      "name_7"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 902,
+    "messages": 907,
     "active_months": 10,
     "first_seen": "2025-11"
   },
   "top_months": [
     {
       "month": "2026-7",
+      "kind": "cheers",
+      "rank": 1
+    },
+    {
+      "month": "2026-8",
       "kind": "cheers",
       "rank": 1
     },
