@@ -5,20 +5,30 @@
   "legacy": 0,
   "achievements": {
     "earned": {
-      "chat_10": "2026-01-13T02:24:14.378292+00:00"
+      "chat_10": "2026-01-13T02:24:14.378292+00:00",
+      "gifted_cumulative_5": "2026-08-10T23:41:39.759306+00:00",
+      "gifted_times_1": "2026-08-10T23:41:40.215082+00:00",
+      "gifted_instance_5": "2026-08-10T23:41:40.547195+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
-      "prefix_7"
+      "prefix_7",
+      "name_14"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 52,
-    "active_months": 3,
+    "messages": 53,
+    "active_months": 4,
     "first_seen": "2026-1"
   },
-  "top_months": []
+  "top_months": [
+    {
+      "month": "2026-8",
+      "kind": "gifted",
+      "rank": 3
+    }
+  ]
 }
