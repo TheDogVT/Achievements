@@ -1,0 +1,23 @@
+{
+  "user_id": "1492535845",
+  "username": "raisin_brand_1234567",
+  "pfp_url": "https://static-cdn.jtvnw.net/user-default-pictures-uv/dbdc9198-def8-11e9-8681-784f43822e80-profile_image-300x300.png",
+  "legacy": 0,
+  "achievements": {
+    "earned": {
+      "redeem_pet_1": "2026-08-11T20:53:56.505807+00:00",
+      "redeem_checkin_1": "2026-08-11T20:54:49.412832+00:00"
+    },
+    "founded": {}
+  },
+  "decorations": {
+    "unlocked": [],
+    "active": {}
+  },
+  "stats": {
+    "messages": 6,
+    "active_months": 1,
+    "first_seen": "2026-07-30T20:32:37.761989+00:00"
+  },
+  "top_months": []
+}
