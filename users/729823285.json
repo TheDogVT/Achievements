@@ -8,18 +8,21 @@
       "chat_dig": "2026-08-14T22:57:19.147993+00:00",
       "chat_10": "2026-08-14T22:57:22.850300+00:00",
       "chat_stick": "2026-08-14T23:01:08.000945+00:00",
-      "redeem_checkin_1": "2026-08-16T22:40:48.556809+00:00"
+      "redeem_checkin_1": "2026-08-16T22:40:48.556809+00:00",
+      "attend_3": "2026-08-17T20:21:18.322554+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
-      "prefix_7"
+      "prefix_7",
+      "prefix_79",
+      "suffix_57"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 22,
+    "messages": 24,
     "active_months": 1,
     "first_seen": "2026-08-14T22:50:53.662559+00:00"
   },
