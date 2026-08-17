@@ -1,7 +1,7 @@
 {
   "user_id": "37762754",
   "username": "silvbells",
-  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/94ddcaa4-fbe0-4fd8-8521-fc305e56554b-profile_image-300x300.jpeg",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/0988c3e7-f069-4ff4-b668-05b8cf65cf99-profile_image-300x300.jpeg",
   "legacy": 1,
   "achievements": {
     "earned": {
@@ -92,7 +92,11 @@
       "gamble_loss_total_100k": "2026-05-11T20:47:16.487772+00:00",
       "streak_5": "2026-05-15T21:04:27.154348+00:00",
       "chat_blep": "2026-05-15T22:08:10.503386+00:00",
-      "attend_10": "2026-05-17T20:29:39.666379+00:00"
+      "attend_10": "2026-05-17T20:29:39.666379+00:00",
+      "cheer_cumulative_1k": "2026-08-17T21:24:03.839903+00:00",
+      "cheer_cumulative_2500": "2026-08-17T21:24:04.168009+00:00",
+      "cheer_cumulative_5k": "2026-08-17T21:24:04.489009+00:00",
+      "cheer_1000": "2026-08-17T21:24:04.787309+00:00"
     },
     "founded": {
       "chat_doge": "2026-02-09T21:09:29.324348+00:00",
@@ -137,13 +141,18 @@
       "suffix_58",
       "suffix_59",
       "suffix_67",
-      "suffix_68"
+      "suffix_68",
+      "name_4",
+      "name_5",
+      "name_6",
+      "prefix_48",
+      "suffix_35"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 3327,
-    "active_months": 7,
+    "messages": 3340,
+    "active_months": 8,
     "first_seen": "2026-1"
   },
   "top_months": [
@@ -164,6 +173,11 @@
     },
     {
       "month": "2026-3",
+      "kind": "cheers",
+      "rank": 3
+    },
+    {
+      "month": "2026-8",
       "kind": "cheers",
       "rank": 3
     }
