@@ -1,12 +1,13 @@
 {
   "user_id": "debug_id",
-  "username": "TestUser",
+  "username": "TheDogVT",
   "pfp_url": "",
   "legacy": 0,
   "achievements": {
     "earned": {
       "cheer_message_100": "2026-05-18T16:02:49.118553+00:00",
-      "cheer_time_1": "2026-05-18T16:02:49.381548+00:00"
+      "cheer_time_1": "2026-05-18T16:02:49.381548+00:00",
+      "redeem_first_1": "2026-08-19T22:19:16.316013+00:00"
     },
     "founded": {
       "streak_10": "2026-05-30T16:10:45.023579+00:00"
@@ -18,7 +19,9 @@
       "name_1",
       "name_4",
       "prefix_92",
-      "suffix_70"
+      "suffix_70",
+      "prefix_101",
+      "suffix_79"
     ],
     "active": {}
   },
