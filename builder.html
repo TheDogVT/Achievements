@@ -7,7 +7,10 @@
     <title>Build a PuppyBot decoration</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Mono:wght@400;500&family=Lato:wght@400;700&family=Lora:wght@500;600;700&family=Special+Elite&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Audiowide&family=Bangers&family=Caveat:wght@500;600;700&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@400;600;700&family=Grenze+Gotisch:wght@400;700&family=Lato:wght@400;700&family=Lobster&family=Luckiest+Guy&family=Metamorphous&family=Orbitron:wght@400;700&family=Pacifico&family=Permanent+Marker&family=Playfair+Display:wght@400;700&family=Press+Start+2P&family=Rubik+Glitch&family=VT323&family=Rye&family=Satisfy&family=Shadows+Into+Light&family=Special+Elite&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Bubblegum+Sans&family=Chewy&family=Comfortaa:wght@400;500;600;700&family=DynaPuff:wght@400;500;600;700&family=Fredoka:wght@400;500;600;700&family=Mochiy+Pop+One&family=Nunito:wght@400;600;700;800&family=Quicksand:wght@400;500;600;700&family=Varela+Round&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Black+Ops+One&family=Bowlby+One+SC&family=Bungee+Spice&family=Faster+One&family=Iceland&family=Kanit:ital,wght@0,400;0,700;1,400;1,700&family=Michroma&family=Rubik+Burned&family=Sigmar+One&family=Teko:wght@400;600;700&family=Titan+One&family=Tourney:wght@400;700&family=Wallpoet&family=WindSong:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="static/css/builder/card/layout.css">
     <link rel="stylesheet" href="static/css/builder/card/backgrounds.css">
     <link rel="stylesheet" href="static/css/builder/card/background-renderers.css">
@@ -1335,7 +1338,7 @@
             border-radius: 8px;
             background: linear-gradient(145deg, #170e18, #0c080f 78%);
             box-shadow: inset 0 0 0 1px rgba(255, 219, 154, .045);
-            cursor: grab;
+            cursor: default;
         }
 
         .manual-slot-track::-webkit-scrollbar { display: none; }
@@ -1347,12 +1350,15 @@
             user-select: none;
         }
 
+        .manual-slot-track.is-drag-ready { cursor: grab; }
+
         .manual-slot-tab {
             min-height: 44px;
             border: 1px solid rgba(201, 150, 69, .42);
             border-radius: 7px;
             color: var(--muted);
             background: linear-gradient(145deg, #281820, #130c14 78%);
+            cursor: inherit;
             font-family: 'DM Mono', ui-monospace, monospace;
             font-size: 10px;
             font-weight: 700;
