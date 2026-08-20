@@ -88,15 +88,14 @@
       "name_14"
     ],
     "active": {
-      "name_prefix": "prefix_93",
-      "name_suffix": "suffix_70",
+      "system_badge": "system_first",
+      "name_prefix": "prefix_119",
       "washi_color": "washi_mint",
-      "washi_position": "washi_corner_tl",
-      "system_badge": "system_first"
+      "washi_position": "washi_corner_tl"
     }
   },
   "stats": {
-    "messages": 27673,
+    "messages": 27680,
     "active_months": 10,
     "first_seen": "2025-10"
   },
@@ -115,6 +114,16 @@
       "month": "2026-2",
       "kind": "donations",
       "rank": 3
+    },
+    {
+      "month": "2026-8",
+      "kind": "cheers",
+      "rank": 1
+    },
+    {
+      "month": "2026-8",
+      "kind": "gifted",
+      "rank": 1
     }
   ]
 }
