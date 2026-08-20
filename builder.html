@@ -1211,11 +1211,205 @@
             background: linear-gradient(180deg, #fff1c4, #ddb461 72%, #b5803d);
         }
 
+        .mode-tabs {
+            gap: 8px;
+            padding: 8px;
+            border-radius: 10px;
+            background: linear-gradient(145deg, #170e18, #0c080f 78%);
+        }
+
+        .mode-tab,
+        .mode-tab:last-child {
+            position: relative;
+            border: 1px solid rgba(201, 150, 69, .38);
+            border-radius: 7px;
+            color: #bca9ac;
+            background: linear-gradient(145deg, #261720, #130c14 78%);
+            box-shadow: inset 0 1px rgba(255, 225, 163, .05);
+            opacity: .82;
+            transition: border-color 160ms ease, color 160ms ease, opacity 160ms ease, box-shadow 160ms ease;
+        }
+
+        .mode-tab:hover,
+        .mode-tab:focus-visible { opacity: 1; }
+
+        .mode-tab[aria-selected="true"] {
+            border-color: var(--gold-soft);
+            color: var(--cream);
+            background:
+                radial-gradient(circle at 14% 10%, rgba(98, 234, 215, .15), transparent 36%),
+                linear-gradient(145deg, #4a3032, #20131d 78%);
+            box-shadow:
+                inset 0 -3px var(--gold),
+                inset 0 1px rgba(255, 238, 194, .18),
+                0 0 0 1px rgba(201, 150, 69, .18),
+                0 0 18px rgba(98, 234, 215, .11);
+            opacity: 1;
+        }
+
+        .manual-slot-selector {
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .manual-slot-track {
+            display: flex;
+            min-width: 0;
+            gap: 7px;
+            padding: 7px;
+            overflow-x: auto;
+            overscroll-behavior-x: contain;
+            scrollbar-width: none;
+            scroll-behavior: smooth;
+            scroll-snap-type: x proximity;
+            touch-action: pan-x;
+            border: 1px solid rgba(201, 150, 69, .48);
+            border-radius: 8px;
+            background: linear-gradient(145deg, #140d17, #09070c 78%);
+            box-shadow: inset 0 0 16px rgba(0, 0, 0, .45);
+        }
+
+        .manual-slot-track::-webkit-scrollbar { display: none; }
+
+        .manual-slot-tab {
+            min-height: 44px;
+            border: 1px solid rgba(201, 150, 69, .42);
+            border-radius: 7px;
+            color: var(--muted);
+            background: linear-gradient(145deg, #281820, #130c14 78%);
+            font-family: 'DM Mono', ui-monospace, monospace;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .035em;
+        }
+
+        .manual-slot-tab {
+            flex: 0 0 126px;
+            padding: 8px 11px;
+            scroll-snap-align: center;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .manual-slot-tab:hover { border-color: var(--gold-soft); color: var(--cream); }
+
+        .manual-slot-tab[aria-selected="true"] {
+            border-color: var(--gold-soft);
+            color: var(--cream);
+            background:
+                radial-gradient(circle at 50% 0, rgba(98, 234, 215, .16), transparent 55%),
+                linear-gradient(145deg, #3d2932, #1b111b 78%);
+            box-shadow: inset 0 -3px var(--gold), 0 0 12px rgba(98, 234, 215, .13);
+        }
+
+        .manual-swipe-hint { display: none; }
+
+        .slot-grid.manual-slot-panels {
+            display: block;
+            margin-top: 14px;
+        }
+
+        .manual-slot-panel[hidden] { display: none !important; }
+
+        .manual-slot-panel {
+            padding: 0;
+            border: 0;
+            background: transparent;
+        }
+
+        .mobile-choice-grid.has-category-groups {
+            grid-template-columns: minmax(0, 1fr);
+            gap: 18px;
+        }
+
+        .choice-category-group {
+            display: grid;
+            gap: 8px;
+            margin: 0;
+        }
+
+        .choice-category-heading {
+            margin: 0;
+            padding-bottom: 7px;
+            border-bottom: 1px solid rgba(201, 150, 69, .42);
+            color: var(--gold-soft);
+            font-family: 'DM Mono', ui-monospace, monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .035em;
+            text-transform: uppercase;
+        }
+
+        .choice-category-options {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px;
+        }
+
+        @media (min-width: 761px) {
+            #manual-panel > .mode-intro,
+            .manual-slot-selector { display: none; }
+
+            .slot-grid.manual-slot-panels {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 18px;
+                margin-top: 0;
+            }
+
+        }
+
         @media (max-width: 960px) {
             .preview-column {
                 top: calc(env(safe-area-inset-top, 0px) + 10px);
                 padding: 12px 18px 13px;
             }
+
+            .manual-slot-selector { margin-bottom: 28px; }
+
+            .manual-slot-selector.can-scroll .manual-swipe-hint {
+                position: absolute;
+                left: 12px;
+                right: 12px;
+                bottom: -23px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 6px;
+                color: var(--faint);
+                font-family: 'DM Mono', ui-monospace, monospace;
+                font-size: 9px;
+                letter-spacing: .08em;
+                pointer-events: none;
+                text-transform: uppercase;
+                transition: opacity 180ms ease, visibility 180ms ease;
+            }
+
+            .manual-swipe-hint.is-dismissed { opacity: 0; visibility: hidden; }
+
+            .manual-swipe-track {
+                position: relative;
+                width: 54px;
+                height: 12px;
+            }
+
+            .manual-swipe-dot {
+                position: absolute;
+                top: 1px;
+                left: 0;
+                width: 10px;
+                height: 10px;
+                border: 1px solid rgba(255, 241, 209, .78);
+                border-radius: 50%;
+                background: var(--teal);
+                box-shadow: 0 0 8px rgba(98, 234, 215, .72);
+                animation: manual-swipe-cue 1.55s ease-in-out infinite;
+            }
+        }
+
+        @keyframes manual-swipe-cue {
+            0%, 100% { transform: translateX(0); opacity: .48; }
+            50% { transform: translateX(44px); opacity: 1; }
         }
 
         @media (max-width: 760px) {
@@ -1249,6 +1443,8 @@
             .option-section,
             .selection-section { padding: 22px 20px; }
             .mode-tab { min-height: 66px; padding: 15px 12px; }
+            .manual-slot-tab { flex-basis: 108px; }
+            .manual-slot-panel > label { display: none; }
             .achievement-list { gap: 14px; margin-top: 22px; }
             .achievement-card { padding: 17px 16px; }
             .stage-navigation { padding: 18px 20px; }
@@ -1269,6 +1465,7 @@
             .progress-number { width: 28px; height: 28px; }
             .command-actions { justify-content: center; }
             .command-actions .button-gold { width: 100%; }
+            .manual-slot-tab { flex-basis: 98px; }
         }
     </style>
 </head>
@@ -1406,28 +1603,41 @@
 
                 <section class="mode-panel" id="manual-panel" role="tabpanel" aria-labelledby="manual-tab" hidden>
                     <p class="mode-intro">Pick any combination from the unlocked choices. A slot can stay on None.</p>
-                    <div class="slot-grid" id="slots-section">
-                        <div class="option-field">
+                    <div class="manual-slot-selector" id="manual-slot-selector">
+                        <div class="manual-slot-track" id="manual-slot-track" role="tablist" aria-label="Decoration slots">
+                            <button class="manual-slot-tab" id="manual-slot-tab-name-prefix" type="button" role="tab" aria-selected="true" aria-controls="manual-slot-panel-name-prefix" data-slot="name_prefix">Prefix</button>
+                            <button class="manual-slot-tab" id="manual-slot-tab-name-base" type="button" role="tab" aria-selected="false" aria-controls="manual-slot-panel-name-base" data-slot="name_base" tabindex="-1">Name style</button>
+                            <button class="manual-slot-tab" id="manual-slot-tab-name-suffix" type="button" role="tab" aria-selected="false" aria-controls="manual-slot-panel-name-suffix" data-slot="name_suffix" tabindex="-1">Suffix</button>
+                            <button class="manual-slot-tab" id="manual-slot-tab-message-text" type="button" role="tab" aria-selected="false" aria-controls="manual-slot-panel-message-text" data-slot="message_text" tabindex="-1">Message style</button>
+                            <button class="manual-slot-tab" id="manual-slot-tab-card-background" type="button" role="tab" aria-selected="false" aria-controls="manual-slot-panel-card-background" data-slot="card_background" tabindex="-1">Card background</button>
+                        </div>
+                        <div class="manual-swipe-hint" id="manual-swipe-hint" aria-hidden="true">
+                            <span class="manual-swipe-track"><span class="manual-swipe-dot"></span></span>
+                            <span>Swipe tabs</span>
+                        </div>
+                    </div>
+                    <div class="slot-grid manual-slot-panels" id="slots-section">
+                        <div class="option-field manual-slot-panel" id="manual-slot-panel-name-prefix" role="tabpanel" aria-labelledby="manual-slot-tab-name-prefix" data-slot="name_prefix">
                             <label for="prefix-select">Prefix</label>
                             <select class="desktop-select" id="prefix-select"><option value="">None</option></select>
                             <div class="mobile-choice-grid" id="prefix-choices" role="group" aria-label="Prefix choices"></div>
                         </div>
-                        <div class="option-field">
+                        <div class="option-field manual-slot-panel" id="manual-slot-panel-name-base" role="tabpanel" aria-labelledby="manual-slot-tab-name-base" data-slot="name_base" hidden>
                             <label for="name-select">Name style</label>
                             <select class="desktop-select" id="name-select"><option value="">None</option></select>
                             <div class="mobile-choice-grid" id="name-choices" role="group" aria-label="Name style choices"></div>
                         </div>
-                        <div class="option-field">
+                        <div class="option-field manual-slot-panel" id="manual-slot-panel-name-suffix" role="tabpanel" aria-labelledby="manual-slot-tab-name-suffix" data-slot="name_suffix" hidden>
                             <label for="suffix-select">Suffix</label>
                             <select class="desktop-select" id="suffix-select"><option value="">None</option></select>
                             <div class="mobile-choice-grid" id="suffix-choices" role="group" aria-label="Suffix choices"></div>
                         </div>
-                        <div class="option-field">
+                        <div class="option-field manual-slot-panel" id="manual-slot-panel-message-text" role="tabpanel" aria-labelledby="manual-slot-tab-message-text" data-slot="message_text" hidden>
                             <label for="message-select">Message style</label>
                             <select class="desktop-select" id="message-select"><option value="">None</option></select>
                             <div class="mobile-choice-grid" id="message-choices" role="group" aria-label="Message style choices"></div>
                         </div>
-                        <div class="option-field">
+                        <div class="option-field manual-slot-panel" id="manual-slot-panel-card-background" role="tabpanel" aria-labelledby="manual-slot-tab-card-background" data-slot="card_background" hidden>
                             <label for="bg-select">Card background</label>
                             <select class="desktop-select" id="bg-select"><option value="">None</option></select>
                             <div class="mobile-choice-grid" id="bg-choices" role="group" aria-label="Card background choices"></div>

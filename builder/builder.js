@@ -61,6 +61,13 @@
     let loadToken = 0;
     let copyTimer = null;
     const washiValueMap = {};
+    let activeManualSlot = SLOT_ORDER[0];
+    let manualSwipeHintDismissed = false;
+    try {
+        manualSwipeHintDismissed = window.sessionStorage.getItem('builderManualSwipeHintSeen') === '1';
+    } catch (error) {
+        manualSwipeHintDismissed = false;
+    }
 
     function $(id) {
         return document.getElementById(id);
@@ -107,7 +114,7 @@
     }
 
     function entryLabel(item) {
-        return item.entry.display_name || item.entry.config?.label || item.id;
+        return item.entry.achievement_name || item.entry.display_name || item.entry.config?.label || item.id;
     }
 
     function achievementCategoryLabel(category) {
@@ -353,6 +360,7 @@
         const container = $(containerId);
         if (!select || !container) return;
         container.replaceChildren();
+        container.classList.remove('has-category-groups');
         const options = [...select.options];
         if (select.disabled && options.length <= 1 && options[0]?.value === '') {
             const unavailable = document.createElement('button');
@@ -363,22 +371,11 @@
             container.appendChild(unavailable);
             return;
         }
-        let previousGroup = null;
-        options.forEach(option => {
-            const parent = option.parentElement;
-            const group = parent && parent.tagName === 'OPTGROUP' ? parent : null;
-            if (group && group !== previousGroup) {
-                const heading = document.createElement('div');
-                heading.className = 'choice-category-heading';
-                heading.setAttribute('role', 'heading');
-                heading.setAttribute('aria-level', '4');
-                heading.textContent = group.label;
-                container.appendChild(heading);
-            }
-            previousGroup = group;
+
+        function createOptionButton(option, extraClass = '') {
             const button = document.createElement('button');
             button.type = 'button';
-            button.className = 'choice-button';
+            button.className = `choice-button${extraClass ? ` ${extraClass}` : ''}`;
             button.dataset.value = option.value;
             button.textContent = option.textContent;
             button.disabled = select.disabled || option.disabled;
@@ -397,7 +394,35 @@
                     if (replacement) replacement.focus();
                 });
             });
-            container.appendChild(button);
+            return button;
+        }
+
+        const groups = [...select.querySelectorAll('optgroup')];
+        if (groups.length) {
+            container.classList.add('has-category-groups');
+            const noneOptions = options.filter(option => option.parentElement === select);
+            groups.forEach(group => {
+                const section = document.createElement('section');
+                section.className = 'choice-category-group';
+
+                const heading = document.createElement('h3');
+                heading.className = 'choice-category-heading';
+                heading.textContent = group.label;
+
+                const choices = document.createElement('div');
+                choices.className = 'choice-category-options';
+                choices.setAttribute('role', 'group');
+                choices.setAttribute('aria-label', `${group.label} choices`);
+                noneOptions.forEach(option => choices.appendChild(createOptionButton(option)));
+                [...group.children].forEach(option => choices.appendChild(createOptionButton(option)));
+                section.append(heading, choices);
+                container.appendChild(section);
+            });
+            return;
+        }
+
+        options.forEach(option => {
+            container.appendChild(createOptionButton(option));
         });
     }
 
@@ -469,7 +494,7 @@
         if (slot === 'washi_color') return $('washi-color-select').selectedOptions[0]?.textContent || id;
         if (slot === 'washi_position') return $('washi-pos-select').selectedOptions[0]?.textContent || id;
         const item = catalog[id];
-        return item?.display_name || item?.config?.label || id;
+        return item?.achievement_name || item?.display_name || item?.config?.label || id;
     }
 
     function validateSelection() {
@@ -776,6 +801,85 @@
         renderPreview();
     }
 
+    function dismissManualSwipeHint() {
+        if (manualSwipeHintDismissed) return;
+        manualSwipeHintDismissed = true;
+        $('manual-swipe-hint')?.classList.add('is-dismissed');
+        try {
+            window.sessionStorage.setItem('builderManualSwipeHintSeen', '1');
+        } catch (error) {
+            // The hint can still dismiss for this page even if storage is unavailable.
+        }
+    }
+
+    function manualSlotIsCompact() {
+        return window.matchMedia('(max-width: 760px)').matches;
+    }
+
+    function setManualSlot(slot, options = {}) {
+        if (!SLOT_ORDER.includes(slot)) return;
+        activeManualSlot = slot;
+        const compact = manualSlotIsCompact();
+        const tabs = [...document.querySelectorAll('.manual-slot-tab')];
+        tabs.forEach(tab => {
+            const selected = tab.dataset.slot === slot;
+            tab.setAttribute('aria-selected', String(selected));
+            tab.tabIndex = selected ? 0 : -1;
+        });
+        document.querySelectorAll('.manual-slot-panel').forEach(panel => {
+            panel.hidden = compact && panel.dataset.slot !== slot;
+        });
+        const activeTab = tabs.find(tab => tab.dataset.slot === slot);
+        if (compact && options.scroll !== false && activeTab) {
+            activeTab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+        if (options.focus && activeTab) activeTab.focus();
+        if (options.dismissHint) dismissManualSwipeHint();
+        window.requestAnimationFrame(updateManualSlotOverflow);
+    }
+
+    function updateManualSlotOverflow() {
+        const track = $('manual-slot-track');
+        const selector = $('manual-slot-selector');
+        if (!track || !selector) return;
+        selector.classList.toggle('can-scroll', manualSlotIsCompact() && track.scrollWidth > track.clientWidth + 1);
+    }
+
+    function wireManualSlotTabs() {
+        const tabs = [...document.querySelectorAll('.manual-slot-tab')];
+        tabs.forEach((tab, index) => {
+            tab.addEventListener('click', () => setManualSlot(tab.dataset.slot, { dismissHint: true }));
+            tab.addEventListener('keydown', event => {
+                if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+                event.preventDefault();
+                let next = index;
+                if (event.key === 'ArrowLeft') next = (index + tabs.length - 1) % tabs.length;
+                if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+                if (event.key === 'Home') next = 0;
+                if (event.key === 'End') next = tabs.length - 1;
+                setManualSlot(tabs[next].dataset.slot, { focus: true, dismissHint: true });
+            });
+        });
+
+        const track = $('manual-slot-track');
+        let pointerStart = null;
+        track.addEventListener('pointerdown', event => {
+            pointerStart = event.clientX;
+        });
+        track.addEventListener('pointermove', event => {
+            if (pointerStart !== null && Math.abs(event.clientX - pointerStart) > 12) dismissManualSwipeHint();
+        });
+        track.addEventListener('pointerup', () => { pointerStart = null; });
+        track.addEventListener('pointercancel', () => { pointerStart = null; });
+        track.addEventListener('wheel', event => {
+            if (Math.abs(event.deltaX) > 4) dismissManualSwipeHint();
+        }, { passive: true });
+        window.addEventListener('resize', () => setManualSlot(activeManualSlot, { scroll: false }));
+
+        if (manualSwipeHintDismissed) $('manual-swipe-hint').classList.add('is-dismissed');
+        setManualSlot(activeManualSlot, { scroll: false });
+    }
+
     function setMode(nextMode) {
         mode = nextMode === 'manual' ? 'manual' : 'quick';
         const quick = mode === 'quick';
@@ -788,6 +892,7 @@
         if (!quick) {
             currentAchievement = '';
             renderQuickCards();
+            window.requestAnimationFrame(() => setManualSlot(activeManualSlot));
         }
     }
 
@@ -992,6 +1097,7 @@
         resetControls();
         setMode('quick');
         wireModeTabs();
+        wireManualSlotTabs();
         wireControls();
         renderPreview();
 
