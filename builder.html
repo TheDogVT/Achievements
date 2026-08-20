@@ -372,6 +372,69 @@
             gap: 8px;
         }
 
+        .username-input-wrap {
+            position: relative;
+            flex: 1 1 auto;
+            min-width: 0;
+        }
+
+        .username-suggestions {
+            position: absolute;
+            z-index: 20;
+            top: calc(100% + 6px);
+            right: 0;
+            left: 0;
+            max-height: min(320px, 50vh);
+            margin: 0;
+            padding: 6px;
+            overflow-y: auto;
+            list-style: none;
+            border: 1px solid var(--gold);
+            border-radius: 7px;
+            background:
+                radial-gradient(circle at 20% 0, rgba(107, 71, 158, .14), transparent 52%),
+                linear-gradient(148deg, #21141e, #130c14 76%);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, .42), inset 0 0 0 1px rgba(255, 219, 154, .08);
+        }
+
+        .username-suggestion {
+            display: flex;
+            align-items: baseline;
+            width: 100%;
+            min-height: 44px;
+            padding: 9px 11px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            color: var(--text);
+            background: transparent;
+            font-size: 14px;
+            text-align: left;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .username-suggestion:hover,
+        .username-suggestion.is-active,
+        .username-suggestion:focus-visible {
+            border-color: var(--gold);
+            color: var(--cream);
+            background: rgba(201, 150, 69, .14);
+        }
+
+        .username-suggestion-match {
+            padding: 0 1px;
+            color: var(--ink);
+            background: var(--gold);
+            font-weight: 700;
+        }
+
+        .username-suggestion-rest {
+            min-width: 0;
+            overflow: hidden;
+            color: var(--text);
+            text-overflow: ellipsis;
+        }
+
         input[type="text"],
         input[readonly],
         select {
@@ -1029,6 +1092,10 @@
                 0 14px 28px rgba(0, 0, 0, .3);
         }
 
+        .gate-panel { overflow: visible; }
+
+        .gate-panel::before { border-radius: inherit; }
+
         .preview-column::before,
         .progress-rail::before,
         .gate-panel::before {
@@ -1462,6 +1529,14 @@
                 align-items: flex-start;
                 gap: 6px;
             }
+            .username-suggestions {
+                max-height: min(280px, 44vh);
+                padding: 4px;
+            }
+            .username-suggestion {
+                min-height: 46px;
+                padding: 10px;
+            }
         }
 
         @media (max-width: 360px) {
@@ -1563,7 +1638,10 @@
                 <form id="username-form" class="field-group">
                     <label for="username-input">Twitch username</label>
                     <div class="input-row">
-                        <input type="text" id="username-input" placeholder="YourName" autocomplete="username" spellcheck="false" maxlength="50">
+                        <div class="username-input-wrap">
+                            <input type="text" id="username-input" placeholder="YourName" autocomplete="off" spellcheck="false" maxlength="50" role="combobox" aria-autocomplete="list" aria-controls="username-suggestions" aria-expanded="false" aria-haspopup="listbox">
+                            <ul class="username-suggestions" id="username-suggestions" role="listbox" aria-label="Twitch username suggestions" hidden></ul>
+                        </div>
                         <button class="button button-primary" id="load-btn" type="submit">Load account</button>
                     </div>
                     <p class="status-line info" id="load-status" role="status" aria-live="polite">Enter your username to begin.</p>

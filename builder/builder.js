@@ -60,6 +60,11 @@
     let quickApplying = false;
     let loadToken = 0;
     let copyTimer = null;
+    let usernameMap = null;
+    let usernameMapPromise = null;
+    let usernameSuggestions = [];
+    let usernameSuggestionIndex = -1;
+    let usernameSuggestionRequest = 0;
     const washiValueMap = {};
     let activeManualSlot = SLOT_ORDER[0];
     let manualSwipeHintDismissed = false;
@@ -100,6 +105,174 @@
             if (!response.ok) throw new Error('HTTP ' + response.status);
             return response.json();
         });
+    }
+
+    function normalizeUsername(value) {
+        return String(value || '').trim().replace(/^@/, '');
+    }
+
+    function loadUsernameMap() {
+        if (usernameMap) return Promise.resolve(usernameMap);
+        if (!usernameMapPromise) {
+            usernameMapPromise = fetchJSON('username_map.json')
+                .then(map => {
+                    usernameMap = map && typeof map === 'object' ? map : {};
+                    return usernameMap;
+                })
+                .catch(error => {
+                    usernameMapPromise = null;
+                    throw error;
+                });
+        }
+        return usernameMapPromise;
+    }
+
+    function hideUsernameSuggestions() {
+        const list = $('username-suggestions');
+        const input = $('username-input');
+        usernameSuggestions = [];
+        usernameSuggestionIndex = -1;
+        if (list) {
+            list.hidden = true;
+            list.replaceChildren();
+        }
+        if (input) {
+            input.setAttribute('aria-expanded', 'false');
+            input.removeAttribute('aria-activedescendant');
+        }
+    }
+
+    function setUsernameSuggestionActive(index) {
+        const list = $('username-suggestions');
+        const input = $('username-input');
+        if (!list || !input || !usernameSuggestions.length) return;
+        const options = [...list.querySelectorAll('.username-suggestion')];
+        usernameSuggestionIndex = Math.max(-1, Math.min(index, options.length - 1));
+        options.forEach((option, optionIndex) => {
+            const active = optionIndex === usernameSuggestionIndex;
+            option.classList.toggle('is-active', active);
+            option.setAttribute('aria-selected', String(active));
+        });
+        if (usernameSuggestionIndex < 0) {
+            input.removeAttribute('aria-activedescendant');
+            return;
+        }
+        const activeOption = options[usernameSuggestionIndex];
+        input.setAttribute('aria-activedescendant', activeOption.id);
+        activeOption.scrollIntoView({ block: 'nearest' });
+    }
+
+    function selectUsernameSuggestion(username) {
+        const input = $('username-input');
+        if (!input) return;
+        input.value = username;
+        hideUsernameSuggestions();
+        input.focus();
+        input.setSelectionRange(input.value.length, input.value.length);
+    }
+
+    function compareUsernameNames(first, second) {
+        const lengthDelta = first.length - second.length;
+        if (lengthDelta) return lengthDelta;
+        const firstLower = first.toLowerCase();
+        const secondLower = second.toLowerCase();
+        if (firstLower < secondLower) return -1;
+        if (firstLower > secondLower) return 1;
+        if (first < second) return -1;
+        if (first > second) return 1;
+        return 0;
+    }
+
+    function renderUsernameSuggestions(matches, prefix) {
+        const list = $('username-suggestions');
+        const input = $('username-input');
+        if (!list || !input || !matches.length) {
+            hideUsernameSuggestions();
+            return;
+        }
+
+        usernameSuggestions = matches;
+        usernameSuggestionIndex = -1;
+        list.replaceChildren();
+        matches.forEach((username, index) => {
+            const option = document.createElement('button');
+            option.type = 'button';
+            option.id = 'username-suggestion-' + index;
+            option.className = 'username-suggestion';
+            option.setAttribute('role', 'option');
+            option.setAttribute('aria-selected', 'false');
+            option.tabIndex = -1;
+
+            const match = document.createElement('mark');
+            match.className = 'username-suggestion-match';
+            match.textContent = username.slice(0, prefix.length);
+            const remainder = document.createElement('span');
+            remainder.className = 'username-suggestion-rest';
+            remainder.textContent = username.slice(prefix.length);
+            option.append(match, remainder);
+
+            option.addEventListener('pointerdown', event => {
+                event.preventDefault();
+                selectUsernameSuggestion(username);
+            });
+            option.addEventListener('click', () => selectUsernameSuggestion(username));
+            list.appendChild(option);
+        });
+        list.hidden = false;
+        input.setAttribute('aria-expanded', 'true');
+    }
+
+    async function refreshUsernameSuggestions() {
+        const input = $('username-input');
+        if (!input) return;
+        const request = ++usernameSuggestionRequest;
+        const prefix = normalizeUsername(input.value);
+        hideUsernameSuggestions();
+        if (prefix.length < 3 || input.disabled) return;
+
+        try {
+            const map = await loadUsernameMap();
+            if (request !== usernameSuggestionRequest) return;
+            const currentPrefix = normalizeUsername(input.value);
+            if (currentPrefix.length < 3 || currentPrefix !== prefix) return;
+            const normalizedPrefix = prefix.toLowerCase();
+            const matches = Object.keys(map)
+                .filter(username => username.toLowerCase().startsWith(normalizedPrefix))
+                .sort(compareUsernameNames);
+            renderUsernameSuggestions(matches, prefix);
+        } catch (error) {
+            if (request === usernameSuggestionRequest) hideUsernameSuggestions();
+        }
+    }
+
+    function handleUsernameKeydown(event) {
+        const input = $('username-input');
+        const list = $('username-suggestions');
+        const visible = list && !list.hidden && usernameSuggestions.length;
+        if (event.key === 'Escape') {
+            if (visible) {
+                event.preventDefault();
+                hideUsernameSuggestions();
+            }
+            return;
+        }
+        if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+            if (!visible) {
+                if (normalizeUsername(input.value).length >= 3) refreshUsernameSuggestions();
+                return;
+            }
+            event.preventDefault();
+            const delta = event.key === 'ArrowDown' ? 1 : -1;
+            let next = usernameSuggestionIndex + delta;
+            if (next >= usernameSuggestions.length) next = 0;
+            if (next < 0) next = usernameSuggestions.length - 1;
+            setUsernameSuggestionActive(next);
+            return;
+        }
+        if (event.key === 'Enter' && visible && usernameSuggestionIndex >= 0) {
+            event.preventDefault();
+            selectUsernameSuggestion(usernameSuggestions[usernameSuggestionIndex]);
+        }
     }
 
     async function loadCatalog() {
@@ -185,6 +358,8 @@
 
     function showUsernameGate({ keepValue = true } = {}) {
         loadToken += 1;
+        usernameSuggestionRequest += 1;
+        hideUsernameSuggestions();
         userRecord = null;
         unlockedSet = new Set();
         quickGroups = [];
@@ -203,6 +378,7 @@
 
     function showLoadError(state, message) {
         copyCompleted = false;
+        hideUsernameSuggestions();
         setGateState(state, message);
         resetControls();
         renderPreview();
@@ -1043,6 +1219,14 @@
             event.preventDefault();
             window.loadUser();
         });
+        $('username-input').addEventListener('input', () => refreshUsernameSuggestions());
+        $('username-input').addEventListener('keydown', handleUsernameKeydown);
+        $('username-input').addEventListener('blur', () => {
+            window.setTimeout(() => {
+                const list = $('username-suggestions');
+                if (!list || !list.contains(document.activeElement)) hideUsernameSuggestions();
+            }, 0);
+        });
         $('cat-select').addEventListener('change', onCategoryChange);
         SLOT_ORDER.forEach(slot => $(SLOT_IDS[slot]).addEventListener('change', onSlotChange));
         $('washi-color-select').addEventListener('change', onWashiChange);
@@ -1070,14 +1254,18 @@
 
     window.loadUser = async function () {
         const input = $('username-input');
-        const raw = input.value.trim().replace(/^@/, '');
+        const raw = normalizeUsername(input.value);
         if (!raw) {
+            usernameSuggestionRequest += 1;
+            hideUsernameSuggestions();
             setStatus('load-status', 'Enter a Twitch username first.', 'err');
             input.focus();
             return;
         }
 
         const requestToken = ++loadToken;
+        usernameSuggestionRequest += 1;
+        hideUsernameSuggestions();
         userRecord = null;
         unlockedSet = new Set();
         quickGroups = [];
@@ -1091,8 +1279,11 @@
         $('load-btn').disabled = true;
         try {
             await loadCatalog();
-            const usernameMap = await fetchJSON('username_map.json');
-            const userId = usernameMap[raw.toLowerCase()];
+            const map = await loadUsernameMap();
+            const normalizedRaw = raw.toLowerCase();
+            const matchingUsername = Object.keys(map)
+                .find(username => username.toLowerCase() === normalizedRaw);
+            const userId = matchingUsername ? map[matchingUsername] : null;
             if (!userId) {
                 if (requestToken !== loadToken) return;
                 userRecord = null;
