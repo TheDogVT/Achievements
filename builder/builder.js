@@ -1051,14 +1051,13 @@
         });
 
         const track = $('manual-slot-track');
-        const MOUSE_DRAG_HOLD_DELAY = 280; // Hold the desktop rail for 280ms before grab mode begins.
+        const MOUSE_DRAG_THRESHOLD = 6;
+        const TOUCH_SWIPE_THRESHOLD = 8;
         let pointerStart = null;
         let pointerScrollStart = 0;
         let pointerType = '';
         let pointerId = null;
         let pointerDragged = false;
-        let pointerDragReady = false;
-        let holdTimer = null;
         let suppressClick = false;
 
         track.addEventListener('click', event => {
@@ -1075,46 +1074,33 @@
             pointerType = event.pointerType;
             pointerId = event.pointerId;
             pointerDragged = false;
-            pointerDragReady = false;
-            if (event.pointerType === 'mouse') {
-                holdTimer = window.setTimeout(() => {
-                    if (pointerStart === null || pointerType !== 'mouse' || pointerId !== event.pointerId) return;
-                    pointerDragReady = true;
-                    track.classList.add('is-drag-ready');
-                    track.setPointerCapture(event.pointerId);
-                }, MOUSE_DRAG_HOLD_DELAY);
-            }
         });
         track.addEventListener('pointermove', event => {
             if (pointerStart === null || event.pointerId !== pointerId) return;
             const delta = event.clientX - pointerStart;
             if (pointerType !== 'mouse') {
-                if (Math.abs(delta) > 8) dismissManualSwipeHint();
+                if (Math.abs(delta) > TOUCH_SWIPE_THRESHOLD) dismissManualSwipeHint();
                 return;
             }
-            if (!pointerDragReady || (Math.abs(delta) <= 8 && !pointerDragged)) return;
+            if (!(event.buttons & 1)) return;
+            if (!pointerDragged && Math.abs(delta) <= MOUSE_DRAG_THRESHOLD) return;
             dismissManualSwipeHint();
             pointerDragged = true;
-            track.classList.remove('is-drag-ready');
             track.classList.add('is-dragging');
+            if (!track.hasPointerCapture(event.pointerId)) track.setPointerCapture(event.pointerId);
             track.scrollLeft = pointerScrollStart - delta;
             event.preventDefault();
         });
 
         const finishPointer = event => {
             if (pointerStart === null || event.pointerId !== pointerId) return;
-            if (holdTimer !== null) {
-                window.clearTimeout(holdTimer);
-                holdTimer = null;
-            }
             suppressClick = pointerType === 'mouse' && pointerDragged;
             if (suppressClick) window.setTimeout(() => { suppressClick = false; }, 0);
             pointerStart = null;
             pointerType = '';
             pointerId = null;
             pointerDragged = false;
-            pointerDragReady = false;
-            track.classList.remove('is-drag-ready', 'is-dragging');
+            track.classList.remove('is-dragging');
             if (track.hasPointerCapture(event.pointerId)) track.releasePointerCapture(event.pointerId);
         };
 
