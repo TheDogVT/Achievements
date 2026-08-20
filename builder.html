@@ -1358,7 +1358,7 @@
             border-radius: 7px;
             color: var(--muted);
             background: linear-gradient(145deg, #281820, #130c14 78%);
-            cursor: inherit;
+            cursor: pointer;
             font-family: 'DM Mono', ui-monospace, monospace;
             font-size: 10px;
             font-weight: 700;
@@ -1374,6 +1374,8 @@
         }
 
         .manual-slot-tab:hover { border-color: var(--gold-soft); color: var(--cream); }
+
+        .manual-slot-track.is-dragging .manual-slot-tab { cursor: grabbing; }
 
         .manual-slot-tab[aria-selected="true"] {
             border-color: var(--gold-soft);
