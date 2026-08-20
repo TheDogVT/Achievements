@@ -85,7 +85,16 @@
       "suffix_8",
       "prefix_101",
       "suffix_79",
-      "name_14"
+      "name_14",
+      "prefix_8",
+      "prefix_76",
+      "suffix_19",
+      "name_4",
+      "name_15",
+      "name_16",
+      "name_9",
+      "name_17",
+      "name_18"
     ],
     "active": {
       "name_prefix": "prefix_93",
@@ -96,7 +105,7 @@
     }
   },
   "stats": {
-    "messages": 27673,
+    "messages": 27675,
     "active_months": 10,
     "first_seen": "2025-10"
   },
@@ -114,6 +123,21 @@
     {
       "month": "2026-2",
       "kind": "donations",
+      "rank": 3
+    },
+    {
+      "month": "2026-8",
+      "kind": "gifted",
+      "rank": 1
+    },
+    {
+      "month": "2026-8",
+      "kind": "donations",
+      "rank": 1
+    },
+    {
+      "month": "2026-8",
+      "kind": "cheers",
       "rank": 3
     }
   ]
