@@ -1214,7 +1214,8 @@
         .mode-tabs {
             gap: 8px;
             padding: 8px;
-            border-radius: 10px;
+            border-width: 0 2px 1px;
+            border-radius: 0;
             background: linear-gradient(145deg, #170e18, #0c080f 78%);
         }
 
@@ -1265,11 +1266,19 @@
             touch-action: pan-x;
             border: 1px solid rgba(201, 150, 69, .48);
             border-radius: 8px;
-            background: linear-gradient(145deg, #140d17, #09070c 78%);
-            box-shadow: inset 0 0 16px rgba(0, 0, 0, .45);
+            background: linear-gradient(145deg, #170e18, #0c080f 78%);
+            box-shadow: inset 0 0 0 1px rgba(255, 219, 154, .045);
+            cursor: grab;
         }
 
         .manual-slot-track::-webkit-scrollbar { display: none; }
+
+        .manual-slot-track.is-dragging {
+            scroll-behavior: auto;
+            scroll-snap-type: none;
+            cursor: grabbing;
+            user-select: none;
+        }
 
         .manual-slot-tab {
             min-height: 44px;
@@ -1685,7 +1694,6 @@
                     </div>
                     <div class="command-value is-placeholder" id="command-value" aria-live="polite">Choose at least one decoration.</div>
                     <p class="command-feedback" id="command-feedback" role="status" aria-live="polite">The command will appear here when it is ready.</p>
-                    <p class="option-help">Copy this command, then use it in chat while the stream is live.</p>
                     <div class="command-actions">
                         <button class="button button-gold" id="copy-btn" type="button" disabled>Copy command</button>
                         <button class="button button-small" id="back-to-selection-btn" type="button">Back to choose</button>

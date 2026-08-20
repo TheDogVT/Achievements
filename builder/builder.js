@@ -521,7 +521,7 @@
                 command: '',
             };
         }
-        return { valid: true, message: 'Ready to use in chat while the stream is live.', command: '!deco ' + ids.join(' ') };
+        return { valid: true, message: 'Copy this command, then use it in chat while the stream is live.', command: '!deco ' + ids.join(' ') };
     }
 
     function renderSelectionSummary() {
@@ -863,14 +863,54 @@
 
         const track = $('manual-slot-track');
         let pointerStart = null;
+        let pointerScrollStart = 0;
+        let pointerType = '';
+        let pointerDragged = false;
+        let suppressClick = false;
+
+        track.addEventListener('click', event => {
+            if (!suppressClick) return;
+            event.preventDefault();
+            event.stopPropagation();
+            suppressClick = false;
+        }, true);
+
         track.addEventListener('pointerdown', event => {
+            if (event.pointerType === 'mouse' && event.button !== 0) return;
             pointerStart = event.clientX;
+            pointerScrollStart = track.scrollLeft;
+            pointerType = event.pointerType;
+            pointerDragged = false;
+            if (event.pointerType === 'mouse') track.setPointerCapture(event.pointerId);
         });
         track.addEventListener('pointermove', event => {
-            if (pointerStart !== null && Math.abs(event.clientX - pointerStart) > 12) dismissManualSwipeHint();
+            if (pointerStart === null) return;
+            const delta = event.clientX - pointerStart;
+            if (Math.abs(delta) <= 8 && !pointerDragged) return;
+            dismissManualSwipeHint();
+            if (pointerType !== 'mouse') return;
+            pointerDragged = true;
+            track.classList.add('is-dragging');
+            track.scrollLeft = pointerScrollStart - delta;
+            event.preventDefault();
         });
-        track.addEventListener('pointerup', () => { pointerStart = null; });
-        track.addEventListener('pointercancel', () => { pointerStart = null; });
+
+        const finishPointer = event => {
+            if (pointerStart === null) return;
+            suppressClick = pointerType === 'mouse' && pointerDragged;
+            if (suppressClick) window.setTimeout(() => { suppressClick = false; }, 0);
+            pointerStart = null;
+            pointerType = '';
+            pointerDragged = false;
+            track.classList.remove('is-dragging');
+            if (track.hasPointerCapture(event.pointerId)) track.releasePointerCapture(event.pointerId);
+        };
+
+        track.addEventListener('pointerup', finishPointer);
+        track.addEventListener('pointercancel', event => {
+            finishPointer(event);
+            suppressClick = false;
+        });
         track.addEventListener('wheel', event => {
             if (Math.abs(event.deltaX) > 4) dismissManualSwipeHint();
         }, { passive: true });
