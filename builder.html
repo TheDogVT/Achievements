@@ -7,7 +7,7 @@
     <title>Build a PuppyBot decoration</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Caveat:wght@500;600;700&family=Lato:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Mono:wght@400;500&family=Lato:wght@400;700&family=Lora:wght@500;600;700&family=Special+Elite&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="static/css/builder/card/layout.css">
     <link rel="stylesheet" href="static/css/builder/card/backgrounds.css">
     <link rel="stylesheet" href="static/css/builder/card/background-renderers.css">
@@ -17,29 +17,37 @@
     <link rel="stylesheet" href="static/css/fullscreen/decorations.css">
     <style>
         :root {
-            --ink: #0d1011;
-            --ink-soft: #111718;
-            --panel: #151d1d;
-            --panel-raised: #1b2524;
-            --panel-line: #2d3a38;
-            --field: #0b0f10;
-            --field-line: #43504d;
-            --paper: #f3f4ef;
-            --paper-line: #d4d9d0;
-            --text: #f5f7f2;
-            --muted: #a7b5ad;
-            --faint: #73827b;
-            --teal: #7cd6c4;
-            --teal-strong: #a1f0df;
-            --gold: #f2b35d;
-            --gold-soft: #f5d19a;
-            --success: #83d69b;
+            --wood: #211014;
+            --wood-mid: #452127;
+            --wood-deep: #160b0e;
+            --wood-line: #6f3d3d;
+            --ink: var(--wood);
+            --ink-soft: #2b161b;
+            --panel: #321a20;
+            --panel-raised: #402027;
+            --panel-line: #603338;
+            --field: #1a0d11;
+            --field-line: #80534b;
+            --paper: #fff1d1;
+            --paper-line: #e1bd79;
+            --text: #fff1d1;
+            --muted: #d2b99b;
+            --faint: #a5817e;
+            --teal: #62ead7;
+            --teal-strong: #9affed;
+            --gold: #c99645;
+            --gold-soft: #ffe1a0;
+            --success: #62ead7;
             --danger: #f08a7e;
-            --shadow: 0 20px 60px rgba(0, 0, 0, .24);
+            --shadow: 0 20px 60px rgba(12, 4, 7, .42);
         }
 
         * { box-sizing: border-box; }
-        html { min-width: 320px; background: var(--ink); }
+        html {
+            min-width: 320px;
+            background: var(--ink);
+            scroll-padding-top: 270px;
+        }
 
         body {
             margin: 0;
@@ -48,6 +56,7 @@
             color: var(--text);
             font-family: 'Lato', system-ui, sans-serif;
             line-height: 1.45;
+            overflow-x: hidden;
         }
 
         button, input, select { font: inherit; }
@@ -79,11 +88,10 @@
         .skip-link:focus { transform: translateY(0); }
 
         .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 40;
+            position: relative;
+            z-index: 1;
             border-bottom: 1px solid var(--panel-line);
-            background: var(--ink-soft);
+            background: var(--wood-deep);
         }
 
         .site-header-inner {
@@ -96,20 +104,6 @@
             padding: 12px 24px;
         }
 
-        .brand-mark {
-            display: grid;
-            place-items: center;
-            width: 34px;
-            height: 34px;
-            flex: 0 0 auto;
-            border: 1px solid var(--gold);
-            color: var(--gold-soft);
-            font-family: 'Special Elite', monospace;
-            font-size: 12px;
-            letter-spacing: .08em;
-            transform: rotate(-4deg);
-        }
-
         .header-copy { min-width: 0; }
 
         .eyebrow,
@@ -119,6 +113,7 @@
         .command-label {
             margin: 0;
             color: var(--faint);
+            font-family: 'DM Mono', ui-monospace, monospace;
             font-size: 10px;
             font-weight: 700;
             letter-spacing: .13em;
@@ -129,9 +124,9 @@
         .header-copy h1 {
             margin: 2px 0 0;
             color: var(--text);
-            font-family: 'Abril Fatface', Georgia, serif;
+            font-family: 'Lora', Georgia, serif;
             font-size: clamp(20px, 2.5vw, 29px);
-            font-weight: 400;
+            font-weight: 600;
             line-height: 1.08;
         }
 
@@ -150,6 +145,9 @@
         }
 
         .text-button {
+            display: inline-flex;
+            align-items: center;
+            min-height: 44px;
             padding: 4px 0;
             border: 0;
             color: var(--gold-soft);
@@ -161,7 +159,7 @@
 
         .page-grid {
             display: grid;
-            grid-template-columns: minmax(0, 1fr) minmax(360px, 500px);
+            grid-template-columns: minmax(0, 1fr);
             gap: 22px;
             width: min(1280px, 100%);
             margin: 0 auto;
@@ -171,8 +169,9 @@
         .progress-rail {
             grid-column: 1 / -1;
             padding: 14px 18px 12px;
-            border: 1px solid var(--panel-line);
+            border: 1px solid var(--wood-line);
             background: var(--panel);
+            box-shadow: 0 8px 24px rgba(12, 4, 7, .2);
         }
 
         .progress-rail > p { margin: 0 0 10px; }
@@ -191,11 +190,11 @@
             align-items: center;
             gap: 9px;
             width: 100%;
-            min-height: 45px;
+            min-height: 48px;
             padding: 7px 9px;
             border: 1px solid var(--panel-line);
             color: var(--muted);
-            background: var(--ink-soft);
+            background: var(--wood-deep);
             text-align: left;
         }
 
@@ -203,7 +202,8 @@
         .progress-step[aria-current="step"] {
             border-color: var(--teal);
             color: var(--text);
-            background: #1e2b29;
+            background: #302027;
+            box-shadow: 0 0 18px rgba(98, 234, 215, .1);
         }
 
         .progress-step[aria-current="step"] .progress-number {
@@ -225,7 +225,7 @@
             flex: 0 0 auto;
             border: 1px solid var(--field-line);
             color: var(--faint);
-            font-family: 'Special Elite', monospace;
+            font-family: 'DM Mono', ui-monospace, monospace;
             font-size: 11px;
         }
 
@@ -240,21 +240,68 @@
         }
 
         .progress-copy strong { color: inherit; font-size: 12px; }
-        .progress-copy small { margin-top: 2px; color: var(--faint); font-size: 10px; }
+        .progress-copy small {
+            display: block;
+            margin-top: 2px;
+            color: var(--faint);
+            font-family: 'DM Mono', ui-monospace, monospace;
+            font-size: 10px;
+        }
+
+        .progress-step[data-state="complete"]:not([aria-current="step"]) .progress-copy strong::after,
+        .progress-step[data-state="available"]:not([aria-current="step"]) .progress-copy strong::after,
+        .progress-step[data-state="locked"] .progress-copy strong::after {
+            margin-left: 4px;
+            font-size: 10px;
+            font-weight: 400;
+            letter-spacing: .02em;
+        }
+
+        .progress-step[data-state="complete"]:not([aria-current="step"]) .progress-copy strong::after {
+            content: '(complete)';
+            color: var(--gold-soft);
+        }
+
+        .progress-step[data-state="available"]:not([aria-current="step"]) .progress-copy strong::after {
+            content: '(available)';
+            color: var(--teal);
+        }
+
+        .progress-step[data-state="locked"] .progress-copy strong::after {
+            content: '(locked)';
+            color: var(--faint);
+        }
 
         .controls-column,
         .preview-column { min-width: 0; }
 
+        .controls-column {
+            width: min(100%, 1100px);
+            margin-inline: auto;
+        }
+
+        .controls-column button,
+        .controls-column input,
+        .controls-column select { scroll-margin-top: 270px; }
+
         .preview-column {
             position: sticky;
-            top: 92px;
-            align-self: start;
+            top: env(safe-area-inset-top, 0px);
+            z-index: 60;
+            align-self: stretch;
+            grid-column: 1;
+            width: 100%;
+            padding: 10px 12px 11px;
+            border: 1px solid var(--wood-line);
+            background: var(--wood-mid);
+            box-shadow: 0 12px 30px rgba(12, 4, 7, .34);
+            scroll-margin-top: 270px;
         }
 
         .panel {
-            border: 1px solid var(--panel-line);
+            border: 1px solid var(--wood-line);
             background: var(--panel);
-            box-shadow: 0 8px 28px rgba(0, 0, 0, .16);
+            box-shadow: 0 8px 28px rgba(12, 4, 7, .22);
         }
 
         .gate-panel {
@@ -282,25 +329,25 @@
             height: 44px;
             border: 1px solid var(--gold);
             color: var(--gold-soft);
-            font-family: 'Special Elite', monospace;
+            font-family: 'DM Mono', ui-monospace, monospace;
             font-size: 17px;
         }
 
         .gate-heading h2,
         .workbench-heading h2,
-        .preview-heading h2,
-        .modal-card h2 {
+        .preview-heading h2 {
             margin: 3px 0 0;
             color: var(--text);
+            font-family: 'Lora', Georgia, serif;
             font-size: 20px;
+            font-weight: 600;
             line-height: 1.15;
         }
 
         .gate-heading p,
         .workbench-heading p,
         .mode-intro,
-        .option-help,
-        .modal-card p {
+        .option-help {
             margin: 8px 0 0;
             color: var(--muted);
             font-size: 13px;
@@ -313,6 +360,7 @@
             display: block;
             margin-bottom: 6px;
             color: var(--muted);
+            font-family: 'DM Mono', ui-monospace, monospace;
             font-size: 12px;
             font-weight: 700;
         }
@@ -326,7 +374,7 @@
         input[readonly],
         select {
             width: 100%;
-            min-height: 40px;
+            min-height: 44px;
             padding: 9px 11px;
             border: 1px solid var(--field-line);
             border-radius: 2px;
@@ -337,12 +385,21 @@
 
         input::placeholder { color: var(--faint); }
         select option { color: var(--text); background: var(--panel); }
+        select optgroup {
+            color: var(--gold-soft);
+            background: var(--panel);
+            font-family: 'DM Mono', ui-monospace, monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
 
         .button {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            min-height: 40px;
+            min-height: 44px;
             padding: 9px 15px;
             border: 1px solid var(--field-line);
             border-radius: 2px;
@@ -358,7 +415,8 @@
 
         .button:hover:not(:disabled) {
             border-color: var(--teal);
-            background: #24312f;
+            background: var(--wood-mid);
+            box-shadow: 0 0 16px rgba(98, 234, 215, .1);
         }
 
         .button-primary {
@@ -384,12 +442,13 @@
             background: var(--gold-soft);
         }
 
-        .button-small { min-height: 32px; padding: 6px 10px; font-size: 11px; }
+        .button-small { min-height: 44px; padding: 6px 10px; font-size: 11px; }
 
         .status-line {
             min-height: 20px;
             margin: 8px 0 0;
             color: var(--muted);
+            font-family: 'DM Mono', ui-monospace, monospace;
             font-size: 12px;
         }
 
@@ -400,9 +459,10 @@
         .gate-message {
             margin: 18px 0 0;
             padding: 10px 12px;
-            border-left: 2px solid var(--gold);
+            border: 1px solid var(--gold);
             color: var(--gold-soft);
-            background: rgba(242, 179, 93, .08);
+            background: rgba(201, 150, 69, .1);
+            box-shadow: 0 0 18px rgba(201, 150, 69, .08);
             font-size: 12px;
         }
 
@@ -421,7 +481,7 @@
             justify-content: space-between;
             gap: 14px;
             padding: 20px 22px 17px;
-            border: 1px solid var(--panel-line);
+            border: 1px solid var(--wood-line);
             border-bottom: 0;
             background: var(--panel);
         }
@@ -429,9 +489,9 @@
         .unlock-summary {
             flex: 0 0 auto;
             padding: 5px 8px;
-            border: 1px solid #49655e;
+            border: 1px solid var(--teal);
             color: var(--teal);
-            font-family: 'Special Elite', monospace;
+            font-family: 'DM Mono', ui-monospace, monospace;
             font-size: 11px;
             white-space: nowrap;
         }
@@ -439,17 +499,18 @@
         .mode-tabs {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            border: 1px solid var(--panel-line);
-            background: var(--ink-soft);
+            border: 1px solid var(--wood-line);
+            background: var(--wood-deep);
         }
 
         .mode-tab {
-            min-height: 50px;
+            min-height: 54px;
             padding: 10px 14px;
             border: 0;
             border-right: 1px solid var(--panel-line);
             color: var(--muted);
             background: transparent;
+            font-family: 'DM Mono', ui-monospace, monospace;
             font-size: 12px;
             font-weight: 700;
             letter-spacing: .05em;
@@ -460,8 +521,9 @@
         .mode-tab:last-child { border-right: 0; }
 
         .mode-tab[aria-selected="true"] {
-            color: var(--ink);
+            color: var(--wood-deep);
             background: var(--teal);
+            box-shadow: 0 0 20px rgba(98, 234, 215, .14);
         }
 
         .mode-tab span {
@@ -477,7 +539,7 @@
 
         .mode-panel {
             padding: 18px 22px;
-            border: 1px solid var(--panel-line);
+            border: 1px solid var(--wood-line);
             border-top: 0;
             background: var(--panel);
         }
@@ -493,7 +555,7 @@
 
         .choice-button {
             width: 100%;
-            min-height: 42px;
+            min-height: 44px;
             padding: 8px 10px;
             border: 1px solid var(--field-line);
             color: var(--muted);
@@ -508,17 +570,31 @@
         .choice-button[aria-pressed="true"] {
             border-color: var(--teal);
             color: var(--text);
-            background: #1e2b29;
+            background: #302027;
         }
 
         .choice-button[aria-pressed="true"] {
-            box-shadow: inset 3px 0 0 var(--gold);
+            box-shadow: 0 0 0 2px rgba(98, 234, 215, .24), 0 0 18px rgba(98, 234, 215, .1);
             color: var(--teal-strong);
         }
 
         .choice-button:disabled {
             border-style: dashed;
             color: var(--faint);
+        }
+
+        .choice-category-heading {
+            grid-column: 1 / -1;
+            margin-top: 8px;
+            padding: 5px 2px 3px;
+            border-top: 1px solid rgba(201, 150, 69, .42);
+            color: var(--gold-soft);
+            font-family: 'DM Mono', ui-monospace, monospace;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .12em;
+            line-height: 1.2;
+            text-transform: uppercase;
         }
 
         .achievement-list {
@@ -533,22 +609,20 @@
         .achievement-card {
             width: 100%;
             padding: 12px 13px;
+            min-height: 44px;
             border: 1px solid var(--panel-line);
-            border-left: 3px solid var(--panel-line);
             color: var(--text);
             background: var(--panel-raised);
             text-align: left;
-            transition: border-color .16s ease, background-color .16s ease, transform .16s ease;
+            transition: border-color .16s ease, background-color .16s ease, box-shadow .16s ease;
         }
 
         .achievement-card:hover,
         .achievement-card[aria-pressed="true"] {
-            border-color: var(--teal);
-            border-left-color: var(--gold);
-            background: #22302e;
+            border-color: var(--gold);
+            background: #4a2528;
+            box-shadow: 0 0 0 2px rgba(201, 150, 69, .24), 0 0 22px rgba(98, 234, 215, .1);
         }
-
-        .achievement-card[aria-pressed="true"] { transform: translateX(3px); }
 
         .achievement-card-top {
             display: flex;
@@ -561,6 +635,7 @@
 
         .achievement-card-category {
             color: var(--gold-soft);
+            font-family: 'DM Mono', ui-monospace, monospace;
             font-size: 10px;
             letter-spacing: .08em;
             text-transform: uppercase;
@@ -569,6 +644,7 @@
         .achievement-card-meta {
             margin-top: 4px;
             color: var(--muted);
+            font-family: 'DM Mono', ui-monospace, monospace;
             font-size: 11px;
         }
 
@@ -585,9 +661,10 @@
             align-items: center;
             max-width: 100%;
             padding: 4px 7px;
-            border: 1px solid #45615a;
+            border: 1px solid #6b9f8d;
             color: var(--teal-strong);
-            background: #162321;
+            background: #2a2b25;
+            font-family: 'DM Mono', ui-monospace, monospace;
             font-size: 10px;
             line-height: 1.2;
         }
@@ -618,7 +695,7 @@
         .selection-section,
         .command-section {
             padding: 18px 22px;
-            border: 1px solid var(--panel-line);
+            border: 1px solid var(--wood-line);
             border-top: 0;
             background: var(--panel);
         }
@@ -631,13 +708,22 @@
         }
 
         .section-heading h3 { margin: 0; color: var(--text); font-size: 14px; }
-        .section-heading small { color: var(--faint); font-size: 11px; }
-        .option-help { margin-top: 5px; font-size: 12px; }
+        .section-heading small {
+            color: var(--faint);
+            font-family: 'DM Mono', ui-monospace, monospace;
+            font-size: 11px;
+        }
+        .option-help {
+            margin-top: 5px;
+            font-family: 'DM Mono', ui-monospace, monospace;
+            font-size: 12px;
+        }
 
         .washi-status {
             min-height: 18px;
             margin: 10px 0 0;
             color: var(--muted);
+            font-family: 'DM Mono', ui-monospace, monospace;
             font-size: 12px;
         }
 
@@ -652,14 +738,14 @@
             display: flex;
             justify-content: flex-end;
             padding: 13px 22px;
-            border: 1px solid var(--panel-line);
+            border: 1px solid var(--wood-line);
             border-top: 0;
             background: var(--panel);
         }
 
         .command-section {
             border-top: 1px solid var(--panel-line);
-            background: #101616;
+            background: var(--wood-deep);
         }
 
         .command-header {
@@ -669,7 +755,11 @@
             gap: 12px;
         }
 
-        .command-state { color: var(--faint); font-size: 11px; }
+        .command-state {
+            color: var(--faint);
+            font-family: 'DM Mono', ui-monospace, monospace;
+            font-size: 11px;
+        }
         .command-state.is-ready { color: var(--success); }
 
         .command-value {
@@ -679,7 +769,7 @@
             border: 1px solid var(--field-line);
             color: var(--teal-strong);
             background: var(--field);
-            font-family: 'Special Elite', ui-monospace, monospace;
+            font-family: 'DM Mono', ui-monospace, monospace;
             font-size: 14px;
             overflow-wrap: anywhere;
         }
@@ -694,6 +784,7 @@
             min-height: 19px;
             margin: 8px 0 0;
             color: var(--muted);
+            font-family: 'DM Mono', ui-monospace, monospace;
             font-size: 12px;
         }
 
@@ -709,7 +800,7 @@
             display: flex;
             justify-content: flex-end;
             padding: 13px 22px 17px;
-            border: 1px solid var(--panel-line);
+            border: 1px solid var(--wood-line);
             border-top: 0;
             background: var(--panel);
         }
@@ -719,27 +810,18 @@
             align-items: flex-end;
             justify-content: space-between;
             gap: 12px;
-            margin: 0 0 10px;
+            margin: 0 0 6px;
         }
 
         .preview-heading h2 { font-size: 18px; }
-
-        .preview-user-label {
-            max-width: 55%;
-            color: var(--gold-soft);
-            font-family: 'Special Elite', monospace;
-            font-size: 11px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
 
         .stage {
             display: flex;
             align-items: flex-start;
             justify-content: center;
-            min-height: 360px;
-            padding: 36px 16px 24px;
+            min-height: 210px;
+            height: 210px;
+            padding: 16px;
             overflow: hidden;
             border: 1px solid var(--paper-line);
             background: var(--paper);
@@ -751,31 +833,39 @@
             flex-direction: column;
             align-items: center;
             width: 100%;
-            gap: 17px;
-        }
-
-        .preview-hint {
-            max-width: 300px;
-            color: #61706a;
-            font-size: 12px;
-            line-height: 1.5;
-            text-align: center;
+            gap: 8px;
         }
 
         .preview-note {
             display: flex;
             justify-content: space-between;
             gap: 12px;
-            margin-top: 10px;
+            margin-top: 5px;
             color: var(--muted);
+            font-family: 'DM Mono', ui-monospace, monospace;
             font-size: 11px;
         }
 
         .preview-note strong { color: var(--teal); font-weight: 700; }
 
-        .mobile-selection-summary { display: none; }
+        /* Each progress state owns one task surface. The mobile layout adds
+           ordering/sticky behavior below, but these stage boundaries are
+           shared at every viewport width. */
+        .page-grid[data-mobile-step="1"] #builder-workbench,
+        .page-grid[data-mobile-step="2"] #account-gate,
+        .page-grid[data-mobile-step="2"] #command-stage,
+        .page-grid[data-mobile-step="3"] #account-gate,
+        .page-grid[data-mobile-step="3"] #mode-tabs,
+        .page-grid[data-mobile-step="3"] #quick-panel,
+        .page-grid[data-mobile-step="3"] #manual-panel,
+        .page-grid[data-mobile-step="3"] #washi-section,
+        .page-grid[data-mobile-step="3"] #selection-section,
+        .page-grid[data-mobile-step="3"] #stage2-actions,
+        .page-grid[data-mobile-step="3"] .workbench-heading {
+            display: none !important;
+        }
 
-        .username-dash { margin-right: 4px; font-family: 'Caveat', cursive; }
+        .username-dash { margin-right: 4px; font-family: 'Special Elite', monospace; }
 
         .decor-card {
             width: max-content !important;
@@ -797,104 +887,78 @@
             transform-origin: top left;
         }
 
-        .modal-dialog {
-            width: min(520px, calc(100% - 28px));
-            max-width: 520px;
-            padding: 0;
-            border: 1px solid var(--field-line);
-            border-radius: 0;
-            color: var(--text);
-            background: var(--panel);
-            box-shadow: var(--shadow);
-        }
-
-        .modal-dialog::backdrop { background: rgba(5, 8, 8, .78); }
-        .modal-card { padding: 24px; }
-
-        .modal-close-row {
-            display: flex;
-            justify-content: flex-end;
-            margin: -8px -8px 4px 0;
-        }
-
-        .modal-close {
-            width: 32px;
-            height: 32px;
-            padding: 0;
-            border: 1px solid transparent;
-            color: var(--muted);
-            background: transparent;
-            font-size: 22px;
-            line-height: 1;
-        }
-
-        .modal-close:hover { border-color: var(--field-line); color: var(--text); }
-        .modal-command { margin-top: 18px; }
-
-        .modal-command input {
-            color: var(--teal-strong);
-            font-family: 'Special Elite', ui-monospace, monospace;
-        }
-
-        .modal-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 9px;
-            margin-top: 16px;
-        }
-
-        .modal-status {
-            min-height: 20px;
-            margin-top: 8px;
-            color: var(--success);
-            font-size: 12px;
-        }
-
         [hidden] { display: none !important; }
 
         /* The preview card stays at chat's natural size. JS scales its wrapper so
            long prefix/suffix combinations remain faithful instead of squishing. */
         @media (max-width: 960px) {
-            .page-grid { grid-template-columns: minmax(0, 1fr) minmax(320px, 390px); gap: 16px; padding: 18px; }
+            .page-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                padding: 18px;
+            }
             .site-header-inner { padding-inline: 18px; }
-            .stage { min-height: 320px; }
+            html { scroll-padding-top: 270px; }
+            .progress-rail { order: 2; }
+            .controls-column { order: 3; }
+            .preview-column {
+                align-self: stretch;
+                width: calc(100% + 36px);
+                order: 1;
+                position: sticky;
+                top: env(safe-area-inset-top, 0px);
+                margin: 0 -18px;
+                padding: 10px 18px 11px;
+            }
+            .stage { min-height: 210px; height: 210px; }
         }
 
         @media (max-width: 760px) {
-            .site-header-inner { min-height: 62px; padding: 10px 14px; }
+            .site-header-inner {
+                min-height: calc(62px + env(safe-area-inset-top));
+                padding: calc(10px + env(safe-area-inset-top)) 14px 10px;
+            }
             .account-summary { display: none; }
-            .page-grid { display: flex; flex-direction: column; gap: 12px; padding: 12px 14px 28px; }
-            .progress-rail { order: 0; padding: 11px 12px 10px; }
+            html { scroll-padding-top: 185px; }
+            .page-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                padding: 12px 14px calc(28px + env(safe-area-inset-bottom));
+            }
+            .progress-rail { order: 2; padding: 11px 12px 10px; }
             .progress-list { gap: 5px; }
-            .progress-step { min-height: 41px; padding: 6px; gap: 6px; }
+            .progress-step { min-height: 54px; padding: 6px; gap: 6px; }
             .progress-number { width: 23px; height: 23px; }
             .progress-copy small { display: none; }
-            .controls-column { order: 2; }
-            .preview-column { order: 3; position: static; }
-            .page-grid[data-account-ready="true"][data-mobile-step="2"] .preview-column,
-            .page-grid[data-account-ready="true"][data-mobile-step="3"] .preview-column {
-                position: sticky;
-                top: 62px;
-                z-index: 30;
+            .controls-column { order: 3; }
+            .controls-column button,
+            .controls-column input,
+            .controls-column select { scroll-margin-top: 185px; }
+            .preview-column {
                 order: 1;
+                position: sticky;
+                top: env(safe-area-inset-top, 0px);
+                align-self: stretch;
+                width: calc(100% + 28px);
                 margin: 0 -14px;
-                padding: 8px 14px 9px;
-                border-bottom: 1px solid var(--panel-line);
-                background: var(--ink);
+                padding: 0 14px 1px;
             }
 
-            .page-grid[data-account-ready="true"][data-mobile-step="2"] .controls-column,
-            .page-grid[data-account-ready="true"][data-mobile-step="3"] .controls-column { order: 2; }
-
-            .page-grid[data-mobile-step="2"] #account-gate,
-            .page-grid[data-mobile-step="3"] #account-gate { display: none; }
-            .page-grid[data-mobile-step="1"] #builder-workbench { display: none !important; }
-            .page-grid[data-mobile-step="3"] #mode-tabs,
-            .page-grid[data-mobile-step="3"] #quick-panel,
-            .page-grid[data-mobile-step="3"] #manual-panel,
-            .page-grid[data-mobile-step="3"] #washi-section,
-            .page-grid[data-mobile-step="3"] #selection-section,
-            .page-grid[data-mobile-step="3"] #stage2-actions { display: none !important; }
+            .progress-copy strong {
+                overflow: visible;
+                text-overflow: clip;
+                white-space: normal;
+                font-size: 10px;
+                line-height: 1.12;
+            }
+            .progress-copy strong::after {
+                display: block;
+                margin: 2px 0 0 !important;
+                font-size: 8px !important;
+                line-height: 1;
+            }
 
             .gate-panel { padding: 22px 18px; }
             .workbench-heading,
@@ -910,25 +974,12 @@
             .desktop-select { display: none; }
             .mobile-choice-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; margin-top: 8px; }
             .achievement-list { max-height: none; }
-            .preview-column .preview-heading { margin: 0 0 5px; align-items: center; }
+            .preview-column .preview-heading { margin: 0; align-items: center; }
             .preview-column .preview-kicker,
             .preview-column .preview-heading h2 { display: none; }
-            .preview-column .preview-user-label { max-width: 68%; font-size: 10px; }
-            .stage { min-height: 132px; height: 132px; padding: 10px 12px; box-shadow: none; }
+            .stage { min-height: 128px; height: 128px; padding: 0 12px; box-shadow: none; }
             .preview-wrap { gap: 0; }
-            .preview-hint { display: none; }
-            .preview-note { margin-top: 5px; font-size: 10px; }
-            .mobile-selection-summary {
-                display: block;
-                min-height: 18px;
-                margin: 3px 0 0;
-                color: var(--muted);
-                font-size: 10px;
-                line-height: 1.35;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-            }
+            .preview-note { margin-top: 0; font-size: 8px; line-height: 1; }
             .stage-navigation { padding-inline: 18px; }
             .change-user-row { padding-inline: 18px; }
         }
@@ -941,6 +992,283 @@
                 transition-duration: .01ms !important;
             }
         }
+
+        /* Aurora Lodge instrument-panel polish. The Subathon clock remains the
+           source of truth: wood shell, fine brass bevel, then a recessed face. */
+        body {
+            background:
+                radial-gradient(circle at 50% -12%, rgba(69, 43, 92, .34), transparent 36rem),
+                linear-gradient(150deg, #170b11, #0e0910 68%);
+        }
+
+        .site-header {
+            border-bottom-color: rgba(168, 120, 62, .48);
+            background:
+                radial-gradient(ellipse at 18% -20%, rgba(255, 221, 154, .09), transparent 42%),
+                linear-gradient(110deg, #211014, #120b10 72%);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, .24);
+        }
+
+        .preview-column,
+        .progress-rail,
+        .gate-panel {
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #a8783e;
+            border-radius: 12px;
+            background:
+                radial-gradient(ellipse at 22% -8%, rgba(255, 221, 154, .13), transparent 38%),
+                linear-gradient(104deg, rgba(255, 255, 255, .035), transparent 38%, rgba(0, 0, 0, .14) 76%),
+                linear-gradient(125deg, #4f2c2b, #351a21 29%, #160b11 87%);
+            box-shadow:
+                inset 0 0 0 3px rgba(23, 8, 12, .52),
+                inset 0 1px 0 rgba(255, 230, 176, .3),
+                0 0 0 1px rgba(32, 12, 14, .85),
+                0 14px 28px rgba(0, 0, 0, .3);
+        }
+
+        .preview-column::before,
+        .progress-rail::before,
+        .gate-panel::before {
+            content: "";
+            position: absolute;
+            z-index: 0;
+            inset: 0;
+            opacity: .38;
+            pointer-events: none;
+            background-image:
+                repeating-linear-gradient(91deg, transparent 0 13px, rgba(255, 226, 178, .055) 14px, transparent 16px 37px),
+                repeating-linear-gradient(87deg, transparent 0 31px, rgba(10, 2, 5, .19) 33px, transparent 36px 79px);
+            background-size: 211px 100%, 307px 100%;
+            mix-blend-mode: soft-light;
+        }
+
+        .preview-column > *,
+        .progress-rail > *,
+        .gate-panel > * { position: relative; z-index: 1; }
+
+        .preview-column {
+            position: sticky;
+            top: env(safe-area-inset-top, 0px);
+            padding: 14px 16px 15px;
+        }
+        .preview-heading { align-items: center; margin-bottom: 9px; }
+        .preview-heading h2 { color: var(--cream); text-shadow: 0 2px 2px rgba(0, 0, 0, .62); }
+
+        .stage {
+            border: 2px solid rgba(23, 8, 12, .82);
+            border-radius: 8px;
+            background:
+                radial-gradient(circle at 50% 0, rgba(107, 71, 158, .2), transparent 54%),
+                linear-gradient(150deg, #211629, #100b16 72%);
+            box-shadow:
+                inset 0 0 0 2px rgba(255, 219, 154, .075),
+                inset 0 0 28px rgba(0, 0, 0, .72),
+                0 0 0 1px rgba(255, 225, 163, .07);
+        }
+
+        .preview-note { justify-content: flex-end; }
+        .preview-note strong { color: var(--gold-soft); }
+
+        .progress-rail { padding: 16px 18px 14px; }
+        .progress-step {
+            border-color: rgba(255, 225, 163, .16);
+            border-radius: 7px;
+            background:
+                radial-gradient(circle at 22% 0, rgba(107, 71, 158, .12), transparent 56%),
+                linear-gradient(150deg, #211629, #100b16 72%);
+            box-shadow: inset 0 0 0 1px rgba(255, 219, 154, .045);
+        }
+
+        .progress-step:hover:not(:disabled),
+        .progress-step[aria-current="step"] {
+            border-color: var(--gold);
+            background: linear-gradient(145deg, #2b1a2f, #140d1a 78%);
+            box-shadow: inset 0 0 0 1px rgba(255, 225, 163, .1), 0 0 14px rgba(98, 234, 215, .12);
+        }
+
+        .progress-number,
+        .gate-number {
+            border-radius: 7px 3px 7px 3px;
+            background: linear-gradient(145deg, #29172d, #120b16 78%);
+            box-shadow: inset 0 0 0 1px rgba(255, 225, 163, .07);
+        }
+
+        .progress-step[aria-current="step"] .progress-number {
+            border-color: var(--gold);
+            color: var(--cream);
+            background: linear-gradient(145deg, #3b2a36, #17101e 78%);
+            box-shadow: inset 0 0 0 1px rgba(255, 225, 163, .12), 0 0 10px rgba(98, 234, 215, .18);
+        }
+
+        .panel:not(.gate-panel),
+        .workbench-heading,
+        .mode-tabs,
+        .mode-panel,
+        .option-section,
+        .selection-section,
+        .stage-navigation,
+        .command-section {
+            border-color: rgba(168, 120, 62, .78);
+            background:
+                radial-gradient(circle at 20% 0, rgba(107, 71, 158, .1), transparent 48%),
+                linear-gradient(148deg, #21141e, #130c14 76%);
+            box-shadow: inset 0 0 0 1px rgba(255, 219, 154, .045);
+        }
+
+        .workbench-heading {
+            border-width: 2px 2px 0;
+            border-radius: 12px 12px 0 0;
+            padding: 26px 28px 22px;
+        }
+
+        .command-section {
+            border-width: 2px;
+            border-radius: 8px;
+            box-shadow: inset 0 0 24px rgba(0, 0, 0, .34), 0 10px 22px rgba(0, 0, 0, .2);
+        }
+
+        .workbench { margin-top: 24px; }
+        .mode-tab { min-height: 62px; padding: 14px 18px; }
+        .mode-panel,
+        .option-section,
+        .selection-section { padding: 24px 28px; }
+        .stage-navigation { padding: 18px 28px; }
+        .quick-filters { margin-top: 20px; gap: 16px; }
+        .achievement-list { gap: 12px; margin-top: 20px; }
+        .slot-grid,
+        .washi-grid { gap: 18px; margin-top: 20px; }
+        .mode-intro,
+        .option-help { line-height: 1.6; }
+
+        input[type="text"],
+        input[readonly],
+        select,
+        .choice-button,
+        .command-value {
+            border-color: rgba(201, 150, 69, .56);
+            border-radius: 7px;
+            background: linear-gradient(150deg, #17101d, #0e0a13 76%);
+            box-shadow: inset 0 0 12px rgba(0, 0, 0, .32);
+        }
+
+        .mode-tab[aria-selected="true"] {
+            color: var(--cream);
+            background: linear-gradient(145deg, #342433, #17101e 78%);
+            box-shadow: inset 0 -3px var(--gold), inset 0 1px rgba(255, 225, 163, .12);
+        }
+
+        .mode-tab[aria-selected="true"]::first-line { color: var(--gold-soft); }
+
+        .achievement-card {
+            border-color: rgba(201, 150, 69, .38);
+            border-radius: 8px;
+            padding: 16px 18px;
+            background: linear-gradient(145deg, #2a1821, #170e16 76%);
+            box-shadow: inset 0 0 0 1px rgba(255, 225, 163, .035);
+        }
+
+        .achievement-card:hover,
+        .achievement-card[aria-pressed="true"] {
+            background: linear-gradient(145deg, #3e242a, #1b1018 76%);
+        }
+
+        .chip {
+            border-color: rgba(98, 234, 215, .46);
+            border-radius: 5px;
+            background: rgba(20, 23, 25, .76);
+        }
+
+        .button {
+            border-radius: 7px;
+            background: linear-gradient(180deg, #42242c, #211217 82%);
+            box-shadow: inset 0 1px rgba(255, 225, 163, .1);
+        }
+
+        .button-primary {
+            border-color: var(--teal);
+            color: var(--cream);
+            background: linear-gradient(145deg, #2b4547, #17272b 78%);
+            box-shadow: inset 0 1px rgba(255, 255, 255, .1), 0 0 10px rgba(98, 234, 215, .12);
+        }
+
+        .button-primary:hover:not(:disabled) {
+            color: var(--cream);
+            background: linear-gradient(145deg, #35605f, #1b3437 78%);
+        }
+
+        .button-gold {
+            border-color: var(--gold-soft);
+            color: #211014;
+            background: linear-gradient(180deg, #ffe1a0, #c99645 72%, #9d6d37);
+            box-shadow: inset 0 1px rgba(255, 249, 223, .72), 0 0 14px rgba(201, 150, 69, .2);
+        }
+
+        .button-gold:hover:not(:disabled) {
+            border-color: #fff1c4;
+            background: linear-gradient(180deg, #fff1c4, #ddb461 72%, #b5803d);
+        }
+
+        .change-user-short { display: none; }
+
+        @media (max-width: 960px) {
+            .preview-column { padding: 12px 18px 13px; }
+        }
+
+        @media (max-width: 760px) {
+            .account-summary { display: flex; }
+            .account-summary > span { display: none; }
+            .change-user-long { display: none; }
+            .change-user-short { display: inline; }
+            .account-summary .text-button { min-height: 44px; font-size: 11px; }
+            .header-copy h1 { font-size: clamp(16px, 5.3vw, 20px); }
+            .header-copy .eyebrow { display: none; }
+
+            .preview-column {
+                width: calc(100% + 20px);
+                margin-inline: -10px;
+                padding: 8px 10px 9px;
+                border-radius: 10px;
+            }
+
+            .stage {
+                align-items: center;
+                min-height: 210px;
+                height: 210px;
+                padding: 0 10px;
+                border-radius: 7px;
+                box-shadow: inset 0 0 0 2px rgba(255, 219, 154, .06), inset 0 0 20px rgba(0, 0, 0, .64);
+            }
+
+            .preview-note { margin-top: 2px; }
+            .progress-rail { padding: 12px; }
+            .progress-step { border-radius: 6px; }
+            .workbench-heading,
+            .mode-panel,
+            .option-section,
+            .selection-section { padding: 22px 20px; }
+            .mode-tab { min-height: 66px; padding: 15px 12px; }
+            .achievement-list { gap: 14px; margin-top: 22px; }
+            .achievement-card { padding: 17px 16px; }
+            .stage-navigation { padding: 18px 20px; }
+            .section-heading {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .progress-step {
+                min-height: 44px;
+                justify-content: center;
+                padding: 5px;
+            }
+            .progress-copy { display: none; }
+            .progress-number { width: 28px; height: 28px; }
+            .command-actions { justify-content: center; }
+            .command-actions .button-gold { width: 100%; }
+        }
     </style>
 </head>
 <body>
@@ -948,19 +1276,49 @@
 
     <header class="site-header">
         <div class="site-header-inner">
-            <div class="brand-mark" aria-hidden="true">PB</div>
             <div class="header-copy">
                 <p class="eyebrow">Stream loadout workbench</p>
                 <h1>Build a decoration command</h1>
             </div>
             <div class="account-summary" id="account-summary" hidden>
                 <span>Editing <strong id="account-name">-</strong></span>
-                <button class="text-button" id="change-user-header" type="button">Change username</button>
+                <button class="text-button" id="change-user-header" type="button"><span class="change-user-long">Change username</span><span class="change-user-short">Change</span></button>
             </div>
         </div>
     </header>
 
     <main class="page-grid">
+        <aside class="preview-column" id="preview-column" aria-labelledby="preview-title">
+            <div class="preview-heading">
+                <div>
+                    <p class="preview-kicker">Live preview</p>
+                    <h2 id="preview-title">See your stream name tag</h2>
+                </div>
+            </div>
+            <div class="stage" id="preview-stage">
+                <div class="preview-wrap">
+                    <div id="card-scaler">
+                        <div class="decor-card" id="decor-card">
+                            <div class="decor-background" id="decor-background"></div>
+                            <div id="washi-tape" class="washi" style="display:none;"></div>
+                            <div class="content">
+                                <div class="message message-text name-tag" id="preview-message">This is my chat message!</div>
+                                <div class="name-line">
+                                    <span class="name-prefix name-tag" id="preview-prefix"></span>
+                                    <span class="username-dash" id="preview-dash">&mdash;</span>
+                                    <span class="name-base name-effects-none name-tag" id="preview-name">YourName</span>
+                                    <span class="name-suffix name-tag" id="preview-suffix"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="preview-note">
+                <strong id="preview-selection-count">0 selected</strong>
+            </div>
+        </aside>
+
         <nav class="progress-rail" id="progress-rail" aria-label="Builder progress">
             <p class="section-label">Build flow</p>
             <ol class="progress-list">
@@ -979,7 +1337,7 @@
                 <li>
                     <button class="progress-step" id="progress-step-3" type="button" data-step="3" disabled>
                         <span class="progress-number">3</span>
-                        <span class="progress-copy"><strong>Save</strong><small>Copy the chat command</small></span>
+                        <span class="progress-copy"><strong>Copy command</strong><small>Take it to live chat</small></span>
                     </button>
                 </li>
             </ol>
@@ -1037,7 +1395,7 @@
                         <div class="option-field">
                             <label for="cat-select">Achievement category</label>
                             <select class="desktop-select" id="cat-select" aria-describedby="quick-filter-help"></select>
-                            <div class="mobile-choice-grid" id="category-choices" aria-label="Achievement categories"></div>
+                            <div class="mobile-choice-grid" id="category-choices" role="group" aria-label="Achievement categories"></div>
                         </div>
                     </div>
                     <p class="option-help" id="quick-filter-help">Choose a category, then tap an achievement card below to load its coherent set.</p>
@@ -1051,27 +1409,27 @@
                         <div class="option-field">
                             <label for="prefix-select">Prefix</label>
                             <select class="desktop-select" id="prefix-select"><option value="">None</option></select>
-                            <div class="mobile-choice-grid" id="prefix-choices" aria-label="Prefix choices"></div>
+                            <div class="mobile-choice-grid" id="prefix-choices" role="group" aria-label="Prefix choices"></div>
                         </div>
                         <div class="option-field">
                             <label for="name-select">Name style</label>
                             <select class="desktop-select" id="name-select"><option value="">None</option></select>
-                            <div class="mobile-choice-grid" id="name-choices" aria-label="Name style choices"></div>
+                            <div class="mobile-choice-grid" id="name-choices" role="group" aria-label="Name style choices"></div>
                         </div>
                         <div class="option-field">
                             <label for="suffix-select">Suffix</label>
                             <select class="desktop-select" id="suffix-select"><option value="">None</option></select>
-                            <div class="mobile-choice-grid" id="suffix-choices" aria-label="Suffix choices"></div>
+                            <div class="mobile-choice-grid" id="suffix-choices" role="group" aria-label="Suffix choices"></div>
                         </div>
                         <div class="option-field">
                             <label for="message-select">Message style</label>
                             <select class="desktop-select" id="message-select"><option value="">None</option></select>
-                            <div class="mobile-choice-grid" id="message-choices" aria-label="Message style choices"></div>
+                            <div class="mobile-choice-grid" id="message-choices" role="group" aria-label="Message style choices"></div>
                         </div>
                         <div class="option-field">
                             <label for="bg-select">Card background</label>
                             <select class="desktop-select" id="bg-select"><option value="">None</option></select>
-                            <div class="mobile-choice-grid" id="bg-choices" aria-label="Card background choices"></div>
+                            <div class="mobile-choice-grid" id="bg-choices" role="group" aria-label="Card background choices"></div>
                         </div>
                     </div>
                 </section>
@@ -1087,17 +1445,17 @@
                         <div class="option-field">
                             <label for="washi-color-select">Tape color</label>
                             <select class="desktop-select" id="washi-color-select"><option value="">None</option></select>
-                            <div class="mobile-choice-grid" id="washi-color-choices" aria-label="Washi color choices"></div>
+                            <div class="mobile-choice-grid" id="washi-color-choices" role="group" aria-label="Washi color choices"></div>
                         </div>
                         <div class="option-field">
                             <label for="washi-pos-select">Tape position</label>
                             <select class="desktop-select" id="washi-pos-select"><option value="">None</option></select>
-                            <div class="mobile-choice-grid" id="washi-pos-choices" aria-label="Washi position choices"></div>
+                            <div class="mobile-choice-grid" id="washi-pos-choices" role="group" aria-label="Washi position choices"></div>
                         </div>
                     </div>
                 </section>
 
-                <section class="selection-section" aria-labelledby="selection-title">
+                <section class="selection-section" id="selection-section" aria-labelledby="selection-title">
                     <div class="section-heading">
                         <h3 id="selection-title">Current selection</h3>
                         <small id="selection-count">0 choices</small>
@@ -1105,81 +1463,28 @@
                     <div class="selection-chips" id="selection-summary"><span class="chip chip-muted">Nothing selected yet</span></div>
                 </section>
 
-                <section class="command-section" aria-labelledby="command-title">
+                <div class="stage-navigation" id="stage2-actions">
+                    <button class="button button-primary" id="continue-command-btn" type="button" disabled>Continue to command</button>
+                </div>
+
+                <section class="command-section" id="command-stage" aria-labelledby="command-title">
                     <div class="command-header">
                         <p class="command-label" id="command-title">Chat command</p>
                         <span class="command-state" id="command-state">Waiting for a valid selection</span>
                     </div>
                     <div class="command-value is-placeholder" id="command-value" aria-live="polite">Choose at least one decoration.</div>
                     <p class="command-feedback" id="command-feedback" role="status" aria-live="polite">The command will appear here when it is ready.</p>
-                    <p class="option-help">Save opens the command; it does not save a decoration on this page.</p>
+                    <p class="option-help">Copy this command, then use it in chat while the stream is live.</p>
                     <div class="command-actions">
-                        <button class="button button-gold" id="save-btn" type="button" disabled>Save</button>
-                        <button class="button" id="copy-btn" type="button" disabled>Copy command</button>
+                        <button class="button button-gold" id="copy-btn" type="button" disabled>Copy command</button>
+                        <button class="button button-small" id="back-to-selection-btn" type="button">Back to choose</button>
                         <span class="status-line ok" id="copy-status" role="status" aria-live="polite"></span>
                     </div>
                 </section>
-
-                <div class="change-user-row">
-                    <button class="text-button" id="change-user-btn" type="button">Change username</button>
-                </div>
             </section>
         </div>
 
-        <aside class="preview-column" aria-labelledby="preview-title">
-            <div class="preview-heading">
-                <div>
-                    <p class="preview-kicker">Live preview</p>
-                    <h2 id="preview-title">See your stream name tag</h2>
-                </div>
-                <span class="preview-user-label" id="preview-user-label">Waiting for username</span>
-            </div>
-            <div class="stage" id="preview-stage">
-                <div class="preview-wrap">
-                    <div id="card-scaler">
-                        <div class="decor-card" id="decor-card">
-                            <div class="decor-background" id="decor-background"></div>
-                            <div id="washi-tape" class="washi" style="display:none;"></div>
-                            <div class="content">
-                                <div class="message message-text name-tag" id="preview-message">This is my chat message!</div>
-                                <div class="name-line">
-                                    <span class="name-prefix name-tag" id="preview-prefix"></span>
-                                    <span class="username-dash" id="preview-dash">&mdash;</span>
-                                    <span class="name-base name-effects-none name-tag" id="preview-name">YourName</span>
-                                    <span class="name-suffix name-tag" id="preview-suffix"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="preview-hint" id="preview-hint">Load your account to preview the decorations you have unlocked.</p>
-                </div>
-            </div>
-            <div class="preview-note">
-                <span id="preview-mode-label">Account not loaded</span>
-                <strong id="preview-selection-count">0 selected</strong>
-            </div>
-        </aside>
     </main>
-
-    <dialog class="modal-dialog" id="command-dialog" aria-labelledby="modal-title">
-        <div class="modal-card">
-            <div class="modal-close-row">
-                <button class="modal-close" id="modal-close-btn" type="button" aria-label="Close command dialog">&times;</button>
-            </div>
-            <p class="panel-kicker">Command ready</p>
-            <h2 id="modal-title">Your decoration is ready to use</h2>
-            <p>Use this command in chat while the stream is live to set up your new decoration.</p>
-            <div class="modal-command">
-                <label class="command-label" for="modal-command-input">Copy this exact command</label>
-                <input id="modal-command-input" type="text" readonly spellcheck="false" aria-describedby="modal-copy-status">
-            </div>
-            <p class="modal-status" id="modal-copy-status" role="status" aria-live="polite"></p>
-            <div class="modal-actions">
-                <button class="button button-primary" id="modal-copy-btn" type="button">Copy command</button>
-                <button class="button" id="modal-back-btn" type="button">Back to builder</button>
-            </div>
-        </div>
-    </dialog>
 
     <input type="hidden" id="message-input" value="This is my chat message!">
 
@@ -1194,6 +1499,6 @@
     <script src="static/js/builder/card/name/translate-glow.js"></script>
     <script src="static/js/builder/card/name/translate-effects.js"></script>
     <script src="static/js/builder/card/name/name.js"></script>
-    <script src="builder/builder.js"></script>
+    <script src="builder/builder.js?v=2"></script>
 </body>
 </html>

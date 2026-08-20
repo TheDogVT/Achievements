@@ -14,6 +14,15 @@
         message_text:    'message-select',
         card_background: 'bg-select',
     };
+    const CHOICE_IDS = {
+        name_prefix: 'prefix-choices',
+        name_base: 'name-choices',
+        name_suffix: 'suffix-choices',
+        message_text: 'message-choices',
+        card_background: 'bg-choices',
+        washi_color: 'washi-color-choices',
+        washi_position: 'washi-pos-choices',
+    };
     const SLOT_ORDER = ['name_prefix', 'name_base', 'name_suffix', 'message_text', 'card_background'];
     const SLOT_LABELS = {
         name_prefix:     'Prefix',
@@ -46,6 +55,8 @@
     let currentCategory = '';
     let currentAchievement = '';
     let mode = 'quick';
+    let mobileStep = 1;
+    let copyCompleted = false;
     let quickApplying = false;
     let loadToken = 0;
     let copyTimer = null;
@@ -99,16 +110,31 @@
         return item.entry.display_name || item.entry.config?.label || item.id;
     }
 
+    function achievementCategoryLabel(category) {
+        return String(category || 'other')
+            .replace(/[_-]+/g, ' ')
+            .trim()
+            .toUpperCase();
+    }
+
     function setGateState(state, message) {
         const gate = $('account-gate');
         const messageElement = $('gate-message');
         const actions = $('gate-actions');
         const builder = $('builder-workbench');
         const summary = $('account-summary');
+        const page = document.querySelector('.page-grid');
         if (!gate || !builder) return;
 
         gate.dataset.state = state;
         const ready = state === 'ready';
+        if (page) {
+            page.dataset.accountReady = String(ready);
+            if (!ready) {
+                mobileStep = 1;
+                page.dataset.mobileStep = '1';
+            }
+        }
         builder.hidden = !ready;
         builder.setAttribute('aria-hidden', String(!ready));
         if (summary) summary.hidden = !ready;
@@ -130,10 +156,11 @@
         } else {
             setStatus('load-status', 'Enter your username to begin.', 'info');
         }
+        updateProgress();
     }
 
     function resetControls() {
-        [...SLOT_ORDER.map(slot => SLOT_IDS[slot]), 'washi-color-select', 'washi-pos-select', 'cat-select', 'ach-select']
+        [...SLOT_ORDER.map(slot => SLOT_IDS[slot]), 'washi-color-select', 'washi-pos-select', 'cat-select']
             .forEach(id => {
                 const select = $(id);
                 if (!select) return;
@@ -143,6 +170,10 @@
             });
         $('quick-achievements').replaceChildren();
         $('quick-empty').hidden = true;
+        ['category-choices', ...SLOT_ORDER.map(slot => CHOICE_IDS[slot]), CHOICE_IDS.washi_color, CHOICE_IDS.washi_position]
+            .map(id => $(id))
+            .filter(Boolean)
+            .forEach(element => element.replaceChildren());
     }
 
     function showUsernameGate({ keepValue = true } = {}) {
@@ -153,11 +184,10 @@
         currentCategory = '';
         currentAchievement = '';
         mode = 'quick';
+        mobileStep = 1;
+        copyCompleted = false;
         if (!keepValue) $('username-input').value = '';
         $('account-name').textContent = '-';
-        $('preview-user-label').textContent = 'Waiting for username';
-        $('preview-mode-label').textContent = 'Account not loaded';
-        $('preview-hint').hidden = false;
         resetControls();
         setGateState('idle');
         setMode('quick');
@@ -165,7 +195,7 @@
     }
 
     function showLoadError(state, message) {
-        $('preview-hint').hidden = false;
+        copyCompleted = false;
         setGateState(state, message);
         resetControls();
         renderPreview();
@@ -175,7 +205,13 @@
         const select = $(SLOT_IDS[slot]);
         const items = availableEntries()
             .filter(item => item.entry.slot === slot)
-            .sort((a, b) => entryLabel(a).localeCompare(entryLabel(b)));
+            .sort((a, b) => {
+                const categoryDelta = achievementCategoryLabel(a.entry.achievement_category)
+                    .localeCompare(achievementCategoryLabel(b.entry.achievement_category));
+                const nameDelta = String(a.entry.achievement_name || 'Unnamed achievement')
+                    .localeCompare(String(b.entry.achievement_name || 'Unnamed achievement'));
+                return categoryDelta || nameDelta || a.id.localeCompare(b.id);
+            });
         select.replaceChildren();
         if (!items.length) {
             appendOption(select, 'No unlocked choices', '');
@@ -183,12 +219,19 @@
             return;
         }
         appendOption(select, 'None', '');
-        items.forEach(item => appendOption(
-            select,
-            item.entry.achievement_name ? `${entryLabel(item)} - ${item.entry.achievement_name}` : entryLabel(item),
-            item.id,
-            active[slot] === item.id,
-        ));
+        let currentCategory = '';
+        let currentGroup = null;
+        items.forEach(item => {
+            const category = String(item.entry.achievement_category || 'other');
+            if (category !== currentCategory) {
+                currentCategory = category;
+                currentGroup = document.createElement('optgroup');
+                currentGroup.label = achievementCategoryLabel(category);
+                select.appendChild(currentGroup);
+            }
+            const achievementName = String(item.entry.achievement_name || 'Unnamed achievement');
+            appendOption(currentGroup, achievementName, item.id, active[slot] === item.id);
+        });
         select.disabled = false;
     }
 
@@ -269,19 +312,6 @@
             : quickGroups;
     }
 
-    function renderAchievementSelect() {
-        const select = $('ach-select');
-        const groups = groupsForCurrentCategory();
-        select.replaceChildren();
-        appendOption(select, groups.length ? 'Choose an achievement' : 'No achievements in this category', '');
-        groups.forEach(group => appendOption(select, group.name, group.key, group.key === currentAchievement));
-        select.disabled = !groups.length;
-        if (!groups.some(group => group.key === currentAchievement)) {
-            currentAchievement = '';
-            select.value = '';
-        }
-    }
-
     function createAchievementCard(group) {
         const button = document.createElement('button');
         button.type = 'button';
@@ -318,17 +348,84 @@
         return button;
     }
 
+    function renderChoiceButtons(selectId, containerId, changeHandler) {
+        const select = $(selectId);
+        const container = $(containerId);
+        if (!select || !container) return;
+        container.replaceChildren();
+        const options = [...select.options];
+        if (select.disabled && options.length <= 1 && options[0]?.value === '') {
+            const unavailable = document.createElement('button');
+            unavailable.type = 'button';
+            unavailable.className = 'choice-button';
+            unavailable.disabled = true;
+            unavailable.textContent = options[0]?.textContent || 'Load account first';
+            container.appendChild(unavailable);
+            return;
+        }
+        let previousGroup = null;
+        options.forEach(option => {
+            const parent = option.parentElement;
+            const group = parent && parent.tagName === 'OPTGROUP' ? parent : null;
+            if (group && group !== previousGroup) {
+                const heading = document.createElement('div');
+                heading.className = 'choice-category-heading';
+                heading.setAttribute('role', 'heading');
+                heading.setAttribute('aria-level', '4');
+                heading.textContent = group.label;
+                container.appendChild(heading);
+            }
+            previousGroup = group;
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'choice-button';
+            button.dataset.value = option.value;
+            button.textContent = option.textContent;
+            button.disabled = select.disabled || option.disabled;
+            button.setAttribute('aria-pressed', String(option.value === select.value));
+            button.addEventListener('click', () => {
+                const wasAtCommand = mobileStep === 3;
+                select.value = option.value;
+                changeHandler();
+                const color = $('washi-color-select')?.value;
+                const position = $('washi-pos-select')?.value;
+                const washiIncomplete = (color || position) && !(color && position);
+                if (wasAtCommand && washiIncomplete && (selectId === 'washi-color-select' || selectId === 'washi-pos-select')) return;
+                window.requestAnimationFrame(() => {
+                    const replacement = [...container.querySelectorAll('.choice-button')]
+                        .find(choice => choice.dataset.value === option.value);
+                    if (replacement) replacement.focus();
+                });
+            });
+            container.appendChild(button);
+        });
+    }
+
+    function renderCategoryChoices() {
+        renderChoiceButtons('cat-select', 'category-choices', onCategoryChange);
+    }
+
+    function syncChoiceControls() {
+        renderCategoryChoices();
+        SLOT_ORDER.forEach(slot => renderChoiceButtons(SLOT_IDS[slot], CHOICE_IDS[slot], onSlotChange));
+        renderChoiceButtons('washi-color-select', CHOICE_IDS.washi_color, onWashiChange);
+        renderChoiceButtons('washi-pos-select', CHOICE_IDS.washi_position, onWashiChange);
+    }
+
     function renderQuickCards() {
         const list = $('quick-achievements');
         const empty = $('quick-empty');
         const groups = groupsForCurrentCategory();
         list.replaceChildren();
-        groups.forEach(group => list.appendChild(createAchievementCard(group)));
+        if (currentCategory) groups.forEach(group => list.appendChild(createAchievementCard(group)));
         empty.hidden = groups.length > 0;
-        if (!groups.length) empty.textContent = quickGroups.length
-            ? 'No unlocked decorations are linked to an achievement in this category.'
-            : 'No unlocked decorations are linked to an achievement yet. Use Build manually to inspect your available slots.';
-        renderAchievementSelect();
+        if (!currentCategory) {
+            empty.hidden = false;
+            empty.textContent = 'Choose an achievement category to see your available choices.';
+        } else if (!groups.length) {
+            empty.textContent = 'No unlocked decorations are linked to an achievement in this category.';
+        }
+        renderCategoryChoices();
     }
 
     function populateQuickAchievements() {
@@ -336,7 +433,7 @@
         const categories = [...new Set(quickGroups.map(group => group.category))].sort();
         const categorySelect = $('cat-select');
         categorySelect.replaceChildren();
-        appendOption(categorySelect, categories.length ? 'All categories' : 'No achievement groups', '');
+        appendOption(categorySelect, categories.length ? 'Choose a category' : 'No achievement groups', '');
         categories.forEach(category => appendOption(categorySelect, toTitleCase(category), category));
         categorySelect.disabled = !categories.length;
         if (!categories.includes(currentCategory)) currentCategory = '';
@@ -350,9 +447,6 @@
         populateQuickAchievements();
         $('unlock-summary').textContent = `${availableEntries().length} unlocked`;
         $('account-name').textContent = userRecord.username || $('username-input').value.trim();
-        $('preview-user-label').textContent = userRecord.username || $('username-input').value.trim();
-        $('preview-mode-label').textContent = mode === 'quick' ? 'Quick Load mode' : 'Manual mode';
-        $('preview-hint').hidden = true;
         renderPreview();
     }
 
@@ -538,14 +632,85 @@
         scalePreviewCard();
     }
 
+    function updateProgress(validation) {
+        const page = document.querySelector('.page-grid');
+        const hasAccount = Boolean(userRecord);
+        const valid = validation ? validation.valid : (hasAccount && validateSelection().valid);
+        const steps = [
+            { id: 'progress-step-1', step: 1, available: true, complete: hasAccount },
+            { id: 'progress-step-2', step: 2, available: hasAccount, complete: valid },
+            { id: 'progress-step-3', step: 3, available: valid, complete: copyCompleted },
+        ];
+        steps.forEach(item => {
+            const button = $(item.id);
+            if (!button) return;
+            button.disabled = !item.available;
+            button.dataset.state = item.complete ? 'complete' : (item.available ? 'available' : 'locked');
+            const visibleLabel = button.querySelector('.progress-copy')?.textContent.trim().replace(/\s+/g, ' ')
+                || `Step ${item.step}`;
+            const stateLabel = item.complete ? 'complete' : (item.available ? 'available' : 'locked');
+            button.setAttribute('aria-label', `${visibleLabel} (${stateLabel}${mobileStep === item.step ? ', current' : ''})`);
+            if (mobileStep === item.step) button.setAttribute('aria-current', 'step');
+            else button.removeAttribute('aria-current');
+        });
+        if (page) {
+            page.dataset.mobileStep = String(mobileStep);
+            page.dataset.accountReady = String(hasAccount);
+        }
+    }
+
+    function focusMobileStep(step) {
+        if (step === 1) {
+            $('username-input').focus();
+            return;
+        }
+        if (step === 2) {
+            if (mode === 'quick' && currentCategory) {
+                const selectedCard = document.querySelector('.achievement-card[aria-pressed="true"]');
+                (selectedCard || document.querySelector('#quick-achievements .achievement-card') || $('cat-select')).focus();
+            } else {
+                const firstChoice = document.querySelector('#category-choices .choice-button:not(:disabled)')
+                    || document.querySelector('#prefix-choices .choice-button:not(:disabled)')
+                    || $('cat-select');
+                firstChoice.focus();
+            }
+            return;
+        }
+        $('copy-btn').focus();
+    }
+
+    function setMobileStep(requestedStep, { focus = true } = {}) {
+        const hasAccount = Boolean(userRecord);
+        const valid = hasAccount && validateSelection().valid;
+        const wantsCommand = Number(requestedStep) === 3;
+        const hasPartialWashi = Boolean($('washi-color-select').value || $('washi-pos-select').value)
+            && !Boolean($('washi-color-select').value && $('washi-pos-select').value);
+        const maxStep = !hasAccount ? 1 : (valid ? 3 : 2);
+        mobileStep = Math.max(1, Math.min(Number(requestedStep) || 1, maxStep));
+        updateProgress({ valid });
+        if (focus) window.requestAnimationFrame(() => {
+            if (wantsCommand && !valid && hasPartialWashi) focusIncompleteWashi();
+            else focusMobileStep(mobileStep);
+        });
+    }
+
+    function focusIncompleteWashi() {
+        const color = $('washi-color-select').value;
+        const position = $('washi-pos-select').value;
+        const choiceId = !color ? CHOICE_IDS.washi_color : CHOICE_IDS.washi_position;
+        const selectId = !color ? 'washi-color-select' : 'washi-pos-select';
+        const target = document.querySelector(`#${choiceId} .choice-button:not(:disabled)`) || $(selectId);
+        if (target) target.focus();
+    }
+
     function updateCommand() {
         renderSelectionSummary();
         const validation = validateSelection();
         const commandValue = $('command-value');
         const commandState = $('command-state');
         const feedback = $('command-feedback');
-        const save = $('save-btn');
         const copy = $('copy-btn');
+        const continueCommand = $('continue-command-btn');
         const color = $('washi-color-select').value;
         const position = $('washi-pos-select').value;
         const washiStatus = $('washi-status');
@@ -556,8 +721,9 @@
         commandState.classList.toggle('is-ready', validation.valid);
         feedback.textContent = validation.message;
         feedback.classList.toggle('is-error', !validation.valid && Boolean(color || position));
-        save.disabled = !validation.valid;
         copy.disabled = !validation.valid;
+        if (continueCommand) continueCommand.disabled = !validation.valid;
+        if (!validation.valid) copyCompleted = false;
 
         if (color && position) {
             washiStatus.textContent = 'Washi complete. Both values will be included in the command.';
@@ -572,6 +738,12 @@
             washiStatus.textContent = 'No Washi selected.';
             washiStatus.className = 'washi-status';
         }
+        if (mobileStep === 3 && !validation.valid) {
+            setMobileStep(2, { focus: false });
+            if (color || position) window.requestAnimationFrame(focusIncompleteWashi);
+        }
+        updateProgress(validation);
+        syncChoiceControls();
     }
 
     function scalePreviewCard() {
@@ -592,7 +764,7 @@
         const group = quickGroups.find(candidate => candidate.key === key);
         if (!group) return;
         currentAchievement = group.key;
-        $('ach-select').value = group.key;
+        copyCompleted = false;
         quickApplying = true;
         SLOT_ORDER.forEach(slot => { $(SLOT_IDS[slot]).value = ''; });
         group.coherentEntries.forEach(item => {
@@ -613,12 +785,8 @@
         $('manual-tab').tabIndex = quick ? -1 : 0;
         $('quick-panel').hidden = !quick;
         $('manual-panel').hidden = quick;
-        $('preview-mode-label').textContent = userRecord
-            ? (quick ? 'Quick Load mode' : 'Manual mode')
-            : 'Account not loaded';
         if (!quick) {
             currentAchievement = '';
-            $('ach-select').value = '';
             renderQuickCards();
         }
     }
@@ -626,24 +794,27 @@
     function onCategoryChange() {
         currentCategory = $('cat-select').value;
         currentAchievement = '';
+        copyCompleted = false;
         renderQuickCards();
+        syncChoiceControls();
     }
 
     function onAchievementChange() {
-        const key = $('ach-select').value;
-        if (key) applyQuickAchievement(key);
+        const selectedCard = document.querySelector('.achievement-card[aria-pressed="true"]');
+        if (selectedCard) applyQuickAchievement(selectedCard.dataset.achievement);
     }
 
     function onSlotChange() {
+        copyCompleted = false;
         if (!quickApplying) {
             currentAchievement = '';
-            $('ach-select').value = '';
             document.querySelectorAll('.achievement-card[aria-pressed="true"]').forEach(card => card.setAttribute('aria-pressed', 'false'));
         }
         renderPreview();
     }
 
     function onWashiChange() {
+        copyCompleted = false;
         renderPreview();
     }
 
@@ -693,35 +864,15 @@
         try {
             await copyText(command);
             setCopyFeedback('Copied.', false, targetId);
+            if (targetId === 'copy-status') {
+                copyCompleted = true;
+                updateProgress({ valid: true });
+            }
             return true;
         } catch (error) {
             setCopyFeedback('Copy failed. Select the command and copy it manually.', true, targetId);
             return false;
         }
-    }
-
-    function closeCommandDialog() {
-        const dialog = $('command-dialog');
-        if (!dialog) return;
-        if (typeof dialog.close === 'function' && dialog.open) dialog.close();
-        else dialog.removeAttribute('open');
-        $('save-btn').focus();
-    }
-
-    function saveCommand() {
-        const validation = validateSelection();
-        if (!validation.valid) {
-            updateCommand();
-            return;
-        }
-        const dialog = $('command-dialog');
-        const commandInput = $('modal-command-input');
-        commandInput.value = validation.command;
-        $('modal-copy-status').textContent = '';
-        if (typeof dialog.showModal === 'function') dialog.showModal();
-        else dialog.setAttribute('open', '');
-        commandInput.focus();
-        commandInput.select();
     }
 
     function wireModeTabs() {
@@ -748,19 +899,14 @@
             window.loadUser();
         });
         $('cat-select').addEventListener('change', onCategoryChange);
-        $('ach-select').addEventListener('change', onAchievementChange);
         SLOT_ORDER.forEach(slot => $(SLOT_IDS[slot]).addEventListener('change', onSlotChange));
         $('washi-color-select').addEventListener('change', onWashiChange);
         $('washi-pos-select').addEventListener('change', onWashiChange);
-        $('save-btn').addEventListener('click', saveCommand);
         $('copy-btn').addEventListener('click', () => copyCommand());
-        $('modal-copy-btn').addEventListener('click', () => copyCommand($('modal-command-input').value, 'modal-copy-status'));
-        $('modal-close-btn').addEventListener('click', closeCommandDialog);
-        $('modal-back-btn').addEventListener('click', closeCommandDialog);
-        $('change-user-btn').addEventListener('click', () => {
-            showUsernameGate();
-            $('username-input').focus();
-            $('username-input').select();
+        $('continue-command-btn').addEventListener('click', () => setMobileStep(3));
+        $('back-to-selection-btn').addEventListener('click', () => setMobileStep(2));
+        [1, 2, 3].forEach(step => {
+            $('progress-step-' + step).addEventListener('click', () => setMobileStep(step));
         });
         $('change-user-header').addEventListener('click', () => {
             showUsernameGate();
@@ -787,6 +933,14 @@
         }
 
         const requestToken = ++loadToken;
+        userRecord = null;
+        unlockedSet = new Set();
+        quickGroups = [];
+        currentCategory = '';
+        currentAchievement = '';
+        mode = 'quick';
+        mobileStep = 1;
+        copyCompleted = false;
         setGateState('loading');
         input.disabled = true;
         $('load-btn').disabled = true;
@@ -806,11 +960,15 @@
             unlockedSet = new Set(Array.isArray(record.decorations?.unlocked) ? record.decorations.unlocked : []);
             const entries = availableEntries();
             if (!entries.length) {
+                userRecord = null;
+                unlockedSet = new Set();
                 showLoadError('empty', 'This account is known, but it has no published decoration unlocks to build from yet.');
                 return;
             }
+            setMode('quick');
             populateDropdowns(record.decorations?.active || {});
             setGateState('ready');
+            setMobileStep(2);
         } catch (error) {
             if (requestToken !== loadToken) return;
             userRecord = null;
@@ -829,7 +987,6 @@
     window.onWashiChange = onWashiChange;
     window.stepSelect = stepSelect;
     window.copyCommand = copyCommand;
-    window.saveCommand = saveCommand;
 
     function init() {
         resetControls();
