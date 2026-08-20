@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Decoration Builder — TheDogVT</title>
+    <meta name="description" content="Build a PuppyBot decoration command from the decorations you have unlocked.">
+    <title>Build a PuppyBot decoration</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Audiowide&family=Bangers&family=Caveat:wght@500;600;700&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@400;600;700&family=Grenze+Gotisch:wght@400;700&family=Lato:wght@400;700&family=Lobster&family=Luckiest+Guy&family=Metamorphous&family=Orbitron:wght@400;700&family=Pacifico&family=Permanent+Marker&family=Playfair+Display:wght@400;700&family=Press+Start+2P&family=Rubik+Glitch&family=VT323&family=Rye&family=Satisfy&family=Shadows+Into+Light&family=Special+Elite&family=Uncial+Antiqua&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Bubblegum+Sans&family=Chewy&family=Comfortaa:wght@400;500;600;700&family=DynaPuff:wght@400;500;600;700&family=Fredoka:wght@400;500;600;700&family=Mochiy+Pop+One&family=Nunito:wght@400;600;700;800&family=Quicksand:wght@400;500;600;700&family=Varela+Round&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Black+Ops+One&family=Bowlby+One+SC&family=Bungee+Spice&family=Faster+One&family=Iceland&family=Kanit:ital,wght@0,400;0,700;1,400;1,700&family=Michroma&family=Rubik+Burned&family=Sigmar+One&family=Teko:wght@400;600;700&family=Titan+One&family=Tourney:wght@400;700&family=Wallpoet&family=WindSong:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Caveat:wght@500;600;700&family=Lato:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="static/css/builder/card/layout.css">
     <link rel="stylesheet" href="static/css/builder/card/backgrounds.css">
     <link rel="stylesheet" href="static/css/builder/card/background-renderers.css">
@@ -18,274 +17,778 @@
     <link rel="stylesheet" href="static/css/fullscreen/decorations.css">
     <style>
         :root {
-            --builder-accent: #7cd6c4;
-            --builder-accent2: #f2b35d;
-            --builder-panel: #121516;
-            --builder-panel2: #181d1e;
-            --builder-panel3: #202728;
-            --builder-field: #0d1011;
-            --builder-field-border: #3b4547;
-            --builder-text: #f5f7f2;
-            --builder-muted: #9aacaa;
-            --builder-success: #6dca8a;
-            --builder-danger: #ee746d;
+            --ink: #0d1011;
+            --ink-soft: #111718;
+            --panel: #151d1d;
+            --panel-raised: #1b2524;
+            --panel-line: #2d3a38;
+            --field: #0b0f10;
+            --field-line: #43504d;
+            --paper: #f3f4ef;
+            --paper-line: #d4d9d0;
+            --text: #f5f7f2;
+            --muted: #a7b5ad;
+            --faint: #73827b;
+            --teal: #7cd6c4;
+            --teal-strong: #a1f0df;
+            --gold: #f2b35d;
+            --gold-soft: #f5d19a;
+            --success: #83d69b;
+            --danger: #f08a7e;
+            --shadow: 0 20px 60px rgba(0, 0, 0, .24);
         }
+
+        * { box-sizing: border-box; }
+        html { min-width: 320px; background: var(--ink); }
 
         body {
-            font-family: 'Lato', sans-serif;
-            background: #0d1011;
-            color: var(--builder-text);
-            min-height: 100vh;
-            padding: 0;
             margin: 0;
+            min-height: 100vh;
+            background: var(--ink);
+            color: var(--text);
+            font-family: 'Lato', system-ui, sans-serif;
+            line-height: 1.45;
         }
 
-        .page-header {
-            background: linear-gradient(180deg, #181d1e, #111516);
-            border-bottom: 1px solid #2a3233;
-            padding: 14px 24px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
+        button, input, select { font: inherit; }
+        button { cursor: pointer; }
+
+        button:disabled,
+        select:disabled,
+        input:disabled {
+            cursor: not-allowed;
+            opacity: .52;
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--teal-strong);
+            outline-offset: 3px;
+        }
+
+        .skip-link {
+            position: fixed;
+            top: 8px;
+            left: 8px;
+            z-index: 100;
+            padding: 8px 12px;
+            color: var(--ink);
+            background: var(--teal-strong);
+            transform: translateY(-160%);
+        }
+
+        .skip-link:focus { transform: translateY(0); }
+
+        .site-header {
             position: sticky;
             top: 0;
             z-index: 40;
-        }
-        .page-header h1 {
-            font-size: 16px;
-            font-weight: 700;
-            letter-spacing: 0.04em;
-            color: var(--builder-text);
-        }
-        .page-header .kicker {
-            font-size: 11px;
-            color: var(--builder-muted);
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-        .page-header-dot {
-            width: 6px; height: 6px;
-            border-radius: 50%;
-            background: var(--builder-accent);
-            flex-shrink: 0;
+            border-bottom: 1px solid var(--panel-line);
+            background: var(--ink-soft);
         }
 
-        .builder-layout {
-            display: grid;
-            grid-template-columns: 340px 1fr;
-            gap: 0;
-            height: calc(100vh - 53px);
-        }
-
-        /* ── Controls panel ── */
-        .controls-panel {
-            background: var(--builder-panel2);
-            border-right: 1px solid #242c2d;
+        .site-header-inner {
             display: flex;
-            flex-direction: column;
-            overflow-y: auto;
+            align-items: center;
+            gap: 14px;
+            width: min(1280px, 100%);
+            min-height: 68px;
+            margin: 0 auto;
+            padding: 12px 24px;
         }
 
-        .section {
-            padding: 16px 18px;
-            border-bottom: 1px solid #242c2d;
+        .brand-mark {
+            display: grid;
+            place-items: center;
+            width: 34px;
+            height: 34px;
+            flex: 0 0 auto;
+            border: 1px solid var(--gold);
+            color: var(--gold-soft);
+            font-family: 'Special Elite', monospace;
+            font-size: 12px;
+            letter-spacing: .08em;
+            transform: rotate(-4deg);
         }
-        .section-label {
+
+        .header-copy { min-width: 0; }
+
+        .eyebrow,
+        .section-label,
+        .panel-kicker,
+        .preview-kicker,
+        .command-label {
+            margin: 0;
+            color: var(--faint);
             font-size: 10px;
             font-weight: 700;
-            letter-spacing: 0.1em;
+            letter-spacing: .13em;
+            line-height: 1.2;
             text-transform: uppercase;
-            color: var(--builder-muted);
-            margin-bottom: 10px;
         }
 
-        .field-row {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            margin-bottom: 10px;
-        }
-        .field-row:last-child { margin-bottom: 0; }
-
-        label {
-            font-size: 11px;
-            color: var(--builder-muted);
-            font-weight: 600;
-            letter-spacing: 0.04em;
+        .header-copy h1 {
+            margin: 2px 0 0;
+            color: var(--text);
+            font-family: 'Abril Fatface', Georgia, serif;
+            font-size: clamp(20px, 2.5vw, 29px);
+            font-weight: 400;
+            line-height: 1.08;
         }
 
-        input[type="text"], select {
-            width: 100%;
-            background: var(--builder-field);
-            border: 1px solid var(--builder-field-border);
-            color: var(--builder-text);
-            font-family: 'Lato', sans-serif;
-            font-size: 13px;
-            padding: 7px 10px;
-            border-radius: 5px;
-            outline: none;
-            transition: border-color 0.15s;
-        }
-        input[type="text"]:focus, select:focus {
-            border-color: var(--builder-accent);
-        }
-        select option { background: #1a2022; }
-        select:disabled { opacity: 0.4; cursor: not-allowed; }
-
-        .select-row {
-            display: flex;
-            gap: 4px;
-            align-items: center;
-        }
-        .select-row select { flex: 1; min-width: 0; }
-        .btn-step {
-            flex-shrink: 0;
-            background: var(--builder-panel3);
-            border: 1px solid var(--builder-field-border);
-            color: var(--builder-text);
-            font-size: 14px;
-            line-height: 1;
-            width: 30px;
-            height: 30px;
-            border-radius: 5px;
-            cursor: pointer;
+        .account-summary {
             display: flex;
             align-items: center;
-            justify-content: center;
-            transition: background 0.12s, border-color 0.12s;
-            padding: 0;
+            gap: 10px;
+            margin-left: auto;
+            color: var(--muted);
+            font-size: 12px;
         }
-        .btn-step:hover:not(:disabled) { background: #2a3537; border-color: var(--builder-accent); }
-        .btn-step:disabled { opacity: 0.25; cursor: not-allowed; }
 
-        .load-row {
-            display: flex;
+        .account-summary strong {
+            color: var(--teal-strong);
+            font-weight: 700;
+        }
+
+        .text-button {
+            padding: 4px 0;
+            border: 0;
+            color: var(--gold-soft);
+            background: transparent;
+            font-size: 12px;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .page-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(360px, 500px);
+            gap: 22px;
+            width: min(1280px, 100%);
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        .progress-rail {
+            grid-column: 1 / -1;
+            padding: 14px 18px 12px;
+            border: 1px solid var(--panel-line);
+            background: var(--panel);
+        }
+
+        .progress-rail > p { margin: 0 0 10px; }
+
+        .progress-list {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 8px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
         }
-        .load-row input { flex: 1; }
 
-        .btn {
-            background: var(--builder-panel3);
-            border: 1px solid var(--builder-field-border);
-            color: var(--builder-text);
-            font-family: 'Lato', sans-serif;
+        .progress-step {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            width: 100%;
+            min-height: 45px;
+            padding: 7px 9px;
+            border: 1px solid var(--panel-line);
+            color: var(--muted);
+            background: var(--ink-soft);
+            text-align: left;
+        }
+
+        .progress-step:hover:not(:disabled),
+        .progress-step[aria-current="step"] {
+            border-color: var(--teal);
+            color: var(--text);
+            background: #1e2b29;
+        }
+
+        .progress-step[aria-current="step"] .progress-number {
+            border-color: var(--teal);
+            color: var(--ink);
+            background: var(--teal);
+        }
+
+        .progress-step[data-state="complete"] .progress-number {
+            border-color: var(--gold);
+            color: var(--gold-soft);
+        }
+
+        .progress-number {
+            display: grid;
+            place-items: center;
+            width: 25px;
+            height: 25px;
+            flex: 0 0 auto;
+            border: 1px solid var(--field-line);
+            color: var(--faint);
+            font-family: 'Special Elite', monospace;
+            font-size: 11px;
+        }
+
+        .progress-copy { min-width: 0; }
+
+        .progress-copy strong,
+        .progress-copy small {
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .progress-copy strong { color: inherit; font-size: 12px; }
+        .progress-copy small { margin-top: 2px; color: var(--faint); font-size: 10px; }
+
+        .controls-column,
+        .preview-column { min-width: 0; }
+
+        .preview-column {
+            position: sticky;
+            top: 92px;
+            align-self: start;
+        }
+
+        .panel {
+            border: 1px solid var(--panel-line);
+            background: var(--panel);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, .16);
+        }
+
+        .gate-panel {
+            min-height: 255px;
+            padding: 28px;
+        }
+
+        .gate-panel[data-state="ready"] {
+            min-height: auto;
+            padding: 18px 22px;
+        }
+
+        .gate-heading {
+            display: grid;
+            grid-template-columns: 44px minmax(0, 1fr);
+            gap: 14px;
+            align-items: start;
+            margin-bottom: 22px;
+        }
+
+        .gate-number {
+            display: grid;
+            place-items: center;
+            width: 44px;
+            height: 44px;
+            border: 1px solid var(--gold);
+            color: var(--gold-soft);
+            font-family: 'Special Elite', monospace;
+            font-size: 17px;
+        }
+
+        .gate-heading h2,
+        .workbench-heading h2,
+        .preview-heading h2,
+        .modal-card h2 {
+            margin: 3px 0 0;
+            color: var(--text);
+            font-size: 20px;
+            line-height: 1.15;
+        }
+
+        .gate-heading p,
+        .workbench-heading p,
+        .mode-intro,
+        .option-help,
+        .modal-card p {
+            margin: 8px 0 0;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .field-group { margin: 0; }
+
+        .field-group label,
+        .option-field label {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--muted);
             font-size: 12px;
             font-weight: 700;
-            padding: 7px 14px;
-            border-radius: 5px;
-            cursor: pointer;
-            white-space: nowrap;
-            transition: background 0.12s, border-color 0.12s;
-            letter-spacing: 0.03em;
         }
-        .btn:hover { background: #2a3537; border-color: var(--builder-accent); }
-        .btn-accent {
-            background: var(--builder-accent);
-            border-color: var(--builder-accent);
-            color: #0d1011;
+
+        .input-row {
+            display: flex;
+            gap: 8px;
         }
-        .btn-accent:hover { background: #8fe8d5; border-color: #8fe8d5; }
+
+        input[type="text"],
+        input[readonly],
+        select {
+            width: 100%;
+            min-height: 40px;
+            padding: 9px 11px;
+            border: 1px solid var(--field-line);
+            border-radius: 2px;
+            color: var(--text);
+            background: var(--field);
+            font-size: 14px;
+        }
+
+        input::placeholder { color: var(--faint); }
+        select option { color: var(--text); background: var(--panel); }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 40px;
+            padding: 9px 15px;
+            border: 1px solid var(--field-line);
+            border-radius: 2px;
+            color: var(--text);
+            background: var(--panel-raised);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .04em;
+            line-height: 1.1;
+            text-transform: uppercase;
+            transition: border-color .16s ease, background-color .16s ease, color .16s ease;
+        }
+
+        .button:hover:not(:disabled) {
+            border-color: var(--teal);
+            background: #24312f;
+        }
+
+        .button-primary {
+            border-color: var(--teal);
+            color: var(--ink);
+            background: var(--teal);
+        }
+
+        .button-primary:hover:not(:disabled) {
+            border-color: var(--teal-strong);
+            color: var(--ink);
+            background: var(--teal-strong);
+        }
+
+        .button-gold {
+            border-color: var(--gold);
+            color: var(--ink);
+            background: var(--gold);
+        }
+
+        .button-gold:hover:not(:disabled) {
+            border-color: var(--gold-soft);
+            background: var(--gold-soft);
+        }
+
+        .button-small { min-height: 32px; padding: 6px 10px; font-size: 11px; }
 
         .status-line {
-            font-size: 11px;
-            min-height: 16px;
-            margin-top: 4px;
+            min-height: 20px;
+            margin: 8px 0 0;
+            color: var(--muted);
+            font-size: 12px;
         }
-        .status-line.ok   { color: var(--builder-success); }
-        .status-line.err  { color: var(--builder-danger); }
-        .status-line.info { color: var(--builder-muted); }
 
-        /* ── Command output ── */
-        .command-section {
-            padding: 16px 18px;
-            border-top: 1px solid #242c2d;
-            background: #111415;
-            position: sticky;
-            bottom: 0;
-            z-index: 20;
+        .status-line.ok { color: var(--success); }
+        .status-line.err { color: var(--danger); }
+        .status-line.info { color: var(--muted); }
+
+        .gate-message {
+            margin: 18px 0 0;
+            padding: 10px 12px;
+            border-left: 2px solid var(--gold);
+            color: var(--gold-soft);
+            background: rgba(242, 179, 93, .08);
+            font-size: 12px;
         }
-        .command-box {
+
+        .gate-actions {
             display: flex;
-            flex-direction: column;
-            gap: 8px;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 14px;
         }
-        .command-label {
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--builder-muted);
+
+        .workbench { margin-top: 18px; }
+
+        .workbench-heading {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 14px;
+            padding: 20px 22px 17px;
+            border: 1px solid var(--panel-line);
+            border-bottom: 0;
+            background: var(--panel);
         }
-        .command-value {
-            background: var(--builder-field);
-            border: 1px solid var(--builder-field-border);
-            border-radius: 5px;
-            padding: 9px 12px;
+
+        .unlock-summary {
+            flex: 0 0 auto;
+            padding: 5px 8px;
+            border: 1px solid #49655e;
+            color: var(--teal);
             font-family: 'Special Elite', monospace;
-            font-size: 13px;
-            color: var(--builder-accent);
-            word-break: break-all;
-            min-height: 38px;
-        }
-        .command-copy-row {
-            display: flex;
-            gap: 8px;
-            align-items: center;
-        }
-        .copy-status {
             font-size: 11px;
-            color: var(--builder-success);
-            opacity: 0;
-            transition: opacity 0.3s;
+            white-space: nowrap;
         }
-        .copy-status.show { opacity: 1; }
 
-        /* ── Stage (preview) ── */
+        .mode-tabs {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            border: 1px solid var(--panel-line);
+            background: var(--ink-soft);
+        }
+
+        .mode-tab {
+            min-height: 50px;
+            padding: 10px 14px;
+            border: 0;
+            border-right: 1px solid var(--panel-line);
+            color: var(--muted);
+            background: transparent;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .05em;
+            text-align: left;
+            text-transform: uppercase;
+        }
+
+        .mode-tab:last-child { border-right: 0; }
+
+        .mode-tab[aria-selected="true"] {
+            color: var(--ink);
+            background: var(--teal);
+        }
+
+        .mode-tab span {
+            display: block;
+            margin-top: 3px;
+            color: inherit;
+            font-size: 10px;
+            font-weight: 400;
+            letter-spacing: 0;
+            opacity: .8;
+            text-transform: none;
+        }
+
+        .mode-panel {
+            padding: 18px 22px;
+            border: 1px solid var(--panel-line);
+            border-top: 0;
+            background: var(--panel);
+        }
+
+        .quick-filters {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .mobile-choice-grid { display: none; }
+
+        .choice-button {
+            width: 100%;
+            min-height: 42px;
+            padding: 8px 10px;
+            border: 1px solid var(--field-line);
+            color: var(--muted);
+            background: var(--field);
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 1.2;
+            text-align: left;
+        }
+
+        .choice-button:hover:not(:disabled),
+        .choice-button[aria-pressed="true"] {
+            border-color: var(--teal);
+            color: var(--text);
+            background: #1e2b29;
+        }
+
+        .choice-button[aria-pressed="true"] {
+            box-shadow: inset 3px 0 0 var(--gold);
+            color: var(--teal-strong);
+        }
+
+        .choice-button:disabled {
+            border-style: dashed;
+            color: var(--faint);
+        }
+
+        .achievement-list {
+            display: grid;
+            gap: 8px;
+            max-height: 370px;
+            margin-top: 16px;
+            overflow: auto;
+            padding-right: 3px;
+        }
+
+        .achievement-card {
+            width: 100%;
+            padding: 12px 13px;
+            border: 1px solid var(--panel-line);
+            border-left: 3px solid var(--panel-line);
+            color: var(--text);
+            background: var(--panel-raised);
+            text-align: left;
+            transition: border-color .16s ease, background-color .16s ease, transform .16s ease;
+        }
+
+        .achievement-card:hover,
+        .achievement-card[aria-pressed="true"] {
+            border-color: var(--teal);
+            border-left-color: var(--gold);
+            background: #22302e;
+        }
+
+        .achievement-card[aria-pressed="true"] { transform: translateX(3px); }
+
+        .achievement-card-top {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .achievement-card-name { font-size: 14px; font-weight: 700; }
+
+        .achievement-card-category {
+            color: var(--gold-soft);
+            font-size: 10px;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .achievement-card-meta {
+            margin-top: 4px;
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        .achievement-card-chips,
+        .selection-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 9px;
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            max-width: 100%;
+            padding: 4px 7px;
+            border: 1px solid #45615a;
+            color: var(--teal-strong);
+            background: #162321;
+            font-size: 10px;
+            line-height: 1.2;
+        }
+
+        .chip-muted {
+            border-color: var(--panel-line);
+            color: var(--muted);
+            background: var(--panel-raised);
+        }
+
+        .empty-message {
+            margin: 16px 0 0;
+            padding: 14px;
+            border: 1px dashed var(--panel-line);
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .slot-grid,
+        .washi-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+            margin-top: 16px;
+        }
+
+        .option-section,
+        .selection-section,
+        .command-section {
+            padding: 18px 22px;
+            border: 1px solid var(--panel-line);
+            border-top: 0;
+            background: var(--panel);
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .section-heading h3 { margin: 0; color: var(--text); font-size: 14px; }
+        .section-heading small { color: var(--faint); font-size: 11px; }
+        .option-help { margin-top: 5px; font-size: 12px; }
+
+        .washi-status {
+            min-height: 18px;
+            margin: 10px 0 0;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .washi-status.is-error,
+        .command-feedback.is-error { color: var(--danger); }
+
+        .washi-status.is-ok { color: var(--success); }
+        .selection-section { padding-bottom: 14px; }
+        .selection-chips { min-height: 28px; margin-top: 11px; }
+
+        .stage-navigation {
+            display: flex;
+            justify-content: flex-end;
+            padding: 13px 22px;
+            border: 1px solid var(--panel-line);
+            border-top: 0;
+            background: var(--panel);
+        }
+
+        .command-section {
+            border-top: 1px solid var(--panel-line);
+            background: #101616;
+        }
+
+        .command-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .command-state { color: var(--faint); font-size: 11px; }
+        .command-state.is-ready { color: var(--success); }
+
+        .command-value {
+            min-height: 44px;
+            margin-top: 9px;
+            padding: 11px 12px;
+            border: 1px solid var(--field-line);
+            color: var(--teal-strong);
+            background: var(--field);
+            font-family: 'Special Elite', ui-monospace, monospace;
+            font-size: 14px;
+            overflow-wrap: anywhere;
+        }
+
+        .command-value.is-placeholder {
+            color: var(--muted);
+            font-family: 'Lato', system-ui, sans-serif;
+            font-size: 12px;
+        }
+
+        .command-feedback {
+            min-height: 19px;
+            margin: 8px 0 0;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .command-actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 9px;
+            margin-top: 10px;
+        }
+
+        .change-user-row {
+            display: flex;
+            justify-content: flex-end;
+            padding: 13px 22px 17px;
+            border: 1px solid var(--panel-line);
+            border-top: 0;
+            background: var(--panel);
+        }
+
+        .preview-heading {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 12px;
+            margin: 0 0 10px;
+        }
+
+        .preview-heading h2 { font-size: 18px; }
+
+        .preview-user-label {
+            max-width: 55%;
+            color: var(--gold-soft);
+            font-family: 'Special Elite', monospace;
+            font-size: 11px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
         .stage {
             display: flex;
             align-items: flex-start;
             justify-content: center;
-            background:
-                linear-gradient(90deg, rgba(18,21,22,0.045) 1px, transparent 1px) 0 0 / 28px 28px,
-                linear-gradient(180deg, rgba(18,21,22,0.045) 1px, transparent 1px) 0 0 / 28px 28px,
-                #f3f4ef;
-            padding: 48px 24px;
-            overflow-y: auto;
-            height: 100%;      /* override layout.css height: fit-content */
-            align-self: auto;  /* let grid handle it */
+            min-height: 360px;
+            padding: 36px 16px 24px;
+            overflow: hidden;
+            border: 1px solid var(--paper-line);
+            background: var(--paper);
+            box-shadow: var(--shadow);
         }
 
         .preview-wrap {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 16px;
             width: 100%;
-            max-width: 900px;
+            gap: 17px;
         }
 
-        /* Wave dash — mirrors fullscreen chat username-dash */
-        .username-dash {
-            font-family: 'Caveat', cursive;
-            margin-right: 4px;
+        .preview-hint {
+            max-width: 300px;
+            color: #61706a;
+            font-size: 12px;
+            line-height: 1.5;
+            text-align: center;
         }
 
-        /* Match fullscreen chat card dimensions exactly: min 450 (chat min-width),
-           grows to 530 for long prefix/suffix combos — same as fullscreen */
+        .preview-note {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 10px;
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        .preview-note strong { color: var(--teal); font-weight: 700; }
+
+        .mobile-selection-summary { display: none; }
+
+        .username-dash { margin-right: 4px; font-family: 'Caveat', cursive; }
+
         .decor-card {
+            width: max-content !important;
             min-width: 450px !important;
             max-width: 530px !important;
-            width: max-content !important;
         }
 
-        /* Scaler wrapper — JS sizes it to the SCALED card dimensions so flex centers it.
-           The card is absolutely positioned inside so its 450px layout footprint never
-           overflows or de-centers the scaler; only the JS transform resizes it visually. */
         #card-scaler {
             position: relative;
-            overflow: visible;
             flex-shrink: 0;
+            overflow: visible;
         }
+
         #card-scaler .decor-card {
             position: absolute;
             top: 0;
@@ -293,274 +796,404 @@
             margin: 0 !important;
             transform-origin: top left;
         }
-        .preview-hint {
+
+        .modal-dialog {
+            width: min(520px, calc(100% - 28px));
+            max-width: 520px;
+            padding: 0;
+            border: 1px solid var(--field-line);
+            border-radius: 0;
+            color: var(--text);
+            background: var(--panel);
+            box-shadow: var(--shadow);
+        }
+
+        .modal-dialog::backdrop { background: rgba(5, 8, 8, .78); }
+        .modal-card { padding: 24px; }
+
+        .modal-close-row {
+            display: flex;
+            justify-content: flex-end;
+            margin: -8px -8px 4px 0;
+        }
+
+        .modal-close {
+            width: 32px;
+            height: 32px;
+            padding: 0;
+            border: 1px solid transparent;
+            color: var(--muted);
+            background: transparent;
+            font-size: 22px;
+            line-height: 1;
+        }
+
+        .modal-close:hover { border-color: var(--field-line); color: var(--text); }
+        .modal-command { margin-top: 18px; }
+
+        .modal-command input {
+            color: var(--teal-strong);
+            font-family: 'Special Elite', ui-monospace, monospace;
+        }
+
+        .modal-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-top: 16px;
+        }
+
+        .modal-status {
+            min-height: 20px;
+            margin-top: 8px;
+            color: var(--success);
             font-size: 12px;
-            color: #8a9a98;
-            text-align: center;
-            max-width: 280px;
-            line-height: 1.5;
         }
 
-        /* ── Slot badge in dropdown ── */
-        .slot-badge {
-            display: inline-block;
-            font-size: 9px;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            padding: 1px 5px;
-            border-radius: 3px;
-            margin-left: 4px;
-            background: #2a3537;
-            color: var(--builder-muted);
-            vertical-align: middle;
+        [hidden] { display: none !important; }
+
+        /* The preview card stays at chat's natural size. JS scales its wrapper so
+           long prefix/suffix combinations remain faithful instead of squishing. */
+        @media (max-width: 960px) {
+            .page-grid { grid-template-columns: minmax(0, 1fr) minmax(320px, 390px); gap: 16px; padding: 18px; }
+            .site-header-inner { padding-inline: 18px; }
+            .stage { min-height: 320px; }
         }
 
-        .divider {
-            height: 1px;
-            background: #242c2d;
-            margin: 2px 0;
-        }
-
-        /* Responsive: stack on narrow screens */
-        @media (max-width: 780px) {
-            /* Drop the fixed-height grid — flex column so order works */
-            .builder-layout {
-                display: flex;
-                flex-direction: column;
-                height: auto;
-            }
-
-            /* Stage hoisted to top, sticky so it stays visible while scrolling */
-            .stage {
-                order: -1;
+        @media (max-width: 760px) {
+            .site-header-inner { min-height: 62px; padding: 10px 14px; }
+            .account-summary { display: none; }
+            .page-grid { display: flex; flex-direction: column; gap: 12px; padding: 12px 14px 28px; }
+            .progress-rail { order: 0; padding: 11px 12px 10px; }
+            .progress-list { gap: 5px; }
+            .progress-step { min-height: 41px; padding: 6px; gap: 6px; }
+            .progress-number { width: 23px; height: 23px; }
+            .progress-copy small { display: none; }
+            .controls-column { order: 2; }
+            .preview-column { order: 3; position: static; }
+            .page-grid[data-account-ready="true"][data-mobile-step="2"] .preview-column,
+            .page-grid[data-account-ready="true"][data-mobile-step="3"] .preview-column {
                 position: sticky;
-                top: 53px;
+                top: 62px;
                 z-index: 30;
-                height: 38vh !important;
-                min-height: 200px;
-                padding: 12px 16px;
+                order: 1;
+                margin: 0 -14px;
+                padding: 8px 14px 9px;
+                border-bottom: 1px solid var(--panel-line);
+                background: var(--ink);
+            }
+
+            .page-grid[data-account-ready="true"][data-mobile-step="2"] .controls-column,
+            .page-grid[data-account-ready="true"][data-mobile-step="3"] .controls-column { order: 2; }
+
+            .page-grid[data-mobile-step="2"] #account-gate,
+            .page-grid[data-mobile-step="3"] #account-gate { display: none; }
+            .page-grid[data-mobile-step="1"] #builder-workbench { display: none !important; }
+            .page-grid[data-mobile-step="3"] #mode-tabs,
+            .page-grid[data-mobile-step="3"] #quick-panel,
+            .page-grid[data-mobile-step="3"] #manual-panel,
+            .page-grid[data-mobile-step="3"] #washi-section,
+            .page-grid[data-mobile-step="3"] #selection-section,
+            .page-grid[data-mobile-step="3"] #stage2-actions { display: none !important; }
+
+            .gate-panel { padding: 22px 18px; }
+            .workbench-heading,
+            .mode-panel,
+            .option-section,
+            .selection-section,
+            .command-section { padding-inline: 18px; }
+            .workbench-heading { display: block; }
+            .unlock-summary { display: inline-block; margin-top: 11px; }
+            .quick-filters,
+            .slot-grid,
+            .washi-grid { grid-template-columns: 1fr; }
+            .desktop-select { display: none; }
+            .mobile-choice-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; margin-top: 8px; }
+            .achievement-list { max-height: none; }
+            .preview-column .preview-heading { margin: 0 0 5px; align-items: center; }
+            .preview-column .preview-kicker,
+            .preview-column .preview-heading h2 { display: none; }
+            .preview-column .preview-user-label { max-width: 68%; font-size: 10px; }
+            .stage { min-height: 132px; height: 132px; padding: 10px 12px; box-shadow: none; }
+            .preview-wrap { gap: 0; }
+            .preview-hint { display: none; }
+            .preview-note { margin-top: 5px; font-size: 10px; }
+            .mobile-selection-summary {
+                display: block;
+                min-height: 18px;
+                margin: 3px 0 0;
+                color: var(--muted);
+                font-size: 10px;
+                line-height: 1.35;
                 overflow: hidden;
-                box-shadow: 0 3px 12px rgba(0,0,0,0.4);
-                flex-shrink: 0;
+                text-overflow: ellipsis;
+                white-space: nowrap;
             }
+            .stage-navigation { padding-inline: 18px; }
+            .change-user-row { padding-inline: 18px; }
+        }
 
-            .preview-wrap {
-                gap: 8px;
-                height: 100%;
-                justify-content: center;
-            }
-
-            /* Scale + origin handled by the #card-scaler rules (top left) — no override here */
-
-            .preview-hint {
-                display: none;
-            }
-
-            /* Controls scroll below */
-            .controls-panel {
-                height: auto;
-                overflow-y: visible;
-            }
-
-            /* Bigger touch targets */
-            select, input[type="text"] {
-                font-size: 16px !important; /* prevents iOS zoom on focus */
-                padding: 10px 12px !important;
-            }
-
-            .btn {
-                padding: 10px 18px !important;
-                font-size: 14px !important;
-            }
-
-            .section {
-                padding: 14px 16px;
-            }
-
-            .command-section {
-                padding: 14px 16px;
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
             }
         }
     </style>
 </head>
 <body>
+    <a class="skip-link" href="#builder-workbench">Skip to builder</a>
 
-<header class="page-header">
-    <div class="page-header-dot"></div>
-    <h1>Decoration Builder</h1>
-</header>
-
-<div class="builder-layout">
-
-    <!-- ── Controls ── -->
-    <div class="controls-panel">
-
-        <div class="section">
-            <div class="section-label">Your Account</div>
-            <div class="field-row">
-                <label for="username-input">Twitch Username</label>
-                <div class="load-row">
-                    <input type="text" id="username-input" placeholder="YourName" autocomplete="off" spellcheck="false">
-                    <button class="btn" id="load-btn" onclick="loadUser()">Load</button>
-                </div>
-                <div class="status-line info" id="load-status"></div>
+    <header class="site-header">
+        <div class="site-header-inner">
+            <div class="brand-mark" aria-hidden="true">PB</div>
+            <div class="header-copy">
+                <p class="eyebrow">Stream loadout workbench</p>
+                <h1>Build a decoration command</h1>
+            </div>
+            <div class="account-summary" id="account-summary" hidden>
+                <span>Editing <strong id="account-name">-</strong></span>
+                <button class="text-button" id="change-user-header" type="button">Change username</button>
             </div>
         </div>
+    </header>
 
-        <input type="hidden" id="message-input" value="Sphinx of black quartz, judge my vow!">
+    <main class="page-grid">
+        <nav class="progress-rail" id="progress-rail" aria-label="Builder progress">
+            <p class="section-label">Build flow</p>
+            <ol class="progress-list">
+                <li>
+                    <button class="progress-step" id="progress-step-1" type="button" data-step="1" aria-current="step">
+                        <span class="progress-number">1</span>
+                        <span class="progress-copy"><strong>Load account</strong><small>Find your unlocks</small></span>
+                    </button>
+                </li>
+                <li>
+                    <button class="progress-step" id="progress-step-2" type="button" data-step="2" disabled>
+                        <span class="progress-number">2</span>
+                        <span class="progress-copy"><strong>Choose decoration</strong><small>Pick your loadout</small></span>
+                    </button>
+                </li>
+                <li>
+                    <button class="progress-step" id="progress-step-3" type="button" data-step="3" disabled>
+                        <span class="progress-number">3</span>
+                        <span class="progress-copy"><strong>Save</strong><small>Copy the chat command</small></span>
+                    </button>
+                </li>
+            </ol>
+        </nav>
 
-        <div class="section" id="quick-section">
-            <div class="section-label">Quick Select by Achievement</div>
-            <div class="field-row">
-                <label for="cat-select">Category</label>
-                <div class="select-row">
-                    <button class="btn-step" onclick="stepSelect('cat-select','onCategoryChange',-1)">&#8249;</button>
-                    <select id="cat-select" disabled onchange="onCategoryChange()">
-                        <option value=""></option>
-                    </select>
-                    <button class="btn-step" onclick="stepSelect('cat-select','onCategoryChange',1)">&#8250;</button>
-                </div>
-            </div>
-            <div class="field-row">
-                <label for="ach-select">Achievement</label>
-                <div class="select-row">
-                    <button class="btn-step" onclick="stepSelect('ach-select','onAchievementChange',-1)">&#8249;</button>
-                    <select id="ach-select" disabled onchange="onAchievementChange()">
-                        <option value="">— pick a category —</option>
-                    </select>
-                    <button class="btn-step" onclick="stepSelect('ach-select','onAchievementChange',1)">&#8250;</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="section" id="slots-section">
-            <div class="section-label">Decoration Slots</div>
-            <div class="field-row">
-                <label for="prefix-select">Prefix</label>
-                <div class="select-row">
-                    <button class="btn-step" onclick="stepSelect('prefix-select','onSlotChange',-1)">&#8249;</button>
-                    <select id="prefix-select" disabled onchange="onSlotChange()">
-                        <option value="">None</option>
-                    </select>
-                    <button class="btn-step" onclick="stepSelect('prefix-select','onSlotChange',1)">&#8250;</button>
-                </div>
-            </div>
-            <div class="field-row">
-                <label for="name-select">Name Style</label>
-                <div class="select-row">
-                    <button class="btn-step" onclick="stepSelect('name-select','onSlotChange',-1)">&#8249;</button>
-                    <select id="name-select" disabled onchange="onSlotChange()">
-                        <option value="">None</option>
-                    </select>
-                    <button class="btn-step" onclick="stepSelect('name-select','onSlotChange',1)">&#8250;</button>
-                </div>
-            </div>
-            <div class="field-row">
-                <label for="suffix-select">Suffix</label>
-                <div class="select-row">
-                    <button class="btn-step" onclick="stepSelect('suffix-select','onSlotChange',-1)">&#8249;</button>
-                    <select id="suffix-select" disabled onchange="onSlotChange()">
-                        <option value="">None</option>
-                    </select>
-                    <button class="btn-step" onclick="stepSelect('suffix-select','onSlotChange',1)">&#8250;</button>
-                </div>
-            </div>
-            <div class="field-row">
-                <label for="message-select">Message Text Style</label>
-                <div class="select-row">
-                    <button class="btn-step" onclick="stepSelect('message-select','onSlotChange',-1)">&#8249;</button>
-                    <select id="message-select" disabled onchange="onSlotChange()">
-                        <option value="">None</option>
-                    </select>
-                    <button class="btn-step" onclick="stepSelect('message-select','onSlotChange',1)">&#8250;</button>
-                </div>
-            </div>
-            <div class="field-row">
-                <label for="bg-select">Card Background</label>
-                <div class="select-row">
-                    <button class="btn-step" onclick="stepSelect('bg-select','onSlotChange',-1)">&#8249;</button>
-                    <select id="bg-select" disabled onchange="onSlotChange()">
-                        <option value="">None</option>
-                    </select>
-                    <button class="btn-step" onclick="stepSelect('bg-select','onSlotChange',1)">&#8250;</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="section" id="washi-section">
-            <div class="section-label">Washi Tape (Subscriber Perk)</div>
-            <div class="field-row">
-                <label for="washi-color-select">Tape Color</label>
-                <select id="washi-color-select" onchange="onWashiChange()">
-                    <option value="">None</option>
-                    <option value="washi_pink">Pink</option>
-                    <option value="washi_mint">Mint</option>
-                    <option value="washi_gold">Gold</option>
-                    <option value="washi_lavender">Lavender</option>
-                </select>
-            </div>
-            <div class="field-row">
-                <label for="washi-pos-select">Tape Position</label>
-                <select id="washi-pos-select" onchange="onWashiChange()">
-                    <option value="">None</option>
-                    <option value="washi_top_left">Top Left</option>
-                    <option value="washi_top_right">Top Right</option>
-                    <option value="washi_top_center">Top Center</option>
-                    <option value="washi_corner_tl">Corner</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="command-section">
-            <div class="command-box">
-                <div class="command-label">Chat Command</div>
-                <div class="command-value" id="command-value">!deco</div>
-                <div class="command-copy-row">
-                    <button class="btn btn-accent" id="copy-btn" onclick="copyCommand()">Copy</button>
-                    <span class="copy-status" id="copy-status">Copied!</span>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- ── Stage ── -->
-    <div class="stage">
-        <div class="preview-wrap">
-            <div id="card-scaler">
-                <div class="decor-card" id="decor-card">
-                    <div class="decor-background" id="decor-background"></div>
-                    <div id="washi-tape" class="washi" style="display:none;"></div>
-                    <div class="content">
-                        <div class="message message-text name-tag" id="preview-message">This is my chat message!</div>
-                        <div class="name-line">
-                            <span class="name-prefix name-tag" id="preview-prefix"></span>
-                            <span class="username-dash" id="preview-dash">⁓</span>
-                            <span class="name-base name-effects-none name-tag" id="preview-name">YourName</span>
-                            <span class="name-suffix name-tag" id="preview-suffix"></span>
-                        </div>
+        <div class="controls-column">
+            <section class="panel gate-panel" id="account-gate" data-state="idle" aria-labelledby="gate-title">
+                <div class="gate-heading">
+                    <div class="gate-number" aria-hidden="true">01</div>
+                    <div>
+                        <p class="panel-kicker">Start with your Twitch account</p>
+                        <h2 id="gate-title">Load your unlocked decorations</h2>
+                        <p>Enter the username you use in chat. Nothing can be selected until your public unlock list is loaded.</p>
                     </div>
                 </div>
-            </div>
-            <div class="preview-hint" id="preview-hint">Load your account to see your unlocked decorations.</div>
+                <form id="username-form" class="field-group">
+                    <label for="username-input">Twitch username</label>
+                    <div class="input-row">
+                        <input type="text" id="username-input" placeholder="YourName" autocomplete="username" spellcheck="false" maxlength="50">
+                        <button class="button button-primary" id="load-btn" type="submit">Load account</button>
+                    </div>
+                    <p class="status-line info" id="load-status" role="status" aria-live="polite">Enter your username to begin.</p>
+                </form>
+                <p class="gate-message" id="gate-message" hidden></p>
+                <div class="gate-actions" id="gate-actions" hidden>
+                    <button class="button button-small" id="retry-btn" type="button">Try again</button>
+                    <button class="button button-small" id="edit-user-btn" type="button">Edit username</button>
+                </div>
+            </section>
+
+            <section class="workbench" id="builder-workbench" hidden aria-hidden="true">
+                <div class="workbench-heading">
+                    <div>
+                        <p class="panel-kicker">Your unlocked loadout</p>
+                        <h2>Choose a look, then make the command</h2>
+                        <p>Use Quick Load for a matching achievement set, or build manually one slot at a time.</p>
+                    </div>
+                    <div class="unlock-summary" id="unlock-summary">0 unlocked</div>
+                </div>
+
+                <div class="mode-tabs" id="mode-tabs" role="tablist" aria-label="Decoration selection mode">
+                    <button class="mode-tab" id="quick-tab" type="button" role="tab" aria-selected="true" aria-controls="quick-panel">
+                        Quick Load
+                        <span>Choose by achievement</span>
+                    </button>
+                    <button class="mode-tab" id="manual-tab" type="button" role="tab" aria-selected="false" aria-controls="manual-panel" tabindex="-1">
+                        Build manually
+                        <span>Choose each slot</span>
+                    </button>
+                </div>
+
+                <section class="mode-panel" id="quick-panel" role="tabpanel" aria-labelledby="quick-tab">
+                    <p class="mode-intro">Each card below groups the unlocked decoration choices tied to one achievement.</p>
+                    <div class="quick-filters">
+                        <div class="option-field">
+                            <label for="cat-select">Achievement category</label>
+                            <select class="desktop-select" id="cat-select" aria-describedby="quick-filter-help"></select>
+                            <div class="mobile-choice-grid" id="category-choices" aria-label="Achievement categories"></div>
+                        </div>
+                    </div>
+                    <p class="option-help" id="quick-filter-help">Choose a category, then tap an achievement card below to load its coherent set.</p>
+                    <div class="achievement-list" id="quick-achievements" aria-live="polite"></div>
+                    <p class="empty-message" id="quick-empty" hidden>No unlocked decorations are linked to an achievement in this category.</p>
+                </section>
+
+                <section class="mode-panel" id="manual-panel" role="tabpanel" aria-labelledby="manual-tab" hidden>
+                    <p class="mode-intro">Pick any combination from the unlocked choices. A slot can stay on None.</p>
+                    <div class="slot-grid" id="slots-section">
+                        <div class="option-field">
+                            <label for="prefix-select">Prefix</label>
+                            <select class="desktop-select" id="prefix-select"><option value="">None</option></select>
+                            <div class="mobile-choice-grid" id="prefix-choices" aria-label="Prefix choices"></div>
+                        </div>
+                        <div class="option-field">
+                            <label for="name-select">Name style</label>
+                            <select class="desktop-select" id="name-select"><option value="">None</option></select>
+                            <div class="mobile-choice-grid" id="name-choices" aria-label="Name style choices"></div>
+                        </div>
+                        <div class="option-field">
+                            <label for="suffix-select">Suffix</label>
+                            <select class="desktop-select" id="suffix-select"><option value="">None</option></select>
+                            <div class="mobile-choice-grid" id="suffix-choices" aria-label="Suffix choices"></div>
+                        </div>
+                        <div class="option-field">
+                            <label for="message-select">Message style</label>
+                            <select class="desktop-select" id="message-select"><option value="">None</option></select>
+                            <div class="mobile-choice-grid" id="message-choices" aria-label="Message style choices"></div>
+                        </div>
+                        <div class="option-field">
+                            <label for="bg-select">Card background</label>
+                            <select class="desktop-select" id="bg-select"><option value="">None</option></select>
+                            <div class="mobile-choice-grid" id="bg-choices" aria-label="Card background choices"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="option-section" id="washi-section">
+                    <div class="section-heading">
+                        <h3>Washi tape</h3>
+                        <small>Optional subscriber flourish</small>
+                    </div>
+                    <p class="option-help">Washi is one choice with two required values. Choose both, or leave both on None.</p>
+                    <p class="washi-status" id="washi-status" role="status" aria-live="polite">No Washi selected.</p>
+                    <div class="washi-grid">
+                        <div class="option-field">
+                            <label for="washi-color-select">Tape color</label>
+                            <select class="desktop-select" id="washi-color-select"><option value="">None</option></select>
+                            <div class="mobile-choice-grid" id="washi-color-choices" aria-label="Washi color choices"></div>
+                        </div>
+                        <div class="option-field">
+                            <label for="washi-pos-select">Tape position</label>
+                            <select class="desktop-select" id="washi-pos-select"><option value="">None</option></select>
+                            <div class="mobile-choice-grid" id="washi-pos-choices" aria-label="Washi position choices"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="selection-section" aria-labelledby="selection-title">
+                    <div class="section-heading">
+                        <h3 id="selection-title">Current selection</h3>
+                        <small id="selection-count">0 choices</small>
+                    </div>
+                    <div class="selection-chips" id="selection-summary"><span class="chip chip-muted">Nothing selected yet</span></div>
+                </section>
+
+                <section class="command-section" aria-labelledby="command-title">
+                    <div class="command-header">
+                        <p class="command-label" id="command-title">Chat command</p>
+                        <span class="command-state" id="command-state">Waiting for a valid selection</span>
+                    </div>
+                    <div class="command-value is-placeholder" id="command-value" aria-live="polite">Choose at least one decoration.</div>
+                    <p class="command-feedback" id="command-feedback" role="status" aria-live="polite">The command will appear here when it is ready.</p>
+                    <p class="option-help">Save opens the command; it does not save a decoration on this page.</p>
+                    <div class="command-actions">
+                        <button class="button button-gold" id="save-btn" type="button" disabled>Save</button>
+                        <button class="button" id="copy-btn" type="button" disabled>Copy command</button>
+                        <span class="status-line ok" id="copy-status" role="status" aria-live="polite"></span>
+                    </div>
+                </section>
+
+                <div class="change-user-row">
+                    <button class="text-button" id="change-user-btn" type="button">Change username</button>
+                </div>
+            </section>
         </div>
-    </div>
 
-</div>
+        <aside class="preview-column" aria-labelledby="preview-title">
+            <div class="preview-heading">
+                <div>
+                    <p class="preview-kicker">Live preview</p>
+                    <h2 id="preview-title">See your stream name tag</h2>
+                </div>
+                <span class="preview-user-label" id="preview-user-label">Waiting for username</span>
+            </div>
+            <div class="stage" id="preview-stage">
+                <div class="preview-wrap">
+                    <div id="card-scaler">
+                        <div class="decor-card" id="decor-card">
+                            <div class="decor-background" id="decor-background"></div>
+                            <div id="washi-tape" class="washi" style="display:none;"></div>
+                            <div class="content">
+                                <div class="message message-text name-tag" id="preview-message">This is my chat message!</div>
+                                <div class="name-line">
+                                    <span class="name-prefix name-tag" id="preview-prefix"></span>
+                                    <span class="username-dash" id="preview-dash">&mdash;</span>
+                                    <span class="name-base name-effects-none name-tag" id="preview-name">YourName</span>
+                                    <span class="name-suffix name-tag" id="preview-suffix"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="preview-hint" id="preview-hint">Load your account to preview the decorations you have unlocked.</p>
+                </div>
+            </div>
+            <div class="preview-note">
+                <span id="preview-mode-label">Account not loaded</span>
+                <strong id="preview-selection-count">0 selected</strong>
+            </div>
+        </aside>
+    </main>
 
-<script>
-    window.DECORATION_NAME_CONFIG = {};
-    window.PUPPY_IMG_BASE = 'static/resources/backgrounds/';
-</script>
-<script src="static/js/builder/card/name/effects_manifest.js"></script>
-<script src="static/js/builder/card/particle_engine.js"></script>
-<script src="static/js/builder/card/background-renderers.js"></script>
-<script src="static/js/builder/card/name/translate-core.js"></script>
-<script src="static/js/builder/card/name/translate-glow.js"></script>
-<script src="static/js/builder/card/name/translate-effects.js"></script>
-<script src="static/js/builder/card/name/name.js"></script>
-<script src="builder/builder.js"></script>
+    <dialog class="modal-dialog" id="command-dialog" aria-labelledby="modal-title">
+        <div class="modal-card">
+            <div class="modal-close-row">
+                <button class="modal-close" id="modal-close-btn" type="button" aria-label="Close command dialog">&times;</button>
+            </div>
+            <p class="panel-kicker">Command ready</p>
+            <h2 id="modal-title">Your decoration is ready to use</h2>
+            <p>Use this command in chat while the stream is live to set up your new decoration.</p>
+            <div class="modal-command">
+                <label class="command-label" for="modal-command-input">Copy this exact command</label>
+                <input id="modal-command-input" type="text" readonly spellcheck="false" aria-describedby="modal-copy-status">
+            </div>
+            <p class="modal-status" id="modal-copy-status" role="status" aria-live="polite"></p>
+            <div class="modal-actions">
+                <button class="button button-primary" id="modal-copy-btn" type="button">Copy command</button>
+                <button class="button" id="modal-back-btn" type="button">Back to builder</button>
+            </div>
+        </div>
+    </dialog>
 
+    <input type="hidden" id="message-input" value="This is my chat message!">
+
+    <script>
+        window.DECORATION_NAME_CONFIG = {};
+        window.PUPPY_IMG_BASE = 'static/resources/backgrounds/';
+    </script>
+    <script src="static/js/builder/card/name/effects_manifest.js"></script>
+    <script src="static/js/builder/card/particle_engine.js"></script>
+    <script src="static/js/builder/card/background-renderers.js"></script>
+    <script src="static/js/builder/card/name/translate-core.js"></script>
+    <script src="static/js/builder/card/name/translate-glow.js"></script>
+    <script src="static/js/builder/card/name/translate-effects.js"></script>
+    <script src="static/js/builder/card/name/name.js"></script>
+    <script src="builder/builder.js"></script>
 </body>
 </html>
