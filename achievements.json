@@ -1,1 +1,9 @@
-{}
+{
+  "redeems": {
+    "redeem_checkin_1": {
+      "name": "Welcome Home Comutt.",
+      "desc": "Awarded for your first check-in.",
+      "amount": 1
+    }
+  }
+}
