@@ -4,38 +4,6 @@
       "name": "Welcome Home Comutt.",
       "desc": "Awarded for your first check-in.",
       "amount": 1
-    },
-    "redeem_checkin_2": {
-      "name": "Welcome Back Comutt.",
-      "desc": "Awarded for your second check-in.",
-      "amount": 2
-    },
-    "redeem_checkin_5": {
-      "name": "Reporting for view-y.",
-      "desc": "Awarded for your 5th check-in.",
-      "amount": 5
-    },
-    "redeem_checkin_10": {
-      "name": "I'm here, I'm here!",
-      "desc": "Awarded for your 10th check-in.",
-      "amount": 10
-    },
-    "redeem_first_1": {
-      "name": "Me First!",
-      "desc": "Awarded for getting first for the first time.",
-      "amount": 1
-    },
-    "redeem_total_5": {
-      "name": "Curious Redeemer.",
-      "desc": "Awarded for using 5 channel point redeems.",
-      "amount": 5,
-      "type": "total"
-    },
-    "redeem_total_10": {
-      "name": "Semi-Active Redeemer.",
-      "desc": "Awarded for using 10 channel point redeems.",
-      "amount": 10,
-      "type": "total"
     }
   }
 }
