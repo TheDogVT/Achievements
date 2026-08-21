@@ -413,7 +413,14 @@
                 select.appendChild(currentGroup);
             }
             const achievementName = String(item.entry.achievement_name || 'Unnamed achievement');
-            appendOption(currentGroup, achievementName, item.id, active[slot] === item.id);
+            const decorationText = String(item.entry.config?.text || '').trim();
+            const showDecorationText = slot === 'name_prefix' || slot === 'name_suffix';
+            const optionLabel = showDecorationText && decorationText
+                ? `${achievementName} - ${decorationText}`
+                : achievementName;
+            
+            const option = appendOption(currentGroup, optionLabel, item.id, active[slot] === item.id);
+            option.dataset.choiceLabel = achievementName;
         });
         select.disabled = false;
     }
@@ -553,7 +560,7 @@
             button.type = 'button';
             button.className = `choice-button${extraClass ? ` ${extraClass}` : ''}`;
             button.dataset.value = option.value;
-            button.textContent = option.textContent;
+            button.textContent = option.dataset.choiceLabel || option.textContent;
             button.disabled = select.disabled || option.disabled;
             button.setAttribute('aria-pressed', String(option.value === select.value));
             button.addEventListener('mousedown', event => {
