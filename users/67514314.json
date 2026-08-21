@@ -11,12 +11,18 @@
       "redeem_checkin_5": "2026-08-21T19:10:07.656152+00:00",
       "redeem_total_5": "2026-08-21T19:10:07.927067+00:00",
       "redeem_checkin_10": "2026-08-21T19:20:15.462417+00:00",
-      "redeem_total_10": "2026-08-21T19:20:15.784773+00:00"
+      "redeem_total_10": "2026-08-21T19:20:15.784773+00:00",
+      "redeem_first_1": "2026-08-21T19:24:12.933689+00:00"
     }
   },
   "decorations": {
-    "unlocked": [],
-    "active": {}
+    "unlocked": [
+      "prefix_101",
+      "suffix_79"
+    ],
+    "active": {
+      "system_badge": "system_first"
+    }
   },
   "stats": {
     "messages": 0,
