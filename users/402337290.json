@@ -4,46 +4,11 @@
   "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/51f9ca15-6719-41bb-9763-af9da8f6e73e-profile_image-300x300.png",
   "legacy": 1,
   "achievements": {
-    "earned": {
-      "chat_10": "2025-11-21T20:59:47.911030+00:00",
-      "subathon_2025": "2025-12-22T21:00:23.161010+00:00",
-      "subathon_2025_any": "2025-12-23T21:00:29.469499+00:00",
-      "birthday_2025": "2025-12-26T20:00:58.511267+00:00",
-      "chat_100": "2026-03-14T20:07:29.929366+00:00",
-      "attend_3": "2026-05-07T20:02:28.409355+00:00",
-      "streak_3": "2026-05-07T20:02:28.666783+00:00",
-      "attend_5": "2026-05-09T20:15:51.087190+00:00",
-      "streak_5": "2026-05-14T20:00:34.829202+00:00",
-      "chat_pet": "2026-05-14T21:18:28.180178+00:00",
-      "attend_10": "2026-05-15T20:02:18.919729+00:00"
-    },
-    "founded": {
-      "streak_7": "2026-05-16T20:12:23.970039+00:00"
-    }
+    "earned": {},
+    "founded": {}
   },
   "decorations": {
-    "unlocked": [
-      "prefix_2",
-      "prefix_7",
-      "prefix_79",
-      "prefix_80",
-      "prefix_81",
-      "prefix_89",
-      "prefix_90",
-      "prefix_91",
-      "suffix_57",
-      "suffix_58",
-      "suffix_59",
-      "suffix_67",
-      "suffix_68",
-      "suffix_69",
-      "prefix_92",
-      "suffix_70",
-      "prefix_93",
-      "suffix_71",
-      "prefix_94",
-      "suffix_72"
-    ],
+    "unlocked": [],
     "active": {}
   },
   "stats": {

@@ -4,33 +4,11 @@
   "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/1f2cb5c3-bdb7-4a3c-8f67-23f5ba98129b-profile_image-300x300.png",
   "legacy": 1,
   "achievements": {
-    "earned": {
-      "chat_10": "2025-11-09T01:01:53.343570+00:00",
-      "subathon_2025": "2025-12-22T22:10:43.545162+00:00",
-      "subathon_2025_any": "2025-12-25T00:44:35.224983+00:00",
-      "redeem_total_5": "2026-02-27T01:50:17.232754+00:00",
-      "gamble_total_loss_1": "2026-03-23T23:40:29.602908+00:00",
-      "gamble_total_1": "2026-03-23T23:40:29.602908+00:00",
-      "chat_100": "2026-03-23T23:40:36.939907+00:00",
-      "redeem_total_10": "2026-05-10T23:20:42.121319+00:00",
-      "chat_treats": "2026-05-10T23:21:16.446377+00:00",
-      "attend_3": "2026-05-29T21:48:10.144107+00:00",
-      "attend_5": "2026-06-06T21:37:28.437595+00:00",
-      "attend_10": "2026-06-19T23:30:40.825197+00:00"
-    },
+    "earned": {},
     "founded": {}
   },
   "decorations": {
-    "unlocked": [
-      "prefix_2",
-      "prefix_7",
-      "prefix_79",
-      "suffix_57",
-      "prefix_80",
-      "suffix_58",
-      "prefix_81",
-      "suffix_59"
-    ],
+    "unlocked": [],
     "active": {}
   },
   "stats": {
