@@ -15,10 +15,21 @@
       "desc": "Awarded for your 5th check-in.",
       "amount": 5
     },
+    "redeem_checkin_10": {
+      "name": "I'm here, I'm here!",
+      "desc": "Awarded for your 10th check-in.",
+      "amount": 10
+    },
     "redeem_total_5": {
       "name": "Curious Redeemer.",
       "desc": "Awarded for using 5 channel point redeems.",
       "amount": 5,
+      "type": "total"
+    },
+    "redeem_total_10": {
+      "name": "Semi-Active Redeemer.",
+      "desc": "Awarded for using 10 channel point redeems.",
+      "amount": 10,
       "type": "total"
     }
   }
