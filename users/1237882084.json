@@ -125,50 +125,9 @@
     "active": {}
   },
   "stats": {
-    "messages": 2263,
-    "active_months": 9,
-    "first_seen": "2025-11"
+    "messages": 0,
+    "active_months": 0,
+    "first_seen": null
   },
-  "top_months": [
-    {
-      "month": "2025-11",
-      "kind": "donations",
-      "rank": 1
-    },
-    {
-      "month": "2025-11",
-      "kind": "cheers",
-      "rank": 2
-    },
-    {
-      "month": "2026-1",
-      "kind": "gifted",
-      "rank": 1
-    },
-    {
-      "month": "2026-2",
-      "kind": "donations",
-      "rank": 1
-    },
-    {
-      "month": "2026-3",
-      "kind": "cheers",
-      "rank": 1
-    },
-    {
-      "month": "2026-3",
-      "kind": "gifted",
-      "rank": 1
-    },
-    {
-      "month": "2026-3",
-      "kind": "donations",
-      "rank": 1
-    },
-    {
-      "month": "2026-5",
-      "kind": "donations",
-      "rank": 1
-    }
-  ]
+  "top_months": []
 }

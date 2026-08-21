@@ -151,25 +151,9 @@
     }
   },
   "stats": {
-    "messages": 5685,
-    "active_months": 10,
-    "first_seen": "2025-11"
+    "messages": 0,
+    "active_months": 0,
+    "first_seen": null
   },
-  "top_months": [
-    {
-      "month": "2026-3",
-      "kind": "gifted",
-      "rank": 3
-    },
-    {
-      "month": "2026-6",
-      "kind": "gifted",
-      "rank": 2
-    },
-    {
-      "month": "2026-6",
-      "kind": "chat",
-      "rank": 3
-    }
-  ]
+  "top_months": []
 }

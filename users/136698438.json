@@ -141,35 +141,9 @@
     "active": {}
   },
   "stats": {
-    "messages": 14851,
-    "active_months": 10,
-    "first_seen": "2025-11"
+    "messages": 0,
+    "active_months": 0,
+    "first_seen": null
   },
-  "top_months": [
-    {
-      "month": "2025-12",
-      "kind": "chat",
-      "rank": 2
-    },
-    {
-      "month": "2026-1",
-      "kind": "chat",
-      "rank": 3
-    },
-    {
-      "month": "2026-2",
-      "kind": "chat",
-      "rank": 2
-    },
-    {
-      "month": "2026-3",
-      "kind": "chat",
-      "rank": 2
-    },
-    {
-      "month": "2026-4",
-      "kind": "chat",
-      "rank": 3
-    }
-  ]
+  "top_months": []
 }

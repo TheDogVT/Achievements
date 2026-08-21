@@ -222,30 +222,9 @@
     }
   },
   "stats": {
-    "messages": 7096,
-    "active_months": 10,
-    "first_seen": "2025-11"
+    "messages": 0,
+    "active_months": 0,
+    "first_seen": null
   },
-  "top_months": [
-    {
-      "month": "2026-1",
-      "kind": "cheers",
-      "rank": 2
-    },
-    {
-      "month": "2026-2",
-      "kind": "cheers",
-      "rank": 2
-    },
-    {
-      "month": "2026-5",
-      "kind": "cheers",
-      "rank": 3
-    },
-    {
-      "month": "2026-5",
-      "kind": "gifted",
-      "rank": 3
-    }
-  ]
+  "top_months": []
 }

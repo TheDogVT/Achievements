@@ -39,9 +39,9 @@
     "active": {}
   },
   "stats": {
-    "messages": 358,
-    "active_months": 7,
-    "first_seen": "2025-11"
+    "messages": 0,
+    "active_months": 0,
+    "first_seen": null
   },
   "top_months": []
 }

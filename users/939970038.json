@@ -81,9 +81,9 @@
     "active": {}
   },
   "stats": {
-    "messages": 1361,
-    "active_months": 3,
-    "first_seen": "2026-4"
+    "messages": 0,
+    "active_months": 0,
+    "first_seen": null
   },
   "top_months": []
 }

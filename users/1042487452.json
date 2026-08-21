@@ -141,15 +141,9 @@
     "active": {}
   },
   "stats": {
-    "messages": 3873,
-    "active_months": 10,
-    "first_seen": "2025-11"
+    "messages": 0,
+    "active_months": 0,
+    "first_seen": null
   },
-  "top_months": [
-    {
-      "month": "2026-1",
-      "kind": "donations",
-      "rank": 2
-    }
-  ]
+  "top_months": []
 }

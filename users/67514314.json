@@ -122,7 +122,10 @@
       "attend_50": "2026-07-04T20:29:45.656453+00:00",
       "chat_toebeans": "2026-07-05T22:15:36.744410+00:00",
       "redeem_checkin_240": "2026-07-20T20:43:10.516808+00:00",
-      "gifted_cumulative_15": "2026-08-15T21:48:05.677438+00:00"
+      "gifted_cumulative_15": "2026-08-15T21:48:05.677438+00:00",
+      "donation_1": "2026-08-21T15:15:34.920277+00:00",
+      "donation_5": "2026-08-21T15:15:35.229310+00:00",
+      "donation_cumulative_10": "2026-08-21T15:15:35.524031+00:00"
     },
     "founded": {
       "chat_chaos": "2025-11-06T20:59:47.540981+00:00",
@@ -193,7 +196,8 @@
       "prefix_83",
       "suffix_61",
       "suffix_1",
-      "name_16"
+      "name_16",
+      "name_9"
     ],
     "active": {
       "name_prefix": "prefix_12",
@@ -203,60 +207,9 @@
     }
   },
   "stats": {
-    "messages": 55706,
-    "active_months": 10,
-    "first_seen": "2025-11"
+    "messages": 0,
+    "active_months": 0,
+    "first_seen": null
   },
-  "top_months": [
-    {
-      "month": "2025-11",
-      "kind": "chat",
-      "rank": 1
-    },
-    {
-      "month": "2025-12",
-      "kind": "chat",
-      "rank": 1
-    },
-    {
-      "month": "2026-1",
-      "kind": "chat",
-      "rank": 1
-    },
-    {
-      "month": "2026-2",
-      "kind": "chat",
-      "rank": 1
-    },
-    {
-      "month": "2026-3",
-      "kind": "chat",
-      "rank": 1
-    },
-    {
-      "month": "2026-4",
-      "kind": "chat",
-      "rank": 1
-    },
-    {
-      "month": "2026-5",
-      "kind": "chat",
-      "rank": 1
-    },
-    {
-      "month": "2026-6",
-      "kind": "chat",
-      "rank": 1
-    },
-    {
-      "month": "2026-7",
-      "kind": "chat",
-      "rank": 1
-    },
-    {
-      "month": "2026-8",
-      "kind": "chat",
-      "rank": 1
-    }
-  ]
+  "top_months": []
 }

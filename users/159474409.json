@@ -189,55 +189,9 @@
     }
   },
   "stats": {
-    "messages": 10433,
-    "active_months": 7,
-    "first_seen": "2026-1"
+    "messages": 0,
+    "active_months": 0,
+    "first_seen": null
   },
-  "top_months": [
-    {
-      "month": "2026-1",
-      "kind": "chat",
-      "rank": 2
-    },
-    {
-      "month": "2026-1",
-      "kind": "cheers",
-      "rank": 3
-    },
-    {
-      "month": "2026-3",
-      "kind": "cheers",
-      "rank": 2
-    },
-    {
-      "month": "2026-4",
-      "kind": "chat",
-      "rank": 2
-    },
-    {
-      "month": "2026-4",
-      "kind": "cheers",
-      "rank": 2
-    },
-    {
-      "month": "2026-5",
-      "kind": "cheers",
-      "rank": 1
-    },
-    {
-      "month": "2026-5",
-      "kind": "chat",
-      "rank": 3
-    },
-    {
-      "month": "2026-6",
-      "kind": "cheers",
-      "rank": 1
-    },
-    {
-      "month": "2026-7",
-      "kind": "cheers",
-      "rank": 2
-    }
-  ]
+  "top_months": []
 }
