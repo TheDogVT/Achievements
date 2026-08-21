@@ -96,7 +96,7 @@
     }
   },
   "stats": {
-    "messages": 12,
+    "messages": 17,
     "active_months": 1,
     "first_seen": "2026-8"
   },
@@ -104,7 +104,7 @@
     {
       "month": "2026-8",
       "kind": "chat",
-      "rank": 2
+      "rank": 1
     }
   ]
 }
