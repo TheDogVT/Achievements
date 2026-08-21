@@ -125,7 +125,10 @@
       "gifted_cumulative_15": "2026-08-15T21:48:05.677438+00:00",
       "donation_1": "2026-08-21T15:15:34.920277+00:00",
       "donation_5": "2026-08-21T15:15:35.229310+00:00",
-      "donation_cumulative_10": "2026-08-21T15:15:35.524031+00:00"
+      "donation_cumulative_10": "2026-08-21T15:15:35.524031+00:00",
+      "cheer_message_100": "2026-08-21T19:01:17.826261+00:00",
+      "cheer_time_1": "2026-08-21T19:01:18.130715+00:00",
+      "cheer_100": "2026-08-21T19:01:18.413394+00:00"
     },
     "founded": {
       "chat_chaos": "2025-11-06T20:59:47.540981+00:00",
@@ -197,7 +200,10 @@
       "suffix_61",
       "suffix_1",
       "name_16",
-      "name_9"
+      "name_9",
+      "prefix_8",
+      "prefix_76",
+      "suffix_19"
     ],
     "active": {
       "name_prefix": "prefix_12",
@@ -208,8 +214,14 @@
   },
   "stats": {
     "messages": 0,
-    "active_months": 0,
-    "first_seen": null
+    "active_months": 1,
+    "first_seen": "2026-8"
   },
-  "top_months": []
+  "top_months": [
+    {
+      "month": "2026-8",
+      "kind": "cheers",
+      "rank": 1
+    }
+  ]
 }
