@@ -10,13 +10,35 @@
       "cheer_time_1": "2026-08-22T15:20:44.121642+00:00",
       "gifted_cumulative_5": "2026-08-22T15:30:25.053737+00:00",
       "gifted_times_1": "2026-08-22T15:30:25.325877+00:00",
-      "gifted_instance_5": "2026-08-22T15:30:27.105918+00:00"
+      "gifted_instance_5": "2026-08-22T15:30:27.105918+00:00",
+      "cheer_message_1k": "2026-08-22T15:38:36.373482+00:00",
+      "cheer_message_10k": "2026-08-22T15:38:36.696589+00:00",
+      "cheer_message_100k": "2026-08-22T15:38:38.115617+00:00",
+      "cheer_cumulative_1k": "2026-08-22T15:38:39.086191+00:00",
+      "cheer_cumulative_2500": "2026-08-22T15:38:39.367851+00:00",
+      "cheer_cumulative_5k": "2026-08-22T15:38:41.115169+00:00",
+      "cheer_cumulative_10k": "2026-08-22T15:38:41.395108+00:00",
+      "cheer_cumulative_20k": "2026-08-22T15:38:43.127675+00:00",
+      "cheer_cumulative_50k": "2026-08-22T15:38:43.417574+00:00",
+      "cheer_cumulative_75k": "2026-08-22T15:38:45.108653+00:00",
+      "cheer_cumulative_100k": "2026-08-22T15:38:46.083565+00:00"
     }
   },
   "decorations": {
     "unlocked": [
       "prefix_8",
-      "name_14"
+      "name_14",
+      "name_3",
+      "name_4",
+      "name_5",
+      "name_6",
+      "name_7",
+      "name_8",
+      "prefix_119",
+      "prestige_cheer_static",
+      "prestige_cheer_name",
+      "message_2",
+      "prestige_cheer_animated"
     ],
     "active": {}
   },

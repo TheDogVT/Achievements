@@ -6,6 +6,72 @@
       "amount": 100,
       "type": "threshold"
     },
+    "cheer_message_1k": {
+      "name": "Big Bit Giver.",
+      "desc": "Awarded for cheering 1,000 or more bits in a message.",
+      "amount": 1000,
+      "type": "threshold"
+    },
+    "cheer_message_10k": {
+      "name": "Massive Bit Giver.",
+      "desc": "Awarded for cheering 10,000 or more bits in a single message.",
+      "amount": 10000,
+      "type": "threshold"
+    },
+    "cheer_message_100k": {
+      "name": "(Platinum) Titan Bit Giver.",
+      "desc": "Awarded for cheering 100,000 bits or more in a single message",
+      "amount": 100000,
+      "type": "threshold"
+    },
+    "cheer_cumulative_1k": {
+      "name": "Bit Curious.",
+      "desc": "Awarded for cheering 1,000 bits overall.",
+      "amount": 1000,
+      "type": "cumulative"
+    },
+    "cheer_cumulative_2500": {
+      "name": "Cheer Chewer.",
+      "desc": "Awarded for cheering 2,500 bits overall.",
+      "amount": 2500,
+      "type": "cumulative"
+    },
+    "cheer_cumulative_5k": {
+      "name": "Bit of Bits.",
+      "desc": "Awarded for cheering 5,000 bits overall.",
+      "amount": 5000,
+      "type": "cumulative"
+    },
+    "cheer_cumulative_10k": {
+      "name": "Famous Cheerer.",
+      "desc": "Awarded for cheering 10,000 bits overall.",
+      "amount": 10000,
+      "type": "cumulative"
+    },
+    "cheer_cumulative_20k": {
+      "name": "Food Buyer.",
+      "desc": "Awarded for cheering 20,000 bits overall.",
+      "amount": 20000,
+      "type": "cumulative"
+    },
+    "cheer_cumulative_50k": {
+      "name": "Bit Burrier.",
+      "desc": "Awarded for cheering 50,000 bits overall.",
+      "amount": 50000,
+      "type": "cumulative"
+    },
+    "cheer_cumulative_75k": {
+      "name": "High Bitroller.",
+      "desc": "Awarded for cheering 75,000 bits overall.",
+      "amount": 75000,
+      "type": "cumulative"
+    },
+    "cheer_cumulative_100k": {
+      "name": "Bit VIP.",
+      "desc": "Awarded for cheering 100,000 bits overall.",
+      "amount": 100000,
+      "type": "cumulative"
+    },
     "cheer_time_1": {
       "name": "Babys First Cheer.",
       "desc": "Awarded for cheering once.",
