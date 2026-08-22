@@ -218,12 +218,11 @@
       "name_base": "name_7",
       "name_suffix": "suffix_5",
       "washi_color": "washi_gold",
-      "washi_position": "washi_top_left",
-      "system_badge": "system_first"
+      "washi_position": "washi_top_left"
     }
   },
   "stats": {
-    "messages": 7187,
+    "messages": 7201,
     "active_months": 10,
     "first_seen": "2025-11"
   },
