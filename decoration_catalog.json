@@ -20,6 +20,23 @@
       }
     }
   },
+  "name_14": {
+    "slot": "name_base",
+    "display_name": "name_14",
+    "achievement_name": "Mini Santa",
+    "achievement_category": "gifted",
+    "achievement_id": "gifted_cumulative_5",
+    "config": {
+      "outline": "basic",
+      "outline_thickness": "1",
+      "text_color": "#f43f5e",
+      "unlock": {
+        "type": "achievement",
+        "category": "gifted",
+        "id": "gifted_cumulative_5"
+      }
+    }
+  },
   "name_9": {
     "slot": "name_base",
     "display_name": "name_9",

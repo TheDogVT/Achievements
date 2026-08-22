@@ -32,5 +32,25 @@
       "amount": 10,
       "type": "cumulative"
     }
+  },
+  "gifted": {
+    "gifted_times_1": {
+      "name": "A present for Doggo, and friend",
+      "desc": "Awarded gifting for the first time.",
+      "amount": 1,
+      "type": "times"
+    },
+    "gifted_cumulative_5": {
+      "name": "Mini Santa",
+      "desc": "Awarded for 5 cumulative gifted subs.",
+      "amount": 5,
+      "type": "cumulative"
+    },
+    "gifted_instance_5": {
+      "name": "Gifty Bomba",
+      "desc": "Awarded for gifting 5 subs or more at once.",
+      "amount": 5,
+      "type": "instance"
+    }
   }
 }

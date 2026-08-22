@@ -7,12 +7,16 @@
     "earned": {},
     "founded": {
       "cheer_message_100": "2026-08-22T15:20:43.819616+00:00",
-      "cheer_time_1": "2026-08-22T15:20:44.121642+00:00"
+      "cheer_time_1": "2026-08-22T15:20:44.121642+00:00",
+      "gifted_cumulative_5": "2026-08-22T15:30:25.053737+00:00",
+      "gifted_times_1": "2026-08-22T15:30:25.325877+00:00",
+      "gifted_instance_5": "2026-08-22T15:30:27.105918+00:00"
     }
   },
   "decorations": {
     "unlocked": [
-      "prefix_8"
+      "prefix_8",
+      "name_14"
     ],
     "active": {}
   },
@@ -25,6 +29,11 @@
     {
       "month": "2026-8",
       "kind": "cheers",
+      "rank": 1
+    },
+    {
+      "month": "2026-8",
+      "kind": "gifted",
       "rank": 1
     }
   ]
