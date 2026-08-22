@@ -12,5 +12,25 @@
       "amount": 1,
       "type": "times"
     }
+  },
+  "donation": {
+    "donation_1": {
+      "name": "Dollar For Your Thoughts?",
+      "desc": "Awarded for donating 1 or more dollars at a time.",
+      "amount": 1,
+      "type": "threshold"
+    },
+    "donation_5": {
+      "name": "Five Bucks For The Pup.",
+      "desc": "Awarded for donating 5 or more dollars at a time.",
+      "amount": 5,
+      "type": "threshold"
+    },
+    "donation_cumulative_10": {
+      "name": "First Treat.",
+      "desc": "Awarded for donating $10 overall.",
+      "amount": 10,
+      "type": "cumulative"
+    }
   }
 }
