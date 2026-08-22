@@ -2,7 +2,17 @@
     const RENDERER_ATTR = 'data-puppy-background-renderer';
     const IMG_BASE = (window.PUPPY_IMG_BASE !== undefined ? window.PUPPY_IMG_BASE : '/static/resources/backgrounds/');
 
-    function imgPath(filename) { return IMG_BASE + filename; }
+    // Renderer asset URLs travel through CSS custom properties, and browsers
+    // resolve url() tokens at the consuming stylesheet's base, not the
+    // document's. Pre-resolve against the document here so a relative
+    // PUPPY_IMG_BASE (e.g. GitHub Pages subpath hosting) cannot break.
+    function imgPath(filename) {
+        try {
+            return new URL(IMG_BASE + filename, document.baseURI).href;
+        } catch (err) {
+            return IMG_BASE + filename;
+        }
+    }
 
     // Each renderer is a named layer recipe: JS builds the DOM stack, then CSS
     // owns the material treatment and animation.
