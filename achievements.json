@@ -1148,6 +1148,12 @@
       "desc": "Awarded for having 10 quotes approved.",
       "amount": 10,
       "type": "cumulative"
+    },
+    "quote_25": {
+      "name": "Quote Veteran",
+      "desc": "Awarded for having 25 quotes approved.",
+      "amount": 25,
+      "type": "cumulative"
     }
   },
   "redeems": {
