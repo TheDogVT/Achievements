@@ -4,60 +4,17 @@
   "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/e900bfb2-0272-482d-8254-908c3043d683-profile_image-300x300.png",
   "legacy": 1,
   "achievements": {
-    "earned": {
-      "redeem_checkin_1": "2025-11-15T22:05:34.415138+00:00",
-      "chat_10": "2025-11-15T22:15:53.783425+00:00",
-      "redeem_checkin_2": "2025-12-13T21:09:41.816489+00:00",
-      "chat_100": "2025-12-20T21:36:11.366748+00:00",
-      "subathon_2025_any": "2025-12-24T23:51:46.524894+00:00",
-      "redeem_total_5": "2025-12-25T00:01:06.249414+00:00",
-      "gifted_cumulative_5": "2025-12-25T00:04:52.017655+00:00",
-      "gifted_cumulative_10": "2025-12-25T00:04:52.017655+00:00",
-      "gifted_times_1": "2025-12-25T00:04:52.017655+00:00",
-      "gifted_instance_10": "2025-12-25T00:04:52.017655+00:00",
-      "cheer_time_1": "2025-12-25T00:07:45.479518+00:00",
-      "chat_bork": "2025-12-25T00:23:34.607078+00:00",
-      "chat_goodboy": "2025-12-25T00:25:41.073596+00:00",
-      "redeem_pet_1": "2025-12-25T00:46:02.657311+00:00",
-      "redeem_total_10": "2025-12-25T00:48:51.370995+00:00",
-      "chat_howl": "2025-12-25T00:54:09.089165+00:00",
-      "redeem_checkin_5": "2025-12-26T20:02:41.305078+00:00",
-      "birthday_2025": "2025-12-26T20:02:51.606211+00:00",
-      "gamble_loss_total_100k": "2026-01-11T01:48:30.150468+00:00",
-      "gamble_total_loss_1": "2026-01-11T01:48:30.150468+00:00",
-      "gamble_total_1": "2026-01-11T01:48:30.150468+00:00",
-      "redeem_checkin_10": "2026-01-15T21:33:58.060756+00:00",
-      "gamble_total_win_1": "2026-01-18T22:22:20.810730+00:00",
-      "redeem_total_25": "2026-01-19T21:22:10.827607+00:00",
-      "gamble_win_total_10k": "2026-01-19T21:22:37.677426+00:00",
-      "chat_500": "2026-01-22T20:55:11.833131+00:00",
-      "chat_sleepy": "2026-02-12T21:42:30.066613+00:00",
-      "chat_ball": "2026-02-12T21:45:43.887628+00:00"
-    },
+    "earned": {},
     "founded": {}
   },
   "decorations": {
-    "unlocked": [
-      "prefix_10",
-      "prefix_11",
-      "prefix_18",
-      "prefix_19",
-      "prefix_2",
-      "prefix_3",
-      "prefix_7",
-      "prefix_8",
-      "name_1",
-      "suffix_8",
-      "name_14",
-      "name_15",
-      "prefix_77"
-    ],
+    "unlocked": [],
     "active": {}
   },
   "stats": {
-    "messages": 638,
-    "active_months": 5,
-    "first_seen": "2025-11"
+    "messages": 0,
+    "active_months": 0,
+    "first_seen": null
   },
   "top_months": []
 }

@@ -4,48 +4,17 @@
   "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/144bd2df-790f-4e84-ab59-d35239c23b18-profile_image-300x300.png",
   "legacy": 1,
   "achievements": {
-    "earned": {
-      "redeem_checkin_1": "2025-12-22T21:13:20.790403+00:00",
-      "subathon_2025": "2025-12-22T21:14:47.935216+00:00",
-      "chat_10": "2025-12-22T21:22:25.187932+00:00",
-      "gamble_total_loss_1": "2025-12-22T21:26:56.725461+00:00",
-      "gamble_total_1": "2025-12-22T21:26:56.725461+00:00",
-      "redeem_total_5": "2025-12-22T22:44:32.062087+00:00",
-      "redeem_checkin_2": "2025-12-26T22:39:18.026724+00:00",
-      "subathon_2025_any": "2025-12-26T22:44:55.538481+00:00",
-      "birthday_2025": "2025-12-26T22:44:55.538481+00:00",
-      "redeem_total_10": "2026-02-02T21:01:12.172038+00:00",
-      "redeem_checkin_5": "2026-03-26T19:11:39.942920+00:00",
-      "redeem_checkin_10": "2026-05-29T20:14:11.495792+00:00",
-      "redeem_checkin_30": "2026-05-29T20:14:11.756901+00:00",
-      "redeem_checkin_60": "2026-05-29T20:14:12.004958+00:00",
-      "redeem_checkin_90": "2026-05-29T20:14:12.263086+00:00",
-      "redeem_total_25": "2026-05-29T20:14:12.600600+00:00",
-      "redeem_total_50": "2026-05-29T20:14:12.853852+00:00",
-      "redeem_total_100": "2026-05-29T20:14:13.115094+00:00",
-      "redeem_pet_1": "2026-05-29T21:40:36.681539+00:00",
-      "redeem_first_1": "2026-07-21T20:21:14.751177+00:00",
-      "gamble_win_total_10k": "2026-07-21T20:42:13.346086+00:00",
-      "gamble_win_total_100k": "2026-07-21T20:42:13.630284+00:00",
-      "gamble_total_win_1": "2026-07-21T20:42:13.902720+00:00",
-      "attend_3": "2026-07-30T21:28:29.195264+00:00"
-    },
+    "earned": {},
     "founded": {}
   },
   "decorations": {
-    "unlocked": [
-      "prefix_7",
-      "prefix_101",
-      "suffix_79",
-      "prefix_79",
-      "suffix_57"
-    ],
+    "unlocked": [],
     "active": {}
   },
   "stats": {
-    "messages": 93,
-    "active_months": 6,
-    "first_seen": "2025-12"
+    "messages": 0,
+    "active_months": 0,
+    "first_seen": null
   },
   "top_months": []
 }

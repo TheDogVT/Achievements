@@ -4,29 +4,17 @@
   "pfp_url": "https://static-cdn.jtvnw.net/user-default-pictures-uv/ce57700a-def9-11e9-842d-784f43822e80-profile_image-300x300.png",
   "legacy": 1,
   "achievements": {
-    "earned": {
-      "chat_10": "2025-12-02T22:05:25.111458+00:00",
-      "redeem_checkin_1": "2026-04-27T20:56:04.576773+00:00",
-      "redeem_checkin_2": "2026-04-27T20:56:04.813512+00:00",
-      "redeem_pet_1": "2026-04-27T20:58:33.835813+00:00",
-      "redeem_total_5": "2026-04-27T20:58:34.044303+00:00",
-      "gamble_total_win_1": "2026-04-27T21:10:46.702314+00:00",
-      "gamble_win_total_10k": "2026-04-27T21:25:35.013505+00:00",
-      "chat_100": "2026-04-28T20:25:11.161867+00:00"
-    },
+    "earned": {},
     "founded": {}
   },
   "decorations": {
-    "unlocked": [
-      "prefix_2",
-      "prefix_7"
-    ],
+    "unlocked": [],
     "active": {}
   },
   "stats": {
-    "messages": 127,
-    "active_months": 3,
-    "first_seen": "2025-12"
+    "messages": 0,
+    "active_months": 0,
+    "first_seen": null
   },
   "top_months": []
 }

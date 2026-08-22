@@ -4,61 +4,17 @@
   "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/d25fe227-4637-4799-8ed6-2112af779424-profile_image-300x300.png",
   "legacy": 1,
   "achievements": {
-    "earned": {
-      "subathon_2025_any": "2025-12-28T21:04:13.581887+00:00",
-      "gifted_cumulative_5": "2025-12-28T21:31:12.353555+00:00",
-      "gifted_times_1": "2025-12-28T21:31:12.353555+00:00",
-      "gifted_instance_5": "2025-12-28T21:31:12.353555+00:00",
-      "chat_10": "2025-12-28T21:32:09.649042+00:00",
-      "gifted_cumulative_10": "2025-12-28T21:38:40.847614+00:00",
-      "gifted_times_2": "2025-12-28T21:38:40.847614+00:00",
-      "gifted_cumulative_15": "2025-12-28T21:48:36.480488+00:00",
-      "gifted_cumulative_20": "2025-12-28T21:48:36.480488+00:00",
-      "gifted_instance_10": "2025-12-28T21:48:36.480488+00:00",
-      "chat_chaos": "2025-12-28T21:55:59.041272+00:00",
-      "redeem_checkin_1": "2025-12-29T21:00:46.996111+00:00",
-      "chat_100": "2025-12-29T21:01:11.648344+00:00",
-      "gifted_cumulative_25": "2025-12-29T21:08:44.069971+00:00",
-      "gifted_cumulative_30": "2025-12-29T21:08:44.069971+00:00",
-      "gifted_times_5": "2025-12-29T21:08:59.823206+00:00",
-      "redeem_total_5": "2025-12-29T21:24:10.413030+00:00",
-      "chat_goodboy": "2025-12-29T21:26:21.767940+00:00",
-      "redeem_checkin_2": "2025-12-30T21:01:40.263970+00:00",
-      "redeem_checkin_5": "2026-01-24T21:42:25.715571+00:00",
-      "chat_bath": "2026-02-28T21:22:59.453717+00:00",
-      "redeem_total_10": "2026-02-28T21:35:57.517205+00:00",
-      "redeem_pet_1": "2026-02-28T21:41:19.259022+00:00"
-    },
+    "earned": {},
     "founded": {}
   },
   "decorations": {
-    "unlocked": [
-      "prefix_12",
-      "prefix_16",
-      "prefix_18",
-      "prefix_2",
-      "prefix_7",
-      "suffix_3",
-      "suffix_8",
-      "name_14",
-      "name_15",
-      "name_16",
-      "name_17",
-      "name_18",
-      "name_19"
-    ],
+    "unlocked": [],
     "active": {}
   },
   "stats": {
-    "messages": 297,
-    "active_months": 4,
-    "first_seen": "2025-12"
+    "messages": 0,
+    "active_months": 0,
+    "first_seen": null
   },
-  "top_months": [
-    {
-      "month": "2025-12",
-      "kind": "gifted",
-      "rank": 3
-    }
-  ]
+  "top_months": []
 }

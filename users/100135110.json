@@ -4,58 +4,17 @@
   "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/74a96970-cd03-4ca5-89ce-92d8b04813df-profile_image-300x300.png",
   "legacy": 1,
   "achievements": {
-    "earned": {
-      "chat_10": "2025-11-11T21:07:38.566651+00:00",
-      "chat_100": "2025-11-21T22:39:20.773380+00:00",
-      "subathon_2025": "2025-12-22T21:00:22.549262+00:00",
-      "subathon_2025_any": "2025-12-23T21:00:29.385042+00:00",
-      "chat_500": "2026-01-12T20:54:55.245452+00:00",
-      "chat_bork": "2026-02-08T01:01:22.093353+00:00",
-      "chat_1k": "2026-02-23T22:04:08.771699+00:00",
-      "chat_yap": "2026-03-26T19:09:45.790031+00:00",
-      "attend_3": "2026-05-07T20:02:28.158227+00:00",
-      "streak_3": "2026-05-07T20:02:28.414880+00:00",
-      "attend_5": "2026-05-08T21:15:23.869654+00:00",
-      "streak_5": "2026-05-08T21:15:24.105570+00:00",
-      "streak_7": "2026-05-16T20:12:24.087222+00:00"
-    },
-    "founded": {
-      "birthday_2025": "2025-12-26T20:00:58.293802+00:00",
-      "attend_10": "2026-05-14T20:00:34.473856+00:00"
-    }
+    "earned": {},
+    "founded": {}
   },
   "decorations": {
-    "unlocked": [
-      "prefix_2",
-      "prefix_3",
-      "prefix_4",
-      "prefix_7",
-      "prefix_79",
-      "prefix_80",
-      "prefix_81",
-      "prefix_89",
-      "prefix_90",
-      "prefix_91",
-      "suffix_57",
-      "suffix_58",
-      "suffix_59",
-      "suffix_67",
-      "suffix_68",
-      "suffix_69",
-      "prefix_92",
-      "suffix_70",
-      "prefix_93",
-      "suffix_71",
-      "prefix_94",
-      "suffix_72",
-      "prefix_10"
-    ],
+    "unlocked": [],
     "active": {}
   },
   "stats": {
-    "messages": 2678,
-    "active_months": 10,
-    "first_seen": "2025-11"
+    "messages": 0,
+    "active_months": 0,
+    "first_seen": null
   },
   "top_months": []
 }

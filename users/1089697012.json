@@ -4,39 +4,17 @@
   "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/d97bc8cd-f1fb-4f21-8469-ab881928e04c-profile_image-300x300.jpeg",
   "legacy": 1,
   "achievements": {
-    "earned": {
-      "redeem_checkin_1": "2026-01-17T21:29:18.255510+00:00",
-      "chat_10": "2026-01-18T21:06:47.647427+00:00",
-      "redeem_checkin_2": "2026-01-18T21:06:51.767528+00:00",
-      "gamble_total_loss_1": "2026-01-18T21:12:46.388086+00:00",
-      "gamble_total_1": "2026-01-18T21:12:46.388086+00:00",
-      "gamble_total_win_1": "2026-01-18T21:18:07.494270+00:00",
-      "redeem_pet_1": "2026-01-18T21:28:09.441725+00:00",
-      "redeem_total_5": "2026-01-18T21:28:09.441725+00:00",
-      "gamble_total_5": "2026-01-18T21:46:28.727062+00:00",
-      "chat_100": "2026-01-18T22:42:21.988089+00:00",
-      "chat_stick": "2026-01-18T23:25:28.909485+00:00",
-      "redeem_total_10": "2026-01-20T21:00:11.405059+00:00",
-      "gamble_jackpot_total_1": "2026-01-23T21:18:18.030594+00:00",
-      "redeem_checkin_5": "2026-01-24T21:40:39.873148+00:00",
-      "redeem_pet_5": "2026-01-24T21:47:55.424808+00:00",
-      "redeem_checkin_10": "2026-02-14T21:17:12.599874+00:00",
-      "redeem_total_25": "2026-02-21T22:17:18.902433+00:00",
-      "redeem_pet_10": "2026-03-23T21:04:08.348635+00:00"
-    },
+    "earned": {},
     "founded": {}
   },
   "decorations": {
-    "unlocked": [
-      "prefix_2",
-      "prefix_7"
-    ],
+    "unlocked": [],
     "active": {}
   },
   "stats": {
-    "messages": 276,
-    "active_months": 3,
-    "first_seen": "2026-1"
+    "messages": 0,
+    "active_months": 0,
+    "first_seen": null
   },
   "top_months": []
 }

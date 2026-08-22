@@ -4,43 +4,17 @@
   "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/d5e6b003-d519-4ef6-865e-780537eb8d95-profile_image-300x300.png",
   "legacy": 1,
   "achievements": {
-    "earned": {
-      "chat_10": "2025-12-26T21:10:18.314401+00:00",
-      "subathon_2025_any": "2025-12-26T21:10:18.314401+00:00",
-      "birthday_2025": "2025-12-26T21:10:18.314401+00:00",
-      "cheer_time_1": "2025-12-26T21:19:29.107207+00:00",
-      "gamble_win_total_10k": "2026-01-05T21:26:07.397205+00:00",
-      "gamble_total_win_1": "2026-01-05T21:26:07.397205+00:00",
-      "gamble_total_1": "2026-01-05T21:26:07.397205+00:00",
-      "redeem_checkin_1": "2026-01-11T21:21:31.050864+00:00",
-      "chat_treats": "2026-02-09T21:14:24.072706+00:00",
-      "chat_goodboy": "2026-04-13T23:04:00.324507+00:00",
-      "chat_100": "2026-04-13T23:23:41.964162+00:00",
-      "redeem_total_5": "2026-04-14T23:51:00.282476+00:00",
-      "redeem_checkin_2": "2026-05-12T21:31:54.535621+00:00",
-      "redeem_checkin_5": "2026-05-12T21:31:54.785532+00:00",
-      "redeem_checkin_10": "2026-05-12T21:31:55.008764+00:00",
-      "redeem_total_10": "2026-05-12T21:31:55.257765+00:00",
-      "redeem_total_25": "2026-05-12T21:31:55.498028+00:00",
-      "gamble_win_total_100k": "2026-05-12T21:47:48.022014+00:00"
-    },
+    "earned": {},
     "founded": {}
   },
   "decorations": {
-    "unlocked": [
-      "prefix_18",
-      "prefix_2",
-      "prefix_7",
-      "prefix_8",
-      "name_1",
-      "suffix_8"
-    ],
+    "unlocked": [],
     "active": {}
   },
   "stats": {
-    "messages": 149,
-    "active_months": 6,
-    "first_seen": "2025-12"
+    "messages": 0,
+    "active_months": 0,
+    "first_seen": null
   },
   "top_months": []
 }
