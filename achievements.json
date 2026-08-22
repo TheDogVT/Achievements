@@ -1,20 +1,16 @@
 {
-  "redeems": {
-    "redeem_pet_1": {
-      "name": "He's a good boy, yes he is!",
-      "desc": "Awarded for petting the dog.",
-      "amount": 1
+  "cheer": {
+    "cheer_message_100": {
+      "name": "Generoius Bit Giver.",
+      "desc": "Awarded for cheering 100 or more bits in a message.",
+      "amount": 100,
+      "type": "threshold"
     },
-    "redeem_pet_5": {
-      "name": "Touch The Floof",
-      "desc": "Awarded for petting the dog 5 times.",
-      "amount": 5
-    },
-    "redeem_total_5": {
-      "name": "Curious Redeemer.",
-      "desc": "Awarded for using 5 channel point redeems.",
-      "amount": 5,
-      "type": "total"
+    "cheer_time_1": {
+      "name": "Babys First Cheer.",
+      "desc": "Awarded for cheering once.",
+      "amount": 1,
+      "type": "times"
     }
   }
 }

@@ -1,1 +1,23 @@
-{}
+{
+  "prefix_8": {
+    "slot": "name_prefix",
+    "display_name": "Sincerely,",
+    "achievement_name": "Babys First Cheer.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_time_1",
+    "config": {
+      "font_family": "Pacifico",
+      "font_size": "16.5px",
+      "font_style": "italic",
+      "font_weight": "100",
+      "offset_y": "-8.5px",
+      "outline": "basic",
+      "text": "Sincerely,",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_time_1"
+      }
+    }
+  }
+}

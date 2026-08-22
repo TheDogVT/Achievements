@@ -5,16 +5,27 @@
   "legacy": 2,
   "achievements": {
     "earned": {},
-    "founded": {}
+    "founded": {
+      "cheer_message_100": "2026-08-22T15:20:43.819616+00:00",
+      "cheer_time_1": "2026-08-22T15:20:44.121642+00:00"
+    }
   },
   "decorations": {
-    "unlocked": [],
+    "unlocked": [
+      "prefix_8"
+    ],
     "active": {}
   },
   "stats": {
     "messages": 0,
-    "active_months": 0,
-    "first_seen": null
+    "active_months": 1,
+    "first_seen": "2026-8"
   },
-  "top_months": []
+  "top_months": [
+    {
+      "month": "2026-8",
+      "kind": "cheers",
+      "rank": 2
+    }
+  ]
 }
