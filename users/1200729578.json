@@ -4,46 +4,17 @@
   "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/99e9a86d-e5d2-446c-8b2f-074b1dce3d18-profile_image-300x300.png",
   "legacy": 1,
   "achievements": {
-    "earned": {
-      "redeem_checkin_1": "2026-01-24T00:09:41.569058+00:00",
-      "chat_10": "2026-01-24T00:11:48.609430+00:00",
-      "chat_treats": "2026-01-24T00:11:48.609430+00:00",
-      "redeem_checkin_2": "2026-01-24T22:37:07.755209+00:00",
-      "chat_tail": "2026-01-24T22:37:28.828954+00:00",
-      "chat_ball": "2026-01-24T22:38:55.964015+00:00",
-      "chat_howl": "2026-01-24T22:50:47.228148+00:00",
-      "redeem_total_5": "2026-01-26T22:57:16.983218+00:00",
-      "chat_100": "2026-01-27T22:43:11.909624+00:00",
-      "redeem_pet_1": "2026-02-08T21:16:20.826187+00:00",
-      "redeem_checkin_5": "2026-02-08T21:16:38.630208+00:00",
-      "chat_bork": "2026-02-08T21:17:33.170573+00:00",
-      "chat_chaos": "2026-02-08T21:20:10.304136+00:00",
-      "redeem_total_10": "2026-02-09T21:32:21.321245+00:00",
-      "chat_sniff": "2026-02-12T22:06:26.613519+00:00",
-      "redeem_checkin_10": "2026-02-16T00:09:41.659973+00:00",
-      "attend_3": "2026-08-06T21:26:57.136543+00:00"
-    },
-    "founded": {
-      "chat_woofwoof": "2026-02-08T21:17:33.170573+00:00"
-    }
+    "earned": {},
+    "founded": {}
   },
   "decorations": {
-    "unlocked": [
-      "prefix_11",
-      "prefix_16",
-      "prefix_19",
-      "prefix_2",
-      "prefix_7",
-      "prefix_77",
-      "prefix_79",
-      "suffix_57"
-    ],
+    "unlocked": [],
     "active": {}
   },
   "stats": {
-    "messages": 187,
-    "active_months": 3,
-    "first_seen": "2026-1"
+    "messages": 0,
+    "active_months": 0,
+    "first_seen": null
   },
   "top_months": []
 }

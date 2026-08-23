@@ -4,37 +4,17 @@
   "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/35f7fc12-f70b-4374-ae48-d4c11a46d744-profile_image-300x300.png",
   "legacy": 1,
   "achievements": {
-    "earned": {
-      "chat_treats": "2026-01-17T23:27:07.348663+00:00",
-      "chat_10": "2026-01-17T23:28:54.584899+00:00",
-      "redeem_total_5": "2026-01-23T22:18:41.945992+00:00",
-      "redeem_checkin_1": "2026-01-27T00:44:32.444662+00:00",
-      "chat_100": "2026-02-10T21:20:15.669697+00:00",
-      "redeem_pet_1": "2026-02-13T00:02:01.065698+00:00",
-      "redeem_total_10": "2026-02-13T01:05:50.411685+00:00",
-      "chat_goodboy": "2026-02-13T23:07:44.090066+00:00",
-      "redeem_pet_5": "2026-02-14T21:52:21.790845+00:00",
-      "redeem_total_25": "2026-02-14T23:43:34.923075+00:00",
-      "chat_brush": "2026-02-15T00:12:34.735024+00:00",
-      "chat_bork": "2026-02-17T21:19:32.354596+00:00",
-      "chat_woofwoof": "2026-02-17T21:19:32.354596+00:00",
-      "redeem_checkin_2": "2026-02-24T22:43:48.901689+00:00"
-    },
+    "earned": {},
     "founded": {}
   },
   "decorations": {
-    "unlocked": [
-      "prefix_18",
-      "prefix_2",
-      "prefix_7",
-      "suffix_8"
-    ],
+    "unlocked": [],
     "active": {}
   },
   "stats": {
-    "messages": 419,
-    "active_months": 4,
-    "first_seen": "2026-1"
+    "messages": 0,
+    "active_months": 0,
+    "first_seen": null
   },
   "top_months": []
 }
