@@ -19,14 +19,8 @@
   },
   "stats": {
     "messages": 0,
-    "active_months": 1,
+    "active_months": 0,
     "first_seen": "2026-08-22T15:26:35.992268+00:00"
   },
-  "top_months": [
-    {
-      "month": "2026-8",
-      "kind": "donations",
-      "rank": 3
-    }
-  ]
+  "top_months": []
 }
