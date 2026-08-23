@@ -117,6 +117,20 @@
       }
     }
   },
+  "name_10": {
+    "slot": "name_base",
+    "display_name": "name_10",
+    "achievement_name": "Treat Buyer.",
+    "achievement_category": "donation",
+    "achievement_id": "donation_cumulative_25",
+    "config": {
+      "unlock": {
+        "type": "achievement",
+        "category": "donation",
+        "id": "donation_cumulative_25"
+      }
+    }
+  },
   "name_14": {
     "slot": "name_base",
     "display_name": "name_14",

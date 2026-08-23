@@ -14,9 +14,16 @@
       "cheer_cumulative_5k": "2026-08-23T03:04:20.908105+00:00",
       "cheer_cumulative_10k": "2026-08-23T03:04:21.199545+00:00",
       "cheer_cumulative_20k": "2026-08-23T03:06:02.294496+00:00",
-      "cheer_cumulative_50k": "2026-08-23T03:06:57.918362+00:00"
+      "cheer_cumulative_50k": "2026-08-23T03:06:57.918362+00:00",
+      "donation_1": "2026-08-23T03:11:06.329802+00:00",
+      "donation_5": "2026-08-23T03:11:06.570563+00:00",
+      "donation_cumulative_10": "2026-08-23T03:11:06.902760+00:00"
     },
-    "founded": {}
+    "founded": {
+      "donation_10": "2026-08-23T03:11:06.848600+00:00",
+      "donation_20": "2026-08-23T03:11:06.878211+00:00",
+      "donation_cumulative_25": "2026-08-23T03:11:07.173336+00:00"
+    }
   },
   "decorations": {
     "unlocked": [
@@ -29,7 +36,9 @@
       "prefix_119",
       "prestige_cheer_static",
       "prestige_cheer_name",
-      "message_2"
+      "message_2",
+      "name_9",
+      "name_10"
     ],
     "active": {}
   },
@@ -39,6 +48,11 @@
     "first_seen": "2026-8"
   },
   "top_months": [
+    {
+      "month": "2026-8",
+      "kind": "donations",
+      "rank": 2
+    },
     {
       "month": "2026-8",
       "kind": "cheers",

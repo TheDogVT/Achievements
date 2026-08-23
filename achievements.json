@@ -92,10 +92,28 @@
       "amount": 5,
       "type": "threshold"
     },
+    "donation_10": {
+      "name": "Big Woof Energy.",
+      "desc": "Awarded for donating 10 or more dollars at a time.",
+      "amount": 10,
+      "type": "threshold"
+    },
+    "donation_20": {
+      "name": "That's A Lot Of Treats.",
+      "desc": "Awarded for donating 20 or more dollars at a time.",
+      "amount": 20,
+      "type": "threshold"
+    },
     "donation_cumulative_10": {
       "name": "First Treat.",
       "desc": "Awarded for donating $10 overall.",
       "amount": 10,
+      "type": "cumulative"
+    },
+    "donation_cumulative_25": {
+      "name": "Treat Buyer.",
+      "desc": "Awarded for donating $25 overall.",
+      "amount": 25,
       "type": "cumulative"
     }
   },
