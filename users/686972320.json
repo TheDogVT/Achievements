@@ -12,7 +12,9 @@
       "cheer_message_10k": "2026-08-23T03:04:20.362753+00:00",
       "cheer_cumulative_2500": "2026-08-23T03:04:20.637650+00:00",
       "cheer_cumulative_5k": "2026-08-23T03:04:20.908105+00:00",
-      "cheer_cumulative_10k": "2026-08-23T03:04:21.199545+00:00"
+      "cheer_cumulative_10k": "2026-08-23T03:04:21.199545+00:00",
+      "cheer_cumulative_20k": "2026-08-23T03:06:02.294496+00:00",
+      "cheer_cumulative_50k": "2026-08-23T03:06:57.918362+00:00"
     },
     "founded": {}
   },
@@ -22,7 +24,12 @@
       "prefix_8",
       "name_5",
       "name_6",
-      "name_7"
+      "name_7",
+      "name_8",
+      "prefix_119",
+      "prestige_cheer_static",
+      "prestige_cheer_name",
+      "message_2"
     ],
     "active": {}
   },
