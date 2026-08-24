@@ -530,6 +530,12 @@
       "amount": 10000,
       "type": "threshold"
     },
+    "cheer_message_100k": {
+      "name": "(Platinum) Titan Bit Giver.",
+      "desc": "Awarded for cheering 100,000 bits or more in a single message",
+      "amount": 100000,
+      "type": "threshold"
+    },
     "cheer_cumulative_1k": {
       "name": "Bit Curious.",
       "desc": "Awarded for cheering 1,000 bits overall.",
@@ -570,6 +576,12 @@
       "name": "High Bitroller.",
       "desc": "Awarded for cheering 75,000 bits overall.",
       "amount": 75000,
+      "type": "cumulative"
+    },
+    "cheer_cumulative_100k": {
+      "name": "Bit VIP.",
+      "desc": "Awarded for cheering 100,000 bits overall.",
+      "amount": 100000,
       "type": "cumulative"
     },
     "cheer_time_1": {

@@ -1,4 +1,24 @@
 {
+  "prestige_cheer_animated": {
+    "slot": "card_background",
+    "display_name": "Prestige Cheer Animated",
+    "achievement_name": "Bit VIP.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_cumulative_100k",
+    "config": {
+      "background_class": "bg-chat-prestige-cheer bg-chat-prestige-cheer-animated",
+      "background_mode": "class",
+      "background_renderer": "cheer_crt",
+      "opacity": "100",
+      "text": "Prestige Cheer Animated",
+      "theme": "prestige-cheer",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_cumulative_100k"
+      }
+    }
+  },
   "prestige_cheer_static": {
     "slot": "card_background",
     "display_name": "Prestige Cheer",
@@ -2221,6 +2241,22 @@
         "type": "achievement",
         "category": "manual",
         "id": "bog_sputter"
+      }
+    }
+  },
+  "name_3": {
+    "slot": "name_base",
+    "display_name": "name_3",
+    "achievement_name": "(Platinum) Titan Bit Giver.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_message_100k",
+    "config": {
+      "font_family": "Varela Round",
+      "outline": "basic",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_message_100k"
       }
     }
   },
