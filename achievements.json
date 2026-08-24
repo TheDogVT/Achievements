@@ -77,6 +77,12 @@
       "desc": "Awarded for cheering once.",
       "amount": 1,
       "type": "times"
+    },
+    "cheer_69": {
+      "name": "Nice Bitties.",
+      "desc": "Awarded for cheering exactly 69 bits",
+      "amount": 69,
+      "type": "exact"
     }
   },
   "donation": {

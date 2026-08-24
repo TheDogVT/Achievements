@@ -96,6 +96,23 @@
       }
     }
   },
+  "prefix_74": {
+    "slot": "name_prefix",
+    "display_name": "nice",
+    "achievement_name": "Nice Bitties.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_69",
+    "config": {
+      "outline": "basic",
+      "text": "nice",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_69"
+      }
+    }
+  },
   "prefix_8": {
     "slot": "name_prefix",
     "display_name": "Sincerely,",
@@ -541,6 +558,23 @@
         "type": "achievement",
         "category": "cheer",
         "id": "cheer_cumulative_50k"
+      }
+    }
+  },
+  "suffix_18": {
+    "slot": "name_suffix",
+    "display_name": "nice",
+    "achievement_name": "Nice Bitties.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_69",
+    "config": {
+      "outline": "basic",
+      "text": "nice",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_69"
       }
     }
   }

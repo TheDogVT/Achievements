@@ -22,7 +22,8 @@
     "founded": {
       "donation_10": "2026-08-23T03:11:06.848600+00:00",
       "donation_20": "2026-08-23T03:11:06.878211+00:00",
-      "donation_cumulative_25": "2026-08-23T03:11:07.173336+00:00"
+      "donation_cumulative_25": "2026-08-23T03:11:07.173336+00:00",
+      "cheer_69": "2026-08-24T00:33:06.243161+00:00"
     }
   },
   "decorations": {
@@ -38,7 +39,9 @@
       "prestige_cheer_name",
       "message_2",
       "name_9",
-      "name_10"
+      "name_10",
+      "prefix_74",
+      "suffix_18"
     ],
     "active": {}
   },
