@@ -5,119 +5,32 @@
   "legacy": 1,
   "achievements": {
     "earned": {
-      "cheer_message_100": "2026-08-23T03:03:12.145841+00:00",
-      "cheer_message_1k": "2026-08-23T03:03:12.410391+00:00",
-      "cheer_cumulative_1k": "2026-08-23T03:03:12.706420+00:00",
-      "cheer_time_1": "2026-08-23T03:03:12.984249+00:00",
-      "cheer_message_10k": "2026-08-23T03:04:20.362753+00:00",
-      "cheer_cumulative_2500": "2026-08-23T03:04:20.637650+00:00",
-      "cheer_cumulative_5k": "2026-08-23T03:04:20.908105+00:00",
-      "cheer_cumulative_10k": "2026-08-23T03:04:21.199545+00:00",
-      "cheer_cumulative_20k": "2026-08-23T03:06:02.294496+00:00",
-      "cheer_cumulative_50k": "2026-08-23T03:06:57.918362+00:00",
-      "donation_1": "2026-08-23T03:11:06.329802+00:00",
-      "donation_5": "2026-08-23T03:11:06.570563+00:00",
-      "donation_cumulative_10": "2026-08-23T03:11:06.902760+00:00",
-      "cheer_cumulative_75k": "2026-08-24T01:36:07.399474+00:00",
-      "gifted_cumulative_5": "2026-08-24T01:36:30.998885+00:00",
-      "gifted_times_1": "2026-08-24T01:36:31.384444+00:00",
-      "gifted_instance_5": "2026-08-24T01:36:31.637859+00:00",
-      "cheer_time_10": "2026-08-24T04:29:31.842831+00:00",
-      "cheer_1": "2026-08-24T04:29:32.093603+00:00",
-      "cheer_100": "2026-08-24T04:29:46.433986+00:00",
-      "cheer_cumulative_100k": "2026-08-24T04:42:18.548802+00:00"
+      "chat_10": "2025-12-08T00:43:35.279037+00:00",
+      "redeem_pet_1": "2025-12-13T00:36:31.221503+00:00",
+      "redeem_total_5": "2026-03-06T23:48:00.235202+00:00",
+      "chat_100": "2026-05-05T20:56:14.829464+00:00",
+      "redeem_total_10": "2026-05-19T22:21:06.216416+00:00",
+      "chat_heckin": "2026-05-21T23:29:49.174086+00:00",
+      "attend_3": "2026-05-25T23:02:42.658183+00:00",
+      "attend_5": "2026-07-23T20:07:40.147545+00:00"
     },
-    "founded": {
-      "donation_10": "2026-08-23T03:11:06.848600+00:00",
-      "donation_20": "2026-08-23T03:11:06.878211+00:00",
-      "donation_cumulative_25": "2026-08-23T03:11:07.173336+00:00",
-      "cheer_69": "2026-08-24T00:33:06.243161+00:00",
-      "cheer_256": "2026-08-24T01:36:13.346855+00:00",
-      "gifted_cumulative_10": "2026-08-24T01:36:31.290546+00:00",
-      "gifted_cumulative_15": "2026-08-24T01:36:31.317344+00:00",
-      "gifted_cumulative_20": "2026-08-24T01:36:31.339870+00:00",
-      "gifted_cumulative_25": "2026-08-24T01:36:31.360395+00:00",
-      "gifted_instance_10": "2026-08-24T01:36:31.889236+00:00",
-      "gifted_instance_20": "2026-08-24T01:36:31.907283+00:00",
-      "donation_50": "2026-08-24T03:53:18.734085+00:00",
-      "donation_100": "2026-08-24T03:53:18.752600+00:00",
-      "donation_200": "2026-08-24T03:53:18.773603+00:00",
-      "donation_cumulative_50": "2026-08-24T03:53:18.805219+00:00",
-      "donation_cumulative_100": "2026-08-24T03:53:18.837374+00:00",
-      "donation_cumulative_200": "2026-08-24T03:53:18.874968+00:00",
-      "donation_cumulative_250": "2026-08-24T03:53:18.903000+00:00",
-      "donation_cumulative_500": "2026-08-24T03:53:18.923102+00:00",
-      "donation_cumulative_1000": "2026-08-24T03:53:18.961151+00:00",
-      "cheer_10": "2026-08-24T04:29:38.895002+00:00",
-      "cheer_999": "2026-08-24T04:29:58.472816+00:00",
-      "cheer_9999": "2026-08-24T04:40:32.081548+00:00"
-    }
+    "founded": {}
   },
   "decorations": {
     "unlocked": [
-      "name_4",
-      "prefix_8",
-      "name_5",
-      "name_6",
-      "name_7",
-      "name_8",
-      "prefix_119",
-      "prestige_cheer_static",
-      "prestige_cheer_name",
-      "message_2",
-      "name_9",
-      "name_10",
-      "prefix_74",
-      "suffix_18",
-      "suffix_22",
-      "name_14",
-      "name_15",
-      "name_16",
-      "name_17",
-      "name_18",
-      "name_11",
-      "name_12",
-      "name_13",
-      "prefix_121",
-      "prestige_donation_static",
-      "prestige_donation_name",
-      "message_1",
-      "prestige_donation_animated",
-      "prefix_9",
-      "name_2",
-      "prefix_75",
-      "suffix_9",
-      "prefix_23",
-      "suffix_12",
-      "prefix_76",
-      "suffix_19",
-      "prefix_47",
-      "prefix_66",
-      "suffix_48",
-      "prestige_cheer_animated"
+      "prefix_2",
+      "prefix_7",
+      "prefix_79",
+      "suffix_57",
+      "prefix_80",
+      "suffix_58"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 0,
-    "active_months": 1,
-    "first_seen": "2026-8"
+    "messages": 211,
+    "active_months": 6,
+    "first_seen": "2025-12"
   },
-  "top_months": [
-    {
-      "month": "2026-8",
-      "kind": "gifted",
-      "rank": 1
-    },
-    {
-      "month": "2026-8",
-      "kind": "cheers",
-      "rank": 2
-    },
-    {
-      "month": "2026-8",
-      "kind": "donations",
-      "rank": 2
-    }
-  ]
+  "top_months": []
 }

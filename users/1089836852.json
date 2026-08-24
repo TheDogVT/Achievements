@@ -4,17 +4,42 @@
   "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/908ff0fa-005a-4235-8270-faa470cdbee3-profile_image-300x300.png",
   "legacy": 1,
   "achievements": {
-    "earned": {},
+    "earned": {
+      "chat_10": "2025-11-15T22:21:02.180315+00:00",
+      "gamble_total_loss_1": "2025-11-21T23:06:17.993683+00:00",
+      "gamble_total_1": "2025-11-21T23:06:17.993683+00:00",
+      "chat_100": "2025-11-22T23:23:37.573876+00:00",
+      "chat_ball": "2025-12-11T22:01:30.017146+00:00",
+      "subathon_2025": "2025-12-22T21:22:04.588516+00:00",
+      "subathon_2025_any": "2025-12-24T21:40:56.766277+00:00",
+      "chat_stinky": "2025-12-25T21:36:33.282008+00:00",
+      "chat_500": "2026-02-07T23:35:16.869413+00:00",
+      "chat_tail": "2026-02-23T22:15:08.714743+00:00",
+      "redeem_total_5": "2026-05-30T23:59:30.709788+00:00",
+      "redeem_total_10": "2026-05-30T23:59:31.116594+00:00",
+      "redeem_total_25": "2026-05-30T23:59:31.441823+00:00",
+      "redeem_total_50": "2026-05-30T23:59:31.718642+00:00",
+      "redeem_total_100": "2026-05-30T23:59:31.985642+00:00",
+      "attend_3": "2026-08-11T22:29:02.274289+00:00"
+    },
     "founded": {}
   },
   "decorations": {
-    "unlocked": [],
+    "unlocked": [
+      "prefix_11",
+      "prefix_2",
+      "prefix_3",
+      "prefix_7",
+      "prefix_77",
+      "prefix_79",
+      "suffix_57"
+    ],
     "active": {}
   },
   "stats": {
-    "messages": 0,
-    "active_months": 0,
-    "first_seen": null
+    "messages": 565,
+    "active_months": 8,
+    "first_seen": "2025-11"
   },
   "top_months": []
 }
