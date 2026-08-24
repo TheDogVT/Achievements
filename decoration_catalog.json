@@ -38,6 +38,26 @@
       }
     }
   },
+  "prestige_donation_animated": {
+    "slot": "card_background",
+    "display_name": "Prestige Donation Animated",
+    "achievement_name": "Five Months Of Meals.",
+    "achievement_category": "donation",
+    "achievement_id": "donation_cumulative_1000",
+    "config": {
+      "background_class": "bg-chat-prestige-donation bg-chat-prestige-donation-animated",
+      "background_mode": "class",
+      "background_renderer": "donation_wish",
+      "opacity": "100",
+      "text": "Prestige Donation Animated",
+      "theme": "prestige-donation",
+      "unlock": {
+        "type": "achievement",
+        "category": "donation",
+        "id": "donation_cumulative_1000"
+      }
+    }
+  },
   "prestige_donation_static": {
     "slot": "card_background",
     "display_name": "Prestige Donation",

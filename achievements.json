@@ -885,6 +885,12 @@
       "desc": "Awarded for donating $500 overall.",
       "amount": 500,
       "type": "cumulative"
+    },
+    "donation_cumulative_1000": {
+      "name": "Five Months Of Meals.",
+      "desc": "Awarded for donating $1,000 overall.",
+      "amount": 1000,
+      "type": "cumulative"
     }
   },
   "gamble": {

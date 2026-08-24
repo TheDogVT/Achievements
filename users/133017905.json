@@ -117,7 +117,21 @@
       "gifted_cumulative_15": "2026-08-15T21:49:44.161366+00:00",
       "gifted_cumulative_20": "2026-08-15T21:49:44.527082+00:00",
       "gifted_times_5": "2026-08-15T21:49:44.869925+00:00",
-      "chat_10k": "2026-08-24T22:11:40.871653+00:00"
+      "chat_10k": "2026-08-24T22:11:40.871653+00:00",
+      "donation_1": "2026-08-24T22:21:52.048934+00:00",
+      "donation_5": "2026-08-24T22:21:52.068042+00:00",
+      "donation_10": "2026-08-24T22:21:52.083556+00:00",
+      "donation_20": "2026-08-24T22:21:52.101557+00:00",
+      "donation_50": "2026-08-24T22:21:52.119133+00:00",
+      "donation_100": "2026-08-24T22:21:52.137799+00:00",
+      "donation_200": "2026-08-24T22:21:52.156326+00:00",
+      "donation_cumulative_10": "2026-08-24T22:21:52.171468+00:00",
+      "donation_cumulative_25": "2026-08-24T22:21:52.191466+00:00",
+      "donation_cumulative_50": "2026-08-24T22:21:52.212506+00:00",
+      "donation_cumulative_100": "2026-08-24T22:21:52.233505+00:00",
+      "donation_cumulative_200": "2026-08-24T22:21:52.254569+00:00",
+      "donation_cumulative_250": "2026-08-24T22:21:52.276570+00:00",
+      "donation_cumulative_500": "2026-08-24T22:21:52.293955+00:00"
     },
     "founded": {
       "gamble_loss_total_1m": "2025-11-08T21:02:10.507374+00:00",
@@ -127,7 +141,8 @@
       "chat_sit": "2026-02-07T22:12:57.808390+00:00",
       "chat_leash": "2026-02-09T00:05:11.057248+00:00",
       "chat_pupper": "2026-02-09T00:06:44.575760+00:00",
-      "cheer_cumulative_10k": "2026-05-01T22:12:09.614617+00:00"
+      "cheer_cumulative_10k": "2026-05-01T22:12:09.614617+00:00",
+      "donation_cumulative_1000": "2026-08-24T22:21:52.324509+00:00"
     }
   },
   "decorations": {
@@ -183,7 +198,17 @@
       "name_15",
       "name_16",
       "name_17",
-      "prefix_6"
+      "prefix_6",
+      "name_9",
+      "name_10",
+      "name_11",
+      "name_12",
+      "name_13",
+      "prefix_121",
+      "prestige_donation_static",
+      "prestige_donation_name",
+      "message_1",
+      "prestige_donation_animated"
     ],
     "active": {
       "name_prefix": "prefix_16",
@@ -194,7 +219,7 @@
     }
   },
   "stats": {
-    "messages": 10004,
+    "messages": 10021,
     "active_months": 10,
     "first_seen": "2025-11"
   },
@@ -212,6 +237,11 @@
     {
       "month": "2026-8",
       "kind": "gifted",
+      "rank": 1
+    },
+    {
+      "month": "2026-8",
+      "kind": "donations",
       "rank": 1
     }
   ]
