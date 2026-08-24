@@ -1,4 +1,101 @@
 {
+  "prestige_cheer_animated": {
+    "slot": "card_background",
+    "display_name": "Prestige Cheer Animated",
+    "achievement_name": "Bit VIP.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_cumulative_100k",
+    "config": {
+      "background_class": "bg-chat-prestige-cheer bg-chat-prestige-cheer-animated",
+      "background_mode": "class",
+      "background_renderer": "cheer_crt",
+      "opacity": "100",
+      "text": "Prestige Cheer Animated",
+      "theme": "prestige-cheer",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_cumulative_100k"
+      }
+    }
+  },
+  "prestige_cheer_static": {
+    "slot": "card_background",
+    "display_name": "Prestige Cheer",
+    "achievement_name": "Bit Burrier.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_cumulative_50k",
+    "config": {
+      "background_class": "bg-chat-prestige-cheer",
+      "background_mode": "class",
+      "opacity": "100",
+      "text": "Prestige Cheer",
+      "theme": "prestige-cheer",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_cumulative_50k"
+      }
+    }
+  },
+  "prefix_119": {
+    "slot": "name_prefix",
+    "display_name": "Prestige Cheer Name",
+    "achievement_name": "Bit Burrier.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_cumulative_50k",
+    "config": {
+      "animation": "glitch",
+      "effects_layers": [
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "chroma_echo",
+          "enabled": true,
+          "engine": "text",
+          "interval": "",
+          "knobs": {
+            "intensity": 1,
+            "speed": 3
+          },
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "",
+          "plane": "text",
+          "random_range": "",
+          "scale": "",
+          "z_index": "6"
+        }
+      ],
+      "font_family": "VT323",
+      "font_size": "16px",
+      "font_style": "normal",
+      "font_weight": "700",
+      "glow_color": "rgba(0, 212, 255, 0.66)",
+      "glow_layers": [
+        {
+          "animation": "pulse",
+          "color": "rgba(255, 79, 216, 0.56)",
+          "distance": "12",
+          "fade": "66",
+          "plane": "back",
+          "spread": "90"
+        }
+      ],
+      "label": "Prestige Cheer Name",
+      "style": "neon",
+      "text": "Bit Runner",
+      "text_color": "#fff7d6",
+      "theme": "prestige-cheer",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_cumulative_50k"
+      }
+    }
+  },
   "prefix_47": {
     "slot": "name_prefix",
     "display_name": "shortie",
@@ -64,6 +161,22 @@
       }
     }
   },
+  "name_3": {
+    "slot": "name_base",
+    "display_name": "name_3",
+    "achievement_name": "(Platinum) Titan Bit Giver.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_message_100k",
+    "config": {
+      "font_family": "Varela Round",
+      "outline": "basic",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_message_100k"
+      }
+    }
+  },
   "name_4": {
     "slot": "name_base",
     "display_name": "name_4",
@@ -79,6 +192,351 @@
         "type": "achievement",
         "category": "cheer",
         "id": "cheer_cumulative_1k"
+      }
+    }
+  },
+  "name_5": {
+    "slot": "name_base",
+    "display_name": "name_5",
+    "achievement_name": "Cheer Chewer.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_cumulative_2500",
+    "config": {
+      "outline": "basic",
+      "outline_position": "outer_fake",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#9147ff",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_cumulative_2500"
+      }
+    }
+  },
+  "name_6": {
+    "slot": "name_base",
+    "display_name": "name_6",
+    "achievement_name": "Bit of Bits.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_cumulative_5k",
+    "config": {
+      "font_family": "VT323",
+      "gradient_animation": "sheen",
+      "outline": "ink_soft",
+      "outline_thickness": "1",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#9147ff",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_cumulative_5k"
+      }
+    }
+  },
+  "name_7": {
+    "slot": "name_base",
+    "display_name": "name_7",
+    "achievement_name": "Famous Cheerer.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_cumulative_10k",
+    "config": {
+      "effects_layers": [
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "chroma_echo",
+          "enabled": true,
+          "engine": "text",
+          "interval": "",
+          "knobs": {},
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "",
+          "plane": "text",
+          "random_range": "",
+          "scale": "",
+          "z_index": "5"
+        }
+      ],
+      "font_family": "VT323",
+      "glow_layers": [
+        {
+          "animation": "pulse",
+          "color": "#00d4ff",
+          "distance": "",
+          "fade": "",
+          "plane": "back",
+          "spread": ""
+        }
+      ],
+      "gradient_animation": "sheen",
+      "outline": "ink_soft",
+      "outline_thickness": "1",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#9147ff",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_cumulative_10k"
+      }
+    }
+  },
+  "name_8": {
+    "slot": "name_base",
+    "display_name": "name_8",
+    "achievement_name": "Food Buyer.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_cumulative_20k",
+    "config": {
+      "effects_layers": [
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "mist_roll",
+          "enabled": true,
+          "engine": "render",
+          "interval": "",
+          "knobs": {
+            "color1": "#6600ff",
+            "effect_opacity": 0.35,
+            "intensity": 0.1,
+            "speed": 2
+          },
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "",
+          "plane": "front",
+          "random_range": "",
+          "scale": "0.7",
+          "z_index": "7"
+        },
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "spark_trail",
+          "enabled": true,
+          "engine": "particle",
+          "interval": "",
+          "knobs": {
+            "canvas_rotation": 90,
+            "color1": "#962eff",
+            "intensity": 1,
+            "length": 40,
+            "origin_x": 0,
+            "range": 45,
+            "speed": 5
+          },
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "",
+          "plane": "rear",
+          "random_range": "",
+          "scale": "",
+          "z_index": "3"
+        },
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "rune_jitter",
+          "enabled": true,
+          "engine": "text",
+          "interval": "",
+          "knobs": {},
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "",
+          "plane": "rear",
+          "random_range": "",
+          "scale": "",
+          "z_index": "5"
+        },
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "chroma_echo",
+          "enabled": true,
+          "engine": "text",
+          "interval": "",
+          "knobs": {},
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "",
+          "plane": "text",
+          "random_range": "",
+          "scale": "",
+          "z_index": "5"
+        }
+      ],
+      "font_family": "VT323",
+      "glow_layers": [
+        {
+          "animation": "breathe",
+          "color": "#00d4ff",
+          "distance": "",
+          "fade": "",
+          "plane": "back",
+          "spread": ""
+        },
+        {
+          "animation": "pulse",
+          "color": "#9147ff",
+          "distance": "",
+          "fade": "",
+          "plane": "back",
+          "spread": ""
+        }
+      ],
+      "gradient_animation": "aurora",
+      "outline": "ink_soft",
+      "outline_thickness": "2",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#9147ff",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_cumulative_20k"
+      }
+    }
+  },
+  "prestige_cheer_name": {
+    "slot": "name_base",
+    "display_name": "Prestige Cheer Name",
+    "achievement_name": "Bit Burrier.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_cumulative_50k",
+    "config": {
+      "animation": "glitch",
+      "effects_layers": [
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "chroma_echo",
+          "enabled": true,
+          "engine": "text",
+          "interval": "",
+          "knobs": {
+            "intensity": 1,
+            "speed": 3
+          },
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "",
+          "plane": "text",
+          "random_range": "",
+          "scale": "",
+          "z_index": "6"
+        }
+      ],
+      "font_family": "VT323",
+      "font_style": "normal",
+      "font_weight": "700",
+      "glow_color": "rgba(0, 212, 255, 0.66)",
+      "glow_layers": [
+        {
+          "animation": "pulse",
+          "color": "rgba(255, 79, 216, 0.56)",
+          "distance": "12",
+          "fade": "66",
+          "plane": "back",
+          "spread": "90"
+        }
+      ],
+      "label": "Prestige Cheer Name",
+      "style": "neon",
+      "text_color": "#fff7d6",
+      "theme": "prestige-cheer",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_cumulative_50k"
+      }
+    }
+  },
+  "message_2": {
+    "slot": "message_text",
+    "display_name": "Prestige Cheer Name",
+    "achievement_name": "Bit Burrier.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_cumulative_50k",
+    "config": {
+      "edge_animation": "shimmer",
+      "font_family": "VT323",
+      "font_size": "31px",
+      "font_style": "normal",
+      "font_weight": "700",
+      "glow_color": "rgba(0, 212, 255, 0.66)",
+      "glow_layers": [
+        {
+          "animation": "chain",
+          "color": "rgba(255, 79, 216, 0.68)",
+          "distance": "2.5",
+          "fade": "16",
+          "plane": "back",
+          "spread": "0"
+        }
+      ],
+      "label": "Prestige Cheer Name",
+      "outline_light_blur": "3.75",
+      "outline_light_color": "#9e33b9",
+      "outline_light_opacity": "72",
+      "outline_light_thickness": "2.75",
+      "outline_light_z_index": "1",
+      "style": "neon",
+      "text": "Test",
+      "text_color": "#a6dbe7",
+      "theme": "prestige-cheer",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_cumulative_50k"
       }
     }
   },
