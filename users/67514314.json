@@ -6,13 +6,16 @@
   "achievements": {
     "earned": {
       "cheer_message_100": "2026-08-22T15:21:23.637951+00:00",
-      "cheer_time_1": "2026-08-22T15:21:23.878211+00:00"
+      "cheer_time_1": "2026-08-22T15:21:23.878211+00:00",
+      "cheer_message_1k": "2026-08-24T04:14:28.271039+00:00",
+      "cheer_cumulative_1k": "2026-08-24T04:14:28.556429+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
-      "prefix_8"
+      "prefix_8",
+      "name_4"
     ],
     "active": {}
   },
