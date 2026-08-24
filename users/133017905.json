@@ -116,7 +116,8 @@
       "gifted_instance_10": "2026-08-09T23:27:53.529467+00:00",
       "gifted_cumulative_15": "2026-08-15T21:49:44.161366+00:00",
       "gifted_cumulative_20": "2026-08-15T21:49:44.527082+00:00",
-      "gifted_times_5": "2026-08-15T21:49:44.869925+00:00"
+      "gifted_times_5": "2026-08-15T21:49:44.869925+00:00",
+      "chat_10k": "2026-08-24T22:11:40.871653+00:00"
     },
     "founded": {
       "gamble_loss_total_1m": "2025-11-08T21:02:10.507374+00:00",
@@ -181,7 +182,8 @@
       "name_14",
       "name_15",
       "name_16",
-      "name_17"
+      "name_17",
+      "prefix_6"
     ],
     "active": {
       "name_prefix": "prefix_16",
@@ -192,7 +194,7 @@
     }
   },
   "stats": {
-    "messages": 9976,
+    "messages": 10004,
     "active_months": 10,
     "first_seen": "2025-11"
   },
