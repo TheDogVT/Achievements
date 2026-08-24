@@ -4,17 +4,23 @@
   "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/a1798a0f-10e8-4b74-b967-88e12a2a0d58-profile_image-300x300.png",
   "legacy": 1,
   "achievements": {
-    "earned": {},
+    "earned": {
+      "chat_10": "2025-11-21T22:54:29.656881+00:00",
+      "chat_sleepy": "2026-04-06T22:59:13.220021+00:00"
+    },
     "founded": {}
   },
   "decorations": {
-    "unlocked": [],
+    "unlocked": [
+      "prefix_10",
+      "prefix_7"
+    ],
     "active": {}
   },
   "stats": {
-    "messages": 0,
-    "active_months": 0,
-    "first_seen": null
+    "messages": 26,
+    "active_months": 3,
+    "first_seen": "2025-11"
   },
   "top_months": []
 }
