@@ -168,6 +168,51 @@
       }
     }
   },
+  "prefix_23": {
+    "slot": "name_prefix",
+    "display_name": "Bit",
+    "achievement_name": "Not much, but it's honest bits.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_10",
+    "config": {
+      "font_family": "VT323",
+      "outline": "basic",
+      "text": "Bit",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_10"
+      }
+    }
+  },
+  "prefix_47": {
+    "slot": "name_prefix",
+    "display_name": "shortie",
+    "achievement_name": "One away...",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_999",
+    "config": {
+      "outline": "basic",
+      "text": "shortie",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#7de8ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_999"
+      }
+    }
+  },
   "prefix_74": {
     "slot": "name_prefix",
     "display_name": "nice",
@@ -182,6 +227,21 @@
         "type": "achievement",
         "category": "cheer",
         "id": "cheer_69"
+      }
+    }
+  },
+  "prefix_75": {
+    "slot": "name_prefix",
+    "display_name": "little",
+    "achievement_name": "Bit Giver.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_1",
+    "config": {
+      "text": "little",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_1"
       }
     }
   },
@@ -1039,6 +1099,24 @@
       }
     }
   },
+  "suffix_12": {
+    "slot": "name_suffix",
+    "display_name": "[10]",
+    "achievement_name": "Not much, but it's honest bits.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_10",
+    "config": {
+      "font_family": "VT323",
+      "outline": "basic",
+      "text": "[10]",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_10"
+      }
+    }
+  },
   "suffix_18": {
     "slot": "name_suffix",
     "display_name": "nice",
@@ -1087,6 +1165,23 @@
         "type": "achievement",
         "category": "cheer",
         "id": "cheer_256"
+      }
+    }
+  },
+  "suffix_9": {
+    "slot": "name_suffix",
+    "display_name": "the bit",
+    "achievement_name": "Bit Giver.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_1",
+    "config": {
+      "outline": "basic",
+      "text": "the bit",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_1"
       }
     }
   }

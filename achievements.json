@@ -84,6 +84,18 @@
       "amount": 10,
       "type": "times"
     },
+    "cheer_1": {
+      "name": "Bit Giver.",
+      "desc": "Awarded for cheering exactly 1 bit.",
+      "amount": 1,
+      "type": "exact"
+    },
+    "cheer_10": {
+      "name": "Not much, but it's honest bits.",
+      "desc": "Awarded for cheering exactly 10 bits",
+      "amount": 10,
+      "type": "exact"
+    },
     "cheer_69": {
       "name": "Nice Bitties.",
       "desc": "Awarded for cheering exactly 69 bits",
@@ -100,6 +112,12 @@
       "name": "There be colors!",
       "desc": "Awarded for cheering exactly 256 bits",
       "amount": 256,
+      "type": "exact"
+    },
+    "cheer_999": {
+      "name": "One away...",
+      "desc": "Awarded for cheering exactly 999 bits",
+      "amount": 999,
       "type": "exact"
     }
   },
