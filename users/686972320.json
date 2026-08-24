@@ -24,7 +24,8 @@
       "gifted_instance_5": "2026-08-24T01:36:31.637859+00:00",
       "cheer_time_10": "2026-08-24T04:29:31.842831+00:00",
       "cheer_1": "2026-08-24T04:29:32.093603+00:00",
-      "cheer_100": "2026-08-24T04:29:46.433986+00:00"
+      "cheer_100": "2026-08-24T04:29:46.433986+00:00",
+      "cheer_cumulative_100k": "2026-08-24T04:42:18.548802+00:00"
     },
     "founded": {
       "donation_10": "2026-08-23T03:11:06.848600+00:00",
@@ -92,7 +93,8 @@
       "suffix_19",
       "prefix_47",
       "prefix_66",
-      "suffix_48"
+      "suffix_48",
+      "prestige_cheer_animated"
     ],
     "active": {}
   },
@@ -109,13 +111,13 @@
     },
     {
       "month": "2026-8",
-      "kind": "donations",
+      "kind": "cheers",
       "rank": 2
     },
     {
       "month": "2026-8",
-      "kind": "cheers",
-      "rank": 3
+      "kind": "donations",
+      "rank": 2
     }
   ]
 }
