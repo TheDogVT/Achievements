@@ -38,6 +38,45 @@
       }
     }
   },
+  "prestige_donation_animated": {
+    "slot": "card_background",
+    "display_name": "Prestige Donation Animated",
+    "achievement_name": "Five Months Of Meals.",
+    "achievement_category": "donation",
+    "achievement_id": "donation_cumulative_1000",
+    "config": {
+      "background_class": "bg-chat-prestige-donation bg-chat-prestige-donation-animated",
+      "background_mode": "class",
+      "background_renderer": "donation_wish",
+      "opacity": "100",
+      "text": "Prestige Donation Animated",
+      "theme": "prestige-donation",
+      "unlock": {
+        "type": "achievement",
+        "category": "donation",
+        "id": "donation_cumulative_1000"
+      }
+    }
+  },
+  "prestige_donation_static": {
+    "slot": "card_background",
+    "display_name": "Prestige Donation",
+    "achievement_name": "Two And A Half Months Fed.",
+    "achievement_category": "donation",
+    "achievement_id": "donation_cumulative_500",
+    "config": {
+      "background_class": "bg-chat-prestige-donation",
+      "background_mode": "class",
+      "opacity": "100",
+      "text": "Prestige Donation",
+      "theme": "prestige-donation",
+      "unlock": {
+        "type": "achievement",
+        "category": "donation",
+        "id": "donation_cumulative_500"
+      }
+    }
+  },
   "prefix_119": {
     "slot": "name_prefix",
     "display_name": "Prestige Cheer Name",
@@ -93,6 +132,39 @@
         "type": "achievement",
         "category": "cheer",
         "id": "cheer_cumulative_50k"
+      }
+    }
+  },
+  "prefix_121": {
+    "slot": "name_prefix",
+    "display_name": "Prestige Donation Name",
+    "achievement_name": "Two And A Half Months Fed.",
+    "achievement_category": "donation",
+    "achievement_id": "donation_cumulative_500",
+    "config": {
+      "font_family": "Cormorant Garamond",
+      "font_size": "16px",
+      "font_style": "normal",
+      "font_weight": "500",
+      "glow_color": "rgba(255, 168, 86, 0.62)",
+      "glow_layers": [
+        {
+          "animation": "breathe",
+          "color": "rgba(255, 168, 86, 0.58)",
+          "distance": "10",
+          "fade": "72",
+          "plane": "back",
+          "spread": "80"
+        }
+      ],
+      "label": "Prestige Donation Name",
+      "text": "Dream Maker",
+      "text_color": "#ffe6ac",
+      "theme": "prestige-donation",
+      "unlock": {
+        "type": "achievement",
+        "category": "donation",
+        "id": "donation_cumulative_500"
       }
     }
   },
@@ -162,6 +234,183 @@
         "type": "achievement",
         "category": "donation",
         "id": "donation_cumulative_25"
+      }
+    }
+  },
+  "name_11": {
+    "slot": "name_base",
+    "display_name": "name_11",
+    "achievement_name": "Kibble Contributor.",
+    "achievement_category": "donation",
+    "achievement_id": "donation_cumulative_50",
+    "config": {
+      "font_family": "Rubik Glitch",
+      "font_style": "normal",
+      "font_weight": "100",
+      "gradient_animation": "sheen",
+      "outline": "ink_soft",
+      "outline_thickness": "1",
+      "text_gradient": [
+        {
+          "color": "#f2a145",
+          "pos": 30
+        },
+        {
+          "color": "#fef3c7",
+          "pos": 100
+        }
+      ],
+      "unlock": {
+        "type": "achievement",
+        "category": "donation",
+        "id": "donation_cumulative_50"
+      }
+    }
+  },
+  "name_12": {
+    "slot": "name_base",
+    "display_name": "name_12",
+    "achievement_name": "Squeaky Toy Sponsor.",
+    "achievement_category": "donation",
+    "achievement_id": "donation_cumulative_100",
+    "config": {
+      "font_family": "Rubik Glitch",
+      "font_style": "normal",
+      "font_weight": "100",
+      "glow_layers": [
+        {
+          "animation": "pulse",
+          "color": "#d97706",
+          "distance": "14",
+          "fade": "0",
+          "plane": "back",
+          "spread": "70"
+        }
+      ],
+      "gradient_animation": "sheen",
+      "outline": "ink_soft",
+      "outline_light_blur": "10.25",
+      "outline_light_color": "#ff7b00",
+      "outline_light_z_index": "3",
+      "outline_thickness": "1",
+      "text_gradient": [
+        {
+          "color": "#d97706",
+          "pos": null
+        },
+        {
+          "color": "#fef3c7",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "type": "achievement",
+        "category": "donation",
+        "id": "donation_cumulative_100"
+      }
+    }
+  },
+  "name_13": {
+    "slot": "name_base",
+    "display_name": "name_13",
+    "achievement_name": "A Month Of Food.",
+    "achievement_category": "donation",
+    "achievement_id": "donation_cumulative_200",
+    "config": {
+      "edge_animation": "pulse",
+      "effects_layers": [
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "fire_embers",
+          "enabled": true,
+          "engine": "particle",
+          "interval": "",
+          "knobs": {
+            "color1": "#ff5100",
+            "glow": 0.1,
+            "origin_x": 0,
+            "particle_count": 50,
+            "range": 55,
+            "size": 20,
+            "speed": 1.9,
+            "spread": 30
+          },
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "50",
+          "phase": "",
+          "plane": "rear",
+          "random_range": "",
+          "scale": "1",
+          "z_index": "3"
+        },
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "lens_fleck",
+          "enabled": true,
+          "engine": "render",
+          "interval": "",
+          "knobs": {},
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "",
+          "plane": "text",
+          "random_range": "",
+          "scale": "",
+          "z_index": "6"
+        }
+      ],
+      "font_family": "Rubik Glitch",
+      "font_style": "normal",
+      "font_weight": "100",
+      "glow_layers": [
+        {
+          "animation": "breathe",
+          "color": "#d97706",
+          "distance": "",
+          "fade": "",
+          "plane": "back",
+          "spread": ""
+        },
+        {
+          "animation": "pulse",
+          "color": "#92400e",
+          "distance": "",
+          "fade": "",
+          "plane": "back",
+          "spread": ""
+        }
+      ],
+      "gradient_animation": "burn",
+      "outline": "ink_soft",
+      "outline_light_blur": "3.25",
+      "outline_light_color": "#ff9742",
+      "outline_light_thickness": "1.75",
+      "outline_light_z_index": "5",
+      "outline_thickness": "1",
+      "text_gradient": [
+        {
+          "color": "#cd6d32",
+          "pos": null
+        },
+        {
+          "color": "#d97706",
+          "pos": null
+        },
+        {
+          "color": "#fef3c7",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "type": "achievement",
+        "category": "donation",
+        "id": "donation_cumulative_200"
       }
     }
   },
@@ -644,6 +893,72 @@
         "type": "achievement",
         "category": "cheer",
         "id": "cheer_cumulative_50k"
+      }
+    }
+  },
+  "prestige_donation_name": {
+    "slot": "name_base",
+    "display_name": "Prestige Donation Name",
+    "achievement_name": "Two And A Half Months Fed.",
+    "achievement_category": "donation",
+    "achievement_id": "donation_cumulative_500",
+    "config": {
+      "font_family": "Cormorant Garamond",
+      "font_size": "22px",
+      "font_style": "normal",
+      "font_weight": "500",
+      "glow_color": "rgba(255, 168, 86, 0.62)",
+      "glow_layers": [
+        {
+          "animation": "breathe",
+          "color": "rgba(255, 168, 86, 0.58)",
+          "distance": "10",
+          "fade": "72",
+          "plane": "back",
+          "spread": "80"
+        }
+      ],
+      "label": "Prestige Donation Name",
+      "text": "Comutt",
+      "text_color": "#ffe6ac",
+      "theme": "prestige-donation",
+      "unlock": {
+        "type": "achievement",
+        "category": "donation",
+        "id": "donation_cumulative_500"
+      }
+    }
+  },
+  "message_1": {
+    "slot": "message_text",
+    "display_name": "Prestige Donation Name",
+    "achievement_name": "Two And A Half Months Fed.",
+    "achievement_category": "donation",
+    "achievement_id": "donation_cumulative_500",
+    "config": {
+      "font_family": "Cormorant Garamond",
+      "font_size": "31px",
+      "font_style": "normal",
+      "font_weight": "500",
+      "glow_color": "rgba(255, 168, 86, 0.62)",
+      "glow_layers": [
+        {
+          "animation": "breathe",
+          "color": "rgba(255, 168, 86, 0.58)",
+          "distance": "10",
+          "fade": "72",
+          "plane": "back",
+          "spread": "80"
+        }
+      ],
+      "label": "Prestige Donation Name",
+      "text": "Test Message",
+      "text_color": "#ffe6ac",
+      "theme": "prestige-donation",
+      "unlock": {
+        "type": "achievement",
+        "category": "donation",
+        "id": "donation_cumulative_500"
       }
     }
   },

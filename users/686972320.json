@@ -34,7 +34,16 @@
       "gifted_cumulative_20": "2026-08-24T01:36:31.339870+00:00",
       "gifted_cumulative_25": "2026-08-24T01:36:31.360395+00:00",
       "gifted_instance_10": "2026-08-24T01:36:31.889236+00:00",
-      "gifted_instance_20": "2026-08-24T01:36:31.907283+00:00"
+      "gifted_instance_20": "2026-08-24T01:36:31.907283+00:00",
+      "donation_50": "2026-08-24T03:53:18.734085+00:00",
+      "donation_100": "2026-08-24T03:53:18.752600+00:00",
+      "donation_200": "2026-08-24T03:53:18.773603+00:00",
+      "donation_cumulative_50": "2026-08-24T03:53:18.805219+00:00",
+      "donation_cumulative_100": "2026-08-24T03:53:18.837374+00:00",
+      "donation_cumulative_200": "2026-08-24T03:53:18.874968+00:00",
+      "donation_cumulative_250": "2026-08-24T03:53:18.903000+00:00",
+      "donation_cumulative_500": "2026-08-24T03:53:18.923102+00:00",
+      "donation_cumulative_1000": "2026-08-24T03:53:18.961151+00:00"
     }
   },
   "decorations": {
@@ -58,7 +67,15 @@
       "name_15",
       "name_16",
       "name_17",
-      "name_18"
+      "name_18",
+      "name_11",
+      "name_12",
+      "name_13",
+      "prefix_121",
+      "prestige_donation_static",
+      "prestige_donation_name",
+      "message_1",
+      "prestige_donation_animated"
     ],
     "active": {}
   },

@@ -122,6 +122,24 @@
       "amount": 20,
       "type": "threshold"
     },
+    "donation_50": {
+      "name": "Howling With Generosity.",
+      "desc": "Awarded for donating 50 or more dollars at a time.",
+      "amount": 50,
+      "type": "threshold"
+    },
+    "donation_100": {
+      "name": "(Platinum) Absolute Unit Donor.",
+      "desc": "Awarded for donating 100 or more dollars at a time.",
+      "amount": 100,
+      "type": "threshold"
+    },
+    "donation_200": {
+      "name": "(Platinum) It's on me.",
+      "desc": "Awarded for donating 100 or more dollars at a time.",
+      "amount": 200,
+      "type": "threshold"
+    },
     "donation_cumulative_10": {
       "name": "First Treat.",
       "desc": "Awarded for donating $10 overall.",
@@ -132,6 +150,42 @@
       "name": "Treat Buyer.",
       "desc": "Awarded for donating $25 overall.",
       "amount": 25,
+      "type": "cumulative"
+    },
+    "donation_cumulative_50": {
+      "name": "Kibble Contributor.",
+      "desc": "Awarded for donating $50 overall.",
+      "amount": 50,
+      "type": "cumulative"
+    },
+    "donation_cumulative_100": {
+      "name": "Squeaky Toy Sponsor.",
+      "desc": "Awarded for donating $100 overall.",
+      "amount": 100,
+      "type": "cumulative"
+    },
+    "donation_cumulative_200": {
+      "name": "A Month Of Food.",
+      "desc": "Awarded for donating $200 overall.",
+      "amount": 200,
+      "type": "cumulative"
+    },
+    "donation_cumulative_250": {
+      "name": "Kibble For The Month.",
+      "desc": "Awarded for donating $250 overall.",
+      "amount": 250,
+      "type": "cumulative"
+    },
+    "donation_cumulative_500": {
+      "name": "Two And A Half Months Fed.",
+      "desc": "Awarded for donating $500 overall.",
+      "amount": 500,
+      "type": "cumulative"
+    },
+    "donation_cumulative_1000": {
+      "name": "Five Months Of Meals.",
+      "desc": "Awarded for donating $1,000 overall.",
+      "amount": 1000,
       "type": "cumulative"
     }
   },

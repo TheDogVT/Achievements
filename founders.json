@@ -54,6 +54,51 @@
     "founder_name": "ashenmei",
     "founded_at": "2026-08-24T01:36:31.907283+00:00"
   },
+  "donation_50": {
+    "founder_id": "686972320",
+    "founder_name": "ashenmei",
+    "founded_at": "2026-08-24T03:53:18.734085+00:00"
+  },
+  "donation_100": {
+    "founder_id": "686972320",
+    "founder_name": "ashenmei",
+    "founded_at": "2026-08-24T03:53:18.752600+00:00"
+  },
+  "donation_200": {
+    "founder_id": "686972320",
+    "founder_name": "ashenmei",
+    "founded_at": "2026-08-24T03:53:18.773603+00:00"
+  },
+  "donation_cumulative_50": {
+    "founder_id": "686972320",
+    "founder_name": "ashenmei",
+    "founded_at": "2026-08-24T03:53:18.805219+00:00"
+  },
+  "donation_cumulative_100": {
+    "founder_id": "686972320",
+    "founder_name": "ashenmei",
+    "founded_at": "2026-08-24T03:53:18.837374+00:00"
+  },
+  "donation_cumulative_200": {
+    "founder_id": "686972320",
+    "founder_name": "ashenmei",
+    "founded_at": "2026-08-24T03:53:18.874968+00:00"
+  },
+  "donation_cumulative_250": {
+    "founder_id": "686972320",
+    "founder_name": "ashenmei",
+    "founded_at": "2026-08-24T03:53:18.903000+00:00"
+  },
+  "donation_cumulative_500": {
+    "founder_id": "686972320",
+    "founder_name": "ashenmei",
+    "founded_at": "2026-08-24T03:53:18.923102+00:00"
+  },
+  "donation_cumulative_1000": {
+    "founder_id": "686972320",
+    "founder_name": "ashenmei",
+    "founded_at": "2026-08-24T03:53:18.961151+00:00"
+  },
   "cheer_message_100": {
     "founder_id": "632165551",
     "founder_name": "revilo2218",
