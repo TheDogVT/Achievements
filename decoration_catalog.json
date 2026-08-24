@@ -113,6 +113,23 @@
       }
     }
   },
+  "prefix_76": {
+    "slot": "name_prefix",
+    "display_name": "good girl,",
+    "achievement_name": "A dollar for doggo.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_100",
+    "config": {
+      "outline": "basic",
+      "text": "good girl,",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_100"
+      }
+    }
+  },
   "prefix_8": {
     "slot": "name_prefix",
     "display_name": "Sincerely,",
@@ -684,6 +701,23 @@
         "type": "achievement",
         "category": "cheer",
         "id": "cheer_69"
+      }
+    }
+  },
+  "suffix_19": {
+    "slot": "name_suffix",
+    "display_name": ", good boi",
+    "achievement_name": "A dollar for doggo.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_100",
+    "config": {
+      "outline": "basic",
+      "text": ", good boi",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_100"
       }
     }
   },
