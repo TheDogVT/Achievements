@@ -78,6 +78,12 @@
       "amount": 1,
       "type": "times"
     },
+    "cheer_time_10": {
+      "name": "Bit Farmer.",
+      "desc": "Awarded for cheering 10 times!.",
+      "amount": 10,
+      "type": "times"
+    },
     "cheer_69": {
       "name": "Nice Bitties.",
       "desc": "Awarded for cheering exactly 69 bits",

@@ -223,6 +223,26 @@
       }
     }
   },
+  "prefix_9": {
+    "slot": "name_prefix",
+    "display_name": "With Love - ",
+    "achievement_name": "Bit Farmer.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_time_10",
+    "config": {
+      "font_family": "Pacifico",
+      "font_size": "25px",
+      "font_style": "italic",
+      "font_weight": "100",
+      "outline": "basic",
+      "text": "With Love - ",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_time_10"
+      }
+    }
+  },
   "name_10": {
     "slot": "name_base",
     "display_name": "name_10",
@@ -537,6 +557,23 @@
         "type": "achievement",
         "category": "gifted",
         "id": "gifted_cumulative_25"
+      }
+    }
+  },
+  "name_2": {
+    "slot": "name_base",
+    "display_name": "name_2",
+    "achievement_name": "Bit Farmer.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_time_10",
+    "config": {
+      "font_family": "Pacifico",
+      "font_weight": "100",
+      "outline": "basic",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_time_10"
       }
     }
   },
