@@ -83,6 +83,12 @@
       "desc": "Awarded for cheering exactly 69 bits",
       "amount": 69,
       "type": "exact"
+    },
+    "cheer_256": {
+      "name": "There be colors!",
+      "desc": "Awarded for cheering exactly 256 bits",
+      "amount": 256,
+      "type": "exact"
     }
   },
   "donation": {
@@ -136,10 +142,46 @@
       "amount": 5,
       "type": "cumulative"
     },
+    "gifted_cumulative_10": {
+      "name": "Little Santa",
+      "desc": "Awarded for 10 cumulative gifted subs.",
+      "amount": 10,
+      "type": "cumulative"
+    },
+    "gifted_cumulative_15": {
+      "name": "Santa",
+      "desc": "Awarded for 15 cumulative gifted subs.",
+      "amount": 15,
+      "type": "cumulative"
+    },
+    "gifted_cumulative_20": {
+      "name": "Big Santa",
+      "desc": "Awarded for 20 cumulative gifted subs.",
+      "amount": 20,
+      "type": "cumulative"
+    },
+    "gifted_cumulative_25": {
+      "name": "Very Big Santa",
+      "desc": "Awarded for 25 cumulative gifted subs.",
+      "amount": 25,
+      "type": "cumulative"
+    },
     "gifted_instance_5": {
       "name": "Gifty Bomba",
       "desc": "Awarded for gifting 5 subs or more at once.",
       "amount": 5,
+      "type": "instance"
+    },
+    "gifted_instance_10": {
+      "name": "Big Gifty Bomba",
+      "desc": "Awarded for gifting 10 subs or more at once.",
+      "amount": 10,
+      "type": "instance"
+    },
+    "gifted_instance_20": {
+      "name": "Gifted Bomb Run",
+      "desc": "Awarded for gifting 20 subs or more at once.",
+      "amount": 20,
       "type": "instance"
     }
   }

@@ -165,6 +165,115 @@
       }
     }
   },
+  "name_15": {
+    "slot": "name_base",
+    "display_name": "name_15",
+    "achievement_name": "Little Santa",
+    "achievement_category": "gifted",
+    "achievement_id": "gifted_cumulative_10",
+    "config": {
+      "outline": "basic",
+      "outline_color": "#000000",
+      "outline_position": "outer_fake",
+      "outline_thickness": "0.5",
+      "text_color": "#e54897",
+      "unlock": {
+        "type": "achievement",
+        "category": "gifted",
+        "id": "gifted_cumulative_10"
+      }
+    }
+  },
+  "name_16": {
+    "slot": "name_base",
+    "display_name": "name_16",
+    "achievement_name": "Santa",
+    "achievement_category": "gifted",
+    "achievement_id": "gifted_cumulative_15",
+    "config": {
+      "outline": "basic",
+      "outline_thickness": "1",
+      "text_gradient": [
+        {
+          "color": "#f43f5e",
+          "pos": null
+        },
+        {
+          "color": "#ec4899",
+          "pos": null
+        },
+        {
+          "color": "#a855f7",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "type": "achievement",
+        "category": "gifted",
+        "id": "gifted_cumulative_15"
+      }
+    }
+  },
+  "name_17": {
+    "slot": "name_base",
+    "display_name": "name_17",
+    "achievement_name": "Big Santa",
+    "achievement_category": "gifted",
+    "achievement_id": "gifted_cumulative_20",
+    "config": {
+      "font_family": "Satisfy",
+      "gradient_animation": "sheen",
+      "outline": "ink_soft",
+      "outline_thickness": "1",
+      "text_gradient": [
+        {
+          "color": "#ec4899",
+          "pos": null
+        },
+        {
+          "color": "#a855f7",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "type": "achievement",
+        "category": "gifted",
+        "id": "gifted_cumulative_20"
+      }
+    }
+  },
+  "name_18": {
+    "slot": "name_base",
+    "display_name": "name_18",
+    "achievement_name": "Very Big Santa",
+    "achievement_category": "gifted",
+    "achievement_id": "gifted_cumulative_25",
+    "config": {
+      "font_family": "Satisfy",
+      "outline": "ink_soft",
+      "outline_color": "#f1b4fe",
+      "outline_thickness": "1",
+      "text_gradient": [
+        {
+          "color": "#f43f5e",
+          "pos": null
+        },
+        {
+          "color": "#ec4899",
+          "pos": null
+        },
+        {
+          "color": "#a855f7",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "type": "achievement",
+        "category": "gifted",
+        "id": "gifted_cumulative_25"
+      }
+    }
+  },
   "name_3": {
     "slot": "name_base",
     "display_name": "name_3",
@@ -575,6 +684,23 @@
         "type": "achievement",
         "category": "cheer",
         "id": "cheer_69"
+      }
+    }
+  },
+  "suffix_22": {
+    "slot": "name_suffix",
+    "display_name": "of 256",
+    "achievement_name": "There be colors!",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_256",
+    "config": {
+      "outline": "basic",
+      "text": "of 256",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_256"
       }
     }
   }

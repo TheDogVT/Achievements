@@ -50,12 +50,12 @@
   "top_months": [
     {
       "month": "2026-8",
-      "kind": "gifted",
-      "rank": 1
+      "kind": "cheers",
+      "rank": 2
     },
     {
       "month": "2026-8",
-      "kind": "cheers",
+      "kind": "gifted",
       "rank": 2
     }
   ]
