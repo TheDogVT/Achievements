@@ -1,1 +1,102 @@
-{}
+{
+  "prefix_47": {
+    "slot": "name_prefix",
+    "display_name": "shortie",
+    "achievement_name": "One away...",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_999",
+    "config": {
+      "outline": "basic",
+      "text": "shortie",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#7de8ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_999"
+      }
+    }
+  },
+  "prefix_76": {
+    "slot": "name_prefix",
+    "display_name": "good girl,",
+    "achievement_name": "A dollar for doggo.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_100",
+    "config": {
+      "outline": "basic",
+      "text": "good girl,",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_100"
+      }
+    }
+  },
+  "prefix_8": {
+    "slot": "name_prefix",
+    "display_name": "Sincerely,",
+    "achievement_name": "Babys First Cheer.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_time_1",
+    "config": {
+      "font_family": "Pacifico",
+      "font_size": "16.5px",
+      "font_style": "italic",
+      "font_weight": "100",
+      "offset_y": "-8.5px",
+      "outline": "basic",
+      "text": "Sincerely,",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_time_1"
+      }
+    }
+  },
+  "name_4": {
+    "slot": "name_base",
+    "display_name": "name_4",
+    "achievement_name": "Bit Curious.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_cumulative_1k",
+    "config": {
+      "outline": "basic",
+      "outline_color": "#000000",
+      "outline_thickness": "1",
+      "text_color": "#00d4ff",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_cumulative_1k"
+      }
+    }
+  },
+  "suffix_19": {
+    "slot": "name_suffix",
+    "display_name": ", good boi",
+    "achievement_name": "A dollar for doggo.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_100",
+    "config": {
+      "outline": "basic",
+      "text": ", good boi",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_100"
+      }
+    }
+  }
+}
