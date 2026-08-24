@@ -1,0 +1,31 @@
+{
+  "user_id": "1469913374",
+  "username": "PoltergeistCC",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/2b113448-4a76-4bd8-ade8-ec570bae1390-profile_image-300x300.png",
+  "legacy": 0,
+  "achievements": {
+    "earned": {
+      "attend_3": "2026-08-10T21:02:15.681377+00:00",
+      "attend_5": "2026-08-13T21:37:34.043908+00:00",
+      "attend_10": "2026-08-18T21:41:25.911664+00:00"
+    },
+    "founded": {}
+  },
+  "decorations": {
+    "unlocked": [
+      "prefix_79",
+      "suffix_57",
+      "prefix_80",
+      "suffix_58",
+      "prefix_81",
+      "suffix_59"
+    ],
+    "active": {}
+  },
+  "stats": {
+    "messages": 0,
+    "active_months": 0,
+    "first_seen": "2026-08-08T20:08:58.907915+00:00"
+  },
+  "top_months": []
+}

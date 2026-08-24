@@ -1,0 +1,30 @@
+{
+  "user_id": "539120130",
+  "username": "gildedgh0ul",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/11c1aef8-82ad-44ef-9a8d-4c3ee870896a-profile_image-300x300.png",
+  "legacy": 0,
+  "achievements": {
+    "earned": {
+      "chat_10": "2026-07-09T21:38:37.585545+00:00",
+      "redeem_checkin_1": "2026-07-09T22:03:55.997078+00:00",
+      "chat_ball": "2026-07-09T22:18:25.843973+00:00",
+      "attend_3": "2026-07-27T22:58:21.801482+00:00"
+    },
+    "founded": {}
+  },
+  "decorations": {
+    "unlocked": [
+      "prefix_7",
+      "prefix_77",
+      "prefix_79",
+      "suffix_57"
+    ],
+    "active": {}
+  },
+  "stats": {
+    "messages": 55,
+    "active_months": 1,
+    "first_seen": "2026-7"
+  },
+  "top_months": []
+}

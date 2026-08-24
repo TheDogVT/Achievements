@@ -1,0 +1,28 @@
+{
+  "user_id": "451523542",
+  "username": "cibeans",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/fdde0390-aee0-49bd-a197-3a318fe5fb69-profile_image-300x300.png",
+  "legacy": 0,
+  "achievements": {
+    "earned": {
+      "attend_3": "2026-08-17T20:48:58.876757+00:00",
+      "chat_bork": "2026-08-17T20:48:59.221658+00:00",
+      "chat_10": "2026-08-17T20:49:26.330888+00:00"
+    },
+    "founded": {}
+  },
+  "decorations": {
+    "unlocked": [
+      "prefix_79",
+      "suffix_57",
+      "prefix_7"
+    ],
+    "active": {}
+  },
+  "stats": {
+    "messages": 13,
+    "active_months": 1,
+    "first_seen": "2026-8"
+  },
+  "top_months": []
+}

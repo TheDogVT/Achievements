@@ -1,0 +1,32 @@
+{
+  "user_id": "1283768319",
+  "username": "mythreels",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/34b476d9-6bfb-420b-aef5-b9ee427e41b2-profile_image-300x300.png",
+  "legacy": 0,
+  "achievements": {
+    "earned": {
+      "chat_chaos": "2026-06-23T23:04:38.809416+00:00",
+      "attend_3": "2026-06-28T21:46:04.476265+00:00",
+      "attend_5": "2026-08-10T23:03:25.880064+00:00",
+      "chat_10": "2026-08-10T23:04:28.103848+00:00"
+    },
+    "founded": {}
+  },
+  "decorations": {
+    "unlocked": [
+      "prefix_16",
+      "prefix_79",
+      "suffix_57",
+      "prefix_80",
+      "suffix_58",
+      "prefix_7"
+    ],
+    "active": {}
+  },
+  "stats": {
+    "messages": 15,
+    "active_months": 2,
+    "first_seen": "2026-06-23T23:01:50.216512+00:00"
+  },
+  "top_months": []
+}

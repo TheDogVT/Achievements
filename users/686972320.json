@@ -4,53 +4,33 @@
   "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/1fef0b34-3a06-40e9-9f89-7a0812d889f8-profile_image-300x300.png",
   "legacy": 1,
   "achievements": {
-    "earned": {},
-    "founded": {
-      "cheer_message_100": "2026-08-24T17:16:25.554559+00:00",
-      "cheer_time_1": "2026-08-24T17:16:25.582070+00:00",
-      "cheer_100": "2026-08-24T17:16:25.602163+00:00",
-      "cheer_message_1k": "2026-08-24T17:16:53.281024+00:00",
-      "cheer_message_10k": "2026-08-24T17:16:53.297537+00:00",
-      "cheer_message_100k": "2026-08-24T17:16:53.313579+00:00",
-      "cheer_cumulative_1k": "2026-08-24T17:16:53.339090+00:00",
-      "cheer_cumulative_2500": "2026-08-24T17:16:53.358128+00:00",
-      "cheer_cumulative_5k": "2026-08-24T17:16:53.379130+00:00",
-      "cheer_cumulative_10k": "2026-08-24T17:16:53.401178+00:00",
-      "cheer_cumulative_20k": "2026-08-24T17:16:53.423227+00:00",
-      "cheer_cumulative_50k": "2026-08-24T17:16:53.441798+00:00",
-      "cheer_cumulative_75k": "2026-08-24T17:16:53.470358+00:00",
-      "cheer_cumulative_100k": "2026-08-24T17:16:53.484360+00:00"
-    }
+    "earned": {
+      "chat_10": "2025-12-08T00:43:35.279037+00:00",
+      "redeem_pet_1": "2025-12-13T00:36:31.221503+00:00",
+      "redeem_total_5": "2026-03-06T23:48:00.235202+00:00",
+      "chat_100": "2026-05-05T20:56:14.829464+00:00",
+      "redeem_total_10": "2026-05-19T22:21:06.216416+00:00",
+      "chat_heckin": "2026-05-21T23:29:49.174086+00:00",
+      "attend_3": "2026-05-25T23:02:42.658183+00:00",
+      "attend_5": "2026-07-23T20:07:40.147545+00:00"
+    },
+    "founded": {}
   },
   "decorations": {
     "unlocked": [
-      "prefix_8",
-      "prefix_76",
-      "suffix_19",
-      "name_3",
-      "name_4",
-      "name_5",
-      "name_6",
-      "name_7",
-      "name_8",
-      "prefix_119",
-      "prestige_cheer_static",
-      "prestige_cheer_name",
-      "message_2",
-      "prestige_cheer_animated"
+      "prefix_2",
+      "prefix_7",
+      "prefix_79",
+      "suffix_57",
+      "prefix_80",
+      "suffix_58"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 0,
-    "active_months": 1,
-    "first_seen": "2026-8"
+    "messages": 211,
+    "active_months": 6,
+    "first_seen": "2025-12"
   },
-  "top_months": [
-    {
-      "month": "2026-8",
-      "kind": "cheers",
-      "rank": 1
-    }
-  ]
+  "top_months": []
 }
