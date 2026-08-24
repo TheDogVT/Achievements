@@ -213,11 +213,12 @@
       "name_prefix": "prefix_12",
       "name_suffix": "suffix_8",
       "washi_color": "washi_pink",
-      "washi_position": "washi_top_center"
+      "washi_position": "washi_top_center",
+      "system_badge": "system_first"
     }
   },
   "stats": {
-    "messages": 8492,
+    "messages": 8494,
     "active_months": 10,
     "first_seen": "2025-11"
   },
