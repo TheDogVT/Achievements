@@ -119,6 +119,12 @@
       "desc": "Awarded for cheering exactly 999 bits",
       "amount": 999,
       "type": "exact"
+    },
+    "cheer_9999": {
+      "name": "(Platinum) You paid so much, for this?",
+      "desc": "Awarded for cheering exactly 9999 bits",
+      "amount": 9999,
+      "type": "exact"
     }
   },
   "donation": {

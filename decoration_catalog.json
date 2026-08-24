@@ -213,6 +213,52 @@
       }
     }
   },
+  "prefix_66": {
+    "slot": "name_prefix",
+    "display_name": "you paid so much",
+    "achievement_name": "(Platinum) You paid so much, for this?",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_9999",
+    "config": {
+      "glow_layers": [
+        {
+          "animation": "breathe",
+          "color": "#00d4ff",
+          "distance": "",
+          "fade": "",
+          "plane": "back",
+          "spread": ""
+        }
+      ],
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "you paid so much",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#9900ff",
+          "pos": null
+        },
+        {
+          "color": "#00d4ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_9999"
+      }
+    }
+  },
   "prefix_74": {
     "slot": "name_prefix",
     "display_name": "nice",
@@ -1165,6 +1211,52 @@
         "type": "achievement",
         "category": "cheer",
         "id": "cheer_256"
+      }
+    }
+  },
+  "suffix_48": {
+    "slot": "name_suffix",
+    "display_name": ", for this?",
+    "achievement_name": "(Platinum) You paid so much, for this?",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_9999",
+    "config": {
+      "glow_layers": [
+        {
+          "animation": "breathe",
+          "color": "#00d4ff",
+          "distance": "",
+          "fade": "",
+          "plane": "back",
+          "spread": ""
+        }
+      ],
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": ", for this?",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#9900ff",
+          "pos": null
+        },
+        {
+          "color": "#00d4ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "cheer",
+        "id": "cheer_9999"
       }
     }
   },
