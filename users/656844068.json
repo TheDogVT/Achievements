@@ -43,7 +43,8 @@
       "attend_10": "2026-08-13T20:36:38.532968+00:00",
       "chat_smol": "2026-08-13T21:37:01.385404+00:00",
       "chat_carride": "2026-08-15T20:34:43.032271+00:00",
-      "redeem_checkin_150": "2026-08-17T20:38:31.368475+00:00"
+      "redeem_checkin_150": "2026-08-17T20:38:31.368475+00:00",
+      "chat_goodboy": "2026-08-25T22:17:29.040422+00:00"
     },
     "founded": {
       "gifted_instance_10": "2025-12-24T21:22:19.032812+00:00"
@@ -71,14 +72,16 @@
       "prefix_80",
       "suffix_58",
       "prefix_81",
-      "suffix_59"
+      "suffix_59",
+      "prefix_18",
+      "suffix_8"
     ],
     "active": {
       "system_badge": "system_first"
     }
   },
   "stats": {
-    "messages": 854,
+    "messages": 862,
     "active_months": 10,
     "first_seen": "2025-11"
   },
