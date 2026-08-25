@@ -73,10 +73,12 @@
       "prefix_81",
       "suffix_59"
     ],
-    "active": {}
+    "active": {
+      "system_badge": "system_first"
+    }
   },
   "stats": {
-    "messages": 841,
+    "messages": 854,
     "active_months": 10,
     "first_seen": "2025-11"
   },

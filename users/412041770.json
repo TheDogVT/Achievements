@@ -1,7 +1,7 @@
 {
   "user_id": "412041770",
   "username": "nabaliciousvt",
-  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/d4c6124c-d443-4b8a-acc0-b4e3f9262e7a-profile_image-300x300.png",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/ad54ab68-4bf9-463d-8d70-96fa89ac7147-profile_image-300x300.png",
   "legacy": 1,
   "achievements": {
     "earned": {},
@@ -12,9 +12,9 @@
     "active": {}
   },
   "stats": {
-    "messages": 0,
-    "active_months": 0,
-    "first_seen": null
+    "messages": 3,
+    "active_months": 1,
+    "first_seen": "2026-8"
   },
   "top_months": []
 }
