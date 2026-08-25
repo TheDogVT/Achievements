@@ -1,0 +1,43 @@
+{
+  "user_id": "1414947698",
+  "username": "wetpockets",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/d1c51c55-4680-4341-82ac-8ee782e7210f-profile_image-300x300.jpeg",
+  "legacy": 0,
+  "achievements": {
+    "earned": {
+      "chat_baddog": "2026-07-23T20:40:05.575189+00:00",
+      "chat_sniff": "2026-07-23T20:42:18.922427+00:00",
+      "chat_10": "2026-07-23T20:47:09.944845+00:00",
+      "chat_pawty": "2026-07-23T20:47:10.179036+00:00",
+      "chat_goodboy": "2026-07-27T22:50:14.010983+00:00",
+      "chat_bork": "2026-07-27T22:51:13.747482+00:00",
+      "redeem_pet_1": "2026-07-27T22:51:35.508984+00:00",
+      "chat_fetch": "2026-07-27T22:52:05.442982+00:00",
+      "redeem_checkin_1": "2026-07-27T22:53:51.391983+00:00",
+      "attend_3": "2026-07-31T20:48:59.750555+00:00",
+      "attend_5": "2026-08-02T23:54:16.448074+00:00",
+      "streak_3": "2026-08-02T23:54:16.881076+00:00"
+    },
+    "founded": {}
+  },
+  "decorations": {
+    "unlocked": [
+      "prefix_7",
+      "prefix_18",
+      "suffix_8",
+      "prefix_79",
+      "suffix_57",
+      "prefix_80",
+      "suffix_58",
+      "prefix_89",
+      "suffix_67"
+    ],
+    "active": {}
+  },
+  "stats": {
+    "messages": 26,
+    "active_months": 2,
+    "first_seen": "2026-07-23T20:40:05.534658+00:00"
+  },
+  "top_months": []
+}

@@ -1,0 +1,30 @@
+{
+  "user_id": "1044411061",
+  "username": "kristianiastorm",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/16a3c1c7-c8ca-4d85-b3e3-e12b8cd2e19c-profile_image-300x300.jpeg",
+  "legacy": 1,
+  "achievements": {
+    "earned": {
+      "chat_bork": "2025-12-11T22:55:35.414648+00:00",
+      "chat_10": "2025-12-11T22:56:42.361888+00:00",
+      "chat_100": "2026-02-13T01:30:53.189224+00:00",
+      "attend_3": "2026-06-22T22:16:53.995562+00:00"
+    },
+    "founded": {}
+  },
+  "decorations": {
+    "unlocked": [
+      "prefix_2",
+      "prefix_7",
+      "prefix_79",
+      "suffix_57"
+    ],
+    "active": {}
+  },
+  "stats": {
+    "messages": 137,
+    "active_months": 6,
+    "first_seen": "2025-11"
+  },
+  "top_months": []
+}

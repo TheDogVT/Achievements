@@ -1,0 +1,27 @@
+{
+  "user_id": "120570475",
+  "username": "deadinlight",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/dc741e8b-8964-447e-94b9-38f54e36b752-profile_image-300x300.png",
+  "legacy": 1,
+  "achievements": {
+    "earned": {
+      "subathon_2025_any": "2025-12-24T21:14:09.938539+00:00",
+      "chat_10": "2026-01-26T21:38:08.122414+00:00",
+      "chat_sleepy": "2026-03-24T23:31:49.277970+00:00"
+    },
+    "founded": {}
+  },
+  "decorations": {
+    "unlocked": [
+      "prefix_10",
+      "prefix_7"
+    ],
+    "active": {}
+  },
+  "stats": {
+    "messages": 20,
+    "active_months": 3,
+    "first_seen": "2025-12"
+  },
+  "top_months": []
+}

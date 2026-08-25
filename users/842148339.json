@@ -1,0 +1,41 @@
+{
+  "user_id": "842148339",
+  "username": "pickles_68",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/3287cc83-f5f5-4cb1-bca9-4116319aa572-profile_image-300x300.png",
+  "legacy": 1,
+  "achievements": {
+    "earned": {
+      "redeem_checkin_1": "2025-11-08T23:16:26.085056+00:00",
+      "chat_10": "2026-01-27T22:18:56.261738+00:00",
+      "gamble_total_win_1": "2026-01-27T22:25:46.405349+00:00",
+      "gamble_total_1": "2026-01-27T22:25:46.405349+00:00",
+      "redeem_checkin_2": "2026-04-17T22:06:42.419708+00:00",
+      "chat_bath": "2026-04-17T22:08:44.891527+00:00",
+      "redeem_checkin_5": "2026-05-04T21:01:50.277548+00:00",
+      "redeem_checkin_10": "2026-05-04T21:01:50.553429+00:00",
+      "redeem_checkin_30": "2026-05-04T21:01:50.806392+00:00",
+      "redeem_total_5": "2026-05-04T21:01:51.063278+00:00",
+      "redeem_total_10": "2026-05-04T21:01:51.318309+00:00",
+      "redeem_total_25": "2026-05-04T21:01:51.572967+00:00",
+      "redeem_total_50": "2026-05-04T21:01:51.805629+00:00",
+      "attend_3": "2026-06-20T00:00:31.615688+00:00"
+    },
+    "founded": {}
+  },
+  "decorations": {
+    "unlocked": [
+      "prefix_12",
+      "prefix_7",
+      "suffix_3",
+      "prefix_79",
+      "suffix_57"
+    ],
+    "active": {}
+  },
+  "stats": {
+    "messages": 49,
+    "active_months": 6,
+    "first_seen": "2025-11"
+  },
+  "top_months": []
+}

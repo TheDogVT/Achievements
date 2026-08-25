@@ -1,0 +1,72 @@
+{
+  "user_id": "134618754",
+  "username": "chaoticchips",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/9ee364fa-20d9-4242-83b1-8a8c74d3fc4f-profile_image-300x300.png",
+  "legacy": 1,
+  "achievements": {
+    "earned": {
+      "redeem_checkin_1": "2025-11-06T21:09:08.521335+00:00",
+      "redeem_checkin_2": "2025-11-08T21:12:13.342670+00:00",
+      "chat_10": "2025-11-11T23:36:21.432671+00:00",
+      "redeem_total_5": "2025-11-13T21:39:18.687107+00:00",
+      "redeem_checkin_5": "2025-11-14T21:07:51.048605+00:00",
+      "redeem_total_10": "2025-11-16T21:39:17.305750+00:00",
+      "redeem_checkin_10": "2025-11-21T21:09:26.451721+00:00",
+      "redeem_total_25": "2025-11-29T21:14:55.227774+00:00",
+      "chat_100": "2025-12-12T00:08:45.498960+00:00",
+      "subathon_2025_any": "2025-12-25T22:08:00.898787+00:00",
+      "birthday_2025": "2025-12-26T23:34:51.120863+00:00",
+      "donation_1": "2026-02-18T17:21:17.133141+00:00",
+      "donation_10": "2026-02-18T17:21:17.133141+00:00",
+      "donation_5": "2026-06-07T20:10:54.837557+00:00",
+      "donation_cumulative_10": "2026-06-07T20:10:55.111252+00:00",
+      "attend_3": "2026-06-22T21:27:58.862476+00:00",
+      "cheer_message_100": "2026-07-31T00:04:56.229118+00:00",
+      "cheer_time_1": "2026-07-31T00:04:56.517522+00:00"
+    },
+    "founded": {}
+  },
+  "decorations": {
+    "unlocked": [
+      "prefix_2",
+      "prefix_7",
+      "name_9",
+      "prefix_79",
+      "suffix_57",
+      "prefix_8"
+    ],
+    "active": {}
+  },
+  "stats": {
+    "messages": 109,
+    "active_months": 7,
+    "first_seen": "2025-11"
+  },
+  "top_months": [
+    {
+      "month": "2025-12",
+      "kind": "donations",
+      "rank": 2
+    },
+    {
+      "month": "2026-3",
+      "kind": "donations",
+      "rank": 2
+    },
+    {
+      "month": "2026-4",
+      "kind": "donations",
+      "rank": 1
+    },
+    {
+      "month": "2026-6",
+      "kind": "donations",
+      "rank": 2
+    },
+    {
+      "month": "2026-7",
+      "kind": "cheers",
+      "rank": 3
+    }
+  ]
+}

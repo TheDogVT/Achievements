@@ -1,0 +1,28 @@
+{
+  "user_id": "pi-catchup-e2e",
+  "username": "Pi Catchup Test",
+  "pfp_url": "",
+  "legacy": 0,
+  "achievements": {
+    "earned": {
+      "cheer_message_100": "2026-07-15T23:59:35.348914+00:00",
+      "cheer_time_1": "2026-07-15T23:59:35.366533+00:00",
+      "cheer_100": "2026-07-15T23:59:35.393124+00:00"
+    },
+    "founded": {}
+  },
+  "decorations": {
+    "unlocked": [
+      "prefix_8",
+      "prefix_76",
+      "suffix_19"
+    ],
+    "active": {}
+  },
+  "stats": {
+    "messages": 0,
+    "active_months": 1,
+    "first_seen": "2026-07-15T23:59:35.301048+00:00"
+  },
+  "top_months": []
+}

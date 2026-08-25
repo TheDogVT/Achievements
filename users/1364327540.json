@@ -1,0 +1,33 @@
+{
+  "user_id": "1364327540",
+  "username": "lost_violett",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/794f56da-ce2a-4f9a-b7dd-801876123c75-profile_image-300x300.png",
+  "legacy": 1,
+  "achievements": {
+    "earned": {
+      "chat_10": "2026-03-07T21:48:39.593052+00:00",
+      "redeem_checkin_1": "2026-03-08T20:43:24.345931+00:00",
+      "chat_bath": "2026-03-08T22:36:43.932964+00:00",
+      "redeem_checkin_2": "2026-03-09T22:41:18.187276+00:00",
+      "redeem_checkin_5": "2026-03-13T20:04:52.492907+00:00",
+      "redeem_total_5": "2026-03-13T20:04:52.492907+00:00",
+      "chat_100": "2026-03-17T21:53:55.634888+00:00"
+    },
+    "founded": {}
+  },
+  "decorations": {
+    "unlocked": [
+      "prefix_12",
+      "prefix_2",
+      "prefix_7",
+      "suffix_3"
+    ],
+    "active": {}
+  },
+  "stats": {
+    "messages": 140,
+    "active_months": 3,
+    "first_seen": "2026-3"
+  },
+  "top_months": []
+}
