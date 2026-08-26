@@ -1,0 +1,35 @@
+{
+  "user_id": "1437778496",
+  "username": "aveeepanda_23",
+  "pfp_url": "",
+  "legacy": 0,
+  "achievements": {
+    "earned": {
+      "redeem_checkin_1": "2026-03-03T23:33:44.963166+00:00",
+      "chat_stinky": "2026-03-03T23:35:23.407047+00:00",
+      "chat_10": "2026-03-03T23:42:36.615145+00:00",
+      "redeem_checkin_2": "2026-03-05T22:38:00.366373+00:00",
+      "redeem_pet_1": "2026-03-05T22:38:05.092088+00:00",
+      "redeem_total_5": "2026-03-07T22:56:46.423368+00:00",
+      "redeem_checkin_5": "2026-03-09T21:26:27.924638+00:00",
+      "gamble_total_win_1": "2026-03-09T21:52:37.384080+00:00",
+      "gamble_total_1": "2026-03-09T21:52:37.384080+00:00",
+      "gamble_total_loss_1": "2026-03-09T22:01:07.563099+00:00",
+      "chat_brush": "2026-03-09T22:23:25.956704+00:00",
+      "redeem_total_10": "2026-03-12T20:26:39.030653+00:00"
+    },
+    "founded": {}
+  },
+  "decorations": {
+    "unlocked": [
+      "prefix_7"
+    ],
+    "active": {}
+  },
+  "stats": {
+    "messages": 71,
+    "active_months": 1,
+    "first_seen": "2026-3"
+  },
+  "top_months": []
+}
