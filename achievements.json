@@ -1,1 +1,40 @@
-{}
+{
+  "cheer": {
+    "cheer_message_100": {
+      "name": "Generoius Bit Giver.",
+      "desc": "Awarded for cheering 100 or more bits in a message.",
+      "amount": 100,
+      "type": "threshold"
+    },
+    "cheer_message_1k": {
+      "name": "Big Bit Giver.",
+      "desc": "Awarded for cheering 1,000 or more bits in a message.",
+      "amount": 1000,
+      "type": "threshold"
+    },
+    "cheer_cumulative_1k": {
+      "name": "Bit Curious.",
+      "desc": "Awarded for cheering 1,000 bits overall.",
+      "amount": 1000,
+      "type": "cumulative"
+    },
+    "cheer_time_1": {
+      "name": "Babys First Cheer.",
+      "desc": "Awarded for cheering once.",
+      "amount": 1,
+      "type": "times"
+    },
+    "cheer_100": {
+      "name": "A dollar for doggo.",
+      "desc": "Awarded for cheering exactly 100 bits",
+      "amount": 100,
+      "type": "exact"
+    },
+    "cheer_1000": {
+      "name": "Oh! For Me?",
+      "desc": "Awarded for cheering exactly 1000 bits",
+      "amount": 1000,
+      "type": "exact"
+    }
+  }
+}
