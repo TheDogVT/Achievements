@@ -1,1 +1,90 @@
-{}
+{
+  "cheer": {
+    "cheer_message_100": {
+      "name": "Generoius Bit Giver.",
+      "desc": "Awarded for cheering 100 or more bits in a message.",
+      "amount": 100,
+      "type": "threshold"
+    },
+    "cheer_message_1k": {
+      "name": "Big Bit Giver.",
+      "desc": "Awarded for cheering 1,000 or more bits in a message.",
+      "amount": 1000,
+      "type": "threshold"
+    },
+    "cheer_cumulative_1k": {
+      "name": "Bit Curious.",
+      "desc": "Awarded for cheering 1,000 bits overall.",
+      "amount": 1000,
+      "type": "cumulative"
+    },
+    "cheer_time_1": {
+      "name": "Babys First Cheer.",
+      "desc": "Awarded for cheering once.",
+      "amount": 1,
+      "type": "times"
+    },
+    "cheer_100": {
+      "name": "A dollar for doggo.",
+      "desc": "Awarded for cheering exactly 100 bits",
+      "amount": 100,
+      "type": "exact"
+    },
+    "cheer_1000": {
+      "name": "Oh! For Me?",
+      "desc": "Awarded for cheering exactly 1000 bits",
+      "amount": 1000,
+      "type": "exact"
+    }
+  },
+  "donation": {
+    "donation_1": {
+      "name": "Dollar For Your Thoughts?",
+      "desc": "Awarded for donating 1 or more dollars at a time.",
+      "amount": 1,
+      "type": "threshold"
+    },
+    "donation_5": {
+      "name": "Five Bucks For The Pup.",
+      "desc": "Awarded for donating 5 or more dollars at a time.",
+      "amount": 5,
+      "type": "threshold"
+    },
+    "donation_10": {
+      "name": "Big Woof Energy.",
+      "desc": "Awarded for donating 10 or more dollars at a time.",
+      "amount": 10,
+      "type": "threshold"
+    },
+    "donation_20": {
+      "name": "That's A Lot Of Treats.",
+      "desc": "Awarded for donating 20 or more dollars at a time.",
+      "amount": 20,
+      "type": "threshold"
+    },
+    "donation_50": {
+      "name": "Howling With Generosity.",
+      "desc": "Awarded for donating 50 or more dollars at a time.",
+      "amount": 50,
+      "type": "threshold"
+    },
+    "donation_cumulative_10": {
+      "name": "First Treat.",
+      "desc": "Awarded for donating $10 overall.",
+      "amount": 10,
+      "type": "cumulative"
+    },
+    "donation_cumulative_25": {
+      "name": "Treat Buyer.",
+      "desc": "Awarded for donating $25 overall.",
+      "amount": 25,
+      "type": "cumulative"
+    },
+    "donation_cumulative_50": {
+      "name": "Kibble Contributor.",
+      "desc": "Awarded for donating $50 overall.",
+      "amount": 50,
+      "type": "cumulative"
+    }
+  }
+}

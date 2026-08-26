@@ -1,0 +1,56 @@
+{
+  "user_id": "686972320",
+  "username": "ashenmei",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/1fef0b34-3a06-40e9-9f89-7a0812d889f8-profile_image-300x300.png",
+  "legacy": 1,
+  "achievements": {
+    "earned": {},
+    "founded": {
+      "cheer_message_100": "2026-08-26T18:13:59.642162+00:00",
+      "cheer_time_1": "2026-08-26T18:13:59.672687+00:00",
+      "cheer_100": "2026-08-26T18:13:59.693753+00:00",
+      "cheer_message_1k": "2026-08-26T18:14:18.758225+00:00",
+      "cheer_cumulative_1k": "2026-08-26T18:14:18.780997+00:00",
+      "cheer_1000": "2026-08-26T18:14:18.802995+00:00",
+      "donation_1": "2026-08-26T18:14:31.617799+00:00",
+      "donation_5": "2026-08-26T18:14:31.639842+00:00",
+      "donation_10": "2026-08-26T18:14:31.657368+00:00",
+      "donation_20": "2026-08-26T18:14:31.678428+00:00",
+      "donation_50": "2026-08-26T18:14:31.696484+00:00",
+      "donation_cumulative_10": "2026-08-26T18:14:31.710527+00:00",
+      "donation_cumulative_25": "2026-08-26T18:14:31.732578+00:00",
+      "donation_cumulative_50": "2026-08-26T18:14:31.752628+00:00"
+    }
+  },
+  "decorations": {
+    "unlocked": [
+      "prefix_8",
+      "prefix_76",
+      "suffix_19",
+      "name_4",
+      "prefix_48",
+      "suffix_35",
+      "name_9",
+      "name_10",
+      "name_11"
+    ],
+    "active": {}
+  },
+  "stats": {
+    "messages": 0,
+    "active_months": 1,
+    "first_seen": "2026-8"
+  },
+  "top_months": [
+    {
+      "month": "2026-8",
+      "kind": "cheers",
+      "rank": 1
+    },
+    {
+      "month": "2026-8",
+      "kind": "donations",
+      "rank": 1
+    }
+  ]
+}
