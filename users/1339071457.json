@@ -1,0 +1,31 @@
+{
+  "user_id": "1339071457",
+  "username": "cactusa319",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/7184db55-3497-4853-8b03-515879527c3e-profile_image-300x300.png",
+  "legacy": 0,
+  "achievements": {
+    "earned": {
+      "attend_3": "2026-07-14T22:51:13.104519+00:00",
+      "attend_5": "2026-07-18T22:06:34.171103+00:00",
+      "attend_10": "2026-07-28T21:15:19.243781+00:00"
+    },
+    "founded": {}
+  },
+  "decorations": {
+    "unlocked": [
+      "prefix_79",
+      "suffix_57",
+      "prefix_80",
+      "suffix_58",
+      "prefix_81",
+      "suffix_59"
+    ],
+    "active": {}
+  },
+  "stats": {
+    "messages": 6,
+    "active_months": 2,
+    "first_seen": "2026-6"
+  },
+  "top_months": []
+}
