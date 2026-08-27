@@ -122,7 +122,8 @@
       "attend_50": "2026-07-04T20:29:45.656453+00:00",
       "chat_toebeans": "2026-07-05T22:15:36.744410+00:00",
       "redeem_checkin_240": "2026-07-20T20:43:10.516808+00:00",
-      "gifted_cumulative_15": "2026-08-15T21:48:05.677438+00:00"
+      "gifted_cumulative_15": "2026-08-15T21:48:05.677438+00:00",
+      "gifted_cumulative_20": "2026-08-27T21:21:05.133644+00:00"
     },
     "founded": {
       "chat_chaos": "2025-11-06T20:59:47.540981+00:00",
@@ -193,7 +194,8 @@
       "prefix_83",
       "suffix_61",
       "suffix_1",
-      "name_16"
+      "name_16",
+      "name_17"
     ],
     "active": {
       "name_prefix": "prefix_12",
@@ -203,7 +205,7 @@
     }
   },
   "stats": {
-    "messages": 56140,
+    "messages": 56143,
     "active_months": 10,
     "first_seen": "2025-11"
   },
