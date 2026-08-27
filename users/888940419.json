@@ -6,7 +6,9 @@
   "achievements": {
     "earned": {
       "attend_3": "2026-08-24T20:36:05.351856+00:00",
-      "streak_3": "2026-08-24T20:36:05.678066+00:00"
+      "streak_3": "2026-08-24T20:36:05.678066+00:00",
+      "attend_5": "2026-08-27T21:29:04.603365+00:00",
+      "streak_5": "2026-08-27T21:29:04.865430+00:00"
     },
     "founded": {}
   },
@@ -15,12 +17,16 @@
       "prefix_79",
       "suffix_57",
       "prefix_89",
-      "suffix_67"
+      "suffix_67",
+      "prefix_80",
+      "suffix_58",
+      "prefix_90",
+      "suffix_68"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 6,
+    "messages": 7,
     "active_months": 1,
     "first_seen": "2026-08-21T21:35:03.261618+00:00"
   },
