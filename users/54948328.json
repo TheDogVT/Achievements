@@ -195,11 +195,12 @@
       "name_prefix": "prefix_16",
       "name_suffix": "suffix_5",
       "washi_color": "washi_lavender",
-      "washi_position": "washi_corner_tl"
+      "washi_position": "washi_corner_tl",
+      "system_badge": "system_first"
     }
   },
   "stats": {
-    "messages": 7438,
+    "messages": 7439,
     "active_months": 10,
     "first_seen": "2025-11"
   },
