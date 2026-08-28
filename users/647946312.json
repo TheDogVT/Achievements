@@ -78,7 +78,8 @@
     ],
     "active": {
       "name_prefix": "prefix_7",
-      "name_suffix": "suffix_79"
+      "name_suffix": "suffix_79",
+      "system_badge": "system_first"
     }
   },
   "stats": {

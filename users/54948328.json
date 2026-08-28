@@ -195,8 +195,7 @@
       "name_prefix": "prefix_16",
       "name_suffix": "suffix_5",
       "washi_color": "washi_lavender",
-      "washi_position": "washi_corner_tl",
-      "system_badge": "system_first"
+      "washi_position": "washi_corner_tl"
     }
   },
   "stats": {
