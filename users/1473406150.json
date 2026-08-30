@@ -1,20 +1,24 @@
 {
   "user_id": "1473406150",
   "username": "meow_RENREN",
-  "pfp_url": "",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/686d2a95-e1f3-459e-b0f9-e070b3a14803-profile_image-300x300.png",
   "legacy": 0,
   "achievements": {
     "earned": {
-      "chat_sniff": "2026-08-30T20:28:04.705071+00:00"
+      "chat_sniff": "2026-08-30T20:28:04.705071+00:00",
+      "chat_stinky": "2026-08-30T20:30:32.736641+00:00",
+      "chat_10": "2026-08-30T20:31:28.640353+00:00"
     },
     "founded": {}
   },
   "decorations": {
-    "unlocked": [],
+    "unlocked": [
+      "prefix_7"
+    ],
     "active": {}
   },
   "stats": {
-    "messages": 4,
+    "messages": 10,
     "active_months": 1,
     "first_seen": "2026-08-30T20:26:57.202371+00:00"
   },
