@@ -175,10 +175,12 @@
       "prefix_82",
       "suffix_60"
     ],
-    "active": {}
+    "active": {
+      "system_badge": "system_first"
+    }
   },
   "stats": {
-    "messages": 6918,
+    "messages": 6923,
     "active_months": 10,
     "first_seen": "2025-11"
   },
