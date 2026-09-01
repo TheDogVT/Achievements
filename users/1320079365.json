@@ -5,7 +5,8 @@
   "legacy": 0,
   "achievements": {
     "earned": {
-      "chat_10": "2026-08-28T22:38:47.772241+00:00"
+      "chat_10": "2026-08-28T22:38:47.772241+00:00",
+      "gamble_total_win_1": "2026-09-01T22:45:32.907614+00:00"
     },
     "founded": {}
   },
@@ -16,7 +17,7 @@
     "active": {}
   },
   "stats": {
-    "messages": 53,
+    "messages": 55,
     "active_months": 2,
     "first_seen": "2026-08-09T22:21:03.669062+00:00"
   },
