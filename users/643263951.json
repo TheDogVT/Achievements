@@ -141,7 +141,8 @@
       "chat_sleepy": "2026-08-02T20:11:34.119777+00:00",
       "quote_1": "2026-08-02T22:22:54.404573+00:00",
       "chat_down": "2026-08-08T23:59:40.985749+00:00",
-      "quote_2": "2026-08-22T21:00:10.028667+00:00"
+      "quote_2": "2026-08-22T21:00:10.028667+00:00",
+      "redeem_first_10": "2026-09-01T22:17:23.977883+00:00"
     },
     "founded": {
       "chat_growl": "2026-02-09T00:18:29.458522+00:00"
@@ -212,19 +213,22 @@
       "prefix_5",
       "prefix_83",
       "suffix_61",
-      "prefix_10"
+      "prefix_10",
+      "prefix_102",
+      "suffix_80"
     ],
     "active": {
       "name_prefix": "prefix_93",
       "name_base": "name_7",
       "name_suffix": "suffix_5",
       "washi_color": "washi_gold",
-      "washi_position": "washi_top_left"
+      "washi_position": "washi_top_left",
+      "system_badge": "system_first"
     }
   },
   "stats": {
-    "messages": 7477,
-    "active_months": 10,
+    "messages": 7479,
+    "active_months": 11,
     "first_seen": "2025-11"
   },
   "top_months": [
@@ -246,6 +250,11 @@
     {
       "month": "2026-5",
       "kind": "gifted",
+      "rank": 3
+    },
+    {
+      "month": "2026-9",
+      "kind": "chat",
       "rank": 3
     }
   ]
