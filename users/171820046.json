@@ -32,7 +32,9 @@
       "redeem_checkin_60": "2026-07-04T20:20:37.450082+00:00",
       "chat_beach": "2026-07-06T21:02:33.846737+00:00",
       "chat_bork": "2026-08-06T21:47:54.423696+00:00",
-      "attend_50": "2026-08-17T20:34:33.066027+00:00"
+      "attend_50": "2026-08-17T20:34:33.066027+00:00",
+      "gamble_total_loss_1": "2026-09-01T22:30:46.148506+00:00",
+      "chat_500": "2026-09-01T22:31:21.644002+00:00"
     },
     "founded": {}
   },
@@ -60,14 +62,21 @@
       "prefix_82",
       "suffix_60",
       "prefix_83",
-      "suffix_61"
+      "suffix_61",
+      "prefix_3"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 496,
-    "active_months": 6,
+    "messages": 502,
+    "active_months": 7,
     "first_seen": "2026-3"
   },
-  "top_months": []
+  "top_months": [
+    {
+      "month": "2026-9",
+      "kind": "chat",
+      "rank": 3
+    }
+  ]
 }
