@@ -87,13 +87,13 @@
   "top_months": [
     {
       "month": "2026-9",
-      "kind": "chat",
+      "kind": "gifted",
       "rank": 1
     },
     {
       "month": "2026-9",
-      "kind": "gifted",
-      "rank": 1
+      "kind": "chat",
+      "rank": 2
     }
   ]
 }
