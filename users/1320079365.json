@@ -7,18 +7,23 @@
     "earned": {
       "chat_10": "2026-08-28T22:38:47.772241+00:00",
       "gamble_total_win_1": "2026-09-01T22:45:32.907614+00:00",
-      "gamble_total_loss_1": "2026-09-01T22:51:27.833687+00:00"
+      "gamble_total_loss_1": "2026-09-01T22:51:27.833687+00:00",
+      "attend_3": "2026-09-03T20:33:56.623183+00:00",
+      "chat_100": "2026-09-03T20:33:56.878420+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
-      "prefix_7"
+      "prefix_7",
+      "prefix_79",
+      "suffix_57",
+      "prefix_2"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 99,
+    "messages": 101,
     "active_months": 2,
     "first_seen": "2026-08-09T22:21:03.669062+00:00"
   },
