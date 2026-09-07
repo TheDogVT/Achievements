@@ -222,11 +222,12 @@
       "name_base": "name_7",
       "name_suffix": "suffix_5",
       "washi_color": "washi_gold",
-      "washi_position": "washi_top_left"
+      "washi_position": "washi_top_left",
+      "system_badge": "system_first"
     }
   },
   "stats": {
-    "messages": 7568,
+    "messages": 7569,
     "active_months": 11,
     "first_seen": "2025-11"
   },
