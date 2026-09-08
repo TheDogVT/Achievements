@@ -82,11 +82,13 @@
       "prefix_93",
       "suffix_71"
     ],
-    "active": {}
+    "active": {
+      "system_badge": "system_first"
+    }
   },
   "stats": {
-    "messages": 85,
-    "active_months": 10,
+    "messages": 87,
+    "active_months": 11,
     "first_seen": "2025-11"
   },
   "top_months": []
