@@ -30,6 +30,12 @@
       "amount": 50,
       "type": "attended"
     },
+    "attend_100": {
+      "name": "Ride or Die",
+      "desc": "Awarded for attending 100 streams. Through thick and thin (and zoomies).",
+      "amount": 100,
+      "type": "attended"
+    },
     "streak_3": {
       "name": "3 Day Streak!",
       "desc": "Three days running. Someone is getting spoiled.",

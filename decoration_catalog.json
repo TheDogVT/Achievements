@@ -1438,6 +1438,39 @@
       }
     }
   },
+  "prefix_84": {
+    "slot": "name_prefix",
+    "display_name": "Main Chat",
+    "achievement_name": "Ride or Die",
+    "achievement_category": "attendance",
+    "achievement_id": "attend_100",
+    "config": {
+      "font_family": "Varela Round",
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "Main Chat",
+      "text_gradient": [
+        {
+          "color": "#0ea5e9",
+          "pos": null
+        },
+        {
+          "color": "#facc15",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "attendance",
+        "id": "attend_100"
+      }
+    }
+  },
   "prefix_89": {
     "slot": "name_prefix",
     "display_name": "Active",
@@ -3449,6 +3482,39 @@
         "type": "achievement",
         "category": "attendance",
         "id": "attend_50"
+      }
+    }
+  },
+  "suffix_62": {
+    "slot": "name_suffix",
+    "display_name": "[100 STREAMS]",
+    "achievement_name": "Ride or Die",
+    "achievement_category": "attendance",
+    "achievement_id": "attend_100",
+    "config": {
+      "font_family": "VT323",
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "[100 STREAMS]",
+      "text_gradient": [
+        {
+          "color": "#0ea5e9",
+          "pos": null
+        },
+        {
+          "color": "#facc15",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "type": "achievement",
+        "category": "attendance",
+        "id": "attend_100"
       }
     }
   },

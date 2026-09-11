@@ -65,7 +65,8 @@
     },
     "founded": {
       "attend_25": "2026-05-31T20:04:20.522037+00:00",
-      "attend_50": "2026-07-03T20:13:04.620690+00:00"
+      "attend_50": "2026-07-03T20:13:04.620690+00:00",
+      "attend_100": "2026-09-11T20:15:17.986340+00:00"
     }
   },
   "decorations": {
@@ -104,7 +105,9 @@
       "prefix_18",
       "suffix_8",
       "prefix_5",
-      "prefix_77"
+      "prefix_77",
+      "prefix_84",
+      "suffix_62"
     ],
     "active": {
       "name_prefix": "prefix_16",
@@ -114,7 +117,7 @@
     }
   },
   "stats": {
-    "messages": 5155,
+    "messages": 5156,
     "active_months": 11,
     "first_seen": "2025-11"
   },
