@@ -1,14 +1,15 @@
 {
   "user_id": "888940419",
   "username": "dexigator",
-  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/58c7fd67-ee62-430e-bf7b-ad10a7e675b9-profile_image-300x300.png",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/14dcda3f-4c3e-4178-9fc9-c471733c60a7-profile_image-300x300.png",
   "legacy": 0,
   "achievements": {
     "earned": {
       "attend_3": "2026-08-24T20:36:05.351856+00:00",
       "streak_3": "2026-08-24T20:36:05.678066+00:00",
       "attend_5": "2026-08-27T21:29:04.603365+00:00",
-      "streak_5": "2026-08-27T21:29:04.865430+00:00"
+      "streak_5": "2026-08-27T21:29:04.865430+00:00",
+      "chat_10": "2026-09-11T20:26:28.731126+00:00"
     },
     "founded": {}
   },
@@ -21,13 +22,14 @@
       "prefix_80",
       "suffix_58",
       "prefix_90",
-      "suffix_68"
+      "suffix_68",
+      "prefix_7"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 9,
-    "active_months": 1,
+    "messages": 10,
+    "active_months": 2,
     "first_seen": "2026-08-21T21:35:03.261618+00:00"
   },
   "top_months": []
