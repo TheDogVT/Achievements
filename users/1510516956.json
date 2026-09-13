@@ -6,7 +6,8 @@
   "achievements": {
     "earned": {
       "redeem_checkin_1": "2026-07-23T20:47:00.983469+00:00",
-      "redeem_pet_1": "2026-07-23T20:47:11.706681+00:00"
+      "redeem_pet_1": "2026-07-23T20:47:11.706681+00:00",
+      "chat_sniff": "2026-09-13T20:06:02.606044+00:00"
     },
     "founded": {}
   },
@@ -15,8 +16,8 @@
     "active": {}
   },
   "stats": {
-    "messages": 1,
-    "active_months": 1,
+    "messages": 8,
+    "active_months": 2,
     "first_seen": "2026-07-23T20:46:38.166080+00:00"
   },
   "top_months": []
