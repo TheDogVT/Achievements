@@ -5,16 +5,19 @@
   "legacy": 0,
   "achievements": {
     "earned": {
-      "redeem_pet_1": "2026-09-13T23:27:53.274423+00:00"
+      "redeem_pet_1": "2026-09-13T23:27:53.274423+00:00",
+      "chat_10": "2026-09-13T23:32:16.870008+00:00"
     },
     "founded": {}
   },
   "decorations": {
-    "unlocked": [],
+    "unlocked": [
+      "prefix_7"
+    ],
     "active": {}
   },
   "stats": {
-    "messages": 7,
+    "messages": 10,
     "active_months": 1,
     "first_seen": "2026-09-13T23:25:43.877453+00:00"
   },
