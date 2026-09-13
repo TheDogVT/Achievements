@@ -7,16 +7,19 @@
     "earned": {
       "redeem_checkin_1": "2026-07-23T20:47:00.983469+00:00",
       "redeem_pet_1": "2026-07-23T20:47:11.706681+00:00",
-      "chat_sniff": "2026-09-13T20:06:02.606044+00:00"
+      "chat_sniff": "2026-09-13T20:06:02.606044+00:00",
+      "chat_10": "2026-09-13T20:07:49.287417+00:00"
     },
     "founded": {}
   },
   "decorations": {
-    "unlocked": [],
+    "unlocked": [
+      "prefix_7"
+    ],
     "active": {}
   },
   "stats": {
-    "messages": 8,
+    "messages": 11,
     "active_months": 2,
     "first_seen": "2026-07-23T20:46:38.166080+00:00"
   },
