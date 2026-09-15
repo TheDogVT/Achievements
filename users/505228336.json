@@ -82,7 +82,9 @@
       "prefix_93",
       "suffix_71"
     ],
-    "active": {}
+    "active": {
+      "system_badge": "system_first"
+    }
   },
   "stats": {
     "messages": 87,
