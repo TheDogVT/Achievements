@@ -1,20 +1,23 @@
 {
   "user_id": "406140049",
   "username": "queen_noobie",
-  "pfp_url": "",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/1fa59841-ad97-4a9a-9e9e-93d4c8f76d41-profile_image-300x300.png",
   "legacy": 0,
   "achievements": {
     "earned": {
-      "chat_sniff": "2026-09-16T00:05:14.048621+00:00"
+      "chat_sniff": "2026-09-16T00:05:14.048621+00:00",
+      "chat_10": "2026-09-16T00:09:48.473225+00:00"
     },
     "founded": {}
   },
   "decorations": {
-    "unlocked": [],
+    "unlocked": [
+      "prefix_7"
+    ],
     "active": {}
   },
   "stats": {
-    "messages": 7,
+    "messages": 10,
     "active_months": 1,
     "first_seen": "2026-09-16T00:04:27.978626+00:00"
   },
