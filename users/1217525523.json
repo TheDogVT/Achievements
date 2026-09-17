@@ -2,7 +2,7 @@
   "user_id": "1217525523",
   "username": "humandperson",
   "pfp_url": "https://static-cdn.jtvnw.net/user-default-pictures-uv/41780b5a-def8-11e9-94d9-784f43822e80-profile_image-300x300.png",
-  "legacy": 1,
+  "legacy": 2,
   "achievements": {
     "earned": {
       "redeem_checkin_1": "2025-11-08T21:12:35.954402+00:00",
@@ -113,7 +113,10 @@
       "quote_1": "2026-05-31T21:35:55.991514+00:00",
       "attend_10": "2026-06-07T22:05:08.908220+00:00",
       "chat_paw": "2026-07-04T20:14:22.509763+00:00",
-      "attend_25": "2026-07-28T22:54:11.674781+00:00"
+      "attend_25": "2026-07-28T22:54:11.674781+00:00",
+      "donation_200": "2026-09-17T20:10:24.475358+00:00",
+      "donation_cumulative_250": "2026-09-17T20:10:24.488359+00:00",
+      "donation_cumulative_500": "2026-09-17T20:10:24.503356+00:00"
     },
     "founded": {
       "chat_treats": "2025-11-05T21:24:34.018452+00:00",
@@ -173,12 +176,16 @@
       "suffix_59",
       "name_13",
       "prefix_82",
-      "suffix_60"
+      "suffix_60",
+      "prefix_121",
+      "prestige_donation_static",
+      "prestige_donation_name",
+      "message_1"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 6969,
+    "messages": 6971,
     "active_months": 11,
     "first_seen": "2025-11"
   },
@@ -195,6 +202,11 @@
     },
     {
       "month": "2026-6",
+      "kind": "donations",
+      "rank": 1
+    },
+    {
+      "month": "2026-9",
       "kind": "donations",
       "rank": 1
     }
