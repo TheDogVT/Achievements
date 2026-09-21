@@ -62,7 +62,8 @@
       "gifted_times_1": "2026-06-21T23:15:18.965571+00:00",
       "gifted_cumulative_5": "2026-08-03T23:14:21.656546+00:00",
       "gifted_times_2": "2026-08-03T23:14:21.989046+00:00",
-      "gifted_instance_5": "2026-08-03T23:14:22.300046+00:00"
+      "gifted_instance_5": "2026-08-03T23:14:22.300046+00:00",
+      "attend_25": "2026-09-21T22:02:26.287813+00:00"
     },
     "founded": {}
   },
@@ -90,12 +91,14 @@
       "suffix_67",
       "prefix_81",
       "suffix_59",
-      "name_14"
+      "name_14",
+      "prefix_82",
+      "suffix_60"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 2007,
+    "messages": 2008,
     "active_months": 11,
     "first_seen": "2025-11"
   },
