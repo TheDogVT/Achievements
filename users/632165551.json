@@ -244,7 +244,7 @@
     "active": {}
   },
   "stats": {
-    "messages": 5731,
+    "messages": 5800,
     "active_months": 11,
     "first_seen": "2025-11"
   },
@@ -306,6 +306,11 @@
     },
     {
       "month": "2026-8",
+      "kind": "gifted",
+      "rank": 2
+    },
+    {
+      "month": "2026-9",
       "kind": "gifted",
       "rank": 2
     }
