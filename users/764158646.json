@@ -1,7 +1,7 @@
 {
   "user_id": "764158646",
   "username": "charlesvfee",
-  "pfp_url": "https://static-cdn.jtvnw.net/user-default-pictures-uv/41780b5a-def8-11e9-94d9-784f43822e80-profile_image-300x300.png",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/b0a554b6-1e8d-417b-8edc-e9b449fd289d-profile_image-300x300.jpeg",
   "legacy": 0,
   "achievements": {
     "earned": {
@@ -29,7 +29,8 @@
       "redeem_total_25": "2026-09-21T20:31:08.349239+00:00",
       "chat_lick": "2026-09-21T20:33:34.819666+00:00",
       "attend_10": "2026-09-24T20:07:08.076256+00:00",
-      "streak_10": "2026-09-24T20:07:08.636669+00:00"
+      "streak_10": "2026-09-24T20:07:08.636669+00:00",
+      "chat_100": "2026-09-24T20:10:56.191599+00:00"
     },
     "founded": {}
   },
@@ -55,12 +56,13 @@
       "prefix_81",
       "suffix_59",
       "prefix_92",
-      "suffix_70"
+      "suffix_70",
+      "prefix_2"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 99,
+    "messages": 101,
     "active_months": 1,
     "first_seen": "2026-09-05T20:13:01.271842+00:00"
   },
