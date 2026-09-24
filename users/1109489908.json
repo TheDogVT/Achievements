@@ -1,6 +1,6 @@
 {
   "user_id": "1109489908",
-  "username": "tartelizbeth",
+  "username": "misstartelizbeth",
   "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/56b319e8-5ff2-43aa-853b-c3a275c05aff-profile_image-300x300.png",
   "legacy": 1,
   "achievements": {
@@ -20,7 +20,8 @@
       "gamble_total_loss_1": "2026-08-11T20:56:10.480209+00:00",
       "gamble_total_win_1": "2026-08-11T21:52:01.916289+00:00",
       "attend_5": "2026-08-14T23:55:57.775833+00:00",
-      "redeem_checkin_30": "2026-08-14T23:55:58.098734+00:00"
+      "redeem_checkin_30": "2026-08-14T23:55:58.098734+00:00",
+      "redeem_pet_10": "2026-09-24T23:31:11.560118+00:00"
     },
     "founded": {}
   },
@@ -35,8 +36,8 @@
     "active": {}
   },
   "stats": {
-    "messages": 86,
-    "active_months": 2,
+    "messages": 88,
+    "active_months": 3,
     "first_seen": "2026-7"
   },
   "top_months": []
