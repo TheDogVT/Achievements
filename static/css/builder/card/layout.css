@@ -969,6 +969,112 @@ body {
     opacity: 0.68;
 }
 
+.builder-actions .button-undo {
+    color: #0d1f1c;
+    background: #d8c48b;
+    border-color: #b9a468;
+}
+
+.builder-actions .button-undo[hidden] {
+    display: none;
+}
+
+/* Undo bar for a pending delete. Rendered outside the action row because deleting a
+   tag empties the shell, which would otherwise hide the Undo control. */
+.builder-undo-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 12px;
+    padding: 9px 11px;
+    color: #f0e3c5;
+    background: rgba(115, 82, 37, 0.16);
+    border: 1px solid rgba(242, 179, 93, 0.34);
+    border-radius: 7px;
+}
+
+.builder-undo-message {
+    font-size: 12px;
+}
+
+.builder-undo-bar .button-undo {
+    padding: 6px 12px;
+    color: #0d1f1c;
+    background: #d8c48b;
+    border: 1px solid #b9a468;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* Import From and Washi live in the builder shell so the focused editor keeps them
+   after the legacy #controls panel is retired. */
+.builder-import-actions,
+.builder-washi-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    padding: 8px 10px;
+    background: rgba(34, 41, 42, 0.55);
+    border: 1px solid #2f3a3b;
+    border-radius: 7px;
+}
+
+.builder-import-title,
+.builder-washi-title {
+    color: #9fb4b0;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.builder-import-select,
+.builder-washi-actions select {
+    min-width: 180px;
+    padding: 6px 8px;
+    color: var(--text);
+    background: #1b2223;
+    border: 1px solid #3d4849;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.builder-import-actions button {
+    padding: 6px 11px;
+    color: var(--text);
+    background: #22292a;
+    border: 1px solid #3d4849;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.builder-import-actions button:hover {
+    border-color: rgba(124, 214, 196, 0.6);
+}
+
+.builder-washi-actions .washi-control {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.builder-washi-actions .washi-control > label {
+    color: #c6bba7;
+    font-size: 12px;
+}
+
+.builder-washi-actions select {
+    min-width: 132px;
+}
+
 .builder-output {
     min-height: 240px;
     resize: vertical;
