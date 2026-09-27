@@ -10,7 +10,9 @@
     "founded": {}
   },
   "decorations": {
-    "unlocked": [],
+    "unlocked": [
+      "prefix_139"
+    ],
     "active": {}
   },
   "stats": {

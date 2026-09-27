@@ -12,7 +12,10 @@
     "founded": {}
   },
   "decorations": {
-    "unlocked": [],
+    "unlocked": [
+      "prefix_126",
+      "suffix_100"
+    ],
     "active": {}
   },
   "stats": {

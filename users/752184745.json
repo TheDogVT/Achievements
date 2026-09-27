@@ -12,7 +12,9 @@
   },
   "decorations": {
     "unlocked": [
-      "prefix_16"
+      "prefix_16",
+      "prefix_126",
+      "suffix_100"
     ],
     "active": {}
   },

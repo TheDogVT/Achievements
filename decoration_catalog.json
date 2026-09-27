@@ -456,6 +456,51 @@
       }
     }
   },
+  "prefix_126": {
+    "slot": "name_prefix",
+    "display_name": "Bark",
+    "achievement_name": "Certified Barker",
+    "achievement_category": "chat",
+    "achievement_id": "chat_bork",
+    "config": {
+      "text": "Bark",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_bork",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_127": {
+    "slot": "name_prefix",
+    "display_name": "Brushies",
+    "achievement_name": "Brush Evader",
+    "achievement_category": "chat",
+    "achievement_id": "chat_brush",
+    "config": {
+      "text": "Brushies",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_brush",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_129": {
+    "slot": "name_prefix",
+    "display_name": "Roadtrip!",
+    "achievement_name": "Window Licker",
+    "achievement_category": "chat",
+    "achievement_id": "chat_carride",
+    "config": {
+      "text": "Roadtrip!",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_carride",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_13": {
     "slot": "name_prefix",
     "display_name": "puppy eyed",
@@ -468,6 +513,156 @@
       "unlock": {
         "category": "chat",
         "id": "chat_beg",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_130": {
+    "slot": "name_prefix",
+    "display_name": "Tail Chaser",
+    "achievement_name": "Tail Chaser",
+    "achievement_category": "chat",
+    "achievement_id": "chat_chasetail",
+    "config": {
+      "text": "Tail Chaser",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_chasetail",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_131": {
+    "slot": "name_prefix",
+    "display_name": "THICC",
+    "achievement_name": "Chonk Surveyor",
+    "achievement_category": "chat",
+    "achievement_id": "chat_chonk",
+    "config": {
+      "text": "THICC",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_chonk",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_132": {
+    "slot": "name_prefix",
+    "display_name": "Derpy",
+    "achievement_name": "Derp Spotter",
+    "achievement_category": "chat",
+    "achievement_id": "chat_derp",
+    "config": {
+      "text": "Derpy",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_derp",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_133": {
+    "slot": "name_prefix",
+    "display_name": "Yard Destroyer",
+    "achievement_name": "Hole Digger",
+    "achievement_category": "chat",
+    "achievement_id": "chat_dig",
+    "config": {
+      "text": "Yard Destroyer",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_dig",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_134": {
+    "slot": "name_prefix",
+    "display_name": "Meme Lover",
+    "achievement_name": "Meme Lord",
+    "achievement_category": "chat",
+    "achievement_id": "chat_doge",
+    "config": {
+      "text": "Meme Lover",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_doge",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_135": {
+    "slot": "name_prefix",
+    "display_name": "DING",
+    "achievement_name": "Doorbell Defender",
+    "achievement_category": "chat",
+    "achievement_id": "chat_doorbell",
+    "config": {
+      "text": "DING",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_doorbell",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_136": {
+    "slot": "name_prefix",
+    "display_name": "Commander",
+    "achievement_name": "Down Commander",
+    "achievement_category": "chat",
+    "achievement_id": "chat_down",
+    "config": {
+      "text": "Commander",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_down",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_137": {
+    "slot": "name_prefix",
+    "display_name": "Drooly",
+    "achievement_name": "Drip Reporter",
+    "achievement_category": "chat",
+    "achievement_id": "chat_drool",
+    "config": {
+      "text": "Drooly",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_drool",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_138": {
+    "slot": "name_prefix",
+    "display_name": "Stick Thrower",
+    "achievement_name": "Thrower Of Objects",
+    "achievement_category": "chat",
+    "achievement_id": "chat_fetch",
+    "config": {
+      "text": "Stick Thrower",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_fetch",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_139": {
+    "slot": "name_prefix",
+    "display_name": "Floof Enjoyer",
+    "achievement_name": "Floof Inspector",
+    "achievement_category": "chat",
+    "achievement_id": "chat_floofy",
+    "config": {
+      "text": "Floof Enjoyer",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_floofy",
         "type": "achievement"
       }
     }
@@ -2886,6 +3081,66 @@
       "unlock": {
         "category": "cheer",
         "id": "cheer_2",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_100": {
+    "slot": "name_suffix",
+    "display_name": "Bark",
+    "achievement_name": "Certified Barker",
+    "achievement_category": "chat",
+    "achievement_id": "chat_bork",
+    "config": {
+      "text": "Bark",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_bork",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_102": {
+    "slot": "name_suffix",
+    "display_name": "THICC",
+    "achievement_name": "Chonk Surveyor",
+    "achievement_category": "chat",
+    "achievement_id": "chat_chonk",
+    "config": {
+      "text": "THICC",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_chonk",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_105": {
+    "slot": "name_suffix",
+    "display_name": "DING",
+    "achievement_name": "Doorbell Defender",
+    "achievement_category": "chat",
+    "achievement_id": "chat_doorbell",
+    "config": {
+      "text": "DING",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_doorbell",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_106": {
+    "slot": "name_suffix",
+    "display_name": "Growler",
+    "achievement_name": "Growl Translator",
+    "achievement_category": "chat",
+    "achievement_id": "chat_growl",
+    "config": {
+      "text": "Growler",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_growl",
         "type": "achievement"
       }
     }

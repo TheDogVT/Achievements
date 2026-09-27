@@ -181,7 +181,12 @@
       "prestige_donation_static",
       "prestige_donation_name",
       "message_1",
-      "prefix_125"
+      "prefix_125",
+      "prefix_126",
+      "prefix_129",
+      "prefix_133",
+      "prefix_138",
+      "suffix_100"
     ],
     "active": {}
   },

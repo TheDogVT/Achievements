@@ -240,7 +240,12 @@
       "prestige_cheer_static",
       "prestige_cheer_name",
       "message_2",
-      "prestige_cheer_animated"
+      "prestige_cheer_animated",
+      "prefix_126",
+      "prefix_129",
+      "prefix_133",
+      "prefix_134",
+      "suffix_100"
     ],
     "active": {}
   },
