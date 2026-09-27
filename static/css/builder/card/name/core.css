@@ -33,28 +33,47 @@
     overflow: visible;
     white-space: nowrap;
 }
-.decor-card.theme-synthwave .content { color: #f1ecff; }
-.decor-card.theme-synthwave .name-line { color: #ffd9f5; }
+.decor-card.theme-synthwave .content,
+.page.theme-synthwave { color: #f1ecff; }
+.decor-card.theme-synthwave .name-line,
+.page.theme-synthwave .username { color: #ffd9f5; }
 .decor-card.theme-synthwave .name-prefix,
-.decor-card.theme-synthwave .name-suffix { color: #bdefff; opacity: 0.95; }
-.decor-card.theme-synthwave .message { text-shadow: 0 0 10px rgba(142,148,255,0.32); }
-.decor-card.theme-big-spender .content { color: #241203; }
-.decor-card.theme-christmas .content { color: #1f130a; }
+.decor-card.theme-synthwave .name-suffix,
+.page.theme-synthwave .name-prefix,
+.page.theme-synthwave .name-suffix { color: #bdefff; opacity: 0.95; }
+.decor-card.theme-synthwave .message,
+.page.theme-synthwave .text { text-shadow: 0 0 10px rgba(142,148,255,0.32); }
+.decor-card.theme-big-spender .content,
+.page.theme-big-spender { color: #241203; }
+.decor-card.theme-christmas .content,
+.page.theme-christmas { color: #1f130a; }
 .decor-card.bg-card-night .content,
 .decor-card.bg-card-cosmic .content,
-.decor-card.bg-card-forest .content {
+.decor-card.bg-card-forest .content,
+.page.bg-card-night,
+.page.bg-card-cosmic,
+.page.bg-card-forest {
     color: #f4efe3;
     text-shadow: 0 1px 2px rgba(0,0,0,0.62), 0 0 9px rgba(0,0,0,0.34);
 }
-.decor-card.bg-card-night .name-line { color: #f6dda1; }
-.decor-card.bg-card-cosmic .name-line { color: #f5d9ff; }
-.decor-card.bg-card-forest .name-line { color: #e8d69a; }
+.decor-card.bg-card-night .name-line,
+.page.bg-card-night .username { color: #f6dda1; }
+.decor-card.bg-card-cosmic .name-line,
+.page.bg-card-cosmic .username { color: #f5d9ff; }
+.decor-card.bg-card-forest .name-line,
+.page.bg-card-forest .username { color: #e8d69a; }
 .decor-card.bg-card-night .name-prefix,
 .decor-card.bg-card-night .name-suffix,
 .decor-card.bg-card-cosmic .name-prefix,
 .decor-card.bg-card-cosmic .name-suffix,
 .decor-card.bg-card-forest .name-prefix,
-.decor-card.bg-card-forest .name-suffix {
+.decor-card.bg-card-forest .name-suffix,
+.page.bg-card-night .name-prefix,
+.page.bg-card-night .name-suffix,
+.page.bg-card-cosmic .name-prefix,
+.page.bg-card-cosmic .name-suffix,
+.page.bg-card-forest .name-prefix,
+.page.bg-card-forest .name-suffix {
     color: rgba(245,239,227,0.88);
 }
 .name-prefix,

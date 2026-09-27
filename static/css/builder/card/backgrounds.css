@@ -661,97 +661,143 @@
     animation: prestige-ember-bed 2.1s ease-in-out infinite, prestige-ignition-line 2.7s ease-in-out infinite, prestige-sparks-up 3.5s linear infinite;
 }
 
-.decor-card.bg-card-dark .content {
+.decor-card.bg-card-dark .content,
+.page.bg-card-dark {
     color: #f4efe3;
     text-shadow: 0 1px 2px rgba(0,0,0,0.62), 0 0 9px rgba(0,0,0,0.34);
 }
-.decor-card.bg-card-steel .name-line { color: #d9e0e8; }
-.decor-card.bg-card-ember .name-line { color: #ffc18b; }
+.decor-card.bg-card-steel .name-line,
+.page.bg-card-steel .username { color: #d9e0e8; }
+.decor-card.bg-card-ember .name-line,
+.page.bg-card-ember .username { color: #ffc18b; }
 .decor-card.bg-card-blueprint .name-line,
 .decor-card.bg-card-circuit .name-line,
 .decor-card.bg-card-command .name-line,
-.decor-card.bg-card-crt .name-line { color: #b7f0ff; }
+.decor-card.bg-card-crt .name-line,
+.page.bg-card-blueprint .username,
+.page.bg-card-circuit .username,
+.page.bg-card-command .username,
+.page.bg-card-crt .username { color: #b7f0ff; }
 .decor-card.bg-card-brass .content,
-.decor-card.bg-card-workshop .content { color: #f7e4bd; text-shadow: 0 1px 2px rgba(0,0,0,0.50); }
-.decor-card.bg-card-storm .name-line { color: #d8e9ff; }
-.decor-card.bg-card-carbon .name-line { color: #f3c7c7; }
-.decor-card.bg-card-blossom .name-line { color: #ffd0df; }
+.decor-card.bg-card-workshop .content,
+.page.bg-card-brass,
+.page.bg-card-workshop { color: #f7e4bd; text-shadow: 0 1px 2px rgba(0,0,0,0.50); }
+.decor-card.bg-card-storm .name-line,
+.page.bg-card-storm .username { color: #d8e9ff; }
+.decor-card.bg-card-carbon .name-line,
+.page.bg-card-carbon .username { color: #f3c7c7; }
+.decor-card.bg-card-blossom .name-line,
+.page.bg-card-blossom .username { color: #ffd0df; }
 .decor-card.bg-card-crystal .content,
 .decor-card.bg-card-pearl .content,
 .decor-card.bg-card-lavender .content,
 .decor-card.bg-card-greenhouse .content,
-.decor-card.bg-card-candy .content { color: #1f1624; text-shadow: 0 1px 0 rgba(255,255,255,0.38); }
-.decor-card.bg-card-aurora .name-line { color: #c8ffe6; }
-.decor-card.bg-card-rose .name-line { color: #ffc8d6; }
-.decor-card.bg-card-glass .name-line { color: #ffe8a8; }
-.decor-card.bg-card-lace .name-line { color: #f0dcff; }
-.decor-card.bg-card-dragonscale .name-line { color: #e5d28c; }
-.decor-card.bg-card-water .content {
+.decor-card.bg-card-candy .content,
+.page.bg-card-crystal,
+.page.bg-card-pearl,
+.page.bg-card-lavender,
+.page.bg-card-greenhouse,
+.page.bg-card-candy { color: #1f1624; text-shadow: 0 1px 0 rgba(255,255,255,0.38); }
+.decor-card.bg-card-aurora .name-line,
+.page.bg-card-aurora .username { color: #c8ffe6; }
+.decor-card.bg-card-rose .name-line,
+.page.bg-card-rose .username { color: #ffc8d6; }
+.decor-card.bg-card-glass .name-line,
+.page.bg-card-glass .username { color: #ffe8a8; }
+.decor-card.bg-card-lace .name-line,
+.page.bg-card-lace .username { color: #f0dcff; }
+.decor-card.bg-card-dragonscale .name-line,
+.page.bg-card-dragonscale .username { color: #e5d28c; }
+.decor-card.bg-card-water .content,
+.page.bg-card-water {
     color: #eefdf9;
     text-shadow: 0 2px 3px rgba(2, 13, 28, 0.78), 0 0 12px rgba(4, 25, 42, 0.72);
 }
-.decor-card.bg-card-water .name-line {
+.decor-card.bg-card-water .name-line,
+.page.bg-card-water .username {
     color: #c9fff3;
     text-shadow: 0 2px 3px rgba(0, 13, 25, 0.78), 0 0 14px rgba(128, 255, 232, 0.22);
 }
 .decor-card.bg-card-water .name-prefix,
-.decor-card.bg-card-water .name-suffix {
+.decor-card.bg-card-water .name-suffix,
+.page.bg-card-water .name-prefix,
+.page.bg-card-water .name-suffix {
     color: rgba(202, 255, 245, 0.90);
 }
-.decor-card.bg-card-water-sourced .content {
+.decor-card.bg-card-water-sourced .content,
+.page.bg-card-water-sourced {
     color: #f0fffb;
     text-shadow: 0 2px 3px rgba(2, 12, 28, 0.80), 0 0 12px rgba(0, 18, 34, 0.70);
 }
-.decor-card.bg-card-water-sourced .name-line {
+.decor-card.bg-card-water-sourced .name-line,
+.page.bg-card-water-sourced .username {
     color: #d5fff7;
     text-shadow: 0 2px 3px rgba(0, 12, 26, 0.84), 0 0 15px rgba(132, 255, 235, 0.26);
 }
 .decor-card.bg-card-water-sourced .name-prefix,
-.decor-card.bg-card-water-sourced .name-suffix {
+.decor-card.bg-card-water-sourced .name-suffix,
+.page.bg-card-water-sourced .name-prefix,
+.page.bg-card-water-sourced .name-suffix {
     color: rgba(210, 255, 248, 0.92);
 }
-.decor-card.bg-card-space .name-line { color: #d9dcff; }
-.decor-card.bg-card-space-art .content {
+.decor-card.bg-card-space .name-line,
+.page.bg-card-space .username { color: #d9dcff; }
+.decor-card.bg-card-space-art .content,
+.page.bg-card-space-art {
     color: #f2f7ff;
     text-shadow: 0 2px 3px rgba(0, 0, 0, 0.82), 0 0 14px rgba(2, 9, 21, 0.72);
 }
-.decor-card.bg-card-space-art .name-line {
+.decor-card.bg-card-space-art .name-line,
+.page.bg-card-space-art .username {
     color: #e0fff5;
     text-shadow: 0 2px 3px rgba(0, 0, 0, 0.82), 0 0 14px rgba(111, 255, 213, 0.20);
 }
-.decor-card.bg-card-biolume .name-line { color: #9fffe6; }
-.decor-card.bg-card-temperate .name-line { color: #d7e8a6; }
-.decor-card.bg-card-temperate-art .content {
+.decor-card.bg-card-biolume .name-line,
+.page.bg-card-biolume .username { color: #9fffe6; }
+.decor-card.bg-card-temperate .name-line,
+.page.bg-card-temperate .username { color: #d7e8a6; }
+.decor-card.bg-card-temperate-art .content,
+.page.bg-card-temperate-art {
     color: #21331e;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.62), 0 2px 8px rgba(218, 255, 230, 0.42);
 }
-.decor-card.bg-card-temperate-art .name-line {
+.decor-card.bg-card-temperate-art .name-line,
+.page.bg-card-temperate-art .username {
     color: #f0ffd8;
     text-shadow: 0 2px 3px rgba(13, 31, 17, 0.78), 0 0 10px rgba(27, 65, 31, 0.48);
 }
-.decor-card.bg-card-window-dark .name-line { color: #d9ecff; }
-.decor-card.bg-card-window-light .content { color: #173040; text-shadow: 0 1px 0 rgba(255,255,255,0.42); }
+.decor-card.bg-card-window-dark .name-line,
+.page.bg-card-window-dark .username { color: #d9ecff; }
+.decor-card.bg-card-window-light .content,
+.page.bg-card-window-light { color: #173040; text-shadow: 0 1px 0 rgba(255,255,255,0.42); }
 .decor-card.bg-card-prestige-gifted .content,
 .decor-card.bg-card-prestige-attendance .content,
-.decor-card.bg-card-prestige-streak .content {
+.decor-card.bg-card-prestige-streak .content,
+.page.bg-card-prestige-gifted,
+.page.bg-card-prestige-attendance,
+.page.bg-card-prestige-streak {
     color: rgba(31, 18, 8, 0.88);
     text-shadow: 0 1px 0 rgba(255, 245, 214, 0.35);
 }
 /* Donation rides on a dark night sky, so body text is light (not the dark ink the
    other prestige families use). */
-.decor-card.bg-card-prestige-donation .content {
+.decor-card.bg-card-prestige-donation .content,
+.page.bg-card-prestige-donation {
     color: rgba(255, 234, 200, 0.88);
     text-shadow: 0 0 8px rgba(255, 168, 86, 0.30), 0 2px 2px rgba(10, 8, 24, 0.82);
 }
-.decor-card.bg-card-prestige-donation .name-line {
+.decor-card.bg-card-prestige-donation .name-line,
+.page.bg-card-prestige-donation .username {
     color: #ffe6ac;
     text-shadow: 0 0 12px rgba(255, 168, 86, 0.50), 0 2px 3px rgba(10, 8, 24, 0.82);
 }
-.decor-card.bg-card-prestige-cheer .content {
+.decor-card.bg-card-prestige-cheer .content,
+.page.bg-card-prestige-cheer {
     color: rgba(205, 246, 255, 0.88);
     text-shadow: 0 0 8px rgba(0, 212, 255, 0.28), 0 2px 2px rgba(5, 5, 24, 0.80);
 }
-.decor-card.bg-card-prestige-cheer .name-line {
+.decor-card.bg-card-prestige-cheer .name-line,
+.page.bg-card-prestige-cheer .username {
     color: #fff7d6;
     text-shadow:
         0 0 8px rgba(255, 212, 86, 0.62),
@@ -760,15 +806,18 @@
         -2px 0 rgba(0, 212, 255, 0.58),
         0 2px 2px rgba(5, 5, 24, 0.82);
 }
-.decor-card.bg-card-prestige-gifted .name-line {
+.decor-card.bg-card-prestige-gifted .name-line,
+.page.bg-card-prestige-gifted .username {
     color: #ffe4f4;
     text-shadow: 0 0 12px rgba(236, 72, 153, 0.42), 0 2px 2px rgba(45, 7, 30, 0.8);
 }
-.decor-card.bg-card-prestige-attendance .name-line {
+.decor-card.bg-card-prestige-attendance .name-line,
+.page.bg-card-prestige-attendance .username {
     color: #f5f8ff;
     text-shadow: 0 0 12px rgba(56, 189, 248, 0.36), 0 2px 3px rgba(2, 8, 18, 0.82);
 }
-.decor-card.bg-card-prestige-streak .name-line {
+.decor-card.bg-card-prestige-streak .name-line,
+.page.bg-card-prestige-streak .username {
     color: #fff7ed;
     text-shadow: 0 0 12px rgba(255, 209, 102, 0.42), 0 3px 3px rgba(35, 5, 4, 0.8);
 }

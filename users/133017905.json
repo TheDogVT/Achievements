@@ -208,7 +208,10 @@
       "prestige_donation_static",
       "prestige_donation_name",
       "message_1",
-      "prestige_donation_animated"
+      "prestige_donation_animated",
+      "prefix_122",
+      "prefix_123",
+      "prefix_125"
     ],
     "active": {
       "name_prefix": "prefix_16",

@@ -13,9 +13,9 @@
       "text": "Prestige Cheer Animated",
       "theme": "prestige-cheer",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_cumulative_100k"
+        "id": "cheer_cumulative_100k",
+        "type": "achievement"
       }
     }
   },
@@ -32,9 +32,9 @@
       "text": "Prestige Cheer",
       "theme": "prestige-cheer",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_cumulative_50k"
+        "id": "cheer_cumulative_50k",
+        "type": "achievement"
       }
     }
   },
@@ -52,9 +52,9 @@
       "text": "Prestige Donation Animated",
       "theme": "prestige-donation",
       "unlock": {
-        "type": "achievement",
         "category": "donation",
-        "id": "donation_cumulative_1000"
+        "id": "donation_cumulative_1000",
+        "type": "achievement"
       }
     }
   },
@@ -71,9 +71,9 @@
       "text": "Prestige Donation",
       "theme": "prestige-donation",
       "unlock": {
-        "type": "achievement",
         "category": "donation",
-        "id": "donation_cumulative_500"
+        "id": "donation_cumulative_500",
+        "type": "achievement"
       }
     }
   },
@@ -87,9 +87,9 @@
       "text": "eepy",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "chat",
-        "id": "chat_sleepy"
+        "id": "chat_sleepy",
+        "type": "achievement"
       }
     }
   },
@@ -103,9 +103,9 @@
       "outline": "basic",
       "text": "First Claim",
       "unlock": {
-        "type": "achievement",
         "category": "redeems",
-        "id": "redeem_first_1"
+        "id": "redeem_first_1",
+        "type": "achievement"
       }
     }
   },
@@ -119,9 +119,9 @@
       "outline": "basic",
       "text": "Quickdraw",
       "unlock": {
-        "type": "achievement",
         "category": "redeems",
-        "id": "redeem_first_10"
+        "id": "redeem_first_10",
+        "type": "achievement"
       }
     }
   },
@@ -135,9 +135,9 @@
       "outline": "basic",
       "text": "Front Runner",
       "unlock": {
-        "type": "achievement",
         "category": "redeems",
-        "id": "redeem_first_25"
+        "id": "redeem_first_25",
+        "type": "achievement"
       }
     }
   },
@@ -163,9 +163,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "redeems",
-        "id": "redeem_first_31"
+        "id": "redeem_first_31",
+        "type": "achievement"
       }
     }
   },
@@ -191,9 +191,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "redeems",
-        "id": "redeem_first_45"
+        "id": "redeem_first_45",
+        "type": "achievement"
       }
     }
   },
@@ -219,9 +219,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "redeems",
-        "id": "redeem_first_60"
+        "id": "redeem_first_60",
+        "type": "achievement"
       }
     }
   },
@@ -251,9 +251,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "redeems",
-        "id": "redeem_first_90"
+        "id": "redeem_first_90",
+        "type": "achievement"
       }
     }
   },
@@ -283,9 +283,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "redeems",
-        "id": "redeem_first_120"
+        "id": "redeem_first_120",
+        "type": "achievement"
       }
     }
   },
@@ -341,9 +341,9 @@
       "text_color": "#fff7d6",
       "theme": "prestige-cheer",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_cumulative_50k"
+        "id": "cheer_cumulative_50k",
+        "type": "achievement"
       }
     }
   },
@@ -357,9 +357,9 @@
       "text": "the betrayer ",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "chat",
-        "id": "chat_bath"
+        "id": "chat_bath",
+        "type": "achievement"
       }
     }
   },
@@ -390,9 +390,69 @@
       "text_color": "#ffe6ac",
       "theme": "prestige-donation",
       "unlock": {
-        "type": "achievement",
         "category": "donation",
-        "id": "donation_cumulative_500"
+        "id": "donation_cumulative_500",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_122": {
+    "slot": "name_prefix",
+    "display_name": "BALSDJHAUISKHDHUIOAS,",
+    "achievement_name": "BALSDJHAUISKHDHUIOAS",
+    "achievement_category": "chat",
+    "achievement_id": "BALSDJHAUISKHDHUIOAS",
+    "config": {
+      "text": "BALSDJHAUISKHDHUIOAS,",
+      "unlock": {
+        "category": "chat",
+        "id": "BALSDJHAUISKHDHUIOAS",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_123": {
+    "slot": "name_prefix",
+    "display_name": "Shameful",
+    "achievement_name": "Rebel Rouser",
+    "achievement_category": "chat",
+    "achievement_id": "chat_baddog",
+    "config": {
+      "text": "Shameful",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_baddog",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_124": {
+    "slot": "name_prefix",
+    "display_name": "Beach lover",
+    "achievement_name": "Beach Bum Planner",
+    "achievement_category": "chat",
+    "achievement_id": "chat_beach",
+    "config": {
+      "text": "Beach lover",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_beach",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_125": {
+    "slot": "name_prefix",
+    "display_name": "Dangerous",
+    "achievement_name": "Dangerous Temptation",
+    "achievement_category": "chat",
+    "achievement_id": "chat_bellyrub",
+    "config": {
+      "text": "Dangerous",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_bellyrub",
+        "type": "achievement"
       }
     }
   },
@@ -406,9 +466,9 @@
       "text": "puppy eyed",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "chat",
-        "id": "chat_beg"
+        "id": "chat_beg",
+        "type": "achievement"
       }
     }
   },
@@ -422,9 +482,9 @@
       "text": ":p",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "chat",
-        "id": "chat_blep"
+        "id": "chat_blep",
+        "type": "achievement"
       }
     }
   },
@@ -438,9 +498,9 @@
       "text": "Boop!",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "chat",
-        "id": "chat_boop"
+        "id": "chat_boop",
+        "type": "achievement"
       }
     }
   },
@@ -464,9 +524,9 @@
       "text": "Chaos bringer",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "chat",
-        "id": "chat_chaos"
+        "id": "chat_chaos",
+        "type": "achievement"
       }
     }
   },
@@ -480,9 +540,9 @@
       "text": "Cuddly",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "chat",
-        "id": "chat_cuddle"
+        "id": "chat_cuddle",
+        "type": "achievement"
       }
     }
   },
@@ -496,9 +556,9 @@
       "text": "Good Girl",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "chat",
-        "id": "chat_goodboy"
+        "id": "chat_goodboy",
+        "type": "achievement"
       }
     }
   },
@@ -539,9 +599,9 @@
       "text": "Awooo",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "chat",
-        "id": "chat_howl"
+        "id": "chat_howl",
+        "type": "achievement"
       }
     }
   },
@@ -554,9 +614,9 @@
     "config": {
       "text": "OwO",
       "unlock": {
-        "type": "achievement",
         "category": "chat",
-        "id": "chat_100"
+        "id": "chat_100",
+        "type": "achievement"
       }
     }
   },
@@ -571,9 +631,9 @@
       "text": "π",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_3"
+        "id": "cheer_3",
+        "type": "achievement"
       }
     }
   },
@@ -588,9 +648,9 @@
       "text": "Lucky",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_7"
+        "id": "cheer_7",
+        "type": "achievement"
       }
     }
   },
@@ -605,9 +665,9 @@
       "text": "8-Bit",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_8"
+        "id": "cheer_8",
+        "type": "achievement"
       }
     }
   },
@@ -623,9 +683,9 @@
       "text": "Bit",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_10"
+        "id": "cheer_10",
+        "type": "achievement"
       }
     }
   },
@@ -641,9 +701,9 @@
       "text": "Coded",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_12"
+        "id": "cheer_12",
+        "type": "achievement"
       }
     }
   },
@@ -658,9 +718,9 @@
       "text": "16-Bit",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_16"
+        "id": "cheer_16",
+        "type": "achievement"
       }
     }
   },
@@ -673,9 +733,9 @@
     "config": {
       "text": "It's",
       "unlock": {
-        "type": "achievement",
         "category": "chat",
-        "id": "chat_500"
+        "id": "chat_500",
+        "type": "achievement"
       }
     }
   },
@@ -690,9 +750,9 @@
       "text": "Area",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_51"
+        "id": "cheer_51",
+        "type": "achievement"
       }
     }
   },
@@ -707,9 +767,9 @@
       "text": "trouble maker",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_99"
+        "id": "cheer_99",
+        "type": "achievement"
       }
     }
   },
@@ -725,9 +785,9 @@
       "text": "Bit",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_128"
+        "id": "cheer_128",
+        "type": "achievement"
       }
     }
   },
@@ -742,9 +802,9 @@
       "text": "3.14",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_314"
+        "id": "cheer_314",
+        "type": "achievement"
       }
     }
   },
@@ -759,9 +819,9 @@
       "text": "3, 2, 1...",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_321"
+        "id": "cheer_321",
+        "type": "achievement"
       }
     }
   },
@@ -774,9 +834,9 @@
     "config": {
       "text": "Yapper",
       "unlock": {
-        "type": "achievement",
         "category": "chat",
-        "id": "chat_1k"
+        "id": "chat_1k",
+        "type": "achievement"
       }
     }
   },
@@ -792,9 +852,9 @@
       "text": "Byte",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_512"
+        "id": "cheer_512",
+        "type": "achievement"
       }
     }
   },
@@ -819,9 +879,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_666"
+        "id": "cheer_666",
+        "type": "achievement"
       }
     }
   },
@@ -846,9 +906,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_999"
+        "id": "cheer_999",
+        "type": "achievement"
       }
     }
   },
@@ -873,9 +933,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_1000"
+        "id": "cheer_1000",
+        "type": "achievement"
       }
     }
   },
@@ -906,9 +966,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_1024"
+        "id": "cheer_1024",
+        "type": "achievement"
       }
     }
   },
@@ -926,9 +986,9 @@
       "outline": "none",
       "text": "Yapper",
       "unlock": {
-        "type": "achievement",
         "category": "chat",
-        "id": "chat_5k"
+        "id": "chat_5k",
+        "type": "achievement"
       }
     }
   },
@@ -959,9 +1019,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_1234"
+        "id": "cheer_1234",
+        "type": "achievement"
       }
     }
   },
@@ -991,9 +1051,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_1337"
+        "id": "cheer_1337",
+        "type": "achievement"
       }
     }
   },
@@ -1023,9 +1083,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_2048"
+        "id": "cheer_2048",
+        "type": "achievement"
       }
     }
   },
@@ -1056,9 +1116,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_4096"
+        "id": "cheer_4096",
+        "type": "achievement"
       }
     }
   },
@@ -1074,9 +1134,9 @@
       "text": "The Yapper",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "chat",
-        "id": "chat_10k"
+        "id": "chat_10k",
+        "type": "achievement"
       }
     }
   },
@@ -1120,9 +1180,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_10000"
+        "id": "cheer_10000",
+        "type": "achievement"
       }
     }
   },
@@ -1137,9 +1197,9 @@
       "outline": "basic",
       "text": "Sincerely,",
       "unlock": {
-        "type": "achievement",
         "category": "chat",
-        "id": "chat_10"
+        "id": "chat_10",
+        "type": "achievement"
       }
     }
   },
@@ -1154,9 +1214,9 @@
       "text": "nice",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_69"
+        "id": "cheer_69",
+        "type": "achievement"
       }
     }
   },
@@ -1169,9 +1229,9 @@
     "config": {
       "text": "little",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_1"
+        "id": "cheer_1",
+        "type": "achievement"
       }
     }
   },
@@ -1186,9 +1246,9 @@
       "text": "good girl,",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_100"
+        "id": "cheer_100",
+        "type": "achievement"
       }
     }
   },
@@ -1203,9 +1263,9 @@
       "text": "ball chaser",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "chat",
-        "id": "chat_ball"
+        "id": "chat_ball",
+        "type": "achievement"
       }
     }
   },
@@ -1293,9 +1353,9 @@
         }
       ],
       "unlock": {
-        "type": "achievement",
         "category": "manual",
-        "id": "bog_sputter"
+        "id": "bog_sputter",
+        "type": "achievement"
       }
     }
   },
@@ -1310,9 +1370,9 @@
       "text": "seen",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "attendance",
-        "id": "attend_3"
+        "id": "attend_3",
+        "type": "achievement"
       }
     }
   },
@@ -1331,9 +1391,9 @@
       "outline": "basic",
       "text": "Sincerely,",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_time_1"
+        "id": "cheer_time_1",
+        "type": "achievement"
       }
     }
   },
@@ -1348,9 +1408,9 @@
       "text": "Recognized",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "attendance",
-        "id": "attend_5"
+        "id": "attend_5",
+        "type": "achievement"
       }
     }
   },
@@ -1376,9 +1436,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "attendance",
-        "id": "attend_10"
+        "id": "attend_10",
+        "type": "achievement"
       }
     }
   },
@@ -1404,9 +1464,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "attendance",
-        "id": "attend_25"
+        "id": "attend_25",
+        "type": "achievement"
       }
     }
   },
@@ -1432,9 +1492,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "attendance",
-        "id": "attend_50"
+        "id": "attend_50",
+        "type": "achievement"
       }
     }
   },
@@ -1465,9 +1525,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "attendance",
-        "id": "attend_100"
+        "id": "attend_100",
+        "type": "achievement"
       }
     }
   },
@@ -1482,9 +1542,9 @@
       "text": "Active",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "attendance",
-        "id": "streak_3"
+        "id": "streak_3",
+        "type": "achievement"
       }
     }
   },
@@ -1502,9 +1562,9 @@
       "outline": "basic",
       "text": "With Love - ",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_time_10"
+        "id": "cheer_time_10",
+        "type": "achievement"
       }
     }
   },
@@ -1519,9 +1579,9 @@
       "text": "Locked In",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "attendance",
-        "id": "streak_5"
+        "id": "streak_5",
+        "type": "achievement"
       }
     }
   },
@@ -1547,9 +1607,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "attendance",
-        "id": "streak_7"
+        "id": "streak_7",
+        "type": "achievement"
       }
     }
   },
@@ -1575,9 +1635,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "attendance",
-        "id": "streak_10"
+        "id": "streak_10",
+        "type": "achievement"
       }
     }
   },
@@ -1603,9 +1663,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "attendance",
-        "id": "streak_14"
+        "id": "streak_14",
+        "type": "achievement"
       }
     }
   },
@@ -1636,9 +1696,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "attendance",
-        "id": "streak_21"
+        "id": "streak_21",
+        "type": "achievement"
       }
     }
   },
@@ -1650,9 +1710,9 @@
     "achievement_id": "donation_cumulative_25",
     "config": {
       "unlock": {
-        "type": "achievement",
         "category": "donation",
-        "id": "donation_cumulative_25"
+        "id": "donation_cumulative_25",
+        "type": "achievement"
       }
     }
   },
@@ -1680,9 +1740,9 @@
         }
       ],
       "unlock": {
-        "type": "achievement",
         "category": "donation",
-        "id": "donation_cumulative_50"
+        "id": "donation_cumulative_50",
+        "type": "achievement"
       }
     }
   },
@@ -1723,9 +1783,9 @@
         }
       ],
       "unlock": {
-        "type": "achievement",
         "category": "donation",
-        "id": "donation_cumulative_100"
+        "id": "donation_cumulative_100",
+        "type": "achievement"
       }
     }
   },
@@ -1827,9 +1887,9 @@
         }
       ],
       "unlock": {
-        "type": "achievement",
         "category": "donation",
-        "id": "donation_cumulative_200"
+        "id": "donation_cumulative_200",
+        "type": "achievement"
       }
     }
   },
@@ -1844,9 +1904,9 @@
       "outline_thickness": "1",
       "text_color": "#f43f5e",
       "unlock": {
-        "type": "achievement",
         "category": "gifted",
-        "id": "gifted_cumulative_5"
+        "id": "gifted_cumulative_5",
+        "type": "achievement"
       }
     }
   },
@@ -1863,9 +1923,9 @@
       "outline_thickness": "0.5",
       "text_color": "#e54897",
       "unlock": {
-        "type": "achievement",
         "category": "gifted",
-        "id": "gifted_cumulative_10"
+        "id": "gifted_cumulative_10",
+        "type": "achievement"
       }
     }
   },
@@ -1893,9 +1953,9 @@
         }
       ],
       "unlock": {
-        "type": "achievement",
         "category": "gifted",
-        "id": "gifted_cumulative_15"
+        "id": "gifted_cumulative_15",
+        "type": "achievement"
       }
     }
   },
@@ -1921,9 +1981,9 @@
         }
       ],
       "unlock": {
-        "type": "achievement",
         "category": "gifted",
-        "id": "gifted_cumulative_20"
+        "id": "gifted_cumulative_20",
+        "type": "achievement"
       }
     }
   },
@@ -1953,9 +2013,9 @@
         }
       ],
       "unlock": {
-        "type": "achievement",
         "category": "gifted",
-        "id": "gifted_cumulative_25"
+        "id": "gifted_cumulative_25",
+        "type": "achievement"
       }
     }
   },
@@ -1992,9 +2052,9 @@
         }
       ],
       "unlock": {
-        "type": "achievement",
         "category": "gifted",
-        "id": "gifted_cumulative_30"
+        "id": "gifted_cumulative_30",
+        "type": "achievement"
       }
     }
   },
@@ -2009,9 +2069,9 @@
       "font_weight": "100",
       "outline": "basic",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_time_10"
+        "id": "cheer_time_10",
+        "type": "achievement"
       }
     }
   },
@@ -2052,9 +2112,9 @@
         }
       ],
       "unlock": {
-        "type": "achievement",
         "category": "gifted",
-        "id": "gifted_cumulative_40"
+        "id": "gifted_cumulative_40",
+        "type": "achievement"
       }
     }
   },
@@ -2096,9 +2156,9 @@
         }
       ],
       "unlock": {
-        "type": "achievement",
         "category": "gifted",
-        "id": "gifted_cumulative_50"
+        "id": "gifted_cumulative_50",
+        "type": "achievement"
       }
     }
   },
@@ -2199,9 +2259,9 @@
         }
       ],
       "unlock": {
-        "type": "achievement",
         "category": "gifted",
-        "id": "gifted_cumulative_75"
+        "id": "gifted_cumulative_75",
+        "type": "achievement"
       }
     }
   },
@@ -2291,9 +2351,9 @@
         }
       ],
       "unlock": {
-        "type": "achievement",
         "category": "manual",
-        "id": "bog_sputter"
+        "id": "bog_sputter",
+        "type": "achievement"
       }
     }
   },
@@ -2307,9 +2367,9 @@
       "font_family": "Varela Round",
       "outline": "basic",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_message_100k"
+        "id": "cheer_message_100k",
+        "type": "achievement"
       }
     }
   },
@@ -2325,9 +2385,9 @@
       "outline_thickness": "1",
       "text_color": "#00d4ff",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_cumulative_1k"
+        "id": "cheer_cumulative_1k",
+        "type": "achievement"
       }
     }
   },
@@ -2351,9 +2411,9 @@
         }
       ],
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_cumulative_2500"
+        "id": "cheer_cumulative_2500",
+        "type": "achievement"
       }
     }
   },
@@ -2379,9 +2439,9 @@
         }
       ],
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_cumulative_5k"
+        "id": "cheer_cumulative_5k",
+        "type": "achievement"
       }
     }
   },
@@ -2437,9 +2497,9 @@
         }
       ],
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_cumulative_10k"
+        "id": "cheer_cumulative_10k",
+        "type": "achievement"
       }
     }
   },
@@ -2574,9 +2634,9 @@
         }
       ],
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_cumulative_20k"
+        "id": "cheer_cumulative_20k",
+        "type": "achievement"
       }
     }
   },
@@ -2591,9 +2651,9 @@
       "outline_thickness": "1",
       "text_color": "#d97706",
       "unlock": {
-        "type": "achievement",
         "category": "donation",
-        "id": "donation_cumulative_10"
+        "id": "donation_cumulative_10",
+        "type": "achievement"
       }
     }
   },
@@ -2647,9 +2707,9 @@
       "text_color": "#fff7d6",
       "theme": "prestige-cheer",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_cumulative_50k"
+        "id": "cheer_cumulative_50k",
+        "type": "achievement"
       }
     }
   },
@@ -2680,9 +2740,9 @@
       "text_color": "#ffe6ac",
       "theme": "prestige-donation",
       "unlock": {
-        "type": "achievement",
         "category": "donation",
-        "id": "donation_cumulative_500"
+        "id": "donation_cumulative_500",
+        "type": "achievement"
       }
     }
   },
@@ -2713,9 +2773,9 @@
       "text_color": "#ffe6ac",
       "theme": "prestige-donation",
       "unlock": {
-        "type": "achievement",
         "category": "donation",
-        "id": "donation_cumulative_500"
+        "id": "donation_cumulative_500",
+        "type": "achievement"
       }
     }
   },
@@ -2753,9 +2813,9 @@
       "text_color": "#a6dbe7",
       "theme": "prestige-cheer",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_cumulative_50k"
+        "id": "cheer_cumulative_50k",
+        "type": "achievement"
       }
     }
   },
@@ -2807,9 +2867,9 @@
       "style": "flat",
       "text": "is typing...",
       "unlock": {
-        "type": "achievement",
         "category": "chat",
-        "id": "chat_50k"
+        "id": "chat_50k",
+        "type": "achievement"
       }
     }
   },
@@ -2824,9 +2884,9 @@
       "text": "the seed",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_2"
+        "id": "cheer_2",
+        "type": "achievement"
       }
     }
   },
@@ -2841,9 +2901,9 @@
       "text": "2²",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_4"
+        "id": "cheer_4",
+        "type": "achievement"
       }
     }
   },
@@ -2859,9 +2919,9 @@
       "text": "[10]",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_10"
+        "id": "cheer_10",
+        "type": "achievement"
       }
     }
   },
@@ -2877,9 +2937,9 @@
       "text": "[12]",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_12"
+        "id": "cheer_12",
+        "type": "achievement"
       }
     }
   },
@@ -2894,9 +2954,9 @@
       "text": "the unlucky",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_13"
+        "id": "cheer_13",
+        "type": "achievement"
       }
     }
   },
@@ -2911,9 +2971,9 @@
       "text": ", that's funnier",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_25"
+        "id": "cheer_25",
+        "type": "achievement"
       }
     }
   },
@@ -2928,9 +2988,9 @@
       "text": "nice",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_69"
+        "id": "cheer_69",
+        "type": "achievement"
       }
     }
   },
@@ -2945,9 +3005,9 @@
       "text": ", good boi",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_100"
+        "id": "cheer_100",
+        "type": "achievement"
       }
     }
   },
@@ -2962,9 +3022,9 @@
       "text": "123 go!",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_123"
+        "id": "cheer_123",
+        "type": "achievement"
       }
     }
   },
@@ -2980,9 +3040,9 @@
       "text": "[128]",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_128"
+        "id": "cheer_128",
+        "type": "achievement"
       }
     }
   },
@@ -2997,9 +3057,9 @@
       "text": "of 256",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_256"
+        "id": "cheer_256",
+        "type": "achievement"
       }
     }
   },
@@ -3014,9 +3074,9 @@
       "text": "go!",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_321"
+        "id": "cheer_321",
+        "type": "achievement"
       }
     }
   },
@@ -3031,9 +3091,9 @@
       "text": "blaze it",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_429"
+        "id": "cheer_429",
+        "type": "achievement"
       }
     }
   },
@@ -3049,9 +3109,9 @@
       "text": "[512]",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_512"
+        "id": "cheer_512",
+        "type": "achievement"
       }
     }
   },
@@ -3076,9 +3136,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_666"
+        "id": "cheer_666",
+        "type": "achievement"
       }
     }
   },
@@ -3103,9 +3163,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_1000"
+        "id": "cheer_1000",
+        "type": "achievement"
       }
     }
   },
@@ -3136,9 +3196,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_1024"
+        "id": "cheer_1024",
+        "type": "achievement"
       }
     }
   },
@@ -3169,9 +3229,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_1234"
+        "id": "cheer_1234",
+        "type": "achievement"
       }
     }
   },
@@ -3201,9 +3261,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_1337"
+        "id": "cheer_1337",
+        "type": "achievement"
       }
     }
   },
@@ -3217,9 +3277,9 @@
       "outline": "basic",
       "text": "the booper",
       "unlock": {
-        "type": "achievement",
         "category": "chat",
-        "id": "chat_boop"
+        "id": "chat_boop",
+        "type": "achievement"
       }
     }
   },
@@ -3249,9 +3309,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_3141"
+        "id": "cheer_3141",
+        "type": "achievement"
       }
     }
   },
@@ -3282,9 +3342,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_4096"
+        "id": "cheer_4096",
+        "type": "achievement"
       }
     }
   },
@@ -3328,9 +3388,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_10000"
+        "id": "cheer_10000",
+        "type": "achievement"
       }
     }
   },
@@ -3346,9 +3406,9 @@
       "outline": "basic",
       "text": "The Believer",
       "unlock": {
-        "type": "achievement",
         "category": "chat",
-        "id": "chat_dog_god"
+        "id": "chat_dog_god",
+        "type": "achievement"
       }
     }
   },
@@ -3361,9 +3421,9 @@
     "config": {
       "text": ":p",
       "unlock": {
-        "type": "achievement",
         "category": "chat",
-        "id": "chat_blep"
+        "id": "chat_blep",
+        "type": "achievement"
       }
     }
   },
@@ -3378,9 +3438,9 @@
       "text": "[3 STREAMS]",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "attendance",
-        "id": "attend_3"
+        "id": "attend_3",
+        "type": "achievement"
       }
     }
   },
@@ -3395,9 +3455,9 @@
       "text": "[5 STREAMS]",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "attendance",
-        "id": "attend_5"
+        "id": "attend_5",
+        "type": "achievement"
       }
     }
   },
@@ -3423,9 +3483,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "attendance",
-        "id": "attend_10"
+        "id": "attend_10",
+        "type": "achievement"
       }
     }
   },
@@ -3451,9 +3511,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "attendance",
-        "id": "attend_25"
+        "id": "attend_25",
+        "type": "achievement"
       }
     }
   },
@@ -3479,9 +3539,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "attendance",
-        "id": "attend_50"
+        "id": "attend_50",
+        "type": "achievement"
       }
     }
   },
@@ -3512,9 +3572,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "attendance",
-        "id": "attend_100"
+        "id": "attend_100",
+        "type": "achievement"
       }
     }
   },
@@ -3529,9 +3589,9 @@
       "text": "[LOCKED]",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "attendance",
-        "id": "streak_3"
+        "id": "streak_3",
+        "type": "achievement"
       }
     }
   },
@@ -3546,9 +3606,9 @@
       "text": "[STREAK]",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "attendance",
-        "id": "streak_5"
+        "id": "streak_5",
+        "type": "achievement"
       }
     }
   },
@@ -3574,9 +3634,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "attendance",
-        "id": "streak_7"
+        "id": "streak_7",
+        "type": "achievement"
       }
     }
   },
@@ -3592,9 +3652,9 @@
       "outline": "basic",
       "text": "The Floof",
       "unlock": {
-        "type": "achievement",
         "category": "chat",
-        "id": "chat_floof"
+        "id": "chat_floof",
+        "type": "achievement"
       }
     }
   },
@@ -3620,9 +3680,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "attendance",
-        "id": "streak_10"
+        "id": "streak_10",
+        "type": "achievement"
       }
     }
   },
@@ -3648,9 +3708,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "attendance",
-        "id": "streak_14"
+        "id": "streak_14",
+        "type": "achievement"
       }
     }
   },
@@ -3681,9 +3741,9 @@
       ],
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "attendance",
-        "id": "streak_21"
+        "id": "streak_21",
+        "type": "achievement"
       }
     }
   },
@@ -3698,9 +3758,9 @@
       "outline": "basic",
       "text": "[FIRST]",
       "unlock": {
-        "type": "achievement",
         "category": "redeems",
-        "id": "redeem_first_1"
+        "id": "redeem_first_1",
+        "type": "achievement"
       }
     }
   },
@@ -3714,9 +3774,9 @@
       "outline": "basic",
       "text": "The Good Boy",
       "unlock": {
-        "type": "achievement",
         "category": "chat",
-        "id": "chat_goodboy"
+        "id": "chat_goodboy",
+        "type": "achievement"
       }
     }
   },
@@ -3731,9 +3791,9 @@
       "outline": "basic",
       "text": "[10 FIRSTS]",
       "unlock": {
-        "type": "achievement",
         "category": "redeems",
-        "id": "redeem_first_10"
+        "id": "redeem_first_10",
+        "type": "achievement"
       }
     }
   },
@@ -3748,9 +3808,9 @@
       "outline": "basic",
       "text": "[25 FIRSTS]",
       "unlock": {
-        "type": "achievement",
         "category": "redeems",
-        "id": "redeem_first_25"
+        "id": "redeem_first_25",
+        "type": "achievement"
       }
     }
   },
@@ -3765,9 +3825,9 @@
       "outline": "basic",
       "text": "[31 FIRSTS]",
       "unlock": {
-        "type": "achievement",
         "category": "redeems",
-        "id": "redeem_first_31"
+        "id": "redeem_first_31",
+        "type": "achievement"
       }
     }
   },
@@ -3782,9 +3842,9 @@
       "outline": "basic",
       "text": "[50 FIRSTS]",
       "unlock": {
-        "type": "achievement",
         "category": "redeems",
-        "id": "redeem_first_45"
+        "id": "redeem_first_45",
+        "type": "achievement"
       }
     }
   },
@@ -3799,9 +3859,9 @@
       "outline": "basic",
       "text": "[60 FIRSTS]",
       "unlock": {
-        "type": "achievement",
         "category": "redeems",
-        "id": "redeem_first_60"
+        "id": "redeem_first_60",
+        "type": "achievement"
       }
     }
   },
@@ -3816,9 +3876,9 @@
       "outline": "basic",
       "text": "[90 FIRSTS]",
       "unlock": {
-        "type": "achievement",
         "category": "redeems",
-        "id": "redeem_first_90"
+        "id": "redeem_first_90",
+        "type": "achievement"
       }
     }
   },
@@ -3833,9 +3893,9 @@
       "outline": "basic",
       "text": "[120 FIRSTS]",
       "unlock": {
-        "type": "achievement",
         "category": "redeems",
-        "id": "redeem_first_120"
+        "id": "redeem_first_120",
+        "type": "achievement"
       }
     }
   },
@@ -3850,9 +3910,9 @@
       "text": "the bit",
       "text_gradient_direction": "45deg",
       "unlock": {
-        "type": "achievement",
         "category": "cheer",
-        "id": "cheer_1"
+        "id": "cheer_1",
+        "type": "achievement"
       }
     }
   }
