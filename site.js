@@ -51,8 +51,11 @@
   function remember(uid) {
     const user = users[uid];
     const dates = Object.values({...user.achievements.earned,...user.achievements.founded}).filter(t=>Number.isFinite(Date.parse(t))).sort((a,b)=>Date.parse(b)-Date.parse(a));
-    saved = {userId:uid,username:user.username,lastAchievementDate:dates[0] || null};
-    document.cookie = `myAchievementsUser=${encodeURIComponent(JSON.stringify(saved))};max-age=31536000;path=/;SameSite=Lax`;
+    const record = {userId:uid,username:user.username,lastAchievementDate:dates[0] || null};
+    document.cookie = `myAchievementsUser=${encodeURIComponent(JSON.stringify(record))};max-age=31536000;path=/;SameSite=Lax`;
+    const stored = loadRemembered();
+    if(stored?.userId!==uid)throw new Error('The browser did not save the remembered profile');
+    saved = stored;
     updateProfileNav();
   }
   function loadRemembered() {
@@ -158,20 +161,21 @@
   }
   function explorer() {
     let uid = params.has('user') ? resolveUser(params.get('user')) : resolveUser(saved?.userId);
-    const state = {query:params.get('q') || '',category:params.get('category') || 'all',filter:params.get('filter') || 'all',sort:params.get('sort') || (uid ? 'recent' : 'name'),limit:36};
+    const state = {query:params.get('q') || '',category:params.get('category') || 'all',filter:params.get('filter') || 'all',sort:params.get('sort') || (uid ? 'recent' : 'name'),limit:Math.min(definitions.size,Math.max(36,Math.floor(Number(params.get('limit'))||36)))};
     app.innerHTML = `<header class="page-head"><h1>Discover the collection.</h1><p class="muted">${definitions.size} achievements have been found by the pack. The rest are still out there.</p></header>${finder('View someone’s achievements')}<div id="viewer"></div><div class="toolbar"><label for="achievement-search">Search achievements</label><input id="achievement-search" type="search" placeholder="Name or description" value="${esc(state.query)}"></div><div class="chips" id="categories"><button data-category="all" type="button">All</button>${categories.map(c=>`<button data-category="${esc(c)}" type="button">${esc(categoryLabel(c))}</button>`).join('')}</div><div class="result-head"><div class="chips" id="filters"><button data-filter="all" type="button">All</button><button data-filter="earned" type="button">Earned</button><button data-filter="founder" type="button">Founder</button></div><label>Sort <select id="sort"><option value="name">Name</option><option value="rarity">Rarest first</option><option value="recent">Recent unlocks</option><option value="founded">Recently founded</option></select></label></div><div class="status" id="result-status" role="status"></div><div class="achievement-grid" id="results"></div><div class="pagination"><button id="more" type="button">Show more achievements</button></div>`;
     function render() {
       const owned = uid && {...users[uid].achievements.earned,...users[uid].achievements.founded};
       const url = new URL(location.href);
+      url.searchParams.set('limit',String(state.limit));
       for (const key of ['q','category','filter','sort']) url.searchParams.set(key,key==='q' ? state.query : state[key]);
       if (uid) url.searchParams.set('user',users[uid].username); else url.searchParams.delete('user');
       history.replaceState(null,'',url);
       let items = [...definitions.values()].filter(d=>(state.category==='all' || d.category===state.category) && `${d.name} ${d.desc || ''}`.toLowerCase().includes(state.query.toLowerCase()) && (state.filter==='all' || uid && (state.filter==='founder' ? Object.hasOwn(users[uid].achievements.founded,d.id) : Object.hasOwn(owned,d.id))));
       const foundedDate = id => (earners.get(id) || []).find(r=>r.founder)?.date;
-      const unlockDate = id => uid ? owned[id] : recent.find(r=>r.id===id)?.date;
+      const unlockDate = id => uid ? owned[id] : earners.get(id)?.at(-1)?.date;
       items.sort((a,b)=>state.sort==='rarity' ? earners.get(a.id).length-earners.get(b.id).length || a.name.localeCompare(b.name) : ['recent','founded'].includes(state.sort) ? (Date.parse(state.sort==='recent' ? unlockDate(b.id) : foundedDate(b.id))||0)-(Date.parse(state.sort==='recent' ? unlockDate(a.id) : foundedDate(a.id))||0) || a.name.localeCompare(b.name) : a.name.localeCompare(b.name));
       app.querySelector('#results').innerHTML = items.slice(0,state.limit).map(d=>card(d.id,uid)).join('') || '<p class="empty">No achievements match these choices.</p>';
-      app.querySelector('#result-status').textContent = `${items.length} discovered achievements${uid ? ` for ${users[uid].username}` : ''}`;
+      app.querySelector('#result-status').innerHTML = `${items.length} discovered achievements${uid ? ` for ${name(uid,false)}` : ''}`;
       app.querySelector('#more').hidden = state.limit>=items.length;
       app.querySelector('#filters').hidden = !uid;
       app.querySelector('#sort').value = state.sort;
@@ -237,6 +241,17 @@
     users=snapshot.users;meta=metadata;saved=loadRemembered();buildIndexes(achievements);updateProfileNav();
     if(page==='home')home();else if(page==='achievements')explorer();else if(page==='achievement')await detail();else if(page==='profile')await showProfile();else if(page==='community')community();
     window.CosmicSky?.mount({users,name,resolveUser,selected:resolveUser(params.get('user')) || resolveUser(saved?.userId)});
+    if(page==='achievements') {
+      // Browser-local position only; filters themselves live in the shareable URL.
+      try {
+        const position=Number(sessionStorage.getItem(`cosmic-scroll:${location.href}`));
+        if(Number.isFinite(position) && position>0)requestAnimationFrame(()=>window.scrollTo(0,position));
+      }catch(error){console.error('Restoring collection scroll position failed',error);}
+      window.addEventListener('pagehide',()=>{
+        try {sessionStorage.setItem(`cosmic-scroll:${location.href}`,String(window.scrollY));}
+        catch(error){console.error('Saving collection scroll position failed',error);}
+      });
+    }
   }
   start().catch(error=>fail(error));
 })();

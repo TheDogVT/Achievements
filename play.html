@@ -6,14 +6,15 @@
     <title>Star Hunt · Cosmic Playground</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="v2.css">
+    <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="v2.css?v=20261001">
 </head>
-<body class="has-nav">
+<body class="has-nav" data-page="play">
 
 <!-- NAVIGATION -->
 <a class="skip-link" href="#site-content">Skip to content</a><nav class="site-nav wrap" aria-label="Main navigation"><a class="brand" href="index.html">Cosmic Playground</a><div class="nav-links"><a href="index.html">Home</a><a href="achievements.html">Achievements</a><a href="community.html">Community</a><a href="builder.html">Decorations</a></div><a class="profile-nav" id="profile-nav" href="profile.html">Your profile</a></nav>
 
 <!-- CONSTELLATION CANVAS -->
+<div class="sky-background" id="sky-background" aria-hidden="true"></div>
 <canvas id="constellation"></canvas>
 
 <!-- LOADING SCREEN -->
@@ -27,7 +28,7 @@
 
 <!-- MAIN APP (hidden until loaded) -->
 <div id="appContent">
-<div class="page-wrap">
+<div class="page-wrap" id="site-content">
 
     <header><h1>Star Hunt</h1><p class="subtitle">Collect stars, unlock modes, and keep your records on this browser.</p><p><button type="button" onclick="document.getElementById('starGameBtn').click()">Choose a game mode</button></p><p><a href="community.html">Explore the community sky ↗</a></p></header></div></div><!-- /appContent -->
 
@@ -219,7 +220,8 @@
 </div>
 
 <script src="data.js"></script>
+<script src="sky.js?v=20261001"></script>
 <script src="constellation.js"></script>
-<script src="play.js"></script>
+<script src="play.js?v=20261001"></script>
 </body>
 </html>
