@@ -668,6 +668,9 @@
         populateQuickAchievements();
         $('unlock-summary').textContent = `${availableEntries().length} unlocked`;
         $('account-name').textContent = userRecord.username || $('username-input').value.trim();
+        $('account-name').className = 'name' + (Number(userRecord.legacy) >= 2 ? ' legacy-2' : Number(userRecord.legacy) >= 1 ? ' legacy-1' : '');
+        const tierLabel = $('builder-tier');
+        if (tierLabel) tierLabel.textContent = Number(userRecord.legacy) >= 2 ? 'Legendary Legacy' : Number(userRecord.legacy) >= 1 ? 'Legacy' : '';
         renderPreview();
     }
 
@@ -815,6 +818,9 @@
         applySlot($('preview-prefix'), prefixId, 'name-prefix name-tag');
         $('preview-dash').style.display = prefixId ? 'none' : '';
         applySlot($('preview-name'), nameId, 'name-base name-tag', username);
+        if (Number(userRecord?.legacy) >= 1) {
+            $('preview-name').classList.add(Number(userRecord.legacy) >= 2 ? 'legacy-preview-2' : 'legacy-preview-1');
+        }
         applySlot($('preview-suffix'), suffixId, 'name-suffix name-tag');
         applySlot($('preview-message'), messageId, 'message message-text name-tag', message);
 
