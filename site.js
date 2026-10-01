@@ -15,7 +15,15 @@
     const days = Math.max(0,Math.floor((Date.now()-Date.parse(value))/86400000));
     return days === 0 ? 'Today' : days < 30 ? `${days} ${days === 1 ? 'day' : 'days'} ago` : fmtDate(value);
   };
-  const href = (file,key,value) => `${file}.html?${key}=${encodeURIComponent(value)}`;
+  const href = (file,key,value) => `${file}.html?${key}=${encodeURIComponent(value)}${file==='achievement' && page!=='achievement' ? `&from=${encodeURIComponent(location.href)}` : ''}`;
+  function backHref() {
+    try {
+      const target = new URL(params.get('from') || 'achievements.html',location.href);
+      const directory = location.pathname.slice(0,location.pathname.lastIndexOf('/')+1);
+      if (target.origin===location.origin && ['index.html','achievements.html','profile.html','community.html'].some(file=>target.pathname===directory+file)) return target.href;
+    } catch { /* Invalid return URLs explicitly fall back to the collection. */ }
+    return 'achievements.html';
+  }
   function name(uid, linked = true) {
     const user = users[uid] || {username:String(uid),legacy:0};
     const tier = Number(user.legacy) >= 2 ? 2 : Number(user.legacy) >= 1 ? 1 : 0;
@@ -58,6 +66,8 @@
     const uid = resolveUser(saved?.userId);
     link.href = uid ? href('profile','user',users[uid].username) : 'profile.html';
     link.innerHTML = uid ? name(uid,false) : 'Your profile';
+    const decorationLink = document.querySelector('.nav-links a[href="builder.html"]');
+    if (uid && decorationLink) decorationLink.href = href('builder','user',users[uid].username);
   }
   function fail(error,context='Loading the site') {
     console.error(`${context} failed`,error);
@@ -152,6 +162,10 @@
     app.innerHTML = `<header class="page-head"><h1>Discover the collection.</h1><p class="muted">${definitions.size} achievements have been found by the pack. The rest are still out there.</p></header>${finder('View someone’s achievements')}<div id="viewer"></div><div class="toolbar"><label for="achievement-search">Search achievements</label><input id="achievement-search" type="search" placeholder="Name or description" value="${esc(state.query)}"></div><div class="chips" id="categories"><button data-category="all" type="button">All</button>${categories.map(c=>`<button data-category="${esc(c)}" type="button">${esc(categoryLabel(c))}</button>`).join('')}</div><div class="result-head"><div class="chips" id="filters"><button data-filter="all" type="button">All</button><button data-filter="earned" type="button">Earned</button><button data-filter="founder" type="button">Founder</button></div><label>Sort <select id="sort"><option value="name">Name</option><option value="rarity">Rarest first</option><option value="recent">Recent unlocks</option><option value="founded">Recently founded</option></select></label></div><div class="status" id="result-status" role="status"></div><div class="achievement-grid" id="results"></div><div class="pagination"><button id="more" type="button">Show more achievements</button></div>`;
     function render() {
       const owned = uid && {...users[uid].achievements.earned,...users[uid].achievements.founded};
+      const url = new URL(location.href);
+      for (const key of ['q','category','filter','sort']) url.searchParams.set(key,key==='q' ? state.query : state[key]);
+      if (uid) url.searchParams.set('user',users[uid].username); else url.searchParams.delete('user');
+      history.replaceState(null,'',url);
       let items = [...definitions.values()].filter(d=>(state.category==='all' || d.category===state.category) && `${d.name} ${d.desc || ''}`.toLowerCase().includes(state.query.toLowerCase()) && (state.filter==='all' || uid && (state.filter==='founder' ? Object.hasOwn(users[uid].achievements.founded,d.id) : Object.hasOwn(owned,d.id))));
       const foundedDate = id => (earners.get(id) || []).find(r=>r.founder)?.date;
       const unlockDate = id => uid ? owned[id] : recent.find(r=>r.id===id)?.date;
@@ -163,10 +177,6 @@
       app.querySelector('#sort').value = state.sort;
       for (const button of app.querySelectorAll('[data-category]')) button.setAttribute('aria-pressed',String(button.dataset.category===state.category));
       for (const button of app.querySelectorAll('[data-filter]')) button.setAttribute('aria-pressed',String(button.dataset.filter===state.filter));
-      const url = new URL(location.href);
-      for (const key of ['q','category','filter','sort']) url.searchParams.set(key,key==='q' ? state.query : state[key]);
-      if (uid) url.searchParams.set('user',users[uid].username); else url.searchParams.delete('user');
-      history.replaceState(null,'',url);
     }
     app.querySelector('#viewer').innerHTML = uid ? `<section class="viewer"><div><h2>${name(uid)}</h2>${tier(uid)}<small>${earnedCount(uid)} earned · of ${definitions.size} discovered</small></div><div class="actions"><button id="remember" type="button">This is me</button><a href="achievements.html?user=">Browse everyone’s discoveries</a></div></section>` : params.get('user') ? '<p class="error">That profile is not published. Showing the community collection.</p>' : '';
     wireFinder('achievements');
@@ -188,7 +198,7 @@
     document.title = `${def.name} · Cosmic Playground`;
     const records = earners.get(def.id), founder = records.find(r=>r.founder), first = records[0];
     const condition = def.type && def.amount != null ? `${{threshold:'Reach',cumulative:'Accumulate',times:'Complete',exact:'Hit exactly'}[def.type] || 'Milestone:'} ${number(def.amount)}${def.type==='times' ? ' times' : ''}` : '';
-    app.innerHTML = `<article class="detail"><header class="page-head"><small>${esc(categoryLabel(def.category))}</small><h1>${esc(def.name)}</h1><p class="muted">${esc(def.desc || '')}</p>${condition ? `<p class="condition">${esc(condition)}</p>` : ''}</header><div class="metrics"><div class="metric"><b>${records.length}</b><small>Earners</small></div><div class="metric"><b>${(records.length/Math.max(Object.keys(users).length,1)*100).toFixed(1)}%</b><small>of published profiles</small></div><div class="metric"><b style="font-size:22px">${first ? esc(fmtDate(first.date)) : '—'}</b><small>First unlocked</small></div></div>${founder ? `<section class="founder-feature"><small>First founder</small><h2>${name(founder.uid)}</h2>${tier(founder.uid)}<small>${esc(fmtDate(founder.date))}</small></section>` : ''}<div id="rewards" aria-live="polite"></div><div class="section-head"><h2>Unlocked by ${number(records.length)} people</h2></div><div id="earners"></div><button id="more-earners" class="pagination" type="button">Show more earners</button><p><a href="achievements.html">← All achievements</a></p></article>`;
+    app.innerHTML = `<article class="detail"><header class="page-head"><small>${esc(categoryLabel(def.category))}</small><h1>${esc(def.name)}</h1><p class="muted">${esc(def.desc || '')}</p>${condition ? `<p class="condition">${esc(condition)}</p>` : ''}</header><div class="metrics"><div class="metric"><b>${records.length}</b><small>Earners</small></div><div class="metric"><b>${(records.length/Math.max(Object.keys(users).length,1)*100).toFixed(1)}%</b><small>of published profiles</small></div><div class="metric"><b style="font-size:22px">${first ? esc(fmtDate(first.date)) : '—'}</b><small>First unlocked</small></div></div>${founder ? `<section class="founder-feature"><small>First founder</small><h2>${name(founder.uid)}</h2>${tier(founder.uid)}<small>${esc(fmtDate(founder.date))}</small></section>` : ''}<div id="rewards" aria-live="polite"></div><div class="section-head"><h2>Unlocked by ${number(records.length)} people</h2></div><div id="earners"></div><button id="more-earners" class="pagination" type="button">Show more earners</button><p><a href="${esc(backHref())}">← Back to collection</a></p></article>`;
     let limit = 30;
     function render() {app.querySelector('#earners').innerHTML=records.slice(0,limit).map(r=>`<div class="list-row"><div class="row-person">${avatar(r.uid)}<div>${name(r.uid)}${tier(r.uid)}${r.founder ? '<small>Founder</small>' : ''}</div></div><small>${esc(fmtDate(r.date))}</small></div>`).join('');app.querySelector('#more-earners').hidden=limit>=records.length;}
     on('#more-earners','click',()=>{limit+=30;render();});render();

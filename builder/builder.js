@@ -671,6 +671,14 @@
         $('account-name').className = 'name' + (Number(userRecord.legacy) >= 2 ? ' legacy-2' : Number(userRecord.legacy) >= 1 ? ' legacy-1' : '');
         const tierLabel = $('builder-tier');
         if (tierLabel) tierLabel.textContent = Number(userRecord.legacy) >= 2 ? 'Legendary Legacy' : Number(userRecord.legacy) >= 1 ? 'Legacy' : '';
+        const profileNav = $('profile-nav');
+        if (profileNav) {
+            profileNav.href = 'profile.html?user=' + encodeURIComponent(userRecord.username);
+            const label = document.createElement('span');
+            label.className = $('account-name').className;
+            label.textContent = userRecord.username;
+            profileNav.replaceChildren(label);
+        }
         renderPreview();
     }
 

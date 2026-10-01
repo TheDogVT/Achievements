@@ -97,7 +97,8 @@
       "chat_chonk": "2026-07-10T23:27:42.202206+00:00",
       "quote_10": "2026-07-11T20:36:27.223349+00:00",
       "redeem_checkin_210": "2026-07-18T21:27:59.403102+00:00",
-      "chat_down": "2026-08-10T21:06:49.033909+00:00"
+      "chat_down": "2026-08-10T21:06:49.033909+00:00",
+      "attend_100": "2026-10-01T20:08:53.606742+00:00"
     },
     "founded": {
       "chat_squirrel": "2025-11-06T21:06:35.745185+00:00",
@@ -158,13 +159,15 @@
       "prefix_136",
       "prefix_138",
       "suffix_100",
-      "suffix_102"
+      "suffix_102",
+      "prefix_84",
+      "suffix_62"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 6853,
-    "active_months": 11,
+    "messages": 6854,
+    "active_months": 12,
     "first_seen": "2025-11"
   },
   "top_months": []
