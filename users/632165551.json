@@ -118,7 +118,8 @@
       "attend_50": "2026-08-24T20:33:02.133897+00:00",
       "cheer_cumulative_50k": "2026-08-24T22:00:03.147421+00:00",
       "cheer_cumulative_75k": "2026-08-24T22:00:03.455015+00:00",
-      "chat_vet": "2026-09-22T01:01:05.258622+00:00"
+      "chat_vet": "2026-09-22T01:01:05.258622+00:00",
+      "chat_howl": "2026-10-02T01:00:37.658042+00:00"
     },
     "founded": {
       "chat_bath": "2025-11-06T20:50:44.249561+00:00",
@@ -245,13 +246,14 @@
       "prefix_129",
       "prefix_133",
       "prefix_134",
-      "suffix_100"
+      "suffix_100",
+      "prefix_19"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 5835,
-    "active_months": 11,
+    "messages": 5914,
+    "active_months": 12,
     "first_seen": "2025-11"
   },
   "top_months": [
@@ -263,6 +265,11 @@
     {
       "month": "2025-12",
       "kind": "cheers",
+      "rank": 1
+    },
+    {
+      "month": "2026-10",
+      "kind": "chat",
       "rank": 1
     },
     {
