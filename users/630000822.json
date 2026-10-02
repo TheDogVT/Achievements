@@ -65,7 +65,8 @@
       "gamble_loss_total_1m": "2026-08-10T22:15:45.610928+00:00",
       "streak_10": "2026-08-22T22:24:29.616861+00:00",
       "chat_1k": "2026-08-28T20:05:45.734953+00:00",
-      "cheer_cumulative_20k": "2026-09-11T21:05:00.124191+00:00"
+      "cheer_cumulative_20k": "2026-09-11T21:05:00.124191+00:00",
+      "attend_50": "2026-10-02T20:09:10.897669+00:00"
     },
     "founded": {
       "cheer_time_10": "2026-07-20T20:53:29.745328+00:00"
@@ -116,12 +117,16 @@
       "prefix_4",
       "name_8",
       "prefix_126",
-      "suffix_100"
+      "suffix_100",
+      "prefix_83",
+      "suffix_61"
     ],
-    "active": {}
+    "active": {
+      "system_badge": "system_first"
+    }
   },
   "stats": {
-    "messages": 1049,
+    "messages": 1050,
     "active_months": 12,
     "first_seen": "2025-11"
   },
