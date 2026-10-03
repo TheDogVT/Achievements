@@ -119,11 +119,16 @@
     }
   },
   "stats": {
-    "messages": 5244,
+    "messages": 5368,
     "active_months": 12,
     "first_seen": "2025-11"
   },
   "top_months": [
+    {
+      "month": "2026-10",
+      "kind": "chat",
+      "rank": 1
+    },
     {
       "month": "2026-8",
       "kind": "chat",
