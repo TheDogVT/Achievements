@@ -145,10 +145,12 @@
       "prefix_126",
       "suffix_100"
     ],
-    "active": {}
+    "active": {
+      "system_badge": "system_first"
+    }
   },
   "stats": {
-    "messages": 3124,
+    "messages": 3127,
     "active_months": 12,
     "first_seen": "2025-11"
   },
