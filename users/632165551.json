@@ -252,7 +252,7 @@
     "active": {}
   },
   "stats": {
-    "messages": 5915,
+    "messages": 5916,
     "active_months": 12,
     "first_seen": "2025-11"
   },
@@ -266,11 +266,6 @@
       "month": "2025-12",
       "kind": "cheers",
       "rank": 1
-    },
-    {
-      "month": "2026-10",
-      "kind": "chat",
-      "rank": 3
     },
     {
       "month": "2026-2",
