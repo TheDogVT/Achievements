@@ -1,6 +1,6 @@
 {
   "user_id": "1500538718",
-  "username": "jannat097",
+  "username": "jen0_0k",
   "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/0554f8ce-15ae-44bf-a295-29a46cf2bffc-profile_image-300x300.png",
   "legacy": 0,
   "achievements": {
@@ -19,7 +19,8 @@
       "attend_25": "2026-08-07T20:10:04.668453+00:00",
       "streak_14": "2026-08-08T22:28:57.035853+00:00",
       "redeem_total_10": "2026-08-10T20:14:00.839628+00:00",
-      "chat_stinky": "2026-08-18T21:49:03.147164+00:00"
+      "chat_stinky": "2026-08-18T21:49:03.147164+00:00",
+      "chat_sniff": "2026-10-04T22:12:12.637019+00:00"
     },
     "founded": {}
   },
@@ -49,8 +50,8 @@
     "active": {}
   },
   "stats": {
-    "messages": 299,
-    "active_months": 4,
+    "messages": 306,
+    "active_months": 5,
     "first_seen": "2026-06-29T22:55:41.348865+00:00"
   },
   "top_months": []
