@@ -145,9 +145,7 @@
       "prefix_126",
       "suffix_100"
     ],
-    "active": {
-      "system_badge": "system_first"
-    }
+    "active": {}
   },
   "stats": {
     "messages": 3127,
