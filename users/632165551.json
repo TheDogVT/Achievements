@@ -250,10 +250,14 @@
       "suffix_100",
       "prefix_19"
     ],
-    "active": {}
+    "active": {
+      "name_prefix": "prefix_49",
+      "washi_color": "washi_gold",
+      "washi_position": "washi_top_right"
+    }
   },
   "stats": {
-    "messages": 5935,
+    "messages": 5942,
     "active_months": 12,
     "first_seen": "2025-11"
   },
