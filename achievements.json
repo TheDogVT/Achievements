@@ -302,6 +302,12 @@
       "desc": "Awarded for cheering exactly 1000 bits",
       "amount": 1000,
       "type": "exact"
+    },
+    "cheer_1234": {
+      "name": "Counting to greatness.",
+      "desc": "Awarded for cheering exactly 1234 bits",
+      "amount": 1234,
+      "type": "exact"
     }
   },
   "gamble": {

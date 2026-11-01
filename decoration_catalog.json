@@ -309,6 +309,39 @@
       }
     }
   },
+  "prefix_51": {
+    "slot": "name_prefix",
+    "display_name": "Coded",
+    "achievement_name": "Counting to greatness.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_1234",
+    "config": {
+      "font_family": "VT323",
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "Coded",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#9900ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_1234",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_7": {
     "slot": "name_prefix",
     "display_name": "Sincerely,",
@@ -737,6 +770,39 @@
       "unlock": {
         "category": "cheer",
         "id": "cheer_1000",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_37": {
+    "slot": "name_suffix",
+    "display_name": "[1234]",
+    "achievement_name": "Counting to greatness.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_1234",
+    "config": {
+      "font_family": "VT323",
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "[1234]",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#9900ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_1234",
         "type": "achievement"
       }
     }
