@@ -50,6 +50,11 @@
       "desc": "Awarded for noting the yawn.",
       "type": "contains"
     },
+    "chat_rage": {
+      "name": "Zoomie Summoner",
+      "desc": "Awarded for invoking chaos.",
+      "type": "contains"
+    },
     "chat_tail": {
       "name": "Tail Enthusiast",
       "desc": "Awarded for noticing the tail physics.",
@@ -148,6 +153,11 @@
     "chat_floof": {
       "name": "Floof Fanatic",
       "desc": "Awarded for fluff obsession.",
+      "type": "contains"
+    },
+    "chat_trick": {
+      "name": "Trick Trainer",
+      "desc": "Awarded for teaching new moves.",
       "type": "contains"
     },
     "chat_park": {
