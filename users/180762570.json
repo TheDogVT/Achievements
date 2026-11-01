@@ -6,7 +6,9 @@
   "achievements": {
     "earned": {
       "chat_chain_member": "2026-11-01T21:44:40.789780+00:00",
-      "chat_10": "2026-11-01T21:49:13.188837+00:00"
+      "chat_10": "2026-11-01T21:49:13.188837+00:00",
+      "chat_blep": "2026-11-01T21:50:09.461927+00:00",
+      "chat_boop": "2026-11-01T21:50:38.242114+00:00"
     },
     "founded": {
       "chat_mlem": "2026-11-01T21:49:13.208356+00:00"
@@ -17,12 +19,16 @@
       "prefix_141",
       "name_28",
       "suffix_108",
-      "prefix_7"
+      "prefix_7",
+      "prefix_14",
+      "suffix_56",
+      "prefix_15",
+      "suffix_4"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 10,
+    "messages": 12,
     "active_months": 1,
     "first_seen": "2026-11"
   },
