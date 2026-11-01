@@ -14,7 +14,9 @@
       "chat_biscuits": "2026-11-01T22:01:49.758684+00:00",
       "chat_mailman": "2026-11-01T22:07:42.148543+00:00",
       "chat_squirrel": "2026-11-01T22:07:44.584899+00:00",
-      "chat_floofy": "2026-11-01T22:16:50.257395+00:00"
+      "chat_floofy": "2026-11-01T22:16:50.257395+00:00",
+      "chat_yap": "2026-11-01T22:30:32.317586+00:00",
+      "chat_100": "2026-11-01T22:31:11.355968+00:00"
     },
     "founded": {}
   },
@@ -25,7 +27,8 @@
       "prefix_141",
       "name_28",
       "suffix_108",
-      "prefix_139"
+      "prefix_139",
+      "prefix_2"
     ],
     "active": {
       "washi_color": "washi_gold",
@@ -33,7 +36,7 @@
     }
   },
   "stats": {
-    "messages": 97,
+    "messages": 100,
     "active_months": 1,
     "first_seen": "2026-11"
   },
