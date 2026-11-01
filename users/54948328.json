@@ -9,7 +9,10 @@
   },
   "decorations": {
     "unlocked": [],
-    "active": {}
+    "active": {
+      "washi_color": "washi_lavender",
+      "washi_position": "washi_top_center"
+    }
   },
   "stats": {
     "messages": 0,
