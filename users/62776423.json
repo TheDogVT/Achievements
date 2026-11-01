@@ -13,7 +13,8 @@
       "chat_fetch": "2026-11-01T21:46:08.820326+00:00"
     },
     "founded": {
-      "chat_vacuum": "2026-11-01T21:21:34.403127+00:00"
+      "chat_vacuum": "2026-11-01T21:21:34.403127+00:00",
+      "chat_playdead": "2026-11-01T21:48:27.527624+00:00"
     }
   },
   "decorations": {
@@ -28,7 +29,7 @@
     "active": {}
   },
   "stats": {
-    "messages": 21,
+    "messages": 22,
     "active_months": 1,
     "first_seen": "2026-11"
   },

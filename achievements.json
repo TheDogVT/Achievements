@@ -235,6 +235,11 @@
       "desc": "Awarded for high-pitched tiny barks (even if you're a big dog).",
       "type": "contains"
     },
+    "chat_playdead": {
+      "name": "Oscar Winner",
+      "desc": "Awarded for the ultimate dramatic flop.",
+      "type": "contains"
+    },
     "chat_wholet": {
       "name": "Baha Men Echo",
       "desc": "Awarded for the eternal question.",
