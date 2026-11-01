@@ -1,0 +1,44 @@
+{
+  "user_id": "643263951",
+  "username": "musicalturtle10",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/11eb1e3f-1994-4d1f-813c-3e4c606caeea-profile_image-300x300.png",
+  "legacy": 1,
+  "achievements": {
+    "earned": {},
+    "founded": {
+      "cheer_message_100": "2026-11-01T16:28:45.203670+00:00",
+      "cheer_time_1": "2026-11-01T16:28:45.227791+00:00",
+      "cheer_100": "2026-11-01T16:28:45.270964+00:00",
+      "chat_dog_god": "2026-11-01T16:29:40.417594+00:00",
+      "chat_goodboy": "2026-11-01T16:29:40.449594+00:00"
+    }
+  },
+  "decorations": {
+    "unlocked": [
+      "prefix_8",
+      "prefix_76",
+      "suffix_19",
+      "suffix_5",
+      "prefix_18",
+      "suffix_8"
+    ],
+    "active": {}
+  },
+  "stats": {
+    "messages": 2,
+    "active_months": 1,
+    "first_seen": "2026-11"
+  },
+  "top_months": [
+    {
+      "month": "2026-11",
+      "kind": "chat",
+      "rank": 1
+    },
+    {
+      "month": "2026-11",
+      "kind": "cheers",
+      "rank": 2
+    }
+  ]
+}

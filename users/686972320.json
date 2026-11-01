@@ -1,0 +1,34 @@
+{
+  "user_id": "686972320",
+  "username": "ashenmei",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/1fef0b34-3a06-40e9-9f89-7a0812d889f8-profile_image-300x300.png",
+  "legacy": 1,
+  "achievements": {
+    "earned": {
+      "cheer_message_100": "2026-11-01T16:29:03.995353+00:00",
+      "cheer_time_1": "2026-11-01T16:29:04.014707+00:00",
+      "cheer_100": "2026-11-01T16:29:04.033744+00:00"
+    },
+    "founded": {}
+  },
+  "decorations": {
+    "unlocked": [
+      "prefix_8",
+      "prefix_76",
+      "suffix_19"
+    ],
+    "active": {}
+  },
+  "stats": {
+    "messages": 0,
+    "active_months": 1,
+    "first_seen": "2026-11"
+  },
+  "top_months": [
+    {
+      "month": "2026-11",
+      "kind": "cheers",
+      "rank": 1
+    }
+  ]
+}

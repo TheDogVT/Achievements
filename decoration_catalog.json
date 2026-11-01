@@ -1,1 +1,107 @@
-{}
+{
+  "prefix_18": {
+    "slot": "name_prefix",
+    "display_name": "Good Girl",
+    "achievement_name": "Who's A Good Doggo?",
+    "achievement_category": "chat",
+    "achievement_id": "chat_goodboy",
+    "config": {
+      "text": "Good Girl",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_goodboy",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_76": {
+    "slot": "name_prefix",
+    "display_name": "good girl,",
+    "achievement_name": "A dollar for doggo.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_100",
+    "config": {
+      "outline": "basic",
+      "text": "good girl,",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_100",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_8": {
+    "slot": "name_prefix",
+    "display_name": "Sincerely,",
+    "achievement_name": "Babys First Cheer.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_time_1",
+    "config": {
+      "font_family": "Pacifico",
+      "font_size": "16.5px",
+      "font_style": "italic",
+      "font_weight": "100",
+      "offset_y": "-8.5px",
+      "outline": "basic",
+      "text": "Sincerely,",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_time_1",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_19": {
+    "slot": "name_suffix",
+    "display_name": ", good boi",
+    "achievement_name": "A dollar for doggo.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_100",
+    "config": {
+      "outline": "basic",
+      "text": ", good boi",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_100",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_5": {
+    "slot": "name_suffix",
+    "display_name": "The Believer",
+    "achievement_name": "Dog Loyalist",
+    "achievement_category": "chat",
+    "achievement_id": "chat_dog_god",
+    "config": {
+      "font_family": "Grenze Gotisch",
+      "offset_x": "3px",
+      "outline": "basic",
+      "text": "The Believer",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_dog_god",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_8": {
+    "slot": "name_suffix",
+    "display_name": "The Good Boy",
+    "achievement_name": "Who's A Good Doggo?",
+    "achievement_category": "chat",
+    "achievement_id": "chat_goodboy",
+    "config": {
+      "outline": "basic",
+      "text": "The Good Boy",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_goodboy",
+        "type": "achievement"
+      }
+    }
+  }
+}
