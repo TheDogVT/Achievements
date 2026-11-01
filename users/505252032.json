@@ -14,7 +14,8 @@
       "cheer_1000": "2026-11-01T21:38:45.868609+00:00",
       "chat_sniff": "2026-11-01T22:02:35.118019+00:00",
       "chat_floof": "2026-11-01T22:07:17.691952+00:00",
-      "chat_treats": "2026-11-01T22:07:37.334848+00:00"
+      "chat_treats": "2026-11-01T22:07:37.334848+00:00",
+      "chat_cuddle": "2026-11-01T22:43:32.949779+00:00"
     },
     "founded": {}
   },
@@ -25,7 +26,8 @@
       "prefix_8",
       "prefix_48",
       "suffix_35",
-      "suffix_7"
+      "suffix_7",
+      "prefix_17"
     ],
     "active": {
       "name_prefix": "prefix_48",
@@ -34,7 +36,7 @@
     }
   },
   "stats": {
-    "messages": 25,
+    "messages": 26,
     "active_months": 1,
     "first_seen": "2026-11"
   },
