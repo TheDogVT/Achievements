@@ -498,6 +498,12 @@
       "amount": 1,
       "type": "jackpot"
     },
+    "gamble_total_5": {
+      "name": "Gambler",
+      "desc": "Awarded for gambling for the 5th time.",
+      "amount": 5,
+      "type": "total"
+    },
     "gamble_total_win_1": {
       "name": "Walk Away Now",
       "desc": "Awarded for winning at gambling for the first time!",
