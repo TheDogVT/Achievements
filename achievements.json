@@ -590,6 +590,12 @@
       "name": "He's a good boy, yes he is!",
       "desc": "Awarded for petting the dog.",
       "amount": 1
+    },
+    "redeem_total_5": {
+      "name": "Curious Redeemer.",
+      "desc": "Awarded for using 5 channel point redeems.",
+      "amount": 5,
+      "type": "total"
     }
   }
 }

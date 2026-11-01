@@ -13,7 +13,8 @@
       "chat_sniff": "2026-11-01T21:56:53.118881+00:00",
       "chat_biscuits": "2026-11-01T22:01:49.758684+00:00",
       "chat_mailman": "2026-11-01T22:07:42.148543+00:00",
-      "chat_squirrel": "2026-11-01T22:07:44.584899+00:00"
+      "chat_squirrel": "2026-11-01T22:07:44.584899+00:00",
+      "chat_floofy": "2026-11-01T22:16:50.257395+00:00"
     },
     "founded": {}
   },
@@ -23,12 +24,13 @@
       "prefix_7",
       "prefix_141",
       "name_28",
-      "suffix_108"
+      "suffix_108",
+      "prefix_139"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 70,
+    "messages": 74,
     "active_months": 1,
     "first_seen": "2026-11"
   },
