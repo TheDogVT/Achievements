@@ -29,7 +29,9 @@
       "chat_woofwoof": "2026-11-01T21:33:44.610163+00:00",
       "chat_baddog": "2026-11-01T21:35:46.295562+00:00",
       "chat_floof": "2026-11-01T21:37:14.200047+00:00",
-      "chat_peanut": "2026-11-01T21:47:41.568811+00:00"
+      "chat_peanut": "2026-11-01T21:47:41.568811+00:00",
+      "chat_sleepy": "2026-11-01T21:48:52.107702+00:00",
+      "chat_blep": "2026-11-01T21:49:34.858003+00:00"
     },
     "founded": {}
   },
@@ -46,12 +48,15 @@
       "prefix_16",
       "prefix_133",
       "prefix_123",
-      "suffix_7"
+      "suffix_7",
+      "prefix_10",
+      "prefix_14",
+      "suffix_56"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 52,
+    "messages": 55,
     "active_months": 1,
     "first_seen": "2026-11"
   },

@@ -359,10 +359,20 @@
     "founder_name": "pancakeman_49",
     "founded_at": "2026-11-01T21:36:36.160251+00:00"
   },
+  "chat_mlem": {
+    "founder_id": "180762570",
+    "founder_name": "mimitan3",
+    "founded_at": "2026-11-01T21:49:13.208356+00:00"
+  },
   "chat_peanut": {
     "founder_id": "1217525523",
     "founder_name": "humandperson",
     "founded_at": "2026-11-01T21:47:13.183528+00:00"
+  },
+  "chat_rollover": {
+    "founder_id": "1217525523",
+    "founder_name": "humandperson",
+    "founded_at": "2026-11-01T21:48:42.857424+00:00"
   },
   "chat_ball": {
     "founder_id": "81344369",
@@ -488,6 +498,16 @@
     "founder_id": "764158646",
     "founder_name": "charlesvfee",
     "founded_at": "2026-11-01T21:22:00.407573+00:00"
+  },
+  "chat_cone": {
+    "founder_id": "764158646",
+    "founder_name": "charlesvfee",
+    "founded_at": "2026-11-01T21:49:11.871441+00:00"
+  },
+  "chat_blep": {
+    "founder_id": "764158646",
+    "founder_name": "charlesvfee",
+    "founded_at": "2026-11-01T21:49:26.790468+00:00"
   },
   "chat_chain_starter": {
     "founder_id": "1557216361",

@@ -120,6 +120,11 @@
       "desc": "Awarded for sealing deals with floofy handshakes.",
       "type": "contains"
     },
+    "chat_rollover": {
+      "name": "Trick Teaser",
+      "desc": "Awarded for flipping the script on pup.",
+      "type": "contains"
+    },
     "chat_lick": {
       "name": "Slobber Survivor",
       "desc": "Awarded for enduring wet kisses.",
@@ -250,6 +255,16 @@
       "desc": "Awarded for identifying the dog loaf formation.",
       "type": "contains"
     },
+    "chat_mlem": {
+      "name": "Mlem Witness",
+      "desc": "Awarded for catching the sacred slow tongue.",
+      "type": "contains"
+    },
+    "chat_blep": {
+      "name": "Blep Patrol",
+      "desc": "Awarded for spotting a rogue tongue tip.",
+      "type": "contains"
+    },
     "chat_chonk": {
       "name": "Chonk Surveyor",
       "desc": "Awarded for measuring the floof-to-mass ratio.",
@@ -263,6 +278,11 @@
     "chat_pawty": {
       "name": "Pun Offender",
       "desc": "Awarded for committing dog puns in chat.",
+      "type": "contains"
+    },
+    "chat_cone": {
+      "name": "Cone Sympathizer",
+      "desc": "Awarded for acknowledging the shame device.",
       "type": "contains"
     },
     "chat_drool": {

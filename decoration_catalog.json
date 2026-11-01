@@ -242,6 +242,22 @@
       }
     }
   },
+  "prefix_14": {
+    "slot": "name_prefix",
+    "display_name": ":p",
+    "achievement_name": "Blep Patrol",
+    "achievement_category": "chat",
+    "achievement_id": "chat_blep",
+    "config": {
+      "text": ":p",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_blep",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_15": {
     "slot": "name_prefix",
     "display_name": "Boop!",
@@ -1083,6 +1099,21 @@
       }
     }
   },
+  "suffix_103": {
+    "slot": "name_suffix",
+    "display_name": "of Shame",
+    "achievement_name": "Cone Sympathizer",
+    "achievement_category": "chat",
+    "achievement_id": "chat_cone",
+    "config": {
+      "text": "of Shame",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_cone",
+        "type": "achievement"
+      }
+    }
+  },
   "suffix_105": {
     "slot": "name_suffix",
     "display_name": "DING",
@@ -1357,6 +1388,21 @@
       "unlock": {
         "category": "chat",
         "id": "chat_dog_god",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_56": {
+    "slot": "name_suffix",
+    "display_name": ":p",
+    "achievement_name": "Blep Patrol",
+    "achievement_category": "chat",
+    "achievement_id": "chat_blep",
+    "config": {
+      "text": ":p",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_blep",
         "type": "achievement"
       }
     }
