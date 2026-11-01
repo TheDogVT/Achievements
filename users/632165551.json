@@ -4,15 +4,31 @@
   "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/8a89692f-5467-41c2-a46a-dca86f8dc5d5-profile_image-300x300.png",
   "legacy": 2,
   "achievements": {
-    "earned": {},
-    "founded": {}
+    "earned": {
+      "chat_ball": "2026-11-01T21:29:52.307109+00:00",
+      "chat_park": "2026-11-01T21:30:00.066946+00:00",
+      "chat_stick": "2026-11-01T21:30:04.840813+00:00",
+      "chat_treats": "2026-11-01T21:30:09.889951+00:00",
+      "chat_sleepy": "2026-11-01T21:30:51.117447+00:00",
+      "chat_10": "2026-11-01T21:30:55.528504+00:00",
+      "chat_fetch": "2026-11-01T21:30:55.548188+00:00"
+    },
+    "founded": {
+      "chat_derp": "2026-11-01T21:30:39.518606+00:00"
+    }
   },
   "decorations": {
-    "unlocked": [],
+    "unlocked": [
+      "prefix_77",
+      "prefix_132",
+      "prefix_10",
+      "prefix_7",
+      "prefix_138"
+    ],
     "active": {}
   },
   "stats": {
-    "messages": 2,
+    "messages": 10,
     "active_months": 1,
     "first_seen": "2026-11"
   },

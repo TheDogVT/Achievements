@@ -9,7 +9,8 @@
       "gifted_cumulative_10": "2026-11-01T21:21:40.079547+00:00",
       "gifted_times_1": "2026-11-01T21:21:40.103546+00:00",
       "gifted_instance_5": "2026-11-01T21:21:40.121770+00:00",
-      "gifted_instance_10": "2026-11-01T21:21:40.139766+00:00"
+      "gifted_instance_10": "2026-11-01T21:21:40.139766+00:00",
+      "chat_treats": "2026-11-01T21:30:15.998251+00:00"
     },
     "founded": {}
   },
@@ -21,7 +22,7 @@
     "active": {}
   },
   "stats": {
-    "messages": 2,
+    "messages": 3,
     "active_months": 1,
     "first_seen": "2026-11"
   },

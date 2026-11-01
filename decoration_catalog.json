@@ -106,6 +106,21 @@
       }
     }
   },
+  "prefix_132": {
+    "slot": "name_prefix",
+    "display_name": "Derpy",
+    "achievement_name": "Derp Spotter",
+    "achievement_category": "chat",
+    "achievement_id": "chat_derp",
+    "config": {
+      "text": "Derpy",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_derp",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_133": {
     "slot": "name_prefix",
     "display_name": "Yard Destroyer",
