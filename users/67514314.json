@@ -27,10 +27,13 @@
       "suffix_108",
       "prefix_139"
     ],
-    "active": {}
+    "active": {
+      "washi_color": "washi_gold",
+      "washi_position": "washi_top_center"
+    }
   },
   "stats": {
-    "messages": 85,
+    "messages": 90,
     "active_months": 1,
     "first_seen": "2026-11"
   },

@@ -12,19 +12,21 @@
       "gifted_instance_10": "2026-11-01T21:21:40.139766+00:00",
       "chat_treats": "2026-11-01T21:30:15.998251+00:00",
       "chat_sniff": "2026-11-01T21:32:29.567645+00:00",
-      "gifted_times_2": "2026-11-01T21:39:05.569423+00:00"
+      "gifted_times_2": "2026-11-01T21:39:05.569423+00:00",
+      "chat_10": "2026-11-01T22:24:16.218303+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
       "name_14",
-      "name_15"
+      "name_15",
+      "prefix_7"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 9,
+    "messages": 11,
     "active_months": 1,
     "first_seen": "2026-11"
   },
