@@ -23,7 +23,8 @@
       "chat_goodboy": "2026-11-01T21:32:56.076522+00:00",
       "chat_pawty": "2026-11-01T21:33:33.566487+00:00",
       "chat_woofwoof": "2026-11-01T21:33:50.879295+00:00",
-      "chat_doorbell": "2026-11-01T21:39:10.901529+00:00"
+      "chat_doorbell": "2026-11-01T21:39:10.901529+00:00",
+      "chat_chain_member": "2026-11-01T21:45:03.840380+00:00"
     },
     "founded": {
       "chat_stick": "2026-11-01T21:21:16.616923+00:00",
@@ -44,12 +45,15 @@
       "prefix_18",
       "suffix_8",
       "prefix_135",
-      "suffix_105"
+      "suffix_105",
+      "prefix_141",
+      "name_28",
+      "suffix_108"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 54,
+    "messages": 57,
     "active_months": 1,
     "first_seen": "2026-11"
   },

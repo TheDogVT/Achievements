@@ -37,9 +37,15 @@
     "active": {}
   },
   "stats": {
-    "messages": 64,
+    "messages": 71,
     "active_months": 1,
     "first_seen": "2026-11"
   },
-  "top_months": []
+  "top_months": [
+    {
+      "month": "2026-11",
+      "kind": "chat",
+      "rank": 3
+    }
+  ]
 }

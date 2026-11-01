@@ -6,19 +6,23 @@
   "achievements": {
     "earned": {
       "chat_chaos": "2026-11-01T21:25:43.316853+00:00",
-      "chat_10": "2026-11-01T21:43:35.919420+00:00"
+      "chat_10": "2026-11-01T21:43:35.919420+00:00",
+      "chat_chain_member": "2026-11-01T21:44:56.157910+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
       "prefix_16",
-      "prefix_7"
+      "prefix_7",
+      "prefix_141",
+      "name_28",
+      "suffix_108"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 11,
+    "messages": 13,
     "active_months": 1,
     "first_seen": "2026-11"
   },
