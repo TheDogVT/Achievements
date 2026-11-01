@@ -9,7 +9,8 @@
       "gifted_cumulative_5": "2026-11-01T21:34:32.029570+00:00",
       "gifted_times_1": "2026-11-01T21:34:32.049586+00:00",
       "gifted_instance_5": "2026-11-01T21:34:32.067630+00:00",
-      "chat_chain_member": "2026-11-01T21:44:47.039900+00:00"
+      "chat_chain_member": "2026-11-01T21:44:47.039900+00:00",
+      "gamble_total_win_1": "2026-11-01T23:48:24.279567+00:00"
     },
     "founded": {}
   },
@@ -24,7 +25,7 @@
     "active": {}
   },
   "stats": {
-    "messages": 34,
+    "messages": 35,
     "active_months": 1,
     "first_seen": "2026-11"
   },
