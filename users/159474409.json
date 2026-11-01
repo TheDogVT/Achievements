@@ -27,10 +27,14 @@
       "prefix_126",
       "suffix_100"
     ],
-    "active": {}
+    "active": {
+      "name_prefix": "prefix_122",
+      "washi_color": "washi_lavender",
+      "washi_position": "washi_corner_tl"
+    }
   },
   "stats": {
-    "messages": 13,
+    "messages": 15,
     "active_months": 1,
     "first_seen": "2026-11"
   },
