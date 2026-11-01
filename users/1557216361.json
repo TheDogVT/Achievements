@@ -18,7 +18,8 @@
       "BALSDJHAUISKHDHUIOAS": "2026-11-01T21:33:41.011321+00:00",
       "gamble_total_loss_1": "2026-11-01T21:42:55.947942+00:00",
       "chat_chain_member": "2026-11-01T21:44:27.666490+00:00",
-      "chat_sniff": "2026-11-01T21:57:10.365396+00:00"
+      "chat_sniff": "2026-11-01T21:57:10.365396+00:00",
+      "chat_floof": "2026-11-01T22:02:57.607798+00:00"
     },
     "founded": {
       "chat_chain_starter": "2026-11-01T21:43:52.781799+00:00"
@@ -38,12 +39,13 @@
       "suffix_107",
       "prefix_141",
       "name_28",
-      "suffix_108"
+      "suffix_108",
+      "suffix_7"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 41,
+    "messages": 43,
     "active_months": 1,
     "first_seen": "2026-10-11T22:07:43.157122+00:00"
   },
