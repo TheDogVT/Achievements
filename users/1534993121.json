@@ -1,0 +1,26 @@
+{
+  "user_id": "1534993121",
+  "username": "lukekaminari012",
+  "pfp_url": "",
+  "legacy": 0,
+  "achievements": {
+    "earned": {
+      "chat_bork": "2026-11-01T21:56:31.912342+00:00",
+      "chat_woofwoof": "2026-11-01T21:56:31.933515+00:00"
+    },
+    "founded": {}
+  },
+  "decorations": {
+    "unlocked": [
+      "prefix_126",
+      "suffix_100"
+    ],
+    "active": {}
+  },
+  "stats": {
+    "messages": 1,
+    "active_months": 1,
+    "first_seen": "2026-11-01T21:56:31.891868+00:00"
+  },
+  "top_months": []
+}
