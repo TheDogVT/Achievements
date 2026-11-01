@@ -359,6 +359,21 @@
       }
     }
   },
+  "prefix_2": {
+    "slot": "name_prefix",
+    "display_name": "OwO",
+    "achievement_name": "Entry Level Yapper.",
+    "achievement_category": "chat",
+    "achievement_id": "chat_100",
+    "config": {
+      "text": "OwO",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_100",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_31": {
     "slot": "name_prefix",
     "display_name": "Area",

@@ -40,7 +40,8 @@
       "chat_playdead": "2026-11-01T21:48:41.316754+00:00",
       "chat_mlem": "2026-11-01T21:49:36.235346+00:00",
       "chat_boop": "2026-11-01T21:50:34.574937+00:00",
-      "gamble_total_loss_1": "2026-11-01T21:51:29.573460+00:00"
+      "gamble_total_loss_1": "2026-11-01T21:51:29.573460+00:00",
+      "chat_chaos": "2026-11-01T21:54:32.957973+00:00"
     },
     "founded": {
       "chat_dog_god": "2026-11-01T21:21:16.519499+00:00",
@@ -71,7 +72,8 @@
       "prefix_122",
       "suffix_20",
       "prefix_15",
-      "suffix_4"
+      "suffix_4",
+      "prefix_16"
     ],
     "active": {
       "name_prefix": "prefix_8",
@@ -81,7 +83,7 @@
     }
   },
   "stats": {
-    "messages": 57,
+    "messages": 59,
     "active_months": 1,
     "first_seen": "2026-11"
   },
