@@ -145,6 +145,11 @@
       "desc": "Awarded for the classic double woof.",
       "type": "contains"
     },
+    "chat_pupper": {
+      "name": "Pupper Aficionado",
+      "desc": "Awarded for using ultimate cute slang.",
+      "type": "contains"
+    },
     "chat_doge": {
       "name": "Meme Lord",
       "desc": "Awarded for invoking the original doge.",
