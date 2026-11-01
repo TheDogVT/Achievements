@@ -23,7 +23,8 @@
       "chat_trick": "2026-11-01T22:50:50.153774+00:00",
       "gamble_total_loss_1": "2026-11-01T23:00:33.719840+00:00",
       "chat_pupper": "2026-11-01T23:23:33.305865+00:00",
-      "chat_growl": "2026-11-01T23:39:35.999035+00:00"
+      "chat_growl": "2026-11-01T23:39:35.999035+00:00",
+      "chat_beg": "2026-11-01T23:57:31.024214+00:00"
     },
     "founded": {
       "chat_carride": "2026-11-01T22:42:16.016824+00:00"
@@ -41,7 +42,8 @@
       "prefix_19",
       "prefix_10",
       "prefix_129",
-      "suffix_106"
+      "suffix_106",
+      "prefix_13"
     ],
     "active": {
       "name_prefix": "prefix_129",
@@ -50,7 +52,7 @@
     }
   },
   "stats": {
-    "messages": 225,
+    "messages": 233,
     "active_months": 1,
     "first_seen": "2026-11"
   },

@@ -51,7 +51,8 @@
       "chat_trick": "2026-11-01T22:51:15.027831+00:00",
       "chat_pupper": "2026-11-01T23:23:44.135202+00:00",
       "chat_chain_starter": "2026-11-01T23:31:20.794948+00:00",
-      "chat_growl": "2026-11-01T23:40:09.719644+00:00"
+      "chat_growl": "2026-11-01T23:40:09.719644+00:00",
+      "chat_beg": "2026-11-01T23:57:57.323923+00:00"
     },
     "founded": {
       "cheer_message_100": "2026-11-01T21:21:19.800434+00:00",
@@ -131,7 +132,8 @@
       "prefix_140",
       "name_27",
       "suffix_107",
-      "suffix_106"
+      "suffix_106",
+      "prefix_13"
     ],
     "active": {
       "name_prefix": "prefix_137",
@@ -142,7 +144,7 @@
     }
   },
   "stats": {
-    "messages": 262,
+    "messages": 268,
     "active_months": 1,
     "first_seen": "2026-11"
   },
