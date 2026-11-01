@@ -42,12 +42,13 @@
       "prefix_129"
     ],
     "active": {
+      "name_prefix": "prefix_129",
       "washi_color": "washi_gold",
       "washi_position": "washi_top_center"
     }
   },
   "stats": {
-    "messages": 188,
+    "messages": 191,
     "active_months": 1,
     "first_seen": "2026-11"
   },

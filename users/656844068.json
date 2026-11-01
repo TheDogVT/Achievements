@@ -33,7 +33,8 @@
       "chat_trick": "2026-11-01T22:51:05.936243+00:00",
       "gamble_loss_total_100k": "2026-11-01T23:12:58.121851+00:00",
       "gamble_total_loss_1": "2026-11-01T23:12:58.142936+00:00",
-      "chat_derp": "2026-11-01T23:15:38.558379+00:00"
+      "chat_derp": "2026-11-01T23:15:38.558379+00:00",
+      "chat_chain_starter": "2026-11-01T23:33:57.871217+00:00"
     },
     "founded": {
       "gifted_cumulative_5": "2026-11-01T21:21:23.728417+00:00",
@@ -107,7 +108,10 @@
       "prefix_138",
       "prefix_132",
       "prefix_45",
-      "suffix_33"
+      "suffix_33",
+      "prefix_140",
+      "name_27",
+      "suffix_107"
     ],
     "active": {
       "name_prefix": "prefix_134",
@@ -116,7 +120,7 @@
     }
   },
   "stats": {
-    "messages": 160,
+    "messages": 163,
     "active_months": 1,
     "first_seen": "2026-11"
   },
