@@ -422,6 +422,12 @@
       "amount": 512,
       "type": "exact"
     },
+    "cheer_666": {
+      "name": "DEVIL NUMBER!",
+      "desc": "Awarded for cheering exactly 666 bits",
+      "amount": 666,
+      "type": "exact"
+    },
     "cheer_1000": {
       "name": "Oh! For Me?",
       "desc": "Awarded for cheering exactly 1000 bits",

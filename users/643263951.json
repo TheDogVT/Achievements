@@ -43,7 +43,8 @@
       "gamble_total_loss_1": "2026-11-01T21:51:29.573460+00:00",
       "chat_chaos": "2026-11-01T21:54:32.957973+00:00",
       "chat_mailman": "2026-11-01T22:08:15.030235+00:00",
-      "chat_chasetail": "2026-11-01T22:14:30.621757+00:00"
+      "chat_chasetail": "2026-11-01T22:14:30.621757+00:00",
+      "chat_howl": "2026-11-01T22:32:32.261484+00:00"
     },
     "founded": {
       "chat_dog_god": "2026-11-01T21:21:16.519499+00:00",
@@ -76,7 +77,8 @@
       "prefix_15",
       "suffix_4",
       "prefix_16",
-      "prefix_130"
+      "prefix_130",
+      "prefix_19"
     ],
     "active": {
       "name_prefix": "prefix_8",
@@ -86,7 +88,7 @@
     }
   },
   "stats": {
-    "messages": 82,
+    "messages": 87,
     "active_months": 1,
     "first_seen": "2026-11"
   },

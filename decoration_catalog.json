@@ -459,6 +459,33 @@
       }
     }
   },
+  "prefix_43": {
+    "slot": "name_prefix",
+    "display_name": "666",
+    "achievement_name": "DEVIL NUMBER!",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_666",
+    "config": {
+      "outline": "basic",
+      "text": "666",
+      "text_gradient": [
+        {
+          "color": "#ff3333",
+          "pos": null
+        },
+        {
+          "color": "#ff8888",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_666",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_48": {
     "slot": "name_prefix",
     "display_name": "Oh,",
@@ -1291,6 +1318,33 @@
       "unlock": {
         "category": "cheer",
         "id": "cheer_512",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_31": {
+    "slot": "name_suffix",
+    "display_name": ", devil.",
+    "achievement_name": "DEVIL NUMBER!",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_666",
+    "config": {
+      "outline": "basic",
+      "text": ", devil.",
+      "text_gradient": [
+        {
+          "color": "#ff3333",
+          "pos": null
+        },
+        {
+          "color": "#ff8888",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_666",
         "type": "achievement"
       }
     }
