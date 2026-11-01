@@ -106,6 +106,22 @@
       }
     }
   },
+  "prefix_13": {
+    "slot": "name_prefix",
+    "display_name": "puppy eyed",
+    "achievement_name": "Sad Eyes Enabler",
+    "achievement_category": "chat",
+    "achievement_id": "chat_beg",
+    "config": {
+      "text": "puppy eyed",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_beg",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_131": {
     "slot": "name_prefix",
     "display_name": "THICC",
@@ -162,6 +178,21 @@
       "unlock": {
         "category": "chat",
         "id": "chat_doge",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_135": {
+    "slot": "name_prefix",
+    "display_name": "DING",
+    "achievement_name": "Doorbell Defender",
+    "achievement_category": "chat",
+    "achievement_id": "chat_doorbell",
+    "config": {
+      "text": "DING",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_doorbell",
         "type": "achievement"
       }
     }
@@ -896,6 +927,21 @@
       "unlock": {
         "category": "chat",
         "id": "chat_chonk",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_105": {
+    "slot": "name_suffix",
+    "display_name": "DING",
+    "achievement_name": "Doorbell Defender",
+    "achievement_category": "chat",
+    "achievement_id": "chat_doorbell",
+    "config": {
+      "text": "DING",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_doorbell",
         "type": "achievement"
       }
     }

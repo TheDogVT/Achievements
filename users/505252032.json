@@ -6,18 +6,27 @@
   "achievements": {
     "earned": {
       "chat_tail": "2026-11-01T21:31:41.439499+00:00",
-      "chat_10": "2026-11-01T21:34:23.240445+00:00"
+      "chat_10": "2026-11-01T21:34:23.240445+00:00",
+      "cheer_message_100": "2026-11-01T21:38:45.777557+00:00",
+      "cheer_message_1k": "2026-11-01T21:38:45.798582+00:00",
+      "cheer_cumulative_1k": "2026-11-01T21:38:45.815640+00:00",
+      "cheer_time_1": "2026-11-01T21:38:45.847472+00:00",
+      "cheer_1000": "2026-11-01T21:38:45.868609+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
-      "prefix_7"
+      "prefix_7",
+      "name_4",
+      "prefix_8",
+      "prefix_48",
+      "suffix_35"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 12,
+    "messages": 13,
     "active_months": 1,
     "first_seen": "2026-11"
   },
