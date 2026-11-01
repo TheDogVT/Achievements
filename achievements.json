@@ -245,6 +245,11 @@
       "desc": "Awarded for declaring war on the loud monster.",
       "type": "contains"
     },
+    "chat_brush": {
+      "name": "Brush Evader",
+      "desc": "Awarded for dramatic escape attempts during grooming.",
+      "type": "contains"
+    },
     "chat_mailman": {
       "name": "Mailman Menace",
       "desc": "Awarded for treating every delivery person like a personal nemesis.",

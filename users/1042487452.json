@@ -84,14 +84,13 @@
     ],
     "active": {
       "name_prefix": "prefix_16",
-      "name_base": "name_28",
       "name_suffix": "suffix_8",
       "washi_color": "washi_mint",
       "washi_position": "washi_corner_tl"
     }
   },
   "stats": {
-    "messages": 147,
+    "messages": 148,
     "active_months": 1,
     "first_seen": "2026-11"
   },

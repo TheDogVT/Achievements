@@ -106,6 +106,21 @@
       }
     }
   },
+  "prefix_127": {
+    "slot": "name_prefix",
+    "display_name": "Brushies",
+    "achievement_name": "Brush Evader",
+    "achievement_category": "chat",
+    "achievement_id": "chat_brush",
+    "config": {
+      "text": "Brushies",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_brush",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_129": {
     "slot": "name_prefix",
     "display_name": "Roadtrip!",
