@@ -312,6 +312,59 @@
       }
     }
   },
+  "prefix_32": {
+    "slot": "name_prefix",
+    "display_name": "64-Bit",
+    "achievement_name": "Modern Age of PC!",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_64",
+    "config": {
+      "outline": "basic",
+      "text": "64-Bit",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_64",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_34": {
+    "slot": "name_prefix",
+    "display_name": "Bit",
+    "achievement_name": "2 but WAOW.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_128",
+    "config": {
+      "font_family": "VT323",
+      "outline": "basic",
+      "text": "Bit",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_128",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_41": {
+    "slot": "name_prefix",
+    "display_name": "Byte",
+    "achievement_name": "Oh, that's growing fast.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_512",
+    "config": {
+      "font_family": "VT323",
+      "outline": "basic",
+      "text": "Byte",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_512",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_48": {
     "slot": "name_prefix",
     "display_name": "Oh,",
@@ -335,6 +388,39 @@
       "unlock": {
         "category": "cheer",
         "id": "cheer_1000",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_49": {
+    "slot": "name_prefix",
+    "display_name": "Bit",
+    "achievement_name": "Stop the 2! Please!",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_1024",
+    "config": {
+      "font_family": "VT323",
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "Bit",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#9900ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_1024",
         "type": "achievement"
       }
     }
@@ -368,6 +454,38 @@
       "unlock": {
         "category": "cheer",
         "id": "cheer_1234",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_56": {
+    "slot": "name_prefix",
+    "display_name": "Game Over:",
+    "achievement_name": "ItKeepsGoingPleaseStopIt!",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_2048",
+    "config": {
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "Game Over:",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#9900ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_2048",
         "type": "achievement"
       }
     }
@@ -794,6 +912,41 @@
       }
     }
   },
+  "suffix_21": {
+    "slot": "name_suffix",
+    "display_name": "[128]",
+    "achievement_name": "2 but WAOW.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_128",
+    "config": {
+      "font_family": "VT323",
+      "outline": "basic",
+      "text": "[128]",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_128",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_22": {
+    "slot": "name_suffix",
+    "display_name": "of 256",
+    "achievement_name": "There be colors!",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_256",
+    "config": {
+      "outline": "basic",
+      "text": "of 256",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_256",
+        "type": "achievement"
+      }
+    }
+  },
   "suffix_27": {
     "slot": "name_suffix",
     "display_name": "blaze it",
@@ -807,6 +960,24 @@
       "unlock": {
         "category": "cheer",
         "id": "cheer_429",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_28": {
+    "slot": "name_suffix",
+    "display_name": "[512]",
+    "achievement_name": "Oh, that's growing fast.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_512",
+    "config": {
+      "font_family": "VT323",
+      "outline": "basic",
+      "text": "[512]",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_512",
         "type": "achievement"
       }
     }
@@ -834,6 +1005,39 @@
       "unlock": {
         "category": "cheer",
         "id": "cheer_1000",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_36": {
+    "slot": "name_suffix",
+    "display_name": "[1024]",
+    "achievement_name": "Stop the 2! Please!",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_1024",
+    "config": {
+      "font_family": "VT323",
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "[1024]",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#9900ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_1024",
         "type": "achievement"
       }
     }

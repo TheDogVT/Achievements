@@ -26,7 +26,8 @@
       "chat_trick": "2026-11-01T21:32:01.562414+00:00",
       "chat_squirrel": "2026-11-01T21:32:09.834403+00:00",
       "chat_pawty": "2026-11-01T21:33:19.220664+00:00",
-      "chat_woofwoof": "2026-11-01T21:33:44.610163+00:00"
+      "chat_woofwoof": "2026-11-01T21:33:44.610163+00:00",
+      "chat_baddog": "2026-11-01T21:35:46.295562+00:00"
     },
     "founded": {}
   },
@@ -41,12 +42,13 @@
       "prefix_134",
       "prefix_139",
       "prefix_16",
-      "prefix_133"
+      "prefix_133",
+      "prefix_123"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 36,
+    "messages": 39,
     "active_months": 1,
     "first_seen": "2026-11"
   },

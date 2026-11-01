@@ -344,6 +344,36 @@
     "founder_name": "revilo2218",
     "founded_at": "2026-11-01T21:31:46.392379+00:00"
   },
+  "cheer_64": {
+    "founder_id": "632165551",
+    "founder_name": "revilo2218",
+    "founded_at": "2026-11-01T21:35:26.112987+00:00"
+  },
+  "cheer_128": {
+    "founder_id": "632165551",
+    "founder_name": "revilo2218",
+    "founded_at": "2026-11-01T21:35:33.047451+00:00"
+  },
+  "cheer_256": {
+    "founder_id": "632165551",
+    "founder_name": "revilo2218",
+    "founded_at": "2026-11-01T21:35:37.054409+00:00"
+  },
+  "cheer_512": {
+    "founder_id": "632165551",
+    "founder_name": "revilo2218",
+    "founded_at": "2026-11-01T21:35:41.706709+00:00"
+  },
+  "cheer_1024": {
+    "founder_id": "632165551",
+    "founder_name": "revilo2218",
+    "founded_at": "2026-11-01T21:35:45.882004+00:00"
+  },
+  "cheer_2048": {
+    "founder_id": "632165551",
+    "founder_name": "revilo2218",
+    "founded_at": "2026-11-01T21:35:51.316931+00:00"
+  },
   "gamble_total_loss_1": {
     "founder_id": "1030689797",
     "founder_name": "eeveerocks13",

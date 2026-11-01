@@ -299,6 +299,12 @@
       "amount": 1,
       "type": "times"
     },
+    "cheer_64": {
+      "name": "Modern Age of PC!",
+      "desc": "Awarded for cheering exactly 64 bits",
+      "amount": 64,
+      "type": "exact"
+    },
     "cheer_69": {
       "name": "Nice Bitties.",
       "desc": "Awarded for cheering exactly 69 bits",
@@ -317,10 +323,28 @@
       "amount": 123,
       "type": "exact"
     },
+    "cheer_128": {
+      "name": "2 but WAOW.",
+      "desc": "Awarded for cheering exactly 128 bits",
+      "amount": 128,
+      "type": "exact"
+    },
+    "cheer_256": {
+      "name": "There be colors!",
+      "desc": "Awarded for cheering exactly 256 bits",
+      "amount": 256,
+      "type": "exact"
+    },
     "cheer_429": {
       "name": "Hahahah pot.",
       "desc": "Awarded for cheering exactly 420 bits",
       "amount": 420,
+      "type": "exact"
+    },
+    "cheer_512": {
+      "name": "Oh, that's growing fast.",
+      "desc": "Awarded for cheering exactly 512 bits",
+      "amount": 512,
       "type": "exact"
     },
     "cheer_1000": {
@@ -329,10 +353,22 @@
       "amount": 1000,
       "type": "exact"
     },
+    "cheer_1024": {
+      "name": "Stop the 2! Please!",
+      "desc": "Awarded for cheering exactly 1024 bits",
+      "amount": 1024,
+      "type": "exact"
+    },
     "cheer_1234": {
       "name": "Counting to greatness.",
       "desc": "Awarded for cheering exactly 1234 bits",
       "amount": 1234,
+      "type": "exact"
+    },
+    "cheer_2048": {
+      "name": "ItKeepsGoingPleaseStopIt!",
+      "desc": "Awarded for cheering exactly 2048 bits",
+      "amount": 2048,
       "type": "exact"
     }
   },

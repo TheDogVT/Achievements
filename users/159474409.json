@@ -5,7 +5,10 @@
   "legacy": 2,
   "achievements": {
     "earned": {
-      "chat_goodboy": "2026-11-01T21:34:15.856483+00:00"
+      "chat_goodboy": "2026-11-01T21:34:15.856483+00:00",
+      "cheer_message_100": "2026-11-01T21:35:05.663361+00:00",
+      "cheer_time_1": "2026-11-01T21:35:05.696461+00:00",
+      "cheer_123": "2026-11-01T21:35:05.718464+00:00"
     },
     "founded": {
       "BALSDJHAUISKHDHUIOAS": "2026-11-01T21:33:27.205440+00:00"
@@ -15,12 +18,14 @@
     "unlocked": [
       "prefix_122",
       "prefix_18",
-      "suffix_8"
+      "suffix_8",
+      "prefix_8",
+      "suffix_20"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 8,
+    "messages": 9,
     "active_months": 1,
     "first_seen": "2026-11"
   },
