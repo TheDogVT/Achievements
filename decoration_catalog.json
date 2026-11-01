@@ -106,6 +106,21 @@
       }
     }
   },
+  "prefix_129": {
+    "slot": "name_prefix",
+    "display_name": "Roadtrip!",
+    "achievement_name": "Window Licker",
+    "achievement_category": "chat",
+    "achievement_id": "chat_carride",
+    "config": {
+      "text": "Roadtrip!",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_carride",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_13": {
     "slot": "name_prefix",
     "display_name": "puppy eyed",
@@ -311,6 +326,22 @@
       "unlock": {
         "category": "chat",
         "id": "chat_chaos",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_17": {
+    "slot": "name_prefix",
+    "display_name": "Cuddly",
+    "achievement_name": "Cuddle Bug",
+    "achievement_category": "chat",
+    "achievement_id": "chat_cuddle",
+    "config": {
+      "text": "Cuddly",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_cuddle",
         "type": "achievement"
       }
     }

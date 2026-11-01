@@ -21,7 +21,9 @@
       "chat_sleepy": "2026-11-01T22:39:33.561886+00:00",
       "chat_vet": "2026-11-01T22:41:57.683446+00:00"
     },
-    "founded": {}
+    "founded": {
+      "chat_carride": "2026-11-01T22:42:16.016824+00:00"
+    }
   },
   "decorations": {
     "unlocked": [
@@ -33,7 +35,8 @@
       "prefix_139",
       "prefix_2",
       "prefix_19",
-      "prefix_10"
+      "prefix_10",
+      "prefix_129"
     ],
     "active": {
       "washi_color": "washi_gold",
@@ -41,7 +44,7 @@
     }
   },
   "stats": {
-    "messages": 121,
+    "messages": 122,
     "active_months": 1,
     "first_seen": "2026-11"
   },

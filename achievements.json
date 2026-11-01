@@ -185,6 +185,11 @@
       "desc": "Awarded for contagious sleepy vibes.",
       "type": "contains"
     },
+    "chat_cuddle": {
+      "name": "Cuddle Bug",
+      "desc": "Awarded for snuggle demands.",
+      "type": "contains"
+    },
     "chat_vet": {
       "name": "Vet Avoider",
       "desc": "Awarded for dreading the doc.",
@@ -223,6 +228,11 @@
     "chat_floofy": {
       "name": "Floof Inspector",
       "desc": "Awarded for fluff quality control.",
+      "type": "contains"
+    },
+    "chat_carride": {
+      "name": "Window Licker",
+      "desc": "Awarded for promising the greatest adventure: sticking your head out the window.",
       "type": "contains"
     },
     "chat_doorbell": {

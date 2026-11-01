@@ -23,7 +23,9 @@
       "chat_bork": "2026-11-01T22:39:51.396003+00:00",
       "chat_woofwoof": "2026-11-01T22:39:51.420216+00:00",
       "chat_walk": "2026-11-01T22:42:04.615816+00:00",
-      "chat_park": "2026-11-01T22:42:04.632946+00:00"
+      "chat_park": "2026-11-01T22:42:04.632946+00:00",
+      "chat_carride": "2026-11-01T22:42:53.230704+00:00",
+      "chat_cuddle": "2026-11-01T22:43:14.388292+00:00"
     },
     "founded": {
       "chat_vacuum": "2026-11-01T21:21:34.403127+00:00",
@@ -47,14 +49,16 @@
       "suffix_27",
       "prefix_77",
       "prefix_126",
-      "suffix_100"
+      "suffix_100",
+      "prefix_129",
+      "prefix_17"
     ],
     "active": {
       "name_prefix": "prefix_130"
     }
   },
   "stats": {
-    "messages": 56,
+    "messages": 60,
     "active_months": 1,
     "first_seen": "2026-11"
   },
