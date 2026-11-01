@@ -43,6 +43,13 @@
 .washi.mint     { background-color:#a8d8c4; background-image:radial-gradient(circle,rgba(255,255,255,0.4) 1px,transparent 1.5px); background-size:6px 6px; }
 .washi.gold     { background-color:#e8c878; background-image:repeating-linear-gradient(90deg,rgba(180,130,40,0.25),rgba(180,130,40,0.25) 4px,transparent 4px,transparent 9px); }
 .washi.lavender { background-color:#c8b0e0; background-image:repeating-linear-gradient(0deg,rgba(255,255,255,0.30),rgba(255,255,255,0.30) 2px,transparent 2px,transparent 5px); }
+/* Default (unchosen) tape: plain masking tape, deliberately dull. */
+.washi.masking  {
+    background-color:#d3c8a6;
+    background-image:repeating-linear-gradient(90deg,rgba(110,92,55,0.07),rgba(110,92,55,0.07) 1px,transparent 1px,transparent 3px);
+    opacity:0.9; box-shadow:0 1px 2px rgba(0,0,0,0.14);
+    clip-path:polygon(0 8%,3% 0,97% 4%,100% 0,98% 30%,100% 55%,97% 78%,100% 100%,3% 96%,0 100%,2% 70%,0 45%,3% 22%);
+}
 .washi.top-left   { top:-8px; left:20px;  transform:rotate(-5deg); }
 .washi.top-right  { top:-8px; right:22px; transform:rotate(6deg); }
 .washi.top-center { top:-9px; left:50%;   transform:translateX(-50%) rotate(-3deg); }
