@@ -315,6 +315,12 @@
       "amount": 10,
       "type": "times"
     },
+    "cheer_51": {
+      "name": "There are aliens here!",
+      "desc": "Awarded for cheering exactly 51 bits",
+      "amount": 51,
+      "type": "exact"
+    },
     "cheer_64": {
       "name": "Modern Age of PC!",
       "desc": "Awarded for cheering exactly 64 bits",

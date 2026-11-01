@@ -343,6 +343,23 @@
       }
     }
   },
+  "prefix_31": {
+    "slot": "name_prefix",
+    "display_name": "Area",
+    "achievement_name": "There are aliens here!",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_51",
+    "config": {
+      "outline": "basic",
+      "text": "Area",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_51",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_32": {
     "slot": "name_prefix",
     "display_name": "64-Bit",
