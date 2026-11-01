@@ -1,26 +1,164 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
-  <title>Under development · TheDogVT Achievements</title>
-  <style>
-    :root {color-scheme:dark; font-family:system-ui,sans-serif; background:#090d19; color:#eef3fa;}
-    body {margin:0; min-height:100svh; display:grid; place-items:center; background:radial-gradient(ellipse at 50% 30%,#182237,transparent 65%);}
-    main {max-width:34rem; padding:3rem 1.5rem; text-align:center;}
-    .eyebrow {color:#adf1de; font-size:.8rem; letter-spacing:.16em; text-transform:uppercase;}
-    h1 {font-size:clamp(2.4rem,8vw,4rem); line-height:1.1; font-weight:600; letter-spacing:-.04em; margin:1rem 0;}
-    p {color:#a7b6ca; line-height:1.7;}
-    time {color:#eef3fa;}
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cosmic Playground · TheDogVT's pack</title>
+<meta name="description" content="Every star in this galaxy is someone from TheDogVT's pack. Find your star, see what the pack has unlocked, and dress up your name.">
+<meta name="theme-color" content="#020309">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2l3.2 10.8L30 16l-10.8 3.2L16 30l-3.2-10.8L2 16l10.8-3.2z' fill='%2362ead7'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="home.css">
+<script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }</script>
 </head>
-<body>
-  <main>
-    <div class="eyebrow">TheDogVT · Achievements</div>
-    <h1>Under development</h1>
-    <p>We’re giving the achievement website some love.<br>Come back on <time datetime="2026-11-01">November 1, 2026</time>.</p>
-    <p>Achievements unlock on debut</p>
-  </main>
+<body class="ui">
+<canvas id="gl" aria-hidden="true"></canvas>
+<canvas id="ov" aria-hidden="true"></canvas>
+<div id="scrim" aria-hidden="true"></div>
+<div id="flash" aria-hidden="true"></div>
+
+<nav class="site-nav" aria-label="Main" data-avoid>
+  <a class="brand" href="index.html"><i>✦</i>Cosmic Playground</a>
+  <div class="nav-links">
+    <a class="hide-s" href="index.html" aria-current="page">Galaxy</a>
+    <a href="builder.html">Decorations</a>
+    <a class="hide-s" href="artists.html">Artists</a>
+    <a class="me" id="nav-me" href="#find" data-short="My star"><i></i><span>Find my star</span></a>
+  </div>
+</nav>
+
+<main id="home">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="kicker">TheDogVT's pack · achievements</p>
+      <h1 id="hero-title">Look what we've<br>unlocked <em>together.</em></h1>
+      <p class="lede">Every star in this galaxy is someone from the pack. Earn achievements on stream and your star burns hotter.</p>
+
+      <div class="tally">
+        <svg class="gauge" id="gauge" viewBox="0 0 120 120" role="img" aria-label="Achievements discovered">
+          <defs><linearGradient id="gauge-aur" x1="0" x2="1"><stop offset="0" stop-color="#62ead7"/><stop offset="1" stop-color="#5eaee9"/></linearGradient></defs>
+          <circle cx="60" cy="60" r="56" fill="none" stroke="#c99645" stroke-width="1.2"/>
+          <circle cx="60" cy="60" r="44" fill="none" stroke="rgba(0,0,0,.5)" stroke-width="11"/>
+          <circle class="g-fill" cx="60" cy="60" r="44" fill="none" stroke="url(#gauge-aur)" stroke-width="11" stroke-linecap="round" transform="rotate(-90 60 60)" stroke-dasharray="0 999"/>
+          <text x="60" y="64" text-anchor="middle" class="g-num" id="g-pct">—</text>
+        </svg>
+        <div class="tally-copy">
+          <p class="big"><b id="t-found">—</b><span> of <span id="t-total">—</span></span></p>
+          <p class="mono">achievements discovered by the pack</p>
+          <p class="hidden-line"><span id="t-hidden">—</span> are still out there. Nobody has found them yet.</p>
+        </div>
+      </div>
+
+      <ul class="stats" aria-label="The pack in numbers">
+        <li><b id="s-stars">—</b><span>stars in the galaxy</span></li>
+        <li><b id="s-unlocks">—</b><span>unlocks so far</span></li>
+        <li><b id="s-firsts">—</b><span>firsts claimed</span></li>
+        <li><b id="s-players">—</b><span>chatters tracked</span></li>
+      </ul>
+
+      <form class="finder" id="find" autocomplete="off">
+        <label class="sr-only" for="find-q">Your Twitch name</label>
+        <input id="find-q" list="names" placeholder="Type your Twitch name…" spellcheck="false">
+        <button class="btn brass" type="submit">Fly to my star ✦</button>
+        <p class="find-msg" id="find-msg" role="status"></p>
+      </form>
+      <div class="hero-actions">
+        <button class="btn ghost" id="to-explore" type="button">Explore the galaxy</button>
+        <a class="btn ghost" id="welcome" href="#" hidden></a>
+      </div>
+    </div>
+
+    <aside class="panel replay" id="replay" aria-live="polite" aria-label="Recent unlocks">
+      <span class="tab" id="r-tab">Just unlocked</span>
+      <button class="r-body" id="r-body" type="button" title="Fly to this star">
+        <span class="ico" id="r-ico"></span>
+        <span class="r-text">
+          <b id="r-name">Loading the pack…</b>
+          <span class="r-who" id="r-who"></span>
+          <span class="r-chips" id="r-chips"></span>
+        </span>
+      </button>
+      <div class="r-dots" id="r-dots" aria-hidden="true"></div>
+    </aside>
+
+    <a class="scroll-cue" href="#leaders">The pack in detail ▾</a>
+  </section>
+
+  <section class="grid two" id="leaders">
+    <div class="panel brightest">
+      <span class="tab">Brightest stars</span>
+      <div class="race" id="race"></div>
+      <ol class="board" id="board"></ol>
+    </div>
+    <div class="panel types">
+      <span class="tab">What kind of star are you?</span>
+      <p class="sub">Your star heats up as you earn achievements. It never cools down.</p>
+      <ul class="type-list" id="type-list"></ul>
+      <a class="btn brass small" href="#find">Find my star</a>
+    </div>
+  </section>
+
+  <section class="supporters" aria-labelledby="sup-title">
+    <h2 class="sec-title" id="sup-title"><span>Top of the pack</span><small>highest lifetime milestone</small></h2>
+    <div class="grid three" id="podiums"></div>
+  </section>
+
+  <section class="grid two feeds">
+    <div class="panel">
+      <span class="tab">Freshly unlocked</span>
+      <ul class="feed" id="feed"></ul>
+    </div>
+    <div class="panel">
+      <span class="tab">First in the pack</span>
+      <p class="sub">Whoever unlocks something first becomes its founder. It orbits their star as a moon.</p>
+      <ul class="feed" id="firsts"></ul>
+    </div>
+  </section>
+
+  <section class="panel teaser" aria-labelledby="teaser-title">
+    <span class="tab">Decorations</span>
+    <div class="teaser-copy">
+      <h2 id="teaser-title">Your achievements look good on you.</h2>
+      <p>Achievements unlock name styles, prefixes, suffixes and chat looks. Mix your own, then type one command in chat.</p>
+      <a class="btn aurora" href="builder.html" id="teaser-cta">Open the decoration workbench ↗</a>
+    </div>
+    <div class="teaser-tag" id="teaser-tag" aria-hidden="true"></div>
+  </section>
+
+  <footer class="site-foot">
+    <span>Cosmic Playground · made for TheDogVT's pack</span>
+    <a href="artists.html">Artist credits</a>
+    <span>Background stars: <a href="https://svs.gsfc.nasa.gov/4851/" rel="noopener">NASA/Goddard SVS Deep Star Maps</a></span>
+    <span id="snap"></span>
+  </footer>
+</main>
+
+<!-- explore mode: the galaxy on its own, names round the cursor -->
+<div class="explore-bar" id="explore-bar" data-avoid>
+  <button class="btn ghost" id="to-ui" type="button">← Back</button>
+  <form class="finder mini" id="find2" autocomplete="off">
+    <label class="sr-only" for="find2-q">Find a star</label>
+    <input id="find2-q" list="names" placeholder="Find a star…" spellcheck="false">
+    <button class="btn brass" type="submit">Find</button>
+  </form>
+  <button class="btn ghost" id="types-btn" type="button" aria-expanded="false" aria-controls="types-pop">Star types</button>
+</div>
+<div class="panel found-card" id="found-card" data-avoid hidden>
+  <span class="tab" id="fc-tab">Found</span>
+  <p class="fc-name"><span class="sdot" id="fc-dot"></span><b id="fc-name"></b></p>
+  <p class="mono" id="fc-line"></p>
+  <button class="btn brass small" id="fc-fly" type="button">Fly in ✦</button>
+</div>
+<div class="panel types-pop" id="types-pop" data-avoid hidden>
+  <span class="tab">Show only</span>
+  <ul class="type-list pick" id="type-pick"></ul>
+</div>
+<p class="hint" id="hint" data-avoid>Move around to see names · click to hold them · click a name to fly in</p>
+<datalist id="names"></datalist>
+<noscript><p class="noscript">This galaxy needs JavaScript and WebGL to light up.</p></noscript>
+
+<script src="site.js"></script>
+<script type="module" src="home.js"></script>
 </body>
 </html>

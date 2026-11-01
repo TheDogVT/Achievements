@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Artists · Cosmic Playground</title>
+<meta name="description" content="The artists who drew, modeled and rigged TheDogVT and the Comutts.">
+<meta name="theme-color" content="#020309">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2l3.2 10.8L30 16l-10.8 3.2L16 30l-3.2-10.8L2 16l10.8-3.2z' fill='%2362ead7'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+/* Artist credits in the stream-overlay skin: one brass-tabbed panel per artist, craft icons in the
+   category-icon style, a quiet starfield behind. No artwork is shown here, only names and links. */
+.sky { position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(70% 40% at 18% -8%, rgba(98,234,215,.14), transparent 70%), radial-gradient(55% 36% at 78% -12%, rgba(155,123,255,.16), transparent 70%),
+    radial-gradient(50% 40% at 50% 112%, rgba(216,120,167,.08), transparent 70%), linear-gradient(180deg, #120a0e, var(--night) 60%); }
+#stars { position: fixed; inset: 0; z-index: 0; width: 100%; height: 100%; pointer-events: none; }
+main { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 120px 20px 0; }
+
+.hero { text-align: center; max-width: 680px; margin: 0 auto 54px; }
+.hero h1 { margin: 14px 0 12px; font: 700 clamp(34px, 6vw, 54px)/1.05 var(--serif); letter-spacing: -.01em;
+  background: linear-gradient(180deg, var(--cream), var(--brass2) 60%, var(--brass)); -webkit-background-clip: text; background-clip: text; color: transparent;
+  text-shadow: 0 0 40px rgba(255,197,61,.12); }
+.hero p { margin: 0 auto; color: var(--tan); font-size: 17px; max-width: 560px; }
+.hero .rule { display: flex; align-items: center; gap: 12px; justify-content: center; margin-top: 26px; color: var(--brass); }
+.hero .rule::before, .hero .rule::after { content: ""; width: 90px; height: 1px; background: linear-gradient(90deg, transparent, var(--brass)); }
+.hero .rule::after { transform: scaleX(-1); }
+
+.section-title { display: flex; align-items: baseline; gap: 14px; margin: 0 0 26px; }
+.section-title h2 { margin: 0; font: 600 24px/1.2 var(--serif); color: var(--cream); }
+.section-title .mono { color: var(--dim); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 34px 22px; margin-bottom: 64px; }
+.artist { display: flex; flex-direction: column; gap: 14px; padding: 30px 22px 22px; opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease, border-color .25s; }
+.artist.in { opacity: 1; transform: none; }
+.artist:hover { border-color: var(--brass); }
+@media (prefers-reduced-motion: reduce) { .artist { opacity: 1; transform: none; transition: none; } }
+.artist .head { display: flex; align-items: center; gap: 14px; }
+.artist .ico { width: 46px; height: 46px; padding: 10px; }
+/* X avatar in the brass ring; the craft icon rides on its corner */
+.pfp { position: relative; flex: none; width: 58px; height: 58px; }
+.pfp img { width: 100%; height: 100%; display: block; border-radius: 50%; object-fit: cover; background: var(--wood);
+  box-shadow: 0 0 0 2px var(--brass), 0 0 0 3.5px #5b3b1c, 0 0 16px color-mix(in srgb, var(--c) 35%, transparent); }
+.pfp .ico { position: absolute; right: -6px; bottom: -6px; width: 26px; height: 26px; padding: 5px; }
+.artist h3 { margin: 0; font: 700 23px/1.15 var(--serif); color: var(--cream); overflow-wrap: anywhere; }
+.artist .aka { display: block; margin-top: 3px; font: 500 10.5px/1.3 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--dim); }
+.made { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.made li { padding: 3px 10px; border-radius: 99px; border: 1px solid color-mix(in srgb, var(--c) 55%, transparent); color: color-mix(in srgb, var(--c) 70%, var(--cream));
+  background: color-mix(in srgb, var(--c) 9%, transparent); font: 500 10.5px/1.5 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+.note { margin: 0; color: var(--tan); font-style: italic; }
+.warn { display: flex; gap: 10px; align-items: flex-start; margin: 0; padding: 10px 12px; border: 1px solid rgba(255,197,61,.45); border-radius: 4px 10px 4px 10px;
+  background: rgba(255,197,61,.07); color: #f3dcae; font-size: 13.5px; line-height: 1.45; }
+.warn b { flex: none; display: grid; place-items: center; width: 18px; height: 18px; margin-top: 1px; border-radius: 50%; background: var(--gold); color: var(--wood); font: 700 12px/1 var(--mono); }
+.warn strong { color: var(--gold); font-weight: 600; }
+.warn.avoid { border-color: rgba(255,107,107,.55); background: rgba(255,107,107,.08); color: #f6d4d4; }
+.warn.avoid b { background: #ff6b6b; color: #2a0a0a; font-size: 10px; }
+.warn.avoid strong { color: #ff8a8a; }
+.artist.avoided { border-color: rgba(255,107,107,.45); outline-color: rgba(255,107,107,.35); background: linear-gradient(180deg, rgba(40,22,26,.95), rgba(20,11,13,.95)); }
+/* everything but the warning goes dim and colourless */
+.artist.avoided :is(.head, .made, .links, .tab) { filter: grayscale(.9) brightness(.55); }
+.artist.avoided .pfp img { box-shadow: 0 0 0 2px #6b5a4a, 0 0 0 3.5px #2a1d14; }
+.rec { display: flex; gap: 10px; align-items: flex-start; margin: 0; padding: 10px 12px; border: 1px solid rgba(98,234,215,.45); border-radius: 4px 10px 4px 10px;
+  background: rgba(98,234,215,.07); color: #d6f3ec; font-size: 13.5px; line-height: 1.45; }
+.rec b { flex: none; display: grid; place-items: center; width: 18px; height: 18px; margin-top: 1px; border-radius: 50%; background: var(--aur); color: #062a2a; font: 700 11px/1 var(--mono); }
+.rec strong { color: var(--aur); font-weight: 600; }
+.links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 4px; }
+.links a { padding: 8px 12px; font-size: 13px; }
+.links a span { font: 500 10px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--aur); }
+.links .none { font: 500 10.5px/1.4 var(--mono); letter-spacing: .08em; color: var(--dim); }
+
+.artist.todo { border-style: dashed; outline-style: dashed; }
+.artist.todo h3 { color: var(--dim); font-style: italic; }
+
+.respect { max-width: 720px; margin: 0 auto 30px; padding: 30px 26px 24px; text-align: center; }
+.respect p { margin: 0; color: var(--tan); }
+.respect strong { color: var(--cream); }
+</style>
+</head>
+<body>
+<div class="sky" aria-hidden="true"></div>
+<canvas id="stars" aria-hidden="true"></canvas>
+
+<nav class="site-nav" aria-label="Main">
+  <a class="brand" href="index.html"><i>✦</i>Cosmic Playground</a>
+  <div class="nav-links">
+    <a class="hide-s" href="index.html">Galaxy</a>
+    <a class="hide-s" href="builder.html">Decorations</a>
+    <a href="artists.html" aria-current="page">Artists</a>
+    <a class="me" id="nav-me" href="index.html#find" data-short="My star"><i></i><span>Find my star</span></a>
+  </div>
+</nav>
+
+<main>
+  <header class="hero">
+    <p class="kicker">✦ Credits</p>
+    <h1>The artists behind the pack</h1>
+    <p>Every piece of TheDogVT and the Comutts was drawn, modeled and rigged by hand by these artists. Go show them some love, and if you like their work, commission them.</p>
+    <div class="rule" aria-hidden="true">✦</div>
+  </header>
+
+  <section aria-labelledby="made-title">
+    <div class="section-title"><h2 id="made-title">Commissioned work</h2><span class="mono" id="made-count"></span></div>
+    <div class="grid" id="made"></div>
+  </section>
+
+  <section aria-labelledby="fan-title" id="fan-section" hidden>
+    <div class="section-title"><h2 id="fan-title">Fan art</h2><span class="mono">Gifts from the Comutts</span></div>
+    <div class="grid" id="fan"></div>
+  </section>
+
+  <aside class="respect panel">
+    <span class="tab">Please respect the art</span>
+    <p>All art belongs to the artists who made it. <strong>Please don't repost, trace, edit or use it to train AI.</strong> If you want something like it, the links above are the way to get your own.</p>
+  </aside>
+
+  <footer class="site-foot">
+    <span>Cosmic Playground · made for TheDogVT's pack</span>
+    <a href="index.html">Back to the galaxy</a>
+  </footer>
+</main>
+
+<script>
+// Credits. Fill these in from the commission records. `made` is what they did (shown as chips);
+// `craft` picks the icon and colour; `links` show as buttons (label → url). `todo: true` draws a dashed
+// placeholder card and should be gone before release.
+const CREDITS = [
+  { name: 'beyo', rec: true, aka: '@yo_beyo', craft: 'model', made: ['Model art'], links: [['VGen', 'https://vgen.co/yo_beyo'], ['X', 'https://x.com/yo_beyo']] },
+  { name: 'wooserr', rec: true, craft: 'mascot', made: ['Reference sheet'], links: [['VGen', 'https://vgen.co/wooserr'], ['X', 'https://x.com/wooserr']] },
+  { name: 'cattttty', rec: true, craft: 'rig', made: ['Live2D rigging'], links: [['VGen', 'https://vgen.co/cattttty'], ['X', 'https://x.com/catttttyVT']] },
+  { name: 'ChristianMs', rec: true, craft: 'scene', made: ['Stream background'], links: [['VGen', 'https://vgen.co/ChristianMs'], ['X', 'https://x.com/Mason2608']] },
+  { name: 'LoreBee', rec: true, craft: 'emote', made: ['Emotes'], links: [['Website', 'https://lorebee.art/'], ['VGen', 'https://vgen.co/LoreBee'], ['X', 'https://x.com/LoreBeeVT'], ['Ko-fi', 'https://ko-fi.com/lorebeevt']] },
+  { name: 'Holly', rec: true, aka: '@HollyArt_', craft: 'badge', made: ['Sub badges'], links: [['VGen', 'https://vgen.co/HollyArt_'], ['X', 'https://x.com/HollyArt_']] },
+  { name: 'sutibu_r', aka: '@rsutibu', craft: 'png', made: ['PNGTuber'], links: [['VGen', 'https://vgen.co/rsutibu'], ['X', 'https://x.com/rsutibu'], ['Website', 'https://rsutibu.carrd.co/']] },
+  { name: 'Pepe', aka: '@AikoPepe', craft: 'png', made: ['Fugi reactive PNGTuber'], links: [['VGen', 'https://vgen.co/AikoPepe'], ['X', 'https://x.com/aikpepe']] },
+  { name: 'Barão', craft: 'rig', made: ['Background rigging'], links: [['VGen', 'https://vgen.co/barao'], ['X', 'https://x.com/oleobarone']] },
+  { name: 'ahnibi', craft: 'alert', made: ['Alerts'], links: [['VGen', 'https://vgen.co/ahnibi'], ['X', 'https://x.com/ahnibi']] },
+  { name: 'honeyaruu', craft: 'scene', made: ['Starting soon screen'], links: [['VGen', 'https://vgen.co/honeyaruu'], ['X', 'https://x.com/honeyaruu']] },
+  { name: 'Ittzi', craft: 'scene', made: ['Twitch panels'], links: [['VGen', 'https://vgen.co/Ittzi'], ['X', 'https://x.com/Ittzi_']] },
+  { name: 'Senpehh_', craft: 'scene', made: ['Eye banner'], links: [['VGen', 'https://vgen.co/Senpehh_'], ['X', 'https://x.com/Senpehh_']] },
+  { name: 'caneera', craft: 'model', made: ['Character design'], links: [['VGen', 'https://vgen.co/caneera'], ['X', 'https://x.com/CaneeraW'], ['Website', 'https://caneera.art/']] },
+  { name: 'Alfyria', craft: 'mascot', made: ['Mascot design sketch'], avoid: 'Poor experience, confirmed by other first-hand accounts, and multiple creators have reported similar issues. I don’t recommend commissioning them.', links: [['X', 'https://x.com/Alfyria']] },
+];
+const FAN_ART = [];
+
+// Category-style icons: 24×24 strokes, coloured by craft.
+const CRAFTS = {
+  model:  ['#62ead7', '<circle cx="12" cy="9" r="5"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/>'],
+  rig:    ['#5eaee9', '<circle cx="6" cy="6" r="2"/><circle cx="18" cy="9" r="2"/><circle cx="9" cy="18" r="2"/><path d="M7.6 7.3l8.6 1.2M7 7.8l1.6 8.3M16.5 10.5l-6 6.2"/>'],
+  png:    ['#ffc53d', '<path d="M12 3l2.2 6.8H21l-5.5 4 2.1 6.7L12 16.4l-5.6 4.1 2.1-6.7-5.5-4h6.8z"/>'],
+  emote:  ['#d878a7', '<circle cx="12" cy="12" r="9"/><path d="M8 14.5c1 1.6 2.4 2.4 4 2.4s3-.8 4-2.4"/><path d="M9 9.5h.01M15 9.5h.01" stroke-width="2.6"/>'],
+  badge:  ['#9b7bff', '<path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/>'],
+  mascot: ['#ffb27a', '<circle cx="7" cy="9" r="1.8"/><circle cx="12" cy="6.5" r="1.8"/><circle cx="17" cy="9" r="1.8"/><path d="M8 17c0-2.6 1.8-4.5 4-4.5s4 1.9 4 4.5c0 1.6-1.4 2.5-4 2.5s-4-.9-4-2.5z"/>'],
+  alert:  ['#62ead7', '<path d="M6 16V11a6 6 0 0112 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 004 0"/>'],
+  scene:  ['#cfe9ff', '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l5-4 4 3 3-2 6 4"/>'],
+  fan:    ['#ff8fb1', '<path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/>'],
+};
+const icon = craft => {
+  const [c, path] = CRAFTS[craft] || CRAFTS.png;
+  return { c, svg: `<svg class="cico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${path}</svg>` };
+};
+const esc = s => String(s).replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[ch]);
+const safeUrl = u => /^https:\/\//i.test(u) ? u : '';
+
+function card(a) {
+  const { c, svg } = icon(a.craft);
+  // avatars are saved copies of each artist's X profile picture, named after the X handle
+  const x = (a.links || []).find(([label]) => label === 'X');
+  const pfp = x ? `artists/${x[1].split('/').pop().toLowerCase()}.jpg` : '';
+  const links = (a.links || []).map(([label, url]) => safeUrl(url)
+    ? `<a class="btn ghost" href="${esc(url)}" target="_blank" rel="noopener"><span>${esc(label)}</span> ↗</a>` : '').join('');
+  return `<article class="artist panel${a.todo ? ' todo' : ''}${a.avoid ? ' avoided' : ''}" style="--c:${c}">
+    <span class="tab">${esc((a.made || [])[0] || 'Artist')}</span>
+    <div class="head">${pfp ? `<span class="pfp"><img src="${pfp}" alt="" width="58" height="58" loading="lazy"><span class="ico">${svg}</span></span>` : `<span class="ico">${svg}</span>`}<div><h3>${esc(a.name)}</h3>${a.aka ? `<span class="aka">${esc(a.aka)}</span>` : ''}</div></div>
+    <ul class="made">${(a.made || []).map(m => `<li>${esc(m)}</li>`).join('')}</ul>
+    ${a.note ? `<p class="note">${esc(a.note)}</p>` : ''}
+    ${a.rec ? `<p class="rec" role="note"><b aria-hidden="true">✓</b><span><strong>Recommended.</strong> Great to work with. Would commission again.</span></p>` : ''}
+    ${a.warn ? `<p class="warn" role="note"><b aria-hidden="true">!</b><span><strong>Heads up:</strong> ${esc(a.warn)}</span></p>` : ''}
+    ${a.avoid ? `<p class="warn avoid" role="note"><b aria-hidden="true">✕</b><span><strong>Avoid.</strong> ${esc(a.avoid)}</span></p>` : ''}
+    <div class="links">${links || '<span class="none">Links coming soon</span>'}</div>
+  </article>`;
+}
+
+document.getElementById('made').innerHTML = CREDITS.map(card).join('');
+document.getElementById('made-count').textContent = `${CREDITS.length} artist${CREDITS.length === 1 ? '' : 's'}`;
+if (FAN_ART.length) {
+  document.getElementById('fan').innerHTML = FAN_ART.map(a => card({ craft: 'fan', ...a })).join('');
+  document.getElementById('fan-section').hidden = false;
+}
+
+// cards rise in as they scroll into view
+const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+}), { rootMargin: '0px 0px -8% 0px' }) : null;
+document.querySelectorAll('.artist').forEach((el, i) => {
+  el.style.transitionDelay = `${(i % 3) * 80}ms`;
+  io ? io.observe(el) : el.classList.add('in');
+});
+
+// solid header once scrolled, like the other pages
+const nav = document.querySelector('.site-nav');
+addEventListener('scroll', () => nav.classList.toggle('solid', scrollY > 30), { passive: true });
+
+// quiet twinkling starfield (static frame when motion is reduced)
+(function () {
+  const cv = document.getElementById('stars'), g = cv.getContext('2d');
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let W, H, stars = [];
+  function size() {
+    const d = Math.min(devicePixelRatio || 1, 2);
+    W = cv.width = innerWidth * d; H = cv.height = innerHeight * d;
+    stars = Array.from({ length: Math.round(innerWidth * innerHeight / 3800) }, () => ({
+      x: Math.random() * W, y: Math.random() * H, r: (Math.random() ** 3 * 1.4 + .35) * d,
+      a: Math.random() * .6 + .2, p: Math.random() * 6.3, s: Math.random() * 1.2 + .3,
+      h: Math.random() < .12 ? (Math.random() < .5 ? '255,214,160' : '170,200,255') : '235,240,255',
+    }));
+  }
+  function draw(t) {
+    g.clearRect(0, 0, W, H);
+    for (const s of stars) {
+      const a = still ? s.a : s.a * (.65 + .35 * Math.sin(t / 1000 * s.s + s.p));
+      g.fillStyle = `rgba(${s.h},${a})`; g.beginPath(); g.arc(s.x, s.y, s.r, 0, 6.283); g.fill();
+    }
+    if (!still) requestAnimationFrame(draw);
+  }
+  size(); addEventListener('resize', () => { size(); if (still) draw(0); });
+  requestAnimationFrame(draw);
+})();
+</script>
+<script src="site.js"></script>
+</body>
+</html>

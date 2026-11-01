@@ -1,0 +1,84 @@
+/* Cosmic Playground: shared look for the galaxy home and the star profile. Stream-overlay family (Aurora
+   wood + brass, Lora + DM Mono), observatory panels (engraved inner line, corner rivets, ✦ brass tabs).
+   The decoration workbench keeps its own copy of the Aurora widget recipe in builder.css. */
+:root {
+  color-scheme: dark;
+  --wood: #211014; --wood2: #452127; --wood3: #704034;
+  --brass: #c99645; --brass2: #ffe1a0; --brass-edge: #a8783e;
+  --cream: #fff1d1; --tan: #d9b98a; --dim: #a88a66;
+  --aur: #62ead7; --aur2: #5eaee9; --violet: #9b7bff; --rose: #d878a7; --gold: #ffc53d; --star: #cfe9ff;
+  --night: #020309;
+  --serif: Lora, Georgia, serif; --mono: "DM Mono", ui-monospace, monospace;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { background: var(--night); scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; color: var(--cream); font: 500 15px/1.5 var(--serif); background: var(--night); overflow-x: hidden; }
+a { color: inherit; }
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--aur); outline-offset: 3px; border-radius: 4px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.mono { font: 500 11px/1.25 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--tan); }
+.kicker { margin: 0; font: 500 11px/1 var(--mono); letter-spacing: .22em; text-transform: uppercase; color: var(--aur); }
+
+/* ── header ───────────────────────────────────────────────────────────── */
+.site-nav { position: fixed; z-index: 30; top: 0; left: 0; right: 0; display: flex; align-items: center; gap: 26px; padding: 16px 24px 26px;
+  background: linear-gradient(180deg, rgba(2,3,9,.9), rgba(2,3,9,.55) 60%, transparent); transition: background .3s, padding .3s, box-shadow .3s; }
+.site-nav.solid { padding-bottom: 16px; background: rgba(14,6,9,.88); backdrop-filter: blur(8px); box-shadow: 0 1px 0 rgba(201,150,69,.35), 0 10px 30px rgba(0,0,0,.5); }
+.brand { display: flex; align-items: center; gap: 9px; color: var(--cream); font: 600 19px/1 var(--serif); text-decoration: none; white-space: nowrap; }
+.brand i { font-style: normal; color: var(--aur); text-shadow: 0 0 12px rgba(98,234,215,.7); }
+.nav-links { display: flex; align-items: center; gap: 22px; margin-left: auto; }
+.nav-links a { color: #d8c8a8; font: 500 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; text-decoration: none; white-space: nowrap; }
+.nav-links a:hover { color: var(--brass2); }
+.nav-links a[aria-current=page] { color: var(--aur); }
+.nav-links .me { display: inline-flex; align-items: center; gap: 7px; padding: 7px 12px; border: 1px solid var(--brass-edge); border-radius: 4px 10px 4px 10px; color: var(--brass2); background: rgba(33,16,20,.7); }
+.nav-links .me i { width: 9px; height: 9px; border-radius: 50%; background: var(--c, var(--star)); box-shadow: 0 0 8px var(--c, var(--star)); }
+@media (max-width: 640px) {
+  .site-nav { gap: 12px; padding: 12px 14px 22px; }
+  .brand { font-size: 16px; }
+  .nav-links .me { padding: 6px 9px; max-width: 150px; } .nav-links .me span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .nav-links { gap: 14px; }
+  .nav-links a { font-size: 10.5px; letter-spacing: .05em; }
+  .nav-links .hide-s { display: none; }
+}
+@media (max-width: 430px) { /* unknown visitors get a short label; a remembered name truncates */
+  .brand { font-size: 15px; } .site-nav { gap: 10px; }
+  .nav-links .me { max-width: 112px; } .nav-links .me:not(.known) span { display: none; } .nav-links .me:not(.known)::after { content: attr(data-short); }
+}
+
+/* ── buttons ──────────────────────────────────────────────────────────── */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 11px 16px; border: 1px solid var(--wood3); border-radius: 4px 12px 4px 12px;
+  background: linear-gradient(180deg, var(--wood2), var(--wood)); color: var(--cream); font: 600 14px/1 var(--serif); text-decoration: none; cursor: pointer; white-space: nowrap;
+  box-shadow: 0 6px 14px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,225,160,.15); transition: border-color .2s, transform .15s; }
+.btn:hover { border-color: var(--brass); } .btn:active { transform: translateY(1px); }
+.btn.brass { border-color: var(--brass); background: linear-gradient(180deg, var(--brass2), var(--brass)); color: var(--wood); box-shadow: 0 6px 0 #7a5524, 0 10px 24px rgba(0,0,0,.4); }
+.btn.brass:hover { filter: brightness(1.06); }
+.btn.aurora { border: 0; background: linear-gradient(90deg, var(--aur), var(--aur2)); color: #062a2a; box-shadow: 0 6px 0 #2a8a8a, 0 0 24px rgba(98,234,215,.35); }
+.btn.ghost { background: rgba(20,9,12,.55); backdrop-filter: blur(4px); }
+
+/* ── observatory panels ───────────────────────────────────────────────── */
+.panel { position: relative; padding: 26px 20px 18px; background: linear-gradient(180deg, rgba(69,33,39,.95), rgba(33,16,20,.95)); border: 1px solid var(--wood3);
+  border-radius: 4px 18px 4px 18px; outline: 1px solid rgba(201,150,69,.4); outline-offset: -7px; box-shadow: 0 16px 34px rgba(0,0,0,.55); }
+.panel::after { content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit;
+  background: radial-gradient(circle at 12px 12px, #ffe1a0 0 2px, #8a6428 2.5px, transparent 3.5px), radial-gradient(circle at calc(100% - 12px) 12px, #ffe1a0 0 2px, #8a6428 2.5px, transparent 3.5px),
+    radial-gradient(circle at 12px calc(100% - 12px), #ffe1a0 0 2px, #8a6428 2.5px, transparent 3.5px), radial-gradient(circle at calc(100% - 12px) calc(100% - 12px), #ffe1a0 0 2px, #8a6428 2.5px, transparent 3.5px); }
+.tab { position: absolute; z-index: 1; top: -13px; left: 18px; padding: 4px 12px; background: linear-gradient(180deg, var(--brass2), var(--brass)); color: var(--wood);
+  font: 600 12px/1.2 var(--serif); letter-spacing: .08em; text-transform: uppercase; border-radius: 4px 10px 4px 10px; box-shadow: 0 2px 6px rgba(0,0,0,.4); white-space: nowrap; }
+.tab::before { content: "✦ "; }
+.chip { display: inline-flex; align-items: center; gap: 5px; padding: 2px 8px; border-radius: 99px; border: 1px solid rgba(201,150,69,.4); font: 500 9.5px/1.5 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--tan); white-space: nowrap; }
+.chip.gold { border: 0; color: var(--wood); background: linear-gradient(90deg, #ffe1a0, #fff6dc 40%, #c99645 70%, #ffe1a0); background-size: 250% 100%; animation: shine 3s linear infinite; }
+.chip.rare { border-color: #c9a2ff; color: #e2d2ff; } .chip.new { border-color: var(--aur); color: var(--aur); }
+@keyframes shine { to { background-position: -250% 0; } }
+.cico { width: 100%; height: 100%; display: block; }
+.ico { flex: none; display: grid; place-items: center; width: 34px; height: 34px; padding: 7px; border-radius: 50%; color: var(--c, var(--aur)); background: radial-gradient(circle, rgba(0,0,0,.3), rgba(0,0,0,.6));
+  box-shadow: 0 0 0 1.5px var(--brass), 0 0 0 2.5px #5b3b1c, 0 0 14px color-mix(in srgb, var(--c, var(--aur)) 40%, transparent); }
+.ico svg { filter: drop-shadow(0 0 4px var(--c, var(--aur))); }
+.sdot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--c, var(--star)); box-shadow: 0 0 8px var(--c, var(--star)); flex: none; }
+.who { color: var(--cream); text-decoration: none; font-weight: 600; }
+a.who:hover { color: var(--brass2); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ── footer ───────────────────────────────────────────────────────────── */
+.site-foot { position: relative; z-index: 2; display: flex; flex-wrap: wrap; gap: 10px 26px; justify-content: center; padding: 34px 20px 40px; font: 500 10.5px/1.6 var(--mono); letter-spacing: .08em; color: #8a6f58; text-align: center; }
+.site-foot a { color: var(--tan); }
+#flash { position: fixed; inset: 0; z-index: 90; background: #fff; opacity: 0; pointer-events: none; }

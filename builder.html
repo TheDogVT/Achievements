@@ -1,26 +1,167 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
-  <title>Under development · TheDogVT Achievements</title>
-  <style>
-    :root {color-scheme:dark; font-family:system-ui,sans-serif; background:#090d19; color:#eef3fa;}
-    body {margin:0; min-height:100svh; display:grid; place-items:center; background:radial-gradient(ellipse at 50% 30%,#182237,transparent 65%);}
-    main {max-width:34rem; padding:3rem 1.5rem; text-align:center;}
-    .eyebrow {color:#adf1de; font-size:.8rem; letter-spacing:.16em; text-transform:uppercase;}
-    h1 {font-size:clamp(2.4rem,8vw,4rem); line-height:1.1; font-weight:600; letter-spacing:-.04em; margin:1rem 0;}
-    p {color:#a7b6ca; line-height:1.7;}
-    time {color:#eef3fa;}
-  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Decorations · Cosmic Playground</title>
+    <meta name="theme-color" content="#120a0e">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2l3.2 10.8L30 16l-10.8 3.2L16 30l-3.2-10.8L2 16l10.8-3.2z' fill='%2362ead7'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- workbench chrome: the Aurora widget fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Lora:wght@500;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <!-- every font a decoration can use (same list as the live builder) -->
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Audiowide&family=Bangers&family=Caveat:wght@500;600;700&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@400;600;700&family=Grenze+Gotisch:wght@400;700&family=Lobster&family=Luckiest+Guy&family=Metamorphous&family=Orbitron:wght@400;700&family=Pacifico&family=Permanent+Marker&family=Playfair+Display:wght@400;700&family=Press+Start+2P&family=Rubik+Glitch&family=VT323&family=Rye&family=Satisfy&family=Shadows+Into+Light&family=Special+Elite&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Bubblegum+Sans&family=Chewy&family=Comfortaa:wght@400;500;600;700&family=DynaPuff:wght@400;500;600;700&family=Fredoka:wght@400;500;600;700&family=Mochiy+Pop+One&family=Nunito:wght@400;600;700;800&family=Quicksand:wght@400;500;600;700&family=Varela+Round&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Black+Ops+One&family=Bowlby+One+SC&family=Bungee+Spice&family=Faster+One&family=Iceland&family=Kanit:ital,wght@0,400;0,700;1,400;1,700&family=Michroma&family=Rubik+Burned&family=Sigmar+One&family=Teko:wght@400;600;700&family=Titan+One&family=Tourney:wght@400;700&family=Wallpoet&family=WindSong:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- the shared decoration renderer's look (not layout.css: that's the old page's chrome) -->
+    <link rel="stylesheet" href="static/css/builder/card/paper.css">
+    <link rel="stylesheet" href="static/css/builder/card/backgrounds.css">
+    <link rel="stylesheet" href="static/css/builder/card/background-renderers.css">
+    <link rel="stylesheet" href="static/css/builder/card/name/core.css">
+    <link rel="stylesheet" href="static/css/builder/card/name/animations.css">
+    <link rel="stylesheet" href="static/css/builder/card/name/effects.css">
+    <link rel="stylesheet" href="static/css/fullscreen/decorations.css">
+    <link rel="stylesheet" href="builder.css">
 </head>
 <body>
-  <main>
-    <div class="eyebrow">TheDogVT · Achievements</div>
-    <h1>Under development</h1>
-    <p>We’re giving the achievement website some love.<br>Come back on <time datetime="2026-11-01">November 1, 2026</time>.</p>
-    <p>Achievements unlock on debut</p>
-  </main>
+    <div class="sky" aria-hidden="true"></div>
+
+    <nav class="site-nav" aria-label="Main navigation">
+        <a class="brand" href="index.html"><span class="brand-star" aria-hidden="true">✦</span>Cosmic Playground</a>
+        <div class="nav-links">
+            <a href="index.html">Galaxy</a><a href="builder.html" aria-current="page">Decorations</a><a href="artists.html">Artists</a>
+        </div>
+        <a class="nav-profile" id="nav-profile" href="index.html#find">Find my star</a>
+    </nav>
+
+    <header class="bench-header panel">
+        <span class="panel-tab">Decoration workbench</span>
+        <!-- same build as the subathon goal medallion: aurora progress ring around a starry core -->
+        <div class="medallion" role="img" id="medallion" aria-label="0 of 0 decorations unlocked">
+            <svg class="progress-ring" viewBox="0 0 132 132" aria-hidden="true">
+                <defs>
+                    <linearGradient id="aurora-progress-gradient" gradientUnits="userSpaceOnUse" x1="-132" y1="132" x2="0" y2="0" spreadMethod="reflect">
+                        <animateTransform attributeName="gradientTransform" type="rotate" from="0 66 66" to="360 66 66" dur="14s" repeatCount="indefinite"/>
+                        <stop offset="0" stop-color="#62ead7"><animate attributeName="stop-color" values="#62ead7;#5eaee9;#9147ff;#d878a7;#62ead7" dur="8s" repeatCount="indefinite"/></stop>
+                        <stop offset=".34" stop-color="#5eaee9"><animate attributeName="stop-color" values="#5eaee9;#9147ff;#d878a7;#62ead7;#5eaee9" dur="8s" repeatCount="indefinite"/></stop>
+                        <stop offset=".68" stop-color="#9147ff"><animate attributeName="stop-color" values="#9147ff;#d878a7;#62ead7;#5eaee9;#9147ff" dur="8s" repeatCount="indefinite"/></stop>
+                        <stop offset="1" stop-color="#d878a7"><animate attributeName="stop-color" values="#d878a7;#62ead7;#5eaee9;#9147ff;#d878a7" dur="8s" repeatCount="indefinite"/></stop>
+                    </linearGradient>
+                </defs>
+                <circle class="ring-track" cx="66" cy="66" r="58"/>
+                <circle class="ring-fill" id="ring-fill" cx="66" cy="66" r="58" pathLength="100"/>
+            </svg>
+            <div class="medallion-core">
+                <div class="medallion-stars" id="medallion-stars"></div>
+                <span class="medal-count" id="medal-count">0</span>
+                <small class="medal-of" id="medal-of">of 0</small>
+            </div>
+            <i class="ring-tip" id="ring-tip"></i>
+        </div>
+        <div class="bench-title">
+            <p class="kicker">Dress up your name tag</p>
+            <h1>Hi, <span class="bench-name" id="bench-name">friend</span></h1>
+            <p class="bench-sub" id="bench-sub">Pick from what you've unlocked, then copy one command into chat.</p>
+        </div>
+        <div class="bench-account">
+            <span class="tier" id="tier" hidden></span>
+            <button class="ghost-btn" id="switch-user" type="button">Not you?</button>
+        </div>
+        <i class="inlay" aria-hidden="true"></i>
+    </header>
+
+    <main class="bench">
+        <section class="stage-col" aria-label="Preview">
+            <div class="panel stage-panel">
+                <span class="panel-tab">Live preview</span>
+                <div class="desk" id="desk">
+                    <div class="card-fit" id="card-fit">
+                        <div class="decor-card" id="decor-card">
+                            <div class="decor-background" id="decor-background"></div>
+                            <div id="washi-tape" class="washi" hidden></div>
+                            <div class="content">
+                                <div class="message message-text name-tag" id="pv-message"></div>
+                                <div class="name-line">
+                                    <span class="name-prefix name-tag" id="pv-prefix"></span>
+                                    <span class="username-dash" id="pv-dash">&mdash;</span>
+                                    <span class="name-base name-tag" id="pv-name"></span>
+                                    <span class="name-suffix name-tag" id="pv-suffix"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <label class="try-line">
+                    <span class="mono-label">Try a message</span>
+                    <input id="try-message" type="text" maxlength="80" value="Do it for them." spellcheck="false">
+                </label>
+            </div>
+
+            <!-- the real compact chat widget (from the bot's overlay studio), fed a test message -->
+            <div class="panel chat-panel">
+                <span class="panel-tab">In stream chat</span>
+                <div class="chat-window" id="chat-window"></div>
+                <p class="chat-note">The side chat on stream shows your <strong>Name</strong> and <strong>Message</strong> styles. Prefix, suffix, card and washi show on the big chat cards.</p>
+            </div>
+
+            <div class="panel loadout-panel">
+                <div class="rule-label"><span>Your loadout</span><button class="link-btn" id="reset-btn" type="button">Back to what I'm wearing</button></div>
+                <ul class="loadout" id="loadout"></ul>
+            </div>
+        </section>
+
+        <section class="panel picker" aria-label="Choose decorations">
+            <div class="slot-tabs" id="slot-tabs" role="tablist" aria-label="Decoration slot"></div>
+            <div class="toolbar">
+                <label class="search">
+                    <span class="sr-only">Search decorations</span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+                    <input id="search" type="search" placeholder="Search by word or achievement" autocomplete="off" spellcheck="false">
+                </label>
+                <button class="ghost-btn" id="shuffle" type="button" title="Random pick from your unlocks">Shuffle</button>
+            </div>
+            <div class="chips" id="chips" role="group" aria-label="Filter by achievement category"></div>
+            <div class="grid" id="grid" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <footer class="dock" id="dock" aria-label="Chat command">
+        <div class="dock-shell">
+            <span class="panel-tab dock-tab" id="dock-tab"><i class="dot"></i>Chat command</span>
+            <code class="dock-cmd" id="dock-cmd">!deco</code>
+            <span class="dock-note" id="dock-note">Paste it in chat while the stream is live.</span>
+            <button class="copy-btn" id="copy-btn" type="button">Copy</button>
+        </div>
+    </footer>
+
+    <dialog class="gate panel" id="gate" aria-labelledby="gate-title">
+        <span class="panel-tab">Who's decorating?</span>
+        <form id="gate-form" method="dialog">
+            <h2 id="gate-title">Load your unlocks</h2>
+            <p>Type the name you use in Twitch chat.</p>
+            <div class="gate-input">
+                <input id="gate-input" type="text" placeholder="YourName" autocomplete="off" spellcheck="false" maxlength="50" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="gate-suggest">
+                <ul id="gate-suggest" role="listbox" hidden></ul>
+            </div>
+            <p class="gate-status" id="gate-status" role="status"></p>
+            <button class="copy-btn" type="submit">Open my workbench</button>
+        </form>
+    </dialog>
+
+    <script>
+        window.DECORATION_NAME_CONFIG = {};
+        window.PUPPY_IMG_BASE = 'static/resources/backgrounds/';
+    </script>
+    <script src="static/js/overlay/srcdoc.js"></script>
+    <script src="static/js/builder/card/name/effects_manifest.js"></script>
+    <script src="static/js/builder/card/particle_engine.js"></script>
+    <script src="static/js/builder/card/background-renderers.js"></script>
+    <script src="static/js/builder/card/name/translate-core.js"></script>
+    <script src="static/js/builder/card/name/translate-glow.js"></script>
+    <script src="static/js/builder/card/name/translate-effects.js"></script>
+    <script src="static/js/builder/card/name/name.js"></script>
+    <script src="builder.js"></script>
 </body>
 </html>

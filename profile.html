@@ -1,26 +1,707 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
-  <title>Under development · TheDogVT Achievements</title>
-  <style>
-    :root {color-scheme:dark; font-family:system-ui,sans-serif; background:#090d19; color:#eef3fa;}
-    body {margin:0; min-height:100svh; display:grid; place-items:center; background:radial-gradient(ellipse at 50% 30%,#182237,transparent 65%);}
-    main {max-width:34rem; padding:3rem 1.5rem; text-align:center;}
-    .eyebrow {color:#adf1de; font-size:.8rem; letter-spacing:.16em; text-transform:uppercase;}
-    h1 {font-size:clamp(2.4rem,8vw,4rem); line-height:1.1; font-weight:600; letter-spacing:-.04em; margin:1rem 0;}
-    p {color:#a7b6ca; line-height:1.7;}
-    time {color:#eef3fa;}
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Star profile · Cosmic Playground</title>
+<meta name="theme-color" content="#020309">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2l3.2 10.8L30 16l-10.8 3.2L16 30l-3.2-10.8L2 16l10.8-3.2z' fill='%2362ead7'/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- decoration fonts, same set the builder loads -->
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Audiowide&family=Bangers&family=Caveat:wght@500;600;700&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@400;600;700&family=Grenze+Gotisch:wght@400;700&family=Lobster&family=Luckiest+Guy&family=Metamorphous&family=Orbitron:wght@400;700&family=Pacifico&family=Permanent+Marker&family=Playfair+Display:wght@400;700&family=Press+Start+2P&family=Rubik+Glitch&family=VT323&family=Rye&family=Satisfy&family=Shadows+Into+Light&family=Special+Elite&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Bubblegum+Sans&family=Chewy&family=Comfortaa:wght@400;500;600;700&family=DynaPuff:wght@400;500;600;700&family=Fredoka:wght@400;500;600;700&family=Mochiy+Pop+One&family=Nunito:wght@400;600;700;800&family=Quicksand:wght@400;500;600;700&family=Varela+Round&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Black+Ops+One&family=Bowlby+One+SC&family=Bungee+Spice&family=Faster+One&family=Iceland&family=Kanit:ital,wght@0,400;0,700;1,400;1,700&family=Michroma&family=Rubik+Burned&family=Sigmar+One&family=Teko:wght@400;600;700&family=Titan+One&family=Tourney:wght@400;700&family=Wallpoet&family=WindSong:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="static/css/builder/card/name/core.css">
+<link rel="stylesheet" href="static/css/builder/card/name/animations.css">
+<link rel="stylesheet" href="static/css/builder/card/name/effects.css">
+<style>
+/* Star profile in the stream-overlay skin (ui-lab tab 7): Aurora wood + brass instrument panels, astrolabe,
+   eyepiece, meteor bars, glowing Lora numbers. You punch in from the galaxy and land in front of your own star
+   (real 3D, middle top); scrolling shrinks it into a pinned badge while the panels scroll underneath. */
+:root { --wood:#211014; --wood2:#452127; --wood3:#704034; --brass:#c99645; --brass2:#ffe1a0; --cream:#fff1d1; --tan:#d9b98a; --aur:#62ead7; --aur2:#5eaee9; --star:#cfe9ff; }
+* { box-sizing:border-box; }
+html { background:#020309; }
+body { margin:0; overflow-x:hidden; color:var(--cream); font:500 15px/1.45 Lora, Georgia, serif; background:#020309; }
+#gl { position:fixed; inset:0; width:100%; height:100%; display:block; }
+#flash { position:fixed; inset:0; z-index:9; background:#fff; opacity:0; pointer-events:none; }
+.mono { font:500 11px/1.2 'DM Mono', monospace; letter-spacing:.12em; text-transform:uppercase; color:var(--tan); }
+.bar { position:fixed; z-index:5; left:0; right:0; top:0; height:92px; display:flex; align-items:center; gap:14px; padding:0 18px; pointer-events:none; }
+.bar > * { pointer-events:auto; }
+.bar::before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg, rgba(20,8,10,.95), rgba(20,8,10,.6) 70%, transparent); opacity:var(--k, 0); }
+.mini { margin-left:72px; opacity:var(--k, 0); transform:translateY(calc((1 - var(--k, 0)) * 8px)); pointer-events:none; }
+.mini b { display:block; font:700 18px Lora; color:var(--cream); } .mini small { font:500 10px 'DM Mono'; letter-spacing:.12em; color:var(--brass2); text-transform:uppercase; }
+.btn { white-space:nowrap; padding:9px 14px; border-radius:4px 12px 4px 12px; border:1px solid var(--wood3); background:linear-gradient(180deg, var(--wood2), var(--wood)); color:var(--cream); font:600 13px Lora; text-decoration:none; cursor:pointer; box-shadow:0 6px 14px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,225,160,.15); }
+.btn:hover { border-color:var(--brass); } .bar .right { margin-left:auto; display:flex; gap:10px; } .btn.me.on { border-color:var(--brass); color:var(--brass2); }
+.bar .back { position:absolute; left:18px; top:20px; transition:opacity .2s; opacity:calc(1 - var(--k, 0)); }
+main { position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:0 20px 60px; overflow-x:clip; } /* name effect canvases can spill wider than a phone */
+/* panels: wood, brass tab, engraved inner line, corner rivets */
+.panel { position:relative; padding:26px 20px 18px; background:linear-gradient(180deg, rgba(69,33,39,.95), rgba(33,16,20,.95)); border:1px solid var(--wood3); border-radius:4px 18px 4px 18px;
+  outline:1px solid rgba(201,150,69,.4); outline-offset:-7px; box-shadow:0 16px 34px rgba(0,0,0,.55); }
+.panel::after { content:""; position:absolute; inset:0; pointer-events:none; border-radius:inherit;
+  background:radial-gradient(circle at 12px 12px, #ffe1a0 0 2px, #8a6428 2.5px, transparent 3.5px), radial-gradient(circle at calc(100% - 12px) 12px, #ffe1a0 0 2px, #8a6428 2.5px, transparent 3.5px),
+  radial-gradient(circle at 12px calc(100% - 12px), #ffe1a0 0 2px, #8a6428 2.5px, transparent 3.5px), radial-gradient(circle at calc(100% - 12px) calc(100% - 12px), #ffe1a0 0 2px, #8a6428 2.5px, transparent 3.5px); }
+.tab { position:absolute; z-index:1; top:-13px; left:18px; padding:4px 12px; background:linear-gradient(180deg, var(--brass2), var(--brass)); color:var(--wood); font:600 12px Lora; letter-spacing:.08em; text-transform:uppercase; border-radius:4px 10px 4px 10px; box-shadow:0 2px 6px rgba(0,0,0,.4); white-space:nowrap; }
+.tab::before { content:"✦ "; }
+/* hero */
+.hero { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; padding-bottom:11vh; text-align:center; pointer-events:none; }
+.hero > * { pointer-events:auto; }
+.plate { position:relative; max-width:calc(100vw - 32px); padding:22px 26px 18px; background:linear-gradient(180deg, var(--wood2), var(--wood)); border:1px solid var(--wood3); border-radius:4px 18px 4px 18px; outline:1px solid rgba(201,150,69,.4); outline-offset:-7px; box-shadow:0 18px 40px rgba(0,0,0,.6), inset 0 1px 0 rgba(255,225,160,.15); }
+/* the name stays on the builder's paper (decorations are designed for it), mounted on the plate */
+.who { position:relative; display:flex; align-items:center; gap:14px; padding:14px 26px 12px; border-radius:2px; transform:rotate(-1.2deg); color:#3d1e0a;
+  background-color:#f0e0c0; background-image:radial-gradient(ellipse 60% 40% at 8% 18%, rgba(140,80,30,.06), transparent 70%), repeating-linear-gradient(transparent 0 30px, rgba(120,75,35,.2) 30px 31px);
+  box-shadow:0 10px 24px rgba(0,0,0,.55), inset 0 0 28px rgba(180,130,60,.14); }
+.tape { position:absolute; width:88px; height:24px; opacity:.88; background:repeating-linear-gradient(90deg, rgba(255,255,255,.18) 0 6px, transparent 6px 12px), var(--tape); box-shadow:0 1px 2px rgba(0,0,0,.2); }
+.tape.top-center { top:-12px; left:50%; margin-left:-44px; transform:rotate(-3deg); } .tape.top-left { top:-10px; left:-22px; transform:rotate(-14deg); }
+.tape.top-right { top:-10px; right:-22px; transform:rotate(14deg); } .tape.corner-tl { top:8px; left:-30px; transform:rotate(-45deg); }
+.pfp { width:50px; height:50px; border-radius:50%; border:2px solid rgba(61,30,10,.35); object-fit:cover; background:#c9a76e; }
+.name-line { display:flex; flex-wrap:nowrap; white-space:nowrap; justify-content:center; align-items:baseline; gap:0 .3em; min-width:0; font-size:clamp(24px, 5.4vw, 50px); }
+.type { margin:16px 0 0; font:500 13px 'DM Mono'; letter-spacing:.14em; text-transform:uppercase; color:var(--brass2); }
+.type .sep { color:var(--wood3); margin:0 .5em; }
+.next { width:min(440px, 86vw); margin-top:14px; } .next span { display:block; margin-top:8px; font-size:14px; color:var(--tan); } .next b { color:var(--cream); }
+.scroll-hint { margin-top:24px; font:500 10px 'DM Mono'; letter-spacing:.16em; color:var(--tan); text-transform:uppercase; animation:bob 2s ease-in-out infinite; } @keyframes bob { 50% { transform:translateY(5px); } }
+/* meteor bar: white-hot head at your progress, tail burning back in --c, dotted sky ahead */
+.meteor { position:relative; height:16px; background:radial-gradient(circle, rgba(255,225,160,.35) 0 1px, transparent 1.5px) 0 50% / 9px 16px repeat-x; }
+.meteor i { display:block; height:100%; width:var(--p); background:linear-gradient(90deg, transparent, color-mix(in srgb, var(--c) 18%, transparent) 35%, var(--c) 82%, #fff 98%);
+  clip-path:polygon(0 47%, calc(100% - 8px) 18%, 100% 50%, calc(100% - 8px) 82%, 0 53%); filter:drop-shadow(0 0 6px var(--c)); animation:burn 1.6s ease-in-out infinite alternate; }
+.meteor::after { content:""; position:absolute; left:var(--p); top:50%; width:12px; height:12px; margin:-6px 0 0 -9px; border-radius:50%;
+  background:radial-gradient(circle, #fff 0 35%, var(--c) 70%, transparent 72%); box-shadow:0 0 10px #fff, 0 0 22px var(--c), 0 0 40px var(--c); }
+.meteor.none i, .meteor.none::after { display:none; }
+@keyframes burn { to { filter:drop-shadow(0 0 10px var(--c)) brightness(1.15); } }
+/* numbers */
+.row { display:grid; grid-template-columns:300px 1fr; gap:22px; margin-top:10px; }
+.medal { display:grid; place-items:center; } .medal svg { width:236px; height:236px; }
+.medal .num { font:700 52px Lora; fill:var(--cream); } .medal .of { font:500 13px 'DM Mono'; fill:var(--brass2); letter-spacing:.1em; }
+.grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:22px 14px; }
+.stat b { display:block; font:700 32px/1.05 Lora; color:var(--cream); text-shadow:0 0 18px rgba(98,234,215,.35); } .stat .mono { display:block; margin-top:8px; }
+.stat.wide { grid-column:span 2; padding-right:132px; } .stat.wide b { color:var(--aur); font-size:clamp(22px, 2.6vw, 30px); }
+.stat.wide::before { content:""; position:absolute; right:22px; top:50%; width:92px; height:92px; margin-top:-46px; border-radius:50%;
+  background:radial-gradient(circle, #fff 0 2px, var(--star) 3px, transparent 9px), url(static/resources/sky/stars_patch.jpg) 60% 40% / 280px; box-shadow:inset 0 0 18px #000, 0 0 0 4px var(--brass), 0 0 0 6px #5b3b1c, 0 0 0 7px rgba(255,225,160,.4); }
+.gems { display:flex; flex-wrap:wrap; gap:10px; margin:26px 0 8px; }
+.gem { display:flex; align-items:center; gap:10px; padding:8px 14px 8px 8px; border-radius:99px; background:rgba(33,16,20,.92); border:1px solid var(--wood3); font:600 14px Lora; color:var(--cream); }
+.gem i { width:28px; height:28px; border-radius:50%; display:grid; place-items:center; font:700 13px Lora; font-style:normal; color:var(--wood); background:var(--m); box-shadow:0 0 10px var(--m); border:2px solid var(--brass); }
+.gem small { display:block; font:500 10px 'DM Mono'; color:var(--tan); letter-spacing:.08em; text-transform:uppercase; }
+.two { display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:30px; }
+.cat { display:grid; grid-template-columns:100px 1fr 58px; gap:12px; align-items:center; margin:14px 0; font:600 14px Lora; color:var(--cream); }
+.cat b { font:500 12px 'DM Mono'; color:var(--tan); text-align:right; } .cat b em { font-style:normal; color:var(--cream); }
+.list { list-style:none; margin:0; padding:0; } .list li { display:flex; justify-content:space-between; gap:12px; align-items:center; padding:11px 0; border-top:1px solid rgba(201,150,69,.2); }
+.list li:first-child { border-top:0; } .list b { display:block; font:600 15px Lora; } .list small { font:500 11px 'DM Mono'; color:var(--tan); letter-spacing:.06em; text-transform:uppercase; }
+.list em { font:500 13px 'DM Mono'; font-style:normal; color:var(--rare, var(--aur)); white-space:nowrap; text-align:right; } .list em small { display:block; font-size:9px; }
+.founded { margin-top:30px; } .founded .grid2 { display:grid; grid-template-columns:repeat(auto-fill, minmax(230px, 1fr)); gap:10px; }
+.moon { display:flex; gap:12px; align-items:center; padding:10px 12px; border-radius:4px 12px 4px 12px; background:rgba(0,0,0,.25); border:1px solid rgba(201,150,69,.22); transition:border-color .2s, box-shadow .2s; }
+.moon i { flex:none; width:18px; height:18px; border-radius:50%; background:radial-gradient(circle at 35% 35%, #f3ecdf, #8c877e 60%, #2a2a30); box-shadow:0 0 10px rgba(207,233,255,.25); }
+.moon.on { border-color:var(--brass2); box-shadow:0 0 16px rgba(255,225,160,.25); } .moon b { display:block; font:600 14px Lora; } .moon small { font:500 10px 'DM Mono'; color:var(--tan); letter-spacing:.06em; text-transform:uppercase; }
+.cta { display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-top:34px; }
+.cta a { padding:14px 22px; border-radius:4px 14px 4px 14px; font:700 15px Lora; text-decoration:none; }
+.cta .dress { background:linear-gradient(90deg, var(--aur), var(--aur2)); color:#062a2a; box-shadow:0 6px 0 #2a8a8a, 0 0 24px rgba(98,234,215,.35); }
+.cta .galaxy { background:linear-gradient(180deg, var(--wood2), var(--wood)); color:var(--cream); border:1px solid var(--wood3); }
+.credit { margin-top:30px; text-align:center; font:500 10px 'DM Mono'; color:#6b4d3c; }
+.tip { position:fixed; z-index:6; pointer-events:none; padding:7px 11px; border-radius:4px 10px 4px 10px; background:linear-gradient(180deg, var(--wood2), var(--wood)); border:1px solid var(--brass); font:600 13px Lora; color:var(--cream); white-space:nowrap; transform:translate(14px, -50%); opacity:0; transition:opacity .15s; }
+.tip small { display:block; font:500 9px 'DM Mono'; letter-spacing:.12em; color:var(--brass2); text-transform:uppercase; }
+.missing { min-height:100vh; display:grid; place-items:center; text-align:center; } .missing h2 { font:700 28px Lora; }
+body.nogl #gl { background:radial-gradient(circle at 50% 30%, var(--c, #ffd9a0) 0 60px, rgba(255,200,120,.25) 61px, transparent 180px), #020309; }
+
+/* logbook: every charted achievement; theirs lit in category colour, the rest locked with how many have it */
+.logbook { margin-top:30px; }
+.lb-bar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:4px 0 10px; }
+.lb-chip { padding:6px 11px; border-radius:99px; border:1px solid var(--wood3); background:rgba(0,0,0,.28); color:var(--cream); font:500 11px 'DM Mono'; letter-spacing:.06em; text-transform:uppercase; cursor:pointer; }
+.lb-chip i { font-style:normal; color:var(--tan); margin-left:6px; } .lb-chip[aria-pressed=true] { background:linear-gradient(180deg, var(--brass2), var(--brass)); color:var(--wood); border-color:var(--brass); } .lb-chip[aria-pressed=true] i { color:var(--wood2); }
+.lb-chip.lbcat::before { content:""; display:inline-block; width:8px; height:8px; margin-right:7px; border-radius:50%; background:var(--c); box-shadow:0 0 6px var(--c); }
+.lb-tools { margin-left:auto; display:flex; gap:8px; }
+.lb-tools select, .lb-tools input { padding:7px 10px; border-radius:8px; border:1px solid var(--wood3); background:rgba(0,0,0,.35); color:var(--cream); font:500 12px 'DM Mono'; }
+.lb-tools input { width:170px; }
+.lb-count { margin:6px 0 12px; font:500 11px 'DM Mono'; letter-spacing:.1em; text-transform:uppercase; color:var(--tan); }
+.lb-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(255px, 1fr)); gap:12px; }
+.ach { position:relative; display:grid; grid-template-columns:40px 1fr; gap:12px; padding:14px 14px 12px; border-radius:4px 14px 4px 14px; overflow:hidden;
+  background:linear-gradient(180deg, rgba(69,33,39,.92), rgba(33,16,20,.95)); border:1px solid rgba(201,150,69,.25); transition:transform .2s, border-color .2s, filter .3s; }
+.ach:hover { transform:translateY(-3px); border-color:var(--brass); }
+.ach[hidden] { display:none; }
+.ach .ico { position:relative; z-index:1; width:40px; height:40px; padding:8px; border-radius:50%; color:var(--c); background:radial-gradient(circle, rgba(0,0,0,.3), rgba(0,0,0,.6)); box-shadow:0 0 0 2px var(--brass), 0 0 0 3px #5b3b1c, 0 0 16px color-mix(in srgb, var(--c) 45%, transparent); }
+.ach .ico svg { filter:drop-shadow(0 0 4px var(--c)); }
+.ach .body { position:relative; z-index:1; min-width:0; }
+.ach b { display:block; font:600 15px/1.25 Lora; color:var(--cream); } .ach p { margin:4px 0 8px; font:400 13px/1.35 Lora; color:var(--tan); }
+.bdgs { display:flex; flex-wrap:wrap; gap:5px; }
+.bdg { padding:2px 7px; border-radius:99px; border:1px solid rgba(201,150,69,.35); font:500 9px 'DM Mono'; letter-spacing:.1em; text-transform:uppercase; color:var(--tan); white-space:nowrap; max-width:100%; overflow:hidden; text-overflow:ellipsis; }
+.bdg.founder { border:0; color:var(--wood); background:linear-gradient(90deg, #ffe1a0, #fff6dc 40%, #c99645 70%, #ffe1a0); background-size:250% 100%; }
+.bdg.earned { border-color:rgba(98,234,215,.5); color:var(--aur); } .bdg.rare { border-color:#c9a2ff; color:#d9c2ff; } .bdg.plat { border:0; color:#062a2a; background:linear-gradient(90deg, #62ead7, #cfe9ff, #5eaee9); }
+.bdg.deco { border-color:rgba(255,241,209,.4); color:var(--cream); }
+.ach .when { display:block; margin-top:8px; font:500 10px 'DM Mono'; letter-spacing:.06em; color:#a88a66; }
+.ach.rare:not(.locked) { border-color:rgba(201,162,255,.55); box-shadow:0 0 16px rgba(201,162,255,.15); }
+.ach.founded { border-color:var(--brass); }
+.ach.locked { filter:saturate(.15) brightness(.72); } .ach.locked .ico { background:none; filter:none; box-shadow:inset 0 0 0 2px rgba(255,225,160,.35); }
+.ach.locked .ico::after { content:""; position:absolute; inset:3px; background:rgba(255,225,160,.25); clip-path:inherit; }
+/* platinum: a little night sky with a moon (from 1.0), aurora once earned */
+.ach.plat { grid-column:span 2; min-height:150px; border-color:rgba(98,234,215,.45); background:#050712; }
+.psky { position:absolute; inset:0; pointer-events:none; background:radial-gradient(120% 90% at 80% 10%, rgba(94,174,233,.18), transparent 60%), linear-gradient(180deg, #070a1c, #03040b); }
+.psky i { position:absolute; width:2px; height:2px; border-radius:50%; background:#fff; opacity:var(--o); }
+.pmoon { position:absolute; right:22px; top:50%; width:64px; height:64px; margin-top:-32px; border-radius:50%;
+  background:radial-gradient(circle at 34% 30%, #fffdf3, #e8e3d6 35%, #b9b3a6 62%, #6f6a62 100%); box-shadow:0 0 30px rgba(255,248,220,.35), inset -10px -8px 18px rgba(0,0,0,.35); }
+.pmoon::after { content:""; position:absolute; inset:0; border-radius:50%; background:radial-gradient(circle at 60% 58%, rgba(0,0,0,.18) 0 7px, transparent 8px), radial-gradient(circle at 38% 66%, rgba(0,0,0,.14) 0 4px, transparent 5px), radial-gradient(circle at 66% 30%, rgba(0,0,0,.12) 0 5px, transparent 6px); }
+.paur span { position:absolute; left:-10%; right:-10%; height:40px; filter:blur(14px); opacity:.45; background:linear-gradient(90deg, transparent, #62ead7, #5eaee9, #9b7bff, transparent); }
+.paur span:nth-child(1) { top:6%; } .paur span:nth-child(2) { top:30%; opacity:.3; transform:skewY(-4deg); } .paur span:nth-child(3) { top:55%; opacity:.2; transform:skewY(3deg); }
+.ach.plat .body { padding-right:96px; } .ach.plat b { font-size:18px; }
+.lb-more { margin:16px 0 0; text-align:center; font:500 11px 'DM Mono'; letter-spacing:.12em; text-transform:uppercase; color:var(--tan); }
+
+/* category icons (never stars: people are the stars) */
+.cico { width:100%; height:100%; display:block; }
+.cat { --c:var(--aur); } .cat .cl { display:flex; align-items:center; gap:7px; min-width:0; } .cat .cl i { flex:none; width:17px; height:17px; color:var(--c); filter:drop-shadow(0 0 4px var(--c)); }
+.list li > span.txt { flex:1; min-width:0; } .li-ico { flex:none; width:30px; height:30px; padding:6px; border-radius:50%; color:var(--c); background:rgba(0,0,0,.3); box-shadow:0 0 0 1.5px var(--brass), 0 0 10px color-mix(in srgb, var(--c) 40%, transparent); }
+.lb-chip.lbcat svg { display:inline-block; width:14px; height:14px; margin-right:6px; vertical-align:-3px; color:var(--c); }
+/* platinum founder: the ultimate rarity */
+@property --ang { syntax:'<angle>'; inherits:false; initial-value:0deg; }
+.type .pf { color:#e8f7ff; text-shadow:0 0 12px rgba(159,232,255,.8); }
+.moon.plat { border-color:#9fe8ff; background:linear-gradient(90deg, rgba(159,232,255,.14), rgba(0,0,0,.25)); box-shadow:0 0 18px rgba(159,232,255,.2); }
+.moon.plat i { width:22px; height:22px; background:radial-gradient(circle at 35% 30%, #fff, #cfeeff 40%, #6aa7c9); box-shadow:0 0 14px #9fe8ff; }
+.pfc { display:inline-block; margin-left:6px; padding:1px 7px; border-radius:99px; font:500 9px 'DM Mono'; letter-spacing:.1em; color:#062a2a; background:linear-gradient(90deg, #cfe9ff, #fff, #9fe8ff); vertical-align:middle; }
+.ach.pf { grid-column:1 / -1; min-height:200px; padding:24px; border:0; }
+.ach.pf::before { content:""; position:absolute; inset:0; z-index:2; padding:2px; border-radius:inherit; pointer-events:none;
+  background:conic-gradient(from var(--ang), #62ead7, #cfe9ff, #ffe1a0, #c9a2ff, #5eaee9, #62ead7); -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; }
+.ach.pf b { font-size:26px; } .ach.pf .body { padding-right:130px; }
+.bdg.pfb { padding:4px 11px; border:0; font-size:11px; color:#062a2a; background:linear-gradient(90deg, #cfe9ff, #fff 30%, #9fe8ff 55%, #ffe1a0 80%, #cfe9ff); background-size:300% 100%; box-shadow:0 0 16px rgba(207,233,255,.55); }
+.ach .ultimate { display:block; margin-top:8px; font:500 11px 'DM Mono'; letter-spacing:.16em; text-transform:uppercase; color:#cfe9ff; text-shadow:0 0 10px rgba(159,232,255,.7); }
+.pmoon.pl { width:96px; height:96px; margin-top:-48px; right:34px; background:radial-gradient(circle at 34% 30%, #fff, #e6f6ff 30%, #a9d8f0 56%, #6aa7c9 80%, #3b5f86); box-shadow:0 0 46px rgba(159,232,255,.65), inset -12px -10px 20px rgba(0,0,0,.3); }
+.pmoon.pl::before { content:""; position:absolute; left:-34%; right:-34%; top:43%; height:14%; border-radius:50%; border:2px solid rgba(159,232,255,.75); transform:rotate(-14deg); box-shadow:0 0 12px rgba(159,232,255,.6); }
+
+/* platinum tiles: a live 3D scene behind the text (the CSS sky is the fallback) */
+.pcan { position:absolute; inset:0; width:100%; height:100%; display:block; pointer-events:none; }
+.pshade { position:absolute; inset:0; pointer-events:none; background:linear-gradient(90deg, rgba(4,6,16,.88) 0, rgba(4,6,16,.6) 38%, transparent 68%); }
+.ach.gl .psky { display:none; }
+@media (max-width:860px) { .ach.plat { grid-column:auto; } .lb-tools { margin-left:0; width:100%; } .lb-tools input { flex:1; width:auto; } }
+@media (max-width:560px) { .btn.deco { display:none; } /* the Dress up button at the bottom covers it */ }
+/* phones: the name tag goes nearly edge to edge, the picture sits above the name, and the name runs big
+   (fitName still shrinks a long prefix + name + suffix to the full width instead of wrapping) */
+@media (max-width:560px) { .hero .plate { width:calc(100vw - 12px); max-width:none; padding:18px 8px 10px; }
+  .hero .who { flex-direction:column; gap:6px; padding:10px 8px 8px; } .who .name-line { align-self:stretch; font-size:clamp(28px, 9vw, 44px); } }
+@media (max-width:860px) { .row, .two { grid-template-columns:1fr; } .grid { grid-template-columns:repeat(2, 1fr); } .stat.wide { padding-right:20px; } .stat.wide::before { display:none; }
+  .bar { height:76px; } .mini { margin-left:60px; } .mini b { font-size:15px; } .btn { padding:8px 11px; font-size:12px; } .plate { padding:20px 14px 14px; } .who { padding:12px 16px 10px; } }
+@media (prefers-reduced-motion: reduce) { .scroll-hint, .meteor i { animation:none; } }
+</style>
+<script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }</script>
 </head>
 <body>
-  <main>
-    <div class="eyebrow">TheDogVT · Achievements</div>
-    <h1>Under development</h1>
-    <p>We’re giving the achievement website some love.<br>Come back on <time datetime="2026-11-01">November 1, 2026</time>.</p>
-    <p>Achievements unlock on debut</p>
-  </main>
+<canvas id="gl" aria-hidden="true"></canvas>
+<div id="flash"></div>
+<div class="bar" id="bar">
+  <a class="btn back" id="back" href="index.html">← Back to the galaxy</a>
+  <div class="mini"><b id="mini-name"></b><small id="mini-type"></small></div>
+  <div class="right"><a class="btn deco" id="nav-deco" href="builder.html">Decorations</a><button class="btn me" id="me" type="button">This is me</button></div>
+</div>
+<main id="main">
+  <section class="hero">
+    <div class="plate"><span class="tab" id="kind-tab"></span><div class="who"><img class="pfp" id="pfp" alt=""><div class="name-line"><span class="name-prefix name-tag" id="n-prefix"></span><span class="name-base name-tag" id="n-base"></span><span class="name-suffix name-tag" id="n-suffix"></span></div></div></div>
+    <p class="type" id="type"></p>
+    <div class="next" id="next"></div>
+    <div class="scroll-hint">▼ scroll for the numbers</div>
+  </section>
+  <section class="row">
+    <div class="panel medal"><span class="tab">Achievements</span><svg id="astro" viewBox="0 0 220 220" role="img"></svg></div>
+    <div class="grid" id="stats"></div>
+  </section>
+  <div class="gems" id="medals"></div>
+  <section class="two">
+    <div class="panel"><span class="tab">Categories</span><div id="cats"></div></div>
+    <div class="panel"><span class="tab">Latest unlocks</span><ul class="list" id="latest"></ul></div>
+  </section>
+  <section class="panel founded" id="founded-card"><span class="tab">Founded · each one is a moon</span><div class="grid2" id="founded"></div></section>
+  <section class="panel logbook" id="logbook"><span class="tab">Logbook</span>
+    <div class="lb-bar" id="lb-show"></div>
+    <div class="lb-bar"><span id="lb-cats" style="display:contents"></span><span class="lb-tools"><select id="lb-sort" aria-label="Sort"><option value="new">Newest</option><option value="rare">Rarest first</option><option value="az">A–Z</option></select><input id="lb-q" type="search" placeholder="Search" aria-label="Search achievements"></span></div>
+    <p class="lb-count" id="lb-count"></p>
+    <div class="lb-grid" id="lb-grid"></div>
+    <p class="lb-more" id="lb-more"></p>
+  </section>
+  <div class="cta"><a class="dress" id="dress" href="builder.html">Dress up your name ↗</a><a class="galaxy" id="back2" href="index.html">See the whole galaxy</a></div>
+  <p class="credit">Background stars: NASA/Goddard SVS Deep Star Maps</p>
+</main>
+<div class="tip" id="tip"></div>
+<script>window.DECORATION_NAME_CONFIG = {}; window.PUPPY_IMG_BASE = 'static/resources/backgrounds/';</script>
+<script src="static/js/builder/card/name/effects_manifest.js"></script>
+<script src="static/js/builder/card/particle_engine.js"></script>
+<script src="static/js/builder/card/name/translate-core.js"></script>
+<script src="static/js/builder/card/name/translate-glow.js"></script>
+<script src="static/js/builder/card/name/translate-effects.js"></script>
+<script src="static/js/builder/card/name/name.js"></script>
+<script type="module">
+// Published names (usernames, achievement names) go into innerHTML below; escape every one.
+function escHtml(t) { return String(t ?? '').replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch])); }
+import * as THREE from 'three';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+import { kelvin, BANDS, bandOf, CATS, NOISE, starMat, coronaMat, catIcon } from './stars.js';
+import { get, loadPack, showLoadFailure } from './pack.js';
+
+const $ = id => document.getElementById(id);
+let remembered = ''; try { remembered = localStorage.getItem('cosmic.me') || ''; } catch (e) {}
+const q = new URLSearchParams(location.search), want = (q.get('u') || remembered).trim().replace(/^@/, '').toLowerCase(), fromGalaxy = q.get('from') === 'galaxy';
+if (!want) { location.replace('index.html#find'); await new Promise(() => {}); } // no name and nobody remembered: go find one
+const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// ---------------------------------------------------------------- data
+const [map, pack, catalog, founders] = await Promise.all([get('username_map.json'), loadPack(), get('decoration_catalog.json'), get('founders.json')])
+  .catch(e => { showLoadFailure(); throw e; });
+const sky = pack.rows, sm = pack.starmap, achDefs = pack.achDefs; // derived in the browser from community.json + achievements.json
+let uname = Object.keys(map).find(k => k.toLowerCase() === want);
+if (!uname) { const safe = want.replace(/[&<>"]/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch])); $('main').innerHTML = `<div class="missing"><div><h2>No star called “${safe}” yet</h2><p class="mono">Chat on stream and earn your first achievement to light one up.</p><p><a class="btn" href="index.html#find">Find a star</a></p></div></div>`; await new Promise(() => {}); /* stop here quietly: nothing else on this page applies */ }
+const user = await get(`users/${map[uname]}.json`).catch(e => { showLoadFailure(); throw e; });
+const ranked = sky.slice().sort((a, b) => b[1] - a[1]), rank = ranked.findIndex(r => r[0].toLowerCase() === want), N = ranked.length; // the two files can differ in capitalisation
+if (rank >= 0) uname = ranked[rank][0]; // show the name as the pack sees it, not the lowercase map key
+const earnedN = ranked[rank][1], tier = user.legacy || 0, isQuasar = rank === 0 && ranked[0][1] > 0, isRunaway = tier === 2 && !isQuasar;
+const b = bandOf(earnedN), B = BANDS[b];
+const defs = {}, catTotal = {};
+for (const c of sm.categories) { catTotal[c.cat] = c.stars.length; for (const [id, name, earners] of c.stars) defs[id] = { name: name.replace(/^\(Platinum\)\s*/, ''), plat: name.startsWith('(Platinum)'), cat: c.cat, earners }; } // Platinum is a flag, not part of the name
+const earned = Object.entries(user.achievements.earned || {}).filter(([id]) => defs[id]).map(([id, at]) => ({ id, at: new Date(at), ...defs[id] }));
+const founded = Object.entries(user.achievements.founded || {}).filter(([id]) => defs[id]).map(([id, at]) => ({ id, at: new Date(at), ...defs[id] })).sort((a, c) => (c.plat - a.plat) || (a.at - c.at)); // platinum founded first
+const catHave = {}; earned.forEach(e => { catHave[e.cat] = (catHave[e.cat] || 0) + 1; });
+const topCat = Object.entries(catHave).sort((a, c) => c[1] - a[1])[0]?.[0] || 'chat';
+const pct = n => (n * 100 >= 10 ? Math.round(n * 100) : (n * 100).toFixed(1)) + '%';
+const rel = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
+const ago = d => { const s = (d - Date.now()) / 1000, A = Math.abs(s); for (const [u, n] of [['year', 31536e3], ['month', 2592e3], ['week', 604800], ['day', 86400], ['hour', 3600], ['minute', 60]]) if (A >= n) return rel.format(Math.round(s / n), u); return 'just now'; };
+const monthName = ym => new Date(ym + '-15').toLocaleDateString('en', { month: 'short', year: 'numeric' });
+const starHex = '#' + kelvin(B.K).getHexString();
+document.documentElement.style.setProperty('--starc', starHex); // the fx layer tints things with their star
+
+// ---------------------------------------------------------------- page text
+document.title = `${uname} · Star Profile`;
+const paint = (el, id, text) => {
+  const tr = window.DECORATION_NAME_TRANSLATOR; if (!tr) { el.textContent = text || ''; return; }
+  const config = id && catalog[id] ? { ...(catalog[id].config || {}) } : {}; if (text !== undefined) config.text = text;
+  tr.applyTagPresentation(el, config, 'name-tag');
+};
+const act = (user.decorations && user.decorations.active) || {};
+act.name_prefix ? paint($('n-prefix'), act.name_prefix) : $('n-prefix').remove();
+paint($('n-base'), act.name_base, uname);
+act.name_suffix ? paint($('n-suffix'), act.name_suffix) : $('n-suffix').remove();
+// a long username + prefix + suffix shrinks to the tag instead of wrapping (same rule as the builder and the
+// stream's chat; this line is centred, so it scales from its centre)
+const fitName = () => {
+  const line = document.querySelector('.who .name-line'); if (!line) return;
+  line.style.transform = ''; const room = line.clientWidth;
+  // it sits beside the picture as a flex item, so stop flex from squeezing it while measuring
+  line.style.flex = '0 0 auto'; line.style.width = 'max-content'; const natural = line.offsetWidth; line.style.width = ''; line.style.flex = '';
+  const scale = room > 0 && natural > 0 ? Math.min(1, room / natural) : 1;
+  if (scale < 1) { line.style.transformOrigin = 'center'; line.style.transform = `scale(${scale.toFixed(4)})`; }
+};
+fitName(); addEventListener('resize', fitName);
+if (document.fonts) { document.fonts.ready.then(fitName); document.fonts.addEventListener?.('loadingdone', fitName); }
+if (user.pfp_url) $('pfp').src = user.pfp_url; else $('pfp').remove();
+const kind = isQuasar ? 'Quasar' : isRunaway ? `Legendary runaway · ${B.name}` : b === 0 ? 'Protostar' : `${B.name} star`;
+{ const TAPE = { washi_pink: '#f3a6c8', washi_mint: '#9fe3cf', washi_gold: '#f2cf74', washi_lavender: '#c5b5ef' };
+  if (TAPE[act.washi_color]) { const t = document.createElement('i'); t.className = 'tape ' + String(act.washi_position || 'washi_top_center').replace('washi_', '').replace('_', '-'); t.style.setProperty('--tape', TAPE[act.washi_color]); document.querySelector('.who').appendChild(t); } }
+$('kind-tab').textContent = kind;
+const legacyTag = tier === 1 ? 'Legacy binary' : tier === 2 ? 'Legendary' : '';
+const toQuasar = ranked[0][1] - earnedN;
+const platF = founded.filter(f => f.plat).length;
+$('type').innerHTML = [platF && `<span class="pf">✦ Platinum founder${platF > 1 ? ' ×' + platF : ''}</span>`, legacyTag, `#${rank + 1} of ${N}`, isQuasar ? 'the quasar' : ranked[0][1] > 0 ? `${toQuasar} from the quasar` : ''].filter(Boolean).join('<span class="sep">·</span>');
+$('mini-name').textContent = uname; $('mini-type').textContent = `${kind} · #${rank + 1}`;
+{ // progress to the next temperature as a meteor (star colour burning toward the next band), or the quasar race
+  const el = $('next'), next = BANDS[b + 1];
+  if (isQuasar) el.innerHTML = `<span><b>The core of the galaxy.</b> Most achievements in the pack${ranked[1] ? ` · ${earnedN - ranked[1][1]} ahead of ${escHtml(ranked[1][0])}` : ''}</span>`;
+  else if (!next) el.innerHTML = `<span><b>Hottest band reached.</b> ${toQuasar} achievement${toQuasar === 1 ? '' : 's'} from the quasar</span>`;
+  else el.innerHTML = `<div class="meteor" style="--p:${Math.max(4, (earnedN - B.min) / (next.min - B.min) * 100)}%;--c:#${kelvin(next.K).getHexString()}"><i></i></div><span><b>${next.min - earnedN} more</b> to burn ${next.name}</span>`;
+}
+{ // "stars collected" gauge: one thick ring that fills to earned / discovered with their star riding the tip;
+  // a clean brass bezel with ten notches (each 10%) so "about half full" reads at a glance
+  const frac = sm.discovered ? earnedN / sm.discovered : 0, C = 2 * Math.PI * 76; // debut day: nothing discovered yet
+  let notches = ''; for (let i = 0; i < 10; i++) { const a = i / 10 * 6.283; notches += `<circle cx="${110 + Math.sin(a) * 94}" cy="${110 - Math.cos(a) * 94}" r="${i ? 1.7 : 2.6}" fill="#c99645"/>`; }
+  $('astro').dataset.frac = frac; $('astro').dataset.n = earnedN;
+  $('astro').setAttribute('aria-label', `${earnedN} of ${sm.discovered} achievements`);
+  $('astro').innerHTML = `<defs><linearGradient id="aurP" x1="0" x2="1"><stop offset="0" stop-color="#62ead7"/><stop offset="1" stop-color="#5eaee9"/></linearGradient><filter id="glP" x="-1" y="-1" width="3" height="3"><feGaussianBlur stdDeviation="3"/></filter></defs>
+    <circle cx="110" cy="110" r="102" fill="none" stroke="#c99645" stroke-width="1.4"/><circle cx="110" cy="110" r="99" fill="none" stroke="rgba(201,150,69,.3)"/>${notches}
+    <circle cx="110" cy="110" r="76" fill="none" stroke="rgba(0,0,0,.45)" stroke-width="15"/>
+    <circle class="prog" cx="110" cy="110" r="76" fill="none" stroke="url(#aurP)" stroke-width="15" stroke-linecap="round" stroke-dasharray="${C * frac} ${C}" transform="rotate(-90 110 110)"/>
+    <g class="tip" transform="rotate(${frac * 360} 110 110)"><circle cx="110" cy="34" r="10" fill="${starHex}" filter="url(#glP)"/><circle cx="110" cy="34" r="4.2" fill="#fff"/></g>
+    <text x="110" y="118" text-anchor="middle" class="num">${earnedN}</text><text x="110" y="146" text-anchor="middle" class="of">OF ${sm.discovered} · ${pct(frac)}</text>`;
+}
+const rarest = earned.slice().sort((a, c) => a.earners - c.earners)[0];
+$('stats').innerHTML = [
+  ['Founded', founded.length, 'first in the pack'],
+  ['Rank', `#${rank + 1}`, `of ${N} stars`],
+  ['Chat', (user.stats?.messages || 0).toLocaleString(), 'messages'],
+  ['With us', user.stats?.active_months || 0, `months${user.stats?.first_seen ? ' · since ' + monthName(user.stats.first_seen) : ''}`],
+  ['Rarest', rarest ? rarest.name : '—', rarest ? `${pct(rarest.earners / N)} of the pack` : 'nothing yet', 'wide'],
+  ['Style', (user.decorations?.unlocked || []).length, 'decorations'],
+  ['Top month', `${(user.top_months || []).filter(m => m.rank === 1).length}×`, '#1 finishes'],
+].map(([tab, v, k, cls = '']) => `<div class="panel stat ${cls}"><span class="tab">${tab}</span><b>${v}</b><span class="mono">${k}</span></div>`).join('');
+const KIND = { cheers: 'Bits', donations: 'Donations', chat: 'Chat', gifted: 'Gifted', gifts: 'Gifted', subs: 'Gifted' };
+$('medals').innerHTML = (user.top_months || []).slice().sort((a, c) => a.rank - c.rank || c.month.localeCompare(a.month)).map(m =>
+  `<span class="gem" style="--m:${['#ffe1a0', '#d9e0f2', '#d08a4a'][m.rank - 1] || '#7a5a48'}"><i>${m.rank}</i><span>${KIND[m.kind] || m.kind}<small>${monthName(m.month)}</small></span></span>`).join('');
+$('cats').innerHTML = Object.keys(CATS).filter(c => catTotal[c]).map(c => {
+  const have = catHave[c] || 0, [label, col] = CATS[c];
+  return `<div class="cat" style="--c:${col}"><span class="cl"><i>${catIcon(c)}</i>${label}</span><div class="meteor${have ? '' : ' none'}" style="--c:${col};--p:${Math.max(have ? 3 : 0, have / catTotal[c] * 100)}%"><i></i></div><b><em>${have}</em>/${catTotal[c]}</b></div>`;
+}).join('');
+if (!$('cats').innerHTML) $('cats').innerHTML = '<p style="margin:0;color:var(--tan)">Categories appear as the pack discovers achievements.</p>';
+const rareCol = r => r < .02 ? '#ffe1a0' : r < .06 ? '#c9a2ff' : r < .15 ? '#5eaee9' : 'var(--aur)';
+$('latest').innerHTML = earned.slice().sort((a, c) => c.at - a.at).slice(0, 6).map(e =>
+  `<li style="--rare:${rareCol(e.earners / N)};--c:${CATS[e.cat]?.[1] || '#888'}"><span class="li-ico">${catIcon(e.cat)}</span><span class="txt"><b>${escHtml(e.name)}</b><small>${CATS[e.cat]?.[0] || e.cat} · ${ago(e.at)}</small></span><em>${pct(e.earners / N)}<small>have it</small></em></li>`).join('');
+if (!earned.length) $('latest').innerHTML = '<li><span class="txt" style="color:var(--tan)">Nothing yet. Earn an achievement on stream and it lands here.</span></li>';
+if (founded.length) $('founded').innerHTML = founded.map((f, i) => `<div class="moon${f.plat ? ' plat' : ''}" data-i="${i}"><i></i><span><b>${escHtml(f.name)}${f.plat ? '<span class="pfc">✦ PLATINUM</span>' : ''}</b><small>${CATS[f.cat]?.[0] || f.cat} · first on ${f.at.toLocaleDateString('en', { day: 'numeric', month: 'short', year: 'numeric' })}${i >= 12 ? ' · beyond the 12 moons' : ''}</small></span></div>`).join('');
+else $('founded-card').innerHTML = '<span class="tab">Founded</span><p style="margin:0;color:var(--tan)">No moons yet. Be the first to unlock something and it starts orbiting your star.</p>';
+{ // logbook: only the achievements they have (nothing locked is shown); platinum gets a sky, platinum founder is the ultimate
+  const esc = t => String(t).replace(/[&<>"]/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch]));
+  const desc = {}; for (const c of Object.values(achDefs)) for (const [id, v] of Object.entries(c)) desc[id] = v.desc;
+  const deco = {}; for (const e of Object.values(catalog)) if (e.achievement_id) (deco[e.achievement_id] ||= []).push(e);
+  const SLOT = { name_prefix: 'Prefix', name_base: 'Name style', name_suffix: 'Suffix', message_text: 'Message style', card_background: 'Card style' };
+  const mine = Object.fromEntries(earned.map(e => [e.id, e])), mineF = new Set(founded.map(f => f.id));
+  founded.forEach(fd => { if (!mine[fd.id]) mine[fd.id] = fd; }); // founding something means having it, even if the earned list missed it
+  const day = d => d.toLocaleDateString('en', { day: 'numeric', month: 'short', year: 'numeric' });
+  const all = Object.keys(mine).filter(id => defs[id]).map(id => ({ id, ...defs[id], desc: desc[id] || '', got: mine[id], fd: mineF.has(id), first: founders[id]?.founder_name }));
+  all.forEach(a => { a.pf = a.plat && a.fd; });
+  const have = {}; all.forEach(a => { have[a.cat] = (have[a.cat] || 0) + 1; });
+  const sky = pf => { let st = ''; for (let i = 0; i < (pf ? 60 : 34); i++) st += `<i style="left:${(i * 37 % 96) + 2}%;top:${(i * 53 % 88) + 5}%;--t:${(i % 7) * .55}s;--o:${(.3 + (i * 13 % 7) / 10).toFixed(2)}"></i>`; return `<div class="psky">${st}<div class="paur"><span></span><span></span><span></span></div><div class="pmoon${pf ? ' pl' : ''}"></div></div>`; };
+  const el = a => {
+    const share = a.earners / N, rare = a.earners > 0 && share <= .05, col = CATS[a.cat]?.[1] || '#9aa3b8', reward = (deco[a.id] || [])[0];
+    const badges = [a.pf ? '<span class="bdg pfb">✦ Platinum founder</span>' : a.plat && '<span class="bdg plat">Platinum</span>',
+      !a.pf && a.fd && '<span class="bdg founder">✦ Founder</span>',
+      a.earners ? `<span class="bdg${rare ? ' rare' : ''}">Top ${pct(share)}</span>` : '',
+      reward && `<span class="bdg deco" title="Unlocks a decoration">✿ ${SLOT[reward.slot] || 'Decoration'}${reward.config?.text ? ' “' + esc(reward.config.text) + '”' : ''}</span>`].filter(Boolean).join('');
+    const when = `${a.fd ? 'Founded' : 'Unlocked'} ${day(a.got.at)}${!a.fd && a.first ? ' · first: ' + esc(a.first) : ''}`;
+    const n = document.createElement('article');
+    n.dataset.seed = a.id;     n.className = `ach${a.fd ? ' founded' : ''}${a.plat ? ' plat' : ''}${a.pf ? ' pf' : ''}${rare ? ' rare' : ''}`; n.style.setProperty('--c', col);
+    n.innerHTML = `${a.plat ? sky(a.pf) : ''}<span class="ico">${catIcon(a.cat)}</span><div class="body"><b>${esc(a.name)}</b><p>${esc(a.desc)}</p><div class="bdgs">${badges}</div><span class="when">${when}</span>${a.pf ? '<span class="ultimate">Ultimate rarity · first in the whole pack to a Platinum</span>' : ''}</div>`;
+    return n;
+  };
+  const tiles = all.map(a => ({ a, n: el(a) }));
+  const f = { show: 'all', cat: null, q: '', sort: 'new' };
+  const nPlat = all.filter(a => a.plat).length;
+  const SHOW = [['all', 'All', all.length], ['founded', 'Founded', all.filter(a => a.fd).length], nPlat && ['plat', 'Platinum', nPlat]].filter(Boolean);
+  $('lb-show').innerHTML = SHOW.map(([k, l, c]) => `<button class="lb-chip" data-show="${k}" aria-pressed="${k === 'all'}">${l}<i>${c}</i></button>`).join('');
+  $('lb-cats').innerHTML = Object.keys(CATS).filter(c => have[c]).map(c => `<button class="lb-chip lbcat" data-cat="${c}" style="--c:${CATS[c][1]}" aria-pressed="false">${catIcon(c)}${CATS[c][0]}<i>${have[c]}</i></button>`).join('');
+  const pin = (x, y) => (y.a.pf - x.a.pf); // platinum founder always on top
+  const order = { new: (x, y) => pin(x, y) || (y.a.got.at - x.a.got.at), rare: (x, y) => pin(x, y) || ((x.a.earners || 1e9) - (y.a.earners || 1e9)), az: (x, y) => pin(x, y) || x.a.name.localeCompare(y.a.name) };
+  const draw = () => {
+    const q = f.q.trim().toLowerCase(); let shown = 0;
+    const list = tiles.slice().sort(order[f.sort]);
+    for (const { a, n } of list) {
+      const ok = (f.show === 'all' || (f.show === 'founded' && a.fd) || (f.show === 'plat' && a.plat)) && (!f.cat || a.cat === f.cat) && (!q || a.name.toLowerCase().includes(q) || a.desc.toLowerCase().includes(q));
+      n.hidden = !ok; if (ok) shown++;
+    }
+    $('lb-grid').append(...list.map(t => t.n));
+    $('lb-count').textContent = shown === all.length ? `${all.length} earned` : `${shown} of ${all.length} earned`;
+    document.dispatchEvent(new Event('logbook:drawn'));
+  };
+  $('lb-show').addEventListener('click', e => { const b = e.target.closest('[data-show]'); if (!b) return; f.show = b.dataset.show; $('lb-show').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', String(x === b))); draw(); });
+  $('lb-cats').addEventListener('click', e => { const b = e.target.closest('[data-cat]'); if (!b) return; f.cat = f.cat === b.dataset.cat ? null : b.dataset.cat; $('lb-cats').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', String(x.dataset.cat === f.cat))); draw(); });
+  $('lb-sort').addEventListener('change', e => { f.sort = e.target.value; draw(); });
+  $('lb-q').addEventListener('input', e => { f.q = e.target.value; draw(); });
+  const left = sm.discovered - all.length;
+  $('lb-more').textContent = !sm.discovered ? 'Nothing has been discovered yet. Unlock the first achievement on stream.' : !all.length ? `${sm.discovered} out there to earn. Your first one ignites your star.` : left > 0 ? `${left} more out there to earn${sm.total > sm.discovered ? ` · ${sm.total - sm.discovered} nobody has found yet` : ''}` : 'Every discovered achievement. Legend.';
+  draw();
+}
+$('dress').href = $('nav-deco').href = `builder.html?user=${encodeURIComponent(uname)}`;
+try { if (localStorage.getItem('cosmic.me') === uname) { $('me').classList.add('on'); $('me').textContent = "That's you ✓"; } } catch (e) {}
+$('me').addEventListener('click', () => { try { localStorage.setItem('cosmic.me', uname); } catch (e) {} $('me').classList.add('on'); $('me').textContent = "That's you ✓"; });
+
+// ---------------------------------------------------------------- the star, in WebGL
+const glc = $('gl');
+let renderer;
+try { renderer = new THREE.WebGLRenderer({ canvas: glc, antialias: true, powerPreference: 'high-performance' }); }
+catch (e) { document.body.classList.add('nogl'); document.body.style.setProperty('--c', starHex); throw e; }
+const PR = Math.min(devicePixelRatio || 1, 2);
+renderer.setPixelRatio(PR); renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.0;
+const scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(35, 1, .1, 400); camera.position.set(0, 0, 9);
+const composer = new EffectComposer(renderer); composer.addPass(new RenderPass(scene, camera));
+const bloom = new UnrealBloomPass(new THREE.Vector2(256, 256), .5, .45, 1.05); composer.addPass(bloom); composer.addPass(new OutputPass());
+const U = { uTime: { value: 0 } };
+const rnd = (s => () => (s = (s * 16807) % 2147483647) / 2147483647)(([...uname].reduce((h, ch) => (h * 31 + ch.charCodeAt(0)) >>> 0, 7) % 2147483646) + 1);
+const addOne = { transparent: true, depthWrite: false, blending: THREE.CustomBlending, blendSrc: THREE.OneFactor, blendDst: THREE.OneFactor };
+
+// far backdrop: real catalogue stars
+const backTex = new THREE.TextureLoader().load('static/resources/sky/stars_patch.jpg', t => { t.colorSpace = THREE.SRGBColorSpace; });
+backTex.wrapS = backTex.wrapT = THREE.RepeatWrapping;
+const back = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial({ map: backTex, color: 0x707690, depthWrite: false }));
+back.position.z = -60; scene.add(back);
+
+const SPOTS = [.8, .7, .6, .4, .25, .1, 0];
+const sys = new THREE.Group(); scene.add(sys);                 // the whole system: moved and shrunk on scroll
+const plane = new THREE.Group(); plane.rotation.set(-1.22, 0, -.22); sys.add(plane); // orbital plane seen from above: the top of each orbit is the far side, so moons up there show their lit face (full), near ones a crescent
+const R = isQuasar ? 1.2 : B.R, col = kelvin(isQuasar ? 16000 : B.K), tint = new THREE.Color(CATS[topCat]?.[1] || '#9fdcff');
+const surf = h => .7 + h * .38;                              // surface brightness from heat: bright, but never a white blob
+const star = new THREE.Mesh(new THREE.SphereGeometry(R, 96, 64), starMat(U.uTime, col, surf(isQuasar ? 2.4 : B.heat), SPOTS[b])); sys.add(star);
+const facing = [];                                             // planes that always face the camera
+const corona = new THREE.Mesh(new THREE.PlaneGeometry(R / .3 * 2, R / .3 * 2), coronaMat(U.uTime, col, tint, isQuasar ? 2.4 : B.heat)); sys.add(corona); facing.push(corona);
+const tips = [];                                               // hoverable things: { mesh, title, sub }
+sys.add(new THREE.AmbientLight(0x3a4170, .25));
+const sun = new THREE.PointLight(col, 4, 0, 0); sys.add(sun);
+
+const v3a = new THREE.Vector3(), v3b = new THREE.Vector3();
+let glowCache = null; // a soft round glow, drawn once
+const glowTex = () => glowCache || (glowCache = (() => { const c = document.createElement('canvas'); c.width = c.height = 64; const g = c.getContext('2d'), rg = g.createRadialGradient(32, 32, 0, 32, 32, 32); rg.addColorStop(0, 'rgba(255,255,255,1)'); rg.addColorStop(.3, 'rgba(255,255,255,.35)'); rg.addColorStop(1, 'rgba(255,255,255,0)'); g.fillStyle = rg; g.fillRect(0, 0, 64, 64); return new THREE.CanvasTexture(c); })());
+// Platinum moons, shared by the 3D system up top and the logbook tiles: a procedural moon (soft seas, crater rims,
+// grain) lit from uLight (view space); founders get a pearlescent aurora rim, plain Platinum a neutral silver one.
+// Rings are built at unit moon radius: founders a banded aurora ring with sparkles, plain Platinum a clean silver ring.
+const FBM = NOISE + `float fbm(vec3 p){ float a = .5, t = 0.; for (int i = 0; i < 5; i++) { t += a * snoise(p); p *= 2.03; a *= .5; } return t; }`;
+const platMoonMat = (T, pf, seed, light, fill = .07) => new THREE.ShaderMaterial({ uniforms: { uTime: T, uPF: { value: pf }, uLight: { value: light }, uFill: { value: fill } },
+      vertexShader: `varying vec3 vN, vP, vV; void main(){ vN = normalize(normalMatrix * normal); vP = position; vec4 mv = modelViewMatrix * vec4(position, 1.); vV = normalize(-mv.xyz); gl_Position = projectionMatrix * mv; }`,
+      fragmentShader: FBM + `uniform float uTime, uPF, uFill; uniform vec3 uLight; varying vec3 vN, vP, vV;
+        float rim(float n, float a, float b) { return smoothstep(a, a + .05, n) - smoothstep(a + .05, b, n) * .6; }
+        void main(){ vec3 p = normalize(vP) + ${(seed * 7).toFixed(2)};
+          float seas = smoothstep(-.05, .45, fbm(p * 1.3));
+          float cr = rim(snoise(p * 7.), .55, .75) + rim(snoise(p * 15. + 7.), .6, .82) * .6 + rim(snoise(p * 31. + 3.), .62, .85) * .35;
+          vec3 base = mix(vec3(.86, .88, .92), vec3(.5, .53, .6), seas * .6) + cr * .07 + fbm(p * 11.) * .05;
+          float diff = clamp(dot(vN, uLight), 0., 1.), fres = pow(1. - clamp(dot(vN, vV), 0., 1.), 2.4);
+          vec3 c = base * (uFill + 1.08 * diff);
+          float ph = fract(fres * 1.1 + uTime * .05);
+          vec3 iri = mix(mix(vec3(.55, 1., .92), vec3(.75, .88, 1.), smoothstep(0., .4, ph)), mix(vec3(.82, .7, 1.), vec3(1., .9, .7), smoothstep(.6, 1., ph)), smoothstep(.3, .7, ph));
+          c += mix(vec3(.82, .84, .88) * fres * .4, iri * fres * 1.15, uPF); // plain Platinum: a neutral silver rim
+          gl_FragColor = vec4(c, 1.); }` });
+function platRing(T, pf, PR, gain = 1) { // gain: the tiny moons up top need brighter rings to read
+  const ring = new THREE.Group(); ring.rotation.set(.98, .3, -.24); let spark = null;
+  const vert = `varying vec2 vP; void main(){ vP = position.xy; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.); }`;
+  if (pf) {
+    ring.add(new THREE.Mesh(new THREE.RingGeometry(1.45, 2.35, 160, 1), new THREE.ShaderMaterial({ ...addOne, side: THREE.DoubleSide, uniforms: { uTime: T, uGain: { value: gain } }, vertexShader: vert,
+      fragmentShader: `uniform float uTime, uGain; varying vec2 vP; void main(){ float r = length(vP), t = (r - 1.45) / .9;
+        float bands = .55 + .45 * sin(r * 46. + uTime * .6) * sin(r * 13.);
+        float ph = fract(t * .8 + uTime * .04);
+        vec3 c = mix(mix(vec3(.38, .92, .84), vec3(.62, .82, 1.), smoothstep(0., .45, ph)), mix(vec3(.72, .58, 1.), vec3(1., .86, .6), smoothstep(.55, 1., ph)), smoothstep(.35, .7, ph));
+        gl_FragColor = vec4(c * smoothstep(0., .12, t) * smoothstep(1., .72, t) * bands * .8 * uGain, 1.); }` })));
+    const n = 90, sp = new Float32Array(n * 3); for (let i = 0; i < n; i++) { const a = i / n * 6.283 + Math.sin(i * 7.1) * .3, rr = 1.55 + (Math.sin(i * 3.7) * .5 + .5) * .75; sp.set([Math.cos(a) * rr, Math.sin(a) * rr, Math.sin(i * 5.3) * .05], i * 3); }
+    const sg = new THREE.BufferGeometry(); sg.setAttribute('position', new THREE.BufferAttribute(sp, 3));
+    spark = new THREE.Points(sg, new THREE.ShaderMaterial({ ...addOne, uniforms: { uTime: T, uPR: { value: PR } },
+      vertexShader: `uniform float uTime, uPR; varying float vA; void main(){ gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.); gl_PointSize = 3. * uPR; vA = .5 + .5 * sin(uTime * 3. + position.x * 9.); }`,
+      fragmentShader: `varying float vA; void main(){ vec2 d = gl_PointCoord - .5; float a = exp(-dot(d, d) * 16.) * vA; gl_FragColor = vec4(vec3(.9, 1., 1.) * a, 1.); }` }));
+    spark.frustumCulled = false; ring.add(spark);
+  } else {
+    ring.add(new THREE.Mesh(new THREE.RingGeometry(1.5, 2.05, 160, 1), new THREE.ShaderMaterial({ ...addOne, side: THREE.DoubleSide, uniforms: { uTime: T, uGain: { value: gain } }, vertexShader: vert,
+      fragmentShader: `uniform float uGain; varying vec2 vP; void main(){ float r = length(vP), t = (r - 1.5) / .55;
+        float bands = .5 + .5 * sin(r * 52.) * sin(r * 17. + 1.3); // fixed fine banding, like a real ring system
+        gl_FragColor = vec4(vec3(.86, .88, .93) * smoothstep(0., .15, t) * smoothstep(1., .75, t) * (.35 + .4 * bands) * .55 * uGain, 1.); }` })));
+  }
+  return { ring, spark };
+}
+// moons: one per founded achievement (up to 12), lit by the star, on Kepler-ish circular orbits (platinum ones first, inner orbits)
+const moons = founded.slice(0, 12).map((f, i) => {
+  const P = f.plat, size = P ? .13 : .055 + rnd() * .055, r = R * 1.7 + i * .17 + (P ? .05 : 0);
+  let m, body;
+  if (P) { // platinum founded: the same moon and aurora ring as its logbook tile, lit from the star's real direction
+    m = new THREE.Group();
+    const light = new THREE.Vector3(1, 0, 0);
+    body = new THREE.Mesh(new THREE.SphereGeometry(1, 48, 32), platMoonMat(U.uTime, 1, (i * .37 + .11) % 1, light, .42)); body.scale.setScalar(size); // fill light: the rarest moon must never vanish into its night side
+    body.onBeforeRender = (rr, scn, cam) => { // light comes from the star: its direction in view space, each frame
+      v3a.setFromMatrixPosition(star.matrixWorld).applyMatrix4(cam.matrixWorldInverse);
+      v3b.setFromMatrixPosition(body.matrixWorld).applyMatrix4(cam.matrixWorldInverse); light.copy(v3a).sub(v3b).normalize();
+    };
+    const { ring: pr, spark } = platRing(U.uTime, 1, PR, 2.2); pr.scale.setScalar(size);
+    const halo = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTex(), color: 0x9fe8ff, blending: THREE.AdditiveBlending, transparent: true, depthWrite: false, opacity: .6 }));
+    halo.scale.setScalar(size * 6);
+    m.add(halo, body, pr); m.userData.ring = pr; m.userData.spark = spark;
+  } else {
+    m = body = new THREE.Mesh(new THREE.SphereGeometry(size, 32, 20), new THREE.MeshStandardMaterial({ color: new THREE.Color().setHSL(.08 + rnd() * .5, .12 + rnd() * .2, .45 + rnd() * .25), roughness: .92 }));
+  }
+  const ring = new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints(Array.from({ length: 128 }, (_, k) => new THREE.Vector3(Math.cos(k / 128 * 6.283) * r, Math.sin(k / 128 * 6.283) * r, 0))),
+    new THREE.LineBasicMaterial({ color: f.plat ? 0x9fe8ff : 0x8a93d6, transparent: true, opacity: f.plat ? .4 : .13, depthWrite: false }));
+  const tiltG = new THREE.Group(); tiltG.rotation.set((rnd() - .5) * .25, (rnd() - .5) * .25, 0); tiltG.add(ring, m); plane.add(tiltG);
+  tips.push({ mesh: body, title: (f.plat ? '✦ ' : '') + f.name, sub: f.plat ? 'Platinum founder · ultimate rarity' : `Founded · first on ${f.at.toLocaleDateString('en', { day: 'numeric', month: 'short', year: 'numeric' })}`, i });
+  return { m, r, w: .55 * (R * 1.7 / r) ** 1.5, ph: rnd() * 6.283, hi: 0, s: 1 };
+});
+
+// Legacy: a companion star (the 1.0 light) on its own orbit
+let companion = null;
+if (tier === 1) {
+  const K2 = b <= 3 ? 11000 : 3600, c2 = kelvin(K2), r2 = R * .26, g = new THREE.Group();
+  const s2 = new THREE.Mesh(new THREE.SphereGeometry(r2, 48, 32), starMat(U.uTime, c2, 1.6, b <= 3 ? 0 : .5));
+  const k2 = new THREE.Mesh(new THREE.PlaneGeometry(r2 / .3 * 2, r2 / .3 * 2), coronaMat(U.uTime, c2, c2, 1.4)); facing.push(k2);
+  g.add(s2, k2); plane.add(g); companion = { g, r: R * 1.7 + Math.min(12, founded.length) * .17 + .4, ph: rnd() * 6.283 };
+  tips.push({ mesh: s2, title: 'Legacy companion', sub: 'The 1.0 light that came with them' });
+}
+
+// Legendary runaway: the camera rides along, stars stream past, a 3D bow shock leads, a wake trails
+const rideDir = new THREE.Vector3(1, .18, 0).normalize();
+let streaks = null, wake = null;
+if (isRunaway) {
+  const pts = [], a = R * 1.4;
+  for (let i = 0; i <= 28; i++) { const r = i / 28 * R * 1.9; pts.push(new THREE.Vector2(r, a - r * r / (2.4 * a))); }
+  const shock = new THREE.Mesh(new THREE.LatheGeometry(pts, 96), new THREE.ShaderMaterial({ ...addOne, side: THREE.DoubleSide, uniforms: { uTime: U.uTime },
+    vertexShader: `varying vec3 vN, vV; varying float vY; void main(){ vN = normalize(normalMatrix * normal); vec4 mv = modelViewMatrix * vec4(position, 1.); vV = normalize(-mv.xyz); vY = position.y; gl_Position = projectionMatrix * mv; }`,
+    fragmentShader: NOISE + `uniform float uTime; varying vec3 vN, vV; varying float vY;
+      void main(){ float rim = pow(1. - abs(dot(vN, vV)), 2.2); float sh = .75 + .25 * snoise(vec3(vY * 3., uTime * .8, 0.));
+        float fade = smoothstep(-2.2, 1.2, vY); gl_FragColor = vec4(vec3(.5, .85, 1.15) * rim * sh * fade * .5, 1.); }` }));
+  shock.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), rideDir); sys.add(shock);
+  tips.push({ mesh: shock, title: 'Bow shock', sub: 'Legendary · a runaway star ploughing through the galaxy' });
+  const NW = 1600, seed = new Float32Array(NW), jit = new Float32Array(NW * 3);
+  for (let i = 0; i < NW; i++) { seed[i] = rnd(); const t = rnd() * 6.283, s = Math.sqrt(rnd()); jit.set([0, Math.cos(t) * s, Math.sin(t) * s], i * 3); }
+  const wg = new THREE.BufferGeometry(); wg.setAttribute('position', new THREE.BufferAttribute(new Float32Array(NW * 3), 3)); wg.setAttribute('seed', new THREE.BufferAttribute(seed, 1)); wg.setAttribute('jit', new THREE.BufferAttribute(jit, 3));
+  wake = new THREE.Points(wg, new THREE.ShaderMaterial({ ...addOne, uniforms: { uTime: U.uTime, uR: { value: R }, uC: { value: col }, uPR: { value: PR } },
+    vertexShader: `attribute float seed; attribute vec3 jit; uniform float uTime, uR, uPR; varying float vA;
+      void main(){ float f = fract(seed + uTime * .25); vec3 p = vec3(-f * uR * 7. - uR * .6, 0., 0.) + jit * uR * (.75 + f * 1.4);
+        vec4 mv = modelViewMatrix * vec4(p, 1.); gl_Position = projectionMatrix * mv; gl_PointSize = (2. + f * 3.) * uPR; vA = (1. - f) * (1. - f) * .35; }`,
+    fragmentShader: `uniform vec3 uC; varying float vA; void main(){ vec2 d = gl_PointCoord - .5; float a = exp(-dot(d, d) * 14.) * vA; if (a < .003) discard; gl_FragColor = vec4(mix(uC, vec3(.55, .85, 1.1), .5) * a, 1.); }` }));
+  wake.quaternion.setFromUnitVectors(new THREE.Vector3(1, 0, 0), rideDir); wake.frustumCulled = false; sys.add(wake);
+  const NS = 260, sp = new Float32Array(NS * 3); for (let i = 0; i < NS; i++) sp.set([(rnd() - .5) * 40, (rnd() - .5) * 24, -4 - rnd() * 22], i * 3);
+  const sg = new THREE.BufferGeometry(); sg.setAttribute('position', new THREE.BufferAttribute(sp, 3));
+  streaks = new THREE.Points(sg, new THREE.ShaderMaterial({ ...addOne, uniforms: { uTime: U.uTime, uPR: { value: PR } },
+    vertexShader: `uniform float uTime, uPR; varying float vA; void main(){ vec3 p = position; p.x = mod(p.x - uTime * (6. + 30. / -p.z), 40.) - 20.; p.y -= (p.x) * .18;
+      vec4 mv = modelViewMatrix * vec4(p, 1.); gl_Position = projectionMatrix * mv; gl_PointSize = 22. * uPR; vA = .5 * clamp(10. / -p.z, .2, 1.); }`,
+    fragmentShader: `varying float vA; void main(){ vec2 d = gl_PointCoord - .5; float a = exp(-d.y * d.y * 900.) * smoothstep(.5, 0., abs(d.x)) * vA; if (a < .003) discard; gl_FragColor = vec4(vec3(.75, .85, 1.) * a, 1.); }` }));
+  streaks.frustumCulled = false; scene.add(streaks);
+}
+
+// Quasar: an accretion disk (hot inside, Doppler-bright on the approaching side) and two jets
+let disk = null;
+if (isQuasar) {
+  disk = new THREE.Mesh(new THREE.RingGeometry(R * 1.3, R * 3.4, 160, 1), new THREE.ShaderMaterial({ ...addOne, side: THREE.DoubleSide, uniforms: { uTime: U.uTime, uR: { value: R } },
+    vertexShader: `varying vec2 vP; void main(){ vP = position.xy; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.); }`,
+    fragmentShader: NOISE + `uniform float uTime, uR; varying vec2 vP;
+      void main(){ float r = length(vP) / uR, a = atan(vP.y, vP.x), sp = uTime * 1.6 / pow(r, 1.5);
+        float n = snoise(vec3(cos(a + sp) * r * 1.6, sin(a + sp) * r * 1.6, r * 2.5)) * .5 + snoise(vec3(cos(a + sp) * r * 5., sin(a + sp) * r * 5., 1.)) * .25;
+        vec3 hot = mix(vec3(1.4, 1.5, 2.), vec3(2., 1.1, .45), smoothstep(1.3, 2.6, r)); hot = mix(hot, vec3(.9, .25, .12), smoothstep(2.4, 3.4, r));
+        float I = pow(1.3 / r, 1.4) * (1. + n * .6) * (1. + .55 * sin(a)) * smoothstep(1.3, 1.45, r) * (1. - smoothstep(2.7, 3.4, r));
+        gl_FragColor = vec4(hot * I * .34, 1.); }` }));
+  plane.add(disk);
+  const NJ = 2600, js = new Float32Array(NJ), jd = new Float32Array(NJ), jj = new Float32Array(NJ * 2);
+  for (let i = 0; i < NJ; i++) { js[i] = rnd(); jd[i] = i % 2 ? 1 : -1; jj[i * 2] = (rnd() - .5) * .5; jj[i * 2 + 1] = (rnd() - .5) * .5; }
+  const jg = new THREE.BufferGeometry(); jg.setAttribute('position', new THREE.BufferAttribute(new Float32Array(NJ * 3), 3));
+  jg.setAttribute('seed', new THREE.BufferAttribute(js, 1)); jg.setAttribute('side', new THREE.BufferAttribute(jd, 1)); jg.setAttribute('jit', new THREE.BufferAttribute(jj, 2));
+  const jets = new THREE.Points(jg, new THREE.ShaderMaterial({ ...addOne, uniforms: { uTime: U.uTime, uPR: { value: PR }, uR: { value: R } },
+    vertexShader: `attribute float seed, side; attribute vec2 jit; uniform float uTime, uPR, uR; varying float vA, vF;
+      void main(){ float f = fract(seed + uTime * .12); vec3 p = vec3(jit * (.3 + f * 2.6) * uR, side * (uR + f * 9.));
+        vec4 mv = modelViewMatrix * vec4(p, 1.); gl_Position = projectionMatrix * mv; gl_PointSize = (2.5 + f * 5.) * uPR; vA = pow(1. - f, 1.5) * .5; vF = f; }`,
+    fragmentShader: `varying float vA, vF; void main(){ vec2 d = gl_PointCoord - .5; float a = exp(-dot(d, d) * 14.) * vA; if (a < .003) discard; gl_FragColor = vec4(mix(vec3(1.3, 1.35, 1.6), vec3(.45, .55, 1.), vF) * a, 1.); }` }));
+  jets.frustumCulled = false; plane.add(jets);
+  tips.push({ mesh: disk, title: 'Accretion disk', sub: 'Quasar · most achievements in the pack' });
+}
+
+// Protostar: still wrapped in the dust cocoon it formed in
+let cocoon = null;
+if (b === 0) {
+  cocoon = new THREE.Mesh(new THREE.SphereGeometry(R * 1.7, 64, 48), new THREE.ShaderMaterial({ transparent: true, depthWrite: false, uniforms: { uTime: U.uTime },
+    vertexShader: `varying vec3 vP, vN, vV; void main(){ vP = position; vN = normalize(normalMatrix * normal); vec4 mv = modelViewMatrix * vec4(position, 1.); vV = normalize(-mv.xyz); gl_Position = projectionMatrix * mv; }`,
+    fragmentShader: NOISE + `uniform float uTime; varying vec3 vP, vN, vV;
+      void main(){ vec3 p = normalize(vP); float d = snoise(p * 2.2 + uTime * .03) * .6 + snoise(p * 6. - uTime * .05) * .3;
+        float a = smoothstep(-.15, .55, d) * .82; float rim = pow(1. - abs(dot(vN, vV)), 2.);
+        gl_FragColor = vec4(mix(vec3(.09, .03, .03), vec3(.9, .28, .12), rim * .6), a); }` }));
+  cocoon.renderOrder = 2; sys.add(cocoon);
+  tips.push({ mesh: cocoon, title: 'Dust cocoon', sub: 'A protostar · earn a first achievement to ignite' });
+}
+tips.push({ mesh: star, title: kind, sub: `${earnedN} achievements · ${B.name.toLowerCase()} hot` });
+
+// ---------------------------------------------------------------- platinum tiles: a little live 3D world each
+// One small renderer per Platinum tile (there are only a handful), drawing only while the tile is on screen.
+// The moon is procedural (seas, crater rims, grain) and lit from one side; a Platinum founder's moon also gets an
+// iridescent rim, a tilted aurora ring with orbiting sparkles, a halo, and aurora curtains in the sky behind it.
+{
+  const FOV = 35, DIST = 9, live = [];
+  const animOn = () => document.documentElement.classList.contains('fx-platsky');
+  const vUv = `varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.); }`;
+  function mount(tile) {
+    let r; try { r = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'low-power' }); } catch (e) { return; }
+    const pf = tile.classList.contains('pf') ? 1 : 0, seed = [...tile.dataset.seed].reduce((h, c) => (h * 31 + c.charCodeAt(0)) % 997, 7) / 997;
+    r.setPixelRatio(Math.min(devicePixelRatio || 1, 2)); r.toneMapping = THREE.ACESFilmicToneMapping;
+    r.domElement.className = 'pcan'; tile.prepend(r.domElement); r.domElement.insertAdjacentHTML('afterend', '<div class="pshade"></div>'); tile.classList.add('gl');
+    const sc = new THREE.Scene(), cam = new THREE.PerspectiveCamera(FOV, 2, .1, 100); cam.position.set(0, 0, DIST);
+    const T = { value: seed * 100 }, P = { value: pf };
+    const bg = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.ShaderMaterial({ uniforms: { uTime: T, uPF: P }, vertexShader: vUv, depthWrite: false,
+      fragmentShader: FBM + `uniform float uTime, uPF; varying vec2 vUv;
+        void main(){ vec2 uv = vUv; float n = fbm(vec3(uv * vec2(3., 1.6) + vec2(uTime * .015, 0.), uTime * .025));
+          vec3 neb = mix(vec3(.04, .22, .32), vec3(.3, .12, .42), smoothstep(-.2, .5, fbm(vec3(uv * 2.4, uTime * .02 + 5.))));
+          vec3 c = vec3(.012, .016, .04) + neb * smoothstep(-.1, .6, n) * smoothstep(.05, .75, uv.x) * .6;
+          float cur = sin(uv.x * 9. + uTime * .35 + n * 3.) * .5 + .5, band = exp(-pow((uv.y - .72 - .08 * sin(uv.x * 4. + uTime * .2)) * 4.5, 2.));
+          c += uPF * mix(vec3(.2, .9, .75), vec3(.6, .45, 1.), uv.x) * band * cur * .4;
+          gl_FragColor = vec4(c, 1.); }` }));
+    bg.position.z = -(DIST + 8); cam.add(bg); sc.add(cam); // the sky rides with the camera, so it always fills the tile
+    const layer = (n, depth, size, speed) => { // stars that drift past, wrapping round; two depths = parallax
+      const pos = new Float32Array(n * 3), tw = new Float32Array(n); let s0 = seed * 9973 + depth;
+      const rnd2 = () => (s0 = (s0 * 16807 + 11) % 2147483647) / 2147483647;
+      for (let i = 0; i < n; i++) { pos.set([(rnd2() - .5) * 40, (rnd2() - .5) * 14, -depth], i * 3); tw[i] = rnd2() * 6.28; }
+      const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(pos, 3)); g.setAttribute('tw', new THREE.BufferAttribute(tw, 1));
+      const pts = new THREE.Points(g, new THREE.ShaderMaterial({ ...addOne, uniforms: { uTime: T, uPR: { value: r.getPixelRatio() } },
+        vertexShader: `attribute float tw; uniform float uTime, uPR; varying float vA; void main(){ vec3 p = position; p.x = mod(p.x - uTime * ${speed.toFixed(3)} + 20., 40.) - 20.;
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(p, 1.); gl_PointSize = ${size.toFixed(1)} * uPR; vA = .55 + .45 * sin(uTime * 1.7 + tw); }`,
+        fragmentShader: `varying float vA; void main(){ vec2 d = gl_PointCoord - .5; float a = exp(-dot(d, d) * 18.) * vA; gl_FragColor = vec4(vec3(.85, .9, 1.) * a, 1.); }` }));
+      pts.frustumCulled = false; sc.add(pts);
+    };
+    layer(260, 6, 2.2, .06); layer(120, 2, 3.4, .18);
+    const sys = new THREE.Group(); sc.add(sys);
+    const moon = new THREE.Mesh(new THREE.SphereGeometry(1, 96, 64), platMoonMat(T, pf, seed, new THREE.Vector3(-.7, .45, .55).normalize()));
+    sys.add(moon);
+    if (pf) { const halo = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTex(), color: 0x9fe8ff, blending: THREE.AdditiveBlending, transparent: true, depthWrite: false, opacity: .75 })); halo.scale.setScalar(4.6); halo.position.z = -.5; sys.add(halo); }
+    const { ring, spark } = platRing(T, pf, r.getPixelRatio()); sys.add(ring);
+    const st = { r, sc, cam, bg, sys, moon, ring, spark, T, tile, vis: false, boost: 0, hover: 0, w: 0, h: 0 };
+    tile.addEventListener('pointerenter', () => { st.hover = 1; }); tile.addEventListener('pointerleave', () => { st.hover = 0; });
+    live.push(st);
+  }
+  function fit(st) {
+    const w = st.tile.clientWidth, h = st.tile.clientHeight; if (!w || !h || (w === st.w && h === st.h)) return;
+    st.w = w; st.h = h; st.r.setSize(w, h, false); st.cam.aspect = w / h; st.cam.updateProjectionMatrix();
+    const halfH = (DIST + 8) * Math.tan(FOV * Math.PI / 360); st.bg.scale.set(halfH * 2 * st.cam.aspect * 1.02, halfH * 2 * 1.02, 1);
+    const hh = DIST * Math.tan(FOV * Math.PI / 360), hw = hh * st.cam.aspect, sz = Math.min(hh * .62, hw * .26); // moon ~ 60% of the tile height, but never wider than its side of a narrow tile
+    st.sys.scale.setScalar(sz); st.sys.position.x = Math.max(hw * .55, hw - 2.7 * sz);
+  }
+  document.querySelectorAll('.ach.plat').forEach(mount);
+  const io = new IntersectionObserver(es => es.forEach(e => { const st = live.find(x => x.tile === e.target); if (st) st.vis = e.isIntersecting; }));
+  live.forEach(st => io.observe(st.tile));
+  let last = performance.now();
+  const tick = now => {
+    const dt = Math.min(.05, (now - last) / 1000); last = now; const anim = animOn() && !still;
+    for (const st of live) {
+      if (!st.vis || st.tile.hidden) continue;
+      fit(st);
+      st.boost += (st.hover - st.boost) * .06; const sp = (1 + st.boost * 2.5) * (anim ? 1 : 0);
+      st.T.value += dt * sp; st.moon.rotation.y += dt * .12 * sp; st.moon.rotation.x = .25;
+      if (st.ring) st.ring.rotation.z += dt * .05 * sp; if (st.spark) st.spark.rotation.z += dt * .25 * sp;
+      st.cam.position.set(Math.sin(st.T.value * .1) * .25, Math.cos(st.T.value * .13) * .15, DIST - st.boost * 1.2); st.cam.lookAt(st.sys.position.x * .25, 0, 0);
+      st.r.render(st.sc, st.cam);
+    }
+    requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+  document.addEventListener('logbook:drawn', () => live.forEach(st => { st.w = 0; })); // filters can resize tiles
+}
+
+// ---------------------------------------------------------------- layout, scroll pin, arrival, exit
+let W = 0, H = 0, ppu = 1, s0 = 1, k = 0, arrive0 = performance.now(), leave = null;
+function resize() {
+  W = innerWidth; H = innerHeight; renderer.setSize(W, H, false); composer.setSize(W, H); camera.aspect = W / H; camera.updateProjectionMatrix();
+  ppu = H / (2 * 9 * Math.tan(35 * Math.PI / 360));            // screen px per world unit at the star's depth
+  s0 = Math.min(H * .13, W * .2) / ppu;                         // a yellow star (R 1) ~ 13% of the screen height
+  const bh = 2 * 69 * Math.tan(35 * Math.PI / 360) * 1.1; back.scale.set(Math.max(bh * W / H, bh * 1.4), Math.max(bh * W / H, bh * 1.4) / 1.4, 1);
+}
+resize(); addEventListener('resize', resize);
+const ease = x => 1 - (1 - x) ** 3, lerp = (a, c, x) => a + (c - a) * x;
+const flash = $('flash');
+function frame(now) {
+  const t = still ? 6 : now / 1000; U.uTime.value = t;
+  k = ease(Math.min(1, Math.max(0, scrollY / (H * .5))));
+  document.documentElement.style.setProperty('--k', k.toFixed(3));
+  // arrival: from the galaxy we come out of the flash with the star filling the screen; a shared link just grows it in
+  const ar = still ? 1 : Math.min(1, (now - arrive0) / (fromGalaxy ? 1400 : 800)), ae = ease(ar);
+  let zoom = fromGalaxy ? 1 : lerp(.2, 1, ae), fl = fromGalaxy ? 1 - Math.min(1, ar * 2.6) : 0; // from the galaxy the flight already brought us here
+  if (leave) { const lk = Math.min(1, (now - leave.t0) / 420); zoom *= lerp(1, 1.12, lk); fl = Math.max(fl, Math.min(1, lk * 1.3)); if (lk >= 1 && !leave.gone) { leave.gone = true; location.href = leave.href; } }
+  flash.style.opacity = fl;
+  const pinR = 15, sc = lerp(s0, pinR / (R * ppu), k) * zoom;   // pinned: ~15 px radius badge in the top bar
+  const sx = lerp(W / 2, W < 860 ? 36 : 46, k), sy = lerp(H * (W < 860 ? .3 : .32), W < 860 ? 38 : 46, k);
+  sys.position.set((sx - W / 2) / ppu, (H / 2 - sy) / ppu, 0); sys.scale.setScalar(sc);
+  star.rotation.y = t * .06; if (cocoon) cocoon.rotation.y = -t * .02;
+  for (const f of facing) f.quaternion.copy(camera.quaternion);
+  moons.forEach(m => { const a = m.ph + t * m.w; m.m.position.set(Math.cos(a) * m.r, Math.sin(a) * m.r, 0); if (m.m.userData.ring) { m.m.userData.ring.rotation.z = t * .05; if (m.m.userData.spark) m.m.userData.spark.rotation.z = t * .25; } m.s += (1 + m.hi * 1.4 - m.s) * .15; m.m.scale.setScalar(m.s); });
+  if (companion) { const a = companion.ph + t * .35; companion.g.position.set(Math.cos(a) * companion.r, Math.sin(a) * companion.r, 0); }
+  if (isRunaway) backTex.offset.set(t * .004, t * .0007);
+  composer.render();
+  if (!still || leave) requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+if (still) addEventListener('scroll', () => requestAnimationFrame(frame), { passive: true });
+
+// leaving: dive back out to the galaxy, landing on this star
+const toGalaxy = e => { e.preventDefault(); const href = `index.html?focus=${encodeURIComponent(uname)}`; if (still) { location.href = href; return; } if (!leave) { leave = { t0: performance.now(), href }; if (still) requestAnimationFrame(frame); } };
+addEventListener('pageshow', e => { if (e.persisted) { leave = null; flash.style.opacity = 0; requestAnimationFrame(frame); } }); // back button
+$('back').addEventListener('click', toGalaxy); $('back2').addEventListener('click', toGalaxy);
+
+// hover the moons (and the other bodies) for what they are
+const ray = new THREE.Raycaster(), ndc = new THREE.Vector2(), tip = $('tip');
+addEventListener('pointermove', e => {
+  if (e.target.closest('.panel, .plate, a, button, .gem')) { tip.style.opacity = 0; return; }
+  ndc.set(e.clientX / W * 2 - 1, -(e.clientY / H) * 2 + 1); ray.setFromCamera(ndc, camera);
+  const hit = ray.intersectObjects(tips.map(x => x.mesh), false)[0], info = hit && tips.find(x => x.mesh === hit.object);
+  document.querySelectorAll('.moon.on').forEach(m => m.classList.remove('on'));
+  if (!info) { tip.style.opacity = 0; return; }
+  if (info.i != null) document.querySelector(`.moon[data-i="${info.i}"]`)?.classList.add('on');
+  tip.innerHTML = `<small>${escHtml(info.sub)}</small>${escHtml(info.title)}`; tip.style.left = e.clientX + 'px'; tip.style.top = e.clientY + 'px'; tip.style.opacity = 1;
+});
+
+// hooks for profile-fx.js (flair layer): grow a moon from its list row, then say the page is filled in
+window.profileHooks = { moonHi: (i, v) => { if (moons[i]) moons[i].hi = v; } };
+document.dispatchEvent(new Event('profile:ready'));
+</script>
+<script src="profile-fx.js"></script>
 </body>
 </html>
