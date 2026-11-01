@@ -8,7 +8,8 @@
       "chat_chain_member": "2026-11-01T21:44:47.077689+00:00",
       "gifted_times_1": "2026-11-01T21:46:25.841158+00:00",
       "gamble_total_loss_1": "2026-11-01T21:52:13.262488+00:00",
-      "chat_10": "2026-11-01T22:33:56.428552+00:00"
+      "chat_10": "2026-11-01T22:33:56.428552+00:00",
+      "chat_chain_starter": "2026-11-01T23:30:26.224957+00:00"
     },
     "founded": {}
   },
@@ -17,12 +18,15 @@
       "prefix_141",
       "name_28",
       "suffix_108",
-      "prefix_7"
+      "prefix_7",
+      "prefix_140",
+      "name_27",
+      "suffix_107"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 10,
+    "messages": 11,
     "active_months": 1,
     "first_seen": "2026-11"
   },
