@@ -6,7 +6,10 @@
   "achievements": {
     "earned": {
       "cheer_message_100": "2026-11-01T21:21:38.911166+00:00",
-      "cheer_time_1": "2026-11-01T21:21:38.971722+00:00"
+      "cheer_time_1": "2026-11-01T21:21:38.971722+00:00",
+      "chat_10": "2026-11-01T21:36:53.664524+00:00",
+      "chat_tail": "2026-11-01T21:36:53.688102+00:00",
+      "chat_floofy": "2026-11-01T21:36:53.706697+00:00"
     },
     "founded": {
       "cheer_message_1k": "2026-11-01T21:21:38.936088+00:00",
@@ -23,12 +26,14 @@
       "prefix_8",
       "prefix_48",
       "suffix_35",
-      "name_5"
+      "name_5",
+      "prefix_7",
+      "prefix_139"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 9,
+    "messages": 10,
     "active_months": 1,
     "first_seen": "2026-11"
   },

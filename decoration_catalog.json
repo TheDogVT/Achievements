@@ -579,6 +579,26 @@
       }
     }
   },
+  "prefix_9": {
+    "slot": "name_prefix",
+    "display_name": "With Love - ",
+    "achievement_name": "Bit Farmer.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_time_10",
+    "config": {
+      "font_family": "Pacifico",
+      "font_size": "25px",
+      "font_style": "italic",
+      "font_weight": "100",
+      "outline": "basic",
+      "text": "With Love - ",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_time_10",
+        "type": "achievement"
+      }
+    }
+  },
   "name_14": {
     "slot": "name_base",
     "display_name": "name_14",
@@ -744,6 +764,23 @@
       }
     }
   },
+  "name_2": {
+    "slot": "name_base",
+    "display_name": "name_2",
+    "achievement_name": "Bit Farmer.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_time_10",
+    "config": {
+      "font_family": "Pacifico",
+      "font_weight": "100",
+      "outline": "basic",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_time_10",
+        "type": "achievement"
+      }
+    }
+  },
   "name_4": {
     "slot": "name_base",
     "display_name": "name_4",
@@ -812,6 +849,23 @@
       "unlock": {
         "category": "cheer",
         "id": "cheer_cumulative_5k",
+        "type": "achievement"
+      }
+    }
+  },
+  "name_9": {
+    "slot": "name_base",
+    "display_name": "name_9",
+    "achievement_name": "First Treat.",
+    "achievement_category": "donation",
+    "achievement_id": "donation_cumulative_10",
+    "config": {
+      "outline": "basic",
+      "outline_thickness": "1",
+      "text_color": "#d97706",
+      "unlock": {
+        "category": "donation",
+        "id": "donation_cumulative_10",
         "type": "achievement"
       }
     }

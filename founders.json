@@ -299,6 +299,26 @@
     "founder_name": "bitterashes",
     "founded_at": "2026-11-01T21:23:59.944491+00:00"
   },
+  "donation_1": {
+    "founder_id": "58983197",
+    "founder_name": "pancakeman_49",
+    "founded_at": "2026-11-01T21:36:36.087376+00:00"
+  },
+  "donation_5": {
+    "founder_id": "58983197",
+    "founder_name": "pancakeman_49",
+    "founded_at": "2026-11-01T21:36:36.106465+00:00"
+  },
+  "donation_10": {
+    "founder_id": "58983197",
+    "founder_name": "pancakeman_49",
+    "founded_at": "2026-11-01T21:36:36.124543+00:00"
+  },
+  "donation_cumulative_10": {
+    "founder_id": "58983197",
+    "founder_name": "pancakeman_49",
+    "founded_at": "2026-11-01T21:36:36.160251+00:00"
+  },
   "chat_ball": {
     "founder_id": "81344369",
     "founder_name": "MobiusWhiteoak",
@@ -373,6 +393,11 @@
     "founder_id": "632165551",
     "founder_name": "revilo2218",
     "founded_at": "2026-11-01T21:35:51.316931+00:00"
+  },
+  "cheer_time_10": {
+    "founder_id": "632165551",
+    "founder_name": "revilo2218",
+    "founded_at": "2026-11-01T21:36:19.229648+00:00"
   },
   "gamble_total_loss_1": {
     "founder_id": "1030689797",

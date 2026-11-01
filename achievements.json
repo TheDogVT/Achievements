@@ -299,6 +299,12 @@
       "amount": 1,
       "type": "times"
     },
+    "cheer_time_10": {
+      "name": "Bit Farmer.",
+      "desc": "Awarded for cheering 10 times!.",
+      "amount": 10,
+      "type": "times"
+    },
     "cheer_64": {
       "name": "Modern Age of PC!",
       "desc": "Awarded for cheering exactly 64 bits",
@@ -370,6 +376,32 @@
       "desc": "Awarded for cheering exactly 2048 bits",
       "amount": 2048,
       "type": "exact"
+    }
+  },
+  "donation": {
+    "donation_1": {
+      "name": "Dollar For Your Thoughts?",
+      "desc": "Awarded for donating 1 or more dollars at a time.",
+      "amount": 1,
+      "type": "threshold"
+    },
+    "donation_5": {
+      "name": "Five Bucks For The Pup.",
+      "desc": "Awarded for donating 5 or more dollars at a time.",
+      "amount": 5,
+      "type": "threshold"
+    },
+    "donation_10": {
+      "name": "Big Woof Energy.",
+      "desc": "Awarded for donating 10 or more dollars at a time.",
+      "amount": 10,
+      "type": "threshold"
+    },
+    "donation_cumulative_10": {
+      "name": "First Treat.",
+      "desc": "Awarded for donating $10 overall.",
+      "amount": 10,
+      "type": "cumulative"
     }
   },
   "gamble": {

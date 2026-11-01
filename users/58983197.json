@@ -14,7 +14,12 @@
       "gifted_instance_5": "2026-11-01T21:26:14.397635+00:00",
       "chat_treats": "2026-11-01T21:29:11.446182+00:00"
     },
-    "founded": {}
+    "founded": {
+      "donation_1": "2026-11-01T21:36:36.087376+00:00",
+      "donation_5": "2026-11-01T21:36:36.106465+00:00",
+      "donation_10": "2026-11-01T21:36:36.124543+00:00",
+      "donation_cumulative_10": "2026-11-01T21:36:36.160251+00:00"
+    }
   },
   "decorations": {
     "unlocked": [
@@ -22,7 +27,8 @@
       "prefix_76",
       "suffix_19",
       "prefix_7",
-      "name_14"
+      "name_14",
+      "name_9"
     ],
     "active": {
       "name_prefix": "prefix_76",
@@ -37,5 +43,11 @@
     "active_months": 1,
     "first_seen": "2026-11"
   },
-  "top_months": []
+  "top_months": [
+    {
+      "month": "2026-11",
+      "kind": "donations",
+      "rank": 1
+    }
+  ]
 }
