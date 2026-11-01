@@ -549,6 +549,37 @@
       }
     }
   },
+  "prefix_45": {
+    "slot": "name_prefix",
+    "display_name": "★ Jackpot ★",
+    "achievement_name": "Jackpot!",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_777",
+    "config": {
+      "outline": "basic",
+      "text": "★ Jackpot ★",
+      "text_gradient": [
+        {
+          "color": "#ffd700",
+          "pos": null
+        },
+        {
+          "color": "#fff5a0",
+          "pos": null
+        },
+        {
+          "color": "#ffd700",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_777",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_48": {
     "slot": "name_prefix",
     "display_name": "Oh,",
@@ -1466,6 +1497,37 @@
       "unlock": {
         "category": "cheer",
         "id": "cheer_666",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_33": {
+    "slot": "name_suffix",
+    "display_name": "777",
+    "achievement_name": "Jackpot!",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_777",
+    "config": {
+      "outline": "basic",
+      "text": "777",
+      "text_gradient": [
+        {
+          "color": "#ffd700",
+          "pos": null
+        },
+        {
+          "color": "#fff5a0",
+          "pos": null
+        },
+        {
+          "color": "#ffd700",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_777",
         "type": "achievement"
       }
     }

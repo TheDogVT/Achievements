@@ -29,7 +29,8 @@
       "gamble_total_win_1": "2026-11-01T23:12:25.908307+00:00",
       "chat_goodboy": "2026-11-01T23:13:34.632907+00:00",
       "chat_protect": "2026-11-01T23:23:17.892380+00:00",
-      "chat_100": "2026-11-01T23:28:33.633015+00:00"
+      "chat_100": "2026-11-01T23:28:33.633015+00:00",
+      "chat_chain_member": "2026-11-01T23:31:20.828868+00:00"
     },
     "founded": {
       "chat_vacuum": "2026-11-01T21:21:34.403127+00:00",
@@ -59,14 +60,17 @@
       "prefix_17",
       "prefix_18",
       "suffix_8",
-      "prefix_2"
+      "prefix_2",
+      "prefix_141",
+      "name_28",
+      "suffix_108"
     ],
     "active": {
       "name_prefix": "prefix_130"
     }
   },
   "stats": {
-    "messages": 103,
+    "messages": 107,
     "active_months": 1,
     "first_seen": "2026-11"
   },
