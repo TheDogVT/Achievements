@@ -5,16 +5,18 @@
   "legacy": 1,
   "achievements": {
     "earned": {},
-    "founded": {}
+    "founded": {
+      "chat_vacuum": "2026-11-01T21:21:34.403127+00:00"
+    }
   },
   "decorations": {
     "unlocked": [],
     "active": {}
   },
   "stats": {
-    "messages": 0,
-    "active_months": 0,
-    "first_seen": null
+    "messages": 2,
+    "active_months": 1,
+    "first_seen": "2026-11"
   },
   "top_months": []
 }

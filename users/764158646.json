@@ -5,15 +5,21 @@
   "legacy": 1,
   "achievements": {
     "earned": {},
-    "founded": {}
+    "founded": {
+      "chat_boop": "2026-11-01T21:21:46.199282+00:00",
+      "chat_snoot": "2026-11-01T21:22:00.407573+00:00"
+    }
   },
   "decorations": {
-    "unlocked": [],
+    "unlocked": [
+      "prefix_15",
+      "suffix_4"
+    ],
     "active": {}
   },
   "stats": {
-    "messages": 0,
-    "active_months": 0,
+    "messages": 5,
+    "active_months": 1,
     "first_seen": "2026-09-05T20:13:01.271842+00:00"
   },
   "top_months": []

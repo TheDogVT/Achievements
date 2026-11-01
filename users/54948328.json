@@ -4,20 +4,57 @@
   "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/bitterashes-profile_image-970ccc949ade2b1b-300x300.jpeg",
   "legacy": 1,
   "achievements": {
-    "earned": {},
-    "founded": {}
+    "earned": {
+      "chat_bork": "2026-11-01T21:21:26.756240+00:00",
+      "chat_tail": "2026-11-01T21:21:55.757988+00:00",
+      "chat_10": "2026-11-01T21:22:08.151285+00:00",
+      "chat_sniff": "2026-11-01T21:22:08.218994+00:00",
+      "chat_snoot": "2026-11-01T21:22:12.759952+00:00",
+      "chat_stick": "2026-11-01T21:22:16.230734+00:00"
+    },
+    "founded": {
+      "cheer_message_100": "2026-11-01T21:21:19.800434+00:00",
+      "cheer_time_1": "2026-11-01T21:21:19.823005+00:00",
+      "cheer_100": "2026-11-01T21:21:19.851525+00:00",
+      "chat_woofwoof": "2026-11-01T21:21:26.783688+00:00",
+      "chat_wholet": "2026-11-01T21:21:26.804681+00:00",
+      "chat_walk": "2026-11-01T21:21:34.343535+00:00",
+      "chat_spelled_forbidden": "2026-11-01T21:21:40.299402+00:00",
+      "chat_yawn": "2026-11-01T21:21:45.517224+00:00",
+      "chat_yap": "2026-11-01T21:21:50.513504+00:00",
+      "chat_squirrel": "2026-11-01T21:22:00.995578+00:00",
+      "chat_scratch": "2026-11-01T21:22:04.117294+00:00"
+    }
   },
   "decorations": {
-    "unlocked": [],
+    "unlocked": [
+      "prefix_8",
+      "prefix_76",
+      "suffix_19",
+      "prefix_126",
+      "suffix_100",
+      "prefix_7"
+    ],
     "active": {
       "washi_color": "washi_lavender",
       "washi_position": "washi_top_center"
     }
   },
   "stats": {
-    "messages": 0,
-    "active_months": 0,
-    "first_seen": null
+    "messages": 12,
+    "active_months": 1,
+    "first_seen": "2026-11"
   },
-  "top_months": []
+  "top_months": [
+    {
+      "month": "2026-11",
+      "kind": "chat",
+      "rank": 2
+    },
+    {
+      "month": "2026-11",
+      "kind": "cheers",
+      "rank": 3
+    }
+  ]
 }

@@ -5,15 +5,22 @@
   "legacy": 1,
   "achievements": {
     "earned": {},
-    "founded": {}
+    "founded": {
+      "chat_dig": "2026-11-01T21:21:23.063687+00:00",
+      "chat_treats": "2026-11-01T21:21:31.194817+00:00",
+      "chat_tail": "2026-11-01T21:21:45.154609+00:00",
+      "chat_leash": "2026-11-01T21:21:48.492338+00:00"
+    }
   },
   "decorations": {
-    "unlocked": [],
+    "unlocked": [
+      "prefix_133"
+    ],
     "active": {}
   },
   "stats": {
-    "messages": 0,
-    "active_months": 0,
+    "messages": 6,
+    "active_months": 1,
     "first_seen": "2026-08-09T22:21:03.669062+00:00"
   },
   "top_months": []

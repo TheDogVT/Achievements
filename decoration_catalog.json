@@ -1,1 +1,614 @@
-{}
+{
+  "prefix_12": {
+    "slot": "name_prefix",
+    "display_name": "the betrayer ",
+    "achievement_name": "Soapy Betrayer",
+    "achievement_category": "chat",
+    "achievement_id": "chat_bath",
+    "config": {
+      "text": "the betrayer ",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_bath",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_126": {
+    "slot": "name_prefix",
+    "display_name": "Bark",
+    "achievement_name": "Certified Barker",
+    "achievement_category": "chat",
+    "achievement_id": "chat_bork",
+    "config": {
+      "text": "Bark",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_bork",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_133": {
+    "slot": "name_prefix",
+    "display_name": "Yard Destroyer",
+    "achievement_name": "Hole Digger",
+    "achievement_category": "chat",
+    "achievement_id": "chat_dig",
+    "config": {
+      "text": "Yard Destroyer",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_dig",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_138": {
+    "slot": "name_prefix",
+    "display_name": "Stick Thrower",
+    "achievement_name": "Thrower Of Objects",
+    "achievement_category": "chat",
+    "achievement_id": "chat_fetch",
+    "config": {
+      "text": "Stick Thrower",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_fetch",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_15": {
+    "slot": "name_prefix",
+    "display_name": "Boop!",
+    "achievement_name": "Nose Booper",
+    "achievement_category": "chat",
+    "achievement_id": "chat_boop",
+    "config": {
+      "text": "Boop!",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_boop",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_16": {
+    "slot": "name_prefix",
+    "display_name": "Chaos bringer",
+    "achievement_name": "Mischief Encourager",
+    "achievement_category": "chat",
+    "achievement_id": "chat_chaos",
+    "config": {
+      "glow_layers": [
+        {
+          "animation": "flicker",
+          "color": "#ff0000",
+          "distance": "",
+          "fade": "",
+          "plane": "back",
+          "spread": ""
+        }
+      ],
+      "text": "Chaos bringer",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_chaos",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_18": {
+    "slot": "name_prefix",
+    "display_name": "Good Girl",
+    "achievement_name": "Who's A Good Doggo?",
+    "achievement_category": "chat",
+    "achievement_id": "chat_goodboy",
+    "config": {
+      "text": "Good Girl",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_goodboy",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_19": {
+    "slot": "name_prefix",
+    "display_name": "Awooo",
+    "achievement_name": "Moon Choir Recruit",
+    "achievement_category": "chat",
+    "achievement_id": "chat_howl",
+    "config": {
+      "effects_layers": [
+        {
+          "blend_mode": "",
+          "delay": "0.3",
+          "duration": "",
+          "effect": "dust_motes",
+          "enabled": true,
+          "engine": "particle",
+          "interval": "",
+          "knobs": {
+            "canvas_rotation": 0,
+            "color1": "#52ffeb",
+            "intensity": 0.8,
+            "origin_x": 0,
+            "range": 40,
+            "speed": 4
+          },
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "0.2",
+          "plane": "front",
+          "random_range": "1.5",
+          "scale": "0.25",
+          "z_index": "7"
+        }
+      ],
+      "text": "Awooo",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_howl",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_48": {
+    "slot": "name_prefix",
+    "display_name": "Oh,",
+    "achievement_name": "Oh! For Me?",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_1000",
+    "config": {
+      "outline": "basic",
+      "text": "Oh,",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#7de8ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_1000",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_7": {
+    "slot": "name_prefix",
+    "display_name": "Sincerely,",
+    "achievement_name": "Curious Chatter.",
+    "achievement_category": "chat",
+    "achievement_id": "chat_10",
+    "config": {
+      "font_size": "25px",
+      "outline": "basic",
+      "text": "Sincerely,",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_10",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_76": {
+    "slot": "name_prefix",
+    "display_name": "good girl,",
+    "achievement_name": "A dollar for doggo.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_100",
+    "config": {
+      "outline": "basic",
+      "text": "good girl,",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_100",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_77": {
+    "slot": "name_prefix",
+    "display_name": "ball chaser",
+    "achievement_name": "Ball? WHERE?",
+    "achievement_category": "chat",
+    "achievement_id": "chat_ball",
+    "config": {
+      "offset_y": "1px",
+      "text": "ball chaser",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_ball",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_8": {
+    "slot": "name_prefix",
+    "display_name": "Sincerely,",
+    "achievement_name": "Babys First Cheer.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_time_1",
+    "config": {
+      "font_family": "Pacifico",
+      "font_size": "16.5px",
+      "font_style": "italic",
+      "font_weight": "100",
+      "offset_y": "-8.5px",
+      "outline": "basic",
+      "text": "Sincerely,",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_time_1",
+        "type": "achievement"
+      }
+    }
+  },
+  "name_14": {
+    "slot": "name_base",
+    "display_name": "name_14",
+    "achievement_name": "Mini Santa",
+    "achievement_category": "gifted",
+    "achievement_id": "gifted_cumulative_5",
+    "config": {
+      "outline": "basic",
+      "outline_thickness": "1",
+      "text_color": "#f43f5e",
+      "unlock": {
+        "category": "gifted",
+        "id": "gifted_cumulative_5",
+        "type": "achievement"
+      }
+    }
+  },
+  "name_15": {
+    "slot": "name_base",
+    "display_name": "name_15",
+    "achievement_name": "Little Santa",
+    "achievement_category": "gifted",
+    "achievement_id": "gifted_cumulative_10",
+    "config": {
+      "outline": "basic",
+      "outline_color": "#000000",
+      "outline_position": "outer_fake",
+      "outline_thickness": "0.5",
+      "text_color": "#e54897",
+      "unlock": {
+        "category": "gifted",
+        "id": "gifted_cumulative_10",
+        "type": "achievement"
+      }
+    }
+  },
+  "name_16": {
+    "slot": "name_base",
+    "display_name": "name_16",
+    "achievement_name": "Santa",
+    "achievement_category": "gifted",
+    "achievement_id": "gifted_cumulative_15",
+    "config": {
+      "outline": "basic",
+      "outline_thickness": "1",
+      "text_gradient": [
+        {
+          "color": "#f43f5e",
+          "pos": null
+        },
+        {
+          "color": "#ec4899",
+          "pos": null
+        },
+        {
+          "color": "#a855f7",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "category": "gifted",
+        "id": "gifted_cumulative_15",
+        "type": "achievement"
+      }
+    }
+  },
+  "name_17": {
+    "slot": "name_base",
+    "display_name": "name_17",
+    "achievement_name": "Big Santa",
+    "achievement_category": "gifted",
+    "achievement_id": "gifted_cumulative_20",
+    "config": {
+      "font_family": "Satisfy",
+      "gradient_animation": "sheen",
+      "outline": "ink_soft",
+      "outline_thickness": "1",
+      "text_gradient": [
+        {
+          "color": "#ec4899",
+          "pos": null
+        },
+        {
+          "color": "#a855f7",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "category": "gifted",
+        "id": "gifted_cumulative_20",
+        "type": "achievement"
+      }
+    }
+  },
+  "name_18": {
+    "slot": "name_base",
+    "display_name": "name_18",
+    "achievement_name": "Very Big Santa",
+    "achievement_category": "gifted",
+    "achievement_id": "gifted_cumulative_25",
+    "config": {
+      "font_family": "Satisfy",
+      "outline": "ink_soft",
+      "outline_color": "#f1b4fe",
+      "outline_thickness": "1",
+      "text_gradient": [
+        {
+          "color": "#f43f5e",
+          "pos": null
+        },
+        {
+          "color": "#ec4899",
+          "pos": null
+        },
+        {
+          "color": "#a855f7",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "category": "gifted",
+        "id": "gifted_cumulative_25",
+        "type": "achievement"
+      }
+    }
+  },
+  "name_19": {
+    "slot": "name_base",
+    "display_name": "name_19",
+    "achievement_name": "Massive Santa",
+    "achievement_category": "gifted",
+    "achievement_id": "gifted_cumulative_30",
+    "config": {
+      "edge_animation": "flicker",
+      "font_family": "Satisfy",
+      "gradient_animation": "sheen",
+      "outline": "ink_soft",
+      "outline_color": "#febedd",
+      "outline_position": "outer_fake",
+      "outline_thickness": "4",
+      "text_gradient": [
+        {
+          "color": "#f43f5e",
+          "pos": null
+        },
+        {
+          "color": "#ec4899",
+          "pos": null
+        },
+        {
+          "color": "#a855f7",
+          "pos": null
+        },
+        {
+          "color": "#e9d5ff",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "category": "gifted",
+        "id": "gifted_cumulative_30",
+        "type": "achievement"
+      }
+    }
+  },
+  "name_4": {
+    "slot": "name_base",
+    "display_name": "name_4",
+    "achievement_name": "Bit Curious.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_cumulative_1k",
+    "config": {
+      "outline": "basic",
+      "outline_color": "#000000",
+      "outline_thickness": "1",
+      "text_color": "#00d4ff",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_cumulative_1k",
+        "type": "achievement"
+      }
+    }
+  },
+  "name_5": {
+    "slot": "name_base",
+    "display_name": "name_5",
+    "achievement_name": "Cheer Chewer.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_cumulative_2500",
+    "config": {
+      "outline": "basic",
+      "outline_position": "outer_fake",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#9147ff",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_cumulative_2500",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_100": {
+    "slot": "name_suffix",
+    "display_name": "Bark",
+    "achievement_name": "Certified Barker",
+    "achievement_category": "chat",
+    "achievement_id": "chat_bork",
+    "config": {
+      "text": "Bark",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_bork",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_106": {
+    "slot": "name_suffix",
+    "display_name": "Growler",
+    "achievement_name": "Growl Translator",
+    "achievement_category": "chat",
+    "achievement_id": "chat_growl",
+    "config": {
+      "text": "Growler",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_growl",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_19": {
+    "slot": "name_suffix",
+    "display_name": ", good boi",
+    "achievement_name": "A dollar for doggo.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_100",
+    "config": {
+      "outline": "basic",
+      "text": ", good boi",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_100",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_35": {
+    "slot": "name_suffix",
+    "display_name": "for me?",
+    "achievement_name": "Oh! For Me?",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_1000",
+    "config": {
+      "outline": "basic",
+      "text": "for me?",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#7de8ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_1000",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_4": {
+    "slot": "name_suffix",
+    "display_name": "the booper",
+    "achievement_name": "Nose Booper",
+    "achievement_category": "chat",
+    "achievement_id": "chat_boop",
+    "config": {
+      "outline": "basic",
+      "text": "the booper",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_boop",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_5": {
+    "slot": "name_suffix",
+    "display_name": "The Believer",
+    "achievement_name": "Dog Loyalist",
+    "achievement_category": "chat",
+    "achievement_id": "chat_dog_god",
+    "config": {
+      "font_family": "Grenze Gotisch",
+      "offset_x": "3px",
+      "outline": "basic",
+      "text": "The Believer",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_dog_god",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_7": {
+    "slot": "name_suffix",
+    "display_name": "The Floof",
+    "achievement_name": "Floof Fanatic",
+    "achievement_category": "chat",
+    "achievement_id": "chat_floof",
+    "config": {
+      "font_family": "Grenze Gotisch",
+      "offset_x": "14px",
+      "outline": "basic",
+      "text": "The Floof",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_floof",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_8": {
+    "slot": "name_suffix",
+    "display_name": "The Good Boy",
+    "achievement_name": "Who's A Good Doggo?",
+    "achievement_category": "chat",
+    "achievement_id": "chat_goodboy",
+    "config": {
+      "outline": "basic",
+      "text": "The Good Boy",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_goodboy",
+        "type": "achievement"
+      }
+    }
+  }
+}

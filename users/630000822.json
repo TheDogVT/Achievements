@@ -4,17 +4,37 @@
   "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/c66b5769-b008-439c-a8fc-73fb23d676e3-profile_image-300x300.png",
   "legacy": 1,
   "achievements": {
-    "earned": {},
-    "founded": {}
+    "earned": {
+      "cheer_message_100": "2026-11-01T21:21:38.911166+00:00",
+      "cheer_time_1": "2026-11-01T21:21:38.971722+00:00"
+    },
+    "founded": {
+      "cheer_message_1k": "2026-11-01T21:21:38.936088+00:00",
+      "cheer_cumulative_1k": "2026-11-01T21:21:38.948083+00:00",
+      "cheer_1000": "2026-11-01T21:21:38.991325+00:00",
+      "cheer_cumulative_2500": "2026-11-01T21:21:57.390562+00:00"
+    }
   },
   "decorations": {
-    "unlocked": [],
+    "unlocked": [
+      "name_4",
+      "prefix_8",
+      "prefix_48",
+      "suffix_35",
+      "name_5"
+    ],
     "active": {}
   },
   "stats": {
-    "messages": 0,
-    "active_months": 0,
-    "first_seen": null
+    "messages": 4,
+    "active_months": 1,
+    "first_seen": "2026-11"
   },
-  "top_months": []
+  "top_months": [
+    {
+      "month": "2026-11",
+      "kind": "cheers",
+      "rank": 1
+    }
+  ]
 }

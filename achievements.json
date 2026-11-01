@@ -1,1 +1,267 @@
-{}
+{
+  "chat": {
+    "chat_dog_god": {
+      "name": "Dog Loyalist",
+      "desc": "Awarded for believing in the dog god.",
+      "type": "contains"
+    },
+    "chat_ball": {
+      "name": "Ball? WHERE?",
+      "desc": "Awarded for baiting dog with toys.",
+      "type": "contains"
+    },
+    "chat_walk": {
+      "name": "Walkies?!",
+      "desc": "Awarded for baiting dog with a walk.",
+      "type": "contains"
+    },
+    "chat_bork": {
+      "name": "Certified Barker",
+      "desc": "Awarded for speaking the sacred tongue.",
+      "type": "contains"
+    },
+    "chat_goodboy": {
+      "name": "Who's A Good Doggo?",
+      "desc": "Awarded for praising the divine pupper.",
+      "type": "contains"
+    },
+    "chat_treats": {
+      "name": "Treat Dispenser",
+      "desc": "Awarded for attempting to bribe the dog.",
+      "type": "contains"
+    },
+    "chat_squirrel": {
+      "name": "SQUIRREL?!",
+      "desc": "Awarded for invoking ancient prey instincts.",
+      "type": "contains"
+    },
+    "chat_stinky": {
+      "name": "Rude Human",
+      "desc": "Awarded for calling dog stinky.",
+      "type": "contains"
+    },
+    "chat_fetch": {
+      "name": "Thrower Of Objects",
+      "desc": "Awarded for commanding fetch.",
+      "type": "contains"
+    },
+    "chat_tail": {
+      "name": "Tail Enthusiast",
+      "desc": "Awarded for noticing the tail physics.",
+      "type": "contains"
+    },
+    "chat_howl": {
+      "name": "Moon Choir Recruit",
+      "desc": "Awarded for attempting to summon howls.",
+      "type": "contains"
+    },
+    "chat_stick": {
+      "name": "Stick Provider",
+      "desc": "Awarded for offering quality lumber.",
+      "type": "contains"
+    },
+    "chat_chaos": {
+      "name": "Mischief Encourager",
+      "desc": "Awarded for promoting chaos energy.",
+      "type": "contains"
+    },
+    "chat_sniff": {
+      "name": "Sniff Scholar",
+      "desc": "Awarded for understanding the sacred sniff ritual.",
+      "type": "contains"
+    },
+    "chat_bath": {
+      "name": "Soapy Betrayer",
+      "desc": "Awarded for suggesting a bath.",
+      "type": "contains"
+    },
+    "chat_boop": {
+      "name": "Nose Booper",
+      "desc": "Awarded for the ultimate snoot touch.",
+      "type": "contains"
+    },
+    "chat_scratch": {
+      "name": "Scratch Specialist",
+      "desc": "Awarded for targeting those itchy spots.",
+      "type": "contains"
+    },
+    "chat_dig": {
+      "name": "Hole Digger",
+      "desc": "Awarded for unearthing buried treasures.",
+      "type": "contains"
+    },
+    "chat_woofwoof": {
+      "name": "Double Barker",
+      "desc": "Awarded for the classic double woof.",
+      "type": "contains"
+    },
+    "chat_leash": {
+      "name": "Leash Handler",
+      "desc": "Awarded for taking control of the walk.",
+      "type": "contains"
+    },
+    "chat_snoot": {
+      "name": "Snoot Connoisseur",
+      "desc": "Awarded for appreciating the noble nose.",
+      "type": "contains"
+    },
+    "chat_floof": {
+      "name": "Floof Fanatic",
+      "desc": "Awarded for fluff obsession.",
+      "type": "contains"
+    },
+    "chat_yawn": {
+      "name": "Yawn Mimic",
+      "desc": "Awarded for contagious sleepy vibes.",
+      "type": "contains"
+    },
+    "chat_spelled_forbidden": {
+      "name": "Pupper Confusion",
+      "desc": "Awarded for spelling out words with sneaky spaces, thinking pup won't notice. Spoiler: pup notices.",
+      "type": "contains"
+    },
+    "chat_growl": {
+      "name": "Growl Translator",
+      "desc": "Awarded for decoding the warning rumbles.",
+      "type": "contains"
+    },
+    "chat_vacuum": {
+      "name": "The monster vacoom",
+      "desc": "Awarded for declaring war on the loud monster.",
+      "type": "contains"
+    },
+    "chat_mailman": {
+      "name": "Mailman Menace",
+      "desc": "Awarded for treating every delivery person like a personal nemesis.",
+      "type": "contains"
+    },
+    "chat_yap": {
+      "name": "Yapper Supreme",
+      "desc": "Awarded for high-pitched tiny barks (even if you're a big dog).",
+      "type": "contains"
+    },
+    "chat_wholet": {
+      "name": "Baha Men Echo",
+      "desc": "Awarded for the eternal question.",
+      "type": "contains"
+    },
+    "chat_10": {
+      "name": "Curious Chatter.",
+      "desc": "Awarded for yapping 10 times.",
+      "amount": 10,
+      "type": "cumulative"
+    }
+  },
+  "cheer": {
+    "cheer_message_100": {
+      "name": "Generoius Bit Giver.",
+      "desc": "Awarded for cheering 100 or more bits in a message.",
+      "amount": 100,
+      "type": "threshold"
+    },
+    "cheer_message_1k": {
+      "name": "Big Bit Giver.",
+      "desc": "Awarded for cheering 1,000 or more bits in a message.",
+      "amount": 1000,
+      "type": "threshold"
+    },
+    "cheer_cumulative_1k": {
+      "name": "Bit Curious.",
+      "desc": "Awarded for cheering 1,000 bits overall.",
+      "amount": 1000,
+      "type": "cumulative"
+    },
+    "cheer_cumulative_2500": {
+      "name": "Cheer Chewer.",
+      "desc": "Awarded for cheering 2,500 bits overall.",
+      "amount": 2500,
+      "type": "cumulative"
+    },
+    "cheer_time_1": {
+      "name": "Babys First Cheer.",
+      "desc": "Awarded for cheering once.",
+      "amount": 1,
+      "type": "times"
+    },
+    "cheer_100": {
+      "name": "A dollar for doggo.",
+      "desc": "Awarded for cheering exactly 100 bits",
+      "amount": 100,
+      "type": "exact"
+    },
+    "cheer_1000": {
+      "name": "Oh! For Me?",
+      "desc": "Awarded for cheering exactly 1000 bits",
+      "amount": 1000,
+      "type": "exact"
+    }
+  },
+  "gifted": {
+    "gifted_times_1": {
+      "name": "A present for Doggo, and friend",
+      "desc": "Awarded gifting for the first time.",
+      "amount": 1,
+      "type": "times"
+    },
+    "gifted_times_2": {
+      "name": "Presents for Doggo, and friends",
+      "desc": "Awarded gifting for the second time.",
+      "amount": 2,
+      "type": "times"
+    },
+    "gifted_cumulative_5": {
+      "name": "Mini Santa",
+      "desc": "Awarded for 5 cumulative gifted subs.",
+      "amount": 5,
+      "type": "cumulative"
+    },
+    "gifted_cumulative_10": {
+      "name": "Little Santa",
+      "desc": "Awarded for 10 cumulative gifted subs.",
+      "amount": 10,
+      "type": "cumulative"
+    },
+    "gifted_cumulative_15": {
+      "name": "Santa",
+      "desc": "Awarded for 15 cumulative gifted subs.",
+      "amount": 15,
+      "type": "cumulative"
+    },
+    "gifted_cumulative_20": {
+      "name": "Big Santa",
+      "desc": "Awarded for 20 cumulative gifted subs.",
+      "amount": 20,
+      "type": "cumulative"
+    },
+    "gifted_cumulative_25": {
+      "name": "Very Big Santa",
+      "desc": "Awarded for 25 cumulative gifted subs.",
+      "amount": 25,
+      "type": "cumulative"
+    },
+    "gifted_cumulative_30": {
+      "name": "Massive Santa",
+      "desc": "Awarded for 30 cumulative gifted subs.",
+      "amount": 30,
+      "type": "cumulative"
+    },
+    "gifted_instance_5": {
+      "name": "Gifty Bomba",
+      "desc": "Awarded for gifting 5 subs or more at once.",
+      "amount": 5,
+      "type": "instance"
+    },
+    "gifted_instance_10": {
+      "name": "Big Gifty Bomba",
+      "desc": "Awarded for gifting 10 subs or more at once.",
+      "amount": 10,
+      "type": "instance"
+    },
+    "gifted_instance_20": {
+      "name": "Gifted Bomb Run",
+      "desc": "Awarded for gifting 20 subs or more at once.",
+      "amount": 20,
+      "type": "instance"
+    }
+  }
+}

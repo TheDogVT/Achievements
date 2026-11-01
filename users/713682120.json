@@ -4,17 +4,32 @@
   "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/4c2c7189-16fc-4858-a514-61c8ad646d9a-profile_image-300x300.png",
   "legacy": 1,
   "achievements": {
-    "earned": {},
+    "earned": {
+      "gifted_cumulative_5": "2026-11-01T21:21:40.021671+00:00",
+      "gifted_cumulative_10": "2026-11-01T21:21:40.079547+00:00",
+      "gifted_times_1": "2026-11-01T21:21:40.103546+00:00",
+      "gifted_instance_5": "2026-11-01T21:21:40.121770+00:00",
+      "gifted_instance_10": "2026-11-01T21:21:40.139766+00:00"
+    },
     "founded": {}
   },
   "decorations": {
-    "unlocked": [],
+    "unlocked": [
+      "name_14",
+      "name_15"
+    ],
     "active": {}
   },
   "stats": {
     "messages": 0,
-    "active_months": 0,
-    "first_seen": null
+    "active_months": 1,
+    "first_seen": "2026-11"
   },
-  "top_months": []
+  "top_months": [
+    {
+      "month": "2026-11",
+      "kind": "gifted",
+      "rank": 2
+    }
+  ]
 }

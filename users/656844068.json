@@ -5,16 +5,41 @@
   "legacy": 1,
   "achievements": {
     "earned": {},
-    "founded": {}
+    "founded": {
+      "gifted_cumulative_5": "2026-11-01T21:21:23.728417+00:00",
+      "gifted_cumulative_10": "2026-11-01T21:21:23.750457+00:00",
+      "gifted_cumulative_15": "2026-11-01T21:21:23.782561+00:00",
+      "gifted_cumulative_20": "2026-11-01T21:21:23.811135+00:00",
+      "gifted_times_1": "2026-11-01T21:21:23.847260+00:00",
+      "gifted_instance_5": "2026-11-01T21:21:23.871258+00:00",
+      "gifted_instance_10": "2026-11-01T21:21:23.890351+00:00",
+      "gifted_instance_20": "2026-11-01T21:21:23.913589+00:00",
+      "gifted_cumulative_25": "2026-11-01T21:21:37.302013+00:00",
+      "gifted_cumulative_30": "2026-11-01T21:21:37.352419+00:00",
+      "gifted_times_2": "2026-11-01T21:21:37.384470+00:00"
+    }
   },
   "decorations": {
-    "unlocked": [],
+    "unlocked": [
+      "name_14",
+      "name_15",
+      "name_16",
+      "name_17",
+      "name_18",
+      "name_19"
+    ],
     "active": {}
   },
   "stats": {
     "messages": 0,
-    "active_months": 0,
-    "first_seen": null
+    "active_months": 1,
+    "first_seen": "2026-11"
   },
-  "top_months": []
+  "top_months": [
+    {
+      "month": "2026-11",
+      "kind": "gifted",
+      "rank": 1
+    }
+  ]
 }
