@@ -481,6 +481,12 @@
       "amount": 100000,
       "type": "win"
     },
+    "gamble_jackpot_total_1": {
+      "name": "Taste of Luck.",
+      "desc": "Awarded for getting your first Jackpot while gambling.",
+      "amount": 1,
+      "type": "jackpot"
+    },
     "gamble_total_win_1": {
       "name": "Walk Away Now",
       "desc": "Awarded for winning at gambling for the first time!",

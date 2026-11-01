@@ -6,7 +6,8 @@
   "achievements": {
     "earned": {
       "chat_chain_member": "2026-11-01T21:44:47.077689+00:00",
-      "gifted_times_1": "2026-11-01T21:46:25.841158+00:00"
+      "gifted_times_1": "2026-11-01T21:46:25.841158+00:00",
+      "gamble_total_loss_1": "2026-11-01T21:52:13.262488+00:00"
     },
     "founded": {}
   },
@@ -19,7 +20,7 @@
     "active": {}
   },
   "stats": {
-    "messages": 4,
+    "messages": 5,
     "active_months": 1,
     "first_seen": "2026-11"
   },
