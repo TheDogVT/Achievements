@@ -7,7 +7,8 @@
     "earned": {
       "cheer_message_100": "2026-11-01T21:22:53.867629+00:00",
       "cheer_time_1": "2026-11-01T21:22:53.885205+00:00",
-      "cheer_100": "2026-11-01T21:22:53.907405+00:00"
+      "cheer_100": "2026-11-01T21:22:53.907405+00:00",
+      "chat_10": "2026-11-01T21:25:29.375719+00:00"
     },
     "founded": {}
   },
@@ -15,7 +16,8 @@
     "unlocked": [
       "prefix_8",
       "prefix_76",
-      "suffix_19"
+      "suffix_19",
+      "prefix_7"
     ],
     "active": {
       "washi_color": "washi_mint",
@@ -23,7 +25,7 @@
     }
   },
   "stats": {
-    "messages": 8,
+    "messages": 11,
     "active_months": 1,
     "first_seen": "2026-11"
   },

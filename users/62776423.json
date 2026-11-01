@@ -6,7 +6,9 @@
   "achievements": {
     "earned": {
       "chat_wholet": "2026-11-01T21:23:18.118735+00:00",
-      "chat_doge": "2026-11-01T21:24:31.086704+00:00"
+      "chat_doge": "2026-11-01T21:24:31.086704+00:00",
+      "gamble_total_loss_1": "2026-11-01T21:25:12.828221+00:00",
+      "chat_10": "2026-11-01T21:25:44.606994+00:00"
     },
     "founded": {
       "chat_vacuum": "2026-11-01T21:21:34.403127+00:00"
@@ -14,12 +16,13 @@
   },
   "decorations": {
     "unlocked": [
-      "prefix_134"
+      "prefix_134",
+      "prefix_7"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 7,
+    "messages": 10,
     "active_months": 1,
     "first_seen": "2026-11"
   },

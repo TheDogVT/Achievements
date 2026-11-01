@@ -285,6 +285,18 @@
       "amount": 100,
       "type": "exact"
     },
+    "cheer_123": {
+      "name": "I can count!",
+      "desc": "Awarded for cheering exactly 123 bits",
+      "amount": 123,
+      "type": "exact"
+    },
+    "cheer_429": {
+      "name": "Hahahah pot.",
+      "desc": "Awarded for cheering exactly 420 bits",
+      "amount": 420,
+      "type": "exact"
+    },
     "cheer_1000": {
       "name": "Oh! For Me?",
       "desc": "Awarded for cheering exactly 1000 bits",
@@ -304,6 +316,12 @@
       "desc": "Awarded for winning at gambling for the first time!",
       "amount": 1,
       "type": "win_total"
+    },
+    "gamble_total_loss_1": {
+      "name": "Shouldn't Have Tried",
+      "desc": "Awarded for losing at gambling for the first time..",
+      "amount": 1,
+      "type": "loss_total"
     }
   },
   "gifted": {

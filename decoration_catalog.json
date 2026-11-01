@@ -680,6 +680,40 @@
       }
     }
   },
+  "suffix_20": {
+    "slot": "name_suffix",
+    "display_name": "123 go!",
+    "achievement_name": "I can count!",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_123",
+    "config": {
+      "outline": "basic",
+      "text": "123 go!",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_123",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_27": {
+    "slot": "name_suffix",
+    "display_name": "blaze it",
+    "achievement_name": "Hahahah pot.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_429",
+    "config": {
+      "outline": "basic",
+      "text": "blaze it",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_429",
+        "type": "achievement"
+      }
+    }
+  },
   "suffix_35": {
     "slot": "name_suffix",
     "display_name": "for me?",
