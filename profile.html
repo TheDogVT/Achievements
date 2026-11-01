@@ -340,7 +340,6 @@ else $('founded-card').innerHTML = '<span class="tab">Founded</span><p style="ma
   const esc = t => String(t).replace(/[&<>"]/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch]));
   const desc = {}; for (const c of Object.values(achDefs)) for (const [id, v] of Object.entries(c)) desc[id] = v.desc;
   const deco = {}; for (const e of Object.values(catalog)) if (e.achievement_id) (deco[e.achievement_id] ||= []).push(e);
-  const SLOT = { name_prefix: 'Prefix', name_base: 'Name style', name_suffix: 'Suffix', message_text: 'Message style', card_background: 'Card style' };
   const mine = Object.fromEntries(earned.map(e => [e.id, e])), mineF = new Set(founded.map(f => f.id));
   founded.forEach(fd => { if (!mine[fd.id]) mine[fd.id] = fd; }); // founding something means having it, even if the earned list missed it
   const day = d => d.toLocaleDateString('en', { day: 'numeric', month: 'short', year: 'numeric' });
@@ -349,11 +348,11 @@ else $('founded-card').innerHTML = '<span class="tab">Founded</span><p style="ma
   const have = {}; all.forEach(a => { have[a.cat] = (have[a.cat] || 0) + 1; });
   const sky = pf => { let st = ''; for (let i = 0; i < (pf ? 60 : 34); i++) st += `<i style="left:${(i * 37 % 96) + 2}%;top:${(i * 53 % 88) + 5}%;--t:${(i % 7) * .55}s;--o:${(.3 + (i * 13 % 7) / 10).toFixed(2)}"></i>`; return `<div class="psky">${st}<div class="paur"><span></span><span></span><span></span></div><div class="pmoon${pf ? ' pl' : ''}"></div></div>`; };
   const el = a => {
-    const share = a.earners / N, rare = a.earners > 0 && share <= .05, col = CATS[a.cat]?.[1] || '#9aa3b8', reward = (deco[a.id] || [])[0];
+    const share = a.earners / N, rare = a.earners > 0 && share <= .05, col = CATS[a.cat]?.[1] || '#9aa3b8', rewards = deco[a.id] || [];
     const badges = [a.pf ? '<span class="bdg pfb">✦ Platinum founder</span>' : a.plat && '<span class="bdg plat">Platinum</span>',
       !a.pf && a.fd && '<span class="bdg founder">✦ Founder</span>',
       a.earners ? `<span class="bdg${rare ? ' rare' : ''}">Top ${pct(share)}</span>` : '',
-      reward && `<span class="bdg deco" title="Unlocks a decoration">✿ ${SLOT[reward.slot] || 'Decoration'}${reward.config?.text ? ' “' + esc(reward.config.text) + '”' : ''}</span>`].filter(Boolean).join('');
+      rewards.length && `<span class="bdg deco">✿ Unlocks ${rewards.length > 1 ? 'decorations' : 'decoration'}</span>`].filter(Boolean).join('');
     const when = `${a.fd ? 'Founded' : 'Unlocked'} ${day(a.got.at)}${!a.fd && a.first ? ' · first: ' + esc(a.first) : ''}`;
     const n = document.createElement('article');
     n.dataset.seed = a.id;     n.className = `ach${a.fd ? ' founded' : ''}${a.plat ? ' plat' : ''}${a.pf ? ' pf' : ''}${rare ? ' rare' : ''}`; n.style.setProperty('--c', col);
