@@ -7,19 +7,22 @@
     "earned": {
       "chat_10": "2026-11-01T21:34:06.816535+00:00",
       "chat_floofy": "2026-11-01T22:02:51.377697+00:00",
-      "chat_treats": "2026-11-01T22:07:43.501835+00:00"
+      "chat_treats": "2026-11-01T22:07:43.501835+00:00",
+      "chat_bork": "2026-11-01T22:15:35.972339+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
       "prefix_7",
-      "prefix_139"
+      "prefix_139",
+      "prefix_126",
+      "suffix_100"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 29,
+    "messages": 31,
     "active_months": 1,
     "first_seen": "2026-11"
   },
