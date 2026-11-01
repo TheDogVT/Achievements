@@ -5,40 +5,16 @@
   "legacy": 1,
   "achievements": {
     "earned": {},
-    "founded": {
-      "cheer_message_100": "2026-11-01T16:28:45.203670+00:00",
-      "cheer_time_1": "2026-11-01T16:28:45.227791+00:00",
-      "cheer_100": "2026-11-01T16:28:45.270964+00:00",
-      "chat_dog_god": "2026-11-01T16:29:40.417594+00:00",
-      "chat_goodboy": "2026-11-01T16:29:40.449594+00:00"
-    }
+    "founded": {}
   },
   "decorations": {
-    "unlocked": [
-      "prefix_8",
-      "prefix_76",
-      "suffix_19",
-      "suffix_5",
-      "prefix_18",
-      "suffix_8"
-    ],
+    "unlocked": [],
     "active": {}
   },
   "stats": {
-    "messages": 2,
-    "active_months": 1,
-    "first_seen": "2026-11"
+    "messages": 0,
+    "active_months": 0,
+    "first_seen": null
   },
-  "top_months": [
-    {
-      "month": "2026-11",
-      "kind": "chat",
-      "rank": 1
-    },
-    {
-      "month": "2026-11",
-      "kind": "cheers",
-      "rank": 2
-    }
-  ]
+  "top_months": []
 }
