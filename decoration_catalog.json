@@ -423,6 +423,23 @@
       }
     }
   },
+  "prefix_33": {
+    "slot": "name_prefix",
+    "display_name": "trouble maker",
+    "achievement_name": "Almost Greatness.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_99",
+    "config": {
+      "outline": "basic",
+      "text": "trouble maker",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_99",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_34": {
     "slot": "name_prefix",
     "display_name": "Bit",

@@ -386,6 +386,12 @@
       "amount": 69,
       "type": "exact"
     },
+    "cheer_99": {
+      "name": "Almost Greatness.",
+      "desc": "Awarded for cheering exactly 99 bits",
+      "amount": 99,
+      "type": "exact"
+    },
     "cheer_100": {
       "name": "A dollar for doggo.",
       "desc": "Awarded for cheering exactly 100 bits",
