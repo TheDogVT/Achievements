@@ -11,7 +11,8 @@
       "chat_chain_member": "2026-11-01T21:45:03.858979+00:00",
       "chat_chain_starter": "2026-11-01T21:45:40.057873+00:00",
       "gamble_total_loss_1": "2026-11-01T21:52:13.119703+00:00",
-      "chat_mailman": "2026-11-01T22:07:34.431462+00:00"
+      "chat_mailman": "2026-11-01T22:07:34.431462+00:00",
+      "chat_bone": "2026-11-01T22:11:47.250368+00:00"
     },
     "founded": {}
   },
@@ -29,7 +30,7 @@
     "active": {}
   },
   "stats": {
-    "messages": 36,
+    "messages": 40,
     "active_months": 1,
     "first_seen": "2026-11"
   },

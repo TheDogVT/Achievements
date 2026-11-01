@@ -33,7 +33,9 @@
       "chat_squirrel": "2026-11-01T22:07:57.720369+00:00",
       "chat_mailman": "2026-11-01T22:08:05.230518+00:00",
       "gamble_loss_total_100k": "2026-11-01T22:10:28.442737+00:00",
-      "gamble_total_loss_1": "2026-11-01T22:10:28.462791+00:00"
+      "gamble_total_loss_1": "2026-11-01T22:10:28.462791+00:00",
+      "chat_sleepy": "2026-11-01T22:12:00.333610+00:00",
+      "chat_100": "2026-11-01T22:12:20.300914+00:00"
     },
     "founded": {
       "chat_dig": "2026-11-01T21:21:23.063687+00:00",
@@ -58,7 +60,9 @@
       "suffix_100",
       "prefix_15",
       "suffix_4",
-      "suffix_7"
+      "suffix_7",
+      "prefix_10",
+      "prefix_2"
     ],
     "active": {
       "name_prefix": "prefix_18",
@@ -66,7 +70,7 @@
     }
   },
   "stats": {
-    "messages": 97,
+    "messages": 100,
     "active_months": 1,
     "first_seen": "2026-08-09T22:21:03.669062+00:00"
   },
