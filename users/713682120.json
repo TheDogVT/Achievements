@@ -28,7 +28,8 @@
       "chat_scratch": "2026-11-01T22:41:42.766874+00:00",
       "chat_vet": "2026-11-01T22:41:51.521425+00:00",
       "chat_park": "2026-11-01T22:42:10.794928+00:00",
-      "chat_carride": "2026-11-01T22:42:43.313301+00:00"
+      "chat_carride": "2026-11-01T22:42:43.313301+00:00",
+      "chat_brush": "2026-11-01T22:48:10.258951+00:00"
     },
     "founded": {}
   },
@@ -47,12 +48,13 @@
       "suffix_56",
       "prefix_10",
       "prefix_77",
-      "prefix_129"
+      "prefix_129",
+      "prefix_127"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 59,
+    "messages": 63,
     "active_months": 1,
     "first_seen": "2026-11"
   },
