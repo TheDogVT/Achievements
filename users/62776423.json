@@ -4,7 +4,9 @@
   "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/a50669ae-3f34-48c0-81cb-e67f3bb1a1e7-profile_image-300x300.jpeg",
   "legacy": 1,
   "achievements": {
-    "earned": {},
+    "earned": {
+      "chat_wholet": "2026-11-01T21:23:18.118735+00:00"
+    },
     "founded": {
       "chat_vacuum": "2026-11-01T21:21:34.403127+00:00"
     }
@@ -14,7 +16,7 @@
     "active": {}
   },
   "stats": {
-    "messages": 2,
+    "messages": 5,
     "active_months": 1,
     "first_seen": "2026-11"
   },

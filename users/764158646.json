@@ -4,7 +4,9 @@
   "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/b0a554b6-1e8d-417b-8edc-e9b449fd289d-profile_image-300x300.jpeg",
   "legacy": 1,
   "achievements": {
-    "earned": {},
+    "earned": {
+      "chat_goodboy": "2026-11-01T21:23:21.378434+00:00"
+    },
     "founded": {
       "chat_boop": "2026-11-01T21:21:46.199282+00:00",
       "chat_snoot": "2026-11-01T21:22:00.407573+00:00"
@@ -13,12 +15,14 @@
   "decorations": {
     "unlocked": [
       "prefix_15",
-      "suffix_4"
+      "suffix_4",
+      "prefix_18",
+      "suffix_8"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 5,
+    "messages": 9,
     "active_months": 1,
     "first_seen": "2026-09-05T20:13:01.271842+00:00"
   },

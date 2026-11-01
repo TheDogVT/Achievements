@@ -6,7 +6,10 @@
   "achievements": {
     "earned": {
       "chat_yap": "2026-11-01T21:21:54.915161+00:00",
-      "chat_10": "2026-11-01T21:22:10.856813+00:00"
+      "chat_10": "2026-11-01T21:22:10.856813+00:00",
+      "chat_stinky": "2026-11-01T21:22:33.391586+00:00",
+      "chat_tail": "2026-11-01T21:23:16.206736+00:00",
+      "chat_floof": "2026-11-01T21:23:19.292727+00:00"
     },
     "founded": {
       "chat_bork": "2026-11-01T21:21:16.838513+00:00",
@@ -19,20 +22,15 @@
       "prefix_126",
       "suffix_100",
       "prefix_19",
-      "prefix_7"
+      "prefix_7",
+      "suffix_7"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 11,
+    "messages": 18,
     "active_months": 1,
     "first_seen": "2026-11"
   },
-  "top_months": [
-    {
-      "month": "2026-11",
-      "kind": "chat",
-      "rank": 3
-    }
-  ]
+  "top_months": []
 }

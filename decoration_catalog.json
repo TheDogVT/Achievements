@@ -1,4 +1,20 @@
 {
+  "prefix_10": {
+    "slot": "name_prefix",
+    "display_name": "eepy",
+    "achievement_name": "Nap Whisperer",
+    "achievement_category": "chat",
+    "achievement_id": "chat_sleepy",
+    "config": {
+      "text": "eepy",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_sleepy",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_12": {
     "slot": "name_prefix",
     "display_name": "the betrayer ",
@@ -45,6 +61,21 @@
       }
     }
   },
+  "prefix_137": {
+    "slot": "name_prefix",
+    "display_name": "Drooly",
+    "achievement_name": "Drip Reporter",
+    "achievement_category": "chat",
+    "achievement_id": "chat_drool",
+    "config": {
+      "text": "Drooly",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_drool",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_138": {
     "slot": "name_prefix",
     "display_name": "Stick Thrower",
@@ -56,6 +87,21 @@
       "unlock": {
         "category": "chat",
         "id": "chat_fetch",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_139": {
+    "slot": "name_prefix",
+    "display_name": "Floof Enjoyer",
+    "achievement_name": "Floof Inspector",
+    "achievement_category": "chat",
+    "achievement_id": "chat_floofy",
+    "config": {
+      "text": "Floof Enjoyer",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_floofy",
         "type": "achievement"
       }
     }
@@ -465,6 +511,34 @@
       "unlock": {
         "category": "cheer",
         "id": "cheer_cumulative_2500",
+        "type": "achievement"
+      }
+    }
+  },
+  "name_6": {
+    "slot": "name_base",
+    "display_name": "name_6",
+    "achievement_name": "Bit of Bits.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_cumulative_5k",
+    "config": {
+      "font_family": "VT323",
+      "gradient_animation": "sheen",
+      "outline": "ink_soft",
+      "outline_thickness": "1",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#9147ff",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_cumulative_5k",
         "type": "achievement"
       }
     }

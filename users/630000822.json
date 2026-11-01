@@ -12,7 +12,9 @@
       "cheer_message_1k": "2026-11-01T21:21:38.936088+00:00",
       "cheer_cumulative_1k": "2026-11-01T21:21:38.948083+00:00",
       "cheer_1000": "2026-11-01T21:21:38.991325+00:00",
-      "cheer_cumulative_2500": "2026-11-01T21:21:57.390562+00:00"
+      "cheer_cumulative_2500": "2026-11-01T21:21:57.390562+00:00",
+      "gamble_win_total_10k": "2026-11-01T21:22:23.339429+00:00",
+      "gamble_total_win_1": "2026-11-01T21:22:23.429368+00:00"
     }
   },
   "decorations": {
@@ -26,7 +28,7 @@
     "active": {}
   },
   "stats": {
-    "messages": 4,
+    "messages": 6,
     "active_months": 1,
     "first_seen": "2026-11"
   },
@@ -34,7 +36,7 @@
     {
       "month": "2026-11",
       "kind": "cheers",
-      "rank": 1
+      "rank": 2
     }
   ]
 }

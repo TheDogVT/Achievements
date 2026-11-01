@@ -45,6 +45,11 @@
       "desc": "Awarded for commanding fetch.",
       "type": "contains"
     },
+    "chat_sleepy": {
+      "name": "Nap Whisperer",
+      "desc": "Awarded for noting the yawn.",
+      "type": "contains"
+    },
     "chat_tail": {
       "name": "Tail Enthusiast",
       "desc": "Awarded for noticing the tail physics.",
@@ -60,6 +65,11 @@
       "desc": "Awarded for offering quality lumber.",
       "type": "contains"
     },
+    "chat_biscuits": {
+      "name": "Economist",
+      "desc": "Awarded for discussing stellar-based wealth.",
+      "type": "contains"
+    },
     "chat_chaos": {
       "name": "Mischief Encourager",
       "desc": "Awarded for promoting chaos energy.",
@@ -68,6 +78,11 @@
     "chat_sniff": {
       "name": "Sniff Scholar",
       "desc": "Awarded for understanding the sacred sniff ritual.",
+      "type": "contains"
+    },
+    "chat_protect": {
+      "name": "Guardian Vibes",
+      "desc": "Awarded for swearing loyalty and protection.",
       "type": "contains"
     },
     "chat_bath": {
@@ -83,6 +98,16 @@
     "chat_scratch": {
       "name": "Scratch Specialist",
       "desc": "Awarded for targeting those itchy spots.",
+      "type": "contains"
+    },
+    "chat_paw": {
+      "name": "Paw Shaker",
+      "desc": "Awarded for sealing deals with floofy handshakes.",
+      "type": "contains"
+    },
+    "chat_lick": {
+      "name": "Slobber Survivor",
+      "desc": "Awarded for enduring wet kisses.",
       "type": "contains"
     },
     "chat_dig": {
@@ -110,9 +135,24 @@
       "desc": "Awarded for fluff obsession.",
       "type": "contains"
     },
+    "chat_park": {
+      "name": "Park Adventurer",
+      "desc": "Awarded for dreaming of open fields.",
+      "type": "contains"
+    },
+    "chat_bone": {
+      "name": "Bone Burier",
+      "desc": "Awarded for hiding treasures.",
+      "type": "contains"
+    },
     "chat_yawn": {
       "name": "Yawn Mimic",
       "desc": "Awarded for contagious sleepy vibes.",
+      "type": "contains"
+    },
+    "chat_vet": {
+      "name": "Vet Avoider",
+      "desc": "Awarded for dreading the doc.",
       "type": "contains"
     },
     "chat_spelled_forbidden": {
@@ -123,6 +163,11 @@
     "chat_growl": {
       "name": "Growl Translator",
       "desc": "Awarded for decoding the warning rumbles.",
+      "type": "contains"
+    },
+    "chat_floofy": {
+      "name": "Floof Inspector",
+      "desc": "Awarded for fluff quality control.",
       "type": "contains"
     },
     "chat_vacuum": {
@@ -143,6 +188,26 @@
     "chat_wholet": {
       "name": "Baha Men Echo",
       "desc": "Awarded for the eternal question.",
+      "type": "contains"
+    },
+    "chat_loaf": {
+      "name": "Bread Inspector",
+      "desc": "Awarded for identifying the dog loaf formation.",
+      "type": "contains"
+    },
+    "chat_heckin": {
+      "name": "Heckin Linguist",
+      "desc": "Awarded for fluent doggo speak.",
+      "type": "contains"
+    },
+    "chat_pawty": {
+      "name": "Pun Offender",
+      "desc": "Awarded for committing dog puns in chat.",
+      "type": "contains"
+    },
+    "chat_drool": {
+      "name": "Drip Reporter",
+      "desc": "Awarded for documenting the slobber waterfall.",
       "type": "contains"
     },
     "chat_10": {
@@ -177,6 +242,12 @@
       "amount": 2500,
       "type": "cumulative"
     },
+    "cheer_cumulative_5k": {
+      "name": "Bit of Bits.",
+      "desc": "Awarded for cheering 5,000 bits overall.",
+      "amount": 5000,
+      "type": "cumulative"
+    },
     "cheer_time_1": {
       "name": "Babys First Cheer.",
       "desc": "Awarded for cheering once.",
@@ -194,6 +265,20 @@
       "desc": "Awarded for cheering exactly 1000 bits",
       "amount": 1000,
       "type": "exact"
+    }
+  },
+  "gamble": {
+    "gamble_win_total_10k": {
+      "name": "Taste of Winning",
+      "desc": "Awarded for winning 10,000 kibble in gambling.",
+      "amount": 10000,
+      "type": "win"
+    },
+    "gamble_total_win_1": {
+      "name": "Walk Away Now",
+      "desc": "Awarded for winning at gambling for the first time!",
+      "amount": 1,
+      "type": "win_total"
     }
   },
   "gifted": {

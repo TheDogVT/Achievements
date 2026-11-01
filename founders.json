@@ -54,6 +54,11 @@
     "founder_name": "oculusvisionss",
     "founded_at": "2026-11-01T21:21:37.384470+00:00"
   },
+  "cheer_cumulative_5k": {
+    "founder_id": "656844068",
+    "founder_name": "oculusvisionss",
+    "founded_at": "2026-11-01T21:22:23.178507+00:00"
+  },
   "cheer_message_1k": {
     "founder_id": "630000822",
     "founder_name": "burstnovax",
@@ -73,6 +78,16 @@
     "founder_id": "630000822",
     "founder_name": "burstnovax",
     "founded_at": "2026-11-01T21:21:57.390562+00:00"
+  },
+  "gamble_win_total_10k": {
+    "founder_id": "630000822",
+    "founder_name": "burstnovax",
+    "founded_at": "2026-11-01T21:22:23.339429+00:00"
+  },
+  "gamble_total_win_1": {
+    "founder_id": "630000822",
+    "founder_name": "burstnovax",
+    "founded_at": "2026-11-01T21:22:23.429368+00:00"
   },
   "chat_stick": {
     "founder_id": "1042487452",
@@ -108,6 +123,11 @@
     "founder_id": "643263951",
     "founder_name": "musicalturtle10",
     "founded_at": "2026-11-01T21:22:13.860949+00:00"
+  },
+  "chat_vet": {
+    "founder_id": "643263951",
+    "founder_name": "musicalturtle10",
+    "founded_at": "2026-11-01T21:22:43.263723+00:00"
   },
   "chat_vacuum": {
     "founder_id": "62776423",
@@ -184,6 +204,56 @@
     "founder_name": "bitterashes",
     "founded_at": "2026-11-01T21:22:04.117294+00:00"
   },
+  "chat_biscuits": {
+    "founder_id": "54948328",
+    "founder_name": "bitterashes",
+    "founded_at": "2026-11-01T21:22:19.943470+00:00"
+  },
+  "chat_protect": {
+    "founder_id": "54948328",
+    "founder_name": "bitterashes",
+    "founded_at": "2026-11-01T21:22:25.043648+00:00"
+  },
+  "chat_pawty": {
+    "founder_id": "54948328",
+    "founder_name": "bitterashes",
+    "founded_at": "2026-11-01T21:22:28.950165+00:00"
+  },
+  "chat_paw": {
+    "founder_id": "54948328",
+    "founder_name": "bitterashes",
+    "founded_at": "2026-11-01T21:22:34.173232+00:00"
+  },
+  "chat_sleepy": {
+    "founder_id": "54948328",
+    "founder_name": "bitterashes",
+    "founded_at": "2026-11-01T21:22:41.670980+00:00"
+  },
+  "chat_loaf": {
+    "founder_id": "54948328",
+    "founder_name": "bitterashes",
+    "founded_at": "2026-11-01T21:22:50.710659+00:00"
+  },
+  "chat_lick": {
+    "founder_id": "54948328",
+    "founder_name": "bitterashes",
+    "founded_at": "2026-11-01T21:22:54.643925+00:00"
+  },
+  "chat_heckin": {
+    "founder_id": "54948328",
+    "founder_name": "bitterashes",
+    "founded_at": "2026-11-01T21:23:04.291134+00:00"
+  },
+  "chat_floofy": {
+    "founder_id": "54948328",
+    "founder_name": "bitterashes",
+    "founded_at": "2026-11-01T21:23:16.086216+00:00"
+  },
+  "chat_drool": {
+    "founder_id": "54948328",
+    "founder_name": "bitterashes",
+    "founded_at": "2026-11-01T21:23:19.696408+00:00"
+  },
   "chat_ball": {
     "founder_id": "81344369",
     "founder_name": "MobiusWhiteoak",
@@ -209,6 +279,11 @@
     "founder_name": "MobiusWhiteoak",
     "founded_at": "2026-11-01T21:22:07.782000+00:00"
   },
+  "chat_park": {
+    "founder_id": "81344369",
+    "founder_name": "MobiusWhiteoak",
+    "founded_at": "2026-11-01T21:23:05.810572+00:00"
+  },
   "chat_dig": {
     "founder_id": "1320079365",
     "founder_name": "Tinksutin",
@@ -228,6 +303,11 @@
     "founder_id": "1320079365",
     "founder_name": "Tinksutin",
     "founded_at": "2026-11-01T21:21:48.492338+00:00"
+  },
+  "chat_bone": {
+    "founder_id": "729823285",
+    "founder_name": "thegalacticorigin",
+    "founded_at": "2026-11-01T21:22:41.480754+00:00"
   },
   "chat_boop": {
     "founder_id": "764158646",

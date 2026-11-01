@@ -5,21 +5,36 @@
   "legacy": 1,
   "achievements": {
     "earned": {
-      "chat_bork": "2026-11-01T21:21:20.333921+00:00"
+      "chat_bork": "2026-11-01T21:21:20.333921+00:00",
+      "chat_stick": "2026-11-01T21:22:21.128208+00:00",
+      "chat_10": "2026-11-01T21:22:31.693559+00:00",
+      "chat_treats": "2026-11-01T21:22:51.586348+00:00",
+      "chat_park": "2026-11-01T21:23:12.297263+00:00",
+      "chat_fetch": "2026-11-01T21:23:15.865551+00:00"
     },
-    "founded": {}
+    "founded": {
+      "chat_bone": "2026-11-01T21:22:41.480754+00:00"
+    }
   },
   "decorations": {
     "unlocked": [
       "prefix_126",
-      "suffix_100"
+      "suffix_100",
+      "prefix_7",
+      "prefix_138"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 6,
+    "messages": 25,
     "active_months": 1,
     "first_seen": "2026-08-14T22:50:53.662559+00:00"
   },
-  "top_months": []
+  "top_months": [
+    {
+      "month": "2026-11",
+      "kind": "chat",
+      "rank": 3
+    }
+  ]
 }
