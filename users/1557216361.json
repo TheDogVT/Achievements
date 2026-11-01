@@ -15,7 +15,8 @@
       "chat_stick": "2026-11-01T21:30:20.438074+00:00",
       "chat_tail": "2026-11-01T21:31:41.275199+00:00",
       "chat_woofwoof": "2026-11-01T21:33:32.795549+00:00",
-      "BALSDJHAUISKHDHUIOAS": "2026-11-01T21:33:41.011321+00:00"
+      "BALSDJHAUISKHDHUIOAS": "2026-11-01T21:33:41.011321+00:00",
+      "gamble_total_loss_1": "2026-11-01T21:42:55.947942+00:00"
     },
     "founded": {}
   },
@@ -32,7 +33,7 @@
     "active": {}
   },
   "stats": {
-    "messages": 31,
+    "messages": 33,
     "active_months": 1,
     "first_seen": "2026-10-11T22:07:43.157122+00:00"
   },
