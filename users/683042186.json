@@ -10,7 +10,9 @@
       "chat_chain_member": "2026-11-01T21:43:52.902717+00:00",
       "chat_chain_starter": "2026-11-01T21:44:25.921503+00:00"
     },
-    "founded": {}
+    "founded": {
+      "redeem_pet_1": "2026-11-01T21:47:02.577802+00:00"
+    }
   },
   "decorations": {
     "unlocked": [
@@ -25,7 +27,7 @@
     "active": {}
   },
   "stats": {
-    "messages": 38,
+    "messages": 40,
     "active_months": 1,
     "first_seen": "2026-11"
   },

@@ -190,6 +190,11 @@
       "desc": "Awarded for spelling out words with sneaky spaces, thinking pup won't notice. Spoiler: pup notices.",
       "type": "contains"
     },
+    "chat_peanut": {
+      "name": "PB Dealer",
+      "desc": "Awarded for offering the legendary sticky treat.",
+      "type": "contains"
+    },
     "chat_growl": {
       "name": "Growl Translator",
       "desc": "Awarded for decoding the warning rumbles.",
@@ -433,6 +438,12 @@
     }
   },
   "gamble": {
+    "gamble_loss_total_100k": {
+      "name": "Noteable Failure",
+      "desc": "Awarded for losing 100,000 kibble in gambling.",
+      "amount": 100000,
+      "type": "loss"
+    },
     "gamble_win_total_10k": {
       "name": "Taste of Winning",
       "desc": "Awarded for winning 10,000 kibble in gambling.",
@@ -501,6 +512,12 @@
       "amount": 30,
       "type": "cumulative"
     },
+    "gifted_cumulative_40": {
+      "name": "Gigantic Santa",
+      "desc": "Awarded for 40 cumulative gifted subs.",
+      "amount": 40,
+      "type": "cumulative"
+    },
     "gifted_instance_5": {
       "name": "Gifty Bomba",
       "desc": "Awarded for gifting 5 subs or more at once.",
@@ -518,6 +535,13 @@
       "desc": "Awarded for gifting 20 subs or more at once.",
       "amount": 20,
       "type": "instance"
+    }
+  },
+  "redeems": {
+    "redeem_pet_1": {
+      "name": "He's a good boy, yes he is!",
+      "desc": "Awarded for petting the dog.",
+      "amount": 1
     }
   }
 }
