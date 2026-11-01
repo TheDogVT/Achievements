@@ -36,7 +36,8 @@
       "chat_park": "2026-11-01T21:48:40.691563+00:00",
       "chat_rollover": "2026-11-01T21:49:06.657572+00:00",
       "chat_mlem": "2026-11-01T21:49:55.879201+00:00",
-      "chat_blep": "2026-11-01T21:50:40.386526+00:00"
+      "chat_blep": "2026-11-01T21:50:40.386526+00:00",
+      "chat_derp": "2026-11-01T21:58:43.469315+00:00"
     },
     "founded": {
       "cheer_message_100": "2026-11-01T21:21:19.800434+00:00",
@@ -100,7 +101,8 @@
       "suffix_108",
       "prefix_14",
       "suffix_56",
-      "prefix_2"
+      "prefix_2",
+      "prefix_132"
     ],
     "active": {
       "washi_color": "washi_lavender",
@@ -108,7 +110,7 @@
     }
   },
   "stats": {
-    "messages": 106,
+    "messages": 110,
     "active_months": 1,
     "first_seen": "2026-11"
   },
