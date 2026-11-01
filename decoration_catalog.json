@@ -647,6 +647,62 @@
       }
     }
   },
+  "prefix_140": {
+    "slot": "name_prefix",
+    "display_name": "Provoker",
+    "achievement_name": "Provoker",
+    "achievement_category": "chat",
+    "achievement_id": "chat_chain_starter",
+    "config": {
+      "font_family": "Lobster",
+      "outline": "ink_soft",
+      "outline_color": "#3d0309",
+      "outline_thickness": "1",
+      "text_color": "#e3122b",
+      "text": "Provoker",
+      "text_gradient": [
+        {
+          "color": "#8f0014",
+          "pos": null
+        },
+        {
+          "color": "#ff2e2e",
+          "pos": null
+        },
+        {
+          "color": "#ff9a7a",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "90deg",
+      "gradient_animation": "prism",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_chain_starter",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_141": {
+    "slot": "name_prefix",
+    "display_name": "Riled Up",
+    "achievement_name": "Riled Up",
+    "achievement_category": "chat",
+    "achievement_id": "chat_chain_member",
+    "config": {
+      "font_family": "Chewy",
+      "outline": "ink_soft",
+      "outline_color": "#5c0b33",
+      "outline_thickness": "1",
+      "text_color": "#ff4fa3",
+      "text": "Riled Up",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_chain_member",
+        "type": "achievement"
+      }
+    }
+  },
   "name_14": {
     "slot": "name_base",
     "display_name": "name_14",
@@ -914,6 +970,42 @@
       "unlock": {
         "category": "donation",
         "id": "donation_cumulative_10",
+        "type": "achievement"
+      }
+    }
+  },
+  "name_27": {
+    "slot": "name_base",
+    "display_name": "name_27",
+    "achievement_name": "Provoker",
+    "achievement_category": "chat",
+    "achievement_id": "chat_chain_starter",
+    "config": {
+      "outline": "ink_soft",
+      "outline_color": "#3d0309",
+      "outline_thickness": "1",
+      "text_color": "#e3122b",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_chain_starter",
+        "type": "achievement"
+      }
+    }
+  },
+  "name_28": {
+    "slot": "name_base",
+    "display_name": "name_28",
+    "achievement_name": "Riled Up",
+    "achievement_category": "chat",
+    "achievement_id": "chat_chain_member",
+    "config": {
+      "outline": "ink_soft",
+      "outline_color": "#5c0b33",
+      "outline_thickness": "1",
+      "text_color": "#ff4fa3",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_chain_member",
         "type": "achievement"
       }
     }
@@ -1256,6 +1348,64 @@
       "unlock": {
         "category": "chat",
         "id": "chat_goodboy",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_107": {
+    "slot": "name_suffix",
+    "display_name": "did it",
+    "achievement_name": "Provoker",
+    "achievement_category": "chat",
+    "achievement_id": "chat_chain_starter",
+    "config": {
+      "font_family": "Lobster",
+      "outline": "ink_soft",
+      "outline_color": "#3d0309",
+      "outline_thickness": "1",
+      "text_color": "#e3122b",
+      "offset_x": "6px",
+      "text": "did it",
+      "text_gradient": [
+        {
+          "color": "#8f0014",
+          "pos": null
+        },
+        {
+          "color": "#ff2e2e",
+          "pos": null
+        },
+        {
+          "color": "#ff9a7a",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "90deg",
+      "gradient_animation": "prism",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_chain_starter",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_108": {
+    "slot": "name_suffix",
+    "display_name": "wanted it",
+    "achievement_name": "Riled Up",
+    "achievement_category": "chat",
+    "achievement_id": "chat_chain_member",
+    "config": {
+      "font_family": "Chewy",
+      "outline": "ink_soft",
+      "outline_color": "#5c0b33",
+      "outline_thickness": "1",
+      "text_color": "#ff4fa3",
+      "offset_x": "6px",
+      "text": "wanted it",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_chain_member",
         "type": "achievement"
       }
     }

@@ -270,6 +270,18 @@
       "desc": "Awarded for yapping 10 times.",
       "amount": 10,
       "type": "cumulative"
+    },
+    "chat_chain_starter": {
+      "name": "Provoker",
+      "desc": "Started an emote chain that reached ×5.",
+      "amount": 5,
+      "type": "emote_chain"
+    },
+    "chat_chain_member": {
+      "name": "Riled Up",
+      "desc": "Was part of an emote chain that reached ×5.",
+      "amount": 5,
+      "type": "emote_chain"
     }
   },
   "cheer": {

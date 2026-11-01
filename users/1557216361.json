@@ -16,9 +16,12 @@
       "chat_tail": "2026-11-01T21:31:41.275199+00:00",
       "chat_woofwoof": "2026-11-01T21:33:32.795549+00:00",
       "BALSDJHAUISKHDHUIOAS": "2026-11-01T21:33:41.011321+00:00",
-      "gamble_total_loss_1": "2026-11-01T21:42:55.947942+00:00"
+      "gamble_total_loss_1": "2026-11-01T21:42:55.947942+00:00",
+      "chat_chain_member": "2026-11-01T21:44:27.666490+00:00"
     },
-    "founded": {}
+    "founded": {
+      "chat_chain_starter": "2026-11-01T21:43:52.781799+00:00"
+    }
   },
   "decorations": {
     "unlocked": [
@@ -28,12 +31,18 @@
       "prefix_16",
       "prefix_139",
       "prefix_77",
-      "prefix_122"
+      "prefix_122",
+      "prefix_140",
+      "name_27",
+      "suffix_107",
+      "prefix_141",
+      "name_28",
+      "suffix_108"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 33,
+    "messages": 36,
     "active_months": 1,
     "first_seen": "2026-10-11T22:07:43.157122+00:00"
   },

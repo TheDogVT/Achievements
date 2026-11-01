@@ -8,18 +8,22 @@
       "chat_loaf": "2026-11-01T21:23:13.781056+00:00",
       "chat_10": "2026-11-01T21:27:03.788025+00:00",
       "chat_treats": "2026-11-01T21:28:55.865917+00:00",
-      "chat_tail": "2026-11-01T21:31:29.565429+00:00"
+      "chat_tail": "2026-11-01T21:31:29.565429+00:00",
+      "chat_chain_member": "2026-11-01T21:43:52.931235+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
-      "prefix_7"
+      "prefix_7",
+      "prefix_141",
+      "name_28",
+      "suffix_108"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 38,
+    "messages": 40,
     "active_months": 1,
     "first_seen": "2026-08-13T22:08:50.389544+00:00"
   },

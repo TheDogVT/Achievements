@@ -7,7 +7,8 @@
     "earned": {
       "chat_bork": "2026-11-01T21:22:47.254252+00:00",
       "chat_yap": "2026-11-01T21:22:55.648486+00:00",
-      "chat_10": "2026-11-01T21:28:36.888017+00:00"
+      "chat_10": "2026-11-01T21:28:36.888017+00:00",
+      "chat_chain_member": "2026-11-01T21:44:39.542742+00:00"
     },
     "founded": {}
   },
@@ -15,12 +16,15 @@
     "unlocked": [
       "prefix_126",
       "suffix_100",
-      "prefix_7"
+      "prefix_7",
+      "prefix_141",
+      "name_28",
+      "suffix_108"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 21,
+    "messages": 22,
     "active_months": 1,
     "first_seen": "2026-11"
   },
