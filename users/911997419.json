@@ -9,19 +9,21 @@
       "gifted_times_1": "2026-11-01T21:22:43.451637+00:00",
       "gifted_instance_5": "2026-11-01T21:22:43.474636+00:00",
       "chat_floofy": "2026-11-01T21:31:14.932326+00:00",
-      "chat_tail": "2026-11-01T21:31:40.645188+00:00"
+      "chat_tail": "2026-11-01T21:31:40.645188+00:00",
+      "chat_10": "2026-11-01T21:33:14.156415+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
       "name_14",
-      "prefix_139"
+      "prefix_139",
+      "prefix_7"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 8,
+    "messages": 10,
     "active_months": 1,
     "first_seen": "2026-11"
   },
