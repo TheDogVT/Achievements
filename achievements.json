@@ -55,6 +55,11 @@
       "desc": "Awarded for noticing the tail physics.",
       "type": "contains"
     },
+    "chat_bellyrub": {
+      "name": "Dangerous Temptation",
+      "desc": "Awarded for offering forbidden tummy rubs.",
+      "type": "contains"
+    },
     "chat_howl": {
       "name": "Moon Choir Recruit",
       "desc": "Awarded for attempting to summon howls.",
@@ -115,9 +120,19 @@
       "desc": "Awarded for unearthing buried treasures.",
       "type": "contains"
     },
+    "chat_baddog": {
+      "name": "Rebel Rouser",
+      "desc": "Awarded for calling out naughty vibes.",
+      "type": "contains"
+    },
     "chat_woofwoof": {
       "name": "Double Barker",
       "desc": "Awarded for the classic double woof.",
+      "type": "contains"
+    },
+    "chat_doge": {
+      "name": "Meme Lord",
+      "desc": "Awarded for invoking the original doge.",
       "type": "contains"
     },
     "chat_leash": {
@@ -165,6 +180,11 @@
       "desc": "Awarded for decoding the warning rumbles.",
       "type": "contains"
     },
+    "chat_beach": {
+      "name": "Beach Bum Planner",
+      "desc": "Awarded for visions of sand, waves, and zoomies.",
+      "type": "contains"
+    },
     "chat_floofy": {
       "name": "Floof Inspector",
       "desc": "Awarded for fluff quality control.",
@@ -193,6 +213,11 @@
     "chat_loaf": {
       "name": "Bread Inspector",
       "desc": "Awarded for identifying the dog loaf formation.",
+      "type": "contains"
+    },
+    "chat_chonk": {
+      "name": "Chonk Surveyor",
+      "desc": "Awarded for measuring the floof-to-mass ratio.",
       "type": "contains"
     },
     "chat_heckin": {

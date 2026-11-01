@@ -10,7 +10,11 @@
       "chat_bork": "2026-11-01T21:22:23.370583+00:00",
       "chat_stinky": "2026-11-01T21:22:29.050458+00:00",
       "chat_bath": "2026-11-01T21:22:37.079299+00:00",
-      "chat_park": "2026-11-01T21:23:25.949373+00:00"
+      "chat_park": "2026-11-01T21:23:25.949373+00:00",
+      "chat_10": "2026-11-01T21:23:56.156690+00:00",
+      "chat_chonk": "2026-11-01T21:23:56.188313+00:00",
+      "chat_doge": "2026-11-01T21:24:22.810579+00:00",
+      "chat_bellyrub": "2026-11-01T21:24:30.764337+00:00"
     },
     "founded": {
       "chat_dog_god": "2026-11-01T21:21:16.519499+00:00",
@@ -28,7 +32,12 @@
       "suffix_106",
       "prefix_126",
       "suffix_100",
-      "prefix_12"
+      "prefix_12",
+      "prefix_7",
+      "prefix_131",
+      "suffix_102",
+      "prefix_134",
+      "prefix_125"
     ],
     "active": {
       "washi_color": "washi_gold",
@@ -36,15 +45,9 @@
     }
   },
   "stats": {
-    "messages": 9,
+    "messages": 12,
     "active_months": 1,
     "first_seen": "2026-11"
   },
-  "top_months": [
-    {
-      "month": "2026-11",
-      "kind": "cheers",
-      "rank": 3
-    }
-  ]
+  "top_months": []
 }

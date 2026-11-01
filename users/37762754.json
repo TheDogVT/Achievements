@@ -5,18 +5,24 @@
   "legacy": 1,
   "achievements": {
     "earned": {
-      "cheer_time_1": "2026-11-01T21:22:33.766462+00:00"
+      "cheer_time_1": "2026-11-01T21:22:33.766462+00:00",
+      "chat_howl": "2026-11-01T21:24:15.458669+00:00",
+      "chat_10": "2026-11-01T21:24:26.245411+00:00",
+      "chat_bellyrub": "2026-11-01T21:24:36.170262+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
-      "prefix_8"
+      "prefix_8",
+      "prefix_19",
+      "prefix_7",
+      "prefix_125"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 7,
+    "messages": 11,
     "active_months": 1,
     "first_seen": "2026-11"
   },

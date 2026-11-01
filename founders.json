@@ -59,6 +59,11 @@
     "founder_name": "oculusvisionss",
     "founded_at": "2026-11-01T21:22:23.178507+00:00"
   },
+  "chat_doge": {
+    "founder_id": "656844068",
+    "founder_name": "oculusvisionss",
+    "founded_at": "2026-11-01T21:24:13.395676+00:00"
+  },
   "cheer_message_1k": {
     "founder_id": "630000822",
     "founder_name": "burstnovax",
@@ -254,6 +259,21 @@
     "founder_name": "bitterashes",
     "founded_at": "2026-11-01T21:23:19.696408+00:00"
   },
+  "chat_chonk": {
+    "founder_id": "54948328",
+    "founder_name": "bitterashes",
+    "founded_at": "2026-11-01T21:23:34.659171+00:00"
+  },
+  "chat_beach": {
+    "founder_id": "54948328",
+    "founder_name": "bitterashes",
+    "founded_at": "2026-11-01T21:23:48.308554+00:00"
+  },
+  "chat_baddog": {
+    "founder_id": "54948328",
+    "founder_name": "bitterashes",
+    "founded_at": "2026-11-01T21:23:59.944491+00:00"
+  },
   "chat_ball": {
     "founder_id": "81344369",
     "founder_name": "MobiusWhiteoak",
@@ -308,6 +328,11 @@
     "founder_id": "729823285",
     "founder_name": "thegalacticorigin",
     "founded_at": "2026-11-01T21:22:41.480754+00:00"
+  },
+  "chat_bellyrub": {
+    "founder_id": "729823285",
+    "founder_name": "thegalacticorigin",
+    "founded_at": "2026-11-01T21:24:17.277216+00:00"
   },
   "chat_boop": {
     "founder_id": "764158646",

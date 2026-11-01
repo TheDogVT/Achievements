@@ -31,6 +31,51 @@
       }
     }
   },
+  "prefix_123": {
+    "slot": "name_prefix",
+    "display_name": "Shameful",
+    "achievement_name": "Rebel Rouser",
+    "achievement_category": "chat",
+    "achievement_id": "chat_baddog",
+    "config": {
+      "text": "Shameful",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_baddog",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_124": {
+    "slot": "name_prefix",
+    "display_name": "Beach lover",
+    "achievement_name": "Beach Bum Planner",
+    "achievement_category": "chat",
+    "achievement_id": "chat_beach",
+    "config": {
+      "text": "Beach lover",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_beach",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_125": {
+    "slot": "name_prefix",
+    "display_name": "Dangerous",
+    "achievement_name": "Dangerous Temptation",
+    "achievement_category": "chat",
+    "achievement_id": "chat_bellyrub",
+    "config": {
+      "text": "Dangerous",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_bellyrub",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_126": {
     "slot": "name_prefix",
     "display_name": "Bark",
@@ -46,6 +91,21 @@
       }
     }
   },
+  "prefix_131": {
+    "slot": "name_prefix",
+    "display_name": "THICC",
+    "achievement_name": "Chonk Surveyor",
+    "achievement_category": "chat",
+    "achievement_id": "chat_chonk",
+    "config": {
+      "text": "THICC",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_chonk",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_133": {
     "slot": "name_prefix",
     "display_name": "Yard Destroyer",
@@ -57,6 +117,21 @@
       "unlock": {
         "category": "chat",
         "id": "chat_dig",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_134": {
+    "slot": "name_prefix",
+    "display_name": "Meme Lover",
+    "achievement_name": "Meme Lord",
+    "achievement_category": "chat",
+    "achievement_id": "chat_doge",
+    "config": {
+      "text": "Meme Lover",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_doge",
         "type": "achievement"
       }
     }
@@ -554,6 +629,21 @@
       "unlock": {
         "category": "chat",
         "id": "chat_bork",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_102": {
+    "slot": "name_suffix",
+    "display_name": "THICC",
+    "achievement_name": "Chonk Surveyor",
+    "achievement_category": "chat",
+    "achievement_id": "chat_chonk",
+    "config": {
+      "text": "THICC",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_chonk",
         "type": "achievement"
       }
     }

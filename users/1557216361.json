@@ -6,19 +6,21 @@
   "achievements": {
     "earned": {
       "chat_bork": "2026-11-01T21:21:17.159440+00:00",
-      "chat_yap": "2026-11-01T21:22:45.473040+00:00"
+      "chat_yap": "2026-11-01T21:22:45.473040+00:00",
+      "chat_10": "2026-11-01T21:24:38.971994+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
       "prefix_126",
-      "suffix_100"
+      "suffix_100",
+      "prefix_7"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 7,
+    "messages": 10,
     "active_months": 1,
     "first_seen": "2026-10-11T22:07:43.157122+00:00"
   },
