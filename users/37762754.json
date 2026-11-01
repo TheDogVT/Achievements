@@ -25,7 +25,9 @@
       "chat_bork": "2026-11-01T21:56:11.925109+00:00",
       "chat_woofwoof": "2026-11-01T21:56:11.955536+00:00",
       "chat_mailman": "2026-11-01T22:08:18.725383+00:00",
-      "chat_spelled_forbidden": "2026-11-01T22:14:34.162771+00:00"
+      "chat_spelled_forbidden": "2026-11-01T22:14:34.162771+00:00",
+      "chat_100": "2026-11-01T22:29:58.575507+00:00",
+      "chat_yap": "2026-11-01T22:30:23.717953+00:00"
     },
     "founded": {}
   },
@@ -43,12 +45,13 @@
       "suffix_19",
       "prefix_139",
       "prefix_126",
-      "suffix_100"
+      "suffix_100",
+      "prefix_2"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 96,
+    "messages": 101,
     "active_months": 1,
     "first_seen": "2026-11"
   },
