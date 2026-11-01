@@ -8,7 +8,8 @@
       "chat_pawty": "2026-11-01T21:32:50.648319+00:00",
       "BALSDJHAUISKHDHUIOAS": "2026-11-01T21:33:55.468410+00:00",
       "chat_10": "2026-11-01T21:35:46.988536+00:00",
-      "chat_floof": "2026-11-01T21:37:19.075640+00:00"
+      "chat_floof": "2026-11-01T21:37:19.075640+00:00",
+      "chat_doorbell": "2026-11-01T21:39:03.921638+00:00"
     },
     "founded": {
       "chat_beg": "2026-11-01T21:37:59.375358+00:00"
@@ -19,12 +20,14 @@
       "prefix_122",
       "prefix_7",
       "suffix_7",
-      "prefix_13"
+      "prefix_13",
+      "prefix_135",
+      "suffix_105"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 21,
+    "messages": 24,
     "active_months": 1,
     "first_seen": "2026-11"
   },

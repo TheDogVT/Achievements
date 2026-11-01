@@ -67,12 +67,14 @@
       "suffix_20"
     ],
     "active": {
+      "name_prefix": "prefix_8",
+      "name_suffix": "suffix_5",
       "washi_color": "washi_gold",
       "washi_position": "washi_top_left"
     }
   },
   "stats": {
-    "messages": 39,
+    "messages": 41,
     "active_months": 1,
     "first_seen": "2026-11"
   },
