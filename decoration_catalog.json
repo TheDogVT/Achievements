@@ -31,6 +31,21 @@
       }
     }
   },
+  "prefix_122": {
+    "slot": "name_prefix",
+    "display_name": "BALSDJHAUISKHDHUIOAS,",
+    "achievement_name": "BALSDJHAUISKHDHUIOAS",
+    "achievement_category": "chat",
+    "achievement_id": "BALSDJHAUISKHDHUIOAS",
+    "config": {
+      "text": "BALSDJHAUISKHDHUIOAS,",
+      "unlock": {
+        "category": "chat",
+        "id": "BALSDJHAUISKHDHUIOAS",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_123": {
     "slot": "name_prefix",
     "display_name": "Shameful",
@@ -374,6 +389,23 @@
       }
     }
   },
+  "prefix_74": {
+    "slot": "name_prefix",
+    "display_name": "nice",
+    "achievement_name": "Nice Bitties.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_69",
+    "config": {
+      "outline": "basic",
+      "text": "nice",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_69",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_76": {
     "slot": "name_prefix",
     "display_name": "good girl,",
@@ -707,6 +739,23 @@
       "unlock": {
         "category": "chat",
         "id": "chat_growl",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_18": {
+    "slot": "name_suffix",
+    "display_name": "nice",
+    "achievement_name": "Nice Bitties.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_69",
+    "config": {
+      "outline": "basic",
+      "text": "nice",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_69",
         "type": "achievement"
       }
     }

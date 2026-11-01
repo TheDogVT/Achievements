@@ -1,5 +1,10 @@
 {
   "chat": {
+    "BALSDJHAUISKHDHUIOAS": {
+      "name": "BALSDJHAUISKHDHUIOAS",
+      "desc": "BALSDJHAUISKHDHUIOAS",
+      "type": "contains"
+    },
     "chat_dog_god": {
       "name": "Dog Loyalist",
       "desc": "Awarded for believing in the dog god.",
@@ -293,6 +298,12 @@
       "desc": "Awarded for cheering once.",
       "amount": 1,
       "type": "times"
+    },
+    "cheer_69": {
+      "name": "Nice Bitties.",
+      "desc": "Awarded for cheering exactly 69 bits",
+      "amount": 69,
+      "type": "exact"
     },
     "cheer_100": {
       "name": "A dollar for doggo.",
