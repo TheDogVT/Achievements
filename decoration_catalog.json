@@ -1090,6 +1090,64 @@
       }
     }
   },
+  "name_7": {
+    "slot": "name_base",
+    "display_name": "name_7",
+    "achievement_name": "Famous Cheerer.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_cumulative_10k",
+    "config": {
+      "effects_layers": [
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "chroma_echo",
+          "enabled": true,
+          "engine": "text",
+          "interval": "",
+          "knobs": {},
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "",
+          "plane": "text",
+          "random_range": "",
+          "scale": "",
+          "z_index": "5"
+        }
+      ],
+      "font_family": "VT323",
+      "glow_layers": [
+        {
+          "animation": "pulse",
+          "color": "#00d4ff",
+          "distance": "",
+          "fade": "",
+          "plane": "back",
+          "spread": ""
+        }
+      ],
+      "gradient_animation": "sheen",
+      "outline": "ink_soft",
+      "outline_thickness": "1",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#9147ff",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_cumulative_10k",
+        "type": "achievement"
+      }
+    }
+  },
   "name_9": {
     "slot": "name_base",
     "display_name": "name_9",

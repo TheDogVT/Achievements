@@ -356,6 +356,12 @@
       "amount": 5000,
       "type": "cumulative"
     },
+    "cheer_cumulative_10k": {
+      "name": "Famous Cheerer.",
+      "desc": "Awarded for cheering 10,000 bits overall.",
+      "amount": 10000,
+      "type": "cumulative"
+    },
     "cheer_time_1": {
       "name": "Babys First Cheer.",
       "desc": "Awarded for cheering once.",
