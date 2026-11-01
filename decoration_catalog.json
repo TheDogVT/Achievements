@@ -122,6 +122,21 @@
       }
     }
   },
+  "prefix_130": {
+    "slot": "name_prefix",
+    "display_name": "Tail Chaser",
+    "achievement_name": "Tail Chaser",
+    "achievement_category": "chat",
+    "achievement_id": "chat_chasetail",
+    "config": {
+      "text": "Tail Chaser",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_chasetail",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_131": {
     "slot": "name_prefix",
     "display_name": "THICC",

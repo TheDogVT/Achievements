@@ -200,6 +200,11 @@
       "desc": "Awarded for offering the legendary sticky treat.",
       "type": "contains"
     },
+    "chat_chasetail": {
+      "name": "Tail Chaser",
+      "desc": "Awarded for witnessing the eternal spin cycle.",
+      "type": "contains"
+    },
     "chat_growl": {
       "name": "Growl Translator",
       "desc": "Awarded for decoding the warning rumbles.",

@@ -26,10 +26,13 @@
       "suffix_100",
       "suffix_7"
     ],
-    "active": {}
+    "active": {
+      "washi_color": "washi_mint",
+      "washi_position": "washi_corner_tl"
+    }
   },
   "stats": {
-    "messages": 76,
+    "messages": 77,
     "active_months": 1,
     "first_seen": "2026-08-13T22:08:50.389544+00:00"
   },
