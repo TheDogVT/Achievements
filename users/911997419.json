@@ -16,7 +16,8 @@
       "chat_chain_member": "2026-11-01T21:45:40.093006+00:00",
       "chat_boop": "2026-11-01T21:50:28.510609+00:00",
       "gamble_win_total_10k": "2026-11-01T21:52:06.931782+00:00",
-      "gamble_total_win_1": "2026-11-01T21:52:06.950745+00:00"
+      "gamble_total_win_1": "2026-11-01T21:52:06.950745+00:00",
+      "chat_bork": "2026-11-01T21:55:29.316645+00:00"
     },
     "founded": {}
   },
@@ -30,12 +31,14 @@
       "name_28",
       "suffix_108",
       "prefix_15",
-      "suffix_4"
+      "suffix_4",
+      "prefix_126",
+      "suffix_100"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 33,
+    "messages": 34,
     "active_months": 1,
     "first_seen": "2026-11"
   },
