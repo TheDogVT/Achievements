@@ -106,19 +106,19 @@
     "active": {}
   },
   "stats": {
-    "messages": 46,
+    "messages": 50,
     "active_months": 1,
     "first_seen": "2026-11"
   },
   "top_months": [
     {
       "month": "2026-11",
-      "kind": "gifted",
-      "rank": 1
+      "kind": "cheers",
+      "rank": 2
     },
     {
       "month": "2026-11",
-      "kind": "cheers",
+      "kind": "gifted",
       "rank": 2
     }
   ]

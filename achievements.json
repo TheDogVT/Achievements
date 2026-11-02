@@ -595,6 +595,12 @@
       "amount": 2,
       "type": "times"
     },
+    "gifted_times_5": {
+      "name": "Many Presents for Doggo, and friends",
+      "desc": "Awarded gifting for the 5th time.",
+      "amount": 5,
+      "type": "times"
+    },
     "gifted_cumulative_5": {
       "name": "Mini Santa",
       "desc": "Awarded for 5 cumulative gifted subs.",
@@ -635,6 +641,12 @@
       "name": "Gigantic Santa",
       "desc": "Awarded for 40 cumulative gifted subs.",
       "amount": 40,
+      "type": "cumulative"
+    },
+    "gifted_cumulative_50": {
+      "name": "UH OH Santa",
+      "desc": "Awarded for 50 cumulative gifted subs.",
+      "amount": 50,
       "type": "cumulative"
     },
     "gifted_instance_5": {
