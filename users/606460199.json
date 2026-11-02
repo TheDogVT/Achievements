@@ -70,11 +70,13 @@
     ],
     "active": {
       "name_prefix": "prefix_16",
-      "name_suffix": "suffix_4"
+      "name_suffix": "suffix_4",
+      "washi_color": "washi_lavender",
+      "washi_position": "washi_top_center"
     }
   },
   "stats": {
-    "messages": 131,
+    "messages": 134,
     "active_months": 1,
     "first_seen": "2026-11"
   },
