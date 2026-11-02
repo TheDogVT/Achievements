@@ -32,7 +32,8 @@
       "chat_stick": "2026-11-02T01:21:28.467742+00:00"
     },
     "founded": {
-      "chat_carride": "2026-11-01T22:42:16.016824+00:00"
+      "chat_carride": "2026-11-01T22:42:16.016824+00:00",
+      "chat_smol": "2026-11-02T01:47:45.710411+00:00"
     }
   },
   "decorations": {
@@ -59,7 +60,7 @@
     }
   },
   "stats": {
-    "messages": 369,
+    "messages": 371,
     "active_months": 1,
     "first_seen": "2026-11"
   },
