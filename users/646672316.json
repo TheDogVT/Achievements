@@ -5,7 +5,8 @@
   "legacy": 0,
   "achievements": {
     "earned": {
-      "redeem_pet_1": "2026-11-02T02:58:23.583187+00:00"
+      "redeem_pet_1": "2026-11-02T02:58:23.583187+00:00",
+      "redeem_checkin_1": "2026-11-02T21:26:16.692973+00:00"
     },
     "founded": {}
   },
@@ -14,7 +15,7 @@
     "active": {}
   },
   "stats": {
-    "messages": 1,
+    "messages": 2,
     "active_months": 1,
     "first_seen": "2026-10-22T20:18:32.176089+00:00"
   },
