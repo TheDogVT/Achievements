@@ -275,6 +275,11 @@
       "desc": "Awarded for the ultimate dramatic flop.",
       "type": "contains"
     },
+    "chat_tug": {
+      "name": "Tug Champion",
+      "desc": "Awarded for rope toy warfare.",
+      "type": "contains"
+    },
     "chat_wholet": {
       "name": "Baha Men Echo",
       "desc": "Awarded for the eternal question.",
