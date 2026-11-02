@@ -43,7 +43,8 @@
       "chat_tail": "2026-11-02T04:41:58.747730+00:00",
       "chat_chasetail": "2026-11-02T04:42:25.161023+00:00",
       "redeem_checkin_1": "2026-11-02T21:15:41.808331+00:00",
-      "gamble_win_total_10k": "2026-11-02T21:22:50.685530+00:00"
+      "gamble_win_total_10k": "2026-11-02T21:22:50.685530+00:00",
+      "chat_baddog": "2026-11-02T22:42:46.355195+00:00"
     },
     "founded": {
       "chat_carride": "2026-11-01T22:42:16.016824+00:00",
@@ -75,7 +76,8 @@
       "prefix_3",
       "prefix_135",
       "suffix_105",
-      "prefix_130"
+      "prefix_130",
+      "prefix_123"
     ],
     "active": {
       "name_prefix": "prefix_129",
@@ -84,7 +86,7 @@
     }
   },
   "stats": {
-    "messages": 732,
+    "messages": 752,
     "active_months": 1,
     "first_seen": "2026-11"
   },
