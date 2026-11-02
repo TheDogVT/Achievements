@@ -7,18 +7,20 @@
     "earned": {
       "chat_treats": "2026-11-01T21:53:18.280040+00:00",
       "chat_10": "2026-11-01T22:11:30.379724+00:00",
-      "chat_yap": "2026-11-02T07:24:25.485914+00:00"
+      "chat_yap": "2026-11-02T07:24:25.485914+00:00",
+      "chat_cone": "2026-11-02T07:42:04.652120+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
-      "prefix_7"
+      "prefix_7",
+      "suffix_103"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 33,
+    "messages": 40,
     "active_months": 1,
     "first_seen": "2026-05-21T22:30:00.315891+00:00"
   },
