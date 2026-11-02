@@ -5,7 +5,8 @@
   "legacy": 1,
   "achievements": {
     "earned": {
-      "redeem_checkin_1": "2026-11-02T21:15:46.360874+00:00"
+      "redeem_checkin_1": "2026-11-02T21:15:46.360874+00:00",
+      "gamble_total_win_1": "2026-11-02T21:22:15.726648+00:00"
     },
     "founded": {}
   },
@@ -14,7 +15,7 @@
     "active": {}
   },
   "stats": {
-    "messages": 6,
+    "messages": 7,
     "active_months": 1,
     "first_seen": "2026-11"
   },
