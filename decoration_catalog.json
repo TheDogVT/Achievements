@@ -535,6 +535,23 @@
       }
     }
   },
+  "prefix_39": {
+    "slot": "name_prefix",
+    "display_name": "Day",
+    "achievement_name": "A bit a day.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_365",
+    "config": {
+      "outline": "basic",
+      "text": "Day",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_365",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_41": {
     "slot": "name_prefix",
     "display_name": "Byte",
@@ -1510,6 +1527,23 @@
       "unlock": {
         "category": "cheer",
         "id": "cheer_256",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_25": {
+    "slot": "name_suffix",
+    "display_name": "of 365",
+    "achievement_name": "A bit a day.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_365",
+    "config": {
+      "outline": "basic",
+      "text": "of 365",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_365",
         "type": "achievement"
       }
     }

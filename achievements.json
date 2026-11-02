@@ -463,6 +463,12 @@
       "amount": 256,
       "type": "exact"
     },
+    "cheer_365": {
+      "name": "A bit a day.",
+      "desc": "Awarded for cheering exactly 365 bits",
+      "amount": 365,
+      "type": "exact"
+    },
     "cheer_429": {
       "name": "Hahahah pot.",
       "desc": "Awarded for cheering exactly 420 bits",
