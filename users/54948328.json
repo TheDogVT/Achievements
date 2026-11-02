@@ -136,15 +136,15 @@
       "prefix_13"
     ],
     "active": {
-      "name_prefix": "prefix_137",
-      "name_base": "name_28",
-      "name_suffix": "suffix_8",
+      "name_prefix": "prefix_141",
+      "name_base": "name_27",
+      "name_suffix": "suffix_35",
       "washi_color": "washi_lavender",
       "washi_position": "washi_top_center"
     }
   },
   "stats": {
-    "messages": 283,
+    "messages": 288,
     "active_months": 1,
     "first_seen": "2026-11"
   },
