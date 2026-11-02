@@ -435,6 +435,21 @@
       }
     }
   },
+  "prefix_3": {
+    "slot": "name_prefix",
+    "display_name": "It's",
+    "achievement_name": "Little Yapper.",
+    "achievement_category": "chat",
+    "achievement_id": "chat_500",
+    "config": {
+      "text": "It's",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_500",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_31": {
     "slot": "name_prefix",
     "display_name": "Area",

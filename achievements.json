@@ -342,6 +342,12 @@
       "amount": 100,
       "type": "cumulative"
     },
+    "chat_500": {
+      "name": "Little Yapper.",
+      "desc": "Awarded for yapping 500 times.",
+      "amount": 500,
+      "type": "cumulative"
+    },
     "chat_chain_starter": {
       "name": "Provoker",
       "desc": "Started an emote chain that reached ×5.",

@@ -41,7 +41,8 @@
     },
     "founded": {
       "chat_carride": "2026-11-01T22:42:16.016824+00:00",
-      "chat_smol": "2026-11-02T01:47:45.710411+00:00"
+      "chat_smol": "2026-11-02T01:47:45.710411+00:00",
+      "chat_500": "2026-11-02T03:10:11.492102+00:00"
     }
   },
   "decorations": {
@@ -64,7 +65,8 @@
       "prefix_126",
       "suffix_100",
       "suffix_103",
-      "prefix_127"
+      "prefix_127",
+      "prefix_3"
     ],
     "active": {
       "name_prefix": "prefix_129",
@@ -73,7 +75,7 @@
     }
   },
   "stats": {
-    "messages": 487,
+    "messages": 501,
     "active_months": 1,
     "first_seen": "2026-11"
   },
