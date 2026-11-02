@@ -695,6 +695,11 @@
     }
   },
   "redeems": {
+    "redeem_checkin_1": {
+      "name": "Welcome Home Comutt.",
+      "desc": "Awarded for your first check-in.",
+      "amount": 1
+    },
     "redeem_pet_1": {
       "name": "He's a good boy, yes he is!",
       "desc": "Awarded for petting the dog.",
@@ -709,6 +714,11 @@
       "name": "Fluff The Floof",
       "desc": "Awarded for petting the dog 10 times.",
       "amount": 10
+    },
+    "redeem_first_1": {
+      "name": "Me First!",
+      "desc": "Awarded for getting first for the first time.",
+      "amount": 1
     },
     "redeem_total_5": {
       "name": "Curious Redeemer.",

@@ -15,6 +15,22 @@
       }
     }
   },
+  "prefix_101": {
+    "slot": "name_prefix",
+    "display_name": "First Claim",
+    "achievement_name": "Me First!",
+    "achievement_category": "redeems",
+    "achievement_id": "redeem_first_1",
+    "config": {
+      "outline": "basic",
+      "text": "First Claim",
+      "unlock": {
+        "category": "redeems",
+        "id": "redeem_first_1",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_12": {
     "slot": "name_prefix",
     "display_name": "the betrayer ",
@@ -1703,6 +1719,23 @@
       "unlock": {
         "category": "chat",
         "id": "chat_floof",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_79": {
+    "slot": "name_suffix",
+    "display_name": "[FIRST]",
+    "achievement_name": "Me First!",
+    "achievement_category": "redeems",
+    "achievement_id": "redeem_first_1",
+    "config": {
+      "font_family": "VT323",
+      "outline": "basic",
+      "text": "[FIRST]",
+      "unlock": {
+        "category": "redeems",
+        "id": "redeem_first_1",
         "type": "achievement"
       }
     }
