@@ -36,7 +36,8 @@
       "chat_chain_starter": "2026-11-02T03:58:54.203328+00:00",
       "redeem_total_10": "2026-11-02T21:15:19.926037+00:00",
       "redeem_checkin_1": "2026-11-02T21:15:27.456866+00:00",
-      "gamble_win_total_10k": "2026-11-02T21:18:37.565386+00:00"
+      "gamble_win_total_10k": "2026-11-02T21:18:37.565386+00:00",
+      "chat_chasetail": "2026-11-02T21:18:53.887809+00:00"
     },
     "founded": {
       "chat_ball": "2026-11-01T21:21:34.970641+00:00",
@@ -72,7 +73,8 @@
       "name_27",
       "suffix_107",
       "prefix_101",
-      "suffix_79"
+      "suffix_79",
+      "prefix_130"
     ],
     "active": {
       "system_badge": "system_first",
@@ -84,7 +86,7 @@
     }
   },
   "stats": {
-    "messages": 218,
+    "messages": 229,
     "active_months": 1,
     "first_seen": "2026-11"
   },
