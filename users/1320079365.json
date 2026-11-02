@@ -112,13 +112,12 @@
     ],
     "active": {
       "name_prefix": "prefix_18",
-      "name_suffix": "suffix_106",
-      "washi_color": "washi_mint",
-      "washi_position": "washi_corner_tl"
+      "washi_color": "washi_pink",
+      "washi_position": "washi_top_right"
     }
   },
   "stats": {
-    "messages": 809,
+    "messages": 819,
     "active_months": 1,
     "first_seen": "2026-08-09T22:21:03.669062+00:00"
   },
