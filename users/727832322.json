@@ -7,7 +7,8 @@
     "earned": {
       "chat_10": "2026-11-02T03:33:23.087453+00:00",
       "gamble_total_win_1": "2026-11-02T03:35:40.336305+00:00",
-      "gamble_jackpot_total_1": "2026-11-02T03:35:40.355381+00:00"
+      "gamble_jackpot_total_1": "2026-11-02T03:35:40.355381+00:00",
+      "chat_treats": "2026-11-02T03:56:59.615827+00:00"
     },
     "founded": {}
   },
@@ -18,7 +19,7 @@
     "active": {}
   },
   "stats": {
-    "messages": 22,
+    "messages": 25,
     "active_months": 1,
     "first_seen": "2026-11"
   },
