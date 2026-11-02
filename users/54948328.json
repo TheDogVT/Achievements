@@ -60,7 +60,8 @@
       "chat_cone": "2026-11-02T02:35:12.901887+00:00",
       "chat_floof": "2026-11-02T02:41:50.966458+00:00",
       "chat_500": "2026-11-02T03:59:01.598949+00:00",
-      "chat_doorbell": "2026-11-02T04:36:12.592902+00:00"
+      "chat_doorbell": "2026-11-02T04:36:12.592902+00:00",
+      "chat_chasetail": "2026-11-02T04:40:42.742690+00:00"
     },
     "founded": {
       "cheer_message_100": "2026-11-01T21:21:19.800434+00:00",
@@ -148,7 +149,8 @@
       "suffix_7",
       "prefix_3",
       "prefix_135",
-      "suffix_105"
+      "suffix_105",
+      "prefix_130"
     ],
     "active": {
       "name_prefix": "prefix_141",
@@ -159,7 +161,7 @@
     }
   },
   "stats": {
-    "messages": 533,
+    "messages": 535,
     "active_months": 1,
     "first_seen": "2026-11"
   },
