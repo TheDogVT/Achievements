@@ -25,10 +25,15 @@
       "suffix_108",
       "name_15"
     ],
-    "active": {}
+    "active": {
+      "name_prefix": "prefix_7",
+      "name_base": "name_15",
+      "washi_color": "washi_mint",
+      "washi_position": "washi_corner_tl"
+    }
   },
   "stats": {
-    "messages": 38,
+    "messages": 41,
     "active_months": 1,
     "first_seen": "2026-11"
   },
