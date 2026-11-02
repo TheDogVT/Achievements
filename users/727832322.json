@@ -9,7 +9,9 @@
       "gamble_total_win_1": "2026-11-02T03:35:40.336305+00:00",
       "gamble_jackpot_total_1": "2026-11-02T03:35:40.355381+00:00",
       "chat_treats": "2026-11-02T03:56:59.615827+00:00",
-      "chat_chain_member": "2026-11-02T04:00:20.638891+00:00"
+      "chat_chain_member": "2026-11-02T04:00:20.638891+00:00",
+      "chat_beg": "2026-11-02T04:05:51.576402+00:00",
+      "redeem_pet_1": "2026-11-02T04:06:36.833499+00:00"
     },
     "founded": {}
   },
@@ -18,12 +20,13 @@
       "prefix_7",
       "prefix_141",
       "name_28",
-      "suffix_108"
+      "suffix_108",
+      "prefix_13"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 39,
+    "messages": 40,
     "active_months": 1,
     "first_seen": "2026-11"
   },

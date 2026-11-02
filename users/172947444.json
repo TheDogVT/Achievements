@@ -16,7 +16,8 @@
       "chat_derp": "2026-11-02T00:49:54.364656+00:00",
       "chat_sleepy": "2026-11-02T03:53:10.310924+00:00",
       "chat_chain_starter": "2026-11-02T03:58:57.526893+00:00",
-      "redeem_pet_1": "2026-11-02T04:02:59.008475+00:00"
+      "redeem_pet_1": "2026-11-02T04:02:59.008475+00:00",
+      "chat_beg": "2026-11-02T04:05:54.552527+00:00"
     },
     "founded": {}
   },
@@ -32,7 +33,8 @@
       "prefix_10",
       "prefix_140",
       "name_27",
-      "suffix_107"
+      "suffix_107",
+      "prefix_13"
     ],
     "active": {
       "name_prefix": "prefix_140",
@@ -43,7 +45,7 @@
     }
   },
   "stats": {
-    "messages": 65,
+    "messages": 68,
     "active_months": 1,
     "first_seen": "2026-11"
   },

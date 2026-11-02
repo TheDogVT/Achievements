@@ -32,7 +32,8 @@
       "quote_1": "2026-11-02T03:24:10.588535+00:00",
       "redeem_total_5": "2026-11-02T03:43:51.554783+00:00",
       "chat_leash": "2026-11-02T03:56:13.775418+00:00",
-      "chat_chain_starter": "2026-11-02T03:59:27.635596+00:00"
+      "chat_chain_starter": "2026-11-02T03:59:27.635596+00:00",
+      "chat_beg": "2026-11-02T04:05:45.546386+00:00"
     },
     "founded": {
       "donation_1": "2026-11-01T21:36:36.087376+00:00",
@@ -59,7 +60,8 @@
       "prefix_16",
       "prefix_140",
       "name_27",
-      "suffix_107"
+      "suffix_107",
+      "prefix_13"
     ],
     "active": {
       "name_prefix": "prefix_141",
@@ -70,7 +72,7 @@
     }
   },
   "stats": {
-    "messages": 296,
+    "messages": 297,
     "active_months": 1,
     "first_seen": "2026-11"
   },
