@@ -668,6 +668,12 @@
       "desc": "Awarded for using 25 channel point redeems.",
       "amount": 25,
       "type": "total"
+    },
+    "redeem_total_50": {
+      "name": "Very Active Redeemer.",
+      "desc": "Awarded for using 50 channel point redeems.",
+      "amount": 50,
+      "type": "total"
     }
   }
 }
