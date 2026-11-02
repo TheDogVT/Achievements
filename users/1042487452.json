@@ -57,7 +57,8 @@
       "redeem_pet_1": "2026-11-02T00:33:45.440176+00:00",
       "gamble_win_total_100k": "2026-11-02T00:59:48.373714+00:00",
       "gamble_total_5": "2026-11-02T00:59:48.392954+00:00",
-      "chat_true_form": "2026-11-02T01:08:44.463726+00:00"
+      "chat_true_form": "2026-11-02T01:08:44.463726+00:00",
+      "chat_cone": "2026-11-02T02:34:32.613363+00:00"
     },
     "founded": {
       "chat_stick": "2026-11-01T21:21:16.616923+00:00",
@@ -95,7 +96,8 @@
       "prefix_17",
       "prefix_127",
       "prefix_138",
-      "prefix_13"
+      "prefix_13",
+      "suffix_103"
     ],
     "active": {
       "name_prefix": "prefix_17",
@@ -105,7 +107,7 @@
     }
   },
   "stats": {
-    "messages": 221,
+    "messages": 223,
     "active_months": 1,
     "first_seen": "2026-11"
   },

@@ -13,7 +13,8 @@
       "chat_howl": "2026-11-02T00:15:36.120379+00:00",
       "chat_100": "2026-11-02T00:35:00.035544+00:00",
       "chat_chain_member": "2026-11-02T00:44:40.134088+00:00",
-      "chat_woofwoof": "2026-11-02T02:31:03.077525+00:00"
+      "chat_woofwoof": "2026-11-02T02:31:03.077525+00:00",
+      "chat_cone": "2026-11-02T02:34:41.478020+00:00"
     },
     "founded": {}
   },
@@ -27,7 +28,8 @@
       "prefix_2",
       "prefix_141",
       "name_28",
-      "suffix_108"
+      "suffix_108",
+      "suffix_103"
     ],
     "active": {
       "name_prefix": "prefix_19",
@@ -37,7 +39,7 @@
     }
   },
   "stats": {
-    "messages": 132,
+    "messages": 133,
     "active_months": 1,
     "first_seen": "2026-11"
   },

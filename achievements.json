@@ -656,6 +656,11 @@
       "desc": "Awarded for petting the dog 5 times.",
       "amount": 5
     },
+    "redeem_pet_10": {
+      "name": "Fluff The Floof",
+      "desc": "Awarded for petting the dog 10 times.",
+      "amount": 10
+    },
     "redeem_total_5": {
       "name": "Curious Redeemer.",
       "desc": "Awarded for using 5 channel point redeems.",
