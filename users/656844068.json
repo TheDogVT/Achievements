@@ -37,7 +37,8 @@
       "chat_chain_starter": "2026-11-01T23:33:57.871217+00:00",
       "chat_beg": "2026-11-01T23:58:29.048396+00:00",
       "donation_1": "2026-11-02T00:08:40.978655+00:00",
-      "donation_5": "2026-11-02T00:08:41.020961+00:00"
+      "donation_5": "2026-11-02T00:08:41.020961+00:00",
+      "chat_baddog": "2026-11-02T00:26:38.563409+00:00"
     },
     "founded": {
       "gifted_cumulative_5": "2026-11-01T21:21:23.728417+00:00",
@@ -115,7 +116,8 @@
       "prefix_140",
       "name_27",
       "suffix_107",
-      "prefix_13"
+      "prefix_13",
+      "prefix_123"
     ],
     "active": {
       "name_prefix": "prefix_134",
@@ -124,7 +126,7 @@
     }
   },
   "stats": {
-    "messages": 198,
+    "messages": 203,
     "active_months": 1,
     "first_seen": "2026-11"
   },
