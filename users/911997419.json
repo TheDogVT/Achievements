@@ -55,7 +55,7 @@
       "prefix_2"
     ],
     "active": {
-      "name_prefix": "prefix_15",
+      "name_prefix": "prefix_2",
       "name_base": "name_28",
       "name_suffix": "suffix_4",
       "washi_color": "washi_pink",
@@ -63,7 +63,7 @@
     }
   },
   "stats": {
-    "messages": 115,
+    "messages": 132,
     "active_months": 1,
     "first_seen": "2026-11"
   },
