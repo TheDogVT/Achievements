@@ -10,6 +10,11 @@
       "desc": "Awarded for believing in the dog god.",
       "type": "contains"
     },
+    "chat_true_form": {
+      "name": "Dog Understander",
+      "desc": "Awarded for knowing the true desires of dog.",
+      "type": "contains"
+    },
     "chat_ball": {
       "name": "Ball? WHERE?",
       "desc": "Awarded for baiting dog with toys.",
