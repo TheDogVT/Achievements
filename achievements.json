@@ -814,6 +814,12 @@
       "desc": "Awarded for having 3 quote approved.",
       "amount": 3,
       "type": "cumulative"
+    },
+    "quote_5": {
+      "name": "Repeat Quoter",
+      "desc": "Awarded for having 5 quotes approved.",
+      "amount": 5,
+      "type": "cumulative"
     }
   },
   "redeems": {
