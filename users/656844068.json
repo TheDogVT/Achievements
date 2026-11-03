@@ -72,7 +72,9 @@
       "chat_drool": "2026-11-03T02:57:16.829560+00:00",
       "chat_wholet": "2026-11-03T02:57:48.729667+00:00",
       "chat_vacuum": "2026-11-03T03:09:53.776893+00:00",
-      "chat_peanut": "2026-11-03T03:25:22.452924+00:00"
+      "chat_peanut": "2026-11-03T03:25:22.452924+00:00",
+      "chat_dig": "2026-11-03T03:35:03.555621+00:00",
+      "chat_sleepy": "2026-11-03T03:35:45.151678+00:00"
     },
     "founded": {
       "gifted_cumulative_5": "2026-11-01T21:21:23.728417+00:00",
@@ -170,7 +172,9 @@
       "prefix_131",
       "suffix_102",
       "suffix_106",
-      "prefix_137"
+      "prefix_137",
+      "prefix_133",
+      "prefix_10"
     ],
     "active": {
       "name_prefix": "prefix_134",
@@ -179,7 +183,7 @@
     }
   },
   "stats": {
-    "messages": 611,
+    "messages": 615,
     "active_months": 1,
     "first_seen": "2026-11"
   },
