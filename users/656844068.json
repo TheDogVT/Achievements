@@ -77,7 +77,8 @@
       "chat_sleepy": "2026-11-03T03:35:45.151678+00:00",
       "chat_floofy": "2026-11-03T03:36:48.591361+00:00",
       "chat_mailman": "2026-11-03T03:37:48.865393+00:00",
-      "chat_biscuits": "2026-11-03T03:40:40.569928+00:00"
+      "chat_biscuits": "2026-11-03T03:40:40.569928+00:00",
+      "chat_chasetail": "2026-11-03T03:43:45.445129+00:00"
     },
     "founded": {
       "gifted_cumulative_5": "2026-11-01T21:21:23.728417+00:00",
@@ -178,7 +179,8 @@
       "prefix_137",
       "prefix_133",
       "prefix_10",
-      "prefix_139"
+      "prefix_139",
+      "prefix_130"
     ],
     "active": {
       "name_prefix": "prefix_134",
@@ -187,7 +189,7 @@
     }
   },
   "stats": {
-    "messages": 631,
+    "messages": 639,
     "active_months": 1,
     "first_seen": "2026-11"
   },
