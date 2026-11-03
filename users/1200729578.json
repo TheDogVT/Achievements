@@ -4,7 +4,9 @@
   "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/99e9a86d-e5d2-446c-8b2f-074b1dce3d18-profile_image-300x300.png",
   "legacy": 1,
   "achievements": {
-    "earned": {},
+    "earned": {
+      "redeem_checkin_1": "2026-11-03T01:02:44.002892+00:00"
+    },
     "founded": {}
   },
   "decorations": {
@@ -12,9 +14,9 @@
     "active": {}
   },
   "stats": {
-    "messages": 0,
-    "active_months": 0,
-    "first_seen": null
+    "messages": 5,
+    "active_months": 1,
+    "first_seen": "2026-11"
   },
   "top_months": []
 }
