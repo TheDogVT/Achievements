@@ -537,10 +537,22 @@
       "amount": 1337,
       "type": "exact"
     },
+    "cheer_1776": {
+      "name": "USA. USA. USA.",
+      "desc": "Awarded for cheering exactly 1776 bits",
+      "amount": 1776,
+      "type": "exact"
+    },
     "cheer_2048": {
       "name": "ItKeepsGoingPleaseStopIt!",
       "desc": "Awarded for cheering exactly 2048 bits",
       "amount": 2048,
+      "type": "exact"
+    },
+    "cheer_3141": {
+      "name": "Pi, But A Little Less.",
+      "desc": "Awarded for cheering exactly 3141 bits",
+      "amount": 3141,
       "type": "exact"
     }
   },
