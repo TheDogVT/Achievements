@@ -59,6 +59,11 @@
       "desc": "Awarded for invoking ancient prey instincts.",
       "type": "contains"
     },
+    "chat_pet": {
+      "name": "Headpats Initiate",
+      "desc": "Awarded for petting the divine creature.",
+      "type": "contains"
+    },
     "chat_stinky": {
       "name": "Rude Human",
       "desc": "Awarded for calling dog stinky.",
