@@ -1,4 +1,23 @@
 {
+  "prestige_cheer_static": {
+    "slot": "card_background",
+    "display_name": "Prestige Cheer",
+    "achievement_name": "Bit Burrier.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_cumulative_50k",
+    "config": {
+      "background_class": "bg-chat-prestige-cheer",
+      "background_mode": "class",
+      "opacity": "100",
+      "text": "Prestige Cheer",
+      "theme": "prestige-cheer",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_cumulative_50k",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_10": {
     "slot": "name_prefix",
     "display_name": "eepy",
@@ -27,6 +46,64 @@
       "unlock": {
         "category": "redeems",
         "id": "redeem_first_1",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_119": {
+    "slot": "name_prefix",
+    "display_name": "Prestige Cheer Name",
+    "achievement_name": "Bit Burrier.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_cumulative_50k",
+    "config": {
+      "animation": "glitch",
+      "effects_layers": [
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "chroma_echo",
+          "enabled": true,
+          "engine": "text",
+          "interval": "",
+          "knobs": {
+            "intensity": 1,
+            "speed": 3
+          },
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "",
+          "plane": "text",
+          "random_range": "",
+          "scale": "",
+          "z_index": "6"
+        }
+      ],
+      "font_family": "VT323",
+      "font_size": "16px",
+      "font_style": "normal",
+      "font_weight": "700",
+      "glow_color": "rgba(0, 212, 255, 0.66)",
+      "glow_layers": [
+        {
+          "animation": "pulse",
+          "color": "rgba(255, 79, 216, 0.56)",
+          "distance": "12",
+          "fade": "66",
+          "plane": "back",
+          "spread": "90"
+        }
+      ],
+      "label": "Prestige Cheer Name",
+      "style": "neon",
+      "text": "Bit Runner",
+      "text_color": "#fff7d6",
+      "theme": "prestige-cheer",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_cumulative_50k",
         "type": "achievement"
       }
     }
@@ -828,6 +905,98 @@
       "unlock": {
         "category": "cheer",
         "id": "cheer_2048",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_67": {
+    "slot": "name_prefix",
+    "display_name": "Bit Giver,",
+    "achievement_name": "(Platinum) A True Doggo Lover.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_10000",
+    "config": {
+      "glow_layers": [
+        {
+          "animation": "breathe",
+          "color": "#00d4ff",
+          "distance": "",
+          "fade": "",
+          "plane": "back",
+          "spread": ""
+        }
+      ],
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "Bit Giver,",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#9900ff",
+          "pos": null
+        },
+        {
+          "color": "#00d4ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_10000",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_69": {
+    "slot": "name_prefix",
+    "display_name": "π ≈",
+    "achievement_name": "(Platinum) True Pi.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_31415",
+    "config": {
+      "glow_layers": [
+        {
+          "animation": "breathe",
+          "color": "#00d4ff",
+          "distance": "",
+          "fade": "",
+          "plane": "back",
+          "spread": ""
+        }
+      ],
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "π ≈",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#9900ff",
+          "pos": null
+        },
+        {
+          "color": "#00d4ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_31415",
         "type": "achievement"
       }
     }
@@ -1869,6 +2038,62 @@
       }
     }
   },
+  "prestige_cheer_name": {
+    "slot": "name_base",
+    "display_name": "Prestige Cheer Name",
+    "achievement_name": "Bit Burrier.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_cumulative_50k",
+    "config": {
+      "animation": "glitch",
+      "effects_layers": [
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "chroma_echo",
+          "enabled": true,
+          "engine": "text",
+          "interval": "",
+          "knobs": {
+            "intensity": 1,
+            "speed": 3
+          },
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "",
+          "plane": "text",
+          "random_range": "",
+          "scale": "",
+          "z_index": "6"
+        }
+      ],
+      "font_family": "VT323",
+      "font_style": "normal",
+      "font_weight": "700",
+      "glow_color": "rgba(0, 212, 255, 0.66)",
+      "glow_layers": [
+        {
+          "animation": "pulse",
+          "color": "rgba(255, 79, 216, 0.56)",
+          "distance": "12",
+          "fade": "66",
+          "plane": "back",
+          "spread": "90"
+        }
+      ],
+      "label": "Prestige Cheer Name",
+      "style": "neon",
+      "text_color": "#fff7d6",
+      "theme": "prestige-cheer",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_cumulative_50k",
+        "type": "achievement"
+      }
+    }
+  },
   "name_27": {
     "slot": "name_base",
     "display_name": "name_27",
@@ -1901,6 +2126,46 @@
       "unlock": {
         "category": "chat",
         "id": "chat_chain_member",
+        "type": "achievement"
+      }
+    }
+  },
+  "message_2": {
+    "slot": "message_text",
+    "display_name": "Prestige Cheer Name",
+    "achievement_name": "Bit Burrier.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_cumulative_50k",
+    "config": {
+      "edge_animation": "shimmer",
+      "font_family": "VT323",
+      "font_size": "31px",
+      "font_style": "normal",
+      "font_weight": "700",
+      "glow_color": "rgba(0, 212, 255, 0.66)",
+      "glow_layers": [
+        {
+          "animation": "chain",
+          "color": "rgba(255, 79, 216, 0.68)",
+          "distance": "2.5",
+          "fade": "16",
+          "plane": "back",
+          "spread": "0"
+        }
+      ],
+      "label": "Prestige Cheer Name",
+      "outline_light_blur": "3.75",
+      "outline_light_color": "#9e33b9",
+      "outline_light_opacity": "72",
+      "outline_light_thickness": "2.75",
+      "outline_light_z_index": "1",
+      "style": "neon",
+      "text": "Test",
+      "text_color": "#a6dbe7",
+      "theme": "prestige-cheer",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_cumulative_50k",
         "type": "achievement"
       }
     }
@@ -2349,6 +2614,52 @@
       }
     }
   },
+  "suffix_49": {
+    "slot": "name_suffix",
+    "display_name": "The Generous",
+    "achievement_name": "(Platinum) A True Doggo Lover.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_10000",
+    "config": {
+      "glow_layers": [
+        {
+          "animation": "breathe",
+          "color": "#00d4ff",
+          "distance": "",
+          "fade": "",
+          "plane": "back",
+          "spread": ""
+        }
+      ],
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "The Generous",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#9900ff",
+          "pos": null
+        },
+        {
+          "color": "#00d4ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_10000",
+        "type": "achievement"
+      }
+    }
+  },
   "suffix_5": {
     "slot": "name_suffix",
     "display_name": "The Believer",
@@ -2409,6 +2720,52 @@
       "unlock": {
         "category": "cheer",
         "id": "cheer_12345",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_52": {
+    "slot": "name_suffix",
+    "display_name": "3.14159...",
+    "achievement_name": "(Platinum) True Pi.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_31415",
+    "config": {
+      "glow_layers": [
+        {
+          "animation": "breathe",
+          "color": "#00d4ff",
+          "distance": "",
+          "fade": "",
+          "plane": "back",
+          "spread": ""
+        }
+      ],
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "3.14159...",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#9900ff",
+          "pos": null
+        },
+        {
+          "color": "#00d4ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_31415",
         "type": "achievement"
       }
     }

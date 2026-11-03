@@ -83,7 +83,10 @@
       "cheer_3141": "2026-11-03T21:43:29.107976+00:00",
       "cheer_message_10k": "2026-11-03T21:46:19.341520+00:00",
       "cheer_cumulative_20k": "2026-11-03T21:46:19.378656+00:00",
-      "cheer_12345": "2026-11-03T21:46:19.440424+00:00"
+      "cheer_12345": "2026-11-03T21:46:19.440424+00:00",
+      "cheer_cumulative_50k": "2026-11-03T21:52:14.410864+00:00",
+      "cheer_31415": "2026-11-03T21:52:14.477480+00:00",
+      "cheer_10000": "2026-11-03T21:52:19.649401+00:00"
     }
   },
   "decorations": {
@@ -150,12 +153,20 @@
       "name_7",
       "suffix_40",
       "name_8",
-      "suffix_50"
+      "suffix_50",
+      "prefix_119",
+      "prestige_cheer_static",
+      "prestige_cheer_name",
+      "message_2",
+      "prefix_69",
+      "suffix_52",
+      "prefix_67",
+      "suffix_49"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 109,
+    "messages": 118,
     "active_months": 1,
     "first_seen": "2026-11"
   },
