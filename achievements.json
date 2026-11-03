@@ -299,6 +299,11 @@
       "desc": "Awarded for the eternal question.",
       "type": "contains"
     },
+    "chat_sploot": {
+      "name": "Sploot Spotter",
+      "desc": "Awarded for noticing the legs-out-back floor pancake.",
+      "type": "contains"
+    },
     "chat_loaf": {
       "name": "Bread Inspector",
       "desc": "Awarded for identifying the dog loaf formation.",
