@@ -6,7 +6,8 @@
   "achievements": {
     "earned": {
       "chat_10": "2026-11-03T00:52:27.108331+00:00",
-      "redeem_pet_1": "2026-11-03T01:01:33.381191+00:00"
+      "redeem_pet_1": "2026-11-03T01:01:33.381191+00:00",
+      "gamble_total_win_1": "2026-11-03T03:33:44.585269+00:00"
     },
     "founded": {}
   },
@@ -17,7 +18,7 @@
     "active": {}
   },
   "stats": {
-    "messages": 17,
+    "messages": 20,
     "active_months": 1,
     "first_seen": "2026-11"
   },
