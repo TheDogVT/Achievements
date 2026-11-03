@@ -6,7 +6,8 @@
   "achievements": {
     "earned": {
       "chat_howl": "2026-11-01T22:14:57.522034+00:00",
-      "attend_3": "2026-11-03T22:20:58.697669+00:00"
+      "attend_3": "2026-11-03T22:20:58.697669+00:00",
+      "streak_3": "2026-11-03T23:01:54.544910+00:00"
     },
     "founded": {}
   },
@@ -14,12 +15,14 @@
     "unlocked": [
       "prefix_19",
       "prefix_79",
-      "suffix_57"
+      "suffix_57",
+      "prefix_89",
+      "suffix_67"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 6,
+    "messages": 7,
     "active_months": 1,
     "first_seen": "2026-11"
   },
