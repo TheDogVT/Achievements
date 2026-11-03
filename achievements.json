@@ -399,6 +399,12 @@
       "amount": 1000,
       "type": "threshold"
     },
+    "cheer_message_10k": {
+      "name": "Massive Bit Giver.",
+      "desc": "Awarded for cheering 10,000 or more bits in a single message.",
+      "amount": 10000,
+      "type": "threshold"
+    },
     "cheer_cumulative_1k": {
       "name": "Bit Curious.",
       "desc": "Awarded for cheering 1,000 bits overall.",
@@ -421,6 +427,12 @@
       "name": "Famous Cheerer.",
       "desc": "Awarded for cheering 10,000 bits overall.",
       "amount": 10000,
+      "type": "cumulative"
+    },
+    "cheer_cumulative_20k": {
+      "name": "Food Buyer.",
+      "desc": "Awarded for cheering 20,000 bits overall.",
+      "amount": 20000,
       "type": "cumulative"
     },
     "cheer_time_1": {
@@ -553,6 +565,12 @@
       "name": "Pi, But A Little Less.",
       "desc": "Awarded for cheering exactly 3141 bits",
       "amount": 3141,
+      "type": "exact"
+    },
+    "cheer_12345": {
+      "name": "(Platinum) PLEASE STOP COUNTING!",
+      "desc": "Awarded for cheering exactly 12345 bits",
+      "amount": 12345,
       "type": "exact"
     }
   },

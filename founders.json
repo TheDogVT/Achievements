@@ -614,6 +614,21 @@
     "founder_name": "revilo2218",
     "founded_at": "2026-11-03T21:43:29.107976+00:00"
   },
+  "cheer_message_10k": {
+    "founder_id": "632165551",
+    "founder_name": "revilo2218",
+    "founded_at": "2026-11-03T21:46:19.341520+00:00"
+  },
+  "cheer_cumulative_20k": {
+    "founder_id": "632165551",
+    "founder_name": "revilo2218",
+    "founded_at": "2026-11-03T21:46:19.378656+00:00"
+  },
+  "cheer_12345": {
+    "founder_id": "632165551",
+    "founder_name": "revilo2218",
+    "founded_at": "2026-11-03T21:46:19.440424+00:00"
+  },
   "gamble_total_loss_1": {
     "founder_id": "1030689797",
     "founder_name": "eeveerocks13",

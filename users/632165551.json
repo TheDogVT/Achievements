@@ -80,7 +80,10 @@
       "gifted_cumulative_75": "2026-11-03T01:54:05.955152+00:00",
       "cheer_1337": "2026-11-03T21:41:37.074093+00:00",
       "cheer_1776": "2026-11-03T21:41:56.130523+00:00",
-      "cheer_3141": "2026-11-03T21:43:29.107976+00:00"
+      "cheer_3141": "2026-11-03T21:43:29.107976+00:00",
+      "cheer_message_10k": "2026-11-03T21:46:19.341520+00:00",
+      "cheer_cumulative_20k": "2026-11-03T21:46:19.378656+00:00",
+      "cheer_12345": "2026-11-03T21:46:19.440424+00:00"
     }
   },
   "decorations": {
@@ -145,25 +148,27 @@
       "prefix_51",
       "suffix_37",
       "name_7",
-      "suffix_40"
+      "suffix_40",
+      "name_8",
+      "suffix_50"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 105,
+    "messages": 108,
     "active_months": 1,
     "first_seen": "2026-11"
   },
   "top_months": [
     {
       "month": "2026-11",
-      "kind": "gifted",
+      "kind": "cheers",
       "rank": 1
     },
     {
       "month": "2026-11",
-      "kind": "cheers",
-      "rank": 2
+      "kind": "gifted",
+      "rank": 1
     }
   ]
 }
