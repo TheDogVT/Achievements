@@ -736,6 +736,38 @@
       }
     }
   },
+  "prefix_52": {
+    "slot": "name_prefix",
+    "display_name": "h4x0r",
+    "achievement_name": "LEET",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_1337",
+    "config": {
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "h4x0r",
+      "text_gradient": [
+        {
+          "color": "#00ff41",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#00cc33",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_1337",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_56": {
     "slot": "name_prefix",
     "display_name": "Game Over:",
@@ -2064,6 +2096,38 @@
       "unlock": {
         "category": "cheer",
         "id": "cheer_1234",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_38": {
+    "slot": "name_suffix",
+    "display_name": "1337",
+    "achievement_name": "LEET",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_1337",
+    "config": {
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "1337",
+      "text_gradient": [
+        {
+          "color": "#00ff41",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#00cc33",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_1337",
         "type": "achievement"
       }
     }

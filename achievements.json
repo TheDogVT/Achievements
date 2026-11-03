@@ -531,6 +531,12 @@
       "amount": 1234,
       "type": "exact"
     },
+    "cheer_1337": {
+      "name": "LEET",
+      "desc": "Awarded for cheering exactly 1337 bits",
+      "amount": 1337,
+      "type": "exact"
+    },
     "cheer_2048": {
       "name": "ItKeepsGoingPleaseStopIt!",
       "desc": "Awarded for cheering exactly 2048 bits",
