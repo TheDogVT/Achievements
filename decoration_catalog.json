@@ -909,6 +909,38 @@
       }
     }
   },
+  "prefix_61": {
+    "slot": "name_prefix",
+    "display_name": "nice",
+    "achievement_name": "NiceNice.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_6969",
+    "config": {
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "nice",
+      "text_gradient": [
+        {
+          "color": "#ff69b4",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#ff69b4",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_6969",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_64": {
     "slot": "name_prefix",
     "display_name": "Bit",
@@ -2643,6 +2675,38 @@
       "unlock": {
         "category": "cheer",
         "id": "cheer_3141",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_44": {
+    "slot": "name_suffix",
+    "display_name": "nice",
+    "achievement_name": "NiceNice.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_6969",
+    "config": {
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "nice",
+      "text_gradient": [
+        {
+          "color": "#ff69b4",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#ff69b4",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_6969",
         "type": "achievement"
       }
     }

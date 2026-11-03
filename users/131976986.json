@@ -53,12 +53,13 @@
     ],
     "active": {
       "name_prefix": "prefix_13",
+      "name_suffix": "suffix_67",
       "washi_color": "washi_lavender",
       "washi_position": "washi_top_center"
     }
   },
   "stats": {
-    "messages": 331,
+    "messages": 333,
     "active_months": 1,
     "first_seen": "2026-11"
   },
