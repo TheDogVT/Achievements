@@ -573,6 +573,12 @@
       "amount": 3141,
       "type": "exact"
     },
+    "cheer_8192": {
+      "name": "ITSTAKINGOVE-",
+      "desc": "Awarded for cheering exactly 8192 bits",
+      "amount": 8192,
+      "type": "exact"
+    },
     "cheer_10000": {
       "name": "(Platinum) A True Doggo Lover.",
       "desc": "Awarded for cheering exactly 10000 bits",

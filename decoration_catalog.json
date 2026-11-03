@@ -909,6 +909,39 @@
       }
     }
   },
+  "prefix_64": {
+    "slot": "name_prefix",
+    "display_name": "Bit",
+    "achievement_name": "ITSTAKINGOVE-",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_8192",
+    "config": {
+      "font_family": "VT323",
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "Bit",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#9900ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_8192",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_67": {
     "slot": "name_prefix",
     "display_name": "Bit Giver,",
@@ -2610,6 +2643,39 @@
       "unlock": {
         "category": "cheer",
         "id": "cheer_3141",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_46": {
+    "slot": "name_suffix",
+    "display_name": "[8192]",
+    "achievement_name": "ITSTAKINGOVE-",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_8192",
+    "config": {
+      "font_family": "VT323",
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "[8192]",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#9900ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_8192",
         "type": "achievement"
       }
     }
