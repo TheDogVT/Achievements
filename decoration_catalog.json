@@ -821,6 +821,96 @@
       }
     }
   },
+  "prefix_78": {
+    "slot": "name_prefix",
+    "display_name": "Debugger",
+    "achievement_name": "Bog Sputter",
+    "achievement_category": "manual",
+    "achievement_id": "bog_sputter",
+    "config": {
+      "edge_animation": "ripple",
+      "effects_layers": [
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "snow_fall",
+          "enabled": false,
+          "engine": "particle",
+          "interval": "",
+          "knobs": {
+            "opacity": 0.45,
+            "range": 75,
+            "size": 10,
+            "speed": 2
+          },
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "",
+          "plane": "rear",
+          "random_range": "",
+          "scale": "",
+          "z_index": "3"
+        },
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "dust_field",
+          "enabled": true,
+          "engine": "render",
+          "interval": "",
+          "knobs": {},
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "",
+          "plane": "front",
+          "random_range": "",
+          "scale": "",
+          "z_index": "7"
+        }
+      ],
+      "font_family": "Orbitron",
+      "font_style": "italic",
+      "glow_layers": [
+        {
+          "animation": "",
+          "color": "#000000",
+          "distance": "6",
+          "fade": "75",
+          "plane": "back",
+          "spread": "200"
+        }
+      ],
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "outline_color": "#4dff00",
+      "outline_light_blur": "6.5",
+      "outline_light_color": "#00ff4c",
+      "outline_light_z_index": "1",
+      "outline_thickness": "3",
+      "style": "foil",
+      "text": "Debugger",
+      "text_color": "#6dca2f",
+      "text_gradient": [
+        {
+          "color": "#c3fe20",
+          "pos": null
+        },
+        {
+          "color": "#63be19",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "category": "manual",
+        "id": "bog_sputter",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_8": {
     "slot": "name_prefix",
     "display_name": "Sincerely,",
@@ -1286,6 +1376,98 @@
       "unlock": {
         "category": "gifted",
         "id": "gifted_cumulative_75",
+        "type": "achievement"
+      }
+    }
+  },
+  "name_24": {
+    "slot": "name_base",
+    "display_name": "name_24",
+    "achievement_name": "Bog Sputter",
+    "achievement_category": "manual",
+    "achievement_id": "bog_sputter",
+    "config": {
+      "edge_animation": "ripple",
+      "effects_layers": [
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "snow_fall",
+          "enabled": true,
+          "engine": "particle",
+          "interval": "",
+          "knobs": {
+            "color1": "#ffffff",
+            "opacity": 0.45,
+            "range": 75,
+            "size": 10,
+            "speed": 2
+          },
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "",
+          "plane": "rear",
+          "random_range": "",
+          "scale": "",
+          "z_index": "3"
+        },
+        {
+          "blend_mode": "",
+          "delay": "",
+          "duration": "",
+          "effect": "dust_field",
+          "enabled": true,
+          "engine": "render",
+          "interval": "",
+          "knobs": {},
+          "offset_x": "",
+          "offset_y": "",
+          "opacity": "",
+          "phase": "",
+          "plane": "front",
+          "random_range": "",
+          "scale": "",
+          "z_index": "7"
+        }
+      ],
+      "font_family": "Orbitron",
+      "font_size": "25.5px",
+      "glow_layers": [
+        {
+          "animation": "",
+          "color": "#000000",
+          "distance": "6",
+          "fade": "75",
+          "plane": "back",
+          "spread": "200"
+        }
+      ],
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "outline_cast_angle": "281",
+      "outline_color": "#4dff00",
+      "outline_light_blur": "6.5",
+      "outline_light_color": "#00ff4c",
+      "outline_light_thickness": "6",
+      "outline_light_z_index": "1",
+      "outline_thickness": "3",
+      "style": "foil",
+      "text_color": "#6dca2f",
+      "text_gradient": [
+        {
+          "color": "#c3fe20",
+          "pos": null
+        },
+        {
+          "color": "#63be19",
+          "pos": null
+        }
+      ],
+      "unlock": {
+        "category": "manual",
+        "id": "bog_sputter",
         "type": "achievement"
       }
     }
