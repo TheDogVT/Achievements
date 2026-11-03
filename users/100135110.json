@@ -6,7 +6,9 @@
   "achievements": {
     "earned": {
       "chat_bork": "2026-11-01T21:43:53.516312+00:00",
-      "chat_10": "2026-11-01T21:55:56.124784+00:00"
+      "chat_10": "2026-11-01T21:55:56.124784+00:00",
+      "attend_3": "2026-11-03T21:19:50.043411+00:00",
+      "streak_3": "2026-11-03T21:19:50.080002+00:00"
     },
     "founded": {}
   },
@@ -14,12 +16,16 @@
     "unlocked": [
       "prefix_126",
       "suffix_100",
-      "prefix_7"
+      "prefix_7",
+      "prefix_79",
+      "suffix_57",
+      "prefix_89",
+      "suffix_67"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 97,
+    "messages": 98,
     "active_months": 1,
     "first_seen": "2026-11"
   },

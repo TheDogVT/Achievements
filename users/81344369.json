@@ -38,7 +38,10 @@
       "redeem_checkin_1": "2026-11-02T21:15:27.456866+00:00",
       "gamble_win_total_10k": "2026-11-02T21:18:37.565386+00:00",
       "chat_chasetail": "2026-11-02T21:18:53.887809+00:00",
-      "chat_pupper": "2026-11-02T21:21:19.355097+00:00"
+      "chat_pupper": "2026-11-02T21:21:19.355097+00:00",
+      "attend_3": "2026-11-03T21:20:01.066518+00:00",
+      "streak_3": "2026-11-03T21:20:01.100269+00:00",
+      "redeem_checkin_2": "2026-11-03T21:20:01.138681+00:00"
     },
     "founded": {
       "chat_ball": "2026-11-01T21:21:34.970641+00:00",
@@ -75,10 +78,13 @@
       "suffix_107",
       "prefix_101",
       "suffix_79",
-      "prefix_130"
+      "prefix_130",
+      "prefix_79",
+      "suffix_57",
+      "prefix_89",
+      "suffix_67"
     ],
     "active": {
-      "system_badge": "system_first",
       "name_prefix": "prefix_10",
       "name_base": "name_28",
       "name_suffix": "suffix_7",
@@ -87,7 +93,7 @@
     }
   },
   "stats": {
-    "messages": 310,
+    "messages": 311,
     "active_months": 1,
     "first_seen": "2026-11"
   },

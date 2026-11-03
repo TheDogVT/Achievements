@@ -72,7 +72,10 @@
       "chat_vacuum": "2026-11-03T00:46:12.264071+00:00",
       "chat_bellyrub": "2026-11-03T01:04:16.597367+00:00",
       "cheer_time_10": "2026-11-03T01:09:39.968149+00:00",
-      "cheer_123": "2026-11-03T01:09:40.017757+00:00"
+      "cheer_123": "2026-11-03T01:09:40.017757+00:00",
+      "attend_3": "2026-11-03T21:19:50.351043+00:00",
+      "streak_3": "2026-11-03T21:19:50.411113+00:00",
+      "redeem_first_1": "2026-11-03T21:19:50.455397+00:00"
     },
     "founded": {
       "cheer_message_100": "2026-11-01T21:21:19.800434+00:00",
@@ -105,7 +108,8 @@
       "redeem_total_25": "2026-11-01T22:48:10.111999+00:00",
       "redeem_pet_5": "2026-11-01T23:47:11.238932+00:00",
       "redeem_total_50": "2026-11-02T01:44:13.557489+00:00",
-      "redeem_pet_10": "2026-11-02T02:33:43.448055+00:00"
+      "redeem_pet_10": "2026-11-02T02:33:43.448055+00:00",
+      "redeem_checkin_2": "2026-11-03T21:19:54.973726+00:00"
     }
   },
   "decorations": {
@@ -167,18 +171,25 @@
       "prefix_125",
       "prefix_9",
       "name_2",
-      "suffix_20"
+      "suffix_20",
+      "prefix_79",
+      "suffix_57",
+      "prefix_89",
+      "suffix_67",
+      "prefix_101",
+      "suffix_79"
     ],
     "active": {
       "name_prefix": "prefix_141",
       "name_base": "name_27",
       "name_suffix": "suffix_35",
       "washi_color": "washi_lavender",
-      "washi_position": "washi_top_center"
+      "washi_position": "washi_top_center",
+      "system_badge": "system_first"
     }
   },
   "stats": {
-    "messages": 595,
+    "messages": 596,
     "active_months": 1,
     "first_seen": "2026-11"
   },

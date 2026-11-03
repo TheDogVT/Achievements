@@ -911,6 +911,23 @@
       }
     }
   },
+  "prefix_79": {
+    "slot": "name_prefix",
+    "display_name": "seen",
+    "achievement_name": "New in the Pack",
+    "achievement_category": "attendance",
+    "achievement_id": "attend_3",
+    "config": {
+      "outline": "basic",
+      "text": "seen",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "attendance",
+        "id": "attend_3",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_8": {
     "slot": "name_prefix",
     "display_name": "Sincerely,",
@@ -928,6 +945,23 @@
       "unlock": {
         "category": "cheer",
         "id": "cheer_time_1",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_89": {
+    "slot": "name_prefix",
+    "display_name": "Active",
+    "achievement_name": "3 Day Streak!",
+    "achievement_category": "attendance",
+    "achievement_id": "streak_3",
+    "config": {
+      "outline": "basic",
+      "text": "Active",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "attendance",
+        "id": "streak_3",
         "type": "achievement"
       }
     }
@@ -2064,6 +2098,40 @@
       "unlock": {
         "category": "chat",
         "id": "chat_blep",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_57": {
+    "slot": "name_suffix",
+    "display_name": "[3 STREAMS]",
+    "achievement_name": "New in the Pack",
+    "achievement_category": "attendance",
+    "achievement_id": "attend_3",
+    "config": {
+      "outline": "basic",
+      "text": "[3 STREAMS]",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "attendance",
+        "id": "attend_3",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_67": {
+    "slot": "name_suffix",
+    "display_name": "[LOCKED]",
+    "achievement_name": "3 Day Streak!",
+    "achievement_category": "attendance",
+    "achievement_id": "streak_3",
+    "config": {
+      "outline": "basic",
+      "text": "[LOCKED]",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "attendance",
+        "id": "streak_3",
         "type": "achievement"
       }
     }

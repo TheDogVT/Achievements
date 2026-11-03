@@ -1,4 +1,18 @@
 {
+  "attendance": {
+    "attend_3": {
+      "name": "New in the Pack",
+      "desc": "Awarded for attending your first 3 streams.",
+      "amount": 3,
+      "type": "attended"
+    },
+    "streak_3": {
+      "name": "3 Day Streak!",
+      "desc": "Three days running. Someone is getting spoiled.",
+      "amount": 3,
+      "type": "streak"
+    }
+  },
   "chat": {
     "BALSDJHAUISKHDHUIOAS": {
       "name": "BALSDJHAUISKHDHUIOAS",
@@ -712,6 +726,11 @@
       "name": "Welcome Home Comutt.",
       "desc": "Awarded for your first check-in.",
       "amount": 1
+    },
+    "redeem_checkin_2": {
+      "name": "Welcome Back Comutt.",
+      "desc": "Awarded for your second check-in.",
+      "amount": 2
     },
     "redeem_pet_1": {
       "name": "He's a good boy, yes he is!",
