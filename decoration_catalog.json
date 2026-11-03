@@ -552,6 +552,21 @@
       }
     }
   },
+  "prefix_4": {
+    "slot": "name_prefix",
+    "display_name": "Yapper",
+    "achievement_name": "Yapper.",
+    "achievement_category": "chat",
+    "achievement_id": "chat_1k",
+    "config": {
+      "text": "Yapper",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_1k",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_41": {
     "slot": "name_prefix",
     "display_name": "Byte",
