@@ -5,13 +5,16 @@
   "legacy": 1,
   "achievements": {
     "earned": {
-      "chat_howl": "2026-11-01T22:14:57.522034+00:00"
+      "chat_howl": "2026-11-01T22:14:57.522034+00:00",
+      "attend_3": "2026-11-03T22:20:58.697669+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
-      "prefix_19"
+      "prefix_19",
+      "prefix_79",
+      "suffix_57"
     ],
     "active": {}
   },
