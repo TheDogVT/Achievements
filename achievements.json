@@ -655,6 +655,12 @@
       "amount": 50,
       "type": "cumulative"
     },
+    "gifted_cumulative_75": {
+      "name": "Santa Evolution",
+      "desc": "Awarded for 75 cumulative gifted subs.",
+      "amount": 75,
+      "type": "cumulative"
+    },
     "gifted_instance_5": {
       "name": "Gifty Bomba",
       "desc": "Awarded for gifting 5 subs or more at once.",
