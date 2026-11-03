@@ -705,24 +705,6 @@
       "desc": "Awarded for having 3 quote approved.",
       "amount": 3,
       "type": "cumulative"
-    },
-    "quote_5": {
-      "name": "Repeat Quoter",
-      "desc": "Awarded for having 5 quotes approved.",
-      "amount": 5,
-      "type": "cumulative"
-    },
-    "quote_10": {
-      "name": "Quote Machine",
-      "desc": "Awarded for having 10 quotes approved.",
-      "amount": 10,
-      "type": "cumulative"
-    },
-    "quote_25": {
-      "name": "Quote Veteran",
-      "desc": "Awarded for having 25 quotes approved.",
-      "amount": 25,
-      "type": "cumulative"
     }
   },
   "redeems": {
