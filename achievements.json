@@ -608,6 +608,12 @@
       "amount": 12345,
       "type": "exact"
     },
+    "cheer_16384": {
+      "name": "ITS ALMOST OVER!",
+      "desc": "Awarded for cheering exactly 16384 bits",
+      "amount": 16384,
+      "type": "exact"
+    },
     "cheer_31415": {
       "name": "(Platinum) True Pi.",
       "desc": "Awarded for cheering exactly 31415 bits",

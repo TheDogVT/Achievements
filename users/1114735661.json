@@ -5,18 +5,20 @@
   "legacy": 1,
   "achievements": {
     "earned": {
-      "chat_doge": "2026-11-03T22:10:34.073418+00:00"
+      "chat_doge": "2026-11-03T22:10:34.073418+00:00",
+      "chat_10": "2026-11-03T22:18:57.050322+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
-      "prefix_134"
+      "prefix_134",
+      "prefix_7"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 8,
+    "messages": 11,
     "active_months": 1,
     "first_seen": "2026-11"
   },

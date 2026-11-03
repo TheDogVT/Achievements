@@ -1020,6 +1020,39 @@
       }
     }
   },
+  "prefix_68": {
+    "slot": "name_prefix",
+    "display_name": "Byte",
+    "achievement_name": "ITS ALMOST OVER!",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_16384",
+    "config": {
+      "font_family": "VT323",
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "Byte",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#9900ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_16384",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_69": {
     "slot": "name_prefix",
     "display_name": "π ≈",
@@ -2850,6 +2883,39 @@
       "unlock": {
         "category": "cheer",
         "id": "cheer_12345",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_51": {
+    "slot": "name_suffix",
+    "display_name": "[16384]",
+    "achievement_name": "ITS ALMOST OVER!",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_16384",
+    "config": {
+      "font_family": "VT323",
+      "gradient_animation": "sheen",
+      "outline": "basic",
+      "text": "[16384]",
+      "text_gradient": [
+        {
+          "color": "#00d4ff",
+          "pos": null
+        },
+        {
+          "color": "#ffffff",
+          "pos": null
+        },
+        {
+          "color": "#9900ff",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_16384",
         "type": "achievement"
       }
     }
