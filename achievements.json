@@ -886,6 +886,12 @@
       "desc": "Awarded for using 50 channel point redeems.",
       "amount": 50,
       "type": "total"
+    },
+    "redeem_total_100": {
+      "name": "Obsessive Redeemer.",
+      "desc": "Awarded for using 100 channel point redeems.",
+      "amount": 100,
+      "type": "total"
     }
   }
 }
