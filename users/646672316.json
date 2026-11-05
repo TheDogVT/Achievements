@@ -6,16 +6,21 @@
   "achievements": {
     "earned": {
       "redeem_pet_1": "2026-11-02T02:58:23.583187+00:00",
-      "redeem_checkin_1": "2026-11-02T21:26:16.692973+00:00"
+      "redeem_checkin_1": "2026-11-02T21:26:16.692973+00:00",
+      "attend_3": "2026-11-05T21:42:06.637528+00:00",
+      "redeem_checkin_2": "2026-11-05T21:42:06.696690+00:00"
     },
     "founded": {}
   },
   "decorations": {
-    "unlocked": [],
+    "unlocked": [
+      "prefix_79",
+      "suffix_57"
+    ],
     "active": {}
   },
   "stats": {
-    "messages": 2,
+    "messages": 4,
     "active_months": 1,
     "first_seen": "2026-10-22T20:18:32.176089+00:00"
   },
