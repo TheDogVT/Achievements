@@ -19,10 +19,15 @@
       "prefix_89",
       "suffix_67"
     ],
-    "active": {}
+    "active": {
+      "name_prefix": "prefix_7",
+      "name_suffix": "suffix_57",
+      "washi_color": "washi_gold",
+      "washi_position": "washi_corner_tl"
+    }
   },
   "stats": {
-    "messages": 51,
+    "messages": 53,
     "active_months": 1,
     "first_seen": "2026-11"
   },

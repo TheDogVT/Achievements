@@ -4,7 +4,9 @@
   "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/1502c3f5-6fcc-476a-8ddf-381d5f24afed-profile_image-300x300.jpeg",
   "legacy": 1,
   "achievements": {
-    "earned": {},
+    "earned": {
+      "redeem_checkin_1": "2026-11-05T22:15:57.636416+00:00"
+    },
     "founded": {}
   },
   "decorations": {
