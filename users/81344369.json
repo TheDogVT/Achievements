@@ -93,11 +93,12 @@
       "name_base": "name_28",
       "name_suffix": "suffix_79",
       "washi_color": "washi_pink",
-      "washi_position": "washi_corner_tl"
+      "washi_position": "washi_corner_tl",
+      "system_badge": "system_first"
     }
   },
   "stats": {
-    "messages": 325,
+    "messages": 328,
     "active_months": 1,
     "first_seen": "2026-11"
   },

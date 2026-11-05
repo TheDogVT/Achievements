@@ -206,12 +206,11 @@
       "name_base": "name_27",
       "name_suffix": "suffix_35",
       "washi_color": "washi_lavender",
-      "washi_position": "washi_top_center",
-      "system_badge": "system_first"
+      "washi_position": "washi_top_center"
     }
   },
   "stats": {
-    "messages": 754,
+    "messages": 757,
     "active_months": 1,
     "first_seen": "2026-11"
   },

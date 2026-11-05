@@ -6,12 +6,19 @@
   "achievements": {
     "earned": {
       "redeem_checkin_1": "2026-11-03T00:41:17.749205+00:00",
-      "redeem_checkin_2": "2026-11-03T21:21:37.582081+00:00"
+      "redeem_checkin_2": "2026-11-03T21:21:37.582081+00:00",
+      "attend_3": "2026-11-05T21:05:01.544361+00:00",
+      "streak_3": "2026-11-05T21:05:01.604387+00:00"
     },
     "founded": {}
   },
   "decorations": {
-    "unlocked": [],
+    "unlocked": [
+      "prefix_79",
+      "suffix_57",
+      "prefix_89",
+      "suffix_67"
+    ],
     "active": {}
   },
   "stats": {
