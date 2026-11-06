@@ -574,7 +574,7 @@
         // a full ring has no gap to show the round cap, so stop just short of it
         $('ring-fill').style.strokeDasharray = `${Math.min(pct, 99.4).toFixed(2)} 100`;
         $('ring-tip').style.setProperty('--tip', `${(pct / 100) * 360}deg`);
-        $('ring-tip').hidden = have === 0;
+        $('ring-tip').classList.toggle('is-empty', have === 0); // fade, not display:none, so it travels with the arc
     }
 
     // fixed starfield inside the medallion core (same look as the goal widget's)
