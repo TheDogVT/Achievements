@@ -249,9 +249,11 @@ const earnedN = ranked[rank][1], tier = user.legacy || 0, isQuasar = rank === 0 
 const b = bandOf(earnedN), B = BANDS[b];
 const defs = {}, catTotal = {};
 for (const c of sm.categories) { catTotal[c.cat] = c.stars.length; for (const [id, name, earners] of c.stars) defs[id] = { name: name.replace(/^\(Platinum\)\s*/, ''), plat: name.startsWith('(Platinum)'), cat: c.cat, earners }; } // Platinum is a flag, not part of the name
+Object.assign(catTotal, pack.meta?.category_totals || {}); // real category sizes (hand-awarded left out); older meta: discovered only
 const earned = Object.entries(user.achievements.earned || {}).filter(([id]) => defs[id]).map(([id, at]) => ({ id, at: new Date(at), ...defs[id] }));
 const founded = Object.entries(user.achievements.founded || {}).filter(([id]) => defs[id]).map(([id, at]) => ({ id, at: new Date(at), ...defs[id] })).sort((a, c) => (c.plat - a.plat) || (a.at - c.at)); // platinum founded first
-const catHave = {}; earned.forEach(e => { catHave[e.cat] = (catHave[e.cat] || 0) + 1; });
+const got = earned.concat(founded); // the publisher files founded achievements separately; both are owned
+const catHave = {}; got.forEach(e => { catHave[e.cat] = (catHave[e.cat] || 0) + 1; });
 const topCat = Object.entries(catHave).sort((a, c) => c[1] - a[1])[0]?.[0] || 'chat';
 const pct = n => (n * 100 >= 10 ? Math.round(n * 100) : (n * 100).toFixed(1)) + '%';
 const rel = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
@@ -312,7 +314,7 @@ $('mini-name').textContent = uname; $('mini-type').textContent = `${kind} · #${
     <g class="tip" transform="rotate(${frac * 360} 110 110)"><circle cx="110" cy="34" r="10" fill="${starHex}" filter="url(#glP)"/><circle cx="110" cy="34" r="4.2" fill="#fff"/></g>
     <text x="110" y="118" text-anchor="middle" class="num">${earnedN}</text><text x="110" y="146" text-anchor="middle" class="of">OF ${sm.discovered} · ${pct(frac)}</text>`;
 }
-const rarest = earned.slice().sort((a, c) => a.earners - c.earners)[0];
+const rarest = got.slice().sort((a, c) => a.earners - c.earners)[0];
 $('stats').innerHTML = [
   ['Founded', founded.length, 'first in the pack'],
   ['Rank', `#${rank + 1}`, `of ${N} stars`],
@@ -331,9 +333,9 @@ $('cats').innerHTML = Object.keys(CATS).filter(c => catTotal[c]).map(c => {
 }).join('');
 if (!$('cats').innerHTML) $('cats').innerHTML = '<p style="margin:0;color:var(--tan)">Categories appear as the pack discovers achievements.</p>';
 const rareCol = r => r < .02 ? '#ffe1a0' : r < .06 ? '#c9a2ff' : r < .15 ? '#5eaee9' : 'var(--aur)';
-$('latest').innerHTML = earned.slice().sort((a, c) => c.at - a.at).slice(0, 6).map(e =>
+$('latest').innerHTML = got.slice().sort((a, c) => c.at - a.at).slice(0, 6).map(e =>
   `<li style="--rare:${rareCol(e.earners / N)};--c:${CATS[e.cat]?.[1] || '#888'}"><span class="li-ico">${catIcon(e.cat)}</span><span class="txt"><b>${escHtml(e.name)}</b><small>${CATS[e.cat]?.[0] || e.cat} · ${ago(e.at)}</small></span><em>${pct(e.earners / N)}<small>have it</small></em></li>`).join('');
-if (!earned.length) $('latest').innerHTML = '<li><span class="txt" style="color:var(--tan)">Nothing yet. Earn an achievement on stream and it lands here.</span></li>';
+if (!got.length) $('latest').innerHTML = '<li><span class="txt" style="color:var(--tan)">Nothing yet. Earn an achievement on stream and it lands here.</span></li>';
 if (founded.length) $('founded').innerHTML = founded.map((f, i) => `<div class="moon${f.plat ? ' plat' : ''}" data-i="${i}"><i></i><span><b>${escHtml(f.name)}${f.plat ? '<span class="pfc">✦ PLATINUM</span>' : ''}</b><small>${CATS[f.cat]?.[0] || f.cat} · first on ${f.at.toLocaleDateString('en', { day: 'numeric', month: 'short', year: 'numeric' })}${i >= 12 ? ' · beyond the 12 moons' : ''}</small></span></div>`).join('');
 else $('founded-card').innerHTML = '<span class="tab">Founded</span><p style="margin:0;color:var(--tan)">No moons yet. Be the first to unlock something and it starts orbiting your star.</p>';
 { // logbook: only the achievements they have (nothing locked is shown); platinum gets a sky, platinum founder is the ultimate
