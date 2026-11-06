@@ -1,5 +1,15 @@
 {
   "total_achievements": 383,
   "discovered_achievements": 159,
-  "total_users": 10092
+  "total_users": 10093,
+  "category_totals": {
+    "attendance": 24,
+    "chat": 105,
+    "cheer": 89,
+    "donation": 24,
+    "gamble": 22,
+    "gifted": 43,
+    "quotes": 8,
+    "redeems": 66
+  }
 }
