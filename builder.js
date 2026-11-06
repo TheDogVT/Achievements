@@ -39,6 +39,7 @@
     let category = '';
     let query = '';
     let founders = {};
+    let siteMeta = {}; // meta.json: decoration_total is every earnable decoration
     let sets = [];
     let copyTimer = null;
     let chatFrame = null;
@@ -415,6 +416,7 @@
         pick = {
             name_prefix: any('name_prefix', 0.8), name_base: any('name_base', 0.9), name_suffix: any('name_suffix', 0.6),
             message_text: any('message_text', 0.5), card_background: any('card_background', 0.4),
+            mini_chat: pick.mini_chat || '',
         };
         if (Math.random() < 0.5) {
             pick.washi_color = WASHI_COLORS[Math.floor(Math.random() * 4)][0];
@@ -426,10 +428,12 @@
     function commandIds() {
         const ids = PIECES.map(slot => pick[slot]).filter(Boolean);
         if (pick.washi_color && pick.washi_position) ids.push(pick.washi_color, pick.washi_position);
+        // mini chat colour is a sticky preference: name it only to switch it on, or off again
+        if (pick.mini_chat) ids.push('Mini_OPTOUT'); else if (wearing.mini_chat) ids.push('Mini_OPTIN');
         return ids;
     }
     const sameAsWearing = () => {
-        const keys = [...PIECES, 'washi_color', 'washi_position'];
+        const keys = [...PIECES, 'washi_color', 'washi_position', 'mini_chat'];
         return keys.every(k => (pick[k] || '') === (wearing[k] || ''));
     };
 
@@ -439,6 +443,7 @@
         renderLoadout();
         renderDock();
         renderTabs();
+        if ($('mini-optout')) $('mini-optout').checked = Boolean(pick.mini_chat);
         // refresh pressed states without re-mounting every tile's effects
         document.querySelectorAll('#grid .tile').forEach(tile => {
             tile.setAttribute('aria-pressed', String((pick[tile.dataset.slot] || '') === tile.dataset.id));
@@ -558,7 +563,8 @@
 
     // ── medallion: share of every decoration that exists ───────────────
     function renderMedallion() {
-        const total = Object.values(catalog).filter(e => PIECES.includes(e.slot)).length;
+        // real total once the bot publishes it; older meta only knows pieces someone already unlocked
+        const total = Number(siteMeta.decoration_total) || Object.values(catalog).filter(e => PIECES.includes(e.slot)).length;
         const have = unlocked.size;
         const pct = total ? Math.min(100, (have / total) * 100) : 0;
         $('medal-count').textContent = String(have);
@@ -621,6 +627,7 @@
         ['name_base', 'message_text'].forEach(slot => {
             if (pick[slot] && catalog[pick[slot]]) decorations[slot] = { ...(catalog[pick[slot]].config || {}) };
         });
+        if (pick.mini_chat) decorations.mini_chat = { value: 'Mini_OPTOUT' };
         post({ type: 'burn_user', username: name });
         chatSeq += 1;
         post({
@@ -651,6 +658,7 @@
         wearing = {};
         PIECES.forEach(slot => { if (active[slot] && unlocked.has(active[slot])) wearing[slot] = active[slot]; });
         if (active.washi_color && active.washi_position) { wearing.washi_color = active.washi_color; wearing.washi_position = active.washi_position; }
+        if (active.mini_chat === 'Mini_OPTOUT') wearing.mini_chat = 'Mini_OPTOUT';
         pick = { ...wearing };
         buildSets();
 
@@ -746,6 +754,7 @@
         $('search').addEventListener('input', e => { query = e.target.value; renderGrid(); });
         $('shuffle').addEventListener('click', shuffle);
         $('reset-btn').addEventListener('click', () => { pick = { ...wearing }; update(); });
+        $('mini-optout')?.addEventListener('change', event => { pick.mini_chat = event.target.checked ? 'Mini_OPTOUT' : ''; update(); });
         $('copy-btn').addEventListener('click', copyCommand);
         $('try-message').addEventListener('input', renderPreview);
         $('slot-tabs').addEventListener('keydown', e => {
@@ -767,7 +776,7 @@
         }
         window.addEventListener('resize', fitCard);
 
-        [catalog, founders] = await Promise.all([fetchJSON('decoration_catalog.json'), fetchJSON('founders.json').catch(() => ({}))])
+        [catalog, founders, siteMeta] = await Promise.all([fetchJSON('decoration_catalog.json'), fetchJSON('founders.json').catch(() => ({})), fetchJSON('meta.json').catch(() => ({}))])
             .catch(e => { showLoadFailure(); throw e; });
         seedStars();
         renderMedallion();
