@@ -6,18 +6,21 @@
   "achievements": {
     "earned": {
       "chat_paw": "2026-11-02T23:46:30.612488+00:00",
-      "chat_10": "2026-11-02T23:47:44.546733+00:00"
+      "chat_10": "2026-11-02T23:47:44.546733+00:00",
+      "attend_3": "2026-11-06T00:17:04.179691+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
-      "prefix_7"
+      "prefix_7",
+      "prefix_79",
+      "suffix_57"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 66,
+    "messages": 67,
     "active_months": 1,
     "first_seen": "2026-11"
   },
