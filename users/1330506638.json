@@ -5,18 +5,20 @@
   "legacy": 0,
   "achievements": {
     "earned": {
-      "chat_floofy": "2026-11-05T23:58:03.248125+00:00"
+      "chat_floofy": "2026-11-05T23:58:03.248125+00:00",
+      "chat_10": "2026-11-06T00:00:50.597760+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
-      "prefix_139"
+      "prefix_139",
+      "prefix_7"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 7,
+    "messages": 12,
     "active_months": 1,
     "first_seen": "2026-11-05T23:54:09.849710+00:00"
   },
