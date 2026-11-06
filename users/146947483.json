@@ -10,18 +10,24 @@
       "gamble_total_win_1": "2026-11-03T03:33:44.585269+00:00",
       "redeem_total_5": "2026-11-03T04:36:28.091464+00:00",
       "redeem_total_10": "2026-11-04T00:12:19.778488+00:00",
-      "chat_pupper": "2026-11-04T00:19:13.969128+00:00"
+      "chat_pupper": "2026-11-04T00:19:13.969128+00:00",
+      "attend_3": "2026-11-06T01:47:32.201695+00:00",
+      "streak_3": "2026-11-06T01:47:32.252696+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
-      "prefix_7"
+      "prefix_7",
+      "prefix_79",
+      "suffix_57",
+      "prefix_89",
+      "suffix_67"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 62,
+    "messages": 65,
     "active_months": 1,
     "first_seen": "2026-11"
   },
