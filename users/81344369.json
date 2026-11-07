@@ -96,7 +96,7 @@
       "suffix_68"
     ],
     "active": {
-      "name_prefix": "prefix_7",
+      "name_prefix": "prefix_2",
       "name_base": "name_28",
       "name_suffix": "suffix_79",
       "washi_color": "washi_pink",
@@ -104,7 +104,7 @@
     }
   },
   "stats": {
-    "messages": 358,
+    "messages": 360,
     "active_months": 1,
     "first_seen": "2026-11"
   },
