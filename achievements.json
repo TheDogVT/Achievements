@@ -529,6 +529,12 @@
       "amount": 256,
       "type": "exact"
     },
+    "cheer_314": {
+      "name": "Mmm PIE!",
+      "desc": "Awarded for cheering exactly 314 bits",
+      "amount": 314,
+      "type": "exact"
+    },
     "cheer_365": {
       "name": "A bit a day.",
       "desc": "Awarded for cheering exactly 365 bits",

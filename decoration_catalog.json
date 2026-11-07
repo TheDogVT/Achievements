@@ -612,6 +612,23 @@
       }
     }
   },
+  "prefix_36": {
+    "slot": "name_prefix",
+    "display_name": "3.14",
+    "achievement_name": "Mmm PIE!",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_314",
+    "config": {
+      "outline": "basic",
+      "text": "3.14",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_314",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_39": {
     "slot": "name_prefix",
     "display_name": "Day",
