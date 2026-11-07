@@ -6,19 +6,23 @@
   "achievements": {
     "earned": {
       "chat_floofy": "2026-11-05T23:58:03.248125+00:00",
-      "chat_10": "2026-11-06T00:00:50.597760+00:00"
+      "chat_10": "2026-11-06T00:00:50.597760+00:00",
+      "redeem_pet_1": "2026-11-07T22:50:58.826110+00:00",
+      "chat_goodboy": "2026-11-07T22:51:41.460405+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
       "prefix_139",
-      "prefix_7"
+      "prefix_7",
+      "prefix_18",
+      "suffix_8"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 15,
+    "messages": 17,
     "active_months": 1,
     "first_seen": "2026-11-05T23:54:09.849710+00:00"
   },
