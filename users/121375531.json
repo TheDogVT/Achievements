@@ -20,7 +20,9 @@
       "streak_3": "2026-11-03T22:47:20.291833+00:00",
       "redeem_checkin_2": "2026-11-03T22:47:20.332538+00:00",
       "gamble_loss_total_100k": "2026-11-04T01:10:23.962201+00:00",
-      "gamble_total_loss_1": "2026-11-04T01:10:23.990272+00:00"
+      "gamble_total_loss_1": "2026-11-04T01:10:23.990272+00:00",
+      "attend_5": "2026-11-07T21:59:55.713054+00:00",
+      "streak_5": "2026-11-07T21:59:55.746659+00:00"
     },
     "founded": {}
   },
@@ -35,12 +37,16 @@
       "prefix_79",
       "suffix_57",
       "prefix_89",
-      "suffix_67"
+      "suffix_67",
+      "prefix_80",
+      "suffix_58",
+      "prefix_90",
+      "suffix_68"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 42,
+    "messages": 43,
     "active_months": 1,
     "first_seen": "2026-11"
   },
