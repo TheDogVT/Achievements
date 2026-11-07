@@ -138,12 +138,14 @@
     ],
     "active": {
       "name_prefix": "prefix_18",
+      "name_suffix": "suffix_105",
       "washi_color": "washi_pink",
-      "washi_position": "washi_top_right"
+      "washi_position": "washi_corner_tl",
+      "mini_chat": "Mini_OPTOUT"
     }
   },
   "stats": {
-    "messages": 1433,
+    "messages": 1455,
     "active_months": 1,
     "first_seen": "2026-08-09T22:21:03.669062+00:00"
   },
