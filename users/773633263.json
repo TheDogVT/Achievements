@@ -9,19 +9,25 @@
       "cheer_time_1": "2026-11-03T22:01:34.952678+00:00",
       "gamble_total_loss_1": "2026-11-03T22:04:38.082240+00:00",
       "redeem_total_5": "2026-11-03T22:19:36.828993+00:00",
-      "chat_peanut": "2026-11-03T23:14:10.793727+00:00"
+      "chat_peanut": "2026-11-03T23:14:10.793727+00:00",
+      "attend_3": "2026-11-07T22:48:44.051139+00:00",
+      "streak_3": "2026-11-07T22:48:44.081327+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
       "prefix_7",
-      "prefix_8"
+      "prefix_8",
+      "prefix_79",
+      "suffix_57",
+      "prefix_89",
+      "suffix_67"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 42,
+    "messages": 43,
     "active_months": 1,
     "first_seen": "2026-11"
   },
