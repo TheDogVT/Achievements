@@ -87,7 +87,9 @@
       "gamble_win_total_100k": "2026-11-03T23:05:17.206585+00:00",
       "chat_pet": "2026-11-03T23:30:38.107928+00:00",
       "cheer_429": "2026-11-05T22:00:18.588828+00:00",
-      "bog_sputter": "2026-11-06T03:40:53.795060+00:00"
+      "bog_sputter": "2026-11-06T03:40:53.795060+00:00",
+      "attend_5": "2026-11-07T20:59:40.510247+00:00",
+      "streak_5": "2026-11-07T20:59:40.560341+00:00"
     },
     "founded": {
       "cheer_message_100": "2026-11-01T21:21:19.800434+00:00",
@@ -205,18 +207,23 @@
       "suffix_25",
       "suffix_27",
       "prefix_78",
-      "name_24"
+      "name_24",
+      "prefix_80",
+      "suffix_58",
+      "prefix_90",
+      "suffix_68"
     ],
     "active": {
       "name_prefix": "prefix_141",
       "name_base": "name_27",
       "name_suffix": "suffix_35",
       "washi_color": "washi_lavender",
-      "washi_position": "washi_top_center"
+      "washi_position": "washi_top_center",
+      "system_badge": "system_first"
     }
   },
   "stats": {
-    "messages": 854,
+    "messages": 855,
     "active_months": 1,
     "first_seen": "2026-11"
   },

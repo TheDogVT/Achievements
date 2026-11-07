@@ -6,10 +6,22 @@
       "amount": 3,
       "type": "attended"
     },
+    "attend_5": {
+      "name": "Getting Familiar",
+      "desc": "Awarded for attending 5 streams. The tail wags are getting stronger.",
+      "amount": 5,
+      "type": "attended"
+    },
     "streak_3": {
       "name": "3 Day Streak!",
       "desc": "Three days running. Someone is getting spoiled.",
       "amount": 3,
+      "type": "streak"
+    },
+    "streak_5": {
+      "name": "5 Day Streak!",
+      "desc": "Five days running. The week is calling.",
+      "amount": 5,
       "type": "streak"
     }
   },

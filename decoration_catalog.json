@@ -1295,6 +1295,23 @@
       }
     }
   },
+  "prefix_80": {
+    "slot": "name_prefix",
+    "display_name": "Recognized",
+    "achievement_name": "Getting Familiar",
+    "achievement_category": "attendance",
+    "achievement_id": "attend_5",
+    "config": {
+      "outline": "basic",
+      "text": "Recognized",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "attendance",
+        "id": "attend_5",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_89": {
     "slot": "name_prefix",
     "display_name": "Active",
@@ -1328,6 +1345,23 @@
       "unlock": {
         "category": "cheer",
         "id": "cheer_time_10",
+        "type": "achievement"
+      }
+    }
+  },
+  "prefix_90": {
+    "slot": "name_prefix",
+    "display_name": "Locked In",
+    "achievement_name": "5 Day Streak!",
+    "achievement_category": "attendance",
+    "achievement_id": "streak_5",
+    "config": {
+      "outline": "basic",
+      "text": "Locked In",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "attendance",
+        "id": "streak_5",
         "type": "achievement"
       }
     }
@@ -2998,6 +3032,23 @@
       }
     }
   },
+  "suffix_58": {
+    "slot": "name_suffix",
+    "display_name": "[5 STREAMS]",
+    "achievement_name": "Getting Familiar",
+    "achievement_category": "attendance",
+    "achievement_id": "attend_5",
+    "config": {
+      "outline": "basic",
+      "text": "[5 STREAMS]",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "attendance",
+        "id": "attend_5",
+        "type": "achievement"
+      }
+    }
+  },
   "suffix_67": {
     "slot": "name_suffix",
     "display_name": "[LOCKED]",
@@ -3011,6 +3062,23 @@
       "unlock": {
         "category": "attendance",
         "id": "streak_3",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_68": {
+    "slot": "name_suffix",
+    "display_name": "[STREAK]",
+    "achievement_name": "5 Day Streak!",
+    "achievement_category": "attendance",
+    "achievement_id": "streak_5",
+    "config": {
+      "outline": "basic",
+      "text": "[STREAK]",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "attendance",
+        "id": "streak_5",
         "type": "achievement"
       }
     }
