@@ -28,7 +28,8 @@
       "redeem_checkin_1": "2026-11-04T00:41:32.661215+00:00",
       "redeem_total_10": "2026-11-04T00:41:32.687842+00:00",
       "redeem_checkin_2": "2026-11-08T00:33:39.526036+00:00",
-      "gifted_cumulative_15": "2026-11-08T00:41:37.387197+00:00"
+      "gifted_cumulative_15": "2026-11-08T00:41:37.387197+00:00",
+      "chat_100": "2026-11-08T00:58:13.856091+00:00"
     },
     "founded": {}
   },
@@ -51,7 +52,8 @@
       "suffix_57",
       "prefix_89",
       "suffix_67",
-      "name_16"
+      "name_16",
+      "prefix_2"
     ],
     "active": {
       "name_prefix": "prefix_140",
@@ -62,7 +64,7 @@
     }
   },
   "stats": {
-    "messages": 98,
+    "messages": 101,
     "active_months": 1,
     "first_seen": "2026-11"
   },
