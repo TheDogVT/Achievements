@@ -856,6 +856,11 @@
       "desc": "Awarded for your second check-in.",
       "amount": 2
     },
+    "redeem_checkin_5": {
+      "name": "Reporting for view-y.",
+      "desc": "Awarded for your 5th check-in.",
+      "amount": 5
+    },
     "redeem_pet_1": {
       "name": "He's a good boy, yes he is!",
       "desc": "Awarded for petting the dog.",

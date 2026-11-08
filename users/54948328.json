@@ -128,7 +128,8 @@
       "chat_sploot": "2026-11-03T22:06:43.609562+00:00",
       "redeem_pet_25": "2026-11-03T22:31:10.190938+00:00",
       "redeem_total_100": "2026-11-05T21:38:27.376042+00:00",
-      "redeem_pet_50": "2026-11-07T21:39:07.138586+00:00"
+      "redeem_pet_50": "2026-11-07T21:39:07.138586+00:00",
+      "redeem_checkin_5": "2026-11-08T21:06:18.619020+00:00"
     }
   },
   "decorations": {
@@ -217,16 +218,16 @@
       "prefix_4"
     ],
     "active": {
-      "system_badge": "system_first",
       "name_prefix": "prefix_78",
       "name_base": "name_5",
       "name_suffix": "suffix_107",
       "washi_color": "washi_lavender",
-      "washi_position": "washi_top_center"
+      "washi_position": "washi_top_center",
+      "system_badge": "system_first"
     }
   },
   "stats": {
-    "messages": 1057,
+    "messages": 1087,
     "active_months": 1,
     "first_seen": "2026-11"
   },
