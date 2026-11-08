@@ -91,7 +91,9 @@
       "cheer_time_10": "2026-11-07T21:21:55.302904+00:00",
       "cheer_365": "2026-11-07T21:21:55.327903+00:00",
       "redeem_total_50": "2026-11-07T22:37:53.165889+00:00",
-      "chat_chain_starter": "2026-11-07T23:51:00.695745+00:00"
+      "chat_chain_starter": "2026-11-07T23:51:00.695745+00:00",
+      "gifted_cumulative_5": "2026-11-08T00:44:50.122258+00:00",
+      "gifted_instance_5": "2026-11-08T00:44:50.192340+00:00"
     },
     "founded": {
       "chat_dog_god": "2026-11-01T21:21:16.519499+00:00",
@@ -162,7 +164,8 @@
       "suffix_25",
       "prefix_140",
       "name_27",
-      "suffix_107"
+      "suffix_107",
+      "name_14"
     ],
     "active": {
       "name_prefix": "prefix_16",
@@ -173,7 +176,7 @@
     }
   },
   "stats": {
-    "messages": 766,
+    "messages": 769,
     "active_months": 1,
     "first_seen": "2026-11"
   },
