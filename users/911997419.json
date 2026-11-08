@@ -41,7 +41,8 @@
       "chat_stick": "2026-11-05T22:57:08.885450+00:00",
       "attend_5": "2026-11-07T21:51:11.643820+00:00",
       "streak_5": "2026-11-07T21:51:11.666559+00:00",
-      "chat_true_form": "2026-11-07T23:58:20.879007+00:00"
+      "chat_true_form": "2026-11-07T23:58:20.879007+00:00",
+      "chat_squirrel": "2026-11-08T00:23:32.610932+00:00"
     },
     "founded": {
       "quote_3": "2026-11-03T03:45:36.854043+00:00",
@@ -85,11 +86,12 @@
       "name_base": "name_24",
       "name_suffix": "suffix_4",
       "washi_color": "washi_pink",
-      "washi_position": "washi_top_right"
+      "washi_position": "washi_top_right",
+      "mini_chat": "Mini_OPTOUT"
     }
   },
   "stats": {
-    "messages": 480,
+    "messages": 488,
     "active_months": 1,
     "first_seen": "2026-11"
   },
