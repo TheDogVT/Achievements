@@ -5,14 +5,17 @@
   "legacy": 0,
   "achievements": {
     "earned": {
-      "attend_3": "2026-11-05T22:12:51.399666+00:00"
+      "attend_3": "2026-11-05T22:12:51.399666+00:00",
+      "attend_5": "2026-11-09T23:08:21.193533+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
       "prefix_79",
-      "suffix_57"
+      "suffix_57",
+      "prefix_80",
+      "suffix_58"
     ],
     "active": {}
   },
