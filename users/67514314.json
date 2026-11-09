@@ -66,7 +66,8 @@
       "streak_5": "2026-11-07T21:48:31.735365+00:00",
       "chat_chain_starter": "2026-11-07T23:48:59.980825+00:00",
       "redeem_checkin_5": "2026-11-08T21:14:22.017572+00:00",
-      "redeem_total_10": "2026-11-08T21:14:22.040104+00:00"
+      "redeem_total_10": "2026-11-08T21:14:22.040104+00:00",
+      "streak_7": "2026-11-09T22:07:46.976751+00:00"
     },
     "founded": {
       "chat_carride": "2026-11-01T22:42:16.016824+00:00",
@@ -119,7 +120,9 @@
       "suffix_68",
       "prefix_140",
       "name_27",
-      "suffix_107"
+      "suffix_107",
+      "prefix_91",
+      "suffix_69"
     ],
     "active": {
       "name_prefix": "prefix_129",
@@ -128,7 +131,7 @@
     }
   },
   "stats": {
-    "messages": 1669,
+    "messages": 1674,
     "active_months": 1,
     "first_seen": "2026-11"
   },
