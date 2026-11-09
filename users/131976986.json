@@ -29,7 +29,8 @@
       "redeem_total_10": "2026-11-03T21:44:17.669666+00:00",
       "chat_dog_god": "2026-11-03T23:36:22.953037+00:00",
       "chat_mlem": "2026-11-03T23:36:59.533508+00:00",
-      "redeem_pet_10": "2026-11-05T22:16:06.232866+00:00"
+      "redeem_pet_10": "2026-11-05T22:16:06.232866+00:00",
+      "attend_5": "2026-11-09T21:25:40.931634+00:00"
     },
     "founded": {}
   },
@@ -53,7 +54,9 @@
       "suffix_57",
       "prefix_89",
       "suffix_67",
-      "suffix_5"
+      "suffix_5",
+      "prefix_80",
+      "suffix_58"
     ],
     "active": {
       "name_prefix": "prefix_13",
@@ -63,7 +66,7 @@
     }
   },
   "stats": {
-    "messages": 401,
+    "messages": 405,
     "active_months": 1,
     "first_seen": "2026-11"
   },
