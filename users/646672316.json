@@ -8,19 +8,26 @@
       "redeem_pet_1": "2026-11-02T02:58:23.583187+00:00",
       "redeem_checkin_1": "2026-11-02T21:26:16.692973+00:00",
       "attend_3": "2026-11-05T21:42:06.637528+00:00",
-      "redeem_checkin_2": "2026-11-05T21:42:06.696690+00:00"
+      "redeem_checkin_2": "2026-11-05T21:42:06.696690+00:00",
+      "attend_5": "2026-11-09T01:36:40.267330+00:00",
+      "streak_3": "2026-11-09T01:36:40.296515+00:00",
+      "redeem_total_5": "2026-11-09T01:36:40.341735+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
       "prefix_79",
-      "suffix_57"
+      "suffix_57",
+      "prefix_80",
+      "suffix_58",
+      "prefix_89",
+      "suffix_67"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 4,
+    "messages": 6,
     "active_months": 1,
     "first_seen": "2026-10-22T20:18:32.176089+00:00"
   },
