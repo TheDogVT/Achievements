@@ -61,7 +61,8 @@
       "attend_5": "2026-11-07T21:10:23.817453+00:00",
       "streak_5": "2026-11-07T21:10:23.840500+00:00",
       "chat_true_form": "2026-11-07T21:21:11.557692+00:00",
-      "chat_trick": "2026-11-07T21:24:04.355759+00:00"
+      "chat_trick": "2026-11-07T21:24:04.355759+00:00",
+      "streak_7": "2026-11-09T21:27:26.334322+00:00"
     },
     "founded": {
       "chat_vacuum": "2026-11-01T21:21:34.403127+00:00",
@@ -111,14 +112,16 @@
       "prefix_80",
       "suffix_58",
       "prefix_90",
-      "suffix_68"
+      "suffix_68",
+      "prefix_91",
+      "suffix_69"
     ],
     "active": {
       "name_prefix": "prefix_130"
     }
   },
   "stats": {
-    "messages": 410,
+    "messages": 412,
     "active_months": 1,
     "first_seen": "2026-11"
   },
