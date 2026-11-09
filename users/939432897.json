@@ -27,7 +27,8 @@
       "redeem_total_5": "2026-11-02T03:33:51.664683+00:00",
       "gamble_total_loss_1": "2026-11-02T03:36:05.325458+00:00",
       "redeem_total_10": "2026-11-02T07:11:58.681685+00:00",
-      "chat_sleepy": "2026-11-02T07:43:02.050778+00:00"
+      "chat_sleepy": "2026-11-02T07:43:02.050778+00:00",
+      "attend_3": "2026-11-09T21:04:15.594589+00:00"
     },
     "founded": {}
   },
@@ -46,7 +47,9 @@
       "prefix_18",
       "suffix_8",
       "prefix_132",
-      "prefix_10"
+      "prefix_10",
+      "prefix_79",
+      "suffix_57"
     ],
     "active": {
       "washi_color": "washi_mint",
@@ -54,7 +57,7 @@
     }
   },
   "stats": {
-    "messages": 392,
+    "messages": 393,
     "active_months": 1,
     "first_seen": "2026-08-13T22:08:50.389544+00:00"
   },
