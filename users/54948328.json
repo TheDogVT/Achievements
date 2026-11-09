@@ -91,7 +91,8 @@
       "attend_5": "2026-11-07T20:59:40.510247+00:00",
       "streak_5": "2026-11-07T20:59:40.560341+00:00",
       "chat_1k": "2026-11-08T00:03:06.342577+00:00",
-      "quote_1": "2026-11-08T22:13:22.792047+00:00"
+      "quote_1": "2026-11-08T22:13:22.792047+00:00",
+      "streak_7": "2026-11-09T21:02:55.492352+00:00"
     },
     "founded": {
       "cheer_message_100": "2026-11-01T21:21:19.800434+00:00",
@@ -216,19 +217,21 @@
       "suffix_58",
       "prefix_90",
       "suffix_68",
-      "prefix_4"
+      "prefix_4",
+      "prefix_91",
+      "suffix_69"
     ],
     "active": {
-      "system_badge": "system_first",
       "name_prefix": "prefix_78",
       "name_base": "name_5",
       "name_suffix": "suffix_107",
       "washi_color": "washi_lavender",
-      "washi_position": "washi_top_center"
+      "washi_position": "washi_top_center",
+      "system_badge": "system_first"
     }
   },
   "stats": {
-    "messages": 1134,
+    "messages": 1137,
     "active_months": 1,
     "first_seen": "2026-11"
   },

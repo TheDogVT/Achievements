@@ -23,6 +23,12 @@
       "desc": "Five days running. The week is calling.",
       "amount": 5,
       "type": "streak"
+    },
+    "streak_7": {
+      "name": "7 Day Streak!",
+      "desc": "A full week. This is getting serious.",
+      "amount": 7,
+      "type": "streak"
     }
   },
   "chat": {
