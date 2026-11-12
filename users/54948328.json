@@ -222,16 +222,16 @@
       "suffix_69"
     ],
     "active": {
-      "system_badge": "system_first",
       "name_prefix": "prefix_78",
       "name_base": "name_5",
       "name_suffix": "suffix_107",
       "washi_color": "washi_lavender",
-      "washi_position": "washi_top_center"
+      "washi_position": "washi_top_center",
+      "system_badge": "system_first"
     }
   },
   "stats": {
-    "messages": 1187,
+    "messages": 1190,
     "active_months": 1,
     "first_seen": "2026-11"
   },
