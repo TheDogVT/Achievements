@@ -125,13 +125,14 @@
       "suffix_69"
     ],
     "active": {
-      "name_prefix": "prefix_129",
+      "name_prefix": "prefix_3",
+      "name_suffix": "suffix_56",
       "washi_color": "washi_gold",
       "washi_position": "washi_top_center"
     }
   },
   "stats": {
-    "messages": 1740,
+    "messages": 1752,
     "active_months": 1,
     "first_seen": "2026-11"
   },
