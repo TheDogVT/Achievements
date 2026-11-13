@@ -223,12 +223,12 @@
       "suffix_69"
     ],
     "active": {
+      "system_badge": "system_first",
       "name_prefix": "prefix_78",
       "name_base": "name_5",
       "name_suffix": "suffix_107",
       "washi_color": "washi_lavender",
-      "washi_position": "washi_top_center",
-      "system_badge": "system_first"
+      "washi_position": "washi_top_center"
     }
   },
   "stats": {
