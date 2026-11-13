@@ -335,6 +335,21 @@
       }
     }
   },
+  "prefix_136": {
+    "slot": "name_prefix",
+    "display_name": "Commander",
+    "achievement_name": "Down Commander",
+    "achievement_category": "chat",
+    "achievement_id": "chat_down",
+    "config": {
+      "text": "Commander",
+      "unlock": {
+        "category": "chat",
+        "id": "chat_down",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_137": {
     "slot": "name_prefix",
     "display_name": "Drooly",
