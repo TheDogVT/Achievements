@@ -5,16 +5,19 @@
   "legacy": 0,
   "achievements": {
     "earned": {
-      "chat_stinky": "2026-11-13T22:09:55.016657+00:00"
+      "chat_stinky": "2026-11-13T22:09:55.016657+00:00",
+      "chat_10": "2026-11-13T22:10:55.987713+00:00"
     },
     "founded": {}
   },
   "decorations": {
-    "unlocked": [],
+    "unlocked": [
+      "prefix_7"
+    ],
     "active": {}
   },
   "stats": {
-    "messages": 9,
+    "messages": 10,
     "active_months": 1,
     "first_seen": "2026-11-13T21:27:12.748520+00:00"
   },
