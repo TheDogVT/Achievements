@@ -5,16 +5,22 @@
   "legacy": 0,
   "achievements": {
     "earned": {
-      "redeem_pet_1": "2026-11-02T03:51:04.388440+00:00"
+      "redeem_pet_1": "2026-11-02T03:51:04.388440+00:00",
+      "attend_3": "2026-11-14T21:37:55.330609+00:00",
+      "chat_10": "2026-11-14T21:37:55.365637+00:00"
     },
     "founded": {}
   },
   "decorations": {
-    "unlocked": [],
+    "unlocked": [
+      "prefix_79",
+      "suffix_57",
+      "prefix_7"
+    ],
     "active": {}
   },
   "stats": {
-    "messages": 9,
+    "messages": 12,
     "active_months": 1,
     "first_seen": "2026-11"
   },
