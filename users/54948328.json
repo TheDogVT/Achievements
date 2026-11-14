@@ -92,7 +92,9 @@
       "streak_5": "2026-11-07T20:59:40.560341+00:00",
       "chat_1k": "2026-11-08T00:03:06.342577+00:00",
       "quote_1": "2026-11-08T22:13:22.792047+00:00",
-      "streak_7": "2026-11-09T21:02:55.492352+00:00"
+      "streak_7": "2026-11-09T21:02:55.492352+00:00",
+      "attend_10": "2026-11-14T21:13:53.249380+00:00",
+      "streak_10": "2026-11-14T21:13:53.297431+00:00"
     },
     "founded": {
       "cheer_message_100": "2026-11-01T21:21:19.800434+00:00",
@@ -220,10 +222,13 @@
       "suffix_68",
       "prefix_4",
       "prefix_91",
-      "suffix_69"
+      "suffix_69",
+      "prefix_81",
+      "suffix_59",
+      "prefix_92",
+      "suffix_70"
     ],
     "active": {
-      "system_badge": "system_first",
       "name_prefix": "prefix_78",
       "name_base": "name_5",
       "name_suffix": "suffix_107",
@@ -232,7 +237,7 @@
     }
   },
   "stats": {
-    "messages": 1281,
+    "messages": 1283,
     "active_months": 1,
     "first_seen": "2026-11"
   },

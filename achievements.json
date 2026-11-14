@@ -12,6 +12,12 @@
       "amount": 5,
       "type": "attended"
     },
+    "attend_10": {
+      "name": "Regular at the Dog House",
+      "desc": "Awarded for attending 10 streams.",
+      "amount": 10,
+      "type": "attended"
+    },
     "streak_3": {
       "name": "3 Day Streak!",
       "desc": "Three days running. Someone is getting spoiled.",
@@ -28,6 +34,12 @@
       "name": "7 Day Streak!",
       "desc": "A full week. This is getting serious.",
       "amount": 7,
+      "type": "streak"
+    },
+    "streak_10": {
+      "name": "10 Day Streak!",
+      "desc": "Ten days in. The dedication is unreal.",
+      "amount": 10,
       "type": "streak"
     }
   },
