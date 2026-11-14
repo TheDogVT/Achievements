@@ -5,7 +5,8 @@
   "legacy": 0,
   "achievements": {
     "earned": {
-      "redeem_checkin_1": "2026-11-07T21:26:05.524339+00:00"
+      "redeem_checkin_1": "2026-11-07T21:26:05.524339+00:00",
+      "redeem_checkin_2": "2026-11-14T21:14:48.137508+00:00"
     },
     "founded": {}
   },
@@ -14,8 +15,8 @@
     "active": {}
   },
   "stats": {
-    "messages": 0,
-    "active_months": 0,
+    "messages": 1,
+    "active_months": 1,
     "first_seen": "2026-11-07T21:26:05.481534+00:00"
   },
   "top_months": []
