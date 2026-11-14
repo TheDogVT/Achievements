@@ -143,15 +143,15 @@
       "prefix_136"
     ],
     "active": {
-      "name_prefix": "prefix_18",
-      "name_suffix": "suffix_105",
+      "name_prefix": "prefix_136",
+      "name_suffix": "suffix_8",
       "washi_color": "washi_pink",
       "washi_position": "washi_corner_tl",
       "mini_chat": "Mini_OPTOUT"
     }
   },
   "stats": {
-    "messages": 2078,
+    "messages": 2094,
     "active_months": 1,
     "first_seen": "2026-08-09T22:21:03.669062+00:00"
   },
