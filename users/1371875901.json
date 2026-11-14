@@ -7,14 +7,17 @@
     "earned": {
       "redeem_checkin_1": "2026-11-05T22:03:53.746420+00:00",
       "attend_3": "2026-11-08T22:06:58.126415+00:00",
-      "redeem_checkin_2": "2026-11-08T22:06:58.146785+00:00"
+      "redeem_checkin_2": "2026-11-08T22:06:58.146785+00:00",
+      "attend_5": "2026-11-14T22:38:16.232766+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
       "prefix_79",
-      "suffix_57"
+      "suffix_57",
+      "prefix_80",
+      "suffix_58"
     ],
     "active": {}
   },
