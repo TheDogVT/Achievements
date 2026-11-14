@@ -5,18 +5,22 @@
   "legacy": 0,
   "achievements": {
     "earned": {
-      "chat_10": "2026-11-14T23:21:17.034412+00:00"
+      "chat_10": "2026-11-14T23:21:17.034412+00:00",
+      "chat_chain_member": "2026-11-14T23:27:32.677654+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
-      "prefix_7"
+      "prefix_7",
+      "prefix_141",
+      "name_28",
+      "suffix_108"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 10,
+    "messages": 17,
     "active_months": 1,
     "first_seen": "2026-11"
   },
