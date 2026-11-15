@@ -7,19 +7,22 @@
     "earned": {
       "chat_doge": "2026-11-03T22:10:34.073418+00:00",
       "chat_10": "2026-11-03T22:18:57.050322+00:00",
-      "gamble_total_win_1": "2026-11-08T23:26:01.471209+00:00"
+      "gamble_total_win_1": "2026-11-08T23:26:01.471209+00:00",
+      "attend_3": "2026-11-15T00:26:59.977352+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
       "prefix_134",
-      "prefix_7"
+      "prefix_7",
+      "prefix_79",
+      "suffix_57"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 41,
+    "messages": 44,
     "active_months": 1,
     "first_seen": "2026-11"
   },
