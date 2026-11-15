@@ -27,7 +27,8 @@
       "redeem_checkin_5": "2026-11-09T01:01:24.036317+00:00",
       "redeem_total_5": "2026-11-09T01:01:24.060141+00:00",
       "chat_treats": "2026-11-12T22:32:46.017923+00:00",
-      "chat_howl": "2026-11-14T21:45:01.079341+00:00"
+      "chat_howl": "2026-11-14T21:45:01.079341+00:00",
+      "attend_10": "2026-11-15T21:40:17.440422+00:00"
     },
     "founded": {}
   },
@@ -51,12 +52,14 @@
       "suffix_58",
       "prefix_90",
       "suffix_68",
-      "prefix_19"
+      "prefix_19",
+      "prefix_81",
+      "suffix_59"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 293,
+    "messages": 294,
     "active_months": 1,
     "first_seen": "2026-11"
   },
