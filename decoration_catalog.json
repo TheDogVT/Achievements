@@ -627,6 +627,23 @@
       }
     }
   },
+  "prefix_35": {
+    "slot": "name_prefix",
+    "display_name": "144p",
+    "achievement_name": "Best Youtube Resolution.",
+    "achievement_category": "cheer",
+    "achievement_id": "cheer_144",
+    "config": {
+      "outline": "basic",
+      "text": "144p",
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "cheer",
+        "id": "cheer_144",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_36": {
     "slot": "name_prefix",
     "display_name": "3.14",

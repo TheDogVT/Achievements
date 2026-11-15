@@ -546,6 +546,12 @@
       "amount": 128,
       "type": "exact"
     },
+    "cheer_144": {
+      "name": "Best Youtube Resolution.",
+      "desc": "Awarded for cheering exactly 144 bits",
+      "amount": 144,
+      "type": "exact"
+    },
     "cheer_256": {
       "name": "There be colors!",
       "desc": "Awarded for cheering exactly 256 bits",
