@@ -57,7 +57,8 @@
       "attend_10": "2026-11-14T21:13:45.295391+00:00",
       "streak_10": "2026-11-14T21:13:45.394892+00:00",
       "chat_lick": "2026-11-14T21:48:09.811846+00:00",
-      "chat_500": "2026-11-14T23:26:30.522721+00:00"
+      "chat_500": "2026-11-14T23:26:30.522721+00:00",
+      "redeem_checkin_10": "2026-11-15T21:04:34.648147+00:00"
     },
     "founded": {
       "chat_ball": "2026-11-01T21:21:34.970641+00:00",
@@ -117,8 +118,7 @@
       "name_base": "name_28",
       "name_suffix": "suffix_79",
       "washi_color": "washi_pink",
-      "washi_position": "washi_corner_tl",
-      "system_badge": "system_first"
+      "washi_position": "washi_corner_tl"
     }
   },
   "stats": {

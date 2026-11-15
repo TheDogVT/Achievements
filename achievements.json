@@ -890,6 +890,11 @@
       "desc": "Awarded for your 5th check-in.",
       "amount": 5
     },
+    "redeem_checkin_10": {
+      "name": "I'm here, I'm here!",
+      "desc": "Awarded for your 10th check-in.",
+      "amount": 10
+    },
     "redeem_pet_1": {
       "name": "He's a good boy, yes he is!",
       "desc": "Awarded for petting the dog.",
