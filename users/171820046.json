@@ -11,7 +11,8 @@
       "chat_goodboy": "2026-11-08T21:47:54.857641+00:00",
       "attend_5": "2026-11-12T21:50:53.765125+00:00",
       "redeem_checkin_1": "2026-11-12T21:54:57.752003+00:00",
-      "redeem_checkin_2": "2026-11-15T22:50:53.069600+00:00"
+      "redeem_checkin_2": "2026-11-15T22:50:53.069600+00:00",
+      "chat_ball": "2026-11-15T22:53:15.187079+00:00"
     },
     "founded": {}
   },
@@ -25,7 +26,8 @@
       "prefix_18",
       "suffix_8",
       "prefix_80",
-      "suffix_58"
+      "suffix_58",
+      "prefix_77"
     ],
     "active": {
       "name_prefix": "prefix_7",
@@ -35,7 +37,7 @@
     }
   },
   "stats": {
-    "messages": 89,
+    "messages": 92,
     "active_months": 1,
     "first_seen": "2026-11"
   },
