@@ -718,6 +718,12 @@
       "amount": 100000,
       "type": "win"
     },
+    "gamble_win_total_1m": {
+      "name": "Huge Winner",
+      "desc": "Awarded for winning 1,000,000 kibble in gambling.",
+      "amount": 1000000,
+      "type": "win"
+    },
     "gamble_jackpot_total_1": {
       "name": "Taste of Luck.",
       "desc": "Awarded for getting your first Jackpot while gambling.",
