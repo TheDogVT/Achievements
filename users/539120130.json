@@ -5,7 +5,8 @@
   "legacy": 1,
   "achievements": {
     "earned": {
-      "chat_10": "2026-11-16T23:06:12.929663+00:00"
+      "chat_10": "2026-11-16T23:06:12.929663+00:00",
+      "redeem_checkin_1": "2026-11-16T23:09:02.194646+00:00"
     },
     "founded": {}
   },
@@ -16,7 +17,7 @@
     "active": {}
   },
   "stats": {
-    "messages": 10,
+    "messages": 14,
     "active_months": 1,
     "first_seen": "2026-11"
   },
