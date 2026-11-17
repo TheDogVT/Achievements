@@ -1,20 +1,23 @@
 {
   "user_id": "1515971045",
   "username": "yuuki_tanaka_",
-  "pfp_url": "",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/c6f50841-4a58-4030-b367-3717eeddfc1a-profile_image-300x300.jpeg",
   "legacy": 0,
   "achievements": {
     "earned": {
-      "redeem_checkin_1": "2026-11-16T23:55:00.467582+00:00"
+      "redeem_checkin_1": "2026-11-16T23:55:00.467582+00:00",
+      "chat_10": "2026-11-17T00:01:58.949142+00:00"
     },
     "founded": {}
   },
   "decorations": {
-    "unlocked": [],
+    "unlocked": [
+      "prefix_7"
+    ],
     "active": {}
   },
   "stats": {
-    "messages": 3,
+    "messages": 10,
     "active_months": 1,
     "first_seen": "2026-11-16T23:54:16.046002+00:00"
   },
