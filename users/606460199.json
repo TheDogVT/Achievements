@@ -49,7 +49,8 @@
       "redeem_checkin_2": "2026-11-15T23:56:53.293923+00:00",
       "redeem_pet_1": "2026-11-15T23:58:44.937619+00:00",
       "redeem_total_10": "2026-11-15T23:58:44.964724+00:00",
-      "attend_5": "2026-11-20T22:45:04.352248+00:00"
+      "attend_5": "2026-11-20T22:45:04.352248+00:00",
+      "chat_vacuum": "2026-11-20T23:20:52.501553+00:00"
     },
     "founded": {}
   },
@@ -85,14 +86,15 @@
       "suffix_58"
     ],
     "active": {
-      "name_prefix": "prefix_16",
-      "name_suffix": "suffix_4",
+      "name_prefix": "prefix_140",
+      "name_base": "name_27",
+      "name_suffix": "suffix_107",
       "washi_color": "washi_lavender",
-      "washi_position": "washi_top_center"
+      "washi_position": "washi_corner_tl"
     }
   },
   "stats": {
-    "messages": 245,
+    "messages": 255,
     "active_months": 1,
     "first_seen": "2026-11"
   },
