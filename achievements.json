@@ -194,6 +194,11 @@
       "desc": "Awarded for calling out naughty vibes.",
       "type": "contains"
     },
+    "chat_frisbee": {
+      "name": "Disc Jockey",
+      "desc": "Awarded for aerial fetch upgrades.",
+      "type": "contains"
+    },
     "chat_woofwoof": {
       "name": "Double Barker",
       "desc": "Awarded for the classic double woof.",
