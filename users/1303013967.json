@@ -5,19 +5,21 @@
   "legacy": 1,
   "achievements": {
     "earned": {
-      "chat_bork": "2026-11-20T21:16:18.946517+00:00"
+      "chat_bork": "2026-11-20T21:16:18.946517+00:00",
+      "chat_cone": "2026-11-20T21:18:12.068418+00:00"
     },
     "founded": {}
   },
   "decorations": {
     "unlocked": [
       "prefix_126",
-      "suffix_100"
+      "suffix_100",
+      "suffix_103"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 2,
+    "messages": 3,
     "active_months": 1,
     "first_seen": "2026-11"
   },
