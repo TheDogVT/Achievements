@@ -61,7 +61,8 @@
       "redeem_checkin_10": "2026-11-15T21:04:34.648147+00:00",
       "gamble_total_loss_1": "2026-11-15T22:15:38.345181+00:00",
       "gamble_loss_total_100k": "2026-11-15T22:21:56.758819+00:00",
-      "chat_frisbee": "2026-11-20T21:06:49.070596+00:00"
+      "chat_frisbee": "2026-11-20T21:06:49.070596+00:00",
+      "chat_beg": "2026-11-20T21:15:29.236621+00:00"
     },
     "founded": {
       "chat_ball": "2026-11-01T21:21:34.970641+00:00",
@@ -114,7 +115,8 @@
       "suffix_59",
       "prefix_92",
       "suffix_70",
-      "prefix_3"
+      "prefix_3",
+      "prefix_13"
     ],
     "active": {
       "name_prefix": "prefix_2",
@@ -126,7 +128,7 @@
     }
   },
   "stats": {
-    "messages": 625,
+    "messages": 629,
     "active_months": 1,
     "first_seen": "2026-11"
   },
