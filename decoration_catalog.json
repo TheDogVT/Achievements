@@ -1499,6 +1499,34 @@
       }
     }
   },
+  "prefix_93": {
+    "slot": "name_prefix",
+    "display_name": "Untouched",
+    "achievement_name": "14 Day Streak!",
+    "achievement_category": "attendance",
+    "achievement_id": "streak_14",
+    "config": {
+      "font_family": "Varela Round",
+      "outline": "basic",
+      "text": "Untouched",
+      "text_gradient": [
+        {
+          "color": "#ff7a18",
+          "pos": null
+        },
+        {
+          "color": "#ffd166",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "attendance",
+        "id": "streak_14",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_140": {
     "slot": "name_prefix",
     "display_name": "Provoker",
@@ -3314,6 +3342,34 @@
       "unlock": {
         "category": "attendance",
         "id": "streak_10",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_71": {
+    "slot": "name_suffix",
+    "display_name": "[UNBROKEN]",
+    "achievement_name": "14 Day Streak!",
+    "achievement_category": "attendance",
+    "achievement_id": "streak_14",
+    "config": {
+      "font_family": "VT323",
+      "outline": "basic",
+      "text": "[UNBROKEN]",
+      "text_gradient": [
+        {
+          "color": "#ff7a18",
+          "pos": null
+        },
+        {
+          "color": "#ffd166",
+          "pos": null
+        }
+      ],
+      "text_gradient_direction": "45deg",
+      "unlock": {
+        "category": "attendance",
+        "id": "streak_14",
         "type": "achievement"
       }
     }

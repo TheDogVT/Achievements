@@ -41,6 +41,12 @@
       "desc": "Ten days in. The dedication is unreal.",
       "amount": 10,
       "type": "streak"
+    },
+    "streak_14": {
+      "name": "14 Day Streak!",
+      "desc": "Two weeks. Peak regularity achieved.",
+      "amount": 14,
+      "type": "streak"
     }
   },
   "chat": {

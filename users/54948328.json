@@ -97,7 +97,8 @@
       "streak_10": "2026-11-14T21:13:53.297431+00:00",
       "cheer_314": "2026-11-15T21:21:39.157450+00:00",
       "cheer_144": "2026-11-15T21:31:11.515622+00:00",
-      "chat_down": "2026-11-15T22:27:19.526319+00:00"
+      "chat_down": "2026-11-15T22:27:19.526319+00:00",
+      "streak_14": "2026-11-21T21:00:43.553351+00:00"
     },
     "founded": {
       "cheer_message_100": "2026-11-01T21:21:19.800434+00:00",
@@ -235,18 +236,21 @@
       "suffix_70",
       "prefix_36",
       "prefix_35",
-      "prefix_136"
+      "prefix_136",
+      "prefix_93",
+      "suffix_71"
     ],
     "active": {
       "name_prefix": "prefix_78",
       "name_base": "name_5",
       "name_suffix": "suffix_107",
       "washi_color": "washi_lavender",
-      "washi_position": "washi_top_center"
+      "washi_position": "washi_top_center",
+      "system_badge": "system_first"
     }
   },
   "stats": {
-    "messages": 1646,
+    "messages": 1647,
     "active_months": 1,
     "first_seen": "2026-11"
   },
