@@ -5,12 +5,16 @@
   "legacy": 1,
   "achievements": {
     "earned": {
-      "gifted_times_1": "2026-11-01T22:35:43.546753+00:00"
+      "gifted_times_1": "2026-11-01T22:35:43.546753+00:00",
+      "attend_3": "2026-11-22T22:51:03.341474+00:00"
     },
     "founded": {}
   },
   "decorations": {
-    "unlocked": [],
+    "unlocked": [
+      "prefix_79",
+      "suffix_57"
+    ],
     "active": {}
   },
   "stats": {
