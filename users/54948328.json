@@ -141,7 +141,8 @@
       "redeem_total_150": "2026-11-12T21:27:50.946205+00:00",
       "redeem_checkin_10": "2026-11-15T21:04:00.942594+00:00",
       "redeem_pet_100": "2026-11-16T21:55:42.835157+00:00",
-      "chat_frisbee": "2026-11-20T21:06:37.525458+00:00"
+      "chat_frisbee": "2026-11-20T21:06:37.525458+00:00",
+      "redeem_first_10": "2026-11-22T21:06:32.607988+00:00"
     }
   },
   "decorations": {
@@ -238,7 +239,9 @@
       "prefix_35",
       "prefix_136",
       "prefix_93",
-      "suffix_71"
+      "suffix_71",
+      "prefix_102",
+      "suffix_80"
     ],
     "active": {
       "name_prefix": "prefix_78",
@@ -250,7 +253,7 @@
     }
   },
   "stats": {
-    "messages": 1649,
+    "messages": 1651,
     "active_months": 1,
     "first_seen": "2026-11"
   },

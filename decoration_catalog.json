@@ -50,6 +50,22 @@
       }
     }
   },
+  "prefix_102": {
+    "slot": "name_prefix",
+    "display_name": "Quickdraw",
+    "achievement_name": "Got First On Lock",
+    "achievement_category": "redeems",
+    "achievement_id": "redeem_first_10",
+    "config": {
+      "outline": "basic",
+      "text": "Quickdraw",
+      "unlock": {
+        "category": "redeems",
+        "id": "redeem_first_10",
+        "type": "achievement"
+      }
+    }
+  },
   "prefix_119": {
     "slot": "name_prefix",
     "display_name": "Prestige Cheer Name",
@@ -3403,6 +3419,23 @@
       "unlock": {
         "category": "chat",
         "id": "chat_goodboy",
+        "type": "achievement"
+      }
+    }
+  },
+  "suffix_80": {
+    "slot": "name_suffix",
+    "display_name": "[10 FIRSTS]",
+    "achievement_name": "Got First On Lock",
+    "achievement_category": "redeems",
+    "achievement_id": "redeem_first_10",
+    "config": {
+      "font_family": "VT323",
+      "outline": "basic",
+      "text": "[10 FIRSTS]",
+      "unlock": {
+        "category": "redeems",
+        "id": "redeem_first_10",
         "type": "achievement"
       }
     }

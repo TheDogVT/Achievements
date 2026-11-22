@@ -959,6 +959,11 @@
       "desc": "Awarded for getting first for the first time.",
       "amount": 1
     },
+    "redeem_first_10": {
+      "name": "Got First On Lock",
+      "desc": "Awarded for getting first for the 10th time.",
+      "amount": 10
+    },
     "redeem_total_5": {
       "name": "Curious Redeemer.",
       "desc": "Awarded for using 5 channel point redeems.",
