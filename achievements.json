@@ -999,6 +999,12 @@
       "desc": "Awarded for using 150 channel point redeems.",
       "amount": 150,
       "type": "total"
+    },
+    "redeem_total_200": {
+      "name": "Lots of playtime with Dog",
+      "desc": "Awarded for using 200 channel point redeems.",
+      "amount": 200,
+      "type": "total"
     }
   }
 }
