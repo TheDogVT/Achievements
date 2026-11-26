@@ -1,10 +1,12 @@
 {
   "user_id": "490057741",
-  "username": "gigachad_of_earth",
-  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/8356eee8-cf12-4396-a951-262e12745df8-profile_image-300x300.jpeg",
+  "username": "thesillyblaze",
+  "pfp_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/32333ed2-12fa-49c2-adbe-c97178af8c3e-profile_image-300x300.png",
   "legacy": 1,
   "achievements": {
-    "earned": {},
+    "earned": {
+      "redeem_checkin_1": "2026-11-26T22:18:42.474148+00:00"
+    },
     "founded": {}
   },
   "decorations": {
@@ -12,9 +14,9 @@
     "active": {}
   },
   "stats": {
-    "messages": 0,
-    "active_months": 0,
-    "first_seen": null
+    "messages": 1,
+    "active_months": 1,
+    "first_seen": "2026-11"
   },
   "top_months": []
 }
