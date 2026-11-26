@@ -5,16 +5,19 @@
   "legacy": 1,
   "achievements": {
     "earned": {
-      "redeem_checkin_1": "2026-11-26T22:18:42.474148+00:00"
+      "redeem_checkin_1": "2026-11-26T22:18:42.474148+00:00",
+      "chat_10": "2026-11-26T23:08:14.267933+00:00"
     },
     "founded": {}
   },
   "decorations": {
-    "unlocked": [],
+    "unlocked": [
+      "prefix_7"
+    ],
     "active": {}
   },
   "stats": {
-    "messages": 8,
+    "messages": 10,
     "active_months": 1,
     "first_seen": "2026-11"
   },
