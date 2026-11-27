@@ -28,7 +28,8 @@
       "gamble_win_total_10k": "2026-11-15T22:42:58.177529+00:00",
       "gamble_total_win_1": "2026-11-15T22:42:58.199182+00:00",
       "streak_14": "2026-11-21T21:04:20.929910+00:00",
-      "gamble_loss_total_100k": "2026-11-27T22:49:07.981323+00:00"
+      "gamble_loss_total_100k": "2026-11-27T22:49:07.981323+00:00",
+      "chat_cuddle": "2026-11-27T22:57:08.287509+00:00"
     },
     "founded": {}
   },
@@ -56,12 +57,13 @@
       "prefix_92",
       "suffix_70",
       "prefix_93",
-      "suffix_71"
+      "suffix_71",
+      "prefix_17"
     ],
     "active": {}
   },
   "stats": {
-    "messages": 63,
+    "messages": 64,
     "active_months": 1,
     "first_seen": "2026-11"
   },
