@@ -75,7 +75,8 @@
       "streak_14": "2026-11-21T21:38:43.379227+00:00",
       "chat_drool": "2026-11-23T23:47:48.881062+00:00",
       "redeem_total_25": "2026-11-27T21:03:52.826841+00:00",
-      "gamble_win_total_100k": "2026-11-27T21:57:05.748381+00:00"
+      "gamble_win_total_100k": "2026-11-27T21:57:05.748381+00:00",
+      "chat_ball": "2026-11-27T22:13:07.107707+00:00"
     },
     "founded": {
       "chat_carride": "2026-11-01T22:42:16.016824+00:00",
@@ -138,7 +139,8 @@
       "prefix_138",
       "prefix_93",
       "suffix_71",
-      "prefix_137"
+      "prefix_137",
+      "prefix_77"
     ],
     "active": {
       "name_prefix": "prefix_3",
@@ -148,7 +150,7 @@
     }
   },
   "stats": {
-    "messages": 2805,
+    "messages": 2813,
     "active_months": 1,
     "first_seen": "2026-11"
   },
